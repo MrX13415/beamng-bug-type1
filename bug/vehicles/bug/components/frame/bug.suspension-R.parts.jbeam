@@ -1,0 +1,280 @@
+{
+
+// --- rear wheel data
+"bug_wheeldata_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Spindles",
+        "value":0,
+    },
+    "slotType" : "bug_wheeldata_R",
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //rear
+        {"selfCollision":false},
+        {"collision":true},
+        {"hubcapBreakGroup":"hubcap_RR"},
+        {"hubcapGroup":"hubcap_RR"},
+        {"axleBeams":["axle_RR"]},
+        ["RR", "wheel_RR", "tire_RR", "rw1rr", "rw1r", 9999, "rh5r", 1, {"torqueCoupling:":"e1r", "torqueArm:":"e3r", "torqueArm2:":"e3l"}],
+        {"hubcapBreakGroup":"hubcap_RL"},
+        {"hubcapGroup":"hubcap_RL"},
+        {"axleBeams":["axle_RL"]},
+        ["RL", "wheel_RL", "tire_RL", "rw1ll", "rw1l", 9999,  "rh5l",  -1, {"torqueCoupling:":"e1l", "torqueArm:":"e3l", "torqueArm2:":"e1r"}],
+        {"selfCollision":true}, 
+        {"hubcapBreakGroup":""},
+        {"hubcapGroup":""},
+        {"axleBeams":[]},{"disableMeshBreaking":false,"disableTriangleBreaking":false},
+        {"enableHubcaps":false},
+        {"propulsed":0},
+
+        //cancel out a bunch of properties before future wheel parts are loaded
+        {"selfCollision":false},
+        {"triangleCollision":false},
+        {"axleBeams":[]},{"disableMeshBreaking":false,"disableTriangleBreaking":false},
+        {"hubcapBreakGroup":""},
+        {"hubcapGroup":""},
+        {"enableHubcaps":false},
+        {"enableTireLbeams":false},
+        {"enableTireSideReinfBeams":false},
+        {"enableTireReinfBeams":false},
+        {"enableTreadReinfBeams":false},
+        {"enableTirePeripheryReinfBeams":false},
+        {"loadSensitivitySlope":""},
+        {"noLoadCoef":""},
+        {"fullLoadCoef":""},
+        {"frictionCoef":""},
+        {"slidingFrictionCoef":""},
+        {"softnessCoef":0.5},
+        {"treadCoef":1.0},
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["shaft", "spindleRL", "wheelaxleRL", 1, {"connectedWheel":"RL", "breakTriggerBeam":"axle_RL", "uiName":"Rear Left Axle", "friction":0.93, "dynamicFriction":0.0021}],
+        ["shaft", "spindleRR", "wheelaxleRR", 1, {"connectedWheel":"RR", "breakTriggerBeam":"axle_RR", "uiName":"Rear Right Axle", "friction":0.93, "dynamicFriction":0.0021}],
+    ],
+},
+
+// --- rear springs
+"bug_spring_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Torsion Bars",
+        "value":100,
+    },
+    "slotType":"bug_spring_R",
+    "slots":[
+        ["type", "default", "description"],
+        ["bug_shock_R","bug_shock_R","Rear Shocks"],
+    ],
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        //20mm 2590
+        //21mm 3155
+        //21.5mm 3460
+        //22mm 3787
+        //23mm 4525
+        {"spring":4525, "damp":10, "deform":200000, "strength":9999999},
+        ["rh5l", "bx2l", "bx2r", "f5r", {"precompressionAngle":0.09}],
+        ["rh5r", "bx2r", "bx2l", "f5l", {"precompressionAngle":-0.09}],
+    ],
+},
+"bug_spring_R_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Rear Torsion Bars",
+        "value":650,
+    },
+    "slotType":"bug_spring_R",
+    "slots":[
+        ["type", "default", "description"],
+        ["bug_shock_R","bug_shock_R_race","Rear Shocks"],
+    ],
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$springheight_R", "range", "+m", "Suspension", 0.0, -0.08, 0.04, "Spring Height", "Raise or lower the suspension height", {"stepDis":0.005, "subCategory":"Rear"}],
+        ["$spring_R", "range", "N/m", "Suspension", 35000, 10000, 100000, "Spring Rate", "Spring stiffness", {"stepDis":500, "subCategory":"Rear"}]
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        //21.5mm 3460
+        //22mm 3787
+        //23mm 4525
+        //24mm 5376
+        //25mm 6329
+        {"spring":"$=$spring_R*0.8*0.8", "damp":10, "deform":200000, "strength":9999999},
+        ["rh5l", "bx2l", "bx2r", "f5r", {"precompressionAngle":"$=($springheight_R-0.03)/0.5"}],
+        ["rh5r", "bx2r", "bx2l", "f5l", {"precompressionAngle":"$=-($springheight_R-0.03)/0.5"}],
+    ],
+},
+"bug_coilover_R_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Rear Coilovers",
+        "value":750,
+    },
+    "slotType":"bug_spring_R",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["shock_R", ["shockbottom_R", "shocktop_R"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$springheight_R", "range", "+m", "Suspension", 0.0, -0.08, 0.04, "Spring Height", "Raise or lower the suspension height", {"stepDis":0.005, "subCategory":"Rear"}],
+        ["$spring_R", "range", "N/m", "Suspension", 70000, 20000, 150000, "Spring Rate", "Spring stiffness", {"stepDis":500, "subCategory":"Rear"}]
+        ["$damp_bump_R", "range", "N/m/s", "Suspension", 5000, 1000, 10000, "Bump Damping", "Damper rate in compression", {"stepDis":100, "subCategory":"Rear"}]
+        ["$damp_rebound_R", "range", "N/m/s", "Suspension", 12000, 2000, 20000, "Rebound Damping", "Damper rate in extension", {"stepDis":100, "subCategory":"Rear"}]
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //rear springs - no soft bumpstop - advanced dampers
+          {"beamType":"|NORMAL"},
+          {"beamDeform":12000,"beamStrength":140000},
+          {"beamSpring":"$spring_R","beamDamp":0},
+          ["rh4r","bs1r", {"precompressionRange":"$=($springheight_R + 0.02)*0.80"}],
+          ["rh4l","bs1l", {"precompressionRange":"$=($springheight_R + 0.02)*0.80"}],
+          //rear dampers
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamSpring":250,"beamDamp":"$damp_bump_R"},
+          ["rh4r","bs1r", {"beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":0.2,"beamDampFast":"$=$damp_bump_R / 3","beamDampReboundFast":"$=$damp_rebound_R / 3","dampCutoffHz":500,
+              "soundFile":"event:>Vehicle>Suspension>car_modn_sml_01>spring_compress_01","colorFactor":0.3,"attackFactor":45,"volumeFactor":2.7,"decayFactor":70,"noiseFactor":0.01,"pitchFactor":1.0,"maxStress":13}],
+          ["rh4l","bs1l", {"beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":0.2,"beamDampFast":"$=$damp_bump_R / 3","beamDampReboundFast":"$=$damp_rebound_R / 3","dampCutoffHz":500,
+              "soundFile":"event:>Vehicle>Suspension>car_modn_sml_01>spring_compress_01","colorFactor":0.3,"attackFactor":45,"volumeFactor":2.7,"decayFactor":70,"noiseFactor":0.01,"pitchFactor":1.0,"maxStress":13}],
+          //bumpstop and extension limiter
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":501000,"beamLimitDamp":5000},
+          ["rh4r","bs1r", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["rh4l","bs1l", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+"bug_coilover_R_rally": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rally Rear Coilovers",
+        "value":850,
+    },
+    "slotType":"bug_spring_R",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["shock_R", ["shockbottom_R", "shocktop_R"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$springheight_R", "range", "+m", "Suspension", 0.0, -0.04, 0.08, "Spring Height", "Raise or lower the suspension height", {"stepDis":0.005, "subCategory":"Rear"}],
+        ["$spring_R", "range", "N/m", "Suspension", 40000, 20000, 100000, "Spring Rate", "Spring stiffness", {"stepDis":500, "subCategory":"Rear"}]
+        ["$damp_bump_R", "range", "N/m/s", "Suspension", 4200, 500, 8000, "Bump Damping", "Damper rate in compression", {"stepDis":100, "subCategory":"Rear"}]
+        ["$damp_bump_R_fast", "range", "N/m/s", "Suspension", 3100, 500, 16000, "Fast Bump Damping", "Damper rate in fast compression", {"stepDis":100, "subCategory":"Rear"}]
+        ["$damp_rebound_R", "range", "N/m/s", "Suspension", 5200, 500, 8000, "Rebound Damping", "Damper rate in extension", {"stepDis":100, "subCategory":"Rear"}]
+        ["$damp_rebound_R_fast", "range", "N/m/s", "Suspension", 2600, 500, 10000, "Fast Rebound Damping", "Damper rate in fast extension", {"stepDis":100,"subCategory":"Rear"}]
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //rear springs - no soft bumpstop - advanced dampers
+          //motion ratio ~0.80
+          {"beamType":"|NORMAL"},
+          {"beamDeform":20000,"beamStrength":220000},
+          {"beamSpring":"$spring_R","beamDamp":0},
+          ["rh4r","bs1r", {"precompressionRange":"$=($springheight_R + 0.04)*0.80"}],
+          ["rh4l","bs1l", {"precompressionRange":"$=($springheight_R + 0.04)*0.80"}],
+          //rear dampers
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamSpring":250,"beamDamp":"$damp_bump_R"},
+          //bump
+          ["rh4r","bs1r", {"beamDampRebound":0,"beamDampVelocitySplit":0.23,"beamDampFast":"$damp_bump_R_fast","beamDampReboundFast":0,"dampCutoffHz":500,
+              "soundFile":"event:>Vehicle>Suspension>car_modn_sml_01>spring_compress_01","colorFactor":0.3,"attackFactor":10,"volumeFactor":3.5,"decayFactor":8,"noiseFactor":0.01,"pitchFactor":0.7,"maxStress":13}],
+          ["rh4l","bs1l", {"beamDampRebound":0,"beamDampVelocitySplit":0.23,"beamDampFast":"$damp_bump_R_fast","beamDampReboundFast":0,"dampCutoffHz":500,
+              "soundFile":"event:>Vehicle>Suspension>car_modn_sml_01>spring_compress_01","colorFactor":0.3,"attackFactor":10,"volumeFactor":3.5,"decayFactor":8,"noiseFactor":0.01,"pitchFactor":0.7,"maxStress":13}],
+          //rebound
+          {"beamSpring":0,"beamDamp":0},
+          ["rh4r","bs1r", {"name":"shock_RR","beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":0.15,"beamDampFast":0,"beamDampReboundFast":"$damp_rebound_R_fast","dampCutoffHz":500}],
+          ["rh4l","bs1l", {"name":"shock_RL","beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":0.15,"beamDampFast":0,"beamDampReboundFast":"$damp_rebound_R_fast","dampCutoffHz":500}],
+          //bumpstop and extension limiter
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":1000,"beamLimitDamp":12000},
+          ["rh4r","bs1r", {"longBoundRange":1,"shortBoundRange":0.035,"boundZone":0.01,"beamLimitDampRebound":1000,"dampCutoffHz":250}],
+          ["rh4l","bs1l", {"longBoundRange":1,"shortBoundRange":0.035,"boundZone":0.01,"beamLimitDampRebound":1000,"dampCutoffHz":250}],
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+
+// --- rear shocks
+"bug_shock_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Shocks",
+        "value":100,
+    },
+    "slotType" : "bug_shock_R",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["shock_R", ["shockbottom_R", "shocktop_R"]],
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        //rear dampers
+        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamDeform":120000,"beamStrength":140000},
+        {"beamLimitSpring":0,"beamLimitDamp":0},
+        {"beamSpring":250,"beamDamp":2000},
+        ["rh4r","bs1r", {"beamDampRebound":4000,"dampCutoffHz":500,
+            "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>leaf_compress_01","colorFactor":0.0,"attackFactor":7,"volumeFactor":4.0,"decayFactor":7,"noiseFactor":0.01,"pitchFactor":0.2,"maxStress":13}],
+        ["rh4l","bs1l", {"beamDampRebound":4000,"dampCutoffHz":500,
+            "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>leaf_compress_01","colorFactor":0.0,"attackFactor":7,"volumeFactor":4.0,"decayFactor":7,"noiseFactor":0.01,"pitchFactor":0.2,"maxStress":13}],
+        //bumpstop and extension limiter
+        {"beamSpring":0,"beamDamp":0},
+        {"beamLimitSpring":501000,"beamLimitDamp":5000},
+        ["rh4r","bs1r", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+        ["rh4l","bs1l", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+        {"beamLimitSpring":0,"beamLimitDamp":0},
+        {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+"bug_shock_R_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Rear Shocks",
+        "value":450,
+    },
+    "slotType" : "bug_shock_R",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["shock_R", ["shockbottom_R", "shocktop_R"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$damp_bump_R", "range", "N/m/s", "Suspension", 5000, 1000, 10000, "Bump Damping", "Damper rate in compression", {"stepDis":100, "subCategory":"Rear"}]
+        ["$damp_rebound_R", "range", "N/m/s", "Suspension", 12000, 2000, 20000, "Rebound Damping", "Damper rate in extension", {"stepDis":100, "subCategory":"Rear"}]
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        //rear dampers
+        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamDeform":12000,"beamStrength":140000},
+        {"beamLimitSpring":0,"beamLimitDamp":0},
+        {"beamSpring":250,"beamDamp":"$damp_bump_R"},
+        ["rh4r","bs1r", {"beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":0.2,"beamDampFast":"$=$damp_bump_R / 3","beamDampReboundFast":"$=$damp_rebound_R / 3","dampCutoffHz":500,
+            "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>leaf_compress_01","colorFactor":0.2,"attackFactor":16,"volumeFactor":2.6,"decayFactor":16,"noiseFactor":0.01,"pitchFactor":0.7,"maxStress":13}],
+        ["rh4l","bs1l", {"beamDampRebound":"$damp_rebound_R","beamDampVelocitySplit":0.2,"beamDampFast":"$=$damp_bump_R / 3","beamDampReboundFast":"$=$damp_rebound_R / 3","dampCutoffHz":500,
+            "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>leaf_compress_01","colorFactor":0.2,"attackFactor":16,"volumeFactor":2.6,"decayFactor":16,"noiseFactor":0.01,"pitchFactor":0.7,"maxStress":13}],
+        //bumpstop and extension limiter
+        {"beamSpring":0,"beamDamp":0},
+        {"beamLimitSpring":501000,"beamLimitDamp":5000},
+        ["rh4r","bs1r", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+        ["rh4l","bs1l", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+        {"beamLimitSpring":0,"beamLimitDamp":0},
+        {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+
+}

@@ -1,0 +1,21 @@
+{
+"bindings" :   [
+    {
+    "control"           : "btn_a"             , 
+    "action"            : "shoot"             
+    }, 
+    {
+    "control"           : "thumbly"           , 
+    "action"            : "lift"              ,
+    "deadzone": {
+      "begin": -0.1,
+      "end": 0.1
+    },
+    }, 
+  ], 
+"name"              : "XBox Controller 1" , 
+"version"           : 1                   , 
+"devicetype"        : "xinput"            , 
+"vidpid"            : "XIDevice"          , 
+"guid"              : "xinput_device_XIDevice"
+}, 

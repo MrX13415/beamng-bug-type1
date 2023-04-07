@@ -1,0 +1,461 @@
+{
+
+// --- Console cage
+
+"bug_radio": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Radio",
+        "value":300,
+    },
+    "slotType" : "bug_console_cage",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["skin_console", "skin_console_silver", "Color", {"coreSlot": true}],
+
+        ["bug_radio_mode", "bug_radio_mode_interior", "Mode", {"coreSlot": true}],
+        ["bug_radio_output", "bug_radio_output_2D", "Output", {"coreSlot": true}],
+        // No longer used["bug_radio_station", "radio_station_piano", "Radio Station"],
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+
+        ["volDown",        "",   "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.02, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.0683, "y":-0.1270, "z":-0.0635}],
+        ["volUp",      "",   "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.02, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.0583, "y":-0.1270, "z":-0.0635}],
+        
+        ["tunePreset1",  "",   "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x": 0.02779, "y":-0.1095, "z":-0.05}],
+        ["tunePreset2",  "",   "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x": 0.01079, "y":-0.1095, "z":-0.05}],
+        ["tunePreset3",  "",   "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.00621, "y":-0.1095, "z":-0.05}],
+        ["tunePreset4",  "",   "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.02321, "y":-0.1095, "z":-0.05}],
+        ["tunePreset5",  "",   "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.04021, "y":-0.1095, "z":-0.05}],
+
+        ["tuneDown",  "",   "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.02, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.0683, "y":-0.1270, "z":-0.0635}],
+        ["tuneUp",    "",   "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.02, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.0783, "y":-0.1270, "z":-0.0635}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],        
+
+        ["volDown", "action0", "volDown"],
+        ["volDown", "action1", "radioOff"],
+        ["volDown", "action2", "radioOff"],
+        ["volUp", "action0", "volUp"],
+        ["volUp", "action1", "radioOff"],
+        ["volUp", "action2", "radioOff"],
+
+        ["tunePreset1", "action0", "tunePreset1"],
+        ["tunePreset2", "action0", "tunePreset2"],
+        ["tunePreset3", "action0", "tunePreset3"],
+        ["tunePreset4", "action0", "tunePreset4"],
+        ["tunePreset5", "action0", "tunePreset5"],
+
+        ["tunePreset1", "action1", "setPreset1"],
+        ["tunePreset2", "action1", "setPreset2"],
+        ["tunePreset3", "action1", "setPreset3"],
+        ["tunePreset4", "action1", "setPreset4"],
+        ["tunePreset5", "action1", "setPreset5"],
+
+        ["tunePreset1", "action2", "setPreset1"],
+        ["tunePreset2", "action2", "setPreset2"],
+        ["tunePreset3", "action2", "setPreset3"],
+        ["tunePreset4", "action2", "setPreset4"],
+        ["tunePreset5", "action2", "setPreset5"],
+        
+        ["tuneDown", "action0", "tuneDown"],
+        ["tuneDown", "action1", "tunePrev"],
+        ["tuneDown", "action2", "tunePrev"],
+        ["tuneUp", "action0", "tuneUp"],
+        ["tuneUp", "action1", "tuneNext"],
+        ["tuneUp", "action2", "tuneNext"],
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        // TODO: texts
+        ["radioOff",  "ui.inputActions.bug.volDown.title", "ui.inputActions.bug.volDown.description", {"onDown":"radio.setState(false)"}],
+
+        ["volDown",  "ui.inputActions.bug.volDown.title", "ui.inputActions.bug.volDown.description", {"onDown":"radio.volumeDown()"}],
+        ["volUp",  "ui.inputActions.bug.volUp.title", "ui.inputActions.bug.volUp.description", {"onDown":"radio.volumeUp()"}],
+
+        ["tunePreset1",  "ui.inputActions.bug.tunepreset1.title", "ui.inputActions.bug.tunepreset1.description", {"onDown":"radio.tunePreset(1)"}],
+        ["tunePreset2",  "ui.inputActions.bug.tunepreset2.title", "ui.inputActions.bug.tunepreset2.description", {"onDown":"radio.tunePreset(2)"}],
+        ["tunePreset3",  "ui.inputActions.bug.tunepreset3.title", "ui.inputActions.bug.tunepreset3.description", {"onDown":"radio.tunePreset(3)"}],
+        ["tunePreset4",  "ui.inputActions.bug.tunepreset4.title", "ui.inputActions.bug.tunepreset4.description", {"onDown":"radio.tunePreset(4)"}],
+        ["tunePreset5",  "ui.inputActions.bug.tunepreset5.title", "ui.inputActions.bug.tunepreset5.description", {"onDown":"radio.tunePreset(5)"}],
+
+        ["setPreset1",  "ui.inputActions.bug.tunepreset1.title", "ui.inputActions.bug.tunepreset1.description", {"onDown":"radio.setPreset(1)"}],
+        ["setPreset2",  "ui.inputActions.bug.tunepreset2.title", "ui.inputActions.bug.tunepreset2.description", {"onDown":"radio.setPreset(2)"}],
+        ["setPreset3",  "ui.inputActions.bug.tunepreset3.title", "ui.inputActions.bug.tunepreset3.description", {"onDown":"radio.setPreset(3)"}],
+        ["setPreset4",  "ui.inputActions.bug.tunepreset4.title", "ui.inputActions.bug.tunepreset4.description", {"onDown":"radio.setPreset(4)"}],
+        ["setPreset5",  "ui.inputActions.bug.tunepreset5.title", "ui.inputActions.bug.tunepreset5.description", {"onDown":"radio.setPreset(5)"}],
+
+        ["tuneDown",  "ui.inputActions.bug.tuneDown.title", "ui.inputActions.bug.tuneDown.description", {"onChange":"radio.tuneDown(VALUE)"}],
+        ["tuneUp",  "ui.inputActions.bug.tuneUp.title", "ui.inputActions.bug.tuneUp.description", {"onChange":"radio.tuneUp(VALUE)"}],
+
+        ["tunePrev",  "ui.inputActions.bug.tunePrev.title", "ui.inputActions.bug.tunePrev.description", {"onDown":"radio.tuneDown()"}],
+        ["tuneNext",  "ui.inputActions.bug.tuneNext.title", "ui.inputActions.bug.tuneNext.description", {"onDown":"radio.tuneUp()"}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+	
+         //old: ["radio", ["bug_dashboard"]],
+         ["radio_frame",        ["bug_dashboard"]],
+         //["radio_buttons",      ["bug_dashboard"]],
+        // ["radio_knobs",        ["bug_dashboard"]],
+         ["radio_knobs_socket", ["bug_dashboard"]],
+         ["radio_text",         ["bug_dashboard"]],
+
+         ["radio_speaker",      ["bug_dashboard"]],
+    ],
+    "props": [
+        ["func",           "mesh",               "idRef:", "idX:", "idY:", "baseRotation",          "rotation",             "translation",          "min", "max", "offset", "multiplier"],
+
+        ["radio_needle",   "radio_needle",       "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":-0.14, "y":0, "z":0}, 0, 1, -0.5, 1],
+     
+        ["radio_buttons1", "radio_buttons.1",    "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons2", "radio_buttons.2",    "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons3", "radio_buttons.3",    "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons4", "radio_buttons.4",    "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons5", "radio_buttons.5",    "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+
+        ["radio_needle",   "radio_knobs_tune",   "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 1440, 0, 1440],
+        ["radio_volume",   "radio_knobs_volume", "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 90, 300],
+    ]
+},
+
+
+"bug_console_cover": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Cover",
+        "value":300,
+    },
+    "slotType" : "bug_console_cage",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+
+         ["console_cover", ["bug_dashboard"]],
+    ],
+},
+"bug_console_tray": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Tray",
+        "value":300,
+    },
+    "slotType" : "bug_console_cage",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["skin_console", "skin_console_silver", "Color", {"coreSlot": true}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+
+         ["console_tray", ["bug_dashboard"]],
+    ],
+},
+
+"skin_console_black": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Black",
+        "value":30,
+    },
+    "slotType" : "skin_console",
+    "skinName": "black"
+},
+"skin_console_white": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"White",
+        "value":30,
+    },
+    "slotType" : "skin_console",
+    "skinName": "White"
+},
+"skin_console_silver": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Silver",
+        "value":30,
+    },
+    "slotType" : "skin_console",
+    "skinName": "silver"
+},
+"skin_console_paint1": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Colored (Exterior)",
+        "value":30,
+    },
+    "slotType" : "skin_console",
+    "skinName": "paint1"
+},
+"skin_console_paint2": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Colored (Exterior, Secondary)",
+        "value":30,
+    },
+    "slotType" : "skin_console",
+    "skinName": "paint2"
+},
+"skin_console_paint3": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Colored (Interior)",
+        "value":30,
+    },
+    "slotType" : "skin_console",
+    "skinName": "paint3"
+},
+"skin_console_wood": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Wood",
+        "value":30,
+    },
+    "slotType" : "skin_console",
+    "skinName": "wood"
+},
+
+// --- Other
+
+"bug_glovebox": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Glovebox",
+        "value":300,
+    },
+    "slotType" : "bug_glovebox",
+    "controller": [
+        ["fileName"],
+        ["advancedCouplerControl", {"name":"gloveboxCoupler"}],
+    ],
+    "gloveboxCoupler":{
+        "groupType": "autoCoupling",
+        "couplerNodes":[
+            ["cid1",    "cid2",     "autoCouplingStrength",    "autoCouplingRadius",   "autoCouplingLockRadius",   "autoCouplingSpeed"],
+            ["dgb5",    "dgb4",    2000,                  0.01,                   0.005,                      0.2]
+        ],
+        "attachSoundVolume":1,
+        "detachSoundVolume":1,
+        "soundNode:":["dgb4"],
+        "attachSoundEvent": "glovebox_close",
+        "detachSoundEvent": "glovebox_open",
+        "breakSoundEvent":"",
+        "openForceMagnitude": 10,
+        "openForceDuration": 0.1,
+        "closeForceMagnitude": 50,
+        "closeForceDuration": 0.8
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["dashboard_glovebox_hatch", ["bug_glovebox"]],
+         ["dashboard_glovebox_case", ["bug_body", "bug_dashboard"]],
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["gloveboxLatch", "", "dgb1l","dgb1r","dgb2l", "box", {"x":0.02, "y":0.015, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1547, "y":0.103, "z":-0.013}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["gloveboxLatch", "action0", "gloveboxLatch"],   // default: left mouse btn
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        // TODO: Where are these texts shown?
+        ["gloveboxLatch", "ui.inputActions.bug.gloveboxLatch.title", "ui.inputActions.bug.gloveboxLatch.description", {"onUp":"controller.getControllerSafe('gloveboxCoupler').toggleGroup()"}],
+    ],
+    "nodes": [
+        //dash anti-deform nodes
+        {"selfCollision":true},
+        {"group": "bug_glovebox"},
+
+        //dash nodes
+        {"nodeWeight": 0.5},
+        ["dgb1l", -0.12132, -0.53654, 0.88347],
+        ["dgb1r", -0.45869, -0.55879, 0.87663],
+        ["dgb2l", -0.12132, -0.54466, 1.01010],
+        ["dgb2r", -0.45869, -0.56279, 0.98610],
+        ["dgb3",  -0.28617, -0.58279, 0.97],
+
+
+        {"group": ""},
+        {"collision":false},
+        {"selfCollision":false},
+        ["dgb4",  -0.28617, -0.50279, 1.01610, {"couplerTag":"gloveboxLatch","couplerLock":true,"couplerStrength":2000,"couplerRadius":1.35,"couplerStartRadius":0.2,"couplerLockRadius":0.05,"couplerLatchSpeed":0.8, "breakGroup":"gloveboxLatch"}],
+        ["dgb5",  -0.28617, -0.50279, 1.01610, {"tag":"gloveboxLatch"}],
+    ],
+    "beams": [
+        {"beamPrecompression":1.0},
+
+        {"disableMeshBreaking":false},
+        {"beamSpring":501000,"beamDamp":100},
+        {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+        {"group": "bug_glovebox"},
+        ["dgb1l", "dgb1r"],
+        ["dgb2l", "dgb2r"],
+        ["dgb1l", "dgb2l"],
+        ["dgb1r", "dgb2r"],
+        ["dgb1l", "dgb2r"],
+        ["dgb1r", "dgb2l"],
+
+        ["dgb1l", "dgb3"],
+        ["dgb1r", "dgb3"],
+        ["dgb2l", "dgb3"],
+        ["dgb2r", "dgb3"],
+        ["dgb4",  "dgb3"],
+
+
+        {"group": ""},
+        {"beamSpring":201000,"beamDamp":100},
+        {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+        ["dgb1l", "dgb4"],
+        ["dgb1r", "dgb4"],
+        ["dgb2l", "dgb4"],
+        ["dgb2r", "dgb4"],
+        ["dgb5", "bd1rr"],
+        ["dgb5", "bd1r"],
+        ["dgb5", "bd1"],
+        ["dgb5", "dsh"],
+        ["dgb5", "dshr"],
+
+        {"breakGroup":"glovebox"},
+        {"beamDeform":15000,"beamStrength":6000},
+        ["dgb1l", "dsh"],
+        ["dgb1l", "dshr"],
+        ["dgb1l", "bd1"],
+        ["dgb1l", "bf8r"],
+        ["dgb1r", "dsh"],
+        ["dgb1r", "dshr"],
+        ["dgb1r", "bf8r"],
+        ["dgb1r", "bd1rr"],
+
+        //gas struts
+        {"breakGroupType":1},
+        {"breakGroup":"glovebox"},
+        {"beamType":"|SUPPORT", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":500,"beamDamp":100},
+        {"beamDeform":4000,"beamStrength":6000},
+        {"beamPrecompression":0.8},
+        ["dgb2l", "f4tm"],
+        ["dgb2l", "f4r"],
+        {"beamPrecompression":1},
+
+        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamShortBound":1},
+        {"beamSpring":0,"beamDamp":100},
+        {"beamLimitSpring":601000,"beamLimitDamp":150},
+        {"beamDeform":2000,"beamStrength":6000},
+        ["dgb2l", "bd1r", {"beamLongBound":0.7}],
+        ["dgb2r", "bd1r", {"beamLongBound":0.4}],
+
+        // limiter
+        {"beamType":"|SUPPORT", "beamLongBound":4},
+        {"beamSpring":601000,"beamDamp":120},
+        {"beamDeform":14000,"beamStrength":6000},
+        {"beamPrecompression":1.001},
+        ["dgb2l", "bc2r"],
+        ["dgb2r", "bc2r"],
+        {"beamPrecompression":1.0},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"breakGroup":""},
+        {"breakGroupType":0},
+        {"group": ""},
+    ]
+},
+"bug_console_clock": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Clock",
+        "value":300,
+    },
+    "slotType" : "bug_console_clock",
+    "controller": [
+        ["fileName"],
+        ["clock"]
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["clock", ["bug_body", "bug_dashboard"]],
+    ],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+
+        //clock
+        ["clockh",    "clock_needle_h",    "f4m","f4l","f4tm",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
+        ["clockmin",  "clock_needle_min",  "f4m","f4l","f4tm",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
+        ["clocksec",  "clock_needle_sec",  "f4m","f4l","f4tm",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
+    ],
+},
+
+// --- Radio Parts
+
+"bug_radio_mode_interior": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Interior only",
+        "value":300,
+    },
+    "slotType" : "bug_radio_mode",
+},
+"bug_radio_mode_both": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Interior + Exterior",
+        "value":300,
+    },
+    "slotType" : "bug_radio_mode",
+},
+
+"bug_radio_output_2D": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"2D",
+        "value":300,
+    },
+    "slotType" : "bug_radio_output",
+},
+"bug_radio_output_3D": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"3D",
+        "value":300,
+    },
+    "slotType" : "bug_radio_output",
+},
+
+// --- Stations:
+
+"bug_radio_station_piano": {
+    "information":{
+        "authors":"BeamNG", // Claude Debussy?
+        "name":"Piano",
+        "song": "event:>Special>piano_music",
+        "builtIn": true,    // Is a built in radio station
+        "value":300,
+    },
+    "slotType" : "bug_radio_station",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+    ],
+},
+
+// No longer present
+// "bug_radio_station_lonle": {
+//     "information":{
+//         "authors":"BeamNG",
+//         "name":"lonle (Credits Theme)",
+//         "song": "ui/modules/credits/lonle.ogg",
+//         "builtIn": true,    // Is a built in radio station
+//         "value":300,
+//     },
+//     "slotType" : "bug_radio_station",
+//     "flexbodies": [
+//          ["mesh", "[group]:", "nonFlexMaterials"],
+//     ],
+// },
+
+}
+
+

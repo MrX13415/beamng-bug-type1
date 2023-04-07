@@ -1,0 +1,637 @@
+{
+   // --- Carpets
+   "bug_floor_carpet_white": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Cream White Carpet",
+         "value":300,
+      },
+      "slotType" : "skin_floor_carpet",
+      "skinName": "white",
+      "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+   
+         ["floor_carpet_1", ["bug_body"]],
+         ["floor_carpet_2", ["bug_body"]],
+         ["floor_carpet_3", ["bug_frame"]],
+         ["floor_carpet_4", ["bug_body"]],
+         ["floor_carpet_5", ["bug_frame"]],
+         ["floor_carpet_6", ["bug_frame"]],
+         ["floor_mat", ["bug_frame"]],
+      ],
+   },
+   "bug_floor_carpet_brown": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Sand Brown Carpet",
+         "value":300,
+      },
+      "slotType" : "skin_floor_carpet",
+      "skinName": "brown",
+      "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+   
+         ["floor_carpet_1", ["bug_body"]],
+         ["floor_carpet_2", ["bug_body"]],
+         ["floor_carpet_3", ["bug_frame"]],
+         ["floor_carpet_4", ["bug_body"]],
+         ["floor_carpet_5", ["bug_frame"]],
+         ["floor_carpet_6", ["bug_frame"]],
+         ["floor_mat", ["bug_frame"]],
+      ],
+   },
+   "bug_floor_carpet_brown2": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Terracotta Brown Carpet",
+         "value":300,
+      },
+      "slotType" : "skin_floor_carpet",
+      "skinName": "brown2",
+      "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+   
+         ["floor_carpet_1", ["bug_body"]],
+         ["floor_carpet_2", ["bug_body"]],
+         ["floor_carpet_3", ["bug_frame"]],
+         ["floor_carpet_4", ["bug_body"]],
+         ["floor_carpet_5", ["bug_frame"]],
+         ["floor_carpet_6", ["bug_frame"]],
+         ["floor_mat", ["bug_frame"]],
+      ],
+   },
+   "bug_floor_carpet_black": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Black Carpet",
+         "value":300,
+      },
+      "slotType" : "skin_floor_carpet",
+      "skinName": "black",
+      "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+   
+         ["floor_carpet_1", ["bug_body"]],
+         ["floor_carpet_2", ["bug_body"]],
+         ["floor_carpet_3", ["bug_frame"]],
+         ["floor_carpet_4", ["bug_body"]],
+         ["floor_carpet_5", ["bug_frame"]],
+         ["floor_carpet_6", ["bug_frame"]],
+         ["floor_mat", ["bug_frame"]],
+      ],
+   },
+   "bug_floor_carpet_gray": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Dusty Gray Carpet",
+         "value":300,
+      },
+      "slotType" : "skin_floor_carpet",
+      "skinName": "gray",
+      "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+   
+         ["floor_carpet_1", ["bug_body"]],
+         ["floor_carpet_2", ["bug_body"]],
+         ["floor_carpet_3", ["bug_frame"]],
+         ["floor_carpet_4", ["bug_body"]],
+         ["floor_carpet_5", ["bug_frame"]],
+         ["floor_carpet_6", ["bug_frame"]],
+         ["floor_mat", ["bug_frame"]],
+      ],
+   },
+   "bug_floor_carpet_red": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Rose Red Carpet",
+         "value":300,
+      },
+      "slotType" : "skin_floor_carpet",
+      "skinName": "red",
+      "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+   
+         ["floor_carpet_1", ["bug_body"]],
+         ["floor_carpet_2", ["bug_body"]],
+         ["floor_carpet_3", ["bug_frame"]],
+         ["floor_carpet_4", ["bug_body"]],
+         ["floor_carpet_5", ["bug_frame"]],
+         ["floor_carpet_6", ["bug_frame"]],
+         ["floor_mat", ["bug_frame"]],
+      ],
+   },
+   "bug_floor_carpet_green": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Apple Green Carpet",
+         "value":300,
+      },
+      "slotType" : "skin_floor_carpet",
+      "skinName": "green",
+      "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+   
+         ["floor_carpet_1", ["bug_body"]],
+         ["floor_carpet_2", ["bug_body"]],
+         ["floor_carpet_3", ["bug_frame"]],
+         ["floor_carpet_4", ["bug_body"]],
+         ["floor_carpet_5", ["bug_frame"]],
+         ["floor_carpet_6", ["bug_frame"]],
+         ["floor_mat", ["bug_frame"]],
+      ],
+   },
+   "bug_floor_carpet_blue": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Sky Blue Carpet",
+         "value":300,
+      },
+      "slotType" : "skin_floor_carpet",
+      "skinName": "blue",
+      "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+   
+         ["floor_carpet_1", ["bug_body"]],
+         ["floor_carpet_2", ["bug_body"]],
+         ["floor_carpet_3", ["bug_frame"]],
+         ["floor_carpet_4", ["bug_body"]],
+         ["floor_carpet_5", ["bug_frame"]],
+         ["floor_carpet_6", ["bug_frame"]],
+         ["floor_mat", ["bug_frame"]],
+      ],
+   },
+
+   "bug_floor_carpet_paint1": {
+      "information":{
+            "authors":"MrX13415",
+            "name":"Colored Carpet (Exterior)",
+            "value":200,
+      },
+      "slotType" : "skin_floor_carpet",
+      "skinName" : "paint1",
+      "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+   
+         ["floor_carpet_1", ["bug_body"]],
+         ["floor_carpet_2", ["bug_body"]],
+         ["floor_carpet_3", ["bug_frame"]],
+         ["floor_carpet_4", ["bug_body"]],
+         ["floor_carpet_5", ["bug_frame"]],
+         ["floor_carpet_6", ["bug_frame"]],
+         ["floor_mat", ["bug_frame"]],
+      ],
+   },
+   "bug_floor_carpet_paint2": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Colored Carpet (Exterior, Secondary)",
+         "value":200,
+      },
+      "slotType" : "skin_floor_carpet",
+      "skinName" : "paint2",
+      "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+   
+         ["floor_carpet_1", ["bug_body"]],
+         ["floor_carpet_2", ["bug_body"]],
+         ["floor_carpet_3", ["bug_frame"]],
+         ["floor_carpet_4", ["bug_body"]],
+         ["floor_carpet_5", ["bug_frame"]],
+         ["floor_carpet_6", ["bug_frame"]],
+         ["floor_mat", ["bug_frame"]],
+      ],
+   },
+   "bug_floor_carpet_paint3": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Colored Carpet (Interior)",
+         "value":200,
+      },
+      "slotType" : "skin_floor_carpet",
+      "skinName" : "paint3",
+      "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+   
+         ["floor_carpet_1", ["bug_body"]],
+         ["floor_carpet_2", ["bug_body"]],
+         ["floor_carpet_3", ["bug_frame"]],
+         ["floor_carpet_4", ["bug_body"]],
+         ["floor_carpet_5", ["bug_frame"]],
+         ["floor_carpet_6", ["bug_frame"]],
+         ["floor_mat", ["bug_frame"]],
+      ],
+   },
+
+
+   // --- Headliner
+   "bug_skin_interior1_gray": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Dusty Gray Headliner",
+         "value":200,
+      },
+      "slotType": "skin_interior1",
+      "skinName": "gray",
+   },
+   "bug_skin_interior1_white": {
+       "information":{
+           "authors":"MrX13415",
+           "name":"Cream White Headliner",
+           "value":200,
+       },
+       "slotType" : "skin_interior1",
+       "skinName" : "white",
+   },
+   "bug_skin_interior1_black": {
+       "information":{
+           "authors":"MrX13415",
+           "name":"Black Headliner",
+           "value":200,
+       },
+       "slotType" : "skin_interior1",
+       "skinName" : "black",
+   },
+   "bug_skin_interior1_brown": {
+       "information":{
+           "authors":"MrX13415",
+           "name":"Sand Brown Headliner",
+           "value":200,
+       },
+       "slotType" : "skin_interior1",
+       "skinName" : "brown",
+   },
+   "bug_skin_interior1_green": {
+       "information":{
+           "authors":"MrX13415",
+           "name":"Apple Green Headliner",
+           "value":200,
+       },
+       "slotType" : "skin_interior1",
+       "skinName" : "green",
+   },
+   "bug_skin_interior1_red": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Rose Red Headliner",
+         "value":200,
+      },
+      "slotType" : "skin_interior1",
+      "skinName" : "red",
+   },
+   "bug_skin_interior1_blue": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Sky Blue Headliner",
+         "value":200,
+      },
+      "slotType" : "skin_interior1",
+      "skinName" : "blue",
+   },
+   "bug_skin_interior1_brown2": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Terracotta Brown Headliner",
+          "value":200,
+      },
+      "slotType" : "skin_interior1",
+      "skinName" : "brown2",
+   },
+
+   "bug_skin_interior1_paint1": {
+   "information":{
+       "authors":"MrX13415",
+       "name":"Colored Headliner (Exterior)",
+       "value":200,
+   },
+   "slotType" : "skin_interior1",
+   "skinName" : "paint1",
+   },
+   "bug_skin_interior1_paint2": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Colored Headliner (Exterior, Secondary)",
+         "value":200,
+      },
+      "slotType" : "skin_interior1",
+      "skinName" : "paint2",
+   },
+   "bug_skin_interior1_paint3": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Colored Headliner (Interior)",
+         "value":200,
+      },
+      "slotType" : "skin_interior1",
+      "skinName" : "paint3",
+   },
+
+
+   // --- Panel 1
+   "bug_skin_interior2_gray": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Dusty Gray Leather",
+         "value":200,
+      },
+      "slotType": "skin_interior2",
+      "skinName": "gray",
+   },
+   "bug_skin_interior2_black": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Black Leather",
+         "value":200,
+      },
+      "slotType": "skin_interior2",
+      "skinName": "black",
+   },
+   "bug_skin_interior2_white": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Cream White Leather",
+         "value":200,
+      },
+      "slotType": "skin_interior2",
+      "skinName": "white",
+   },
+   "bug_skin_interior2_brown": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Sand Brown Leather",
+          "value":200,
+      },
+      "slotType" : "skin_interior2",
+      "skinName" : "brown",
+   },
+   "bug_skin_interior2_green": {
+      "information":{
+            "authors":"MrX13415",
+            "name":"Apple Green Leather",
+            "value":200,
+      },
+      "slotType" : "skin_interior2",
+      "skinName" : "green",
+   },
+   "bug_skin_interior2_red": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Rose Red Leather",
+         "value":200,
+      },
+      "slotType" : "skin_interior2",
+      "skinName" : "red",
+   },
+   "bug_skin_interior2_blue": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Sky Blue Leather",
+         "value":200,
+      },
+      "slotType" : "skin_interior2",
+      "skinName" : "blue",
+   },
+   "bug_skin_interior2_brown2": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Terracotta Brown Leather",
+          "value":200,
+      },
+      "slotType" : "skin_interior2",
+      "skinName" : "brown2",
+   },
+
+   "bug_skin_interior2_paint1": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Colored Leather (Exterior)",
+          "value":200,
+      },
+      "slotType" : "skin_interior2",
+      "skinName" : "paint1",
+   },
+   "bug_skin_interior2_paint2": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Colored Leather (Exterior, Secondary)",
+          "value":200,
+      },
+      "slotType" : "skin_interior2",
+      "skinName" : "paint2",
+   },
+   "bug_skin_interior2_paint3": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Colored Leather (Interior)",
+          "value":200,
+      },
+      "slotType" : "skin_interior2",
+      "skinName" : "paint3",
+   },
+
+
+   // --- Panel 2
+   "bug_skin_interior3_gray": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Dusty Gray Leather",
+         "value":200,
+      },
+      "slotType": "skin_interior3",
+      "skinName": "gray",
+   },
+   "bug_skin_interior3_black": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Black Leather",
+         "value":200,
+      },
+      "slotType": "skin_interior3",
+      "skinName": "black",
+   },
+   "bug_skin_interior3_white": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Cream White Leather",
+         "value":200,
+      },
+      "slotType": "skin_interior3",
+      "skinName": "white",
+   },
+   "bug_skin_interior3_brown": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Sand Brown Leather",
+          "value":200,
+      },
+      "slotType" : "skin_interior3",
+      "skinName" : "brown",
+   },
+   "bug_skin_interior3_green": {
+      "information":{
+            "authors":"MrX13415",
+            "name":"Apple Green Leather",
+            "value":200,
+      },
+      "slotType" : "skin_interior3",
+      "skinName" : "green",
+   },
+   "bug_skin_interior3_red": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Rose Red Leather",
+         "value":200,
+      },
+      "slotType" : "skin_interior3",
+      "skinName" : "red",
+   },
+   "bug_skin_interior3_blue": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Sky Blue Leather",
+         "value":200,
+      },
+      "slotType" : "skin_interior3",
+      "skinName" : "blue",
+   },
+   "bug_skin_interior3_brown2": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Terracotta Brown Leather",
+          "value":200,
+      },
+      "slotType" : "skin_interior3",
+      "skinName" : "brown2",
+   },
+
+   "bug_skin_interior3_paint1": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Colored Leather (Exterior)",
+          "value":200,
+      },
+      "slotType" : "skin_interior3",
+      "skinName" : "paint1",
+   },
+   "bug_skin_interior3_paint2": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Colored Leather (Exterior, Secondary)",
+          "value":200,
+      },
+      "slotType" : "skin_interior3",
+      "skinName" : "paint2",
+   },
+   "bug_skin_interior3_paint3": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Colored Leather (Interior)",
+          "value":200,
+      },
+      "slotType" : "skin_interior3",
+      "skinName" : "paint3",
+   },
+
+
+   // --- Seats
+   "bug_skin_interior4_gray": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Dusty Gray Leather",
+         "value":200,
+      },
+      "slotType": "skin_interior4",
+      "skinName": "gray",
+   },
+   "bug_skin_interior4_black": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Black Leather",
+         "value":200,
+      },
+      "slotType": "skin_interior4",
+      "skinName": "black",
+   },
+   "bug_skin_interior4_white": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Cream White Leather",
+         "value":200,
+      },
+      "slotType": "skin_interior4",
+      "skinName": "white",
+   },
+   "bug_skin_interior4_brown": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Sand Brown Leather",
+          "value":200,
+      },
+      "slotType" : "skin_interior4",
+      "skinName" : "brown",
+   },
+   "bug_skin_interior4_green": {
+      "information":{
+            "authors":"MrX13415",
+            "name":"Apple Green Leather",
+            "value":200,
+      },
+      "slotType" : "skin_interior4",
+      "skinName" : "green",
+   },
+   "bug_skin_interior4_red": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Rose Red Leather",
+         "value":200,
+      },
+      "slotType" : "skin_interior4",
+      "skinName" : "red",
+   },
+   "bug_skin_interior4_blue": {
+      "information":{
+         "authors":"MrX13415",
+         "name":"Sky Blue Leather",
+         "value":200,
+      },
+      "slotType" : "skin_interior4",
+      "skinName" : "blue",
+   },
+   "bug_skin_interior4_brown2": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Terracotta Brown Leather",
+          "value":200,
+      },
+      "slotType" : "skin_interior4",
+      "skinName" : "brown2",
+   },
+
+   "bug_skin_interior4_paint1": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Colored Leather (Exterior)",
+          "value":200,
+      },
+      "slotType" : "skin_interior4",
+      "skinName" : "paint1",
+   },
+   "bug_skin_interior4_paint2": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Colored Leather (Exterior, Secondary)",
+          "value":200,
+      },
+      "slotType" : "skin_interior4",
+      "skinName" : "paint2",
+   },
+   "bug_skin_interior4_paint3": {
+      "information":{
+          "authors":"MrX13415",
+          "name":"Colored Leather (Interior)",
+          "value":200,
+      },
+      "slotType" : "skin_interior4",
+      "skinName" : "paint3",
+   },
+
+}

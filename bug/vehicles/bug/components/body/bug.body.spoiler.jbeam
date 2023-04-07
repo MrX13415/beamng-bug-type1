@@ -1,0 +1,196 @@
+{
+"bug_spoilerF": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Spoiler",
+        "value":300,
+    },
+    "slotType" : "bug_spoilerF",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["skin_spoilerF","bug_spoilerF_black", "Spoiler Color", {"coreSlot": true}],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--SPOILER--
+         {"nodeWeight":0.4},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"group":"bug_spoilerF"},
+         {"collision":true},
+         {"selfCollision":true},
+
+         ["sp1fr",-0.66, -1.67, 0.38],
+         ["sp1f", 0.0, -1.7, 0.34],
+         ["sp1fl", 0.66, -1.67, 0.38],
+
+         ["sp2fr",-0.66, -1.74, 0.23],
+         ["sp2f", 0.0, -1.80, 0.18],
+         ["sp2fl", 0.66, -1.74, 0.23],
+
+         ["sp3f", 0.0, -1.65, 0.24],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},//--FRONT BUMPER--
+          {"beamSpring":151000,"beamDamp":50},
+          {"beamDeform":19450,"beamStrength":"FLT_MAX"},
+          //main shape
+          ["sp1fr","sp1f"],
+          ["sp1fl","sp1f"],
+          ["sp2fr","sp2f"],
+          ["sp2fl","sp2f"],
+
+          ["sp1fr","sp2fr"],
+          ["sp1f","sp2f"],
+          ["sp1fl","sp2fl"],
+
+          ["sp1fr","sp2f"],
+          ["sp1f","sp2fr"],
+          ["sp1fl","sp2f"],
+          ["sp1f","sp2fl"],
+
+          //rigids
+          ["sp1fr","sp1fl"],
+          ["sp2fr","sp2fl"],
+          ["sp1fr","sp2fl"],
+          ["sp1fl","sp2fr"],
+
+          ["sp1fl","sp3f"],
+          ["sp1f","sp3f"],
+          ["sp1fr","sp3f"],
+          ["sp2fl","sp3f"],
+          ["sp2f","sp3f"],
+          ["sp2fr","sp3f"],
+
+          //attach
+		  {"beamSpring":401000,"beamDamp":50},
+          {"beamDeform":6000,"beamStrength":12340},
+          {"optional":true},
+          {"breakGroup":"spoilerF_R"},
+          ["sp1fr","bf1rr"],
+          ["sp1fr","bf1r"],
+          ["sp1fr","bf2r"],
+          ["sp1fr","bf6r"],
+          ["sp2fr","bf1rr"],
+          ["sp2fr","bf1r"],
+          ["sp2fr","bf2r"],
+          ["sp2fr","bf6r"],
+
+          {"breakGroup":"spoilerF_L"},
+          ["sp1fl","bf1ll"],
+          ["sp1fl","bf1l"],
+          ["sp1fl","bf2l"],
+          ["sp1fl","bf6l"],
+          ["sp2fl","bf1ll"],
+          ["sp2fl","bf1l"],
+          ["sp2fl","bf2l"],
+          ["sp2fl","bf6l"],
+
+          {"breakGroup":"spoilerF_M"},
+          ["sp1f","bf1ll"],
+          ["sp1f","bf1rr"],
+          ["sp1f","bf2l"],
+          ["sp1f","bf2r"],
+          ["sp2f","bf1ll"],
+          ["sp2f","bf1rr"],
+          ["sp2f","bf2l"],
+          ["sp2f","bf2r"],
+
+          {"optional":false},
+          {"breakGroup":""},
+          {"breakGroupType":0},
+          //support beams
+          {"beamPrecompression":1,"beamType":"|SUPPORT", "beamLongBound":6},
+          {"beamSpring":506460,"beamDamp":55},
+          {"beamDeform":14450,"beamStrength":234600},
+          {"beamPrecompression":0.90},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"group":"bug_spoilerF"},
+        {"dragCoef":5},
+        {"groundModel":"plastic"},
+        ["sp1fl", "sp1f", "sp2fl", {"stallAngle":0.8,"liftCoef":100}],
+        ["sp2fl", "sp1f", "sp2f", {"stallAngle":0.8,"liftCoef":100}],
+        ["sp1f", "sp1fr", "sp2fr", {"stallAngle":0.8,"liftCoef":100}],
+        ["sp2f", "sp1f", "sp2fr", {"stallAngle":0.8,"liftCoef":100}],
+        {"group":""},
+    ],
+},
+
+"bug_spoilerF_black": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Black Spoiler",
+        "value": 50,
+    },
+    "slotType" : "skin_spoilerF",
+    "skinName" : "black",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["spoiler_F", ["bug_spoilerF"]]
+   ],
+},
+"bug_spoilerF_white": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "White Spoiler",
+        "value": 50,
+    },
+    "slotType" : "skin_spoilerF",
+    "skinName" : "white",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["spoiler_F", ["bug_spoilerF"]]
+   ],
+},
+"bug_spoilerF_paint1": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Colored (Exterior)",
+        "value": 50,
+    },
+    "slotType" : "skin_spoilerF",
+    "skinName" : "paint1",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["spoiler_F", ["bug_spoilerF"]]
+   ],
+},
+"bug_spoilerF_paint2": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Colored (Exterior, Secondary)",
+        "value": 50,
+    },
+    "slotType" : "skin_spoilerF",
+    "skinName" : "paint2",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["spoiler_F", ["bug_spoilerF"]]
+   ],
+},
+"bug_spoilerF_paint3": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Colored (Interior)",
+        "value": 50,
+    },
+    "slotType" : "skin_spoilerF",
+    "skinName" : "paint3",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["spoiler_F", ["bug_spoilerF"]]
+   ],
+},
+
+}

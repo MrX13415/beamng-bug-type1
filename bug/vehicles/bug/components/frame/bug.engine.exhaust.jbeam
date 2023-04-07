@@ -1,0 +1,156 @@
+{
+"bug_exhaust": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stock Exhaust",
+        "value":800,
+    },
+    "slotType" : "bug_exhaust",
+    "flexbodies": [
+         ["mesh","[group]:","nonFlexMaterials"],
+
+         ["exhaust", ["bug_exhaust"]],
+         ["exhaust_clamps", ["bug_exhaust"]],
+         ["exhaust_pipes", ["bug_exhaust"]],
+    ],
+    "nodes": [
+         ["id","posX","posY","posZ"],
+
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":0.5},
+         {"group":"bug_exhaust"},
+         ["ex0l", 0.16542, 2.07000, 0.26600],
+		 ["ex0r", -0.16542, 2.07000, 0.26600],
+         ["ex2l", 0.26000, 1.68000, 0.33],
+         ["ex2r", -0.26000, 1.68000, 0.33],
+         ["ex1l", 0.16542, 1.72000, 0.26600, {"afterFireAudioCoef":1, "afterFireVisualCoef":1, "exhaustAudioMufflingCoef":0.5, "exhaustAudioGainChange":-4}],
+		 ["ex1r", -0.16542, 1.72000, 0.26600, {"afterFireAudioCoef":1, "afterFireVisualCoef":1, "exhaustAudioMufflingCoef":0.5, "exhaustAudioGainChange":-4}],
+
+         {"nodeWeight":0.5},
+         ["ex3l",  0.32, 1.76, 0.22],
+		 ["ex3r", -0.32, 1.76, 0.22],
+         ["ex4l",  0.32, 1.76, 0.30],
+		 ["ex4r", -0.32, 1.76, 0.30],
+         ["ex5l",  0.32, 1.70, 0.22],
+		 ["ex5r", -0.32, 1.70, 0.22],
+         ["ex6l",  0.32, 1.70, 0.30],
+		 ["ex6r", -0.32, 1.70, 0.30],
+
+         {"collision":false},
+         {"group":""},
+    ],
+    "beams": [
+        ["id1:","id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL","beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":501000,"beamDamp":80},
+        {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+        {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+
+        //main shape
+        ["ex3l", "ex4l"],
+        ["ex5l", "ex6l"],
+        ["ex3l", "ex5l"],
+        ["ex4l", "ex6l"],
+        ["ex3r", "ex4r"],
+        ["ex5r", "ex6r"],
+        ["ex3r", "ex5r"],
+        ["ex4r", "ex6r"],
+
+        ["ex3l", "ex3r"],
+        ["ex4l", "ex4r"],
+        ["ex5l", "ex5r"],
+        ["ex6l", "ex6r"],
+
+        ["ex3l", "ex6l"],
+        ["ex4l", "ex5l"],
+        ["ex3r", "ex6r"],
+        ["ex4r", "ex5r"],
+
+        ["ex3l", "ex4r"],
+        ["ex4l", "ex3r"],
+        ["ex5l", "ex6r"],
+        ["ex6l", "ex5r"],
+
+        ["ex3l", "ex5r"],
+        ["ex5l", "ex3r"],
+        ["ex4l", "ex6r"],
+        ["ex6l", "ex4r"],
+
+        ["ex0l", "ex0r"]
+
+        // pipe L
+        ["ex3l", "ex0l"],
+        ["ex4l", "ex0l"],
+        ["ex3r", "ex0l"],
+        ["ex4r", "ex0l"],
+
+        ["ex4l", "ex1l"],
+        ["ex3l", "ex1l"],
+        ["ex5l", "ex1l"],
+        ["ex6l", "ex1l"],
+
+        ["ex4l", "ex2l"],
+        ["ex5l", "ex2l"],
+        ["ex6l", "ex2l"],
+
+        // pipe R
+        ["ex3l", "ex0r"],
+        ["ex4l", "ex0r"],
+        ["ex3r", "ex0r"],
+        ["ex4r", "ex0r"],
+
+        ["ex4r", "ex1r"],
+        ["ex3r", "ex1r"],
+        ["ex5r", "ex1r"],
+        ["ex6r", "ex1r"],
+
+        ["ex4r", "ex2r"],
+        ["ex5r", "ex2r"],
+        ["ex6r", "ex2r"],
+
+        // pipe engine connections
+        {"beamSpring":1001000,"beamDamp":400},
+        {"beamDeform":8500,"beamStrength":24000},
+        // pipe L
+        {"breakGroup":"exhaust_a"},
+        ["e2l", "ex2l", {"isExhaust":"mainEngine","deformLimitExpansion":1.1}],
+        {"breakGroup":""},
+        ["ex2l", "ex1l", {"isExhaust":"mainEngine","deformLimitExpansion":1.1}],
+        ["ex1l", "ex0l", {"isExhaust":"mainEngine","deformLimitExpansion":1.1}],
+        // pipe R
+        {"breakGroup":"exhaust_b"},
+        ["e2r", "ex2r", {"isExhaust":"mainEngine","deformLimitExpansion":1.1}],
+        {"breakGroup":""},
+        ["ex2r", "ex1r", {"isExhaust":"mainEngine","deformLimitExpansion":1.1}],
+        ["ex1r", "ex0r", {"isExhaust":"mainEngine","deformLimitExpansion":1.1}],
+
+		// attachment
+        {"beamSpring":801000,"beamDamp":80},
+        {"beamDeform":8500,"beamStrength":24000},
+        {"breakGroup":"exhaust_attach"},
+        {"breakGroupType": 0}
+        ["ex4l", "e1l"],
+        ["ex5l", "e1l"],
+        ["ex5l", "e2l"],
+        ["ex4r", "e1r"],
+        ["ex5r", "e1r"],
+        ["ex5r", "e2r"],
+
+        ["ex0l", "e4l"],
+        ["ex4l", "e4l"],
+        ["ex4r", "e4l"],
+        ["ex6l", "e4l"],
+
+        ["ex0r", "e4r"],
+        ["ex4l", "e4r"],
+        ["ex4r", "e4r"],
+        ["ex6r", "e4r"],
+
+        {"breakGroup":""},
+    ]
+}
+}

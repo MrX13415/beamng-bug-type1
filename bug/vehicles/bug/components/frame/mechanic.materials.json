@@ -1,0 +1,238 @@
+{
+  "bug_battery": {
+    "name": "bug_battery",
+    "mapTo": "bug_battery",
+    "class": "Material",
+    "persistentId": "cb3d04b4-b322-4f8a-a724-284a213f7cdc",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/frame/textures/battery_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/frame/textures/battery_m.data.png",
+        "roughnessMap": "/vehicles/bug/components/frame/textures/battery_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "front_tanks": {
+    "name": "front_tanks",
+    "mapTo": "front_tanks",
+    "class": "Material",
+    "persistentId": "f834d703-1a75-4f51-b51f-7c7a3787bcaa",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/frame/textures/front_tanks_d.color.png",
+        "normalMap": "/vehicles/bug/components/frame/textures/front_tanks_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/frame/textures/front_tanks_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+
+  "engine_block": {
+    "name": "engine_block",
+    "mapTo": "engine_block",
+    "class": "Material",
+    "persistentId": "827682a8-ef16-40ae-bab3-1997ba9fd3eb",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.999989986,
+          0.999989986,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/frame/textures/engine_d.color.png",
+        "metallicFactor": 1.0,
+        "normalMap": "/vehicles/bug/components/frame/textures/engine_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/frame/textures/engine_r.data.png"
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "engine_parts": {
+    "name": "engine_parts",
+    "mapTo": "engine_parts",
+    "class": "Material",
+    "persistentId": "e6b34d67-3643-46bc-8f52-79a711f78181",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.999989986,
+          0.999989986,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/frame/textures/engine_parts_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/frame/textures/engine_parts_m.data.png",
+        "normalMap": "/vehicles/bug/components/frame/textures/engine_parts_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/frame/textures/engine_parts_r.data.png"
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null
+      }
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "version": 1.5
+  },
+  "engine_housing": {
+    "name": "engine_housing",
+    "mapTo": "engine_housing",
+    "class": "Material",
+    "persistentId": "c9afc2cd-81db-4b89-a885-2d704f157aa6",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.207843006,
+          0.188235,
+          0.156863004,
+          1
+        ],
+        "metallicFactor": 0.699999988,
+        "normalMap": "/vehicles/bug/components/frame/textures/engine_housing_n.normal.png",
+        "roughnessFactor": 0.300000012
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "version": 1.5
+  },
+
+  "transaxle": {
+    "name": "transaxle",
+    "mapTo": "transaxle",
+    "class": "Material",
+    "persistentId": "c8b01bbe-33f5-4ae3-802d-417d3bf52e91",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.999989986,
+          0.999989986,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/frame/textures/transaxle_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/frame/textures/transaxle_m.data.png",
+        "normalMap": "/vehicles/bug/components/frame/textures/transaxle_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/frame/textures/transaxle_r.data.png"
+      },
+      { },
+      { },
+      { }
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "version": 1.5
+  },
+  "exhaust": {
+    "name": "exhaust",
+    "mapTo": "exhaust",
+    "class": "Material",
+    "persistentId": "bbba3cc0-f25d-4537-b4ed-173fffe38a98",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.999989986,
+          0.999989986,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/frame/textures/exhaust_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/frame/textures/exhaust_m.data.png",
+        "normalMap": "/vehicles/bug/components/frame/textures/exhaust_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/frame/textures/exhaust_r.data.png"
+      },
+      { },
+      { },
+      { }
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "version": 1.5
+  },
+
+  "fueltank": {
+    "name": "fueltank",
+    "mapTo": "fueltank",
+    "class": "Material",
+    "persistentId": "3abc1ea7-783f-4430-ac14-dc269a8eae9f",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.0917709991,
+          0.0917700008,
+          0.0917700008,
+          1
+        ],
+        "clearCoatFactor": 0.400000006,
+        "clearCoatRoughnessFactor": 0,
+        "metallicFactor": 0.200000003,
+        "normalMapUseUV": 1
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  }
+}

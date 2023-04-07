@@ -1,0 +1,387 @@
+{
+  "bug_lights": {
+    "name": "bug_lights",
+    "mapTo": "bug_lights",
+    "class": "Material",
+    "persistentId": "a7a230f0-7d5d-4b3a-8f1c-d288c68819ca",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/bug/components/body/textures/lights_ao.data.png",
+        "baseColorMap": "/vehicles/bug/components/body/textures/lights_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
+        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
+        "roughnessFactor": 0
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "bug_lights_glass": {
+    "name": "bug_lights_glass",
+    "mapTo": "bug_lights_glass",
+    "class": "Material",
+    "persistentId": "9a769ffd-b34f-458b-b873-26e0aa12e1ce",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/body/textures/lights_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
+        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
+        "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
+        "roughnessFactor": 0
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "bug_lights_glass_on": {
+    "name": "bug_lights_glass_on",
+    "mapTo": "bug_lights_glass_on",
+    "class": "Material",
+    "persistentId": "c8d13f6e-8818-4f0d-b357-d629856365e4",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/body/textures/lights_d.color.png",
+        "emissiveFactor": [
+          1.5,
+          1.5,
+          1.5
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/lights_g.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
+        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.dds",
+        "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
+        "roughnessFactor": 0
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "bug_lights_glass_on_intense": {
+    "name": "bug_lights_glass_on_intense",
+    "mapTo": "bug_lights_glass_on_intense",
+    "class": "Material",
+    "persistentId": "e6661794-6921-4a2b-8403-31438365d303",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/body/textures/lights_d.color.png",
+        "emissiveFactor": [
+          1.5,
+          1.5,
+          1.5
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/lights_g_intense.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
+        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.dds",
+        "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
+        "roughnessFactor": 0
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "bug_lights_on": {
+    "name": "bug_lights_on",
+    "mapTo": "bug_lights_on",
+    "class": "Material",
+    "persistentId": "4a3122ad-5f3e-458f-a255-f8e98b8ea3c3",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/bug/components/body/textures/lights_ao.data.png",
+        "baseColorMap": "/vehicles/bug/components/body/textures/lights_d.color.png",
+        "emissiveFactor": [
+          1,
+          0.999989986,
+          0.999989986
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/lights_g.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
+        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
+        "roughnessFactor": 0
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "bug_lights_on_intense": {
+    "name": "bug_lights_on_intense",
+    "mapTo": "bug_lights_on_intense",
+    "class": "Material",
+    "persistentId": "b2cd3ab9-beaf-42f2-a6df-dfaa849d2c78",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/bug/components/body/textures/lights_ao.data.png",
+        "baseColorMap": "/vehicles/bug/components/body/textures/lights_d.color.png",
+        "emissiveFactor": [
+          1,
+          0.999989986,
+          0.999989986
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/lights_g_intense.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
+        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
+        "roughnessFactor": 0
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+
+  "bug_lights_glass_dmg": {
+    "name": "bug_lights_glass_dmg",
+    "mapTo": "bug_lights_glass_dmg",
+    "class": "Material",
+    "persistentId": "acffcedc-7b0d-4d5a-a950-1e28ae70ba83",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/body/textures/lights_dmg_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
+        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
+        "opacityMap": "/vehicles/bug/components/body/textures/lights_dmg_o.data.png",
+        "roughnessFactor": 0
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 20,
+    "alphaTest": true,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+
+
+
+  "bug_int_lights": {
+    "name": "bug_int_lights",
+    "mapTo": "bug_int_lights",
+    "class": "Material",
+    "persistentId": "46e0eefb-f698-4ee1-b263-41acc6a1e949",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/body/textures/interiorlight_d.color.png",
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/bug/components/body/textures/interiorlight_n.normal.png",
+        "roughnessFactor": 0
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "bug_int_lights_glass": {
+    "name": "bug_int_lights_glass",
+    "mapTo": "bug_int_lights_glass",
+    "class": "Material",
+    "persistentId": "8deed051-c07b-44d0-addd-0ba5958f8d84",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/body/textures/interiorlight_d.color.png",
+        "metallicFactor": 0,
+        "normalMap": "/vehicles/bug/components/body/textures/interiorlight_n.normal.png",
+        "roughnessFactor": 0
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "bug_int_lights_glass_on": {
+    "name": "bug_int_lights_glass_on",
+    "mapTo": "bug_int_lights_glass_on",
+    "class": "Material",
+    "persistentId": "fc813426-8e1c-4ea3-9bba-10822c15c720",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/body/textures/interiorlight_d.color.png",
+        "emissiveFactor": [
+          1.5,
+          1.5,
+          1.5
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/interiorlight_g.color.png",
+        "metallicFactor": 0,
+        "normalMap": "/vehicles/bug/components/body/textures/interiorlight_n.normal.dds",
+        "roughnessFactor": 0
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "bug_int_lights_on": {
+    "name": "bug_int_lights_on",
+    "mapTo": "bug_int_lights_on",
+    "class": "Material",
+    "persistentId": "b77bb944-2d38-4e3c-a69e-041ec70b9dee",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/body/textures/interiorlight_d.color.png",
+        "emissiveFactor": [
+          1,
+          0.999989986,
+          0.999989986
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/interiorlight_g.color.png",
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/bug/components/body/textures/interiorlight_n.normal.png",
+        "roughnessFactor": 0
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+
+
+  "licenseplate_light": {
+    "name": "licenseplate_light",
+    "mapTo": "licenseplate_light",
+    "class": "Material",
+    "persistentId": "893b07c7-8e4f-4252-9ec1-7dad161772fa",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.190491006,
+          0.190488994,
+          0.190488994,
+          1
+        ],
+        "roughnessFactor": 0.699999988
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5
+  },
+  "licenseplate_light_on": {
+    "name": "licenseplate_light_on",
+    "mapTo": "licenseplate_light_on",
+    "class": "Material",
+    "persistentId": "821cbbb4-2697-4d26-9192-707ec7609179",
+    "Stages": [
+      {
+        "colorMap": "/vehicles/common/light_generic_g.dds",
+        "diffuseColor": [
+          1,
+          0.941648006,
+          0.708773971,
+          0.511332989
+        ],
+        "emissive": true,
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "pixelSpecular": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "subSurfacaae0": "0",
+    "translucent": true
+  }
+}

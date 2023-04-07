@@ -1,0 +1,432 @@
+{
+  "tire_rubber": {
+    "name": "tire_rubber",
+    "mapTo": "tire_rubber",
+    "class": "Material",
+    "persistentId": "71bafb9b-7b7d-434f-b569-8336d4f55178",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.190491006,
+          0.190488994,
+          0.190488994,
+          1
+        ],
+        "roughnessFactor": 0.699999988
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5
+  },
+  "tire_white": {
+    "name": "tire_white",
+    "mapTo": "tire_white",
+    "class": "Material",
+    "persistentId": "9bffaf8e-8d4d-4363-b79a-d7ec2382d92e",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "tire_14x6_goodyear" : {
+    "name" : "tire_14x6_goodyear",
+    "mapTo" : "tire_14x6_goodyear",
+    "class" : "Material",
+    "persistentId" : "9ecb1685-3edf-45a2-a239-70a888e70519",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/bug/components/wheels/textures/tire-goodyear.ao.color.png",
+        "baseColorMap": "/vehicles/bug/components/wheels/textures/tire-goodyear.b.color.png",
+        "metallicFactor": 0,
+        "normalMap": "/vehicles/bug/components/wheels/textures/tire-goodyear.n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/wheels/textures/tire-goodyear.r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "doubleSided": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "order_simset": 0,
+    "version": 1.5
+  },
+
+  "rim_paint_F": {
+    "name": "rim_paint_F",
+    "mapTo": "rim_paint_F",
+    "class": "material",
+    "persistentId": "f98d381e-c298-4a61-91a3-efa3f108d0d9",
+    "Stages": [
+      { },
+      { },
+      { },
+      { }
+    ],
+    "castShadows": false,
+    "translucent": true
+  },
+  "rim_paint_F.skin_rim_F.black": {
+    "name": "rim_paint_F.skin_rim_F.black",
+    "mapTo": "rim_paint_F.skin_rim_F.black",
+    "class": "Material",
+    "persistentId": "295895e0-7725-4cfd-ad4b-23443cdb0b2e",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.0980390012,
+          0.0980390012,
+          0.0980390012,
+          1
+        ],
+        "roughnessFactor": 0.100000001
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "rim_paint_F.skin_rim_F.silver": {
+    "name": "rim_paint_F.skin_rim_F.silver",
+    "mapTo": "rim_paint_F.skin_rim_F.silver",
+    "class": "Material",
+    "persistentId": "3b9f81bf-6551-4b53-a260-207809b127a8",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.753286994,
+          0.793637013,
+          0.794118023,
+          1
+        ],
+        "baseColorMap": "vehicles/common/null.dds",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.4
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "rim_paint_F.skin_rim_F.white": {
+    "name": "rim_paint_F.skin_rim_F.white",
+    "mapTo": "rim_paint_F.skin_rim_F.white",
+    "class": "Material",
+    "persistentId": "75609946-32cb-482f-87fb-49709c0ba5d3",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.686275005,
+          0.666666985,
+          0.545098007,
+          1
+        ],
+        "roughnessFactor": 0.100000001
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "rim_paint_F.skin_rim_F.paint1": {
+    "name": "rim_paint_F.skin_rim_F.paint1",
+    "mapTo": "rim_paint_F.skin_rim_F.paint1",
+    "class": "Material",
+    "persistentId": "b120ea6c-6587-461d-848b-45dfc5cd6357",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/default_rough.data.png"
+      },
+      {
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "rim_paint_F.skin_rim_F.paint2": {
+    "name": "rim_paint_F.skin_rim_F.paint2",
+    "mapTo": "rim_paint_F.skin_rim_F.paint2",
+    "class": "Material",
+    "persistentId": "d91b929c-f87e-4e91-9845-3bc9a20e0bb0",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/default_rough.data.png"
+      },
+      {
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "rim_paint_F.skin_rim_F.paint3": {
+    "name": "rim_paint_F.skin_rim_F.paint3",
+    "mapTo": "rim_paint_F.skin_rim_F.paint3",
+    "class": "Material",
+    "persistentId": "2d5fe0dc-2f79-4bed-8a7c-cc09319663ab",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/default_rough.data.png"
+      },
+      {
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+
+
+  "rim_paint_R": {
+    "name": "rim_paint_R",
+    "mapTo": "rim_paint_R",
+    "class": "material",
+    "persistentId": "ccd991e5-0417-49bf-9371-dbbeaf0e5b74",
+    "Stages": [
+      { },
+      { },
+      { },
+      { }
+    ],
+    "castShadows": false,
+    "translucent": true
+  },
+  "rim_paint_R.skin_rim_R.black": {
+    "name": "rim_paint_R.skin_rim_R.black",
+    "mapTo": "rim_paint_R.skin_rim_R.black",
+    "class": "Material",
+    "persistentId": "b5f81b17-66fb-441d-b1b2-3d8aaeb336cd",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.0980390012,
+          0.0980390012,
+          0.0980390012,
+          1
+        ],
+        "roughnessFactor": 0.100000001
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "rim_paint_R.skin_rim_R.silver": {
+    "name": "rim_paint_R.skin_rim_R.silver",
+    "mapTo": "rim_paint_R.skin_rim_R.silver",
+    "class": "Material",
+    "persistentId": "fa19677c-3edf-4a64-9193-86c0176c0ee0",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.753286994,
+          0.793637013,
+          0.794118023,
+          1
+        ],
+        "baseColorMap": "vehicles/common/null.dds",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.4
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "rim_paint_R.skin_rim_R.white": {
+    "name": "rim_paint_R.skin_rim_R.white",
+    "mapTo": "rim_paint_R.skin_rim_R.white",
+    "class": "Material",
+    "persistentId": "eaa22990-b3f4-4c5c-aff3-b2170d57f7fe",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.686275005,
+          0.666666985,
+          0.545098007,
+          1
+        ],
+        "roughnessFactor": 0.100000001
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "rim_paint_R.skin_rim_R.paint1": {
+    "name": "rim_paint_R.skin_rim_R.paint1",
+    "mapTo": "rim_paint_R.skin_rim_R.paint1",
+    "class": "Material",
+    "persistentId": "05007a04-5480-4881-8ad6-05e1c082881d",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/default_rough.data.png"
+      },
+      {
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "rim_paint_R.skin_rim_R.paint2": {
+    "name": "rim_paint_R.skin_rim_R.paint2",
+    "mapTo": "rim_paint_R.skin_rim_R.paint2",
+    "class": "Material",
+    "persistentId": "d95b5b65-ba28-4afd-a5a1-c251b411d334",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/default_rough.data.png"
+      },
+      {
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "rim_paint_R.skin_rim_R.paint3": {
+    "name": "rim_paint_R.skin_rim_R.paint3",
+    "mapTo": "rim_paint_R.skin_rim_R.paint3",
+    "class": "Material",
+    "persistentId": "ef7539f8-c25e-4bcc-bfcc-4fbf98cd90e7",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/default_rough.data.png"
+      },
+      {
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  }
+
+}

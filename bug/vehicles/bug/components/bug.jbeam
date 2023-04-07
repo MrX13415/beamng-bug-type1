@@ -1,0 +1,65 @@
+{
+
+"bug": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Volkswagen Käfer (1963)",
+    },
+    "slotType" : "main",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["licenseplate_design_2_1", "CA Old Black Plate (no tags)", "License Plate Design"],
+        ["paint_design", "", "Paint Design"],
+
+        ["bug_behavior", "bug_behavior", "Behavior"],
+        ["soundscape", "soundscape_herbie_horn", "Soundscape"],
+
+        ["bug_frame", "bug_frame", "Frame", {"coreSlot":true}],
+        ["bug_mod", "", "Additional Modification"],
+    ],
+    "scaledragCoef":1.1,
+    "controller": [
+        ["fileName"],
+        ["vehicleController", {}],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$brakestrength", "range", "", "Brakes", 1, 0.6, 1.0, "Brake Force Multiplier", "Scales the overall brake torque for this setup", {"minDis":60, "maxDis":100}],
+        ["$ffbstrength", "range", "", "Chassis", 1, 0.5, 1.5, "Setup-Specific Force Feedback Multiplier", "Scales the force feedback strength for THIS SETUP ONLY", {"minDis":50, "maxDis":150}]
+    ],
+    "soundscape": [
+        ["name", "src"],
+
+        //indicator
+        {"node:":"dsh"},
+        ["indicatorStart", "event:>Vehicle>Interior>Indicator>FIPA_On"],
+        ["indicatorStop", "event:>Vehicle>Interior>Indicator>FIPA_Off"],
+        ["indLoop1", "event:>Vehicle>Interior>Indicator>FIPA_Click"],
+        ["indLoop2", "event:>Vehicle>Interior>Indicator>FIPA_Clack"],
+
+        //lights3
+        ["LightOn", "event:>Vehicle>Interior>Light>FIPA_On"],
+        ["LightOff", "event:>Vehicle>Interior>Light>FIPA_Off"],
+
+        //handbrake
+        {"node:":"f4tm"},
+        ["handbrakeEngaging","event:>Vehicle>Interior>Handbrake_Ratchet>Ratchet_04_Ratchet"],
+        ["handbrakeDisengaging","event:>Vehicle>Interior>Handbrake_Ratchet>Ratchet_04_Button"],
+        ["handbrakeDisengaged","event:>Vehicle>Interior>Handbrake_Ratchet>Ratchet_04_Thump"],
+
+        // gearshift
+        {"node:":"dsh2"},
+        ["gear","event:>Vehicle>Interior>Gearshift>AU3"],
+
+        //affects horn location because horn soundscape is loaded after
+        {"node:":"bf2l"}, // TODO?
+    ],
+    "glowMap":{
+            // exterior lights
+            //"taillight_glass":      {"simpleFunction":{"lowhighbeam":0.3,"brake":0.6},   "off":"glass_lights",        "on":"glass_lights_on",        "on_intense":"glass_lights_on"},
+            "licenseplate_light":   {"simpleFunction":{"lowbeam":0.3, "highbeam":0.6},   "off":"licenseplate_light",  "on":"licenseplate_light_on",  "on_intense":"licenseplate_light_on"},
+    },
+}
+
+}

@@ -1,0 +1,86 @@
+{
+"bug_steer_white": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"White Steering Wheel",
+        "value":300,
+    },
+    "slotType": "skin_steer",
+    "skinName" : "white",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+
+        ["steering", "steeringwheel", "f4m","f4l","f4tm", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+    ],
+},
+"bug_steer_black": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Black Steering Wheel",
+        "value":300,
+    },
+    "slotType" : "skin_steer",
+    "skinName" : "black",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+
+        ["steering", "steeringwheel", "f4m","f4l","f4tm", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+    ],
+},
+"bug_steer_paint1": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Colored Steering Wheel (Exterior)",
+        "value":300,
+    },
+    "slotType" : "skin_steer",
+    "skinName" : "paint1",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+
+        ["steering", "steeringwheel", "f4m","f4l","f4tm", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+    ],
+},
+"bug_steer_paint2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Colored Steering Wheel (Exterior, Secondary)",
+        "value":300,
+    },
+    "slotType" : "skin_steer",
+    "skinName" : "paint2",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+
+        ["steering", "steeringwheel", "f4m","f4l","f4tm", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+    ],
+},
+"bug_steer_paint3": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Colored Steering Wheel (Interior)",
+        "value":300,
+    },
+    "slotType" : "skin_steer",
+    "skinName" : "paint3",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+
+        ["steering", "steeringwheel", "f4m","f4l","f4tm", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+    ],
+},
+"bug_steer_wood": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Wooden Steering Wheel",
+        "value":300,
+    },
+    "slotType" : "skin_steer",
+    "skinName" : "wood",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+
+        ["steering", "steeringwheel", "f4m","f4l","f4tm", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+    ],
+},
+}

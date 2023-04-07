@@ -1,0 +1,32 @@
+{
+
+"runningboards_black": {
+    "information":{
+        "authors": "53_herbie_53",
+        "name": "Black Runningboards",
+        "value": 50,
+    },
+    "slotType" : "skin_runningboards",
+    "skinName" : "black",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["runningboards", ["bug_frame"]],
+    ]
+},
+"runningboards_white": {
+	"information":{
+        "authors": "53_herbie_53",
+        "name": "White Runningboards",
+        "value": 50,
+    },
+    "slotType" : "skin_runningboards",
+    "skinName" : "white",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["runningboards", ["bug_frame"]],
+    ]
+},
+
+}

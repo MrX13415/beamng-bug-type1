@@ -1,0 +1,15 @@
+{
+
+"soundscape_herbie_horn": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Herbie Personality Horn"
+    },
+    "slotType" : "soundscape",
+    "soundscape": [
+        ["name", "src"],
+        ["horn", "vehicles/bug/components/sounds/horn/herbie_horn.ogg"],
+    ]
+}
+
+}

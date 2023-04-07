@@ -1,0 +1,88 @@
+{
+
+"bug_licenseplate_F": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":"Front License Plate",
+        "value":10,
+    },
+    "slotType" : "bug_licenseplate_F",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["licenseplate_F_frame", ["bug_bumper_F"]],
+        ["licenseplate", ["bug_bumper_F"],[],{"pos":{"x":0.00, "y":-1.93842, "z":0.413667}, "rot":{"x":-5.4, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+    ],
+},
+"bug_licenseplate_F_US": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":"Front License Plate",
+        "value":10,
+    },
+    "slotType" : "bug_licenseplate_F_US",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["licenseplate_F_mount_US", ["bug_bumper_F"]],
+        ["licenseplate_F_frame", ["bug_bumper_F"]],
+        ["licenseplate", ["bug_bumper_F"],[],{"pos":{"x":0.00, "y":-1.93842, "z":0.413667}, "rot":{"x":-5.4, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+    ],
+},
+"bug_licenseplate_R": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":"Rear License Plate",
+        "value":10,
+    },
+    "slotType" : "bug_licenseplate_R",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["licenseplate_R_frame", ["bug_trunk"]],
+        ["licenseplate", ["bug_trunk"],[],{"pos":{"x":0.00, "y":1.87127, "z":0.561727}, "rot":{"x":29.75, "y":0, "z":180}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+    ],
+},
+
+
+"bug_lettering": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Lettering",
+        "value":25,
+    },
+    "slotType" : "bug_lettering",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["lettering", ["bug_trunk"]],
+        //  ["bug_lettering_bug", ["bug_body"]],
+        //  ["bug_lettering_bug_FL", ["bug_fender_L"]],
+        //  ["bug_lettering_bug_FR", ["bug_fender_R"]],
+    ],
+},
+"bug_logo": {
+	"information":{
+        "authors":"53_herbie_53",
+        "name":"Hood Logo",
+        "value":50,
+    },
+    "slotType" : "bug_logo",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hood_logo", ["bug_hood"]],
+    ],
+},
+"bug_fakelogo": {
+	"information":{
+        "authors":"53_herbie_53",
+        "name":"Fake Hood Logo",
+        "value":1,
+    },
+    "slotType" : "bug_logo",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hood_logo_fake", ["bug_hood"]],
+    ],
+},
+
+}

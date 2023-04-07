@@ -1,0 +1,18 @@
+{
+
+"bug_radio_station_gtasa_k-dst": {
+    "information":{
+        "authors":"Rockstar Games",
+        "name":"K-DST \"The Dust\" (GTA: SA)",
+        "song": "vehicles/bug/radio/GTA-SA_K-DST.mp3",
+        "value":300,
+    },
+    "slotType" : "bug_radio_station",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+    ],
+},
+
+}
+
+

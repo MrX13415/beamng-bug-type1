@@ -1,0 +1,103 @@
+{
+"bug_behavior": {
+	"information":{
+        "authors":"MrX13415",
+        "name":"Herbie Behavior",
+        "value":20000,
+    },
+    "slotType" : "bug_behavior",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_herbie_personality", "bug_herbie_personality", "Personality"],
+        ["bug_herbie_regeneration", "bug_herbie_regeneration", "Regeneration"],
+        ["bug_herbie_wheelie_branch","bug_herbie_wheelie_branch", "Wheelie Branch"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        //["$playertrust", "range", "", "Herbie", 0, -150, 500, "Trust", "Trust", {"minDis":0, "maxDis":100}],
+	],
+},
+
+"bug_herbie_regeneration": {
+	"information":{
+        "authors":"MrX13415",
+        "name":"Herbie Regeneration",
+        "value":20000,
+    },
+    "slotType" : "bug_herbie_regeneration",
+},
+
+"bug_herbie_personality": {
+	"information":{
+        "authors":"MrX13415",
+        "name":"Herbie Personality",
+        "value":20000,
+    },
+    "slotType" : "bug_herbie_personality",
+    "hydros": [
+		["id1:","id2:"],
+
+		{"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+		{"beamSpring":20000,"beamDamp":0,"beamDeform":132600,"beamStrength":"FLT_MAX"},
+		["fh1l","fs1l",{"inputSource":"hoppFL","inLimit":3,"outLimit":3,"inRate":5,"outRate":5,"inputFactor":100}],
+		["fh1r","fs1r",{"inputSource":"hoppFR","inLimit":3,"outLimit":3,"inRate":5,"outRate":5,"inputFactor":100}],
+
+        {"beamPrecompression":0.8},
+		{"beamSpring":20000,"beamDamp":0},    //3192
+		["rh1l","bs1l",{"inputSource":"hoppRL","inLimit":-1.8,"outLimit":1.8,"inRate":20,"outRate":10,"inputFactor":100}],
+		["rh1r","bs1r",{"inputSource":"hoppRR","inLimit":-1.8,"outLimit":1.8,"inRate":20,"outRate":10,"inputFactor":100}],
+    ]
+},
+
+"bug_herbie_wheelie_branch": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":"Wheelie Branch",
+    },
+    "slotType" : "bug_herbie_wheelie_branch",
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":false},
+        {"collision":true},
+        {"frictionCoef":0.0},
+        {"nodeMaterial":"|NM_RUBBER"},
+        {"nodeWeight":5},
+        {"group":"wheelie_arm"},
+        ["wb1l",  0.400, -1.33, 0.21],
+        ["wb1r", -0.400, -1.33, 0.21],
+        {"group":""},
+	],
+    "beams": [
+        ["id1:", "id2:"],
+
+		{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":401000,"beamDamp":500},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+        ["wb1l","wb1r"],
+
+        ["wb1l","f5l"],
+        ["wb1l","f5r"],
+        ["wb1r","f5r"],
+        ["wb1r","f5l"],
+
+        //rear bumper support beams
+        {"beamType":"|SUPPORT", "beamLongBound":4},
+        {"beamPrecompression":1.0},
+        ["wb1l","f1tmr"],
+        ["wb1r","f1tml"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+	],
+    "hydros": [
+        ["id1:","id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":25000,"beamDamp":2000,"beamDeform":80000,"beamStrength":"FLT_MAX"},
+        ["wb1l","f1tml",{"inputSource":"wheelie_state","inLimit":1,"outLimit":3.45,"inRate":10,"outRate":8,"inputFactor":100}],
+        ["wb1r","f1tmr",{"inputSource":"wheelie_state","inLimit":1,"outLimit":3.45,"inRate":10,"outRate":8,"inputFactor":100}],
+        {"breakGroup":""},
+    ],
+}
+
+}

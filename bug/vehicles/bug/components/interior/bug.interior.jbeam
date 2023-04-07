@@ -1,0 +1,910 @@
+{
+
+"bug_interior": {
+	"information":{
+        "authors":"MrX13415",
+        "name":"Interior",
+        "value":20,
+    },
+    "slotType" : "bug_interior",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["skin_interior1", "bug_skin_interior1_white", "Headliner", {"coreSlot":true}],
+        ["bug_side_panels", "bug_side_panels", "Side Panels"],
+        ["skin_floor_carpet", "bug_floor_carpet_black", "Carpet"],
+
+        ["skin_steer", "bug_steer_white", "Steering Wheel", {"coreSlot":true}],
+        ["bug_dashboard", "bug_dashboard", "Dashboard"],
+
+        ["bug_sunvisor", "bug_sunvisors", "Sunvisors"],
+        ["bug_seats", "bug_seats", "Seats"],
+
+        ["bug_rollbar","", "Rollbar"],
+        ["bug_window_decals", "", "Window Decals"],
+    ],
+    "camerasInternal":[
+        ["name", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
+
+        {"nodeWeight":1.0},
+        {"beamSpring":800,"beamDamp":100},
+        {"selfCollision":true},
+        {"collision":true},		
+        {"rightHandCamera":false},   // set to true for right steering wheel otherwise false
+        // driver camera (make first value negative for right steering wheel)
+        ["driver",     0.2555, 0.18, 1.24, 55, "f3l","f4l","f5l","f3tm","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+        // passenger seat
+        ["passenger", -0.2555, 0.18, 1.24, 55, "f3r","f4r","f5r","f3tm","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+    ], 
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        // roof
+        ["int_mirror",         ["bug_body"]],
+        ["sunvisor_mount",     ["bug_body"]],
+        ["interior_handles",   ["bug_body"]],
+
+       //["int_sidewall_F",     ["bug_body"]],
+		//["int_sidewall_L",     ["bug_body"]],
+		//["int_sidewall_R",     ["bug_body"]],
+       //["panel_B",            ["bug_body"]],
+		//["int_sidewall_B",     ["bug_body"]],
+    ],
+},
+
+"bug_side_panels": {
+	"information":{
+        "authors": "BeamNG",
+        "name": "Side Panels",
+        "value": 200,
+    },
+    "slotType" : "bug_side_panels",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["skin_interior2", "bug_skin_interior2_gray", "Color 1", {"coreSlot":true}],
+        ["skin_interior3", "bug_skin_interior3_white", "Color 2", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        // doors
+        ["interior_panels_FL",        ["bug_door_FL"]],
+        ["interior_panels_FL_handle", ["bug_door_FL"]],
+        ["interior_panels_FL_bag",    ["bug_door_FL"]],
+
+        ["interior_panels_FR",        ["bug_door_FR"]],
+        ["interior_panels_FR_handle", ["bug_door_FR"]],
+        ["interior_panels_FR_bag",    ["bug_door_FR"]],
+
+        ["interior_panels_R",  ["bug_body"]],
+    ],
+},
+
+
+// --- Sunvisor
+"bug_sunvisors": {
+	"information":{
+        "authors": "BeamNG",
+        "name": "Sunvisors",
+        "value": 50,
+    },
+    "slotType" : "bug_sunvisor",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_sunvisor_kind", "bug_sunvisor_fabric", "Sunvisor", {"coreSlot": true}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["sunvisor_L", "", "brf1","brf1l","brf2", "box", {"x":0.05, "y":0.015, "z":0.015}, {"x":-20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.11, "y":0.05, "z":0.04}],
+        ["sunvisor_R", "", "brf1","brf1r","brf2", "box", {"x":0.05, "y":0.015, "z":0.015}, {"x": 20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.11, "y":0.05, "z":-0.055}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["sunvisor_L", "action0", "sunvisor_L_toggle"],   // default: left mouse btn
+        ["sunvisor_R", "action0", "sunvisor_R_toggle"],   // default: left mouse btn
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        // TODO: texts
+        ["sunvisor_L_toggle", "ui.inputActions.bug.sunvisor_L_toggle.title", "ui.inputActions.bug.sunvisor_L_toggle.description", {"onUp":"vehicle.toggle('sunvisorL')"}],
+        ["sunvisor_R_toggle", "ui.inputActions.bug.sunvisor_R_toggle.title", "ui.inputActions.bug.sunvisor_R_toggle.description", {"onUp":"vehicle.toggle('sunvisorR')"}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"selfCollision":true},
+        {"collision" :true},
+        {"nodeMaterial":"|NM_CLOTH"},
+        {"frictionCoef":0.7},
+        {"nodeWeight":0.5},
+        {"group":"bug_sunvisor_L"},
+        ["sv1l",  0.41898, -0.34713, 1.34840],
+        ["sv2l",  0.08734, -0.34150, 1.36168],
+        ["sv3l",  0.41901, -0.24670, 1.38364],
+        ["sv4l",  0.08730, -0.24670, 1.39300],        
+        ["sv5l",  0.25520, -0.27360, 1.40605, {"selfCollision":false, "collision" :false}],
+        {"group":"bug_sunvisor_R"},
+        ["sv1r", -0.41898, -0.34713, 1.34840],
+        ["sv2r", -0.08734, -0.34150, 1.36168],
+        ["sv3r", -0.41901, -0.24670, 1.38364],
+        ["sv4r", -0.08730, -0.24670, 1.39300],
+        ["sv5r", -0.25520, -0.27360, 1.40605, {"selfCollision":false, "collision" :false}],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        // main
+        {"disableMeshBreaking":true},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":100100,"beamDamp":50},
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":0},
+        // L
+        ["sv1l","sv2l"],
+        ["sv2l","sv3l"],
+        ["sv3l","sv4l"],
+        ["sv4l","sv1l"],
+        // cross
+        ["sv1l","sv3l"],
+        ["sv2l","sv4l"],
+        // rigdi
+        ["sv1l","sv5l"],
+        ["sv2l","sv5l"],
+        ["sv3l","sv5l"],
+        ["sv4l","sv5l"],
+
+        //R
+        ["sv1r","sv2r"],
+        ["sv2r","sv3r"],
+        ["sv3r","sv4r"],
+        ["sv4r","sv1r"],
+        // cross
+        ["sv1r","sv3r"],
+        ["sv2r","sv4r"],
+        // rigdi
+        ["sv1r","sv5r"],
+        ["sv2r","sv5r"],
+        ["sv3r","sv5r"],
+        ["sv4r","sv5r"],
+
+        // sunvisor <> roof
+        {"beamDeform":1000,"beamStrength":4000},
+        {"breakGroup":"sunvisor_L"},
+        //L
+        ["sv1l","brf1ll"],
+        ["sv1l","brf1l"],
+        ["sv1l","brf2ll"],
+        ["sv1l","brf2l"],
+        //-
+        ["sv2l","brf1l"],
+        ["sv2l","brf1"],
+        ["sv2l","brf2l"],
+        ["sv2l","brf2"],
+
+        {"breakGroup":"sunvisor_R"},
+        //R
+        ["sv1r","brf1rr"],
+        ["sv1r","brf1r"],
+        ["sv1r","brf2rr"],
+        ["sv1r","brf2r"],
+        //-
+        ["sv2r","brf1r"],
+        ["sv2r","brf1"],
+        ["sv2r","brf2r"],
+        ["sv2r","brf2"],
+
+        // Damp
+        {"beamSpring":500,"beamDamp":120},
+        {"breakGroup":"sunvisor_L"},
+        ["sv3l","brf3ll"],
+        ["sv4l","brf3"],
+        //-
+        {"breakGroup":"sunvisor_R"},
+        ["sv3r","brf3rr"],
+        ["sv4r","brf3"],
+
+        // support beams
+        {"beamType":"|SUPPORT", "beamLongBound":2},
+        {"beamSpring":6000,"beamDamp":30},
+        {"beamDeform":14000,"beamStrength":4000},
+        {"breakGroupType":1},
+        {"breakGroup":"sunvisor_L"},
+        // Open limit
+        {"beamPrecompression":0.516103},
+        ["sv3l", "brf1ll"],
+        ["sv3r", "brf1rr"],
+        // Close limit
+        {"beamPrecompression":1.1},
+        ["sv3l", "brf2l", {"beamLongBound":10}],
+        ["sv3r", "brf2r", {"beamLongBound":10}],
+        {"breakGroup":"sunvisor_R"},
+        // Open limit
+        {"beamPrecompression":0.735926},
+        ["sv4l", "brf1"],
+        ["sv4r", "brf1"],
+        // Close limit
+        {"beamPrecompression":1.04},
+        ["sv4l", "brf2"],
+        ["sv4r", "brf2"],
+        {"beamPrecompression":1.0},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"breakGroup":""},
+        {"breakGroupType":0}
+    ],
+    "hydros": [
+        ["id1:","id2:"],
+
+        {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":8000,"beamDamp":50,"beamDeform":"FLT_MAX","beamStrength":4000},
+        {"breakGroup":"sunvisor_L"},
+        ["sv3l","bd1l", {"inputSource":"sunvisorL", "inLimit":1.0, "outLimit":0.58, "inRate":0.8, "outRate":0.8, "inputFactor":1.0}],
+        ["sv4l","bd1l", {"inputSource":"sunvisorL", "inLimit":1.0, "outLimit":0.62, "inRate":0.8, "outRate":0.8, "inputFactor":1.0}],
+        {"breakGroup":"sunvisor_R"},
+        ["sv3r","bd1r", {"inputSource":"sunvisorR", "inLimit":1.0, "outLimit":0.58, "inRate":0.8, "outRate":0.8, "inputFactor":1.0}],
+        ["sv4r","bd1r", {"inputSource":"sunvisorR", "inLimit":1.0, "outLimit":0.62, "inRate":0.8, "outRate":0.8, "inputFactor":1.0}],
+        {"breakGroup":""},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"group":"doorwindow_FL"},
+        {"groundModel":"metal"},
+        {"dragCoef":7},
+        ["sv4l", "sv3l", "sv1l"],
+        ["sv4l", "sv1l", "sv2l"],
+        ["sv4r", "sv3r", "sv1r"],
+        ["sv4r", "sv1r", "sv2r"],
+        {"group":""},
+    ]
+},
+"bug_sunvisor_fabric": {
+	"information":{
+        "authors": "BeamNG",
+        "name": "Fabric Sunvisor",
+        "value": 50,
+    },
+    "slotType" : "bug_sunvisor_kind",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sunvisor_L_fabric", ["bug_sunvisor_L"]],
+         ["sunvisor_R_fabric", ["bug_sunvisor_R"]],
+    ],
+},
+"bug_sunvisor_acrylic": {
+	"information":{
+        "authors": "BeamNG",
+        "name": "Acrylic Sunvisor",
+        "value": 50,
+    },
+    "slotType" : "bug_sunvisor_kind",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["sunvisor_L_acrylic", ["bug_sunvisor_L"]],
+         ["sunvisor_R_acrylic", ["bug_sunvisor_R"]],
+    ]
+},
+
+
+// --- Seats
+"bug_seats": {
+	"information":{
+        "authors":"MrX13415",
+        "name":"Seats",
+        "value":20,
+    },
+    "slotType" : "bug_seats",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["skin_interior4", "bug_skin_interior4_white", "Seat Color", {"coreSlot":true}],
+
+        ["bug_seat_FL", "bug_seat_highback_FL", "Front Seat Left"],
+        ["bug_seat_FR", "bug_seat_highback_FR", "Front Seat Right"],
+        ["bug_seat_R", "bug_seat_R", "Rear Seats"],
+    ],
+},
+"bug_seat_lowback_FL": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":" Lowback Front Seat",
+        "value":300,
+    },
+    "slotType" : "bug_seat_FL",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+	
+         ["seat_backrest_lowback_FL", ["bug_seat_FL"]],
+		 ["seat_base_lowback_FL", ["bug_seat_FL"]],
+    ],
+    "nodes": [
+        ["id","posX","posY","posZ"],
+
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.8},
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeWeight": 1.0},
+        {"group": "bug_seat_FL"},
+        ["isFL1l", 0.49257, -0.35284, 0.54160],
+        ["isFL1r", 0.08757, -0.35284, 0.54160],
+        ["isFL2l", 0.49257,  0.06346, 0.43432],
+        ["isFL2r", 0.08757,  0.06346, 0.43432],
+        ["isFL3l", 0.49257,  0.20072, 0.91856],
+        ["isFL3r", 0.08757,  0.20072, 0.91856],
+        {"group": ""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":501000,"beamDamp":300},
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        {"group": "bug_seat_FL"},
+        //main
+        ["isFL1l", "isFL1r"],
+        ["isFL2l", "isFL2r"],
+        ["isFL3l", "isFL3r"],
+        ["isFL1l", "isFL2l"],
+        ["isFL2l", "isFL3l"],
+        ["isFL3l", "isFL1l"],
+        ["isFL1r", "isFL2r"],
+        ["isFL2r", "isFL3r"],
+        ["isFL3r", "isFL1r"],
+        //cross
+        ["isFL1l", "isFL2r"],
+        ["isFL2l", "isFL1r"],
+        ["isFL2l", "isFL3r"],
+        ["isFL3l", "isFL2r"],
+        ["isFL1l", "isFL3r"],
+        ["isFL3l", "isFL1r"],
+        {"group": ""},
+
+        // connection
+        {"breakGroup":"bug_seat_FL"},
+        {"beamDeform":10000,"beamStrength":30000},
+        ["isFL1l", "f4l"],
+        ["isFL1l", "f4m"],
+        ["isFL1r", "f4l"],
+        ["isFL1r", "f4m"],
+        ["isFL1l", "f5l"],
+        ["isFL1l", "f5m"],
+        ["isFL1r", "f5l"],
+        ["isFL1r", "f5m"],
+        ["isFL2l", "f4l"],
+        ["isFL2l", "f4m"],
+        ["isFL2r", "f4l"],
+        ["isFL2r", "f4m"],
+        ["isFL2l", "f5l"],
+        ["isFL2l", "f5m"],
+        ["isFL2r", "f5l"],
+        ["isFL2r", "f5m"],
+        {"breakGroup":""},
+        {"deformLimitExpansion":1.0},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        //front bumper
+        {"groundModel":"CLOTH"},
+        {"dragCoef":0},
+        ["isFL1r", "isFL1l", "isFL2r"],
+        ["isFL2r", "isFL1l", "isFL2l"],
+        ["isFL2r", "isFL2l", "isFL3r"],
+        ["isFL3r", "isFL2l", "isFL3l"],
+    ]
+},
+"bug_seat_lowback_FR": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":" Lowback Front Seat",
+        "value":300,
+    },
+    "slotType" : "bug_seat_FR",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+
+         ["seat_backrest_lowback_FR", ["bug_seat_FR"]],
+         ["seat_base_lowback_FR", ["bug_seat_FR"]],
+    ],
+    "nodes": [
+        ["id","posX","posY","posZ"],
+
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.8},
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeWeight": 1.0},
+        {"group": "bug_seat_FR"},
+        ["isFR1l", -0.49257, -0.35284, 0.54160],
+        ["isFR1r", -0.08757, -0.35284, 0.54160],
+        ["isFR2l", -0.49257,  0.06346, 0.43432],
+        ["isFR2r", -0.08757,  0.06346, 0.43432],
+        ["isFR3l", -0.49257,  0.20072, 0.91856],
+        ["isFR3r", -0.08757,  0.20072, 0.91856],
+        {"group": ""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":501000,"beamDamp":300},
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        {"group": "bug_seat_FR"},
+        //main
+        ["isFR1l", "isFR1r"],
+        ["isFR2l", "isFR2r"],
+        ["isFR3l", "isFR3r"],
+        ["isFR1l", "isFR2l"],
+        ["isFR2l", "isFR3l"],
+        ["isFR3l", "isFR1l"],
+        ["isFR1r", "isFR2r"],
+        ["isFR2r", "isFR3r"],
+        ["isFR3r", "isFR1r"],
+        //cross
+        ["isFR1l", "isFR2r"],
+        ["isFR2l", "isFR1r"],
+        ["isFR2l", "isFR3r"],
+        ["isFR3l", "isFR2r"],
+        ["isFR1l", "isFR3r"],
+        ["isFR3l", "isFR1r"],
+        {"group": ""},
+
+        // connection
+        {"breakGroup":"bug_seat_FR"},
+        {"beamDeform":1000,"beamStrength":30000},
+        ["isFR1l", "f4r"],
+        ["isFR1l", "f4m"],
+        ["isFR1r", "f4r"],
+        ["isFR1r", "f4m"],
+        ["isFR1l", "f5r"],
+        ["isFR1l", "f5m"],
+        ["isFR1r", "f5r"],
+        ["isFR1r", "f5m"],
+        ["isFR2l", "f4r"],
+        ["isFR2l", "f4m"],
+        ["isFR2r", "f4r"],
+        ["isFR2r", "f4m"],
+        ["isFR2l", "f5r"],
+        ["isFR2l", "f5m"],
+        ["isFR2r", "f5r"],
+        ["isFR2r", "f5m"],
+        {"breakGroup":""},
+        {"deformLimitExpansion":1},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        //front bumper
+        {"groundModel":"CLOTH"},
+        {"dragCoef":0},
+        ["isFR1l", "isFR1r", "isFR2r"],
+        ["isFR1l", "isFR2r", "isFR2l"],
+        ["isFR2l", "isFR2r", "isFR3r"],
+        ["isFR2l", "isFR3r", "isFR3l"],
+    ]
+},
+"bug_seat_highback_FL": {
+    "information":{
+        "authors":"VertexStyle",
+        "name":" Highback Front Seat",
+        "value":300,
+    },
+    "slotType" : "bug_seat_FL",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+	
+         ["seat_backrest_highback_FL", ["bug_seat_FL"]],
+		 ["seat_base_highback_FL", ["bug_seat_FL"]],
+    ],
+    "nodes": [
+        ["id","posX","posY","posZ"],
+
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.8},
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeWeight": 1.0},
+        {"group": "bug_seat_FL"},
+        ["isFL1l", 0.49257, -0.35284, 0.54160],
+        ["isFL1r", 0.08757, -0.35284, 0.54160],
+        ["isFL2l", 0.49257,  0.06346, 0.43432],
+        ["isFL2r", 0.08757,  0.06346, 0.43432],
+        ["isFL3l", 0.49257,  0.20072, 0.91856],
+        ["isFL3r", 0.08757,  0.20072, 0.91856],
+        {"group": ""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":501000,"beamDamp":300},
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        {"group": "bug_seat_FL"},
+        //main
+        ["isFL1l", "isFL1r"],
+        ["isFL2l", "isFL2r"],
+        ["isFL3l", "isFL3r"],
+        ["isFL1l", "isFL2l"],
+        ["isFL2l", "isFL3l"],
+        ["isFL3l", "isFL1l"],
+        ["isFL1r", "isFL2r"],
+        ["isFL2r", "isFL3r"],
+        ["isFL3r", "isFL1r"],
+        //cross
+        ["isFL1l", "isFL2r"],
+        ["isFL2l", "isFL1r"],
+        ["isFL2l", "isFL3r"],
+        ["isFL3l", "isFL2r"],
+        ["isFL1l", "isFL3r"],
+        ["isFL3l", "isFL1r"],
+        {"group": ""},
+
+        // connection
+        {"breakGroup":"bug_seat_FL"},
+        {"beamDeform":10000,"beamStrength":30000},
+        ["isFL1l", "f4l"],
+        ["isFL1l", "f4m"],
+        ["isFL1r", "f4l"],
+        ["isFL1r", "f4m"],
+        ["isFL1l", "f5l"],
+        ["isFL1l", "f5m"],
+        ["isFL1r", "f5l"],
+        ["isFL1r", "f5m"],
+        ["isFL2l", "f4l"],
+        ["isFL2l", "f4m"],
+        ["isFL2r", "f4l"],
+        ["isFL2r", "f4m"],
+        ["isFL2l", "f5l"],
+        ["isFL2l", "f5m"],
+        ["isFL2r", "f5l"],
+        ["isFL2r", "f5m"],
+        {"breakGroup":""},
+        {"deformLimitExpansion":1.0},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        //front bumper
+        {"groundModel":"CLOTH"},
+        {"dragCoef":0},
+        ["isFL1r", "isFL1l", "isFL2r"],
+        ["isFL2r", "isFL1l", "isFL2l"],
+        ["isFL2r", "isFL2l", "isFL3r"],
+        ["isFL3r", "isFL2l", "isFL3l"],
+    ]
+},
+"bug_seat_highback_FR": {
+    "information":{
+        "authors":"VertexStyle",
+        "name":"Highback Front Seat",
+        "value":300,
+    },
+    "slotType" : "bug_seat_FR",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+
+		 ["seat_backrest_highback_FR", ["bug_seat_FR"]],
+		 ["seat_base_highback_FR", ["bug_seat_FR"]],
+    ],
+    "nodes": [
+        ["id","posX","posY","posZ"],
+
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.8},
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeWeight": 1.0},
+        {"group": "bug_seat_FR"},
+        ["isFR1l", -0.49257, -0.35284, 0.54160],
+        ["isFR1r", -0.08757, -0.35284, 0.54160],
+        ["isFR2l", -0.49257,  0.06346, 0.43432],
+        ["isFR2r", -0.08757,  0.06346, 0.43432],
+        ["isFR3l", -0.49257,  0.20072, 0.91856],
+        ["isFR3r", -0.08757,  0.20072, 0.91856],
+        {"group": ""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":501000,"beamDamp":300},
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        {"group": "bug_seat_FR"},
+        //main
+        ["isFR1l", "isFR1r"],
+        ["isFR2l", "isFR2r"],
+        ["isFR3l", "isFR3r"],
+        ["isFR1l", "isFR2l"],
+        ["isFR2l", "isFR3l"],
+        ["isFR3l", "isFR1l"],
+        ["isFR1r", "isFR2r"],
+        ["isFR2r", "isFR3r"],
+        ["isFR3r", "isFR1r"],
+        //cross
+        ["isFR1l", "isFR2r"],
+        ["isFR2l", "isFR1r"],
+        ["isFR2l", "isFR3r"],
+        ["isFR3l", "isFR2r"],
+        ["isFR1l", "isFR3r"],
+        ["isFR3l", "isFR1r"],
+        {"group": ""},
+
+        // connection
+        {"breakGroup":"bug_seat_FR"},
+        {"beamDeform":1000,"beamStrength":30000},
+        ["isFR1l", "f4r"],
+        ["isFR1l", "f4m"],
+        ["isFR1r", "f4r"],
+        ["isFR1r", "f4m"],
+        ["isFR1l", "f5r"],
+        ["isFR1l", "f5m"],
+        ["isFR1r", "f5r"],
+        ["isFR1r", "f5m"],
+        ["isFR2l", "f4r"],
+        ["isFR2l", "f4m"],
+        ["isFR2r", "f4r"],
+        ["isFR2r", "f4m"],
+        ["isFR2l", "f5r"],
+        ["isFR2l", "f5m"],
+        ["isFR2r", "f5r"],
+        ["isFR2r", "f5m"],
+        {"breakGroup":""},
+        {"deformLimitExpansion":1},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        //front bumper
+        {"groundModel":"CLOTH"},
+        {"dragCoef":0},
+        ["isFR1l", "isFR1r", "isFR2r"],
+        ["isFR1l", "isFR2r", "isFR2l"],
+        ["isFR2l", "isFR2r", "isFR3r"],
+        ["isFR2l", "isFR3r", "isFR3l"],
+    ]
+},
+"bug_seat_R": {
+    "information":{
+        "authors":"VertexStyle",
+        "name":"Rear Seats",
+        "value":300,
+    },
+    "slotType" : "bug_seat_R",
+    "camerasInternal":[
+        ["name", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
+
+        {"nodeWeight":1.0},
+        {"beamSpring":800,"beamDamp":100},
+        {"selfCollision":true},
+        {"collision":true},		
+        // back seat cameras
+		["backseat.Left",    0.3, 0.80, 1.24, 60, "f4l","f5l","f6l","f4tm","f5tm","f6tml", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+		["backseat.Right",  -0.3, 0.80, 1.24, 60, "f4r","f5r","f6r","f4tm","f5tm","f6tmr", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+    ], 
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+	
+         ["seat_rear_back", ["bug_seat_R"]],
+         ["seat_rear_base", ["bug_seat_R"]],
+    ],
+    "nodes": [
+        ["id","posX","posY","posZ"],
+
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.8},
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeWeight": 1.0},
+        {"group": "bug_seat_R"},
+        ["isR1l",  0.59871, 0.37828, 0.62694],
+        ["isR1r", -0.59871, 0.37828, 0.62694],
+        ["isR2l",  0.59871, 0.77459, 0.58043],
+        ["isR2r", -0.59871, 0.77459, 0.58043],
+        ["isR3l",  0.57240, 0.97553, 0.96024],
+        ["isR3r", -0.57240, 0.97553, 0.96024],
+        {"group": ""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":501000,"beamDamp":300},
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        {"group": "bug_seat_R"},
+        //main
+        ["isR1l", "isR1r"],
+        ["isR2l", "isR2r"],
+        ["isR3l", "isR3r"],
+        ["isR1l", "isR2l"],
+        ["isR2l", "isR3l"],
+        ["isR3l", "isR1l"],
+        ["isR1r", "isR2r"],
+        ["isR2r", "isR3r"],
+        ["isR3r", "isR1r"],
+        //cross
+        ["isR1l", "isR2r"],
+        ["isR2l", "isR1r"],
+        ["isR2l", "isR3r"],
+        ["isR3l", "isR2r"],
+        ["isR1l", "isR3r"],
+        ["isR3l", "isR1r"],
+        {"group": ""},
+
+        // connection
+        {"breakGroup":"bug_seat_R"},
+        {"beamDeform":10000,"beamStrength":30000},
+        ["isR1l", "f5l"],
+        ["isR1l", "f5r"],
+        ["isR1r", "f5l"],
+        ["isR1r", "f5r"],
+        ["isR1l", "f6l"],
+        ["isR1l", "f6r"],
+        ["isR1r", "f6l"],
+        ["isR1r", "f6r"],
+        ["isR2l", "f5l"],
+        ["isR2l", "f5r"],
+        ["isR2r", "f5l"],
+        ["isR2r", "f5r"],
+        ["isR2l", "f6l"],
+        ["isR2l", "f6r"],
+        ["isR2r", "f6l"],
+        ["isR2r", "f6r"],
+        {"breakGroup":""},
+        {"deformLimitExpansion":1.0},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        //front bumper
+        {"groundModel":"CLOTH"},
+        {"dragCoef":0},
+        ["isR1r", "isR1l", "isR2r"],
+        ["isR2r", "isR1l", "isR2l"],
+        ["isR2r", "isR2l", "isR3r"],
+        ["isR3r", "isR2l", "isR3l"],
+    ]
+},
+"bug_seat_R_board": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Wood Cover",
+        "value":300,
+    },
+    "slotType" : "bug_seat_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+	
+         ["seat_rear_board", ["bug_seat_R"]],
+    ],
+    "nodes": [
+        ["id","posX","posY","posZ"],
+
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.8},
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeWeight": 1.0},
+        {"group": "bug_seat_R"},
+        ["isR1l",  0.59871, 0.37828, 0.62694],
+        ["isR1r", -0.59871, 0.37828, 0.62694],
+        ["isR2l",  0.59871, 0.77459, 0.58043],
+        ["isR2r", -0.59871, 0.77459, 0.58043],
+        ["isR3l",  0.57240, 0.97553, 0.96024],
+        ["isR3r", -0.57240, 0.97553, 0.96024],
+        {"group": ""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":501000,"beamDamp":300},
+        {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        {"group": "bug_seat_R"},
+        //main
+        ["isR1l", "isR1r"],
+        ["isR2l", "isR2r"],
+        ["isR3l", "isR3r"],
+        ["isR1l", "isR2l"],
+        ["isR2l", "isR3l"],
+        ["isR3l", "isR1l"],
+        ["isR1r", "isR2r"],
+        ["isR2r", "isR3r"],
+        ["isR3r", "isR1r"],
+        //cross
+        ["isR1l", "isR2r"],
+        ["isR2l", "isR1r"],
+        ["isR2l", "isR3r"],
+        ["isR3l", "isR2r"],
+        ["isR1l", "isR3r"],
+        ["isR3l", "isR1r"],
+        {"group": ""},
+
+        // connection
+        {"breakGroup":"bug_seat_R"},
+        {"beamDeform":10000,"beamStrength":30000},
+        ["isR1l", "f5l"],
+        ["isR1l", "f5r"],
+        ["isR1r", "f5l"],
+        ["isR1r", "f5r"],
+        ["isR1l", "f6l"],
+        ["isR1l", "f6r"],
+        ["isR1r", "f6l"],
+        ["isR1r", "f6r"],
+        ["isR2l", "f5l"],
+        ["isR2l", "f5r"],
+        ["isR2r", "f5l"],
+        ["isR2r", "f5r"],
+        ["isR2l", "f6l"],
+        ["isR2l", "f6r"],
+        ["isR2r", "f6l"],
+        ["isR2r", "f6r"],
+        {"breakGroup":""},
+        {"deformLimitExpansion":1.0},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        //front bumper
+        {"groundModel":"CLOTH"},
+        {"dragCoef":0},
+        ["isR1r", "isR1l", "isR2r"],
+        ["isR2r", "isR1l", "isR2l"],
+        ["isR2r", "isR2l", "isR3r"],
+        ["isR3r", "isR2l", "isR3l"],
+    ]
+},
+// --- Decals
+"bug_window_decals_mc": {
+	"information":{
+        "authors": "53_herbie_53",
+        "name": "Monte Carlo Window Decals",
+        "value": 1,
+    },
+    "slotType" : "bug_window_decals",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["window_decals_mc", ["bug_body"]],
+    ],
+},
+
+
+// --- Rollbar
+"bug_rollbar_2point": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":"2 Point Rollbar",
+        "value":300,
+    },
+    "slotType" : "bug_rollbar",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+	
+         ["rollbar_mc", ["bug_body"]],
+    ],
+},
+"bug_rollbar_4point": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":"4 Point Rollbar",
+        "value":300,
+    },
+    "slotType" : "bug_rollbar",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+	
+         ["rollbar_tlb", ["bug_body"]],
+    ],
+},
+
+}

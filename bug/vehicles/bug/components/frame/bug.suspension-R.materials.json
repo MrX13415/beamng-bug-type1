@@ -1,0 +1,27 @@
+{
+  "suspension-R-st": {
+    "name": "suspension-R-st",
+    "mapTo": "suspension-R-st",
+    "class": "Material",
+    "persistentId": "7bf49f69-925b-42ce-8e65-e3a0421d9276",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.590309978,
+          0.590304017,
+          0.590304017,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/frame/textures/suspension-R-st_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/frame/textures/suspension-R-st_m.data.png",
+        "roughnessFactor": 0.753000021,
+        "roughnessMap": "/vehicles/bug/components/frame/textures/suspension-R-st_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5
+  }
+}

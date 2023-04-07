@@ -1,0 +1,188 @@
+{
+
+// --- Trims
+"hood_trim": {
+	"information":{
+        "authors":"53_herbie_53",
+        "name":"Hood Trim",
+        "value":20,
+    },
+    "slotType" : "hood_trim",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["trim_hood", ["bug_hood"]],
+    ],
+},
+"trim_F": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Front Trim",
+        "value":60,
+    },
+    "slotType" : "bug_trim_F",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["trim_sides_F", ["bug_body"]],
+    ],
+},
+"trim_door": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Door Trim",
+        "value":60,
+    },
+    "slotType" : "bug_trim_door",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["trim_door_L", ["bug_door_FL"]],
+         ["trim_door_R", ["bug_door_FR"]],
+    ],
+},
+"trim_B": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Rear Trim",
+        "value":60,
+    },
+    "slotType" : "bug_trim_B",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["trim_sides_R", ["bug_body"]],
+    ],
+},
+
+// --- Parts
+"antenna_default_R": {
+	"information":{
+        "authors":"53_herbie_53",
+        "name":"Default Antenna",
+        "value":1,
+    },
+    "slotType" : "antenna",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["antenna_side", ["bug_body"]],
+    ],
+},
+"antenna_cowl": {
+	"information":{
+        "authors":"53_herbie_53",
+        "name":"Cowl-Mounted Antenna",
+        "value":1,
+    },
+    "slotType" : "antenna",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["antenna_cowl", ["bug_body"]],
+    ],
+},
+"bug_exterior_sunvisor": {
+	"information":{
+        "authors":"53_herbie_53",
+        "name":"Exterior sunvisor",
+        "value":1,
+    },
+    "slotType" : "bug_exterior_sunvisor",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["exterior_sunvisor", ["bug_body"]],
+    ],
+},
+
+"bug_foglight_carello": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":"Carello Foglight",
+        "value":300,
+    },
+    "slotType" : "bug_foglight",
+    "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+    
+            ["foglight_carello", ["bug_hood"]],
+    ],
+},
+"bug_gascap": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":"Rally Gascap",
+        "value":300,
+    },
+    "slotType" : "bug_gascap",
+    "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+    
+            ["gascap", ["bug_body"]],
+    ],
+},
+"bug_towhitch": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Tow Hitch",
+        "value":70,
+    },
+    "slotType" : "bug_towhitch",
+    "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            ["towhitch_altc", ["bug_body","bug_towhitch"],[],{"pos":{"x":0.0, "y":0.0, "z":0.0}}],
+    ],
+    "slots": [
+        ["type", "default", "description"],
+        ["trailer_small","","Small Trailer", {"nodeOffset":{"x":0.0, "y":-0.31, "z":-0.13}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"collision":true},
+        {"frictionCoef":0.5},
+        {"selfCollision":true},
+        //--TOW HITCH--
+        {"nodeMaterial":"|NM_METAL"},
+        {"group":"bug_towhitch"},
+        {"nodeWeight":5},
+        ["tw", 0.0, 2.76, 0.58,{"couplerTag":"tow_hitch","couplerStrength":2001000,"couplerRadius":1}],
+        ["tw2", 0.0, 2.76, 0.49],
+        {"nodeOffset":""},
+        {"group":""}
+    ],
+    "ties":[
+        ["id1:", "maxLen", "rate", "short", "long", "group", "maxforce"],
+        ["tw", 0.75, 1, 1, 1, "bug_towhitch", 10000000],
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //--TOW HITCH--
+        {"beamSpring":1344840,"beamDamp":195},
+        {"beamDeform":129000,"beamStrength":890000},
+        ["tw","f7ml"],
+        ["tw","f7mr"],
+        ["tw","f7tml"],
+        ["tw","f7tmr"],
+        ["tw","br4l"],
+        ["tw","br4r"],
+        ["tw","br5l"],
+        ["tw","br5r"],
+
+        ["tw2","f7ml"],
+        ["tw2","f7mr"],
+        ["tw2","f7tml"],
+        ["tw2","f7tmr"],
+        ["tw2","br4l"],
+        ["tw2","br4r"],
+        ["tw2","br5l"],
+        ["tw2","br5r"],
+
+        ["tw","tw2"],
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"group":"towhitch"},
+        {"triangleType":"NONCOLLIDABLE"},
+       // ["f7ml","f7mr","tw2"],
+       // ["r4","r7","tw"],
+        {"triangleType":"NORMALTYPE"},
+    ],
+},
+
+}

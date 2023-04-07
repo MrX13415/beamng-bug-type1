@@ -1,0 +1,28 @@
+{
+  "front_axle": {
+    "name": "front_axle",
+    "mapTo": "front_axle",
+    "class": "Material",
+    "persistentId": "8fe7a436-42b6-4a7d-9cf6-3eec480d1d54",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.590309978,
+          0.590304017,
+          0.590304017,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/frame/textures/frontaxle_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/frame/textures/frontaxle_m.data.png",
+        "roughnessFactor": 0.753000021,
+        "roughnessMap": "/vehicles/bug/components/frame/textures/frontaxle_r.data.png",
+        "normalMap": "/vehicles/bug/components/frame/textures/frontaxle_n.normal.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5
+  }
+}

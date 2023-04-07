@@ -1,0 +1,163 @@
+{
+
+// --- Ragtop colors
+"bug_skin_ragtop_gray": {
+    "information":{
+       "authors":"MrX13415",
+       "name":"Dusty Gray Cover",
+       "value":200,
+    },
+    "slotType": "skin_ragtop",
+    "skinName": "gray",
+},
+"bug_skin_ragtop_black": {
+    "information":{
+       "authors":"MrX13415",
+       "name":"Black Cover",
+       "value":200,
+    },
+    "slotType": "skin_ragtop",
+    "skinName": "black",
+},
+"bug_skin_ragtop_white": {
+    "information":{
+       "authors":"MrX13415",
+       "name":"Cream White Cover",
+       "value":200,
+    },
+    "slotType": "skin_ragtop",
+    "skinName": "white",
+},
+"bug_skin_ragtop_brown": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Sand Brown Cover",
+        "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "brown",
+},
+"bug_skin_ragtop_green": {
+    "information":{
+          "authors":"MrX13415",
+          "name":"Apple Green Cover",
+          "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "green",
+},
+"bug_skin_ragtop_red": {
+    "information":{
+       "authors":"MrX13415",
+       "name":"Rose Red Cover",
+       "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "red",
+},
+"bug_skin_ragtop_blue": {
+    "information":{
+       "authors":"MrX13415",
+       "name":"Sky Blue Cover",
+       "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "blue",
+},
+"bug_skin_ragtop_brown2": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Terracotta Brown Cover",
+        "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "brown2",
+},
+
+"bug_skin_ragtop_paint1": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Colored Cover (Exterior)",
+        "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "paint1",
+},
+"bug_skin_ragtop_paint2": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Colored Cover (Exterior, Secondary)",
+        "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "paint2",
+},
+"bug_skin_ragtop_paint3": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Colored Cover (Interior)",
+        "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "paint3",
+},
+
+// No stripes:
+// "bug_skin_ragtop_herbie-fl": {
+//     "information":{
+//         "authors":"MrX13415",
+//         "name":"Herbie Cover - Fully Loaded",
+//         "value":200,
+//     },
+//     "slotType" : "skin_ragtop",
+//     "skinName" : "herbie-fl",
+// },
+"bug_skin_ragtop_herbie-gb-rusty": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Herbie Cover - Goes Bananas Rusty Look",
+        "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "herbie-gb-rusty",
+},
+// Same as above:
+// "bug_skin_ragtop_herbie-gb-rusty-taxi": {
+//     "information":{
+//         "authors":"MrX13415",
+//         "name":"Herbie Cover - Goes Bananas Rusty Taxi Look",
+//         "value":200,
+//     },
+//     "slotType" : "skin_ragtop",
+//     "skinName" : "herbie-gb-rusty-taxi",
+// },
+"bug_skin_ragtop_herbie-ra-mc-gb": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Herbie Cover - Monte Carlo | Goes Bananas | Rides Again | The Love Bug TV Series",
+        "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "herbie-ra-mc-gb",
+},
+"bug_skin_ragtop_herbie-tlb": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Herbie Cover - The Love Bug",
+        "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "herbie-tlb",
+},
+// No stripes:
+// "bug_skin_ragtop_herbie-tlb97": {
+//     "information":{
+//         "authors":"MrX13415",
+//         "name":"Herbie Cover - The Love Bug 1997",
+//         "value":200,
+//     },
+//     "slotType" : "skin_ragtop",
+//     "skinName" : "herbie-tlb97",
+// },
+
+}

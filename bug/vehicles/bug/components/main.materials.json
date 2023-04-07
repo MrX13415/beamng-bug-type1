@@ -1,0 +1,218 @@
+{
+  "chrome": {
+    "name": "chrome",
+    "mapTo": "chrome",
+    "class": "material",
+    "persistentId": "d9cb434d-992f-4567-8192-51ecadddc3df",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.784313977,
+          0.784313977,
+          0.784313977,
+          1
+        ],
+        "baseColorMap": "vehicles/common/null.dds",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.1500000000
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 255,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "interior_chrome": {
+    "name": "interior_chrome",
+    "mapTo": "interior_chrome",
+    "class": "material",
+    "persistentId": "ef9f5b4c-a32a-47a1-a190-c10719043a24",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.784313977,
+          0.784313977,
+          0.784313977,
+          1
+        ],
+        "baseColorMap": "vehicles/common/null.dds",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.1500000000
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 255,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+
+  "mirror": {
+    "name": "mirror",
+    "mapTo": "mirror",
+    "class": "Material",
+    "persistentId": "bd46f148-b662-462c-93e0-c887e33bda52",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "aluminum": {
+    "name": "aluminum",
+    "mapTo": "aluminum",
+    "class": "Material",
+    "persistentId": "a5335944-4c65-41ad-b876-67d3758c516b",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.787751019,
+          0.787742972,
+          0.787742972,
+          1
+        ],
+        "baseColorMap": "vehicles/common/null.dds",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.300000012
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 255,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "interior_aluminum": {
+    "name": "interior_aluminum",
+    "mapTo": "interior_aluminum",
+    "class": "Material",
+    "persistentId": "28ce1f27-ebdb-4d3b-8a35-aff7b6bfe5c4",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.787751019,
+          0.787742972,
+          0.787742972,
+          1
+        ],
+        "baseColorMap": "vehicles/common/null.dds",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.300000012
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 255,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+
+  "plastic_black": {
+    "name": "plastic_black",
+    "mapTo": "plastic_black",
+    "class": "Material",
+    "persistentId": "20ec2d7a-6b95-4169-8786-87deab81a317",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.0868349969,
+          0.0868339986,
+          0.0868339986,
+          1
+        ],
+        "metallicFactor": 0.300000012,
+        "roughnessFactor": 0.100000001
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5
+  },
+  "plastic_white": {
+    "name": "plastic_white",
+    "mapTo": "plastic_white",
+    "class": "Material",
+    "persistentId": "ee22d85b-887f-46e2-8567-5d8a424e992a",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.976471007,
+          0.980391979,
+          0.788235009,
+          1
+        ],
+        "metallicFactor": 0.300000012,
+        "roughnessFactor": 0.100000001
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5
+  },
+  "plastic_embossed_alpha": {
+    "name": "plastic_embossed_alpha",
+    "mapTo": "plastic_embossed_alpha",
+    "class": "material",
+    "persistentId": "b63fea18-546a-4f98-adca-5a35d59541ae",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.61984688,
+          0.61984688,
+          0.61984688,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None"
+  },
+  "rubber": {
+    "name": "rubber",
+    "mapTo": "rubber",
+    "class": "Material",
+    "persistentId": "854a1331-e75a-47b3-994f-be19cd7a9389",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.141176,
+          0.141176,
+          0.141176,
+          1
+        ],
+        "roughnessFactor": 0.5
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "rubber_white": {
+    "name": "rubber_white",
+    "mapTo": "rubber_white",
+    "class": "Material",
+    "persistentId": "82d5b4df-5481-47d9-af7b-bf0318f70a11",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  }
+}

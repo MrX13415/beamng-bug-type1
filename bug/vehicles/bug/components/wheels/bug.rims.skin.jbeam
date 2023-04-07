@@ -1,0 +1,114 @@
+{
+
+    "bug_rim_F_white": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"White",
+            "value":300,
+        },
+        "slotType": "skin_rim_F",
+        "skinName" : "white"
+    },
+    "bug_rim_F_black": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Black",
+            "value":300,
+        },
+        "slotType" : "skin_rim_F",
+        "skinName" : "black"
+    },
+    "bug_rim_F_silver": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Silver",
+            "value":300,
+        },
+        "slotType" : "skin_rim_F",
+        "skinName" : "silver"
+    },
+    "bug_rim_F_paint1": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Colored (Exterior)",
+            "value":300,
+        },
+        "slotType" : "skin_rim_F",
+        "skinName" : "paint1"
+    },
+    "bug_rim_F_paint2": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Colored (Exterior, Secondary)",
+            "value":300,
+        },
+        "slotType" : "skin_rim_F",
+        "skinName" : "paint2"
+    },
+    "bug_rim_F_paint3": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Colored (Interior)",
+            "value":300,
+        },
+        "slotType" : "skin_rim_F",
+        "skinName" : "paint3"
+    },
+
+
+    "bug_rim_R_white": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"White",
+            "value":300,
+        },
+        "slotType": "skin_rim_R",
+        "skinName" : "white"
+    },
+    "bug_rim_R_black": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Black",
+            "value":300,
+        },
+        "slotType" : "skin_rim_R",
+        "skinName" : "black"
+    },
+    "bug_rim_R_silver": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Silver",
+            "value":300,
+        },
+        "slotType" : "skin_rim_R",
+        "skinName" : "silver"
+    },
+    "bug_rim_R_paint1": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Colored (Exterior)",
+            "value":300,
+        },
+        "slotType" : "skin_rim_R",
+        "skinName" : "paint1"
+    },
+    "bug_rim_R_paint2": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Colored (Exterior, Secondary)",
+            "value":300,
+        },
+        "slotType" : "skin_rim_R",
+        "skinName" : "paint2"
+    },
+    "bug_rim_R_paint3": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Colored (Interior)",
+            "value":300,
+        },
+        "slotType" : "skin_rim_R",
+        "skinName" : "paint3"
+    }
+
+}

@@ -1,0 +1,335 @@
+{
+
+"bug_wheeldata_F":{
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Spindles",
+        "value":100,
+    },
+    "slotType" : "bug_wheeldata_F",
+    "pressureWheels":[
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //front
+        {"selfCollision":false},
+        {"collision":true},
+        {"hubcapBreakGroup":"hubcap_FR"},
+        {"hubcapGroup":"hubcap_FR"},
+        {"axleBeams":["axle_FR"]},
+        ["FR", "wheel_FR", "tire_FR", "fw1rr", "fw1r", 9999,  "fh5r", 1,{"torqueCoupling:":"fh3r", "torqueArm:":"fh5r", "steerAxisUp:":"fh2r","steerAxisDown:":"fh1r"}],
+        {"hubcapBreakGroup":"hubcap_FL"},
+        {"hubcapGroup":"hubcap_FL"},
+        {"axleBeams":["axle_FL"]},
+        ["FL", "wheel_FL", "tire_FL", "fw1ll", "fw1l", 9999,  "fh5l", -1,{"torqueCoupling:":"fh3l", "torqueArm:":"fh5l", "steerAxisUp:":"fh2l","steerAxisDown:":"fh1l"}],
+        {"selfCollision":true},
+        {"axleBeams":[]},{"disableMeshBreaking":false,"disableTriangleBreaking":false},
+        {"hubcapBreakGroup":""},
+        {"hubcapGroup":""},
+        {"enableHubcaps":false},
+        {"propulsed":0},
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["shaft", "wheelaxleFL", "differential_F", 1, {"connectedWheel":"FL", "breakTriggerBeam":"axle_FL", "uiName":"Front Left Axle", "friction":0.93, "dynamicFriction":0.0021}],
+        ["shaft", "wheelaxleFR", "differential_F", 2, {"connectedWheel":"FR", "breakTriggerBeam":"axle_FR", "uiName":"Front Right Axle", "friction":0.93, "dynamicFriction":0.0021}],
+    ],
+},
+
+"bug_spring_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Torsion Bars",
+        "value":100,
+    },
+    "slotType":"bug_spring_F",
+    "slots":[
+        ["type", "default", "description"],
+        ["bug_shock_F","bug_shock_F", "Front Shocks"],
+    ],
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        //rigidify subframe in torsion
+        {"spring":200000, "damp":0, "deform":15000, "strength":"FLT_MAX"},
+        ["fx1l", "fx2l", "fx2r", "fx1r"],
+        //10mm 187.4
+        //11mm 274.3
+        //11.5mm 327.7
+        //12mm 388.5
+        {"spring":388.5, "damp":10, "deform":2000, "strength":9999999},
+        ["fh1l", "fx1l", "fx1r", "fx2r", {"precompressionAngle":0.40}],
+        ["fh1r", "fx1r", "fx1l", "fx2l", {"precompressionAngle":-0.40}],
+    ],
+},
+"bug_spring_F_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Front Torsion Bars",
+        "value":650,
+    },
+    "slotType":"bug_spring_F",
+    "slots":[
+        ["type", "default", "description"],
+        ["bug_shock_F","bug_shock_F_race", "Front Shocks"],
+    ],
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$springheight_F", "range", "+m", "Suspension", 0.0, -0.08, 0.04, "Spring Height", "Raise or lower the suspension height", {"stepDis":0.005, "subCategory":"Front"}],
+        ["$spring_F", "range", "N/m", "Suspension", 30000, 10000, 100000, "Spring Rate", "Spring stiffness", {"stepDis":500, "subCategory":"Front"}]
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        //12mm 388.5
+        //13mm 535.0
+        //14mm 719.9
+        //15mm 948.8
+        {"spring":"$=$spring_F*0.167*0.167", "damp":10, "deform":2000, "strength":9999999},
+        ["fh1l", "fx1l", "fx1r", "fx2r", {"precompressionAngle":"$=($springheight_F+0.01)/0.167"}],
+        ["fh1r", "fx1r", "fx1l", "fx2l", {"precompressionAngle":"$=-($springheight_F+0.01)/0.167"}],
+    ],
+},
+"bug_coilover_F_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Front Coilovers",
+        "value":750,
+    },
+    "slotType":"bug_spring_F",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bug_coilover_F", ["shocktop_F","lowerarm_F"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$springheight_F", "range", "+m", "Suspension", 0.0, -0.08, 0.04, "Spring Height", "Raise or lower the suspension height", {"stepDis":0.005, "subCategory":"Front"}],
+        ["$spring_F", "range", "N/m", "Suspension", 30000, 10000, 100000, "Spring Rate", "Spring stiffness", {"stepDis":500, "subCategory":"Front"}]
+        ["$damp_bump_F", "range", "N/m/s", "Suspension", 2000, 500, 4000, "Bump Damping", "Damper rate in compression", {"stepDis":100, "subCategory":"Front"}],
+        ["$damp_rebound_F", "range", "N/m/s", "Suspension", 4300, 1000, 8000, "Rebound Damping", "Damper rate in extension", {"stepDis":100, "subCategory":"Front"}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //front springs - no soft bumpstop - advanced dampers
+          {"beamType":"|NORMAL"},
+          {"beamDeform":12000,"beamStrength":140000},
+          {"beamSpring":"$spring_F","beamDamp":0},
+          ["fh1r","fs1r", {"precompressionRange":"$=$springheight_F+0.045"}],
+          ["fh1l","fs1l", {"precompressionRange":"$=$springheight_F+0.045"}],
+
+          //front dampers
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamSpring":250,"beamDamp":"$damp_bump_F"},
+          ["fh1r","fs1r", {"beamDampRebound":"$damp_rebound_F","beamDampVelocitySplit":0.3,"beamDampFast":"$=$damp_bump_F / 3","beamDampReboundFast":"$=$damp_rebound_F / 3","dampCutoffHz":500,
+              "soundFile":"event:>Vehicle>Suspension>car_modn_sml_01>spring_compress_01","colorFactor":0.3,"attackFactor":45,"volumeFactor":2.2,"decayFactor":70,"pitchFactor":1.0,"maxStress":13}],
+          ["fh1l","fs1l", {"beamDampRebound":"$damp_rebound_F","beamDampVelocitySplit":0.3,"beamDampFast":"$=$damp_bump_F / 3","beamDampReboundFast":"$=$damp_rebound_F / 3","dampCutoffHz":500,
+              "soundFile":"event:>Vehicle>Suspension>car_modn_sml_01>spring_compress_01","colorFactor":0.3,"attackFactor":45,"volumeFactor":2.2,"decayFactor":70,"pitchFactor":1.0,"maxStress":13}],
+
+          //bumpstop and extension limiter
+          {"beamPrecompression":1, "beamType":"|BOUNDED"},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":201000,"beamLimitDamp":5000},
+          ["fh1r","fs1r", {"longBoundRange":0.04,"shortBoundRange":0.1,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["fh1l","fs1l", {"longBoundRange":0.04,"shortBoundRange":0.1,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+"bug_coilover_F_rally": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rally Front Coilovers",
+        "value":850,
+    },
+    "slotType":"bug_spring_F",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bug_coilover_F", ["shocktop_F","lowerarm_F"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$springheight_F", "range", "+m", "Suspension", 0.0, -0.04, 0.08, "Spring Height", "Raise or lower the suspension height", {"stepDis":0.005, "subCategory":"Front"}],
+        ["$spring_F", "range", "N/m", "Suspension", 12000, 10000, 50000, "Spring Rate", "Spring stiffness", {"stepDis":500, "subCategory":"Front"}]
+        ["$damp_bump_F", "range", "N/m/s", "Suspension", 1200, 500, 10000, "Bump Damping", "Damper rate in compression", {"stepDis":100, "subCategory":"Front"}]
+        ["$damp_bump_F_fast", "range", "N/m/s", "Suspension", 900, 500, 20000, "Fast Bump Damping", "Damper rate in fast compression", {"stepDis":100, "subCategory":"Front"}]
+        ["$damp_rebound_F", "range", "N/m/s", "Suspension", 1700, 500, 10000, "Front Rebound Damping", "Damper rate in extension", {"stepDis":100, "subCategory":"Front"}]
+        ["$damp_rebound_F_fast", "range", "N/m/s", "Suspension", 900, 500, 10000, "Fast Rebound Damping", "Damper rate in fast extension", {"stepDis":100,"subCategory":"Front"}]
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //front springs - no soft bumpstop - advanced dampers
+          {"beamType":"|NORMAL"},
+          {"beamDeform":20000,"beamStrength":220000},
+          {"beamSpring":"$spring_F","beamDamp":0},
+          ["fh1r","fs1r", {"precompressionRange":"$=$springheight_F+0.155"}],
+          ["fh1l","fs1l", {"precompressionRange":"$=$springheight_F+0.155"}],
+
+          //front dampers
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamSpring":250,"beamDamp":"$damp_bump_F"},
+          //bump
+          ["fh1r","fs1r", {"beamDampRebound":0,"beamDampVelocitySplit":0.3,"beamDampFast":"$damp_bump_F_fast","beamDampReboundFast":0,"dampCutoffHz":500,
+              "soundFile":"event:>Vehicle>Suspension>car_modn_sml_01>spring_compress_01","colorFactor":0.3,"attackFactor":10,"volumeFactor":2.1,"decayFactor":8,"pitchFactor":0.7,"maxStress":13}],
+          ["fh1l","fs1l", {"beamDampRebound":0,"beamDampVelocitySplit":0.3,"beamDampFast":"$damp_bump_F_fast","beamDampReboundFast":0,"dampCutoffHz":500,
+              "soundFile":"event:>Vehicle>Suspension>car_modn_sml_01>spring_compress_01","colorFactor":0.3,"attackFactor":10,"volumeFactor":2.1,"decayFactor":8,"pitchFactor":0.7,"maxStress":13}],
+          //rebound
+          {"beamSpring":250,"beamDamp":0},
+          ["fh1r","fs1r", {"name":"shock_FR","beamDampRebound":"$damp_rebound_F","beamDampVelocitySplit":0.2,"beamDampFast":0,"beamDampReboundFast":"$damp_rebound_F_fast","dampCutoffHz":500}],
+          ["fh1l","fs1l", {"name":"shock_FL","beamDampRebound":"$damp_rebound_F","beamDampVelocitySplit":0.2,"beamDampFast":0,"beamDampReboundFast":"$damp_rebound_F_fast","dampCutoffHz":500}],
+          //hydraulic bump stop
+          {"beamPrecompression":1, "beamType":"|BOUNDED"},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":1000,"beamLimitDamp":8000},
+          ["fh1r","fs1r", {"longBoundRange":1,"shortBoundRange":0.05,"boundZone":0.01,"beamLimitDampRebound":1000,"dampCutoffHz":250}],
+          ["fh1l","fs1l", {"longBoundRange":1,"shortBoundRange":0.05,"boundZone":0.01,"beamLimitDampRebound":1000,"dampCutoffHz":250}],
+          {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+"bug_shock_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Shocks",
+        "value":100,
+    },
+    "slotType":"bug_shock_F",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["shock_FL_body", ["shocktop_F","lowerarm_F"]],
+        ["shock_FL_rod", ["shocktop_F","lowerarm_F"]],
+        ["shock_FR_body", ["shocktop_F","lowerarm_F"]],
+        ["shock_FR_rod", ["shocktop_F","lowerarm_F"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //front dampers
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamDeform":12000,"beamStrength":140000},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamSpring":0,"beamDamp":850},
+          ["fh1r","fs1r", {"beamDampRebound":1700,"dampCutoffHz":500}],
+          ["fh1l","fs1l", {"beamDampRebound":1700,"dampCutoffHz":500}],
+
+          //bumpstop and extension limiter
+          {"beamSpring":250,"beamDamp":0},
+          {"beamLimitSpring":201000,"beamLimitDamp":5000},
+          ["fh1r","fs1r", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500,
+              "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>leaf_compress_01","colorFactor":0.0,"attackFactor":7,"volumeFactor":2.5,"decayFactor":7,"pitchFactor":0.2,"maxStress":13}],
+          ["fh1l","fs1l", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500,
+              "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>leaf_compress_01","colorFactor":0.0,"attackFactor":7,"volumeFactor":2.5,"decayFactor":7,"pitchFactor":0.2,"maxStress":13}],
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+"bug_shock_F_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Front Shocks",
+        "value":450,
+    },
+    "slotType":"bug_shock_F",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["shock_FL_body", ["shocktop_F","lowerarm_F"]],
+        ["shock_FL_rod", ["shocktop_F","lowerarm_F"]],
+        ["shock_FR_body", ["shocktop_F","lowerarm_F"]],
+        ["shock_FR_rod", ["shocktop_F","lowerarm_F"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$damp_bump_F", "range", "N/m/s", "Suspension", 1300, 500, 4000, "Bump Damping", "Damper rate in compression", {"stepDis":100, "subCategory":"Front"}],
+        ["$damp_rebound_F", "range", "N/m/s", "Suspension", 3900, 1000, 8000, "Rebound Damping", "Damper rate in extension", {"stepDis":100, "subCategory":"Front"}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //front dampers
+          {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamDeform":12000,"beamStrength":140000},
+          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamSpring":250,"beamDamp":"$damp_bump_F"},
+          ["fh1r","fs1r", {"beamDampRebound":"$damp_rebound_F","beamDampVelocitySplit":0.35,"beamDampFast":"$=$damp_bump_F / 3","beamDampReboundFast":"$=$damp_rebound_F / 3","dampCutoffHz":500,
+              "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>leaf_compress_01","colorFactor":0.2,"attackFactor":16,"volumeFactor":2.1,"decayFactor":16,"pitchFactor":0.7,"maxStress":13}],
+          ["fh1l","fs1l", {"beamDampRebound":"$damp_rebound_F","beamDampVelocitySplit":0.35,"beamDampFast":"$=$damp_bump_F / 3","beamDampReboundFast":"$=$damp_rebound_F / 3","dampCutoffHz":500,
+              "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>leaf_compress_01","colorFactor":0.2,"attackFactor":16,"volumeFactor":2.1,"decayFactor":16,"pitchFactor":0.7,"maxStress":13}],
+
+          //bumpstop and extension limiter
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":201000,"beamLimitDamp":5000},
+          ["fh1r","fs1r", {"longBoundRange":0.04,"shortBoundRange":0.1,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          ["fh1l","fs1l", {"longBoundRange":0.04,"shortBoundRange":0.1,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+          {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+
+"bug_swaybar_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"12mm Front Sway Bar",
+        "value":100,
+    },
+    "slotType" : "bug_swaybar_F",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        //10m bar 101 Nm/rad
+        //11m bar 147 Nm/rad
+        //12mm bar 209 Nm/rad
+        //14mm bar 394 Nm/rad
+        {"spring":209, "damp":10, "deform":500, "strength":9999999},
+        ["fh2l", "fx2l", "fx2r", "fh2r"],
+    ],
+},
+"bug_swaybar_F_sport": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"14mm Front Sway Bar",
+        "value":150,
+    },
+    "slotType" : "bug_swaybar_F",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        //10m bar 101 Nm/rad
+        //11m bar 147 Nm/rad
+        //12mm bar 209 Nm/rad
+        //14mm bar 394 Nm/rad
+        {"spring":394, "damp":10, "deform":500, "strength":9999999},
+        ["fh2l", "fx2l", "fx2r", "fh2r"],
+    ],
+},
+"bug_swaybar_F_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Front Sway Bar",
+        "value":450,
+    },
+
+    "slotType" : "bug_swaybar_F",
+
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$arb_spring_F", "range", "N/m", "Suspension", 20000, 5000, 100000, "Anti-Roll Spring Rate", "Stiffness of the anti-roll bar, defined at the end links", {"stepDis":1000,"subCategory":"Front"}]
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        //10m bar 101 Nm/rad
+        //11m bar 147 Nm/rad
+        //12mm bar 209 Nm/rad
+        //14mm bar 394 Nm/rad
+        {"spring":"$=$arb_spring_F*0.167*0.167", "damp":10, "deform":5000, "strength":9999999},
+        ["fh2l", "fx2l", "fx2r", "fh2r"],
+    ],
+},
+
+}

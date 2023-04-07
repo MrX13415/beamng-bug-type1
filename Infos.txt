@@ -1,0 +1,8 @@
+https://www.thesamba.com/vw/archives/info/paintcodestype1.php
+
+All units in BeamNG are in SI. So:
+
+beamSpring: newtons per metre
+beamStrength: newtons
+beamDamp: newton-seconds per meter
+beamDeform: newtons

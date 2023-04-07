@@ -1,0 +1,401 @@
+{
+
+"bug_fueltank": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Fuel Tank",
+        "value":300,
+    },
+    "slotType" : "bug_fueltank",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["fueltank",        ["fueltank"]],
+        ["fueltank_cap",    ["fueltank"]],
+        ["fueltank_sensor", ["fueltank"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$fuel", "range", "L", "Engine", 40, 0, 40, "Fuel Volume", "Initial Fuel Volume", {"stepDis":0.5}]
+    ],
+    "energyStorage": [
+        ["type", "name"],
+        ["fuelTank", "mainTank"],
+    ],
+    "mainTank": {
+        "energyType":"gasoline",
+        "fuelCapacity": 40,
+        "startingFuelCapacity": "$fuel",
+        "fuel": {"[engineGroup]:":["fuel"]},
+        "breakTriggerBeam": "fuelTank",
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //fuel tank particles
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":1},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.0},
+         {"engineGroup":["fuel"]},
+         {"chemEnergy":50,"burnRate":1.2,"flashPoint":220,"vaporPoint":97,"specHeat":0.03,"selfIgnitionCoef":0.4,"smokePoint":220,"containerBeam":"fuelTank"},
+         {"group":"fueltank"},
+         ["ft1l",  0.33, -1.42, 0.7],
+         ["ft1r", -0.33, -1.42, 0.7],
+         {"selfIgnitionCoef":false,"selfCollision":false},
+         ["ft2l",  0.33, -1.07, 0.7],
+         ["ft2r", -0.33, -1.07, 0.7],
+         ["ft3l",  0.24, -1.42, 0.5],
+         ["ft3r", -0.24, -1.42, 0.5],
+         ["ft4l",  0.24, -1.07, 0.5],
+         ["ft4r", -0.24, -1.07, 0.5],
+         {"group":""},
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false,"vaporPoint":false,"specHeat":false,"selfIgnitionCoef":false,"smokePoint":false,"containerBeam":false},
+         {"engineGroup":""}
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":535000,"beamDamp":200},
+          {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"deformLimitExpansion":1.1},
+
+          // Main shape
+          ["ft2l","ft2r"],
+          ["ft3l","ft3r"],
+          ["ft4l","ft4r"],
+          ["ft1l","ft2l"],
+          ["ft1r","ft2r"],
+          ["ft3l","ft4l"],
+          ["ft3r","ft4r"],
+          ["ft1l","ft3l"],
+          ["ft1r","ft3r"],
+          ["ft2l","ft4l"],
+          ["ft2r","ft4r"],
+          // X
+          ["ft1l","ft2r"],
+          ["ft1r","ft2l"],
+          ["ft3l","ft4r"],
+          ["ft3r","ft4l"],
+          ["ft1r","ft4r"],
+          ["ft2r","ft3r"],
+          ["ft1l","ft4l"],
+          ["ft2l","ft3l"],
+          ["ft1l","ft3r"],
+          ["ft1r","ft3l"],
+          ["ft2l","ft4r"],
+          ["ft2r","ft4l"],
+          // rigidify
+          ["ft1l","ft4r"],
+          ["ft1r","ft4l"],
+          ["ft2l","ft3r"],
+          ["ft2r","ft3l"],
+
+          // Connection to frame:
+          {"beamDeform":5000,"beamStrength":20000},
+          {"breakGroup":"fueltank_mount"},
+          {"breakGroupType":0},
+          ["ft3l","f1tml"],
+          ["ft3r","f1tmr"],
+          ["ft3l","f1tmr"],
+          ["ft3r","f1tml"],
+          ["ft3l","f2l"],
+          ["ft3l","f2r"],
+          ["ft3r","f2l"],
+          ["ft3r","f2r"],
+
+          ["ft4l","f1tmr"],
+          ["ft4r","f1tml"],
+          ["ft4l","f1tml"],
+          ["ft4r","f1tmr"],
+          ["ft4l","f2tm"],
+          ["ft4r","f2tm"],
+          ["ft4l","f3l"],
+          ["ft4l","f3r"],
+          ["ft4r","f3l"],
+          ["ft4r","f3r"],
+
+          {"breakGroup":""},
+          {"breakGroupType":1},
+
+          {"breakGroup":"fueltank"},
+          {"beamDeform":5000,"beamStrength":20000},
+          ["ft1l","ft1r", {"name":"fuelTank","containerBeam": "fuelTank"}],
+          {"breakGroup":""},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"groundModel":"metal"},
+        {"dragCoef":0},
+        {"group":"fueltank"},
+        ["ft1r", "ft1l", "ft2r"],
+        ["ft2r", "ft1l", "ft2l"],
+        ["ft3r", "ft3l", "ft1r"],
+        ["ft1r", "ft3l", "ft1l"],
+        ["ft4r", "ft3r", "ft2r"],
+        ["ft2r", "ft3r", "ft1r"],
+        ["ft3l", "ft4l", "ft2l"],
+        ["ft3l", "ft2l", "ft1l"],
+        ["ft4l", "ft4r", "ft2l"],
+        ["ft2l", "ft4r", "ft2r"],
+        ["ft4r", "ft4l", "ft3r"],
+        ["ft3r", "ft4l", "ft3l"],
+        {"group":""},
+    ]
+},
+
+"bug_oilpan": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stock Oil Pan",
+        "value":90,
+    },
+    "slotType" : "bug_oilpan",
+    "mainEngine": {
+        //cooling and oil system
+        "oilVolume":4.0,
+
+        //engine durability
+        "oilpanMaximumSafeG": 1.2,
+
+        //node beam interface
+        "oilpanNodes:":["oilpan","oilref"],
+
+        //engine deform groups
+        "deformGroups_oilPan":["oilpan_damage"]
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+
+         //oil pan node
+         {"group":""},
+         {"nodeWeight":2},
+         ["oilpan", 0.0, 1.49, 0.23],
+         ["oilref", 0.0, 1.49, 0.70, {"nodeWeight":1, "collision":false}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //oilpan node
+          {"beamSpring":1501000,"beamDamp":250},
+          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"oilpan_damage","deformationTriggerRatio":0.005},
+          ["oilpan", "e1r"],
+          ["oilpan", "e1l"],
+          ["oilpan", "e2r"],
+          ["oilpan", "e2l"],
+          ["oilpan", "e3r"],
+          ["oilpan", "e3l"],
+          ["oilpan", "e4r"],
+          ["oilpan", "e4l"],
+          {"deformGroup":""},
+
+          //oil ref
+          {"beamSpring":1001000,"beamDamp":150},
+          {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+          ["oilref", "e1r"],
+          ["oilref", "e1l"],
+          ["oilref", "e2r"],
+          ["oilref", "e2l"],
+          ["oilref", "e3r"],
+          ["oilref", "e3l"],
+          ["oilref", "e4r"],
+          ["oilref", "e4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+
+"bug_battery": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Battery",
+    },
+    "slotType" : "bug_battery",
+	"flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+                                                    // for battery physics below
+        ["battery",               ["bug_battery"]],
+        ["battery_cable_fitting", ["bug_frame"]],
+        ["battery_cable_red",     ["bug_battery", "bug_battery_cable"]],
+        ["battery_cable_black",   ["bug_battery", "bug_battery_cable"]],
+	],
+    // Uncomment to enable battery physics :)
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"group":"bug_battery"},
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeWeight":0.4},
+        ["bty1", -0.22720, 0.41500, 0.41002],
+        ["bty2", -0.22720, 0.59831, 0.41002],
+        ["bty3", -0.22720, 0.41500, 0.23237],
+        ["bty4", -0.22720, 0.59831, 0.23237],
+        ["bty5", -0.44220, 0.41500, 0.41002],
+        ["bty6", -0.44220, 0.59831, 0.41002],
+        ["bty7", -0.44220, 0.41500, 0.23237],
+        ["bty8", -0.44220, 0.59831, 0.23237],
+        {"group":"bug_battery_cable"},
+        ["bty1C", -0.19122,  0.48465,  0.34091],
+        ["bty2C", -0.18059,  0.55111,  0.28711],
+        ["bty3C", -0.19091,  0.67174,  0.33568],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+    
+        //{"highlight":{"radius":0.002, "col":"#1166ffff" }},
+
+        {"disableMeshBreaking":false},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":801000,"beamDamp":100},
+        {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":0.3},
+        
+        ["bty1", "bty2"],
+        ["bty2", "bty4"],
+        ["bty1", "bty3"],
+        ["bty4", "bty1"],
+        ["bty5", "bty6"],
+        ["bty6", "bty8"],
+        ["bty5", "bty7"],
+        ["bty8", "bty5"],
+
+        ["bty1", "bty5"],
+        ["bty2", "bty6"],
+        ["bty3", "bty7"],
+        ["bty4", "bty8"],
+
+        ["bty1", "bty8"],
+        ["bty2", "bty7"],
+        ["bty5", "bty4"],
+        ["bty6", "bty3"],
+
+        ["bty2", "bty3"],
+        ["bty3", "bty4"],
+        ["bty6", "bty7"],
+        ["bty7", "bty8"],
+
+        ["bty1", "bty7"],
+        ["bty3", "bty5"],
+        ["bty2", "bty8"],
+        ["bty4", "bty6"],
+
+        {"beamSpring":20000,"beamDamp":100},
+        {"beamDeform":3000,"beamStrength":"FLT_MAX"},
+        // cable: common
+        ["bty1C", "bty2C"],
+        ["bty2C", "bty3C", {"breakGroupType":0, "beamStrength":1000, "breakGroup": "bug_battery_cable"}],
+        ["bty1C", "bty3C", {"breakGroupType":0, "beamStrength":1000, "breakGroup": "bug_battery_cable"}],
+        // rigidy:
+        ["bty1C", "bty1"],
+        ["bty1C", "bty2"],
+        ["bty1C", "bty3"],
+        ["bty1C", "bty4"],
+        {"beamSpring":5000,"beamDamp":100},
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        ["bty2C", "bty5"],
+        ["bty2C", "bty2"],
+        ["bty2C", "bty7"],
+        ["bty2C", "bty4"],
+        {"beamSpring":5000,"beamDamp":100},
+        {"beamDeform":1000,"beamStrength":1000},
+        {"breakGroup": "bug_battery_cable"}
+        {"breakGroupType":1},
+        ["bty3C", "bty6"],
+        ["bty3C", "bty2"],
+        ["bty3C", "bty8"],
+        ["bty3C", "bty4"],
+        {"breakGroup": ""},
+        {"breakGroupType":0},
+
+        {"beamSpring":801000,"beamDamp":100},
+        {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+        // cable <> frame
+        ["bty3C", "f6ml"],
+        ["bty3C", "f6mr"],
+        ["bty3C", "f6tml"],
+        ["bty3C", "f6tmr"],
+  
+        // battery <> frame
+        {"beamSpring":100000,"beamDamp":100},
+        {"beamDeform":1000,"beamStrength":2000},
+        {"breakGroup": "bug_battery_L", "breakGroupType":0},
+        ["bty3", "f5m"],
+        ["bty3", "f6ml"],
+        ["bty4", "f5m"],
+        ["bty4", "f6ml"],
+        {"breakGroup": "bug_battery_R", "breakGroupType":0},
+        ["bty7", "f5r"],
+        ["bty7", "f6r"],
+        ["bty8", "f5r"],
+        ["bty8", "f6r"],
+
+    //    {"highlight": ""},
+
+        {"breakGroup": ""},
+        {"deformLimitExpansion":1.1}
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        {"dragCoef":0},
+        {"group":"bug_battery"},
+        ["bty7", "bty3", "bty5"],
+        ["bty5", "bty3", "bty1"],
+        ["bty7", "bty3", "bty5"],
+        ["bty3", "bty4", "bty1"],
+        ["bty1", "bty4", "bty2"],
+    ]
+},
+
+"bug_flywheel": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"bug Flywheel",
+        
+        "value":150,
+    },
+    "slotType" : "bug_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.030915, //stock flywheel
+        "clutchMass":4.3,
+    },
+},
+"bug_flywheel_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"bug Ultra Light Flywheel",
+        "value":400,
+    },
+    "slotType" : "bug_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.01,
+        "clutchMass":3.2,
+    },
+},
+"bug_flywheel_light": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"bug Lightened Flywheel",
+        "value":200,
+    },
+    "slotType" : "bug_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.025,
+        "clutchMass":3.9,
+    },
+},
+
+
+
+}

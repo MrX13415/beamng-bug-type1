@@ -1,0 +1,554 @@
+{
+
+// --- roofs
+"bug_roof_hardtop": {
+    "information":{
+        "authors":"Vertex Style",
+        "name":"Hardtop Roof",
+    },
+    "slotType" : "bug_roof",
+	"slots": [
+        ["type", "default", "description"],
+		["bug_roof_rack", "", "Roof Rack"],
+	],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+         //    exterior
+         ["body_roof_hardtop",              ["bug_body", "bug_body_roof", "bug_body_cowl"]],
+         ["body_roof_gutter",               ["bug_body", "bug_body_roof"]],
+         //    interior
+         ["interior_covering_hardtop",      ["bug_body", "bug_roof"]],
+	],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        {"dragCoef":10},
+        ["brf2rr", "brf2r", "brf3rr"],    // roof opening triangle
+        ["brf3rr", "brf2r", "brf3r"],     // roof opening triangle
+        ["brf2r", "brf2", "brf3r"],       // roof opening triangle
+        ["brf3r", "brf2", "brf3"],        // roof opening triangle
+        ["brf2", "brf2l", "brf3"],        // roof opening triangle
+        ["brf3", "brf2l", "brf3l"],       // roof opening triangle
+        ["brf2l", "brf2ll", "brf3l"],     // roof opening triangle
+        ["brf3l", "brf2ll", "brf3ll"],    // roof opening triangle
+        //-
+        ["brf3rr", "brf3r", "brf4rr"],    // roof opening triangle
+        ["brf4rr", "brf3r", "brf4r"],     // roof opening triangle
+        ["brf3r", "brf3", "brf4r"],       // roof opening triangle
+        ["brf4r", "brf3", "brf4"],        // roof opening triangle
+        ["brf3", "brf3l", "brf4"],        // roof opening triangle
+        ["brf4", "brf3l", "brf4l"],       // roof opening triangle
+        ["brf3l", "brf3ll", "brf4l"],     // roof opening triangle
+        ["brf4l", "brf3ll", "brf4ll"],    // roof opening triangle
+        //-
+        ["brf4rr", "brf4r", "brf5rr"],    // roof opening triangle
+        ["brf5rr", "brf4r", "brf5r"],     // roof opening triangle
+        ["brf4r", "brf4", "brf5r"],       // roof opening triangle
+        ["brf5r", "brf4", "brf5"],        // roof opening triangle
+        ["brf4", "brf4l", "brf5"],        // roof opening triangle
+        ["brf5", "brf4l", "brf5l"],       // roof opening triangle
+        ["brf4l", "brf4ll", "brf5l"],     // roof opening triangle
+        ["brf5l", "brf4ll", "brf5ll"],    // roof opening triangle
+    ]
+},
+"bug_roof_ragtop": {
+    "information":{
+        "authors":"Vertex Style",
+        "name":"Ragtop Roof",
+    },
+    "slotType" : "bug_roof",
+	"slots": [
+        ["type", "default", "description"],
+
+		["bug_ragtop_cover", "bug_ragtop_cover", "Ragtop Cover"],
+		["bug_roof_rack", "", "Roof Rack"],
+	],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        //    exterior
+        ["body_roof_racktop_rails",        ["bug_body", "bug_body_roof"]],
+        ["body_roof_ragtop",               ["bug_body", "bug_body_roof", "bug_body_cowl"]],
+        ["body_roof_gutter",               ["bug_body", "bug_body_roof"]],
+        //    interior
+        ["interior_covering_ragtop",       ["bug_body", "bug_body_roof"]],
+	],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"group":"bug_body"},
+        {"collision":false},
+        {"selfCollision":false},
+
+        // overriding nodes defined in body
+        {"nodeWeight":1.0},
+       // {"group":"bug_body_roof"},
+        // roof
+        ["brf3",  0.00000,  0.03775,  1.48149],
+        ["brf3r", -0.22850,  0.03775,  1.47198],
+        ["brf3l",  0.22850,  0.03775,  1.47198],
+        ["brf4",  0.00000,  0.33135,  1.49006],
+        ["brf4r", -0.23020,  0.33135,  1.47941],
+        ["brf4l",  0.23020,  0.33135,  1.47941],
+
+        {"collision":true},
+        {"selfCollision":true},
+        {"group":""},
+    ],
+},
+
+"bug_ragtop_cover": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Ragtop Cover",
+    },
+    "slotType" : "bug_ragtop_cover",
+    "slots": [
+        ["type", "default", "description"],
+
+		["skin_ragtop", "bug_skin_ragtop_white", "Color", {"coreSlot":true}]
+	],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$ragtopInitState", "range", "", "Ragtop", 0, 0, 1.0, "Open Position", "Inital open position of the Ragtop roof.", {"minDis":0, "maxDis":100}],
+	],
+    "controller": [
+        ["fileName"],
+        ["ragtop", {"node": "brf4", "state": "$=$ragtopInitState"}]
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        
+        // Interior
+        ["interior_covering_ragtop_cover.1", ["bug_racktop_fabric1"]],
+        ["interior_covering_ragtop_cover.2", ["bug_racktop_fabric2", "bug_body_racktop_mount"]],
+
+        // Exterior:
+        //  complete, fully closed mesh
+        ["body_roof_ragtop_fabric",        ["bug_racktop_fabric"]],
+        //  sliced, fully closed mesh
+        ["body_roof_ragtop_fabric.a",      ["bug_racktop_fabric2", "bug_body_racktop_mount"]],
+        ["body_roof_ragtop_fabric.b",      ["bug_body_racktop_mount"]],
+        //  sliced mesh with fold for 1st and 2nd bar
+        ["body_roof_ragtop_fabric.1",      ["bug_racktop_fabric1"]],
+        ["body_roof_ragtop_fabric.2",      ["bug_racktop_fabric2"]],
+
+        // Details
+        ["body_roof_ragtop_handle",        ["bug_racktop_bar1", "bug_racktop_fabric1"]],
+        ["body_roof_ragtop_hook",          ["bug_racktop_bar1", "bug_racktop_fabric1"]],
+        // Bar mesh
+        ["body_roof_ragtop_bar1",          ["bug_racktop_bar1"]],
+        ["body_roof_ragtop_bar2",          ["bug_racktop_bar2"]],
+	],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["ragtop", "", "rta1r","rta1l","rtb1r", "box", {"x":0.1, "y":0.05, "z":0.04}, {"x":3, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.35, "y":0.07, "z":-0.03}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["ragtop", "action0", "ragtop_open"],   // default: left mouse btn
+        ["ragtop", "action1", "ragtop_close"],  // default: SHIFT + left mouse btn
+        ["ragtop", "action2", "ragtop_close"],  // default: middle mouse btn
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        // TODO: texts
+        ["ragtop_open",  "ui.inputActions.bug.ragtop_open.title", "ui.inputActions.bug.ragtop_open.description", {"onChange":"controller.getControllerSafe('ragtop').open(VALUE)"}],
+        ["ragtop_close", "ui.inputActions.bug.ragtop_close.title", "ui.inputActions.bug.ragtop_close.description", {"onChange":"controller.getControllerSafe('ragtop').close(VALUE)"}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        // Override body nodes ...
+        {"group":""},
+        {"selfCollision": false},
+        ["brf5",  0.00000,  0.71409,  1.47405],
+        ["brf5r", -0.22944,  0.71449,  1.46385],
+        ["brf5l",  0.22944,  0.71449,  1.46385],
+        ["brf5rr", -0.44191,  0.71449,  1.42856],
+        ["brf5ll",  0.44191,  0.71449,  1.42856],
+        {"selfCollision": true},
+
+        //----------------
+
+        {"selfCollision":false},
+        {"collision" :true},
+
+        // rail nodes
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"nodeWeight":0.5},
+        // 1st bar
+        {"group":"bug_racktop_bar1"},
+        ["rta1l",  0.428780, -0.255840, 1.40688],
+        ["rta2l",  0.430305, -0.196445, 1.41427],
+        ["rta1r", -0.428780, -0.255840, 1.40688],
+        ["rta2r", -0.430305, -0.196445, 1.41427],
+        {"group":""},
+        ["rta3l",  0.436320,  0.037750, 1.44340],
+        ["rta3r", -0.436320,  0.037750, 1.44340],
+        // 2nd bar
+        {"group":"bug_racktop_bar2"},
+        ["rtb1l",  0.440680,  0.207293, 1.44879],
+        ["rtb2l",  0.442509,  0.278421, 1.45104],
+        ["rtb1r", -0.440680,  0.207293, 1.44879],
+        ["rtb2r", -0.442509,  0.278421, 1.45104],
+        {"group":""},
+        ["rtb3l",  0.443870,  0.467534, 1.44414],
+        ["rtb3r", -0.443870,  0.467534, 1.44414],
+        // rear mount 
+        {"group":["bug_racktop_fabric", "bug_body_racktop_mount"]},
+        ["rtc1l",  0.44165,  0.91099,  1.34943],
+        ["rtc1",   0.00000,  0.91099,  1.39806],
+        ["rtc1r", -0.44165,  0.91099,  1.34943],
+        ["rtc2l",  0.44165,  0.97099,  1.32943],
+        ["rtc2",   0.00000,  0.97099,  1.37943],
+        ["rtc2r", -0.44165,  0.97099,  1.32943],
+        {"group":""},
+
+        // Fabric nounting points
+        {"nodeMaterial":"|NM_CLOTH"},
+        {"frictionCoef":0.7},
+        {"nodeWeight":0.4},
+        // 1st bar
+        {"group":["bug_racktop_fabric", "bug_racktop_fabric1"]},
+        ["rtf1l",  0.41149, -0.19623, 1.44262],
+        ["rtf1",   0.00000, -0.19623, 1.46262],
+        ["rtf1r", -0.41149, -0.19623, 1.44262],
+        ["rtf2l",  0.41149, -0.01000, 1.47892],
+        ["rtf2",   0.00000, -0.01000, 1.49892],
+        ["rtf2r", -0.41149, -0.01000, 1.47892],
+        // 2nd bar
+        {"group":["bug_racktop_fabric", "bug_racktop_fabric2"]},
+        ["rtf3l",  0.41149,  0.23316, 1.47892],
+        ["rtf3",   0.00000,  0.23316, 1.49892],
+        ["rtf3r", -0.41149,  0.23316, 1.47892],
+        ["rtf4l",  0.41149,  0.47036, 1.47892],
+        ["rtf4",   0.00000,  0.47036, 1.49892],
+        ["rtf4r", -0.41149,  0.47036, 1.47892],
+        {"group":""},
+        // rigidify
+        {"selfCollision":false},
+        {"collision" :false},
+        {"nodeWeight":0.6},
+        ["rtd1",  0.00000, -0.08000,  1.30000],
+        ["rtd2",  0.00000,  0.40000,  1.33000],
+    ],
+    "slidenodes": [
+        ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
+
+        // 1st bar
+        ["rta1l", "racktop_L", true, true, 0.0, 80100, 3000, "FLT_MAX"],
+        ["rta2l", "racktop_L", true, true, 0.0, 80100, 3000, "FLT_MAX"],
+        ["rta3l", "racktop_L", true, true, 0.0, 80100, 3000, "FLT_MAX"],
+        ["rta1r", "racktop_R", true, true, 0.0, 80100, 3000, "FLT_MAX"],
+        ["rta2r", "racktop_R", true, true, 0.0, 80100, 3000, "FLT_MAX"],
+        ["rta3r", "racktop_R", true, true, 0.0, 80100, 3000, "FLT_MAX"],
+
+        // 2nd bar
+        ["rtb1l", "racktop_L", true, true, 0.0, 80100, 3000, "FLT_MAX"],
+        ["rtb2l", "racktop_L", true, true, 0.0, 80100, 3000, "FLT_MAX"],
+        ["rtb3l", "racktop_L", true, true, 0.0, 80100, 3000, "FLT_MAX"],
+        ["rtb1r", "racktop_R", true, true, 0.0, 80100, 3000, "FLT_MAX"],
+        ["rtb2r", "racktop_R", true, true, 0.0, 80100, 3000, "FLT_MAX"],
+        ["rtb3r", "racktop_R", true, true, 0.0, 80100, 3000, "FLT_MAX"],
+    ],
+    "rails": {
+        "racktop_L":{"links:":["brf2ll", "brf3ll", "brf4ll", "brf5ll", "brf6ll"], "broken:":[], "looped":false, "capped":true},
+        "racktop_R":{"links:":["brf2rr", "brf3rr", "brf4rr", "brf5rr", "brf6rr"], "broken:":[], "looped":false, "capped":true},
+    },
+    "hydros": [
+        ["id1:","id2:"],
+
+        {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":4000,"beamDamp":50,"beamDeform":"FLT_MAX","beamStrength":3000},
+
+        {"breakGroupType":0},
+        {"breakGroup":"ragtopF"},
+        ["brf2ll","rta2l", {"inputSource":"ragtop_state", "inLimit":1.0, "outLimit":14.2, "inRate":10, "outRate":10, "inputFactor":1.0}],
+        ["brf2rr","rta2r", {"inputSource":"ragtop_state", "inLimit":1.0, "outLimit":14.2, "inRate":10, "outRate":10, "inputFactor":1.0}],
+        {"breakGroup":""}
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        //{"highlight":{"radius":0.002, "col":"#ff2200ff" }},
+
+        {"breakGroupType":0},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"deformLimitExpansion":1.1},
+
+        {"beamSpring":20100,"beamDamp":100},
+        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+
+        // fabric
+        ["rtf1l", "rtf1"],
+        ["rtf1", "rtf1r"],
+        ["rtf2l", "rtf2"],
+        ["rtf2", "rtf2r"],
+        ["rtf3l", "rtf3"],
+        ["rtf3", "rtf3r"],
+        ["rtf4l", "rtf4"],
+        ["rtf4", "rtf4r"],
+
+        ["rtf1l", "rtf2l"],
+        ["rtf1", "rtf2"],
+        ["rtf1r", "rtf2r"],
+
+        ["rtf3l", "rtf4l"],
+        ["rtf3", "rtf4"],
+        ["rtf3r", "rtf4r"],
+
+        ["rtf1l", "rtf2"],
+        ["rtf1", "rtf2l"],
+        ["rtf3l", "rtf4"],
+        ["rtf3", "rtf4l"],
+
+        ["rtf1r", "rtf2"],
+        ["rtf1", "rtf2r"],
+        ["rtf3r", "rtf4"],
+        ["rtf3", "rtf4r"],
+
+        // rigidy y:
+        ["rtf2l", "rta2l"],
+        ["rtf2r", "rta2r"],
+        ["rtf4l", "rtb2l"],
+        ["rtf4r", "rtb2r"],
+
+        ["rtf4l", "rtb1l"],
+        ["rtf4l", "rtb1r"],
+        ["rtf4r", "rtb1l"],
+        ["rtf4r", "rtb1r"],
+
+        // rigidy x:
+        ["rtf1l", "rtf1r"],
+        ["rtf2l", "rtf2r"],
+        ["rtf3l", "rtf3r"],
+        ["rtf4l", "rtf4r"],
+
+        {"beamPrecompression":1.0},
+        {"beamSpring":401000,"beamDamp":140},
+        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+
+        // to bar 1
+        ["rtf1l", "rta1l"],
+        ["rtf1l", "rta2l"],
+        ["rtf2l", "rta3l"],
+        ["rtf1r", "rta1r"],
+        ["rtf1r", "rta2r"],
+        ["rtf2r", "rta3r"],
+        //-
+        ["rtf1", "rta1l"],
+        ["rtf1", "rta1r"],
+        ["rtf1", "rta2l"],
+        ["rtf1", "rta2r"],
+        ["rtf2", "rta3l"],
+        ["rtf2", "rta3r"],
+
+        // to bar 2
+        ["rtf3l", "rtb1l"],
+        ["rtf3l", "rtb2l"],
+        ["rtf4l", "rtb3l"],
+        ["rtf3r", "rtb1r"],
+        ["rtf3r", "rtb2r"],
+        ["rtf4r", "rtb3r"],
+        //-
+        ["rtf3", "rtb1l"],
+        ["rtf3", "rtb1r"],
+        ["rtf3", "rtb2l"],
+        ["rtf3", "rtb2r"],
+        ["rtf4", "rtb3l"],
+        ["rtf4", "rtb3r"],
+
+        //{"highlight":{"radius":0.002, "col":"#0088ffff" }},
+
+        {"beamSpring":401000,"beamDamp":140},
+        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+
+        // bar 1
+        ["rta1l", "rta1r"],
+        ["rta2l", "rta2r"],
+        ["rta3l", "rta3r"],
+        ["rta1l", "rta2l"],
+        ["rta2l", "rta3l"],
+        ["rta1r", "rta2r"],
+        ["rta2r", "rta3r"],
+        ["rta1l", "rta2r"],
+        ["rta2l", "rta1r"],
+        ["rta2l", "rta3r"],
+        ["rta3l", "rta2r"],
+
+        // bar 2
+        ["rtb1l", "rtb1r"],
+        ["rtb2l", "rtb2r"],
+        ["rtb3l", "rtb3r"],
+        ["rtb1l", "rtb2l"],
+        ["rtb2l", "rtb3l"],
+        ["rtb1r", "rtb2r"],
+        ["rtb2r", "rtb3r"],
+        ["rtb1l", "rtb2r"],
+        ["rtb2l", "rtb1r"],
+        ["rtb2l", "rtb3r"],
+        ["rtb3l", "rtb2r"],
+
+        // rear mount
+        ["rtc1l", "rtc1"],
+        ["rtc1", "rtc1r"],
+        ["rtc1l", "rtc1r"],
+        ["rtc2l", "rtc2"],
+        ["rtc2", "rtc2r"],
+        ["rtc2l", "rtc2r"],
+        ["rtc1l", "rtc2l"],
+        ["rtc1l", "rtc2r"],
+        ["rtc1", "rtc2"],
+        ["rtc1r", "rtc2l"],
+        ["rtc1r", "rtc2r"],
+
+        // rigidy 
+        ["rta1l", "rtd1"],
+        ["rta1r", "rtd1"],
+        ["rta3l", "rtd1"],
+        ["rta3r", "rtd1"],
+
+        ["rtf1l", "rtd1"],
+        ["rtf1", "rtd1"],
+        ["rtf1r", "rtd1"],
+        ["rtf2l", "rtd1"],
+        ["rtf2", "rtd1"],
+        ["rtf2r", "rtd1"],
+
+        ["rtb1l", "rtd2"],
+        ["rtb1r", "rtd2"],
+        ["rtb3l", "rtd2"],
+        ["rtb3r", "rtd2"],
+
+        ["rtf3l", "rtd2"],
+        ["rtf3", "rtd2"],
+        ["rtf3r", "rtd2"],
+        ["rtf4l", "rtd2"],
+        ["rtf4", "rtd2"],
+        ["rtf4r", "rtd2"],
+
+         
+        // rear mount <> body (should not break from the body)
+        {"beamSpring":401000,"beamDamp":75},
+        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+        ["rtc1l", "brf5ll"],
+        ["rtc1", "brf5"],
+        ["rtc1r", "brf5rr"],
+        ["rtc1l", "brf6ll"],
+        ["rtc1", "brf6"],
+        ["rtc1r", "brf6rr"],
+        ["rtc1l", "brf5l"],
+        ["rtc1", "brf5l"],
+        ["rtc1", "brf5r"],
+        ["rtc1r", "brf5r"],
+        ["rtc2l", "brf7ll"],
+        ["rtc2", "brf7l"],
+        ["rtc2", "brf7"],
+        ["rtc2", "brf7r"],
+        ["rtc2r", "brf7rr"],
+        ["rtc2", "brf6l"],
+        ["rtc2", "brf6r"],
+        ["rtc1l", "bi1"],
+        ["rtc1", "bi1"],
+        ["rtc1r", "bi1"],
+        ["rtc2l", "bi1"],
+        ["rtc2", "bi1"],
+        ["rtc2r", "bi1"],
+
+        // limiter b1 <> b2
+        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.0, "beamShortBound":0.88},
+        {"beamSpring":0,"beamDamp":0,"beamDeform":136500,"beamStrength":"FLT_MAX"},
+        {"beamLimitSpring":1401000,"beamLimitDamp":200},
+        {"deformGroup":"ragtop1","deformationTriggerRatio":0.05},
+        ["rta2l", "rtb1l", {"name": "ragtopState1"}],
+        ["rta2r", "rtb1r", {"name": "ragtopState1"}],
+        {"beamLongBound":0.0, "beamShortBound":0.6},
+        {"beamStrength":3000},
+        ["rtb2l", "brf6ll", {"name": "ragtopState2", "breakGroup":"ragtopR"}],
+        ["rtb2r", "brf6rr", {"name": "ragtopState2", "breakGroup":"ragtopR"}],
+        {"deformGroup":""},
+
+        // rear mount <> fabric
+        {"beamLongBound":0.0, "beamShortBound":1.0},
+        ["rtf4l", "rtc1l"],
+        ["rtf4", "rtc1"],
+        ["rtf4r", "rtc1r"],
+
+
+        //{"highlight":{"radius":0.002, "col":"#ffff00ff" }},
+
+        //rear bumper support beams
+        {"beamType":"|SUPPORT", "beamLongBound":4},
+        {"beamSpring":200,"beamDamp":100},
+        {"beamDeform":14000,"beamStrength":3000},
+        {"beamPrecompression":1.4},
+
+        // to front
+        ["rta1l", "brf1ll", {"breakGroup":"ragtopF"}],
+        ["rta1l", "brf1rr", {"breakGroup":"ragtopF"}],
+        ["rta1r", "brf1ll", {"breakGroup":"ragtopF"}],
+        ["rta1r", "brf1rr", {"breakGroup":"ragtopF"}],
+
+        // to back
+        {"beamPrecompression":1.1},
+        ["rtb2l", "brf6rr", {"breakGroup":"ragtopR"}],
+        ["rtb2r", "brf6ll", {"breakGroup":"ragtopR"}],
+
+        // bar1 <> bar 2
+        {"beamStrength":"FLT_MAX"},
+        ["rta2l", "rtb1r"],
+        ["rta2r", "rtb1l"],
+
+        {"beamLongBound":20},
+        {"beamSpring":1000,"beamDamp":100},
+        {"beamPrecompression":1.0},
+        {"beamStrength":50},
+
+        {"beamPrecompression":1.0},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        //{"highlight":""},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"groundModel":"cloth"},
+        {"dragCoef":5},
+
+        // bar 1
+        ["rta1r", "rta1l", "rtf1"],
+        ["rta1r", "rtf1", "rtf1r"],
+        ["rtf1", "rta1l", "rtf1l"],
+        ["rta2r", "rta1r", "rtf1r"],
+        ["rta1l", "rta2l", "rtf1l"],
+        //-
+        ["rtf1r", "rtf1", "rtf2r"],
+        ["rtf2r", "rtf1", "rtf2"],
+        ["rtf1", "rtf1l", "rtf2"],
+        ["rtf2", "rtf1l", "rtf2l"],
+
+        // bar 1 <> bar 2
+        ["rtf2r", "rtf2", "rtf3r"],
+        ["rtf3r", "rtf2", "rtf3"],
+        ["rtf2", "rtf2l", "rtf3"],
+        ["rtf3", "rtf2l", "rtf3l"],
+        
+        // bar 2
+        ["rtf3r", "rtf3", "rtf4r"],
+        ["rtf4r", "rtf3", "rtf4"],
+        ["rtf3", "rtf3l", "rtf4"],
+        ["rtf4", "rtf3l", "rtf4l"],
+        //-
+        ["rtf4r", "rtf4", "brf5rr"],
+        ["brf5rr", "rtf4", "brf5"],
+        ["rtf4", "rtf4l", "brf5"],
+        ["brf5", "rtf4l", "brf5ll"],
+
+        
+    ],
+
+},
+
+}
