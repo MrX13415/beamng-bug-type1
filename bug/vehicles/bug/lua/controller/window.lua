@@ -2,7 +2,7 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
--- v1.0
+-- v1.1
 -- by MrX13415
 
 local M = {}
@@ -14,8 +14,8 @@ local direction = 0
 local directionLast = 0
 local name = "window"
 
-local sfxNode = ""
-local sfxEvent = "vehicles/bug/components/sounds/common/window-roll.wav"
+local sfxNode = nil
+local sfxEvent = nil
 local sfxVolume = 0.28
 local sfx = nil
 
@@ -38,7 +38,9 @@ local function updateWindow(dt)
   direction = electrics.values[name .. "_input"] or 0
 
   if direction ~= directionLast then
-    sfx = sfx or createSFX(sfxEvent, sfxNode)
+    if sfxEvent and sfxNode then
+      sfx = sfx or createSFX(sfxEvent, sfxNode)
+    end
     if sfx then 
       obj:cutSFX(sfx)
       if direction ~= 0 then
@@ -77,9 +79,10 @@ end
 local function onInit(jbeamData)
   name = jbeamData.name or name
   speed = jbeamData.speed or speed
-  sfxNode = jbeamData.node or ""
-  electrics.values[name .. "_state"] = 0
-
+  sfxNode = jbeamData.sfxNode
+  sfxEvent = jbeamData.sfx
+  value = jbeamData.state or 0
+  electrics.values[name .. "_state"] = value
   print("[Bug:Window] Window \"".. name.. "\" Initialized")
 end
 

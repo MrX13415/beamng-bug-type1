@@ -85,7 +85,7 @@
     "bug_swaybar_F":"bug_swaybar_F",
     "bug_thrusters":"",
     "bug_towhitch":"",
-    "bug_transmission":"bug_transmission_4M",
+    "bug_transaxle":"bug_transaxle_4M",
     "bug_wheeldata_F":"bug_wheeldata_F",
     "bug_wheeldata_R":"bug_wheeldata_R",
     "bug_window_decals":"",

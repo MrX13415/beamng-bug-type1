@@ -42,10 +42,14 @@
     "windowFLclose":       {"order":32, "onChange":"controller.getControllerSafe('windowFL').close(VALUE)", "title":"Window Left Close", "desc":"Closes the front left window."},
     "windowFRopen":        {"order":33, "onChange":"controller.getControllerSafe('windowFR').open(VALUE)", "title":"Window Right Open", "desc":"Opens the front right window."},
     "windowFRclose":       {"order":34, "onChange":"controller.getControllerSafe('windowFR').close(VALUE)", "title":"Window Right Close", "desc":"Closes the front right window."},
+    "doorventFLopen":      {"order":35, "onChange":"controller.getControllerSafe('doorventFL').open(VALUE)", "title":"Vent Window Left Open", "desc":"Opens the front left vent window."},
+    "doorventFLclose":     {"order":36, "onChange":"controller.getControllerSafe('doorventFL').close(VALUE)", "title":"Vent Window Left Close", "desc":"Closes the front left vent window."},
+    "doorventFRopen":      {"order":37, "onChange":"controller.getControllerSafe('doorventFR').open(VALUE)", "title":"Vent Window Right Open", "desc":"Opens the front right vent window."},
+    "doorventFRclose":     {"order":38, "onChange":"controller.getControllerSafe('doorventFR').close(VALUE)", "title":"Vent Window Right Close", "desc":"Closes the front right vent window."},
 
     // ragtop
-    "ragtopopen":          {"order":35, "onChange":"controller.getControllerSafe('ragtop').open(VALUE)", "title":"Racktop Open", "desc":"Opens the racktop."},
-    "ragtopclose":         {"order":36, "onChange":"controller.getControllerSafe('ragtop').close(VALUE)", "title":"Racktop Close", "desc":"Closes the racktop."},
+    "ragtopopen":          {"order":41, "onChange":"controller.getControllerSafe('ragtop').open(VALUE)", "title":"Racktop Open", "desc":"Opens the racktop."},
+    "ragtopclose":         {"order":42, "onChange":"controller.getControllerSafe('ragtop').close(VALUE)", "title":"Racktop Close", "desc":"Closes the racktop."},
 
     // herbie
     "herbiereset":         {"order": 51, "onUp":"herbie.resetTrust()", "title":"Herbie trust reset", "desc":"Resets Herbie's trust in the player to the default value."},

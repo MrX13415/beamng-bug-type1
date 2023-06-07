@@ -144,73 +144,6 @@
         {"group":""},
     ]
 },
-
-"bug_oilpan": {
-    "information":{
-        "authors":"BeamNG",
-        "name":"Stock Oil Pan",
-        "value":90,
-    },
-    "slotType" : "bug_oilpan",
-    "mainEngine": {
-        //cooling and oil system
-        "oilVolume":4.0,
-
-        //engine durability
-        "oilpanMaximumSafeG": 1.2,
-
-        //node beam interface
-        "oilpanNodes:":["oilpan","oilref"],
-
-        //engine deform groups
-        "deformGroups_oilPan":["oilpan_damage"]
-    },
-    "nodes": [
-         ["id", "posX", "posY", "posZ"],
-         {"selfCollision":false},
-         {"collision":true},
-         {"frictionCoef":0.5},
-         {"nodeMaterial":"|NM_METAL"},
-
-         //oil pan node
-         {"group":""},
-         {"nodeWeight":2},
-         ["oilpan", 0.0, 1.49, 0.23],
-         ["oilref", 0.0, 1.49, 0.70, {"nodeWeight":1, "collision":false}],
-    ],
-    "beams": [
-          ["id1:", "id2:"],
-          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-
-          //oilpan node
-          {"beamSpring":1501000,"beamDamp":250},
-          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
-          {"deformGroup":"oilpan_damage","deformationTriggerRatio":0.005},
-          ["oilpan", "e1r"],
-          ["oilpan", "e1l"],
-          ["oilpan", "e2r"],
-          ["oilpan", "e2l"],
-          ["oilpan", "e3r"],
-          ["oilpan", "e3l"],
-          ["oilpan", "e4r"],
-          ["oilpan", "e4l"],
-          {"deformGroup":""},
-
-          //oil ref
-          {"beamSpring":1001000,"beamDamp":150},
-          {"beamDeform":25000,"beamStrength":"FLT_MAX"},
-          ["oilref", "e1r"],
-          ["oilref", "e1l"],
-          ["oilref", "e2r"],
-          ["oilref", "e2l"],
-          ["oilref", "e3r"],
-          ["oilref", "e3l"],
-          ["oilref", "e4r"],
-          ["oilref", "e4l"],
-          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-    ],
-},
-
 "bug_battery": {
     "information":{
         "authors":"MrX13415",
@@ -306,7 +239,7 @@
         ["bty2C", "bty4"],
         {"beamSpring":5000,"beamDamp":100},
         {"beamDeform":1000,"beamStrength":1000},
-        {"breakGroup": "bug_battery_cable"}
+        {"breakGroup": "bug_battery_cable"},
         {"breakGroupType":1},
         ["bty3C", "bty6"],
         ["bty3C", "bty2"],
@@ -355,6 +288,695 @@
     ]
 },
 
+// -- Oil Pan/Cooler
+"bug_oilpan": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stock Oil Pan",
+        "value":90,
+    },
+    "slotType" : "bug_oilpan",
+    "mainEngine": {
+        //engine durability
+        "oilpanMaximumSafeG": 1.2,
+
+        //node beam interface
+        "oilpanNodes:":["oilpan","oilref"],
+
+        //engine deform groups
+        "deformGroups_oilPan":["oilpan_damage"]
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+
+         //oil pan node
+         {"group":""},
+         {"nodeWeight":2},
+         ["oilpan", 0.0, 1.525, 0.22],
+         ["oilref", 0.0, 1.525, 0.70, {"nodeWeight":1, "collision":false}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //oilpan node
+          {"beamSpring":1501000,"beamDamp":250},
+          {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"oilpan_damage","deformationTriggerRatio":0.005},
+          ["oilpan", "e1r"],
+          ["oilpan", "e1l"],
+          ["oilpan", "e2r"],
+          ["oilpan", "e2l"],
+          ["oilpan", "e3r"],
+          ["oilpan", "e3l"],
+          ["oilpan", "e4r"],
+          ["oilpan", "e4l"],
+          {"deformGroup":""},
+
+          //oil ref
+          {"beamSpring":1001000,"beamDamp":150},
+          {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+          ["oilref", "e1r"],
+          ["oilref", "e1l"],
+          ["oilref", "e2r"],
+          ["oilref", "e2l"],
+          ["oilref", "e3r"],
+          ["oilref", "e3l"],
+          ["oilref", "e4r"],
+          ["oilref", "e4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"bug_oilpan_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Race Oil Pan",
+        "value":250,
+    },
+    "slotType" : "bug_oilpan",
+    "mainEngine": {
+        //engine durability
+        "oilpanMaximumSafeG": 1.5,
+
+        //node beam interface
+        "oilpanNodes:":["oilpan","oilref"],
+
+        //engine deform groups
+        "deformGroups_oilPan":["oilpan_damage"]
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+
+         //oil pan node
+         {"group":""},
+         {"nodeWeight":2},
+         ["oilpan", 0.0, 1.525, 0.22],
+         ["oilref", 0.0, 1.525, 0.70, {"nodeWeight":1, "collision":false}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //oilpan node
+          {"beamSpring":1501000,"beamDamp":250},
+          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"oilpan_damage","deformationTriggerRatio":0.005},
+          ["oilpan", "e1r"],
+          ["oilpan", "e1l"],
+          ["oilpan", "e2r"],
+          ["oilpan", "e2l"],
+          ["oilpan", "e3r"],
+          ["oilpan", "e3l"],
+          ["oilpan", "e4r"],
+          ["oilpan", "e4l"],
+          {"deformGroup":""},
+
+          //oil ref
+          {"beamSpring":1001000,"beamDamp":150},
+          {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+          ["oilref", "e1r"],
+          ["oilref", "e1l"],
+          ["oilref", "e2r"],
+          ["oilref", "e2l"],
+          ["oilref", "e3r"],
+          ["oilref", "e3l"],
+          ["oilref", "e4r"],
+          ["oilref", "e4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"bug_oilcooler_a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Mount Oil Cooler",
+        "value":450,
+    },
+
+    "slotType" : "bug_oilcooler",
+
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+     //  ["bug_oilcooler_a", ["oilcooler_F"]],
+     //  ["bug_oilcooler_lines_a", ["body","floor"]],
+    ],
+    "mainEngine":{
+        "oilRadiatorArea":0.16,
+        "oilRadiatorEffectiveness":2400,
+        "oilThermostatTemperature":100,
+        "$+oilVolume":2,
+
+        //damage deformGroups
+        "deformGroups_oilRadiator":["oilcooler_damage"]
+    },
+    // "nodes": [
+    //     ["id", "posX", "posY", "posZ"],
+    //     {"frictionCoef":0.5},
+    //     {"nodeMaterial":"|NM_METAL"},
+    //     //--Oil Cooler-
+    //     {"selfCollision":true},
+    //     {"collision":true},
+    //     {"nodeWeight":0.5},
+    //     {"group":"oilcooler_F"},
+    //     ["oc1l",  0.26, -1.635, 0.37],
+    //     ["oc1",      0, -1.635, 0.37],
+    //     ["oc1r", -0.26, -1.635, 0.37],
+    //     ["oc2l",  0.26, -1.62, 0.27],
+    //     ["oc2",      0, -1.62, 0.27],
+    //     ["oc2r", -0.26, -1.62, 0.27],
+    //     {"selfCollision":false},
+    //     {"collision":false},
+    //     {"group":""},
+    //     {"nodeWeight":0.5},
+    //     ["oc3",      0, -1.55, 0.34],
+    //     {"group":""},
+    // ],
+    // "beams": [
+    //     ["id1:", "id2:"],
+    //     {"deformLimitExpansion":1.2},
+    //     {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    //     //--Oil Cooler-
+    //     {"beamSpring":801000,"beamDamp":40},
+    //     {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+    //     {"deformGroup":"oilcooler_damage","deformationTriggerRatio":0.05},
+    //     ["oc1", "oc2"],
+    //     ["oc1r", "oc2r"],
+    //     ["oc1l", "oc2l"],
+    //     ["oc1", "oc1r"],
+    //     ["oc2", "oc2r"],
+    //     ["oc1", "oc1l"],
+    //     ["oc2", "oc2l"],
+    //     ["oc1", "oc2r"],
+    //     ["oc2", "oc1r"],
+    //     ["oc1", "oc2l"],
+    //     ["oc2", "oc1l"],
+
+    //     ["oc1", "oc3"],
+    //     ["oc2", "oc3"],
+    //     ["oc1r", "oc3"],
+    //     ["oc2r", "oc3"],
+    //     ["oc1l", "oc3"],
+    //     ["oc2l", "oc3"],
+    //     {"deformGroup":""},
+
+    //     {"beamDeform":1000},
+    //     ["oc1r", "oc1l"],
+    //     ["oc2r", "oc2l"],
+
+    //     //attach
+    //     {"beamSpring":601000,"beamDamp":40},
+    //     {"beamDeform":2500,"beamStrength":12000},
+    //     {"breakGroup":"oilcooler_F"},
+    //     ["oc2", "c1"],
+    //     ["oc1", "c3"],
+    //     ["oc2", "c3"],
+    //     ["oc1", "c1"],
+
+    //     ["oc2r", "c1r"],
+    //     ["oc1r", "c3r"],
+    //     ["oc2r", "c3r"],
+    //     ["oc1r", "c1r"],
+
+    //     ["oc2l", "c1l"],
+    //     ["oc1l", "c3l"],
+    //     ["oc2l", "c3l"],
+    //     ["oc1l", "c1l"],
+
+    //     ["oc1r", "c3"],
+    //     ["oc2r", "c1"],
+    //     ["oc1l", "c3"],
+    //     ["oc2l", "c1"],
+    //     {"optional":true},
+    //     {"optional":false},
+    //     {"breakGroup":""},
+    //     {"deformLimitExpansion":1.2},
+    //     {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    // ],
+    // "triangles": [
+    //     ["id1:","id2:","id3:"],
+    //     {"dragCoef":5},
+    //     ["oc1r", "oc2r", "oc2"],
+    //     ["oc2", "oc1", "oc1r"],
+    //     ["oc1l", "oc1", "oc2"],
+    //     ["oc2", "oc2l", "oc1l"],
+    //     {"triangleType":"NORMALTYPE"},
+    // ],
+},
+"bug_oilcooler_b": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Mount Oil Cooler",
+        "value":510,
+    },
+
+    "slotType" : "bug_oilcooler",
+
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+   //    ["bug_oilcooler_b", ["oilcooler_R"]],
+   //    ["bug_oilcooler_lines_b", ["oilcooler_R","body"]],
+    ],
+    "mainEngine":{
+        "oilRadiatorArea":0.16,
+        "oilRadiatorEffectiveness":2000,
+        "oilThermostatTemperature":100,
+        "$+oilVolume":1,
+
+        //damage deformGroups
+        "deformGroups_oilRadiator":["oilcooler_damage"]
+    },
+//     "nodes": [
+//         ["id", "posX", "posY", "posZ"],
+//         {"frictionCoef":0.5},
+//         {"nodeMaterial":"|NM_METAL"},
+//         //--Oil Cooler-
+//         {"selfCollision":true},
+//         {"collision":true},
+//         {"nodeWeight":0.5},
+//         {"group":"oilcooler_R"},
+//         ["oc1l",  0.25, 1.465, 0.85],
+//         ["oc1",      0, 1.465, 0.85],
+//         ["oc1r", -0.25, 1.465, 0.85],
+//         ["oc2l",  0.25, 1.56, 0.89],
+//         ["oc2",      0, 1.56, 0.89],
+//         ["oc2r", -0.25, 1.56, 0.89],
+//         {"selfCollision":false},
+//         {"collision":false},
+//         //{"group":""},
+//         {"nodeWeight":0.5},
+//         ["oc3",      0, 1.45, 0.94],
+//         {"group":""},
+//     ],
+//     "beams": [
+//         ["id1:", "id2:"],
+//         {"deformLimitExpansion":1.2},
+//         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+//         //--Oil Cooler-
+//         {"beamSpring":801000,"beamDamp":40},
+//         {"beamDeform":3500,"beamStrength":"FLT_MAX"},
+//         {"deformGroup":"oilcooler_damage","deformationTriggerRatio":0.05},
+//         ["oc1", "oc2"],
+//         ["oc1r", "oc2r"],
+//         ["oc1l", "oc2l"],
+//         ["oc1", "oc1r"],
+//         ["oc2", "oc2r"],
+//         ["oc1", "oc1l"],
+//         ["oc2", "oc2l"],
+//         ["oc1", "oc2r"],
+//         ["oc2", "oc1r"],
+//         ["oc1", "oc2l"],
+//         ["oc2", "oc1l"],
+
+//         ["oc1", "oc3"],
+//         ["oc2", "oc3"],
+//         ["oc1r", "oc3"],
+//         ["oc2r", "oc3"],
+//         ["oc1l", "oc3"],
+//         ["oc2l", "oc3"],
+//         {"deformGroup":""},
+
+//         {"beamDeform":1000},
+//         ["oc1r", "oc1l"],
+//         ["oc2r", "oc2l"],
+
+//         //attach
+//         {"beamSpring":301000,"beamDamp":40},
+//         {"beamDeform":1000,"beamStrength":20000},
+//         {"breakGroup":"oilcooler_F"},
+//         {"optional":true},
+//         ["oc2", "m5r"],
+//         ["oc2", "m5l"],
+//         ["oc2", "m6r"],
+//         ["oc2", "m6l"],
+
+//         {"beamDeform":5000},
+//         {"beamSpring":801000,"beamDamp":40},
+//         ["oc2l", "m5l"],
+//         ["oc1l", "m6l"],
+//         ["oc1l", "m5l"],
+//         ["oc2l", "m6l"],
+//         ["oc2l", "m5r"],
+
+//         ["oc2r", "m5r"],
+//         ["oc1r", "m6r"],
+//         ["oc1r", "m5r"],
+//         ["oc2r", "m6r"],
+//         ["oc2r", "m5l"],
+
+//         {"beamDeform":1000},
+//         {"beamSpring":11000,"beamDamp":200},
+//         ["oc1r", "k4r"],
+//         ["oc2r", "k2r"],
+//         {"optional":false},
+//         {"breakGroup":""},
+//         {"deformLimitExpansion":1.2},
+//         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+//     ],
+//     "triangles": [
+//         ["id1:","id2:","id3:"],
+//         {"dragCoef":5},
+//         ["oc1r", "oc2r", "oc2"],
+//         ["oc2", "oc1", "oc1r"],
+//         ["oc1l", "oc1", "oc2"],
+//         ["oc2", "oc2l", "oc1l"],
+//         {"triangleType":"NORMALTYPE"},
+//     ],
+},
+
+// -- ECU
+"bug_engine_ecu_sport": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rev Limiter",
+        "value":650,
+    },
+    "slotType" : "bug_engine_ecu",
+    "mainEngine":{
+        "hasRevLimiter":true,
+        "revLimiterType":"rpmDrop",
+        "revLimiterRPM":5000,
+        "revLimiterRPMDrop":150,
+    },
+},
+"bug_engine_ecu_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Adjustable Rev Limiter",
+        "value":3450,
+    },
+
+    "slotType" : "bug_engine_ecu",
+
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$revLimiterRPM", "range", "rpm", "Engine", 5000, 3000, 7000, "RPM Limit", "RPM where the rev limiter prevents further revving", {"stepDis":50}],
+        ["$revLimiterCutTime", "range", "s", "Engine", 0.12, 0.01, 0.5, "RPM Limit Cut Time", "How fast the rev limiter cycles", {"stepDis":0.01}],
+    ],
+    "controller": [
+        ["fileName"],
+        ["twoStepLaunch", {"rpmLimit":4000}],
+    ],
+    "mainEngine":{
+        "hasRevLimiter":true,
+        "revLimiterType":"timeBased",
+        "revLimiterRPM":"$revLimiterRPM",
+        "revLimiterCutTime":"$revLimiterCutTime",
+        "revLimiterMaxRPMDrop":250,
+    },
+    "vehicleController": {
+        "highShiftUpRPM":"$=$revLimiterRPM - 200",
+    },
+},
+
+// -- Internals
+"bug_engine_internals": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stock Long Block",
+        "value":90,
+    },
+
+    "slotType" : "bug_engine_internals",
+
+    "mainEngine":{
+    },
+},
+"bug_engine_internals_heavy": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Heavy Duty Long Block",
+        "value":1700,
+    },
+
+    "slotType" : "bug_engine_internals",
+
+    "mainEngine":{
+        //max rpm physically capable of
+        "$+maxRPM":200,
+        "$*inertia":1.1,
+        "$*friction":1.12,
+        "$*dynamicFriction":1.12,
+        "$*engineBrakeTorque":1.2,
+        "$+engineBlockAirCoolingEfficiency":6,
+        //engine durability
+        "engineBlockTemperatureDamageThreshold":210,
+        "cylinderWallTemperatureDamageThreshold":320,
+        "headGasketDamageThreshold":1700000,
+        "pistonRingDamageThreshold":1700000,
+        "connectingRodDamageThreshold":2200000,
+        "$*maxTorqueRating": 1.5,
+        "$*maxOverTorqueDamage": 2.0,
+    },
+},
+"bug_engine_internals_ultra": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Ultra Heavy Duty Long Block",
+        "value":4100,
+    },
+
+    "slotType" : "bug_engine_internals",
+
+    "mainEngine":{
+        //max rpm physically capable of
+        "$+maxRPM":300,
+        "$*inertia":1.25,
+        "$*friction":1.25,
+        "$*dynamicFriction":1.25,
+        "$*engineBrakeTorque":1.24,
+        "$+engineBlockAirCoolingEfficiency":10,
+        //engine durability
+        "engineBlockTemperatureDamageThreshold":230,
+        "cylinderWallTemperatureDamageThreshold":340,
+        "headGasketDamageThreshold":1700000,
+        "pistonRingDamageThreshold":1700000,
+        "connectingRodDamageThreshold":2200000,
+        "$*maxTorqueRating": 1.9,
+        "$*maxOverTorqueDamage": 2.5,
+    },
+},
+"bug_engine_internals_stage1": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 1 Performance Long Block",
+        "value":2400,
+    },
+
+    "slotType" : "bug_engine_internals",
+
+    "mainEngine":{
+        "torqueModMult":[
+            ["rpm", "torque"],
+            [0,    1],
+            [1000, 0.95],
+            [2000, 0.93],
+            [3000, 1.05],
+            [4000, 1.23],
+            [5000, 1.31],
+            [6000, 1.33],
+            [7000, 1.33],
+            [8000, 1.33],
+        ],
+
+        //max rpm physically capable of
+        "$+maxRPM":800,
+        "$+idleRPM":100,
+        "$+idleRPMRoughness":100,
+        "$*friction":0.95,
+        "$*dynamicFriction":0.95,
+        "$*inertia":0.95,
+        "$*engineBrakeTorque":1.33,
+        "$+engineBlockAirCoolingEfficiency":5,
+        //engine durability
+        "engineBlockTemperatureDamageThreshold":210,
+        "cylinderWallTemperatureDamageThreshold":280,
+        "$*maxTorqueRating": 1.1,
+        "$*maxOverTorqueDamage": 1.25,
+        //exhaust
+        "$*instantAfterFireCoef": 1.15,
+        "$*sustainedAfterFireCoef": 1.15,
+    },
+},
+"bug_engine_internals_stage2": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 2 Performance Long Block",
+        "value":4600,
+    },
+
+    "slotType" : "bug_engine_internals",
+
+    "mainEngine":{
+        "torqueModMult":[
+            ["rpm", "torque"],
+            [0,    1],
+            [1000, 0.93],
+            [2000, 0.88],
+            [3000, 1.08],
+            [4000, 1.46],
+            [5000, 1.75],
+            [6000, 1.99],
+            [7000, 2.15],
+            [8000, 2.15],
+        ],
+
+        //max rpm physically capable of
+        "$+maxRPM":1000,
+        "$+idleRPM":150,
+        "$+idleRPMRoughness":150,
+        "$*friction":0.95,
+        "$*dynamicFriction":0.95,
+        "$*inertia":0.9,
+        "$*engineBrakeTorque":1.4,
+        "$+engineBlockAirCoolingEfficiency":8,
+        //engine durability
+        "engineBlockTemperatureDamageThreshold":220,
+        "cylinderWallTemperatureDamageThreshold":300,
+        "$*maxTorqueRating": 1.25,
+        "$*maxOverTorqueDamage": 1.25,
+        //exhaust
+        "$*instantAfterFireCoef": 1.3,
+        "$*sustainedAfterFireCoef": 1.3,
+    },
+},
+"bug_engine_internals_stage3": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stage 3 Performance Long Block",
+        "value":8200,
+    },
+
+    "slotType" : "bug_engine_internals",
+
+    "mainEngine":{
+        "torqueModMult":[
+            ["rpm", "torque"],
+            [0,    1],
+            [1000, 0.96],
+            [2000, 0.94],
+            [3000, 1.25],
+            [4000, 1.68],
+            [5000, 2.03],
+            [6000, 2.58],
+            [7000, 2.47],
+            [8000, 2.14],
+        ],
+
+        //max rpm physically capable of
+        "$+maxRPM":1200,
+        "$+idleRPM":150,
+        "$+idleRPMRoughness":160,
+        "$*friction":0.98,
+        "$*dynamicFriction":0.97,
+        "$*inertia":0.8,
+        "$*engineBrakeTorque":1.5,
+        "$+engineBlockAirCoolingEfficiency":9,
+        //engine durability
+        "engineBlockTemperatureDamageThreshold":240,
+        "cylinderWallTemperatureDamageThreshold":340,
+        "$*maxTorqueRating": 1.3,
+        "$*maxOverTorqueDamage": 1.3,
+        //exhaust
+        "$*instantAfterFireCoef": 1.35,
+        "$*sustainedAfterFireCoef": 1.35,
+    },
+},
+
+// -- Intake
+"bug_intake": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Single Carburetor",
+        "value":160,
+    },
+    "slotType": "bug_intake",   
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        
+        // Single carburetor
+        ["engine_air_filter",        ["bug_engine"]],
+        ["engine_cables",            ["bug_engine"]],
+        ["engine_carburetor",        ["bug_engine"]],
+        ["engine_carburetor_spring", ["bug_engine"]],
+        ["engine_fuel_line",         ["bug_engine"]],
+        ["engine_ignition_coil",     ["bug_engine"]],
+        ["engine_intake_manifold",   ["bug_engine"]],
+        ["engine_warm_air_tube",     ["bug_engine"]],
+        ["engine_oil_tube",          ["bug_engine"]],
+    ]
+},
+"bug_intake_dual": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Dual Carburetors",
+        "value":600,
+    },
+    "slotType" : "bug_intake",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        // Dual carburetor
+        ["engine_dualcarburetor",               ["bug_engine"]],
+        ["engine_dualcarburetor_cables",        ["bug_engine"]],
+        ["engine_dualcarburetor_connector",     ["bug_engine"]],
+        ["engine_dualcarburetor_filter",        ["bug_engine"]],
+        ["engine_dualcarburetor_ignition_coil", ["bug_engine"]],
+        ["engine_dualcarburetor_intake",        ["bug_engine"]],
+        ["engine_dualcarburetor_linkage",       ["bug_engine"]],
+        ["engine_dualcarburetor_oil_tube",      ["bug_engine"]],
+    ],
+    "mainEngine":{
+        "torqueModIntake":[
+             ["rpm", "torque"],
+             [0, 0],
+             [1000, -4],
+             [1500, -8],
+             [2000, -7.5],
+             [2500, -6],
+             [3000, -2],
+             [3500, 4.5],
+             [4000, 12.5],
+             [4500, 26],
+             [5000, 40],
+             [5500, 46],
+             [6000, 42],
+             [7000, 29],
+             [8000, 20],
+        ],        
+        "blockFanMaxAirSpeed":32,
+        "$+idleRPM":100,
+        "$+idleRPMRoughness":100,
+        "$+particulates":0.01,
+        "$*instantAfterFireCoef": 1.15,
+        "$*sustainedAfterFireCoef": 1.15,
+    },
+    "soundConfig": {
+        "$+intakeMuffling": -0.2,
+        "$+maxLoadMix": 0.1,
+        "$+eqLowGain": 4,
+        "$+eqHighGain": 8,
+    },
+    "soundConfigExhaust": {
+        "$+mainGain": 0.2,
+        "$+maxLoadMix": 0.1,
+        "$+minLoadMix": 0.0,
+        "$+offLoadGain": 0.00,
+    },
+    "vehicleController": {
+        "revMatchThrottle":0.75,
+        "clutchLaunchStartRPM":1900,
+        "clutchLaunchTargetRPM":2600,
+    }
+},
+
+// -- Fylwheel
 "bug_flywheel": {
     "information":{
         "authors":"BeamNG",
@@ -395,7 +1017,5 @@
         "clutchMass":3.9,
     },
 },
-
-
 
 }

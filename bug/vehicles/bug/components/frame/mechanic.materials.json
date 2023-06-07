@@ -24,9 +24,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "front_tanks": {
-    "name": "front_tanks",
-    "mapTo": "front_tanks",
+  "bug_front_tanks": {
+    "name": "bug_front_tanks",
+    "mapTo": "bug_front_tanks",
     "class": "Material",
     "persistentId": "f834d703-1a75-4f51-b51f-7c7a3787bcaa",
     "Stages": [
@@ -43,9 +43,9 @@
     "version": 1.5
   },
 
-  "engine_block": {
-    "name": "engine_block",
-    "mapTo": "engine_block",
+  "bug_engine_block": {
+    "name": "bug_engine_block",
+    "mapTo": "bug_engine_block",
     "class": "Material",
     "persistentId": "827682a8-ef16-40ae-bab3-1997ba9fd3eb",
     "Stages": [
@@ -77,9 +77,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "engine_parts": {
-    "name": "engine_parts",
-    "mapTo": "engine_parts",
+  "bug_engine_parts": {
+    "name": "bug_engine_parts",
+    "mapTo": "bug_engine_parts",
     "class": "Material",
     "persistentId": "e6b34d67-3643-46bc-8f52-79a711f78181",
     "Stages": [
@@ -114,9 +114,9 @@
     "invertBackFaceNormals": true,
     "version": 1.5
   },
-  "engine_housing": {
-    "name": "engine_housing",
-    "mapTo": "engine_housing",
+  "bug_engine_housing": {
+    "name": "bug_engine_housing",
+    "mapTo": "bug_engine_housing",
     "class": "Material",
     "persistentId": "c9afc2cd-81db-4b89-a885-2d704f157aa6",
     "Stages": [
@@ -152,10 +152,36 @@
     "invertBackFaceNormals": true,
     "version": 1.5
   },
+  "bug_engine_dualcarburetor": {
+    "name": "bug_engine_dualcarburetor",
+    "mapTo": "bug_engine_dualcarburetor",
+    "class": "Material",
+    "persistentId": "d4549e75-9c81-4977-9b16-e5fae02a068c",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.999989986,
+          0.999989986,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/frame/textures/dualcarburetor_d.color.png",
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/bug/components/frame/textures/dualcarburetor_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/frame/textures/dualcarburetor_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "version": 1.5
+  },
 
-  "transaxle": {
-    "name": "transaxle",
-    "mapTo": "transaxle",
+  "bug_transaxle": {
+    "name": "bug_transaxle",
+    "mapTo": "bug_transaxle",
     "class": "Material",
     "persistentId": "c8b01bbe-33f5-4ae3-802d-417d3bf52e91",
     "Stages": [
@@ -181,9 +207,9 @@
     "invertBackFaceNormals": true,
     "version": 1.5
   },
-  "exhaust": {
-    "name": "exhaust",
-    "mapTo": "exhaust",
+  "bug_exhaust": {
+    "name": "bug_exhaust",
+    "mapTo": "bug_exhaust",
     "class": "Material",
     "persistentId": "bbba3cc0-f25d-4537-b4ed-173fffe38a98",
     "Stages": [
@@ -210,9 +236,9 @@
     "version": 1.5
   },
 
-  "fueltank": {
-    "name": "fueltank",
-    "mapTo": "fueltank",
+  "bug_fueltank": {
+    "name": "bug_fueltank",
+    "mapTo": "bug_fueltank",
     "class": "Material",
     "persistentId": "3abc1ea7-783f-4430-ac14-dc269a8eae9f",
     "Stages": [

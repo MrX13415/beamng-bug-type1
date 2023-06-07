@@ -55,11 +55,13 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
+        ["hood_dashboard_cover",     ["bug_body", "bug_dashboard"]],
+
         ["dashboard_gauges",      ["bug_frame", "bug_body","bug_dashboard"]],
         ["dashboard_fuelgauge",   ["bug_frame", "bug_body","bug_dashboard"]],
         ["dashboard_lights",      ["bug_frame", "bug_body","bug_dashboard"]],
-        //["dashboard_ashtray",     ["bug_body", "bug_dashboard"]],
-        ["dashboard_ashtray_box", ["bug_body", "bug_dashboard"]],
+        // old: ["dashboard_ashtray",     ["bug_body", "bug_dashboard"]],  // Converted to prop
+        ["dashboard_ashtray_box", ["bug_body", "bug_dashboard"]],        
 
         ["controls_dashboard_knobs", ["bug_body", "bug_dashboard"]],
         ["controls_hood_release",    ["bug_body", "bug_dashboard"]],
@@ -74,22 +76,22 @@
    ],
    "glowMap":{
         // dashboard gauges
-        "gauges":               {"simpleFunction":"lowhighbeam",  "off":"gauges",         "on":"gauges_light",         "on_intense":"gauges_light"},
-        "speedometer":          {"simpleFunction":"lowhighbeam",  "off":"speedometer",    "on":"speedometer_light",    "on_intense":"speedometer_light"},
-        "speedo_needle":        {"simpleFunction":"lowhighbeam",  "off":"speedo_needle",  "on":"speedo_needle_light",  "on_intense":"speedo_needle_light"},
-        "clock_back":           {"simpleFunction":"lowhighbeam",  "off":"clock_back",     "on":"clock_light",          "on_intense":"clock_light"},
-        "clock_needle":         {"simpleFunction":"lowhighbeam",  "off":"clock_needle",   "on":"clock_needle_light",   "on_intense":"clock_needle_light"},
+        "bug_gauges":               {"simpleFunction":"lowhighbeam",  "off":"bug_gauges",         "on":"bug_gauges_light",         "on_intense":"bug_gauges_light"},
+        "bug_speedometer":          {"simpleFunction":"lowhighbeam",  "off":"bug_speedometer",    "on":"bug_speedometer_light",    "on_intense":"bug_speedometer_light"},
+        "bug_speedo_needle":        {"simpleFunction":"lowhighbeam",  "off":"bug_speedo_needle",  "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light"},
+        "bug_clock_back":           {"simpleFunction":"lowhighbeam",  "off":"bug_clock_back",     "on":"bug_clock_light",          "on_intense":"bug_clock_light"},
+        "bug_clock_needle":         {"simpleFunction":"lowhighbeam",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light"},
 
         // dashboard lights
-        "dash_light_signal":    {"simpleFunction":["(signal_L or 0)", "(signal_R or 0)"],     "off":"dash_light_signal",    "on":"dash_light_signal_on",  "on_intense":"dash_light_signal_on"},
-        "dash_light_highbeam":  {"simpleFunction":"highbeam",     "off":"dash_light_highbeam",  "on":"dash_light_on",         "on_intense":"dash_light_on"},
+        "bug_dash_light_signal":    {"simpleFunction":["(signal_L or 0)", "(signal_R or 0)"],     "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on"},
+        "bug_dash_light_highbeam":  {"simpleFunction":"highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on"},
         // use the "oil" LED to indicate regeneration beeing active (blinking)
-        "dash_light_oil":       {"simpleFunction":{"oil":0.3, "regeneration":0.6},          "off":"dash_light_oil",       "on":"dash_light_on",         "on_intense":"dash_light_on"},
-        "dash_light_engine":    {"simpleFunction":"checkengine",  "off":"dash_light_engine",    "on":"dash_light_on",         "on_intense":"dash_light_on"},
+        "bug_dash_light_oil":       {"simpleFunction":{"oil":0.3, "regeneration":0.6},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on"},
+        "bug_dash_light_engine":    {"simpleFunction":"checkengine",                              "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on"},
 
         // misc
-        "radio_panel":          {"simpleFunction":"radio_state",  "off":"radio_panel",   "on":"radio_panel_on",      "on_intense":"radio_panel_on"},
-        "radio_needle":         {"simpleFunction":"radio_state",  "off":"radio_needle",  "on":"radio_needle_light",  "on_intense":"radio_needle_light"},
+        "bug_radio_panel":          {"simpleFunction":"radio_state",  "off":"bug_radio_panel",    "on":"bug_radio_panel_on",       "on_intense":"bug_radio_panel_on"},
+        "bug_radio_needle":         {"simpleFunction":"radio_state",  "off":"bug_radio_needle",   "on":"bug_radio_needle_light",   "on_intense":"bug_radio_needle_light"},
     },
    "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],

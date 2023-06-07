@@ -11,10 +11,10 @@
 
         ["body_window_F",      ["bug_body","bug_windshield"]],
 
-        {"deformGroup":"windshield_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"window_glass_dmg"},
+        {"deformGroup":"windshield_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"bug_window_glass_dmg"},
         ["body_window_F_glass",   ["bug_body","bug_windshield"]],
-        {"deformGroup":"windshield_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound9", "deformVolume":0.8, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_mirror"},
-        //["windshield_glass_dmg",  ["bug_body","bug_windshield"]],
+        {"deformGroup":"windshield_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound9", "deformVolume":0.8, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
+        ["body_window_F_glass_dmg",  ["bug_body","bug_windshield"]],
         {"deformGroup":""},
 
         // exterior : details : fixtures
@@ -100,8 +100,11 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         ["body_window_R", ["bug_body", "bug_roof"]],
-        {"deformGroup":"rearwindow_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound8", "deformVolume":0.5, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"window_glass_dmg"},
+        
+        {"deformGroup":"rearwindow_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"bug_window_glass_dmg"},
         ["body_window_R_glass", ["bug_body", "bug_roof"]],
+        {"deformGroup":"rearwindow_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound8", "deformVolume":0.5, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
+        ["body_window_R_glass_dmg", ["bug_body", "bug_roof"]],
         {"deformGroup":""},
     ],
     "nodes": [
@@ -192,11 +195,18 @@
         ["body_window_RL", ["bug_body", "bug_roof"]],
         ["body_window_RR", ["bug_body", "bug_roof"]],
 
-        {"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound4", "deformVolume":0.6, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"window_glass_dmg"},
+        {"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound4", "deformVolume":0.6, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"bug_window_glass_dmg"},
         {"deformGroup":"sidewindow_RL_break"},
         ["body_window_RL_glass", ["bug_body", "bug_roof"]],
         {"deformGroup":"sidewindow_RR_break"},
         ["body_window_RR_glass", ["bug_body", "bug_roof"]],
+        {"deformGroup":""},
+
+        {"deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
+        {"deformGroup":"sidewindow_RL_break"},
+        ["body_window_RL_glass_dmg", ["bug_body", "bug_roof"]],
+        {"deformGroup":"sidewindow_RR_break"},
+        ["body_window_RR_glass_dmg", ["bug_body", "bug_roof"]],
         {"deformGroup":""},
     ],
     "beams": [
@@ -254,22 +264,21 @@
     "slotType" : "bug_doorglass_FR",
     "controller": [
         ["fileName"],
-        ["window", {"name": "windowFR", "node": "d8r"}]
+        ["window", {"name": "windowFR", "state": "$windowFRInitState", "sfxNode": "d8r", "sfx": "vehicles/bug/components/sounds/common/window-roll.wav"}]
     ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$windowFRInitState", "range", "", "Body", 0, 0, 1.0, "Window Open Right", "Inital open position of the right window.", {"minDis":0, "maxDis":100}],
+	],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         ["door_window_R", ["bug_door_FR"]],
-        ["door_vent_R", ["bug_door_FR"]],
 
-        {"deformGroup":"ventglass_FR_break","deformMaterialBase":"glass_invisible","deformMaterialDamaged":"window_glass_dmg"},
-        {"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3","deformVolume":0.7},
-        ["door_vent_R_glass", ["bug_door_FR"]],
-        {"deformGroup":""},
-
-        {"deformGroup":"doorglass_FR_break","deformMaterialBase":"glass_invisible","deformMaterialDamaged":"window_glass_dmg"},
-        {"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound7","deformVolume":0.3},
+        {"deformGroup":"doorglass_FR_break","deformMaterialBase":"glass_invisible","deformMaterialDamaged":"bug_window_glass_dmg"},
         ["door_window_R_glass", ["doorwindow_FR"]],
+        {"deformGroup":"doorglass_FR_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound7","deformVolume":0.3, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
+        ["door_window_R_glass_dmg",  ["doorwindow_FR"]],
         {"deformGroup":""}
     ],
     "triggers":[
@@ -370,23 +379,21 @@
     "slotType" : "bug_doorglass_FL",
     "controller": [
         ["fileName"],
-        ["window", {"name": "windowFL", "node": "d8l"}]
+        ["window", {"name": "windowFL", "state": "$windowFLInitState", "sfxNode": "d8l", "sfx": "vehicles/bug/components/sounds/common/window-roll.wav"}]
     ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$windowFLInitState", "range", "", "Body", 0, 0, 1.0, "Window Open Left", "Inital open position of the left window.", {"minDis":0, "maxDis":100}],
+	],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         ["door_window_L", ["bug_door_FL"]],
-        ["door_vent_L", ["bug_door_FL"]],
 
-        {"disableMeshBreaking":true},
-        {"deformGroup":"ventglass_FL_break","deformMaterialBase":"glass_invisible","deformMaterialDamaged":"window_glass_dmg"},
-        {"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3","deformVolume":0.7},
-        ["door_vent_L_glass", ["bug_door_FL"]],
-       // {"deformGroup":""},
-
-        {"deformGroup":"doorglass_FL_break","deformMaterialBase":"glass_invisible","deformMaterialDamaged":"window_glass_dmg"},
-        {"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound7","deformVolume":0.3},
+        {"deformGroup":"doorglass_FL_break","deformMaterialBase":"glass_invisible","deformMaterialDamaged":"bug_window_glass_dmg"},
         ["door_window_L_glass", ["doorwindow_FL"]],
+        {"deformGroup":"doorglass_FL_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound7","deformVolume":0.3, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
+        ["door_window_L_glass_dmg",  ["doorwindow_FL"]],
         {"deformGroup":""}
     ],
     "triggers":[
@@ -476,6 +483,260 @@
         ["dw1fl", "dw4fl", "dw2fl"],
         {"group":""},
    ]
-}
+},
+
+
+"bug_doorvent_FR": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Vent Window",
+        "value":100,
+    },
+    "slotType" : "bug_doorvent_FR",
+   "controller": [
+       ["fileName"],
+       ["window", {"name": "doorventFR", "state": "$doorventFRInitState", "speed": 0.03, "sfxNode": "d8r", "sfx": ""}]
+   ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$doorventFRInitState", "range", "", "Body", 0, 0, 1.0, "Vent Window Open Right", "Inital open position of the right vent window.", {"minDis":0, "maxDis":100}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["door_vent_R", ["doorventglass_FR"]],
+
+        {"deformGroup":"ventglass_FR_break","deformMaterialBase":"glass_invisible","deformMaterialDamaged":"bug_window_glass_dmg"},
+        ["door_vent_R_glass", ["doorventglass_FR"]],
+        {"deformGroup":"ventglass_FR_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3","deformVolume":0.7, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
+        ["door_vent_R_glass_dmg",  ["doorventglass_FR"]],
+        {"deformGroup":""},
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["doorvent_FR", "", "dh1r","d8r","d4r", "box", {"x":0.02, "y":0.02, "z":0.02}, {"x":0, "y":3, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.325, "y":-0.08, "z":0.07}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["doorvent_FR", "action0", "doorvent_FR_open"],   // default: left mouse btn
+        ["doorvent_FR", "action1", "doorvent_FR_close"],     // default: SHIFT + left mouse btn
+        ["doorvent_FR", "action2", "doorvent_FR_close"],     // default: middle mouse btn
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        // TODO: texts
+        ["doorvent_FR_open", "ui.inputActions.bug.doorVent_R_open.title", "ui.inputActions.bug.doorVent_R_open.description", {"onChange":"controller.getControllerSafe('doorventFR').open(VALUE)"}],
+        ["doorvent_FR_close", "ui.inputActions.bug.doorVent_R_close.title", "ui.inputActions.bug.doorVent_R_close.description", {"onChange":"controller.getControllerSafe('doorventFR').close(VALUE)"}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"group":"doorventglass_FR"},
+        {"selfCollision":false},
+        {"collision" :true},
+        {"nodeMaterial":"|NM_GLASS"},
+        {"frictionCoef":0.7},
+        {"nodeWeight":0.28},
+        ["dv1fr", -0.552998, -0.253692, 1.25446],
+        ["dv2fr", -0.585834, -0.265692, 1.01827],
+        ["dv3fr", -0.565577, -0.450692, 1.05000],
+        //-
+        ["dv4fr", -0.487890, -0.322178, 1.11795],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"disableMeshBreaking":true},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":201000,"beamDamp":100},
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        {"deformGroup":"ventglass_FR_break","deformationTriggerRatio":0.01},
+        // main
+        ["dv1fr","dv2fr"],
+        ["dv2fr","dv3fr"],
+        {"breakGroup":"ventglass_FR"},
+        ["dv1fr","dv3fr"],
+        {"breakGroup":""},
+        // rigdi
+        ["dv1fr","dv4fr"],
+        ["dv2fr","dv4fr"],
+        ["dv3fr","dv4fr"],
+        {"deformGroup":""},
+
+        // damp
+        {"beamSpring":200,"beamDamp":200,"beamDeform":2000,"beamStrength":3000},
+        {"breakGroupType": 1, "breakGroup":"ventglass_FR_hinge_b"},
+        ["dv3fr", "d14r"],
+
+        // hinge limiter
+        {"beamPrecompression":1.0, "beamType":"|SUPPORT", "beamLongBound":1},
+        {"beamSpring":2000,"beamDamp":100,"beamDeform":2000,"beamStrength":3000},
+        {"breakGroupType": 1, "breakGroup":"ventglass_FR_hinge_a"},
+        ["dv1fr", "d14r"],
+        {"breakGroup":"ventglass_FR_hinge_b"},
+        ["dv2fr", "d14r"],
+        {"breakGroupType": 0},
+
+        // hinges
+        {"beamType":"|NORMAL","beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":500800,"beamDamp":100},
+        {"beamDeform":1000,"beamStrength":2000},
+        {"breakGroup":"ventglass_FR_hinge_a"},
+        ["dv1fr", "dvh1r"],
+        ["dv3fr", "dvh1r"],
+        ["dv4fr", "dvh1r"],
+        {"breakGroup":"ventglass_FR_hinge_b"},
+        ["dv2fr", "dvh2r"],
+        ["dv3fr", "dvh2r"],
+        ["dv4fr", "dvh2r"],
+        {"breakGroup":""},
+    ],
+    "hydros": [
+        ["id1:","id2:"],
+
+        {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":2000,"beamDamp":50,"beamDeform":"FLT_MAX","beamStrength":3000},
+        {"breakGroupType": 1, "breakGroup":"ventglass_FR_hinge_b"},
+        ["dv2fr","d15r", {"inputSource":"doorventFR_state", "inLimit":1.0, "outLimit":1.72, "inRate":10, "outRate":10, "inputFactor":1.0}],
+        ["dv3fr","d15r", {"inputSource":"doorventFR_state", "inLimit":0.72, "outLimit":1.0, "inRate":10, "outRate":10, "inputFactor":-1.0}],
+        {"breakGroupType": 0, "breakGroup":""},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"group":"doorventglass_FR"},
+        {"groundModel":"metal"},
+        {"dragCoef":3},
+        ["dv1fr", "dv2fr", "dv3fr"],
+        {"group":""},
+   ]
+},
+"bug_doorvent_FL": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Vent Window",
+        "value":100,
+    },
+    "slotType" : "bug_doorvent_FL",
+    "controller": [
+        ["fileName"],
+        ["window", {"name": "doorventFL", "state": "$doorventFLInitState", "speed": 0.03, "sfxNode": "d8l", "sfx": ""}]
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$doorventFLInitState", "range", "", "Body", 0, 0, 1.0, "Vent Window Open Left", "Inital open position of the left vent window.", {"minDis":0, "maxDis":100}],
+	],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["door_vent_L", ["doorventglass_FL"]],
+
+        {"deformGroup":"ventglass_FL_break","deformMaterialBase":"glass_invisible","deformMaterialDamaged":"bug_window_glass_dmg"},
+        ["door_vent_L_glass", ["doorventglass_FL"]],
+        {"deformGroup":"ventglass_FL_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3","deformVolume":0.7, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
+        ["door_vent_L_glass_dmg",  ["doorventglass_FL"]],
+        {"deformGroup":""},
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["doorvent_FL", "", "dh1l","d8l","d4l", "box", {"x":0.02, "y":-0.02, "z":0.02}, {"x":0, "y":3, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.325, "y":-0.08, "z":-0.07}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["doorvent_FL", "action0", "doorvent_FL_open"],   // default: left mouse btn
+        ["doorvent_FL", "action1", "doorvent_FL_close"],     // default: SHIFT + left mouse btn
+        ["doorvent_FL", "action2", "doorvent_FL_close"],     // default: middle mouse btn
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        // TODO: texts
+        ["doorvent_FL_open", "ui.inputActions.bug.doorVent_L_open.title", "ui.inputActions.bug.doorVent_L_open.description", {"onChange":"controller.getControllerSafe('doorventFL').open(VALUE)"}],
+        ["doorvent_FL_close", "ui.inputActions.bug.doorVent_L_close.title", "ui.inputActions.bug.doorVent_L_close.description", {"onChange":"controller.getControllerSafe('doorventFL').close(VALUE)"}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"group":"doorventglass_FL"},
+        {"selfCollision":false},
+        {"collision" :true},
+        {"nodeMaterial":"|NM_GLASS"},
+        {"frictionCoef":0.7},
+        {"nodeWeight":0.28},
+        ["dv1fl", 0.552998, -0.253692, 1.25446],
+        ["dv2fl", 0.585834, -0.265692, 1.01827],
+        ["dv3fl", 0.565577, -0.450692, 1.05000],
+        //-
+        ["dv4fl", 0.487890, -0.322178, 1.11795],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"disableMeshBreaking":true},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":201000,"beamDamp":100},
+        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        {"deformGroup":"ventglass_FL_break","deformationTriggerRatio":0.01},
+        // main
+        ["dv1fl","dv2fl"],
+        ["dv2fl","dv3fl"],
+        {"breakGroup":"ventglass_FL"},
+        ["dv1fl","dv3fl"],
+        {"breakGroup":""},
+        // rigdi
+        ["dv1fl","dv4fl"],
+        ["dv2fl","dv4fl"],
+        ["dv3fl","dv4fl"],
+        {"deformGroup":""},
+
+        // damp
+        {"beamSpring":200,"beamDamp":200,"beamDeform":2000,"beamStrength":3000},
+        {"breakGroupType": 1, "breakGroup":"ventglass_FL_hinge_b"},
+        ["dv3fl", "d14l"],
+
+        // hinge limiter
+        {"beamPrecompression":1.0, "beamType":"|SUPPORT", "beamLongBound":1},
+        {"beamSpring":2000,"beamDamp":100,"beamDeform":2000,"beamStrength":3000},
+        {"breakGroupType": 1, "breakGroup":"ventglass_FL_hinge_a"},
+        ["dv1fl", "d14l"],
+        {"breakGroup":"ventglass_FL_hinge_b"},
+        ["dv2fl", "d14l"],
+        {"breakGroupType": 0},
+
+        // hinges
+        {"beamType":"|NORMAL","beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":500800,"beamDamp":100},
+        {"beamDeform":1000,"beamStrength":2000},
+        {"breakGroup":"ventglass_FL_hinge_a"},
+        ["dv1fl", "dvh1l"],
+        ["dv3fl", "dvh1l"],
+        ["dv4fl", "dvh1l"],
+        {"breakGroup":"ventglass_FL_hinge_b"},
+        ["dv2fl", "dvh2l"],
+        ["dv3fl", "dvh2l"],
+        ["dv4fl", "dvh2l"],
+        {"breakGroup":""},
+    ],
+    "hydros": [
+        ["id1:","id2:"],
+
+        {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":2000,"beamDamp":50,"beamDeform":"FLT_MAX","beamStrength":3000},
+        {"breakGroupType": 1, "breakGroup":"ventglass_FL_hinge_b"},
+        ["dv2fl","d15l", {"inputSource":"doorventFL_state", "inLimit":1.0, "outLimit":1.72, "inRate":10, "outRate":10, "inputFactor":1.0}],
+        ["dv3fl","d15l", {"inputSource":"doorventFL_state", "inLimit":0.72, "outLimit":1.0, "inRate":10, "outRate":10, "inputFactor":-1.0}],
+        {"breakGroupType": 0, "breakGroup":""},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"group":"doorventglass_FL"},
+        {"groundModel":"metal"},
+        {"dragCoef":3},
+        ["dv2fl", "dv1fl", "dv3fl"],
+        {"group":""},
+   ]
+},
 
 }

@@ -25,7 +25,7 @@ local state = 0
 
 local bar1BeamName = "ragtopState1"
 local bar2BeamName = "ragtopState2"
-local matVisible = "ragtop_fabric"
+local matVisible = "bug_ragtop_fabric"
 local matHidden = "invis"
 
 -- common

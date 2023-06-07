@@ -39,17 +39,18 @@
         {"nodeMaterial":"|NM_METAL"},
         {"frictionCoef":0.5},
         //rear hub
-        {"nodeWeight":3.0},
+        {"nodeWeight":3.5},
         {"selfCollision":true},
-        ["rh1r",-0.60, 1.15, 0.14, {"group":["lowerarm_R","hub_R"]}],
-        ["rh1l", 0.60, 1.15, 0.14, {"group":["lowerarm_R","hub_R"]}],
-        ["rh2r",-0.60, 1.18, 0.34, {"group":["lowerarm_R","hub_R"]}],
-        ["rh2l", 0.60, 1.18, 0.34, {"group":["lowerarm_R","hub_R"]}],
-        {"nodeWeight":3.0},
-        ["rh4r",-0.40, 1.106, 0.235, {"group":["shockbottom_R","hub_R"]}],
-        ["rh4l", 0.40, 1.106, 0.235, {"group":["shockbottom_R","hub_R"]}],
-        ["rh5r",-0.60, 1.26, 0.22, {"group":["hub_R","lowerarm_R"]}],
-        ["rh5l", 0.60, 1.26, 0.22, {"group":["hub_R","lowerarm_R"]}],
+        ["rh1r",-0.60, 1.17, 0.147021, {"group":["lowerarm_R","hub_R"]}],
+        ["rh1l", 0.60, 1.17, 0.147021, {"group":["lowerarm_R","hub_R"]}],
+        ["rh2r",-0.60, 1.17, 0.447021, {"group":["lowerarm_R","hub_R"]}],
+        ["rh2l", 0.60, 1.17, 0.447021, {"group":["lowerarm_R","hub_R"]}],
+        {"nodeWeight":4.0},
+        ["rh4r",-0.40, 1.106, 0.25, {"group":["shockbottom_R","hub_R"]}],
+        ["rh4l", 0.40, 1.106, 0.25, {"group":["shockbottom_R","hub_R"]}],
+        {"nodeWeight":3.5},
+        ["rh5r",-0.60, 1.30, 0.297021, {"group":["hub_R","lowerarm_R"]}],
+        ["rh5l", 0.60, 1.30, 0.297021, {"group":["hub_R","lowerarm_R"]}],
         {"selfCollision":false},
         {"group":""},
 
@@ -63,7 +64,7 @@
         //redefined body nodes
         {"group":"lowermounts_R"},
         {"selfCollision":false},
-        {"nodeWeight":4.5},
+        {"nodeWeight":5.0}, //4.5
         ["bx1r", -0.214143, 0.781238, 0.309202],
         ["bx1l",  0.214143, 0.781238, 0.309202],
         ["bx2r", -0.48, 0.78, 0.32],
@@ -80,9 +81,8 @@
         {"deformLimitExpansion":1.1},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"optional":true},
-        {"beamSpring":9501000,"beamDamp":80},
-        {"beamDeform":897000,"beamStrength":175000},
-     //   {"dampCutoffHz":100},
+        {"beamSpring":7001000,"beamDamp":80},
+        {"beamDeform":65000,"beamStrength":155000},
         //wheel to trailing arm
         {"breakGroup":"wheel_RR"},
         ["rh1r","rw1r", {"name":"axle_RR"}],
@@ -92,11 +92,13 @@
         ["rh2r","rw1rr", {"beamPrecompression":"$camber_R","beamPrecompressionTime":0.5}],
         ["rh5r","rw1rr"],
 
+        {"beamSpring":7001000,"beamDamp":80},
         ["rw1r","bx1r"],
         ["rw1rr","bx1r", {"beamPrecompression":"$toe_R","beamPrecompressionTime":0.5}],
         ["rw1r","bx2r"],
         ["rw1rr","bx2r", {"beamPrecompression":"$toe_R","beamPrecompressionTime":0.5}],
 
+        {"beamSpring":7001000,"beamDamp":80},
         {"breakGroup":"wheel_RL"},
         ["rh1l","rw1l", {"name":"axle_RL"}],
         ["rh2l","rw1l"],
@@ -105,23 +107,24 @@
         ["rh2l","rw1ll", {"beamPrecompression":"$camber_R","beamPrecompressionTime":0.5}],
         ["rh5l","rw1ll"],
 
-        {"beamSpring":5501000,"beamDamp":60},
+        {"beamSpring":7001000,"beamDamp":80},
         ["rw1l","bx1l"],
         ["rw1ll","bx1l", {"beamPrecompression":"$toe_R","beamPrecompressionTime":0.5}],
         ["rw1l","bx2l"],
         ["rw1ll","bx2l", {"beamPrecompression":"$toe_R","beamPrecompressionTime":0.5}],
-        {"breakGroup":""},
-
+        
         //to shock mount and nodecoupling
-        {"beamSpring":6501000,"beamDamp":141, "beamStrength":"FLT_MAX"},
-        ["rh4l","rh4r"],
-        {"beamSpring":2501000,"beamDamp":100, "beamStrength":175000},
+        {"beamSpring":2501000,"beamDamp":100},
         {"breakGroup":"wheel_RR"},
         ["rh4r","rw1r"],
         ["rh4r","rw1rr"],
+        //["rh3r","rw1r"],
+        //["rh3r","rw1rr"],
         {"breakGroup":"wheel_RL"},
         ["rh4l","rw1l"],
         ["rh4l","rw1ll"],
+        //["rh3l","rw1l"],
+        //["rh3l","rw1ll"],
         {"breakGroup":""},
         {"optional":false},
 
@@ -172,7 +175,7 @@
         //{"highlight":{"radius":0.002, "col":"#ff00ffff" }},
         
         //trailing arm
-        {"beamSpring":4001000,"beamDamp":141},
+        {"beamSpring":8001000,"beamDamp":100},
         {"beamDeform":500000,"beamStrength":"FLT_MAX"},
         ["rh1l","rh2l"],
         ["rh1l","rh5l"],
@@ -185,16 +188,22 @@
         ["bx2r","rh5r"],
 
         ["bx1l","rh1l"],
-        ["bx1l","rh2l"],
         ["bx1l","rh5l"],
         ["bx2l","rh1l"],
-        ["bx2l","rh2l"],
 
         ["bx1r","rh1r"],
-        ["bx1r","rh2r"],
         ["bx1r","rh5r"],
         ["bx2r","rh1r"],
-        ["bx2r","rh2r"],
+        
+        ["rh2l", "bx1r"],
+        ["rh2l", "bx1l"],
+        ["rh2l", "bx2r"],
+        ["rh2l", "bx2l"],
+
+        ["rh2r", "bx1r"],
+        ["rh2r", "bx1l"],
+        ["rh2r", "bx2r"],
+        ["rh2r", "bx2l"],
 
         //{"highlight":{"radius":0.002, "col":"#00ffffff" }},
 
@@ -209,11 +218,13 @@
         ["rh4r","rh5r"],
         ["rh4l","rh5l"],
 
-        ["bx1r","rh4r"],
-        ["bx2r","rh4r"],
+        ["rh4r", "bx1l"],
+        ["rh4r", "bx1r"],
+        ["rh4r", "bx2r"],
 
-        ["bx1l","rh4l"],
-        ["bx2l","rh4l"],
+        ["rh4l", "bx1l"],
+        ["rh4l", "bx1r"],
+        ["rh4l", "bx2l"],
 
         //REAR TORSION BAR TUBE
         {"beamSpring":4801000,"beamDamp":100},
@@ -231,9 +242,15 @@
         {"breakGroup": "suspension_R"},
         {"beamStrength":175000},
         ["bx1l", "f6tml"],
-        ["bx1l", "f6tmr"],
-        ["bx1r", "f6tml"],
+        ["bx1l", "f6ml"],
+        ["bx1l", "f5l"],
+        ["bx1l", "f5m"],
+        ["bx1l", "f5r"],
         ["bx1r", "f6tmr"],
+        ["bx1r", "f6mr"],
+        ["bx1r", "f5l"],
+        ["bx1r", "f5m"],
+        ["bx1r", "f5r"],
 
         ["bx2l", "f5l"],
         ["bx2l", "f6l"],
@@ -249,10 +266,12 @@
 
         //longitudinal damp help
         {"beamSpring":0,"beamDamp":500},
-        ["f6tml", "rh2l", {"dampCutoffHz":500}],
-        ["f6l", "rh1l", {"dampCutoffHz":500}],
-        ["f6tmr", "rh2r", {"dampCutoffHz":500}],
-        ["f6r", "rh1r", {"dampCutoffHz":500}],
+        ["bq6l", "rh2l", {"dampCutoffHz":500, "optional":true}],
+        ["bq6r", "rh2r", {"dampCutoffHz":500, "optional":true}],
+        ["f5l", "rh2l",  {"dampCutoffHz":500}],
+        ["f6l", "rh1l",  {"dampCutoffHz":500}],
+        ["f5r", "rh2r",  {"dampCutoffHz":500}],
+        ["f6r", "rh1r",  {"dampCutoffHz":500}],
         {"deformLimitExpansion":1.2},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"breakGroup": ""},

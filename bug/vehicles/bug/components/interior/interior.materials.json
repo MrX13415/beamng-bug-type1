@@ -1,7 +1,7 @@
 {
-  "dashboard_shelf": {
-    "name": "dashboard_shelf",
-    "mapTo": "dashboard_shelf",
+  "bug_dashboard_shelf": {
+    "name": "bug_dashboard_shelf",
+    "mapTo": "bug_dashboard_shelf",
     "class": "Material",
     "persistentId": "6abf0b25-2f55-4bf7-af39-66fb165986bb",
     "Stages": [
@@ -23,9 +23,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "dashboard_shelf_grid": {
-    "name": "dashboard_shelf_grid",
-    "mapTo": "dashboard_shelf_grid",
+  "bug_dashboard_shelf_grid": {
+    "name": "bug_dashboard_shelf_grid",
+    "mapTo": "bug_dashboard_shelf_grid",
     "class": "Material",
     "persistentId": "6abf0b25-2f55-4bf7-af39-66fb165986bb",
     "Stages": [
@@ -54,9 +54,9 @@
     "translucentRecvShadows": true,
     "version": 1.5
   },
-  "clock_back": {
-    "name": "clock_back",
-    "mapTo": "clock_back",
+  "bug_clock_back": {
+    "name": "bug_clock_back",
+    "mapTo": "bug_clock_back",
     "class": "Material",
     "persistentId": "28c2391e-ea3d-4922-b53a-e3f9c4bcf428",
     "Stages": [
@@ -79,9 +79,9 @@
     ],
     "version": 1.5
   },
-  "clock_light": {
-    "name": "clock_light",
-    "mapTo": "clock_light",
+  "bug_clock_light": {
+    "name": "bug_clock_light",
+    "mapTo": "bug_clock_light",
     "class": "Material",
     "persistentId": "cfcebf89-952e-422d-b8fe-12b3a3b07ef8",
     "Stages": [
@@ -109,9 +109,9 @@
     ],
     "version": 1.5
   },
-  "clock_needle": {
-    "name": "clock_needle",
-    "mapTo": "clock_needle",
+  "bug_clock_needle": {
+    "name": "bug_clock_needle",
+    "mapTo": "bug_clock_needle",
     "class": "Material",
     "persistentId": "9b76f6c0-e068-4744-8390-0063f375721e",
     "Stages": [
@@ -137,9 +137,9 @@
     ],
     "version": 1.5
   },
-  "clock_needle_light": {
-    "name": "clock_needle_light",
-    "mapTo": "clock_needle_light",
+  "bug_clock_needle_light": {
+    "name": "bug_clock_needle_light",
+    "mapTo": "bug_clock_needle_light",
     "class": "Material",
     "persistentId": "f476f01e-d6ee-4fa7-ac2e-dec2303c9432",
     "Stages": [
@@ -159,9 +159,9 @@
     ],
     "version": 1.5
   },
-  "dash_light_engine": {
-    "name": "dash_light_engine",
-    "mapTo": "dash_light_engine",
+  "bug_dash_light_engine": {
+    "name": "bug_dash_light_engine",
+    "mapTo": "bug_dash_light_engine",
     "class": "Material",
     "persistentId": "ea20079b-ae44-48f2-b95f-3db393692e60",
     "Stages": [
@@ -187,9 +187,9 @@
     ],
     "version": 1.5
   },
-  "dash_light_highbeam": {
-    "name": "dash_light_highbeam",
-    "mapTo": "dash_light_highbeam",
+  "bug_dash_light_highbeam": {
+    "name": "bug_dash_light_highbeam",
+    "mapTo": "bug_dash_light_highbeam",
     "class": "Material",
     "persistentId": "1ec261a2-e31e-4d8f-bc44-3216cb7469e0",
     "Stages": [
@@ -210,9 +210,9 @@
     ],
     "version": 1.5
   },
-  "dash_light_highbeam_on": {
-    "name": "dash_light_highbeam_on",
-    "mapTo": "dash_light_highbeam_on",
+  "bug_dash_light_highbeam_on": {
+    "name": "bug_dash_light_highbeam_on",
+    "mapTo": "bug_dash_light_highbeam_on",
     "class": "Material",
     "persistentId": "645eab8f-d115-4c10-9b65-3cf304c23a08",
     "Stages": [
@@ -240,9 +240,9 @@
     ],
     "version": 1.5
   },
-  "dash_light_oil": {
-    "name": "dash_light_oil",
-    "mapTo": "dash_light_oil",
+  "bug_dash_light_oil": {
+    "name": "bug_dash_light_oil",
+    "mapTo": "bug_dash_light_oil",
     "class": "Material",
     "persistentId": "3889c427-bf43-48e8-900f-09ab1288a485",
     "Stages": [
@@ -268,9 +268,9 @@
     ],
     "version": 1.5
   },
-  "dash_light_on": {
-    "name": "dash_light_on",
-    "mapTo": "dash_light_on",
+  "bug_dash_light_on": {
+    "name": "bug_dash_light_on",
+    "mapTo": "bug_dash_light_on",
     "class": "Material",
     "persistentId": "a0206218-c6d7-4416-9238-99c8aa88de9c",
     "Stages": [
@@ -294,9 +294,9 @@
     ],
     "version": 1.5
   },
-  "dash_light_signal": {
-    "name": "dash_light_signal",
-    "mapTo": "dash_light_signal",
+  "bug_dash_light_signal": {
+    "name": "bug_dash_light_signal",
+    "mapTo": "bug_dash_light_signal",
     "class": "Material",
     "persistentId": "e89c3be6-feac-4816-80c4-fb57e840dedd",
     "Stages": [
@@ -322,9 +322,9 @@
     ],
     "version": 1.5
   },
-  "dash_light_signal_on": {
-    "name": "dash_light_signal_on",
-    "mapTo": "dash_light_signal_on",
+  "bug_dash_light_signal_on": {
+    "name": "bug_dash_light_signal_on",
+    "mapTo": "bug_dash_light_signal_on",
     "class": "Material",
     "persistentId": "d25b7d02-8921-4509-ab7b-0c6baa5b4a13",
     "Stages": [
@@ -352,9 +352,9 @@
     ],
     "version": 1.5
   },
-  "dash_netting": {
-    "name": "dash_netting",
-    "mapTo": "dash_netting",
+  "bug_dash_netting": {
+    "name": "bug_dash_netting",
+    "mapTo": "bug_dash_netting",
     "class": "Material",
     "persistentId": "b660c466-e03c-4e94-ae08-146ad9b4d28e",
     "Stages": [
@@ -381,9 +381,9 @@
     "version": 1.5
   },
 
-  "sunvisor_acrylic": {
-    "name": "sunvisor_acrylic",
-    "mapTo": "sunvisor_acrylic",
+  "bug_sunvisor_acrylic": {
+    "name": "bug_sunvisor_acrylic",
+    "mapTo": "bug_sunvisor_acrylic",
     "class": "material",
     "persistentId": "b2a4ea99-a192-4a5a-97bb-89cbea45383e",
     "Stages": [
@@ -409,9 +409,9 @@
     "version": 1.5
   },
 
-  "floor_mat": {
-    "name": "floor_mat",
-    "mapTo": "floor_mat",
+  "bug_floor_mat": {
+    "name": "bug_floor_mat",
+    "mapTo": "bug_floor_mat",
     "class": "Material",
     "persistentId": "1ffc2663-df56-4f7a-bf28-35d24daa085f",
     "Stages": [
@@ -435,9 +435,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "gauges": {
-    "name": "gauges",
-    "mapTo": "gauges",
+  "bug_gauges": {
+    "name": "bug_gauges",
+    "mapTo": "bug_gauges",
     "class": "Material",
     "persistentId": "0c2b5e35-e814-484a-affe-b197268c4f7b",
     "Stages": [
@@ -462,9 +462,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "gauges_back": {
-    "name": "gauges_back",
-    "mapTo": "gauges_back",
+  "bug_gauges_back": {
+    "name": "bug_gauges_back",
+    "mapTo": "bug_gauges_back",
     "class": "Material",
     "persistentId": "fb5aa38c-2c45-4492-b943-d7678e799c7b",
     "Stages": [
@@ -486,11 +486,12 @@
       {},
       {}
     ],
+    "dynamicCubemap": true,
     "version": 1.5
   },
-  "gauges_light": {
-    "name": "gauges_light",
-    "mapTo": "gauges_light",
+  "bug_gauges_light": {
+    "name": "bug_gauges_light",
+    "mapTo": "bug_gauges_light",
     "class": "Material",
     "persistentId": "31c2cc73-af74-49b5-8d33-03cf60bf56a0",
     "Stages": [
@@ -520,9 +521,9 @@
     ],
     "version": 1.5
   },
-  "input_pedals": {
-    "name": "input_pedals",
-    "mapTo": "input_pedals",
+  "bug_input_pedals": {
+    "name": "bug_input_pedals",
+    "mapTo": "bug_input_pedals",
     "class": "Material",
     "persistentId": "55668789-7ea0-4cea-a89d-2d605776577b",
     "Stages": [
@@ -543,9 +544,9 @@
     "version": 1.5
   },
 
-  "interior_theme": {
-    "name": "interior_theme",
-    "mapTo": "interior_theme",
+  "bug_interior_theme": {
+    "name": "bug_interior_theme",
+    "mapTo": "bug_interior_theme",
     "class": "material",
     "persistentId": "d8fad87b-1b34-4ddd-98ca-a0f305e41e11",
     "Stages": [
@@ -557,9 +558,9 @@
     "castShadows": false,
     "translucent": true
   },
-  "interior_theme.skin_interior_theme.black": {
-    "name": "interior_theme.skin_interior_theme.black",
-    "mapTo": "interior_theme.skin_interior_theme.black",
+  "bug_interior_theme.skin_interior_theme.black": {
+    "name": "bug_interior_theme.skin_interior_theme.black",
+    "mapTo": "bug_interior_theme.skin_interior_theme.black",
     "class": "Material",
     "persistentId": "d4e53593-f4fb-4933-b2f0-4c951e4190d1",
     "Stages": [
@@ -579,9 +580,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior_theme.skin_interior_theme.wood": {
-    "name": "interior_theme.skin_interior_theme.wood",
-    "mapTo": "interior_theme.skin_interior_theme.wood",
+  "bug_interior_theme.skin_interior_theme.wood": {
+    "name": "bug_interior_theme.skin_interior_theme.wood",
+    "mapTo": "bug_interior_theme.skin_interior_theme.wood",
     "class": "Material",
     "persistentId": "35c8e1c5-a6b0-4198-b094-4def491c015a",
     "Stages": [
@@ -606,9 +607,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior_theme.skin_interior_theme.white": {
-    "name": "interior_theme.skin_interior_theme.white",
-    "mapTo": "interior_theme.skin_interior_theme.white",
+  "bug_interior_theme.skin_interior_theme.white": {
+    "name": "bug_interior_theme.skin_interior_theme.white",
+    "mapTo": "bug_interior_theme.skin_interior_theme.white",
     "class": "Material",
     "persistentId": "94cace6e-db8d-4aa9-9fa9-f33ca8addb6f",
     "Stages": [
@@ -628,9 +629,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior_theme.skin_interior_theme.paint1": {
-    "name": "interior_theme.skin_interior_theme.paint1",
-    "mapTo": "interior_theme.skin_interior_theme.paint1",
+  "bug_interior_theme.skin_interior_theme.paint1": {
+    "name": "bug_interior_theme.skin_interior_theme.paint1",
+    "mapTo": "bug_interior_theme.skin_interior_theme.paint1",
     "class": "Material",
     "persistentId": "93329163-3061-4425-95a8-92b74398ee0a",
     "Stages": [
@@ -662,9 +663,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "interior_theme.skin_interior_theme.paint2": {
-    "name": "interior_theme.skin_interior_theme.paint2",
-    "mapTo": "interior_theme.skin_interior_theme.paint2",
+  "bug_interior_theme.skin_interior_theme.paint2": {
+    "name": "bug_interior_theme.skin_interior_theme.paint2",
+    "mapTo": "bug_interior_theme.skin_interior_theme.paint2",
     "class": "Material",
     "persistentId": "65437258-45ca-41d8-b91c-ced7adde386b",
     "Stages": [
@@ -696,9 +697,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "interior_theme.skin_interior_theme.paint3": {
-    "name": "interior_theme.skin_interior_theme.paint3",
-    "mapTo": "interior_theme.skin_interior_theme.paint3",
+  "bug_interior_theme.skin_interior_theme.paint3": {
+    "name": "bug_interior_theme.skin_interior_theme.paint3",
+    "mapTo": "bug_interior_theme.skin_interior_theme.paint3",
     "class": "Material",
     "persistentId": "81ba5510-c62c-4fa3-b557-7205ab40d404",
     "Stages": [
@@ -731,9 +732,9 @@
     "version": 1.5
   },
 
-  "steering_theme": {
-    "name": "steering_theme",
-    "mapTo": "steering_theme",
+  "bug_steering_theme": {
+    "name": "bug_steering_theme",
+    "mapTo": "bug_steering_theme",
     "class": "material",
     "persistentId": "2151e042-ea59-401b-b1f4-772fed52130c",
     "Stages": [
@@ -745,9 +746,9 @@
     "castShadows": false,
     "translucent": true
   },
-  "steering_theme.skin_steer.black": {
-    "name": "steering_theme.skin_steer.black",
-    "mapTo": "steering_theme.skin_steer.black",
+  "bug_steering_theme.skin_steer.black": {
+    "name": "bug_steering_theme.skin_steer.black",
+    "mapTo": "bug_steering_theme.skin_steer.black",
     "class": "Material",
     "persistentId": "55678bd3-7301-4b29-a938-ccfab631fd0a",
     "Stages": [
@@ -767,9 +768,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "steering_theme.skin_steer.wood": {
-    "name": "steering_theme.skin_steer.wood",
-    "mapTo": "steering_theme.skin_steer.wood",
+  "bug_steering_theme.skin_steer.wood": {
+    "name": "bug_steering_theme.skin_steer.wood",
+    "mapTo": "bug_steering_theme.skin_steer.wood",
     "class": "Material",
     "persistentId": "bf033789-e902-4329-aaf7-842279158ff7",
     "Stages": [
@@ -794,9 +795,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "steering_theme.skin_steer.white": {
-    "name": "steering_theme.skin_steer.white",
-    "mapTo": "steering_theme.skin_steer.white",
+  "bug_steering_theme.skin_steer.white": {
+    "name": "bug_steering_theme.skin_steer.white",
+    "mapTo": "bug_steering_theme.skin_steer.white",
     "class": "Material",
     "persistentId": "55d16c69-ac3b-42cb-be08-0eb986321243",
     "Stages": [
@@ -816,9 +817,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "steering_theme.skin_steer.paint1": {
-    "name": "steering_theme.skin_steer.paint1",
-    "mapTo": "steering_theme.skin_steer.paint1",
+  "bug_steering_theme.skin_steer.paint1": {
+    "name": "bug_steering_theme.skin_steer.paint1",
+    "mapTo": "bug_steering_theme.skin_steer.paint1",
     "class": "Material",
     "persistentId": "6e1afe37-948e-4e2b-a985-2e55adbdc4d4",
     "Stages": [
@@ -850,9 +851,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "steering_theme.skin_steer.paint2": {
-    "name": "steering_theme.skin_steer.paint2",
-    "mapTo": "steering_theme.skin_steer.paint2",
+  "bug_steering_theme.skin_steer.paint2": {
+    "name": "bug_steering_theme.skin_steer.paint2",
+    "mapTo": "bug_steering_theme.skin_steer.paint2",
     "class": "Material",
     "persistentId": "15619899-5214-4ae7-97fc-e0a90d04da73",
     "Stages": [
@@ -884,9 +885,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "steering_theme.skin_steer.paint3": {
-    "name": "steering_theme.skin_steer.paint3",
-    "mapTo": "steering_theme.skin_steer.paint3",
+  "bug_steering_theme.skin_steer.paint3": {
+    "name": "bug_steering_theme.skin_steer.paint3",
+    "mapTo": "bug_steering_theme.skin_steer.paint3",
     "class": "Material",
     "persistentId": "fe5ec5e5-b342-4483-b958-c4e1905e4b48",
     "Stages": [
@@ -920,9 +921,9 @@
   },
 
 
-  "console_theme": {
-    "name": "console_theme",
-    "mapTo": "console_theme",
+  "bug_console_theme": {
+    "name": "bug_console_theme",
+    "mapTo": "bug_console_theme",
     "class": "material",
     "persistentId": "046a8d89-feec-4950-acb2-4fc77ba0a249",
     "Stages": [
@@ -934,9 +935,9 @@
     "castShadows": false,
     "translucent": true
   },
-  "console_theme.skin_console.silver": {
-    "name": "console_theme.skin_console.silver",
-    "mapTo": "console_theme.skin_console.silver",
+  "bug_console_theme.skin_console.silver": {
+    "name": "bug_console_theme.skin_console.silver",
+    "mapTo": "bug_console_theme.skin_console.silver",
     "class": "Material",
     "persistentId": "fb0add4a-50c1-4ce1-adf8-fd71219b7b18",
     "Stages": [
@@ -959,9 +960,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "console_theme.skin_console.black": {
-    "name": "console_theme.skin_console.black",
-    "mapTo": "console_theme.skin_console.black",
+  "bug_console_theme.skin_console.black": {
+    "name": "bug_console_theme.skin_console.black",
+    "mapTo": "bug_console_theme.skin_console.black",
     "class": "Material",
     "persistentId": "55678bd3-7301-4b29-a938-ccfab631fd0a",
     "Stages": [
@@ -982,9 +983,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "console_theme.skin_console.wood": {
-    "name": "console_theme.skin_console.wood",
-    "mapTo": "console_theme.skin_console.wood",
+  "bug_console_theme.skin_console.wood": {
+    "name": "bug_console_theme.skin_console.wood",
+    "mapTo": "bug_console_theme.skin_console.wood",
     "class": "Material",
     "persistentId": "bf033789-e902-4329-aaf7-842279158ff7",
     "Stages": [
@@ -1009,9 +1010,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "console_theme.skin_console.white": {
-    "name": "console_theme.skin_console.white",
-    "mapTo": "console_theme.skin_console.white",
+  "bug_console_theme.skin_console.white": {
+    "name": "bug_console_theme.skin_console.white",
+    "mapTo": "bug_console_theme.skin_console.white",
     "class": "Material",
     "persistentId": "55d16c69-ac3b-42cb-be08-0eb986321243",
     "Stages": [
@@ -1032,9 +1033,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "console_theme.skin_console.paint1": {
-    "name": "console_theme.skin_console.paint1",
-    "mapTo": "console_theme.skin_console.paint1",
+  "bug_console_theme.skin_console.paint1": {
+    "name": "bug_console_theme.skin_console.paint1",
+    "mapTo": "bug_console_theme.skin_console.paint1",
     "class": "Material",
     "persistentId": "6e1afe37-948e-4e2b-a985-2e55adbdc4d4",
     "Stages": [
@@ -1066,9 +1067,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "console_theme.skin_console.paint2": {
-    "name": "console_theme.skin_console.paint2",
-    "mapTo": "console_theme.skin_console.paint2",
+  "bug_console_theme.skin_console.paint2": {
+    "name": "bug_console_theme.skin_console.paint2",
+    "mapTo": "bug_console_theme.skin_console.paint2",
     "class": "Material",
     "persistentId": "43883da9-3704-4be4-afa3-a801582c2aa3",
     "Stages": [
@@ -1100,9 +1101,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "console_theme.skin_console.paint3": {
-    "name": "console_theme.skin_console.paint3",
-    "mapTo": "console_theme.skin_console.paint3",
+  "bug_console_theme.skin_console.paint3": {
+    "name": "bug_console_theme.skin_console.paint3",
+    "mapTo": "bug_console_theme.skin_console.paint3",
     "class": "Material",
     "persistentId": "6e1afe37-948e-4e2b-a985-2e55adbdc4d4",
     "Stages": [
@@ -1136,9 +1137,9 @@
   },
 
 
-  "controls": {
-    "name": "controls",
-    "mapTo": "controls",
+  "bug_controls": {
+    "name": "bug_controls",
+    "mapTo": "bug_controls",
     "class": "Material",
     "persistentId": "d431f239-8879-4c5c-94b3-3d3b2d200676",
     "Stages": [
@@ -1162,9 +1163,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior_glass": {
-    "name": "interior_glass",
-    "mapTo": "interior_glass",
+  "bug_interior_glass": {
+    "name": "bug_interior_glass",
+    "mapTo": "bug_interior_glass",
     "class": "Material",
     "persistentId": "91beb918-c52c-4a15-89b4-fa72e5f42c0c",
     "Stages": [
@@ -1193,9 +1194,9 @@
     "version": 1.5
   },
   
-  "interior_metal_gray": {
-    "name": "interior_metal_gray",
-    "mapTo": "interior_metal_gray",
+  "bug_interior_metal_gray": {
+    "name": "bug_interior_metal_gray",
+    "mapTo": "bug_interior_metal_gray",
     "class": "Material",
     "persistentId": "9ae7865e-cc50-41b6-bfb1-7d1e91a145f8",
     "Stages": [
@@ -1216,9 +1217,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior_black": {
-    "name": "interior_black",
-    "mapTo": "interior_black",
+  "bug_interior_black": {
+    "name": "bug_interior_black",
+    "mapTo": "bug_interior_black",
     "class": "Material",
     "persistentId": "d4e53593-f4fb-4933-b2f0-4c951e4190d1",
     "Stages": [
@@ -1239,9 +1240,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior_white": {
-    "name": "interior_white",
-    "mapTo": "interior_white",
+  "bug_interior_white": {
+    "name": "bug_interior_white",
+    "mapTo": "bug_interior_white",
     "class": "Material",
     "persistentId": "94cace6e-db8d-4aa9-9fa9-f33ca8addb6f",
     "Stages": [
@@ -1262,9 +1263,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "netting_black": {
-    "name": "netting_black",
-    "mapTo": "netting_black",
+  "bug_netting_black": {
+    "name": "bug_netting_black",
+    "mapTo": "bug_netting_black",
     "class": "Material",
     "persistentId": "07f6939d-1238-482f-a360-6145c7d89441",
     "Stages": [
@@ -1286,9 +1287,9 @@
     ],
     "version": 1.5
   },
-  "radio_needle": {
-    "name": "radio_needle",
-    "mapTo": "radio_needle",
+  "bug_radio_needle": {
+    "name": "bug_radio_needle",
+    "mapTo": "bug_radio_needle",
     "class": "Material",
     "persistentId": "d244623e-e0c1-4d9e-ab89-07b5335bb49d",
     "Stages": [
@@ -1314,9 +1315,9 @@
     ],
     "version": 1.5
   },
-  "radio_needle_light": {
-    "name": "radio_needle_light",
-    "mapTo": "radio_needle_light",
+  "bug_radio_needle_light": {
+    "name": "bug_radio_needle_light",
+    "mapTo": "bug_radio_needle_light",
     "class": "Material",
     "persistentId": "aadc3eb0-0715-42b2-9b5f-aa05e137e955",
     "Stages": [
@@ -1336,9 +1337,9 @@
     ],
     "version": 1.5
   },
-  "radio_panel": {
-    "name": "radio_panel",
-    "mapTo": "radio_panel",
+  "bug_radio_panel": {
+    "name": "bug_radio_panel",
+    "mapTo": "bug_radio_panel",
     "class": "Material",
     "persistentId": "5d47d137-37dd-4f06-8a82-b83ea474dcdb",
     "Stages": [
@@ -1372,9 +1373,9 @@
     "activeLayers": 2,
     "version": 1.5
   },
-  "radio_panel_on": {
-    "name": "radio_panel_on",
-    "mapTo": "radio_panel_on",
+  "bug_radio_panel_on": {
+    "name": "bug_radio_panel_on",
+    "mapTo": "bug_radio_panel_on",
     "class": "Material",
     "persistentId": "a7858909-d367-4421-b852-224b2c6199aa",
     "Stages": [
@@ -1415,9 +1416,9 @@
     "version": 1.5
   },
 
-  "speedometer": {
-    "name": "speedometer",
-    "mapTo": "speedometer",
+  "bug_speedometer": {
+    "name": "bug_speedometer",
+    "mapTo": "bug_speedometer",
     "class": "Material",
     "persistentId": "e756d07a-a1c3-4892-a6c7-9107f3b591d4",
     "Stages": [
@@ -1429,9 +1430,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "speedometer.skin_speedometer.km140": {
-    "name": "speedometer.skin_speedometer.km140",
-    "mapTo": "speedometer.skin_speedometer.km140",
+  "bug_speedometer.skin_speedometer.km140": {
+    "name": "bug_speedometer.skin_speedometer.km140",
+    "mapTo": "bug_speedometer.skin_speedometer.km140",
     "class": "Material",
     "persistentId": "ae32e640-250c-4909-bc4a-b2b1899d6759",
     "Stages": [
@@ -1463,11 +1464,12 @@
       {}
     ],
     "activeLayers": 2,
+    "dynamicCubemap": true,
     "version": 1.5
   },
-  "speedometer.skin_speedometer.km200": {
-    "name": "speedometer.skin_speedometer.km200",
-    "mapTo": "speedometer.skin_speedometer.km200",
+  "bug_speedometer.skin_speedometer.km200": {
+    "name": "bug_speedometer.skin_speedometer.km200",
+    "mapTo": "bug_speedometer.skin_speedometer.km200",
     "class": "Material",
     "persistentId": "ae32e640-250c-4909-bc4a-b2b1899d6759",
     "Stages": [
@@ -1499,11 +1501,12 @@
       {}
     ],
     "activeLayers": 2,
+    "dynamicCubemap": true,
     "version": 1.5
   },
-  "speedometer.skin_speedometer.mph90": {
-    "name": "speedometer.skin_speedometer.mph90",
-    "mapTo": "speedometer.skin_speedometer.mph90",
+  "bug_speedometer.skin_speedometer.mph90": {
+    "name": "bug_speedometer.skin_speedometer.mph90",
+    "mapTo": "bug_speedometer.skin_speedometer.mph90",
     "class": "Material",
     "persistentId": "d719198c-db61-4042-9376-86e990ee5603",
     "Stages": [
@@ -1535,11 +1538,12 @@
       {}
     ],
     "activeLayers": 2,
+    "dynamicCubemap": true,
     "version": 1.5
   },
-  "speedometer_light": {
-    "name": "speedometer_light",
-    "mapTo": "speedometer_light",
+  "bug_speedometer_light": {
+    "name": "bug_speedometer_light",
+    "mapTo": "bug_speedometer_light",
     "class": "Material",
     "persistentId": "af1b1a43-a3d8-4a7b-b31e-b37151445128",
     "Stages": [
@@ -1549,11 +1553,12 @@
       {}
     ],
     "activeLayers": 2,
+    "dynamicCubemap": true,
     "version": 1.5
   },
-  "speedometer_light.skin_speedometer.km140": {
-    "name": "speedometer_light.skin_speedometer.km140",
-    "mapTo": "speedometer_light.skin_speedometer.km140",
+  "bug_speedometer_light.skin_speedometer.km140": {
+    "name": "bug_speedometer_light.skin_speedometer.km140",
+    "mapTo": "bug_speedometer_light.skin_speedometer.km140",
     "class": "Material",
     "persistentId": "e9a94f80-dafc-4765-b815-8f35852c8344",
     "Stages": [
@@ -1591,11 +1596,12 @@
       {}
     ],
     "activeLayers": 2,
+    "dynamicCubemap": true,
     "version": 1.5
   },
-  "speedometer_light.skin_speedometer.km200": {
-    "name": "speedometer_light.skin_speedometer.km200",
-    "mapTo": "speedometer_light.skin_speedometer.km200",
+  "bug_speedometer_light.skin_speedometer.km200": {
+    "name": "bug_speedometer_light.skin_speedometer.km200",
+    "mapTo": "bug_speedometer_light.skin_speedometer.km200",
     "class": "Material",
     "persistentId": "e9a94f80-dafc-4765-b815-8f35852c8344",
     "Stages": [
@@ -1633,11 +1639,12 @@
       {}
     ],
     "activeLayers": 2,
+    "dynamicCubemap": true,
     "version": 1.5
   },
-  "speedometer_light.skin_speedometer.mph90": {
-    "name": "speedometer_light.skin_speedometer.mph90",
-    "mapTo": "speedometer_light.skin_speedometer.mph90",
+  "bug_speedometer_light.skin_speedometer.mph90": {
+    "name": "bug_speedometer_light.skin_speedometer.mph90",
+    "mapTo": "bug_speedometer_light.skin_speedometer.mph90",
     "class": "Material",
     "persistentId": "c233b015-483b-455b-bc54-bd742b3ccc39",
     "Stages": [
@@ -1675,13 +1682,14 @@
       {}
     ],
     "activeLayers": 2,
+    "dynamicCubemap": true,
     "version": 1.5
   },
 
 
-  "speedo_needle": {
-    "name": "speedo_needle",
-    "mapTo": "speedo_needle",
+  "bug_speedo_needle": {
+    "name": "bug_speedo_needle",
+    "mapTo": "bug_speedo_needle",
     "class": "Material",
     "persistentId": "3240ff32-be34-4d0e-b3e7-c4e5e82fff6c",
     "Stages": [
@@ -1708,9 +1716,9 @@
     ],
     "version": 1.5
   },
-  "speedo_needle_light": {
-    "name": "speedo_needle_light",
-    "mapTo": "speedo_needle_light",
+  "bug_speedo_needle_light": {
+    "name": "bug_speedo_needle_light",
+    "mapTo": "bug_speedo_needle_light",
     "class": "Material",
     "persistentId": "f6aa3cce-114d-4219-a463-25f6cc1bf567",
     "Stages": [
@@ -1730,9 +1738,9 @@
     ],
     "version": 1.5
   },
-  "steeringwheel_symbols": {
-    "name": "steeringwheel_symbols",
-    "mapTo": "steeringwheel_symbols",
+  "bug_steeringwheel_symbols": {
+    "name": "bug_steeringwheel_symbols",
+    "mapTo": "bug_steeringwheel_symbols",
     "class": "Material",
     "persistentId": "ab7e2648-53ca-447a-af5d-a4a31037f682",
     "Stages": [
@@ -1752,9 +1760,9 @@
     "version": 1.5
   },
 
-  "seat_rear_board": {
-    "name": "seat_rear_board",
-    "mapTo": "seat_rear_board",
+  "bug_seat_rear_board": {
+    "name": "bug_seat_rear_board",
+    "mapTo": "bug_seat_rear_board",
     "class": "Material",
     "persistentId": "be7e9ef7-eba2-4901-8458-05a2486523a0",
     "Stages": [

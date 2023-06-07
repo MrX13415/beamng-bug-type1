@@ -1,12 +1,12 @@
 {
 
-"bug_transmission_2A": {
+"bug_transaxle_2A": {
     "information":{
         "authors":"BeamNG",
         "name":"2-Speed bug-Matic Transmission",
         "value":500,
     },
-    "slotType" : "bug_transmission",
+    "slotType" : "bug_transaxle",
     "slots": [
         ["type", "default", "description"]
         ["bug_converter","bug_torque_converter","Torque Converter", {"coreSlot":true}],
@@ -44,20 +44,20 @@
         ["transaxle_starter_motor", ["transaxle"]],
     ],
     "nodes": [
-         ["id", "posX", "posY", "posZ"],
+        ["id", "posX", "posY", "posZ"],
 
-         //--2 Speed Auto--
-         {"selfCollision":true},
-         {"collision":true},
-         {"nodeMaterial":"|NM_METAL"},
-         {"frictionCoef":0.7},
-         {"group":"transaxle"},
-         {"nodeWeight":2.2},
-         ["tra1", 0.0, 0.85, 0.343606],
-         {"selfCollision":false},
-         {"nodeWeight":1.5},
-         ["tra2l", 0.136124, 1.14305, 0.343606],
-         ["tra2r", -0.136124, 1.14305, 0.343606],
+        //-- 2 Speed Auto --
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.7},
+        {"group":"transaxle"},
+        {"nodeWeight":2.2},
+        ["tra1", 0.0, 0.83, 0.343606],
+        {"selfCollision":false},
+        {"nodeWeight":1.5},
+        ["tra2l",  0.123996, 1.18048, 0.317161],
+        ["tra2r", -0.123996, 1.18048, 0.317161],
     ],
     "beams": [
         ["id1:", "id2:"],
@@ -100,18 +100,17 @@
         ["tra1","f6tmr"],
         ["tra1","f6ml"],
         ["tra1","f6mr"],
-
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"breakGroup":""},
     ],
 },
-"bug_transmission_4M": {
+"bug_transaxle_4M": {
     "information":{
         "authors":"BeamNG",
         "name":"4-Speed bug Manual",
         "value":350,
     },
-    "slotType" : "bug_transmission",
+    "slotType" : "bug_transaxle",
     "slots": [
         ["type", "default","description"],
 
@@ -160,18 +159,18 @@
     "nodes": [
         ["id", "posX", "posY", "posZ"],
 
-        //--2 Speed Auto--
+        //-- 4 Speed Manuel --
         {"selfCollision":true},
         {"collision":true},
         {"nodeMaterial":"|NM_METAL"},
         {"frictionCoef":0.7},
         {"group":"transaxle"},
         {"nodeWeight":2.2},
-        ["tra1", 0.0, 0.85, 0.343606],
+        ["tra1", 0.0, 0.83, 0.343606],
         {"selfCollision":false},
         {"nodeWeight":1.5},
-        ["tra2l", 0.136124, 1.14305, 0.343606],
-        ["tra2r", -0.136124, 1.14305, 0.343606],
+        ["tra2l",  0.123996, 1.18048, 0.317161],
+        ["tra2r", -0.123996, 1.18048, 0.317161],
     ],
     "beams": [
         ["id1:", "id2:"],
@@ -218,13 +217,13 @@
         {"breakGroup":""},
     ],
 },
-"bug_transmission_5M_race": {
+"bug_transaxle_5M_race": {
     "information":{
         "authors":"BeamNG",
         "name":"Race 5-Speed Manual Transmission",
         "value":1600,
     },
-    "slotType" : "bug_transmission",
+    "slotType" : "bug_transaxle",
     "slots": [
         ["type", "default","description"]
         ["bug_flywheel","bug_flywheel_race","Flywheel", {"coreSlot":true}],
@@ -278,23 +277,24 @@
     "nodes": [
         ["id", "posX", "posY", "posZ"],
 
-        //--2 Speed Auto--
+        //-- 5 Speed Manual --
         {"selfCollision":true},
         {"collision":true},
         {"nodeMaterial":"|NM_METAL"},
         {"frictionCoef":0.7},
         {"group":"transaxle"},
-        {"nodeWeight":6.0},
-        ["tra1", 0.0, 0.85, 0.343606],
+        {"nodeWeight":2.2},
+        ["tra1", 0.0, 0.83, 0.343606],
         {"selfCollision":false},
-        ["tra2l", 0.136124, 1.14305, 0.343606],
-        ["tra2r", -0.136124, 1.14305, 0.343606],
+        {"nodeWeight":1.5},
+        ["tra2l",  0.123996, 1.18048, 0.317161],
+        ["tra2r", -0.123996, 1.18048, 0.317161],
     ],
     "beams": [
         ["id1:", "id2:"],
 
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":10001000,"beamDamp":250},
+        {"beamSpring":1001000,"beamDamp":250},
         {"beamDeform":150000,"beamStrength":"FLT_MAX"},
 
         // shape
@@ -325,13 +325,12 @@
         {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":401000,"beamDamp":2500},
         {"beamDeform":15000,"beamStrength":165000},
-        {"dampCutoffHz":500}
+        {"dampCutoffHz":500},
         {"breakGroup":"transmission_frame"},
         ["tra1","f6tml"],
         ["tra1","f6tmr"],
         ["tra1","f6ml"],
         ["tra1","f6mr"],
-
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"breakGroup":""},
     ],

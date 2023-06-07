@@ -3,8 +3,8 @@
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
 -- Lua Radio for the VW Beetle mod.
--- v2.0
--- by MrX13415 (2023-03-25)
+-- v2.1
+-- by MrX13415 (2023-06-06)
 
 -- Please give credit when using this :)
 
@@ -386,6 +386,20 @@ function Radio:save()
 	for index,p in pairs(self.presets) do
 		if p.user then d.radio.presets[tostring(index)] = p.frequency end
 	end
+end
+
+function Radio:reset()	
+	print("[Bug:Radio] Reset to default settings.")
+	
+	self.frequency = 0
+	self.userVolume = 0.3
+	for _,p in pairs(self.presets) do
+		p.frequency = frequencyMin
+		p.user = false
+	end	
+	self:save()	
+
+	self:initalize()
 end
 
 function Radio:toggleState()
@@ -1095,6 +1109,7 @@ local function toggle() radio:toggleState() end
 local function unload() radio:unloadStations() end
 local function load() radio:loadStations() end
 local function info() radio:showInfo() end
+local function reset() radio:reset() end
 
 local function volume(volume) radio:setVolume(volume) end
 local function prevTrack() radio:prevTrack() end
@@ -1122,6 +1137,7 @@ M.setState     = setState
 M.unload       = unload
 M.load         = load
 M.info         = info
+M.reset        = reset
 
 M.volume       = volume
 M.prevTrack    = prevTrack

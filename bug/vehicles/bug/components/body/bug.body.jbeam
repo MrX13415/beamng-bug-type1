@@ -45,8 +45,8 @@
         ["bug_spoilerF","", "Front Spoiler"],
     ],
     "glowMap":{
-        "interiorlight":       {"simpleFunction":{"interiorlight":0.49}, "off":"bug_int_lights", "on":"bug_int_lights_on"},
-        "interiorlight_glass": {"simpleFunction":{"interiorlight":0.49}, "off":"bug_int_lights_glass", "on":"bug_int_lights_glass_on"}
+        "bug_interiorlight":       {"simpleFunction":{"interiorlight":0.49}, "off":"bug_int_lights", "on":"bug_int_lights_on"},
+        "bug_interiorlight_glass": {"simpleFunction":{"interiorlight":0.49}, "off":"bug_int_lights_glass", "on":"bug_int_lights_glass_on"}
     },
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -107,6 +107,7 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         ["body_interior_dashboard",        ["bug_body", "bug_body_interior", "bug_body_cowl"]],
+        ["body_interior_hood",             ["bug_body", "bug_body_interior", "bug_body_cowl"]],
         ["body_interior_rear_window",      ["bug_body", "bug_body_interior", "bug_body_roof"]],
         ["body_interior_sides",            ["bug_body", "bug_body_interior", "bug_body_sides"]],
         ["body_sides",                     ["bug_body", "bug_body_sides"]],
@@ -225,14 +226,14 @@
         {"nodeWeight":1.3},
         //{"group":"bug_body_sides"},
         // sides
-        ["bq1r", -0.61537, -0.65071,  0.29000],
-        ["bq1l",  0.61537, -0.65071,  0.29000],
+        ["bq1r", -0.61537, -0.65071,  0.29000, {"tag":"bug_runningboards_R1"}],
+        ["bq1l",  0.61537, -0.65071,  0.29000, {"tag":"bug_runningboards_L1"}],
         ["bq2r", -0.66286, -0.25584,  0.29000],
         ["bq2l",  0.66286, -0.25584,  0.29000],
         ["bq3r", -0.69086,  0.34135,  0.29000],
         ["bq3l",  0.69086,  0.34135,  0.29000],
-        ["bq4r", -0.66680,  0.68449,  0.29000],
-        ["bq4l",  0.66680,  0.68449,  0.29000],
+        ["bq4r", -0.66680,  0.68449,  0.29000, {"tag":"bug_runningboards_R2"}],
+        ["bq4l",  0.66680,  0.68449,  0.29000, {"tag":"bug_runningboards_L2"}],
         ["bq5r", -0.70880,  0.34135,  0.63912],
         ["bq5l",  0.70880,  0.34135,  0.63912],
         ["bq6r", -0.70206,  0.71449,  0.63820],

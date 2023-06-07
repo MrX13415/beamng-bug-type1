@@ -319,9 +319,10 @@ local function setThermals()
 	end
 end
 
-local function eventMessage(name, trustDiff, severity)
+local function eventMessage(name, trustDiff, severity, minor)
 	-- Clamp min/max
 	playerTrust = math.min(math.max(playerTrust, playerTrustMin), playerTrustMax)
+	minor = minor or false
 
 	local lastDirection = trustDirection
 	local arrow = " "
@@ -353,11 +354,12 @@ local function eventMessage(name, trustDiff, severity)
 	local msg = "Trust" ..arrow..	"(" ..tostring(name).. ")"
 	if emojiTimer > 0 then
 		msg = getTrustEmoji(severity) .. " " .. msg
+		minor = false
 	end
 	herbieMood = emoji
+
+	if minor then return end
 	guihooks.message({txt = "Herbie: " .. msg, context = {}}, 2, "herbie")
-
-
 	message(m)
 end
 
@@ -381,7 +383,7 @@ local function playerBehaviourValuation()
 					setNewTorqueCurve()
 				end
 
-				eventMessage("No crash", playerTrust-lastTrust, 1)
+				eventMessage("No crash", playerTrust-lastTrust, 1, true)
 			end
 		end
 		

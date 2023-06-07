@@ -98,9 +98,9 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
 	
          //old: ["radio", ["bug_dashboard"]],
+         //     ["radio_buttons",      ["bug_dashboard"]],
+         //     ["radio_knobs",        ["bug_dashboard"]],
          ["radio_frame",        ["bug_dashboard"]],
-         //["radio_buttons",      ["bug_dashboard"]],
-        // ["radio_knobs",        ["bug_dashboard"]],
          ["radio_knobs_socket", ["bug_dashboard"]],
          ["radio_text",         ["bug_dashboard"]],
 
@@ -364,6 +364,20 @@
         {"group": ""},
     ]
 },
+"bug_glovebox_nolid": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Glovebox (No Lid)",
+        "value":300,
+    },
+    "slotType" : "bug_glovebox",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["dashboard_glovebox_case", ["bug_body", "bug_dashboard"]],
+    ]
+},
+
+
 "bug_console_clock": {
     "information":{
         "authors":"MrX13415",

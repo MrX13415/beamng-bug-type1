@@ -145,7 +145,7 @@
     "bug_taillight_R":"bug_taillight_R",
     "bug_thrusters":"",
     "bug_towhitch":"",
-    "bug_transmission":"bug_transmission_4M",
+    "bug_transaxle":"bug_transaxle_4M",
     "bug_trim_B":"trim_B",
     "bug_trim_F":"trim_F",
     "bug_trim_door":"trim_door",

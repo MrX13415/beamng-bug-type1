@@ -56,9 +56,8 @@
         {"node:":"bf2l"}, // TODO?
     ],
     "glowMap":{
-            // exterior lights
-            //"taillight_glass":      {"simpleFunction":{"lowhighbeam":0.3,"brake":0.6},   "off":"glass_lights",        "on":"glass_lights_on",        "on_intense":"glass_lights_on"},
-            "licenseplate_light":   {"simpleFunction":{"lowbeam":0.3, "highbeam":0.6},   "off":"licenseplate_light",  "on":"licenseplate_light_on",  "on_intense":"licenseplate_light_on"},
+        // exterior lights
+        "bug_licenseplate_light":   {"simpleFunction":{"lowbeam":0.3, "highbeam":0.6},   "off":"bug_licenseplate_light",  "on":"bug_licenseplate_light_on",  "on_intense":"bug_licenseplate_light_on"},
     },
 }
 

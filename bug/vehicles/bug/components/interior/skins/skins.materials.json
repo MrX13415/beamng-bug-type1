@@ -1,7 +1,7 @@
 {
-  "floor_carpet": {
-    "name": "floor_carpet",
-    "mapTo": "floor_carpet",
+  "bug_floor_carpet": {
+    "name": "bug_floor_carpet",
+    "mapTo": "bug_floor_carpet",
     "class": "material",
     "persistentId": "8483eaf1-7e11-45d0-9e80-b954c67b7198",
     "Stages": [
@@ -13,9 +13,9 @@
     "castShadows": false,
     "translucent": true
   },
-  "floor_carpet.skin_floor_carpet.black": {
-    "name": "floor_carpet.skin_floor_carpet.black",
-    "mapTo": "floor_carpet.skin_floor_carpet.black",
+  "bug_floor_carpet.skin_floor_carpet.black": {
+    "name": "bug_floor_carpet.skin_floor_carpet.black",
+    "mapTo": "bug_floor_carpet.skin_floor_carpet.black",
     "class": "material",
     "persistentId": "c055f517-202e-4f67-89a6-5d4f351e816b",
     "Stages": [
@@ -39,9 +39,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "floor_carpet.skin_floor_carpet.blue": {
-    "name": "floor_carpet.skin_floor_carpet.blue",
-    "mapTo": "floor_carpet.skin_floor_carpet.blue",
+  "bug_floor_carpet.skin_floor_carpet.blue": {
+    "name": "bug_floor_carpet.skin_floor_carpet.blue",
+    "mapTo": "bug_floor_carpet.skin_floor_carpet.blue",
     "class": "material",
     "persistentId": "c055f517-202e-4f67-89a6-5d4f351e816b",
     "Stages": [
@@ -65,9 +65,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "floor_carpet.skin_floor_carpet.brown": {
-    "name": "floor_carpet.skin_floor_carpet.brown",
-    "mapTo": "floor_carpet.skin_floor_carpet.brown",
+  "bug_floor_carpet.skin_floor_carpet.brown": {
+    "name": "bug_floor_carpet.skin_floor_carpet.brown",
+    "mapTo": "bug_floor_carpet.skin_floor_carpet.brown",
     "class": "material",
     "persistentId": "c055f517-202e-4f67-89a6-5d4f351e816b",
     "Stages": [
@@ -91,9 +91,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "floor_carpet.skin_floor_carpet.brown2": {
-    "name": "floor_carpet.skin_floor_carpet.brown2",
-    "mapTo": "floor_carpet.skin_floor_carpet.brown2",
+  "bug_floor_carpet.skin_floor_carpet.brown2": {
+    "name": "bug_floor_carpet.skin_floor_carpet.brown2",
+    "mapTo": "bug_floor_carpet.skin_floor_carpet.brown2",
     "class": "material",
     "persistentId": "e8d683ac-ceb8-4b2e-8284-fc5b1e67f2ee",
     "Stages": [
@@ -117,9 +117,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "floor_carpet.skin_floor_carpet.gray": {
-    "name": "floor_carpet.skin_floor_carpet.gray",
-    "mapTo": "floor_carpet.skin_floor_carpet.gray",
+  "bug_floor_carpet.skin_floor_carpet.gray": {
+    "name": "bug_floor_carpet.skin_floor_carpet.gray",
+    "mapTo": "bug_floor_carpet.skin_floor_carpet.gray",
     "class": "material",
     "persistentId": "ce541c82-9d68-42b7-95cc-24fe1d0d6d32",
     "Stages": [
@@ -143,9 +143,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "floor_carpet.skin_floor_carpet.green": {
-    "name": "floor_carpet.skin_floor_carpet.green",
-    "mapTo": "floor_carpet.skin_floor_carpet.green",
+  "bug_floor_carpet.skin_floor_carpet.green": {
+    "name": "bug_floor_carpet.skin_floor_carpet.green",
+    "mapTo": "bug_floor_carpet.skin_floor_carpet.green",
     "class": "material",
     "persistentId": "c055f517-202e-4f67-89a6-5d4f351e816b",
     "Stages": [
@@ -169,9 +169,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "floor_carpet.skin_floor_carpet.red": {
-    "name": "floor_carpet.skin_floor_carpet.red",
-    "mapTo": "floor_carpet.skin_floor_carpet.red",
+  "bug_floor_carpet.skin_floor_carpet.red": {
+    "name": "bug_floor_carpet.skin_floor_carpet.red",
+    "mapTo": "bug_floor_carpet.skin_floor_carpet.red",
     "class": "material",
     "persistentId": "c055f517-202e-4f67-89a6-5d4f351e816b",
     "Stages": [
@@ -195,9 +195,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "floor_carpet.skin_floor_carpet.white": {
-    "name": "floor_carpet.skin_floor_carpet.white",
-    "mapTo": "floor_carpet.skin_floor_carpet.white",
+  "bug_floor_carpet.skin_floor_carpet.white": {
+    "name": "bug_floor_carpet.skin_floor_carpet.white",
+    "mapTo": "bug_floor_carpet.skin_floor_carpet.white",
     "class": "material",
     "persistentId": "8851fa18-a3ad-415d-8ce9-d8ec3c1d29de",
     "Stages": [
@@ -222,9 +222,9 @@
     "version": 1.5
   },
 
-  "floor_carpet.skin_floor_carpet.paint1": {
-    "name": "floor_carpet.skin_floor_carpet.paint1",
-    "mapTo": "floor_carpet.skin_floor_carpet.paint1",
+  "bug_floor_carpet.skin_floor_carpet.paint1": {
+    "name": "bug_floor_carpet.skin_floor_carpet.paint1",
+    "mapTo": "bug_floor_carpet.skin_floor_carpet.paint1",
     "class": "material",
     "persistentId": "f0738571-ee36-4723-a5bb-4c7919e7e649",
     "Stages": [
@@ -250,9 +250,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "floor_carpet.skin_floor_carpet.paint2": {
-    "name": "floor_carpet.skin_floor_carpet.paint2",
-    "mapTo": "floor_carpet.skin_floor_carpet.paint2",
+  "bug_floor_carpet.skin_floor_carpet.paint2": {
+    "name": "bug_floor_carpet.skin_floor_carpet.paint2",
+    "mapTo": "bug_floor_carpet.skin_floor_carpet.paint2",
     "class": "material",
     "persistentId": "ee284457-3849-40d1-951d-848695146232",
     "Stages": [
@@ -279,9 +279,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "floor_carpet.skin_floor_carpet.paint3": {
-    "name": "floor_carpet.skin_floor_carpet.paint3",
-    "mapTo": "floor_carpet.skin_floor_carpet.paint3",
+  "bug_floor_carpet.skin_floor_carpet.paint3": {
+    "name": "bug_floor_carpet.skin_floor_carpet.paint3",
+    "mapTo": "bug_floor_carpet.skin_floor_carpet.paint3",
     "class": "material",
     "persistentId": "be110117-b81d-4d07-9a75-540affcbeca6",
     "Stages": [
@@ -309,9 +309,9 @@
     "version": 1.5
   },
 
-  "interior1": {
-    "name": "interior1",
-    "mapTo": "interior1",
+  "bug_interior1": {
+    "name": "bug_interior1",
+    "mapTo": "bug_interior1",
     "class": "material",
     "persistentId": "915b7c71-86d6-4b87-9a5c-c4364263d590",
     "Stages": [
@@ -323,9 +323,9 @@
     "castShadows": false,
     "translucent": true
   },
-  "interior1.skin_interior1.black": {
-    "name": "interior1.skin_interior1.black",
-    "mapTo": "interior1.skin_interior1.black",
+  "bug_interior1.skin_interior1.black": {
+    "name": "bug_interior1.skin_interior1.black",
+    "mapTo": "bug_interior1.skin_interior1.black",
     "class": "material",
     "persistentId": "8807ec4f-569b-4b08-850e-37ed06b2aed2",
     "Stages": [
@@ -347,9 +347,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior1.skin_interior1.blue": {
-    "name": "interior1.skin_interior1.blue",
-    "mapTo": "interior1.skin_interior1.blue",
+  "bug_interior1.skin_interior1.blue": {
+    "name": "bug_interior1.skin_interior1.blue",
+    "mapTo": "bug_interior1.skin_interior1.blue",
     "class": "material",
     "persistentId": "af28786a-b883-4732-a15d-f9bfbed5ffa4",
     "Stages": [
@@ -371,9 +371,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior1.skin_interior1.brown": {
-    "name": "interior1.skin_interior1.brown",
-    "mapTo": "interior1.skin_interior1.brown",
+  "bug_interior1.skin_interior1.brown": {
+    "name": "bug_interior1.skin_interior1.brown",
+    "mapTo": "bug_interior1.skin_interior1.brown",
     "class": "material",
     "persistentId": "973d718d-fdc8-4665-bb14-aa1b672d4e3c",
     "Stages": [
@@ -395,9 +395,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior1.skin_interior1.brown2": {
-    "name": "interior1.skin_interior1.brown2",
-    "mapTo": "interior1.skin_interior1.brown2",
+  "bug_interior1.skin_interior1.brown2": {
+    "name": "bug_interior1.skin_interior1.brown2",
+    "mapTo": "bug_interior1.skin_interior1.brown2",
     "class": "material",
     "persistentId": "165a83b1-aad2-4b1d-b74d-121edb5c7798",
     "Stages": [
@@ -419,9 +419,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior1.skin_interior1.gray": {
-    "name": "interior1.skin_interior1.gray",
-    "mapTo": "interior1.skin_interior1.gray",
+  "bug_interior1.skin_interior1.gray": {
+    "name": "bug_interior1.skin_interior1.gray",
+    "mapTo": "bug_interior1.skin_interior1.gray",
     "class": "material",
     "persistentId": "bf781edc-386b-41e9-bb73-f6688e050bee",
     "Stages": [
@@ -443,9 +443,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior1.skin_interior1.green": {
-    "name": "interior1.skin_interior1.green",
-    "mapTo": "interior1.skin_interior1.green",
+  "bug_interior1.skin_interior1.green": {
+    "name": "bug_interior1.skin_interior1.green",
+    "mapTo": "bug_interior1.skin_interior1.green",
     "class": "material",
     "persistentId": "83a70873-8c18-4d13-9f0b-91b5bac52553",
     "Stages": [
@@ -467,9 +467,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior1.skin_interior1.red": {
-    "name": "interior1.skin_interior1.red",
-    "mapTo": "interior1.skin_interior1.red",
+  "bug_interior1.skin_interior1.red": {
+    "name": "bug_interior1.skin_interior1.red",
+    "mapTo": "bug_interior1.skin_interior1.red",
     "class": "material",
     "persistentId": "e5de8c95-5fbf-4856-b5a0-024106f711af",
     "Stages": [
@@ -491,9 +491,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior1.skin_interior1.white": {
-    "name": "interior1.skin_interior1.white",
-    "mapTo": "interior1.skin_interior1.white",
+  "bug_interior1.skin_interior1.white": {
+    "name": "bug_interior1.skin_interior1.white",
+    "mapTo": "bug_interior1.skin_interior1.white",
     "class": "material",
     "persistentId": "ac78246d-4544-4f6c-9d0f-267a1e492034",
     "Stages": [
@@ -516,9 +516,9 @@
     "version": 1.5
   },
 
-  "interior1.skin_interior1.paint1": {
-    "name": "interior1.skin_interior1.paint1",
-    "mapTo": "interior1.skin_interior1.paint1",
+  "bug_interior1.skin_interior1.paint1": {
+    "name": "bug_interior1.skin_interior1.paint1",
+    "mapTo": "bug_interior1.skin_interior1.paint1",
     "class": "material",
     "persistentId": "034fa05f-7b90-44b6-8b33-d572022ea7fe",
     "Stages": [
@@ -541,9 +541,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior1.skin_interior1.paint2": {
-    "name": "interior1.skin_interior1.paint2",
-    "mapTo": "interior1.skin_interior1.paint2",
+  "bug_interior1.skin_interior1.paint2": {
+    "name": "bug_interior1.skin_interior1.paint2",
+    "mapTo": "bug_interior1.skin_interior1.paint2",
     "class": "material",
     "persistentId": "c9b5a0e9-0e10-413e-851e-aad8f9c1beb0",
     "Stages": [
@@ -567,9 +567,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior1.skin_interior1.paint3": {
-    "name": "interior1.skin_interior1.paint3",
-    "mapTo": "interior1.skin_interior1.paint3",
+  "bug_interior1.skin_interior1.paint3": {
+    "name": "bug_interior1.skin_interior1.paint3",
+    "mapTo": "bug_interior1.skin_interior1.paint3",
     "class": "material",
     "persistentId": "92be0684-50db-4b2b-866f-ed0092a0d716",
     "Stages": [
@@ -594,9 +594,9 @@
     "version": 1.5
   },
 
-  "interior2": {
-    "name": "interior2",
-    "mapTo": "interior2",
+  "bug_interior2": {
+    "name": "bug_interior2",
+    "mapTo": "bug_interior2",
     "class": "material",
     "persistentId": "f0b52fb4-7606-4943-a22b-f3228a4e09b0",
     "Stages": [
@@ -608,9 +608,9 @@
     "castShadows": false,
     "translucent": true
   },
-  "interior2.skin_interior2.black": {
-    "name": "interior2.skin_interior2.black",
-    "mapTo": "interior2.skin_interior2.black",
+  "bug_interior2.skin_interior2.black": {
+    "name": "bug_interior2.skin_interior2.black",
+    "mapTo": "bug_interior2.skin_interior2.black",
     "class": "material",
     "persistentId": "68af2d57-c87b-44f6-868f-eab4232f6fbc",
     "Stages": [
@@ -632,9 +632,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior2.skin_interior2.blue": {
-    "name": "interior2.skin_interior2.blue",
-    "mapTo": "interior2.skin_interior2.blue",
+  "bug_interior2.skin_interior2.blue": {
+    "name": "bug_interior2.skin_interior2.blue",
+    "mapTo": "bug_interior2.skin_interior2.blue",
     "class": "material",
     "persistentId": "71800ae8-de6f-4235-aef3-fd7d54bde3ca",
     "Stages": [
@@ -656,9 +656,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior2.skin_interior2.brown": {
-    "name": "interior2.skin_interior2.brown",
-    "mapTo": "interior2.skin_interior2.brown",
+  "bug_interior2.skin_interior2.brown": {
+    "name": "bug_interior2.skin_interior2.brown",
+    "mapTo": "bug_interior2.skin_interior2.brown",
     "class": "material",
     "persistentId": "4d233eb0-79f9-4a14-a70e-1a97c6a2144a",
     "Stages": [
@@ -680,9 +680,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior2.skin_interior2.brown2": {
-    "name": "interior2.skin_interior2.brown2",
-    "mapTo": "interior2.skin_interior2.brown2",
+  "bug_interior2.skin_interior2.brown2": {
+    "name": "bug_interior2.skin_interior2.brown2",
+    "mapTo": "bug_interior2.skin_interior2.brown2",
     "class": "material",
     "persistentId": "a232d679-c023-4d0f-8405-d95fc42814f8",
     "Stages": [
@@ -704,9 +704,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior2.skin_interior2.gray": {
-    "name": "interior2.skin_interior2.gray",
-    "mapTo": "interior2.skin_interior2.gray",
+  "bug_interior2.skin_interior2.gray": {
+    "name": "bug_interior2.skin_interior2.gray",
+    "mapTo": "bug_interior2.skin_interior2.gray",
     "class": "material",
     "persistentId": "04ceb412-a7a4-46e0-b9fa-a0fa6b0ca191",
     "Stages": [
@@ -728,9 +728,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior2.skin_interior2.green": {
-    "name": "interior2.skin_interior2.green",
-    "mapTo": "interior2.skin_interior2.green",
+  "bug_interior2.skin_interior2.green": {
+    "name": "bug_interior2.skin_interior2.green",
+    "mapTo": "bug_interior2.skin_interior2.green",
     "class": "material",
     "persistentId": "83862e3a-392b-46ec-b11b-ec56a7a150f9",
     "Stages": [
@@ -752,9 +752,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior2.skin_interior2.red": {
-    "name": "interior2.skin_interior2.red",
-    "mapTo": "interior2.skin_interior2.red",
+  "bug_interior2.skin_interior2.red": {
+    "name": "bug_interior2.skin_interior2.red",
+    "mapTo": "bug_interior2.skin_interior2.red",
     "class": "material",
     "persistentId": "0b240a85-8419-49ea-884c-b110808014c0",
     "Stages": [
@@ -776,9 +776,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior2.skin_interior2.white": {
-    "name": "interior2.skin_interior2.white",
-    "mapTo": "interior2.skin_interior2.white",
+  "bug_interior2.skin_interior2.white": {
+    "name": "bug_interior2.skin_interior2.white",
+    "mapTo": "bug_interior2.skin_interior2.white",
     "class": "material",
     "persistentId": "ff6cda3f-f699-4ada-8931-c6356acc114f",
     "Stages": [
@@ -801,9 +801,9 @@
     "version": 1.5
   },
 
-  "interior2.skin_interior2.paint1": {
-    "name": "interior2.skin_interior2.paint1",
-    "mapTo": "interior2.skin_interior2.paint1",
+  "bug_interior2.skin_interior2.paint1": {
+    "name": "bug_interior2.skin_interior2.paint1",
+    "mapTo": "bug_interior2.skin_interior2.paint1",
     "class": "material",
     "persistentId": "3c192a5e-7eb5-4a10-bfb3-e9262892de27",
     "Stages": [
@@ -826,9 +826,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior2.skin_interior2.paint2": {
-    "name": "interior2.skin_interior2.paint2",
-    "mapTo": "interior2.skin_interior2.paint2",
+  "bug_interior2.skin_interior2.paint2": {
+    "name": "bug_interior2.skin_interior2.paint2",
+    "mapTo": "bug_interior2.skin_interior2.paint2",
     "class": "material",
     "persistentId": "cc0eff34-43fd-4908-b31a-534c746ca162",
     "Stages": [
@@ -852,9 +852,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior2.skin_interior2.paint3": {
-    "name": "interior2.skin_interior2.paint3",
-    "mapTo": "interior2.skin_interior2.paint3",
+  "bug_interior2.skin_interior2.paint3": {
+    "name": "bug_interior2.skin_interior2.paint3",
+    "mapTo": "bug_interior2.skin_interior2.paint3",
     "class": "material",
     "persistentId": "99d1608f-ad43-4084-9aa8-2399118c01ad",
     "Stages": [
@@ -879,9 +879,9 @@
     "version": 1.5
   },
 
-  "interior3": {
-    "name": "interior3",
-    "mapTo": "interior3",
+  "bug_interior3": {
+    "name": "bug_interior3",
+    "mapTo": "bug_interior3",
     "class": "material",
     "persistentId": "6bf524db-995f-462c-97d9-513decfdbd91",
     "Stages": [
@@ -893,9 +893,9 @@
     "castShadows": false,
     "translucent": true
   },
-  "interior3.skin_interior3.black": {
-    "name": "interior3.skin_interior3.black",
-    "mapTo": "interior3.skin_interior3.black",
+  "bug_interior3.skin_interior3.black": {
+    "name": "bug_interior3.skin_interior3.black",
+    "mapTo": "bug_interior3.skin_interior3.black",
     "class": "material",
     "persistentId": "6aa8894b-b84e-4381-8dd9-34e69ea93d71",
     "Stages": [
@@ -917,9 +917,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior3.skin_interior3.blue": {
-    "name": "interior3.skin_interior3.blue",
-    "mapTo": "interior3.skin_interior3.blue",
+  "bug_interior3.skin_interior3.blue": {
+    "name": "bug_interior3.skin_interior3.blue",
+    "mapTo": "bug_interior3.skin_interior3.blue",
     "class": "material",
     "persistentId": "7d95d82c-9955-4098-bf93-161fc37717e1",
     "Stages": [
@@ -941,9 +941,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior3.skin_interior3.brown": {
-    "name": "interior3.skin_interior3.brown",
-    "mapTo": "interior3.skin_interior3.brown",
+  "bug_interior3.skin_interior3.brown": {
+    "name": "bug_interior3.skin_interior3.brown",
+    "mapTo": "bug_interior3.skin_interior3.brown",
     "class": "material",
     "persistentId": "7716f558-25c6-439e-a627-825ebde710b3",
     "Stages": [
@@ -965,9 +965,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior3.skin_interior3.brown2": {
-    "name": "interior3.skin_interior3.brown2",
-    "mapTo": "interior3.skin_interior3.brown2",
+  "bug_interior3.skin_interior3.brown2": {
+    "name": "bug_interior3.skin_interior3.brown2",
+    "mapTo": "bug_interior3.skin_interior3.brown2",
     "class": "material",
     "persistentId": "3c9cf0da-9eba-4074-ad79-25d27d9c31bc",
     "Stages": [
@@ -989,9 +989,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior3.skin_interior3.gray": {
-    "name": "interior3.skin_interior3.gray",
-    "mapTo": "interior3.skin_interior3.gray",
+  "bug_interior3.skin_interior3.gray": {
+    "name": "bug_interior3.skin_interior3.gray",
+    "mapTo": "bug_interior3.skin_interior3.gray",
     "class": "material",
     "persistentId": "e02bfd20-ebf4-4427-8e3f-cd30845bc338",
     "Stages": [
@@ -1013,9 +1013,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior3.skin_interior3.green": {
-    "name": "interior3.skin_interior3.green",
-    "mapTo": "interior3.skin_interior3.green",
+  "bug_interior3.skin_interior3.green": {
+    "name": "bug_interior3.skin_interior3.green",
+    "mapTo": "bug_interior3.skin_interior3.green",
     "class": "material",
     "persistentId": "0fdb9d06-c180-43b6-bfcc-331acb158f5c",
     "Stages": [
@@ -1037,9 +1037,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior3.skin_interior3.red": {
-    "name": "interior3.skin_interior3.red",
-    "mapTo": "interior3.skin_interior3.red",
+  "bug_interior3.skin_interior3.red": {
+    "name": "bug_interior3.skin_interior3.red",
+    "mapTo": "bug_interior3.skin_interior3.red",
     "class": "material",
     "persistentId": "f323c0ed-a51b-4370-84c6-35cf99c6bbde",
     "Stages": [
@@ -1061,9 +1061,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior3.skin_interior3.white": {
-    "name": "interior3.skin_interior3.white",
-    "mapTo": "interior3.skin_interior3.white",
+  "bug_interior3.skin_interior3.white": {
+    "name": "bug_interior3.skin_interior3.white",
+    "mapTo": "bug_interior3.skin_interior3.white",
     "class": "material",
     "persistentId": "b5b057fc-503e-4ce9-a811-d4860fbbab10",
     "Stages": [
@@ -1086,9 +1086,9 @@
     "version": 1.5
   },
  
-  "interior3.skin_interior3.paint1": {
-    "name": "interior3.skin_interior3.paint1",
-    "mapTo": "interior3.skin_interior3.paint1",
+  "bug_interior3.skin_interior3.paint1": {
+    "name": "bug_interior3.skin_interior3.paint1",
+    "mapTo": "bug_interior3.skin_interior3.paint1",
     "class": "material",
     "persistentId": "86eeb9b5-3a0b-4e69-b5bf-7a337f043da7",
     "Stages": [
@@ -1111,9 +1111,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior3.skin_interior3.paint2": {
-    "name": "interior3.skin_interior3.paint2",
-    "mapTo": "interior3.skin_interior3.paint2",
+  "bug_interior3.skin_interior3.paint2": {
+    "name": "bug_interior3.skin_interior3.paint2",
+    "mapTo": "bug_interior3.skin_interior3.paint2",
     "class": "material",
     "persistentId": "e3c6fb1a-825e-4abd-bdc4-826d2ae0b1e8",
     "Stages": [
@@ -1137,9 +1137,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior3.skin_interior3.paint3": {
-    "name": "interior3.skin_interior3.paint3",
-    "mapTo": "interior3.skin_interior3.paint3",
+  "bug_interior3.skin_interior3.paint3": {
+    "name": "bug_interior3.skin_interior3.paint3",
+    "mapTo": "bug_interior3.skin_interior3.paint3",
     "class": "material",
     "persistentId": "10031e56-3abb-434b-9169-81f244272280",
     "Stages": [
@@ -1164,9 +1164,9 @@
     "version": 1.5
   },
 
-  "interior4": {
-    "name": "interior4",
-    "mapTo": "interior4",
+  "bug_interior4": {
+    "name": "bug_interior4",
+    "mapTo": "bug_interior4",
     "class": "material",
     "persistentId": "91782905-6b5f-4818-9e22-66a306c610e0",
     "Stages": [
@@ -1178,9 +1178,9 @@
     "castShadows": false,
     "translucent": true
   },
-  "interior4.skin_interior4.black": {
-    "name": "interior4.skin_interior4.black",
-    "mapTo": "interior4.skin_interior4.black",
+  "bug_interior4.skin_interior4.black": {
+    "name": "bug_interior4.skin_interior4.black",
+    "mapTo": "bug_interior4.skin_interior4.black",
     "class": "material",
     "persistentId": "949f3441-5910-4937-9717-93f3b3a3cace",
     "Stages": [
@@ -1205,9 +1205,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior4.skin_interior4.blue": {
-    "name": "interior4.skin_interior4.blue",
-    "mapTo": "interior4.skin_interior4.blue",
+  "bug_interior4.skin_interior4.blue": {
+    "name": "bug_interior4.skin_interior4.blue",
+    "mapTo": "bug_interior4.skin_interior4.blue",
     "class": "material",
     "persistentId": "45fb8300-3f9e-4427-a1c2-d7b50acebfe9",
     "Stages": [
@@ -1232,9 +1232,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior4.skin_interior4.brown": {
-    "name": "interior4.skin_interior4.brown",
-    "mapTo": "interior4.skin_interior4.brown",
+  "bug_interior4.skin_interior4.brown": {
+    "name": "bug_interior4.skin_interior4.brown",
+    "mapTo": "bug_interior4.skin_interior4.brown",
     "class": "material",
     "persistentId": "fdea40dd-7b6d-4750-b5a4-cbd1315f5cc0",
     "Stages": [
@@ -1259,9 +1259,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior4.skin_interior4.brown2": {
-    "name": "interior4.skin_interior4.brown2",
-    "mapTo": "interior4.skin_interior4.brown2",
+  "bug_interior4.skin_interior4.brown2": {
+    "name": "bug_interior4.skin_interior4.brown2",
+    "mapTo": "bug_interior4.skin_interior4.brown2",
     "class": "material",
     "persistentId": "df202755-2a5c-43d9-9eee-49747935ebc3",
     "Stages": [
@@ -1286,9 +1286,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior4.skin_interior4.gray": {
-    "name": "interior4.skin_interior4.gray",
-    "mapTo": "interior4.skin_interior4.gray",
+  "bug_interior4.skin_interior4.gray": {
+    "name": "bug_interior4.skin_interior4.gray",
+    "mapTo": "bug_interior4.skin_interior4.gray",
     "class": "material",
     "persistentId": "54a9d799-20b9-4a4d-a74c-f6f0ee3574da",
     "Stages": [
@@ -1313,9 +1313,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior4.skin_interior4.green": {
-    "name": "interior4.skin_interior4.green",
-    "mapTo": "interior4.skin_interior4.green",
+  "bug_interior4.skin_interior4.green": {
+    "name": "bug_interior4.skin_interior4.green",
+    "mapTo": "bug_interior4.skin_interior4.green",
     "class": "material",
     "persistentId": "891a2f82-7894-42f0-a7af-ac0dae4f8717",
     "Stages": [
@@ -1340,9 +1340,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior4.skin_interior4.red": {
-    "name": "interior4.skin_interior4.red",
-    "mapTo": "interior4.skin_interior4.red",
+  "bug_interior4.skin_interior4.red": {
+    "name": "bug_interior4.skin_interior4.red",
+    "mapTo": "bug_interior4.skin_interior4.red",
     "class": "material",
     "persistentId": "99d2dae2-a296-4c69-a1f7-2542cda7d166",
     "Stages": [
@@ -1367,9 +1367,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior4.skin_interior4.white": {
-    "name": "interior4.skin_interior4.white",
-    "mapTo": "interior4.skin_interior4.white",
+  "bug_interior4.skin_interior4.white": {
+    "name": "bug_interior4.skin_interior4.white",
+    "mapTo": "bug_interior4.skin_interior4.white",
     "class": "material",
     "persistentId": "e4681e6a-22ad-4bb0-944a-5c3c4336ca35",
     "Stages": [
@@ -1395,9 +1395,9 @@
     "version": 1.5
   },
 
-  "interior4.skin_interior4.paint1": {
-    "name": "interior4.skin_interior4.paint1",
-    "mapTo": "interior4.skin_interior4.paint1",
+  "bug_interior4.skin_interior4.paint1": {
+    "name": "bug_interior4.skin_interior4.paint1",
+    "mapTo": "bug_interior4.skin_interior4.paint1",
     "class": "material",
     "persistentId": "cef4b2a3-24c3-4f4c-93e4-bd6acc7b12cb",
     "Stages": [
@@ -1423,9 +1423,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior4.skin_interior4.paint2": {
-    "name": "interior4.skin_interior4.paint2",
-    "mapTo": "interior4.skin_interior4.paint2",
+  "bug_interior4.skin_interior4.paint2": {
+    "name": "bug_interior4.skin_interior4.paint2",
+    "mapTo": "bug_interior4.skin_interior4.paint2",
     "class": "material",
     "persistentId": "2f9d2162-7397-4bfe-a49e-358bb53bc16c",
     "Stages": [
@@ -1452,9 +1452,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "interior4.skin_interior4.paint3": {
-    "name": "interior4.skin_interior4.paint3",
-    "mapTo": "interior4.skin_interior4.paint3",
+  "bug_interior4.skin_interior4.paint3": {
+    "name": "bug_interior4.skin_interior4.paint3",
+    "mapTo": "bug_interior4.skin_interior4.paint3",
     "class": "material",
     "persistentId": "62841483-6afd-4b61-9d15-26302fdd60b2",
     "Stages": [

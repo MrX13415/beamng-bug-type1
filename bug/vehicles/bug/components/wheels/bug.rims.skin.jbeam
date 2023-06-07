@@ -54,7 +54,15 @@
         "slotType" : "skin_rim_F",
         "skinName" : "paint3"
     },
-
+    "bug_rim_F_rusty": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Rusty",
+            "value":300,
+        },
+        "slotType" : "skin_rim_F",
+        "skinName" : "rusty"
+    },
 
     "bug_rim_R_white": {
         "information":{
@@ -109,6 +117,15 @@
         },
         "slotType" : "skin_rim_R",
         "skinName" : "paint3"
+    },
+    "bug_rim_R_rusty": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Rusty",
+            "value":300,
+        },
+        "slotType" : "skin_rim_R",
+        "skinName" : "rusty"
     }
 
 }

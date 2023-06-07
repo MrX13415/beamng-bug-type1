@@ -20,6 +20,11 @@
     {"control": "ctrl numpad6", "action": "windowFRclose"},
     {"control": "ctrl numpad3", "action": "windowFRopen"},
 
+    {"control": "ctrl alt numpad4", "action": "doorventFLclose"},
+    {"control": "ctrl alt numpad1", "action": "doorventFLopen"},
+    {"control": "ctrl alt numpad6", "action": "doorventFRclose"},
+    {"control": "ctrl alt numpad3", "action": "doorventFRopen"},
+
     {"control": "ctrl numpad5", "action": "ragtopclose"},
     {"control": "ctrl numpad2", "action": "ragtopopen"},
     

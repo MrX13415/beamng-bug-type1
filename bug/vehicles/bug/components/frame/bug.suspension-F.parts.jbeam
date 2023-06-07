@@ -101,7 +101,7 @@
     "slotType":"bug_spring_F",
     "flexbodies":[
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_coilover_F", ["shocktop_F","lowerarm_F"]],
+       // ["bug_coilover_F", ["shocktop_F","lowerarm_F"]],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -146,7 +146,7 @@
     "slotType":"bug_spring_F",
     "flexbodies":[
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_coilover_F", ["shocktop_F","lowerarm_F"]],
+       // ["bug_coilover_F", ["shocktop_F","lowerarm_F"]],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

@@ -160,21 +160,25 @@ local function updateOpenings()
   updateInteriorlight(doors)
 
 
+  local ventFL = electrics.values["doorventFL_state"] or 0
+  local ventFR = electrics.values["doorventFR_state"] or 0
   local windowFL = electrics.values["windowFL_state"] or 0
   local windowFR = electrics.values["windowFR_state"] or 0
-  local windows = clamp((windowFL + windowFR) / 2, 0, 1)
+  --local windows = clamp((windowFL + windowFR) / 2, 0, 1)
   
   local ragtop = electrics.values["ragtop_state"] or 0
 
-  local openL = clamp(doorL + (windowFL * 0.75) + (ragtop * 0.5), 0, 1)
-  local openR = clamp(doorR + (windowFR * 0.75) + (ragtop * 0.5), 0, 1)
+  local openL = clamp(doorL + (windowFL * 0.75) + (ventFL * 0.1) + (ragtop * 0.5), 0, 1)
+  local openR = clamp(doorR + (windowFR * 0.75) + (ventFR * 0.1) + (ragtop * 0.5), 0, 1)
   local open = math.max(openL, openR)
 
   electrics.values["vehicleopenL"] = openL
   electrics.values["vehicleopenR"] = openR
   electrics.values["vehicleopen"] = open
 
-  local cabinFilterCoef = math.abs(1 - (open*0.85)) -- Keep at least 15%
+  local openCurve = (open*1.3)/(open+0.3)
+  -- Keep at least 15%
+  local cabinFilterCoef = math.abs(1 - (openCurve*0.85))
   if playerInfo.firstPlayerSeated then
     updateCabinFilterCoef(cabinFilterCoef)
   end
@@ -274,6 +278,9 @@ local function onInit(jbeamData)
 end
 
 local function onReset()
+  print("[Bug] Version 20.5 - 2023-06-07")
+  ----------------------------------------
+
   setCabinFilterCoef()
 
   --dTShow = {}

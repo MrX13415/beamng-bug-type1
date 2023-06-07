@@ -1,8 +1,8 @@
 {
 
-  "body_paint": {
-    "name": "body_paint",
-    "mapTo": "body_paint",
+  "bug_body_paint": {
+    "name": "bug_body_paint",
+    "mapTo": "bug_body_paint",
     "class": "Material",
     "persistentId": "3ffdc28e-be6a-43f0-90f7-a967679efb0f",
     "Stages": [
@@ -34,9 +34,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "body_interiorpaint": {
-    "name": "body_interiorpaint",
-    "mapTo": "body_interiorpaint",
+  "bug_body_interiorpaint": {
+    "name": "bug_body_interiorpaint",
+    "mapTo": "bug_body_interiorpaint",
     "class": "Material",
     "persistentId": "33497c25-b0e3-4e18-ae35-b4d47bbd35de",
     "Stages": [
@@ -64,9 +64,9 @@
     "translucentBlendOp": "None",
     "version": 1.5
   },
-  "body_paint_rubber": {
-    "name": "body_paint_rubber",
-    "mapTo": "body_paint_rubber",
+  "bug_body_paint_rubber": {
+    "name": "bug_body_paint_rubber",
+    "mapTo": "bug_body_paint_rubber",
     "class": "Material",
     "persistentId": "5e10b626-db6d-4baf-a691-36d335fb7126",
     "Stages": [
@@ -93,9 +93,9 @@
     "version": 1.5
   },
 
-  "frame_metal": {
-    "name": "frame_metal",
-    "mapTo": "frame_metal",
+  "bug_frame_metal": {
+    "name": "bug_frame_metal",
+    "mapTo": "bug_frame_metal",
     "class": "Material",
     "persistentId": "95cfedc2-ca89-40e0-b6e1-42d9bf1fff26",
     "Stages": [
@@ -108,7 +108,7 @@
         ],
         "metallicFactor": 1,
         "normalMap": "/vehicles/bug/components/frame/textures/frame_n.normal.png",
-        "normalMapStrength": 0,
+        "normalMapStrength": 0.5,
         "roughnessFactor": 0.736999989,
         "roughnessMap": "/vehicles/bug/components/frame/textures/frame_r.data.png"
       },
@@ -120,9 +120,9 @@
     "version": 1.5
   },
 
-  "window_glass": {
-    "name": "window_glass",
-    "mapTo": "window_glass",
+  "bug_window_glass": {
+    "name": "bug_window_glass",
+    "mapTo": "bug_window_glass",
     "class": "material",
     "persistentId": "ab876f43-74f4-4f05-acac-405d14eb19e9",
     "Stages": [
@@ -151,9 +151,9 @@
     "translucentRecvShadows": true,
     "version": 1.5
   },
-  "window_glass_dmg": {
-    "name": "window_glass_dmg",
-    "mapTo": "window_glass_dmg",
+  "bug_window_glass_dmg": {
+    "name": "bug_window_glass_dmg",
+    "mapTo": "bug_window_glass_dmg",
     "class": "Material",
     "persistentId": "d232a4fc-da29-4492-bd44-a86cbc4c2478",
     "Stages": [
@@ -181,9 +181,9 @@
     "translucentRecvShadows": true,
     "version": 1.5
   },
-  "window_glass_int": {
-    "name": "window_glass_int",
-    "mapTo": "window_glass_int",
+  "bug_window_glass_int": {
+    "name": "bug_window_glass_int",
+    "mapTo": "bug_window_glass_int",
     "class": "material",
     "persistentId": "d7de31aa-b61d-479c-93a1-a69a5bb667bf",
     "Stages": [
@@ -212,9 +212,9 @@
     "version": 1.5
   },
 
-  "window_glass_invisible": {
-    "name": "window_glass_invisible",
-    "mapTo": "window_glass_invisible",
+  "bug_window_glass_invisible": {
+    "name": "bug_window_glass_invisible",
+    "mapTo": "bug_window_glass_invisible",
     "class": "Material",
     "persistentId": "2a90d339-4992-43ff-92d6-3fb5ffcbfd38",
     "Stages": [
@@ -225,9 +225,9 @@
     ]
   },
 
-  "nameplate": {
-    "name": "nameplate",
-    "mapTo": "nameplate",
+  "bug_nameplate": {
+    "name": "bug_nameplate",
+    "mapTo": "bug_nameplate",
     "class": "Material",
     "persistentId": "dc5c03cd-57d0-4ecf-be10-d0d36d561234",
     "Stages": [
@@ -255,9 +255,23 @@
     "version": 1.5
   },
 
-  "runningboard_rubber.skin_runningboards.black": {
-    "name": "runningboard_rubber.skin_runningboards.black",
-    "mapTo": "runningboard_rubber.skin_runningboards.black",
+  "bug_runningboard_rubber": {
+    "name": "bug_runningboard_rubber",
+    "mapTo": "bug_runningboard_rubber",
+    "class": "Material",
+    "persistentId": "11c54212-6fa7-4b49-bd09-4ec6cb047c8f",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_runningboard_rubber.skin_runningboards.black": {
+    "name": "bug_runningboard_rubber.skin_runningboards.black",
+    "mapTo": "bug_runningboard_rubber.skin_runningboards.black",
     "class": "Material",
     "persistentId": "397fa47d-a749-4590-ace6-473d60a7ecdf",
     "Stages": [
@@ -279,9 +293,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "runningboard_rubber.skin_runningboards.white": {
-    "name": "runningboard_rubber.skin_runningboards.white",
-    "mapTo": "runningboard_rubber.skin_runningboards.white",
+  "bug_runningboard_rubber.skin_runningboards.white": {
+    "name": "bug_runningboard_rubber.skin_runningboards.white",
+    "mapTo": "bug_runningboard_rubber.skin_runningboards.white",
     "class": "Material",
     "persistentId": "de3f8be7-03b4-4244-9910-f922374aa99e",
     "Stages": [

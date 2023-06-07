@@ -67,15 +67,28 @@
 "antenna_cowl": {
 	"information":{
         "authors":"53_herbie_53",
-        "name":"Cowl-Mounted Antenna",
+        "name":"Cowl-Mounted Antenna (Retracted)",
         "value":1,
     },
     "slotType" : "antenna",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["antenna_cowl", ["bug_body"]],
+         ["antenna_cowl_in", ["bug_body"]],
     ],
 },
+"antenna_cowl_out": {
+	"information":{
+        "authors":"53_herbie_53",
+        "name":"Cowl-Mounted Antenna (Extended)",
+        "value":1,
+    },
+    "slotType" : "antenna",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["antenna_cowl_out", ["bug_body"]],
+    ],
+},
+
 "bug_exterior_sunvisor": {
 	"information":{
         "authors":"53_herbie_53",

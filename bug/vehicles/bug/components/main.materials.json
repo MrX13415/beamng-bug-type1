@@ -1,7 +1,7 @@
 {
-  "chrome": {
-    "name": "chrome",
-    "mapTo": "chrome",
+  "bug_chrome": {
+    "name": "bug_chrome",
+    "mapTo": "bug_chrome",
     "class": "material",
     "persistentId": "d9cb434d-992f-4567-8192-51ecadddc3df",
     "Stages": [
@@ -25,9 +25,9 @@
     "translucentBlendOp": "None",
     "version": 1.5
   },
-  "interior_chrome": {
-    "name": "interior_chrome",
-    "mapTo": "interior_chrome",
+  "bug_interior_chrome": {
+    "name": "bug_interior_chrome",
+    "mapTo": "bug_interior_chrome",
     "class": "material",
     "persistentId": "ef9f5b4c-a32a-47a1-a190-c10719043a24",
     "Stages": [
@@ -52,9 +52,9 @@
     "version": 1.5
   },
 
-  "mirror": {
-    "name": "mirror",
-    "mapTo": "mirror",
+  "bug_mirror": {
+    "name": "bug_mirror",
+    "mapTo": "bug_mirror",
     "class": "Material",
     "persistentId": "bd46f148-b662-462c-93e0-c887e33bda52",
     "Stages": [
@@ -64,9 +64,9 @@
       {}
     ]
   },
-  "aluminum": {
-    "name": "aluminum",
-    "mapTo": "aluminum",
+  "bug_aluminum": {
+    "name": "bug_aluminum",
+    "mapTo": "bug_aluminum",
     "class": "Material",
     "persistentId": "a5335944-4c65-41ad-b876-67d3758c516b",
     "Stages": [
@@ -90,9 +90,9 @@
     "translucentBlendOp": "None",
     "version": 1.5
   },
-  "interior_aluminum": {
-    "name": "interior_aluminum",
-    "mapTo": "interior_aluminum",
+  "bug_interior_aluminum": {
+    "name": "bug_interior_aluminum",
+    "mapTo": "bug_interior_aluminum",
     "class": "Material",
     "persistentId": "28ce1f27-ebdb-4d3b-8a35-aff7b6bfe5c4",
     "Stages": [
@@ -117,9 +117,9 @@
     "version": 1.5
   },
 
-  "plastic_black": {
-    "name": "plastic_black",
-    "mapTo": "plastic_black",
+  "bug_plastic_black": {
+    "name": "bug_plastic_black",
+    "mapTo": "bug_plastic_black",
     "class": "Material",
     "persistentId": "20ec2d7a-6b95-4169-8786-87deab81a317",
     "Stages": [
@@ -139,9 +139,9 @@
     ],
     "version": 1.5
   },
-  "plastic_white": {
-    "name": "plastic_white",
-    "mapTo": "plastic_white",
+  "bug_plastic_white": {
+    "name": "bug_plastic_white",
+    "mapTo": "bug_plastic_white",
     "class": "Material",
     "persistentId": "ee22d85b-887f-46e2-8567-5d8a424e992a",
     "Stages": [
@@ -161,9 +161,9 @@
     ],
     "version": 1.5
   },
-  "plastic_embossed_alpha": {
-    "name": "plastic_embossed_alpha",
-    "mapTo": "plastic_embossed_alpha",
+  "bug_plastic_embossed_alpha": {
+    "name": "bug_plastic_embossed_alpha",
+    "mapTo": "bug_plastic_embossed_alpha",
     "class": "material",
     "persistentId": "b63fea18-546a-4f98-adca-5a35d59541ae",
     "Stages": [
@@ -181,9 +181,9 @@
     ],
     "translucentBlendOp": "None"
   },
-  "rubber": {
-    "name": "rubber",
-    "mapTo": "rubber",
+  "bug_rubber": {
+    "name": "bug_rubber",
+    "mapTo": "bug_rubber",
     "class": "Material",
     "persistentId": "854a1331-e75a-47b3-994f-be19cd7a9389",
     "Stages": [
@@ -203,9 +203,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "rubber_white": {
-    "name": "rubber_white",
-    "mapTo": "rubber_white",
+  "bug_rubber_white": {
+    "name": "bug_rubber_white",
+    "mapTo": "bug_rubber_white",
     "class": "Material",
     "persistentId": "82d5b4df-5481-47d9-af7b-bf0318f70a11",
     "Stages": [

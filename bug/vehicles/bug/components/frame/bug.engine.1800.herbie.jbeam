@@ -6,22 +6,30 @@
     "information":{
         "authors":"53_herbie_53 & Fufsgfen",
         "name":"Herbie F4 Engine", // depending on the player behaviour
-        "value":1800,
+        "value":80000,
     },
     "slotType" : "bug_engine",
     "slots": [
         ["type", "default", "description"],
 
         ["bug_battery","bug_battery", "Battery", {"coreSlot": true}],
+        ["bug_intake","bug_intake", "Intake", {"coreSlot":true}],
         ["bug_oilpan","bug_oilpan", "Oil Pan", {"coreSlot":true}],
         ["bug_exhaust","bug_exhaust", "Exhaust"],
-        ["bug_transmission","bug_transmission_4M", "Transmission"],
+        
+        ["bug_oilcooler","", "Oil Cooler"],
+        
+        // These parts don't make sense with this engine and cause more problems then they solve.
+        //["bug_engine_internals","bug_engine_internals", "Engine Long Block", {"coreSlot":true}],
+        //["bug_engine_ecu","", "Engine Management"],
+
+        ["bug_transaxle","bug_transaxle_4M", "Transaxle"],
         ["n2o_system","", "Nitrous Oxide System"],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$torque", "range", "", "Engine", 0.5, 0.10, 1.0, "Torque", "Engine Torque multiplier", {"minDis":10, "maxDis":100}],
-        ["$maxrpm", "range", "rpm", "Engine", 8000, 3000, 14000, "Max RPM", "Max RPM limit", {"stepDis":100}],
+        ["$maxrpm", "range", "rpm", "Engine", 8000, 3000, 14000, "RPM Limit", "Max RPM limit", {"stepDis":100}],
 	],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -53,11 +61,13 @@
 			[	15000	, 	"$=$torque*721.01"	],
 		],
 		"idleRPM":950,
+        "idleRPMRoughness":150,
         "maxRPM":"$maxrpm",
         "hasRevLimiter":false,
-        "inertia":0.3,
-        "friction":1,
+        "inertia":0.124, 
+        "friction":6,
         "dynamicFriction":0.025,
+        "engineBrakeTorque":22,
 
         //"burnEfficiency":0.29
         "burnEfficiency":[
@@ -76,13 +86,14 @@
         "isAirCooledOnly":true,
         "airRegulatorTemperature":85,
         "airRegulatorClosedCoef":0.1,
-        "engineBlockMaterial":"aluminium",
 		"engineBlockAirCoolingEfficiency":280,
 		"blockFanMaxAirSpeed":8,
+        "engineBlockAirflowCoef":1.25,
+        "engineBlockMaterial":"aluminium",
         "oilVolume":4,
+        "radiatorFanType":"mechanical",
 		"oilRadiatorArea":0.45,
 		"oilRadiatorEffectiveness":200000,
-        "radiatorFanType":"mechanical",
 
         //engine durability
         "cylinderWallTemperatureDamageThreshold":5000,
@@ -179,7 +190,7 @@
         "eqLowFreq": 450,
         "eqLowWidth": 0.1,
 
-        "eqHighGain": 24,
+        "eqHighGain": 20,
         "eqHighFreq": 8000,
         "eqHighWidth": 0.05,
 
@@ -205,28 +216,18 @@
 
         ["engine_crank_case",           ["bug_engine"]],
         ["engine_cylinders",            ["bug_engine"]],
-        ["engine_intake_manifold",      ["bug_engine"]],
         ["engine_push_rods",            ["bug_engine"]],
         ["engine_valve_cap_holder",     ["bug_engine"]],
-
-        ["engine_air_filter",           ["bug_engine"]],
+        
+        ["engine_ignition",             ["bug_engine"]],
         ["engine_alternator",           ["bug_engine"]],
         ["engine_alternator_regulator", ["bug_engine"]],
         ["engine_alternator_stand",     ["bug_engine"]],
         ["engine_belt",                 ["bug_engine"]],
-        ["engine_cables",               ["bug_engine"]],
-        ["engine_carburetor",           ["bug_engine"]],
-        ["engine_carburetor_spring",    ["bug_engine"]],
-        ["engine_fuel_line",            ["bug_engine"]],
         ["engine_fuel_pump",            ["bug_engine"]],
-        ["engine_ignition",             ["bug_engine"]],
-        ["engine_ignition_coil",        ["bug_engine"]],
         ["engine_oil_dipstick",         ["bug_engine"]],
         ["engine_oil_inlet",            ["bug_engine"]],
-        ["engine_oil_tube",             ["bug_engine"]],
         ["engine_pipe",                 ["bug_engine"]],
-        ["engine_warm_air_tube",        ["bug_engine"]],
-
         ["engine_heat_exchanger",       ["bug_engine"]],
     ],
     "props": [
@@ -250,20 +251,20 @@
         {"group":"bug_engine"},
         {"nodeWeight":6.0},
         {"engineGroup":"engine_block"},
-        ["e1l", 0.36, 1.37, 0.3,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
-        ["e1r", -0.36, 1.37, 0.3],
-        ["e2l", 0.36, 1.68, 0.3,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
-        ["e2r", -0.36, 1.68, 0.3],
+        ["e1l",  0.36, 1.37, 0.22,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
+        ["e1r", -0.36, 1.37, 0.22],
+        ["e2l",  0.36, 1.68, 0.22,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
+        ["e2r", -0.36, 1.68, 0.22],
         {"engineGroup":["engine_block","engine_intake"]},
         {"nodeWeight":6.0},
-        ["e3l", 0.32, 1.37, 0.56,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
-        ["e3r", -0.32, 1.37, 0.56],
-        ["e4l", 0.32, 1.68, 0.56, {"isExhaust":"mainEngine","chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
-        ["e4r", -0.32, 1.68, 0.56, {"isExhaust":"mainEngine","chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
+        ["e3l",  0.34, 1.37, 0.56,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
+        ["e3r", -0.34, 1.37, 0.56],
+        ["e4l",  0.34, 1.68, 0.56, {"isExhaust":"mainEngine","chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
+        ["e4r", -0.34, 1.68, 0.56, {"isExhaust":"mainEngine","chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
         {"nodeWeight":1.3},
-        ["e5l", 0.18, 1.37, 0.79,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.5,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
+        ["e5l",  0.18, 1.37, 0.79,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.5,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
         ["e5r", -0.18, 1.37, 0.79,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.5,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
-        ["e6l", 0.18, 1.68, 0.79,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.5,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
+        ["e6l",  0.18, 1.68, 0.79,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.5,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
         ["e6r", -0.18, 1.68, 0.79,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.5,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
         {"engineGroup":""},
         {"group":""},
@@ -272,8 +273,8 @@
         ["id1:", "id2:"],
 
         {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":9001000,"beamDamp":250},
-        {"beamDeform":200000,"beamStrength":"FLT_MAX"},
+        {"beamSpring":9001000,"beamDamp":500},
+        {"beamDeform":175000,"beamStrength":"FLT_MAX"},
         {"deformGroup":"mainEngine", "deformationTriggerRatio":0.001},
         //engine
         ["e1r","e1l"],

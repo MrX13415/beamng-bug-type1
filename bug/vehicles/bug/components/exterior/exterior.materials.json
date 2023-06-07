@@ -1,7 +1,7 @@
 {
-  "foglight_carello": {
-    "name": "foglight_carello",
-    "mapTo": "foglight_carello",
+  "bug_foglight_carello": {
+    "name": "bug_foglight_carello",
+    "mapTo": "bug_foglight_carello",
     "class": "Material",
     "persistentId": "7463c4ee-f272-4c02-90d7-4e650aae5748",
     "Stages": [
@@ -15,9 +15,9 @@
     ],
     "translucentBlendOp": "None"
   },
-  "gascap": {
-    "name": "gascap",
-    "mapTo": "gascap",
+  "bug_gascap": {
+    "name": "bug_gascap",
+    "mapTo": "bug_gascap",
     "class": "Material",
     "persistentId": "168bdc7d-390a-4da7-965f-0bee0fc35aad",
     "Stages": [
@@ -41,9 +41,9 @@
     "translucentRecvShadows": true,
     "version": 1.5
   },
-  "monte_carlo_decals": {
-    "name": "monte_carlo_decals",
-    "mapTo": "monte_carlo_decals",
+  "bug_monte_carlo_decals": {
+    "name": "bug_monte_carlo_decals",
+    "mapTo": "bug_monte_carlo_decals",
     "class": "Material",
     "persistentId": "58fa0ee2-e7e1-47a5-a979-1aaa6241e164",
     "Stages": [
@@ -57,9 +57,9 @@
     "doubleSided": true,
     "version": 1.5
   },
-  "tape": {
-    "name": "tape",
-    "mapTo": "tape",
+  "bug_tape": {
+    "name": "bug_tape",
+    "mapTo": "bug_tape",
     "class": "Material",
     "persistentId": "d82a4c04-fef1-4008-89b8-0ddec15b8ce6",
     "Stages": [
@@ -79,9 +79,9 @@
     "version": 1.5
   },
 
-  "rack_wood": {
-    "name": "rack_wood",
-    "mapTo": "rack_wood",
+  "bug_rack_wood": {
+    "name": "bug_rack_wood",
+    "mapTo": "bug_rack_wood",
     "class": "material",
     "persistentId": "ecc757c2-7029-44e3-9943-8e479f4b4ec9",
     "Stages": [
@@ -113,9 +113,9 @@
     "translucentBlendOp": "None",
     "version": 1.5
   },
-  "rearrack_bag_metal": {
-    "name": "rearrack_bag_metal",
-    "mapTo": "rearrack_bag_metal",
+  "bug_rearrack_bag_metal": {
+    "name": "bug_rearrack_bag_metal",
+    "mapTo": "bug_rearrack_bag_metal",
     "class": "Material",
     "persistentId": "40186b3e-ea21-4064-9a51-6cd904570cf8",
     "Stages": [
@@ -133,9 +133,9 @@
     "version": 1.5
   },
 
-  "rearrack_bag_leather": {
-    "name": "rearrack_bag_leather",
-    "mapTo": "rearrack_bag_leather",
+  "bug_rearrack_bag_leather": {
+    "name": "bug_rearrack_bag_leather",
+    "mapTo": "bug_rearrack_bag_leather",
     "class": "Material",
     "persistentId": "d68e06c3-6586-454a-ac69-498bbe73d27b",
     "Stages": [
@@ -157,9 +157,9 @@
     ],
     "version": 1.5
   },
-  "roofrack_bag_gold": {
-    "name": "roofrack_bag_gold",
-    "mapTo": "roofrack_bag_gold",
+  "bug_roofrack_bag_gold": {
+    "name": "bug_roofrack_bag_gold",
+    "mapTo": "bug_roofrack_bag_gold",
     "class": "material",
     "persistentId": "c659a443-007a-4854-848d-c4ab0bc40031",
     "Stages": [
@@ -197,9 +197,9 @@
     "translucentBlendOp": "None",
     "version": 1.5
   },
-  "roofrack_bag_leather": {
-    "name": "roofrack_bag_leather",
-    "mapTo": "roofrack_bag_leather",
+  "bug_roofrack_bag_leather": {
+    "name": "bug_roofrack_bag_leather",
+    "mapTo": "bug_roofrack_bag_leather",
     "class": "material",
     "persistentId": "8440fe41-fbcc-4b14-a259-c883962453a9",
     "Stages": [
@@ -222,9 +222,9 @@
     "version": 1.5
   },
 
-  "roofrack_tricycle_leather": {
-    "name": "roofrack_tricycle_leather",
-    "mapTo": "roofrack_tricycle_leather",
+  "bug_roofrack_tricycle_leather": {
+    "name": "bug_roofrack_tricycle_leather",
+    "mapTo": "bug_roofrack_tricycle_leather",
     "class": "Material",
     "persistentId": "a995b790-3534-489f-86b1-2e768bca787d",
     "Stages": [
@@ -243,9 +243,9 @@
     ],
     "version": 1.5
   },
-  "roofrack_tricycle_paint": {
-    "name": "roofrack_tricycle_paint",
-    "mapTo": "roofrack_tricycle_paint",
+  "bug_roofrack_tricycle_paint": {
+    "name": "bug_roofrack_tricycle_paint",
+    "mapTo": "bug_roofrack_tricycle_paint",
     "class": "Material",
     "persistentId": "878a634b-4867-4e4c-9ba0-7201fe582f2a",
     "Stages": [
@@ -268,9 +268,9 @@
     "translucentBlendOp": "None",
     "version": 1.5
   },
-  "roofrack_tricycle_rubber": {
-    "name": "roofrack_tricycle_rubber",
-    "mapTo": "roofrack_tricycle_rubber",
+  "bug_roofrack_tricycle_rubber": {
+    "name": "bug_roofrack_tricycle_rubber",
+    "mapTo": "bug_roofrack_tricycle_rubber",
     "class": "Material",
     "persistentId": "c9ef8196-db2e-4cfb-a1df-e7d91ca54550",
     "Stages": [
@@ -290,9 +290,9 @@
     ],
     "version": 1.5
   },
-  "surfboard": {
-    "name": "surfboard",
-    "mapTo": "surfboard",
+  "bug_surfboard": {
+    "name": "bug_surfboard",
+    "mapTo": "bug_surfboard",
     "class": "Material",
     "persistentId": "ed36a1be-a46a-4c04-ae75-d47998fb20a4",
     "Stages": [
@@ -315,9 +315,9 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "drinkbox_metal": {
-    "name": "drinkbox_metal",
-    "mapTo": "drinkbox_metal",
+  "bug_drinkbox_metal": {
+    "name": "bug_drinkbox_metal",
+    "mapTo": "bug_drinkbox_metal",
     "class": "Material",
     "persistentId": "eabc5b9b-e78c-4b59-bfea-ddf275fb301b",
     "Stages": [
@@ -337,9 +337,9 @@
     ],
     "version": 1.5
   },
-  "drinkbox_paint": {
-    "name": "drinkbox_paint",
-    "mapTo": "drinkbox_paint",
+  "bug_drinkbox_paint": {
+    "name": "bug_drinkbox_paint",
+    "mapTo": "bug_drinkbox_paint",
     "class": "Material",
     "persistentId": "757d083a-9236-4e9e-8b1a-228c3bd882e1",
     "Stages": [
@@ -360,9 +360,9 @@
     "version": 1.5
   },
 
-  "spoilerR.skin_spoilerR.black": {
-    "name": "spoilerR.skin_spoilerR.black",
-    "mapTo": "spoilerR.skin_spoilerR.black",
+  "bug_spoilerR.skin_spoilerR.black": {
+    "name": "bug_spoilerR.skin_spoilerR.black",
+    "mapTo": "bug_spoilerR.skin_spoilerR.black",
     "class": "Material",
     "persistentId": "b4fe4a0e-9063-4f4f-ae22-26425d6a5f6d",
     "Stages": [
@@ -382,9 +382,9 @@
     ],
     "version": 1.5
   },
-  "spoilerR.skin_spoilerR.white": {
-    "name": "spoilerR.skin_spoilerR.white",
-    "mapTo": "spoilerR.skin_spoilerR.white",
+  "bug_spoilerR.skin_spoilerR.white": {
+    "name": "bug_spoilerR.skin_spoilerR.white",
+    "mapTo": "bug_spoilerR.skin_spoilerR.white",
     "class": "Material",
     "persistentId": "5b810b72-45d4-4fbe-8c06-5ac802a64b25",
     "Stages": [
@@ -404,9 +404,9 @@
     ],
     "version": 1.5
   },
-  "spoilerR.skin_spoilerR.paint1": {
-    "name": "spoilerR.skin_spoilerR.paint1",
-    "mapTo": "spoilerR.skin_spoilerR.paint1",
+  "bug_spoilerR.skin_spoilerR.paint1": {
+    "name": "bug_spoilerR.skin_spoilerR.paint1",
+    "mapTo": "bug_spoilerR.skin_spoilerR.paint1",
     "class": "Material",
     "persistentId": "e1c5120b-fdaa-4793-9706-a8d58e87042f",
     "Stages": [
@@ -438,9 +438,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "spoilerR.skin_spoilerR.paint2": {
-    "name": "spoilerR.skin_spoilerR.paint2",
-    "mapTo": "spoilerR.skin_spoilerR.paint2",
+  "bug_spoilerR.skin_spoilerR.paint2": {
+    "name": "bug_spoilerR.skin_spoilerR.paint2",
+    "mapTo": "bug_spoilerR.skin_spoilerR.paint2",
     "class": "Material",
     "persistentId": "e1c5120b-fdaa-4793-9706-a8d58e87042f",
     "Stages": [
@@ -472,9 +472,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "spoilerR.skin_spoilerR.paint3": {
-    "name": "spoilerR.skin_spoilerR.paint3",
-    "mapTo": "spoilerR.skin_spoilerR.paint3",
+  "bug_spoilerR.skin_spoilerR.paint3": {
+    "name": "bug_spoilerR.skin_spoilerR.paint3",
+    "mapTo": "bug_spoilerR.skin_spoilerR.paint3",
     "class": "Material",
     "persistentId": "8aeff271-1282-4181-9e51-3afa42e2195e",
     "Stages": [
@@ -506,9 +506,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "spoilerF.skin_spoilerF.black": {
-    "name": "spoilerF.skin_spoilerF.black",
-    "mapTo": "spoilerF.skin_spoilerF.black",
+  "bug_spoilerF.skin_spoilerF.black": {
+    "name": "bug_spoilerF.skin_spoilerF.black",
+    "mapTo": "bug_spoilerF.skin_spoilerF.black",
     "class": "Material",
     "persistentId": "69c6d48e-7f65-466a-9260-da781f6ca95a",
     "Stages": [
@@ -528,9 +528,9 @@
     ],
     "version": 1.5
   },
-  "spoilerF.skin_spoilerF.white": {
-    "name": "spoilerF.skin_spoilerF.white",
-    "mapTo": "spoilerF.skin_spoilerF.white",
+  "bug_spoilerF.skin_spoilerF.white": {
+    "name": "bug_spoilerF.skin_spoilerF.white",
+    "mapTo": "bug_spoilerF.skin_spoilerF.white",
     "class": "Material",
     "persistentId": "aeb322ca-9f46-4956-8559-18b891c19238",
     "Stages": [
@@ -550,9 +550,9 @@
     ],
     "version": 1.5
   },
-  "spoilerF.skin_spoilerF.paint1": {
-    "name": "spoilerF.skin_spoilerF.paint1",
-    "mapTo": "spoilerF.skin_spoilerF.paint1",
+  "bug_spoilerF.skin_spoilerF.paint1": {
+    "name": "bug_spoilerF.skin_spoilerF.paint1",
+    "mapTo": "bug_spoilerF.skin_spoilerF.paint1",
     "class": "Material",
     "persistentId": "74a27254-7195-49a4-a353-d84d0554ed5d",
     "Stages": [
@@ -584,9 +584,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "spoilerF.skin_spoilerF.paint2": {
-    "name": "spoilerF.skin_spoilerF.paint2",
-    "mapTo": "spoilerF.skin_spoilerF.paint2",
+  "bug_spoilerF.skin_spoilerF.paint2": {
+    "name": "bug_spoilerF.skin_spoilerF.paint2",
+    "mapTo": "bug_spoilerF.skin_spoilerF.paint2",
     "class": "Material",
     "persistentId": "cd97ddc6-50d2-4df2-9965-cc53906cf574",
     "Stages": [
@@ -618,9 +618,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "spoilerF.skin_spoilerF.paint3": {
-    "name": "spoilerF.skin_spoilerF.paint3",
-    "mapTo": "spoilerF.skin_spoilerF.paint3",
+  "bug_spoilerF.skin_spoilerF.paint3": {
+    "name": "bug_spoilerF.skin_spoilerF.paint3",
+    "mapTo": "bug_spoilerF.skin_spoilerF.paint3",
     "class": "Material",
     "persistentId": "8aeff271-1282-4181-9e51-3afa42e2195e",
     "Stages": [

@@ -3,29 +3,61 @@
 "bug_licenseplate_F": {
     "information":{
         "authors":"53_herbie_53",
-        "name":"Front License Plate",
+        "name":"Front EU License Plate",
         "value":10,
     },
     "slotType" : "bug_licenseplate_F",
+    "licenseplateFormat": "52-11",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-
-        ["licenseplate_F_frame", ["bug_bumper_F"]],
-        ["licenseplate", ["bug_bumper_F"],[],{"pos":{"x":0.00, "y":-1.93842, "z":0.413667}, "rot":{"x":-5.4, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+        
+        ["licenseplate_F_frame_EU", ["bug_bumper_F"]],
+        ["licenseplate-52-11", ["bug_bumper_F"],[],{"pos":{"x":0.00, "y":-1.94121, "z":0.396227}, "rot":{"x":-5.4, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
     ],
 },
 "bug_licenseplate_F_US": {
     "information":{
         "authors":"53_herbie_53",
-        "name":"Front License Plate",
+        "name":"Front US License Plate",
         "value":10,
     },
-    "slotType" : "bug_licenseplate_F_US",
+    "slotType" : "bug_licenseplate_F",
+    "licenseplateFormat": "30-15",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["licenseplate_F_frame_US", ["bug_bumper_F"]],
+        ["licenseplate", ["bug_bumper_F"],[],{"pos":{"x":0.00, "y":-1.93842, "z":0.413667}, "rot":{"x":-5.4, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+    ],
+},
+"bug_licenseplate_F2_EU": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":"Front EU License Plate",
+        "value":10,
+    },
+    "slotType" : "bug_licenseplate_F2",
+    "licenseplateFormat": "52-11",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        
+        ["licenseplate_F_frame_EU", ["bug_bumper_F"]],
+        ["licenseplate-52-11", ["bug_bumper_F"],[],{"pos":{"x":0.00, "y":-1.94121, "z":0.396227}, "rot":{"x":-5.4, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+    ],
+},
+"bug_licenseplate_F2_US": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":"Front US License Plate",
+        "value":10,
+    },
+    "slotType" : "bug_licenseplate_F2",
+    "licenseplateFormat": "30-15",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         ["licenseplate_F_mount_US", ["bug_bumper_F"]],
-        ["licenseplate_F_frame", ["bug_bumper_F"]],
+        ["licenseplate_F_frame_US", ["bug_bumper_F"]],
         ["licenseplate", ["bug_bumper_F"],[],{"pos":{"x":0.00, "y":-1.93842, "z":0.413667}, "rot":{"x":-5.4, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
     ],
 },
@@ -36,6 +68,7 @@
         "value":10,
     },
     "slotType" : "bug_licenseplate_R",
+    "licenseplateFormat": "30-15",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 

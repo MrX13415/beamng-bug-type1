@@ -10,14 +10,14 @@
     "slots": [
         ["type", "default", "description"],
 
-        ["bug_licenseplate_F_US","bug_licenseplate_F_US", "Front License Plate"],
+        ["bug_licenseplate_F2","bug_licenseplate_F2_US", "Front License Plate"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 
          ["bumper_F_US",        ["bug_bumper_F"]],
-         ["bumper_F_mount",     ["bug_bumper_F"]],
-         ["bumper_F_mount_top", ["bug_bumper_F"]],
+         ["bumper_F_mount",     ["bug_body"]],
+         ["bumper_F_mount_top", ["bug_body"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -306,8 +306,8 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
          
          ["bumper_R_US",        ["bug_bumper_R"]],
-         ["bumper_R_mount",     ["bug_bumper_R"]],
-         ["bumper_R_mount_top", ["bug_bumper_R"]],
+         ["bumper_R_mount",     ["bug_body"]],
+         ["bumper_R_mount_top", ["bug_body"]],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -579,7 +579,7 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
     
         ["bumper_F_EU",        ["bug_bumper_F"]],
-        ["bumper_F_mount",     ["bug_bumper_F"]],
+        ["bumper_F_mount",     ["bug_body"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -868,7 +868,7 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
         
         ["bumper_R_EU",        ["bug_bumper_R"]],
-        ["bumper_R_mount",     ["bug_bumper_R"]],
+        ["bumper_R_mount",     ["bug_body"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

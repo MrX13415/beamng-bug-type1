@@ -111,7 +111,7 @@
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$ragtopInitState", "range", "", "Ragtop", 0, 0, 1.0, "Open Position", "Inital open position of the Ragtop roof.", {"minDis":0, "maxDis":100}],
+        ["$ragtopInitState", "range", "", "Body", 0, 0, 1.0, "Ragtop Open", "Inital open position of the Ragtop roof.", {"minDis":0, "maxDis":100}],
 	],
     "controller": [
         ["fileName"],
@@ -211,6 +211,7 @@
         {"nodeMaterial":"|NM_CLOTH"},
         {"frictionCoef":0.7},
         {"nodeWeight":0.4},
+        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
         // 1st bar
         {"group":["bug_racktop_fabric", "bug_racktop_fabric1"]},
         ["rtf1l",  0.41149, -0.19623, 1.44262],
@@ -228,6 +229,7 @@
         ["rtf4",   0.00000,  0.47036, 1.49892],
         ["rtf4r", -0.41149,  0.47036, 1.47892],
         {"group":""},
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
         // rigidify
         {"selfCollision":false},
         {"collision" :false},
