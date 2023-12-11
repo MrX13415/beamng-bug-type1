@@ -44,6 +44,11 @@ local backfire_sound_played = false
 local backfire_nodeL = {0, 0}
 local backfire_nodeR = {0, 0}
 
+local excitedTimer = math.random(10,120)
+local angryTimer = math.random(7,20)
+local angryPause = false
+local lastOpen = false
+
 -- MAIN
 
 function playHornSound(soundname,volume,pitch)
@@ -52,7 +57,7 @@ end
 
 local function excitedHopping(dt)
 	-- Do hopping?
-	local hopp = herbie.isEnabled() and herbie.getPlayerTrust() >= 330
+	local hopp = herbie.isEnabled() and herbie.IsExcited()
 	hopp = hopp and herbie.hasPower() and not herbie.state().driving
 
 	if not hopp then 
@@ -98,13 +103,36 @@ local function excitedHopping(dt)
 
 	--herbie.message("Hopp (F): #" .. tostring(hoppCount) .. " | " .. tostring(hoppSleep) .. "s L: " ..tostring(hoppL*100).. "% " ..tostring(hoppL/4*1000).. "ms R: " ..tostring(hoppR*100).. "% " ..tostring(hoppR/4*1000).. "ms")
 end
-
 local function excitedBurnouts()
 end
+local function excitedNotSeatedBehavior(dt)
+	if not herbie.isEnabled() or not herbie.hasPower() or not herbie.IsExcited() then return end
+
+	if not playerInfo.firstPlayerSeated and not herbie.state().driving then
+		if excitedTimer > 0 then
+			excitedTimer = excitedTimer - dt
+		end
+		print(excitedTimer)
+		if excitedTimer <= 0 then
+			local open = electrics.values["opendoors"]
+			if not open then
+				vehicle.setDoorL(true)
+				excitedTimer = math.random(0.5,5)
+			else
+				vehicle.setDoorL(false)
+				excitedTimer = math.random(10,120)
+			end
+			lastOpen = open
+		end
+	elseif excitedTimer <= 0 then 
+		excitedTimer = math.random(10,120)
+	end
+end
+
 
 local function angryHopping(dt)
 	-- Do hopping?
-	local hopp = herbie.isEnabled() and herbie.getPlayerTrust() <= -40
+	local hopp = herbie.isEnabled() and herbie.isAngry() and not angryPause
 	hopp = hopp and herbie.hasPower()
 	hopp = hopp and electrics.values.wheelspeed <= 7.2 and electrics.values.airspeed <= 7.2
 
@@ -136,13 +164,12 @@ local function angryHopping(dt)
 		--herbie.message("Hopp (R): " .. tostring(backfireHoppSleep) .. "s L: " ..tostring(backfireHoppL*100).. "% " ..tostring(backfireHoppL/4*1000).. "ms R: " ..tostring(backfireHoppR*100).. "% " ..tostring(backfireHoppR/4*1000).. "ms")
 	end
 end
-
 local function angryBackfires(dt)
 	-- Do backfires?
-	local backfires = herbie.isEnabled() and herbie.getPlayerTrust() <= -40
+	local backfires = herbie.isEnabled() and herbie.isAngry() and not angryPause
 	backfires = backfires and herbie.hasPower()
 	backfires = backfires and electrics.values.wheelspeed <= 7.2 and electrics.values.airspeed <= 7.2
-
+	
 	if not backfires then return end
 
 	if backfire_ticks > 0 then
@@ -207,6 +234,40 @@ local function angryBackfires(dt)
 		backfire_pause = math.random(15,75) 
 	end
 end
+local function angryNotSeatedBehavior(dt)
+	if not herbie.isEnabled() or not herbie.isAngry() then return end
+
+	-- Stop with angry behaviour after 10 seconds when the player extied the car
+	-- Start again when entering or trying to open a door...
+	if not playerInfo.firstPlayerSeated then
+		local curAngryPause = angryPause
+		angryPause = angryTimer <= 0
+		if angryTimer > 0 then
+			angryTimer = angryTimer - dt
+		end
+		
+		local open = electrics.values["opendoors"]
+		if open and open ~= lastOpen then
+			-- Refuse to open the door at first ...
+			if angryTimer <= 0 or angryTimer > 7 then 
+				vehicle.closeDoors() 
+			end
+			if electrics.values.ignitionLevel < 1 then electrics.setIgnitionLevel(1) end
+			angryTimer = 10
+		end
+		lastOpen = open
+
+		-- Stop engine and close doors when in pause ...
+		if angryPause and not curAngryPause then
+			if open then vehicle.closeDoors() end
+			if electrics.values.ignitionLevel > 0 then electrics.setIgnitionLevel(0) end
+		end		
+	elseif angryPause then
+		if electrics.values.ignitionLevel < 1 then electrics.setIgnitionLevel(1) end
+		angryTimer = math.random(7,20)
+		angryPause = false
+	end
+end
 
 local function onReset()
 	hoppTimer = 0
@@ -217,7 +278,10 @@ end
 local function updateGFX(dt)
 	if not herbie.isEnabled() then return end
 
+	excitedNotSeatedBehavior(dt)
 	excitedHopping(dt)
+
+	angryNotSeatedBehavior(dt)
 	angryHopping(dt)
 	angryBackfires(dt)
 end

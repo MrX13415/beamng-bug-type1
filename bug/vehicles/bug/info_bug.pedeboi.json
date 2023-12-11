@@ -1,0 +1,38 @@
+{
+  "0-100 km/h":22.8,
+  "0-60 mph":21,
+  "100-0 km/h":44.3,
+  "60-0 mph":132.7,
+  "BoundingBox":[
+    [
+      -0.783,
+      -1.77119,
+      -0.242979
+    ],
+    [
+      0.783,
+      2.29767,
+      1.27506
+    ]
+  ],
+  "Config Type":"Factory",
+  "Configuration":"Pé de Boi (M)",
+  "Description":"Very spartan model, primarily for the Brazilian market",
+  "Drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":34,
+  "Performance Class":"2",
+  "Power":40,
+  "PowerPeakRPM":"3250 - 4000",
+  "Propulsion":"ICE",
+  "Top Speed":37.87786495,
+  "Torque":95,
+  "TorquePeakRPM":"1800 - 2800",
+  "Transmission":"Manual",
+  "Value":8500,
+  "Weight":1005,
+  "Weight/Power":25.125,
+  "defaultPaintName1":"Cascade Cyan",
+  "defaultPaintName3":"Cement Gray"
+}

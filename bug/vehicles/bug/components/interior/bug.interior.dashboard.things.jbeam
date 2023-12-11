@@ -1,0 +1,22 @@
+{
+
+"bug_glovebox_things": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Things",
+        "value":150,
+    },
+    "slotType" : "bug_glovebox_things",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        
+        ["glovebox_notebook",    ["bug_body", "bug_dashboard"]],
+        ["glovebox_ownermanual", ["bug_body", "bug_dashboard"]],
+        ["glovebox_sponge",      ["bug_body", "bug_dashboard"]],
+        ["glovebox_sunglasses",  ["bug_body", "bug_dashboard"]]
+    ]
+},
+
+}
+
+

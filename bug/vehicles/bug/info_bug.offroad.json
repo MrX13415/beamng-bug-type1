@@ -1,0 +1,41 @@
+{
+  "0-100 km/h":13.4,
+  "0-100 mph":47.9,
+  "0-60 mph":12.6,
+  "100-0 km/h":62,
+  "60-0 mph":191.9,
+  "60-100 mph":35.3,
+  "BoundingBox":[
+    [
+      -0.783,
+      -1.77119,
+      -0.265979
+    ],
+    [
+      0.86,
+      2.29767,
+      1.43586
+    ]
+  ],
+  "Braking G":0.634,
+  "Config Type":"Offroad",
+  "Configuration":"Off-Road (M)",
+  "Description":"Off-road capable with higher ground clearance",
+  "drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":39,
+  "Performance Class":"2",
+  "Power":75,
+  "PowerPeakRPM":"4700 - 5300",
+  "Propulsion":"ICE",
+  "Top Speed":48.71244859,
+  "Torque":125,
+  "TorquePeakRPM":"2550 - 3700",
+  "Transmission":"Manual",
+  "Value":8500,
+  "Weight":1065,
+  "Weight/Power":14.2,
+  "defaultPaintName1":"Army Green",
+  "defaultPaintName3":"Army Green"
+}

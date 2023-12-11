@@ -9,20 +9,27 @@
     "slotType" : "bug_roof",
 	"slots": [
         ["type", "default", "description"],
+
+		["bug_headliner_hardtop", "bug_headliner_hardtop", "Headliner"],
 		["bug_roof_rack", "", "Roof Rack"],
 	],
+    "sounds": {
+        "$+cabinFilterCoef": 0.2
+    },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-         //    exterior
-         ["body_roof_hardtop",              ["bug_body", "bug_body_roof", "bug_body_cowl"]],
-         ["body_roof_gutter",               ["bug_body", "bug_body_roof"]],
-         //    interior
-         ["interior_covering_hardtop",      ["bug_body", "bug_roof"]],
+        //    exterior
+        ["body_roof_hardtop",              ["bug_body", "bug_body_roof", "bug_body_cowl"]],
+        ["body_roof_gutter",               ["bug_body", "bug_body_roof"]],
+
+        //    interior
+        ["body_interior_roof_hardtop",     ["bug_body", "bug_body_roof"]],
 	],
     "triangles": [
         ["id1:","id2:","id3:"],
 
+        {"groundModel":"metal"},
         {"dragCoef":10},
         ["brf2rr", "brf2r", "brf3rr"],    // roof opening triangle
         ["brf3rr", "brf2r", "brf3r"],     // roof opening triangle
@@ -61,9 +68,13 @@
 	"slots": [
         ["type", "default", "description"],
 
+		["bug_headliner_ragtop", "bug_headliner_ragtop", "Headliner"],
 		["bug_ragtop_cover", "bug_ragtop_cover", "Ragtop Cover"],
 		["bug_roof_rack", "", "Roof Rack"],
 	],
+    "sounds": {
+        "$+cabinFilterCoef": 0.02
+    },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
@@ -71,8 +82,9 @@
         ["body_roof_racktop_rails",        ["bug_body", "bug_body_roof"]],
         ["body_roof_ragtop",               ["bug_body", "bug_body_roof", "bug_body_cowl"]],
         ["body_roof_gutter",               ["bug_body", "bug_body_roof"]],
+
         //    interior
-        ["interior_covering_ragtop",       ["bug_body", "bug_body_roof"]],
+        ["body_interior_roof_ragtop",      ["bug_body", "bug_body_roof"]],
 	],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -93,7 +105,7 @@
         ["brf4l",  0.23020,  0.33135,  1.47941],
 
         {"collision":true},
-        {"selfCollision":true},
+        {"selfCollision":false},
         {"group":""},
     ],
 },
@@ -109,6 +121,9 @@
 
 		["skin_ragtop", "bug_skin_ragtop_white", "Color", {"coreSlot":true}]
 	],
+    "sounds": {
+        "$+cabinFilterCoef": 0.08
+    },
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$ragtopInitState", "range", "", "Body", 0, 0, 1.0, "Ragtop Open", "Inital open position of the Ragtop roof.", {"minDis":0, "maxDis":100}],
@@ -120,10 +135,6 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-        // Interior
-        ["interior_covering_ragtop_cover.1", ["bug_racktop_fabric1"]],
-        ["interior_covering_ragtop_cover.2", ["bug_racktop_fabric2", "bug_body_racktop_mount"]],
-
         // Exterior:
         //  complete, fully closed mesh
         ["body_roof_ragtop_fabric",        ["bug_racktop_fabric"]],
@@ -266,16 +277,20 @@
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
         {"beamSpring":4000,"beamDamp":50,"beamDeform":"FLT_MAX","beamStrength":3000},
 
+        {"highlight":{"radius":0.002, "col":"#ff7700ff" }},
+
         {"breakGroupType":0},
         {"breakGroup":"ragtopF"},
         ["brf2ll","rta2l", {"inputSource":"ragtop_state", "inLimit":1.0, "outLimit":14.2, "inRate":10, "outRate":10, "inputFactor":1.0}],
         ["brf2rr","rta2r", {"inputSource":"ragtop_state", "inLimit":1.0, "outLimit":14.2, "inRate":10, "outRate":10, "inputFactor":1.0}],
-        {"breakGroup":""}
+        {"breakGroup":""},
+
+        {"highlight":""},
     ],
     "beams": [
         ["id1:", "id2:"],
 
-        //{"highlight":{"radius":0.002, "col":"#ff2200ff" }},
+        {"highlight":{"radius":0.002, "col":"#bbbb88ff" }},
 
         {"breakGroupType":0},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
@@ -333,6 +348,8 @@
         {"beamSpring":401000,"beamDamp":140},
         {"beamDeform":10000,"beamStrength":"FLT_MAX"},
 
+        {"highlight":{"radius":0.002, "col":"#888888ff" }},
+
         // to bar 1
         ["rtf1l", "rta1l"],
         ["rtf1l", "rta2l"],
@@ -363,10 +380,10 @@
         ["rtf4", "rtb3l"],
         ["rtf4", "rtb3r"],
 
-        //{"highlight":{"radius":0.002, "col":"#0088ffff" }},
-
         {"beamSpring":401000,"beamDamp":140},
         {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+
+        {"highlight":{"radius":0.002, "col":"#0088ffff" }},
 
         // bar 1
         ["rta1l", "rta1r"],
@@ -381,6 +398,8 @@
         ["rta2l", "rta3r"],
         ["rta3l", "rta2r"],
 
+        {"highlight":{"radius":0.002, "col":"#33cc00ff" }},
+
         // bar 2
         ["rtb1l", "rtb1r"],
         ["rtb2l", "rtb2r"],
@@ -394,6 +413,8 @@
         ["rtb2l", "rtb3r"],
         ["rtb3l", "rtb2r"],
 
+        {"highlight":{"radius":0.002, "col":"#ff2222ff" }},
+
         // rear mount
         ["rtc1l", "rtc1"],
         ["rtc1", "rtc1r"],
@@ -406,6 +427,8 @@
         ["rtc1", "rtc2"],
         ["rtc1r", "rtc2l"],
         ["rtc1r", "rtc2r"],
+
+        {"highlight":{"radius":0.002, "col":"#333333ff" }},
 
         // rigidy 
         ["rta1l", "rtd1"],
@@ -432,7 +455,8 @@
         ["rtf4", "rtd2"],
         ["rtf4r", "rtd2"],
 
-         
+        {"highlight":{"radius":0.002, "col":"#ff2222ff" }},
+
         // rear mount <> body (should not break from the body)
         {"beamSpring":401000,"beamDamp":75},
         {"beamDeform":10000,"beamStrength":"FLT_MAX"},
@@ -460,6 +484,8 @@
         ["rtc2", "bi1"],
         ["rtc2r", "bi1"],
 
+        {"highlight":{"radius":0.002, "col":"#00ccccff" }},
+
         // limiter b1 <> b2
         {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.0, "beamShortBound":0.88},
         {"beamSpring":0,"beamDamp":0,"beamDeform":136500,"beamStrength":"FLT_MAX"},
@@ -467,11 +493,14 @@
         {"deformGroup":"ragtop1","deformationTriggerRatio":0.05},
         ["rta2l", "rtb1l", {"name": "ragtopState1"}],
         ["rta2r", "rtb1r", {"name": "ragtopState1"}],
-        {"beamLongBound":0.0, "beamShortBound":0.6},
-        {"beamStrength":3000},
+        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.0, "beamShortBound":0.6},
+        {"beamSpring":0,"beamDamp":0,"beamDeform":136500,"beamStrength":3000},
+        {"beamLimitSpring":1401000,"beamLimitDamp":200},
         ["rtb2l", "brf6ll", {"name": "ragtopState2", "breakGroup":"ragtopR"}],
         ["rtb2r", "brf6rr", {"name": "ragtopState2", "breakGroup":"ragtopR"}],
         {"deformGroup":""},
+        
+        {"highlight":{"radius":0.002, "col":"#bbbb88ff" }},
 
         // rear mount <> fabric
         {"beamLongBound":0.0, "beamShortBound":1.0},
@@ -480,7 +509,7 @@
         ["rtf4r", "rtc1r"],
 
 
-        //{"highlight":{"radius":0.002, "col":"#ffff00ff" }},
+        {"highlight":{"radius":0.002, "col":"#ffff00ff" }},
 
         //rear bumper support beams
         {"beamType":"|SUPPORT", "beamLongBound":4},
@@ -504,15 +533,10 @@
         ["rta2l", "rtb1r"],
         ["rta2r", "rtb1l"],
 
-        {"beamLongBound":20},
-        {"beamSpring":1000,"beamDamp":100},
-        {"beamPrecompression":1.0},
-        {"beamStrength":50},
-
         {"beamPrecompression":1.0},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 
-        //{"highlight":""},
+        {"highlight":""},
     ],
     "triangles": [
         ["id1:","id2:","id3:"],
@@ -551,6 +575,70 @@
         
     ],
 
+},
+
+
+// -- Headliner --
+"bug_headliner_hardtop": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Headliner",
+    },
+    "slotType" : "bug_headliner_hardtop",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        //    interior
+        ["interior_covering_hardtop",      ["bug_body", "bug_roof"]],
+	]
+},
+"bug_headliner_ragtop": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Headliner",
+    },
+    "slotType" : "bug_headliner_ragtop",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        //    interior
+        ["interior_covering_ragtop",       ["bug_body", "bug_body_roof"]],
+
+        //    cover interior
+        ["interior_covering_ragtop_cover.1", ["bug_racktop_fabric1"]],
+        ["interior_covering_ragtop_cover.2", ["bug_racktop_fabric2", "bug_body_racktop_mount"]],
+	]
+},
+
+"bug_headliner_partial_hardtop": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Partial Headliner",
+    },
+    "slotType" : "bug_headliner_hardtop",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        //    interior
+        ["interior_covering_partial_hardtop",      ["bug_body", "bug_roof"]],
+	]
+},
+"bug_headliner_partial__ragtop": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Partial Headliner",
+    },
+    "slotType" : "bug_headliner_ragtop",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        //    interior
+        ["interior_covering_partial_ragtop",       ["bug_body", "bug_body_roof"]],
+
+        //    cover interior
+        ["interior_covering_ragtop_cover.1", ["bug_racktop_fabric1"]],
+        ["interior_covering_ragtop_cover.2", ["bug_racktop_fabric2", "bug_body_racktop_mount"]],
+	]
 },
 
 }

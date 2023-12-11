@@ -19,12 +19,6 @@ function round(num, numDecimalPlaces)
   return math.floor(num * mult + 0.5) / mult
 end
 
-local function writeCurrentTrust()
-	local d = storage.data()
-	d.herbie = {}
-	d.herbie.trust = playerTrust
-end
-
 local function load()
   local odometer = storage.data().odometer or {}
   lastMileage = odometer.mileage or 0
@@ -124,9 +118,7 @@ local function onInit(jbeamData)
 
   load()
 
-  print("[Bug:Odometer] Initialized")
-  print("[Bug:Odometer]    mileage: " .. lastMileage)
-  print("[Bug:Odometer]    unit:    " .. unit)
+  log("D", "", "[Bug:Odometer] Initialized " .. tostring(lastMileage) .. " meter, unit: " .. tostring(unit))
 end
 
 M.init      = onInit

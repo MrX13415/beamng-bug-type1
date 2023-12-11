@@ -1,0 +1,119 @@
+{
+
+"bug_wheel_spare": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Spare Wheel",
+        "value":130,
+    },
+    "slotType" : "bug_wheel_spare",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["tire_spare","tire_spare_ww", "Tires"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        
+        ["rim_14x6_Spare", ["wheel_spare"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"collision":false},
+        {"selfCollision":false},
+        //front wheels
+        {"nodeWeight":5.0},
+        {"nodeMaterial":"|NM_METAL"},
+        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        {"frictionCoef":0.5},
+        {"group":"wheel_spare"},
+        ["spare1", 0.0, -1.508, 0.520, {"staticCollision":false}],
+        ["spare2", 0.0, -1.639, 0.593, {"staticCollision":false}],
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":1501000,"beamDamp":25},
+        {"beamDeform":78500,"beamStrength":434000},
+        // spare wheel
+        ["spare1","spare2"],
+
+        {"optional":true},
+        {"beamDeform":1000,"beamStrength":5000},
+        {"beamSpring":81000,"beamDamp":100},
+        //attach to wheel
+        {"breakGroup":"wheel_spare"},
+        ["bf1l","spare1"],
+        ["bf1r","spare1"],
+        ["bf6l","spare1"],
+        ["bf6r","spare1"],
+        ["bf1l","spare2"],
+        ["bf1r","spare2"],
+        ["bf6l","spare2"],
+        ["bf6r","spare2"],
+        {"breakGroup":""},
+        {"optional":false},
+        
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+
+        //general settings
+        {"hubRadius":0.28},
+        {"wheelOffset":0},
+        {"hubWidth":0.125},
+        {"numRays":6},
+        {"hasTire":false},
+
+        //hub options
+        {"hubBeamSpring":251000, "hubBeamDamp":5},
+        {"hubBeamDeform":40000, "hubBeamStrength":160000},
+        {"hubNodeWeight":0.1},
+        {"hubNodeMaterial":"|NM_RUBBER"},
+        {"hubFrictionCoef":0.8},
+
+        //wheel
+        {"propulsed":0},
+        {"brakeTorque":0},
+        {"parkingTorque":0},
+        {"selfCollision":true},
+        {"collision":true},
+        ["spare", "wheel_spare", "tire_spare", "spare2", "spare1", 9999,  "", -1, {"speedo":false}],
+        {"propulsed":0},
+        {"hasTire":true},
+    ],
+},
+
+"tire_spare": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Tire",
+        "value":75,
+    },
+    "slotType" : "tire_spare",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["tire_14x6_Spare_a", ["wheel_spare"]],
+    ]
+},
+"tire_spare_ww": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Whitewall Tire",
+        "value":75,
+    },
+    "slotType" : "tire_spare",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["tire_14x6_Spare_c", ["wheel_spare"]],
+    ]
+},
+
+}

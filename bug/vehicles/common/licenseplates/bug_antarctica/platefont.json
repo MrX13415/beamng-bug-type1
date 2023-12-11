@@ -1,0 +1,165 @@
+{
+  "info": {
+    "face": "License Plate",
+    "size": "-128",
+    "bold": "0",
+    "italic": "0",
+    "charset": "",
+    "unicode": "1",
+    "stretchH": "80",
+    "smooth": "1",
+    "aa": "2",
+    "padding": "0,0,0,0",
+    "spacing": "5,5",
+    "outline": "0"
+  },
+  "common": {
+    "lineHeight": "110",
+    "base": "98",
+    "scaleW": "1024",
+    "scaleH": "512",
+    "pages": "1",
+    "packed": "0",
+    "alphaChnl": "1",
+    "redChnl": "0",
+    "greenChnl": "0",
+    "blueChnl": "0"
+  },
+  "chars": {
+    "count": "11",
+    "char": [
+      {
+        "id": "32",
+        "x": "0",
+        "y": "0",
+        "width": "0",
+        "height": "110",
+        "xoffset": "0",
+        "yoffset": "0",
+        "xadvance": "69",
+        "page": "0",
+        "chnl": "15"
+      },
+      {
+        "id": "48",
+        "x": "69",
+        "y": "0",
+        "width": "69",
+        "height": "110",
+        "xoffset": "0",
+        "yoffset": "0",
+        "xadvance": "69",
+        "page": "0",
+        "chnl": "15"
+      },
+      {
+        "id": "49",
+        "x": "138",
+        "y": "0",
+        "width": "69",
+        "height": "110",
+        "xoffset": "0",
+        "yoffset": "0",
+        "xadvance": "69",
+        "page": "0",
+        "chnl": "15"
+      },
+      {
+        "id": "50",
+        "x": "207",
+        "y": "0",
+        "width": "69",
+        "height": "110",
+        "xoffset": "0",
+        "yoffset": "0",
+        "xadvance": "69",
+        "page": "0",
+        "chnl": "15"
+      },
+      {
+        "id": "51",
+        "x": "276",
+        "y": "0",
+        "width": "69",
+        "height": "110",
+        "xoffset": "0",
+        "yoffset": "0",
+        "xadvance": "69",
+        "page": "0",
+        "chnl": "15"
+      },
+      {
+        "id": "52",
+        "x": "345",
+        "y": "0",
+        "width": "69",
+        "height": "110",
+        "xoffset": "0",
+        "yoffset": "0",
+        "xadvance": "69",
+        "page": "0",
+        "chnl": "15"
+      },
+      {
+        "id": "53",
+        "x": "414",
+        "y": "0",
+        "width": "69",
+        "height": "110",
+        "xoffset": "0",
+        "yoffset": "0",
+        "xadvance": "69",
+        "page": "0",
+        "chnl": "15"
+      },
+      {
+        "id": "54",
+        "x": "483",
+        "y": "0",
+        "width": "69",
+        "height": "110",
+        "xoffset": "0",
+        "yoffset": "0",
+        "xadvance": "69",
+        "page": "0",
+        "chnl": "15"
+      },
+      {
+        "id": "55",
+        "x": "552",
+        "y": "0",
+        "width": "69",
+        "height": "110",
+        "xoffset": "0",
+        "yoffset": "0",
+        "xadvance": "69",
+        "page": "0",
+        "chnl": "15"
+      },
+      {
+        "id": "56",
+        "x": "549",
+        "y": "0",
+        "width": "56",
+        "height": "115",
+        "xoffset": "0",
+        "yoffset": "0",
+        "xadvance": "69",
+        "page": "0",
+        "chnl": "15"
+      },
+      {
+        "id": "57",
+        "x": "621",
+        "y": "0",
+        "width": "69",
+        "height": "110",,
+        "xoffset": "0",
+        "yoffset": "0",
+        "xadvance": "69",
+        "page": "0",
+        "chnl": "15"
+      }
+    ]
+  }
+}

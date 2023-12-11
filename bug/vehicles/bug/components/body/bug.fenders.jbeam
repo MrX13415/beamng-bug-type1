@@ -15,11 +15,40 @@
         ["bug_fender_RR", "bug_fender_RR", "Rear Right Fender"],
         ["bug_fender_RL", "bug_fender_RL", "Rear Left Fender"],
 
+        ["bug_fender_grille", "bug_fender_grille", "Front Grille", {"coreSlot":true}],
         ["bug_fender_gravel_guards", "bug_fender_gravel_guards", "Gravel Guards"],
         ["bug_fender_mud_flaps", "bug_fender_mud_flaps", "Mud Flaps"],
     ],
 },
 
+"bug_fender_grille_none": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Empty",
+        "value":75,
+    },
+    "slotType" : "bug_fender_grille",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+		
+        ["fender_FL_grille_cover", ["bug_fender_FL"]],
+		["fender_FR_grille_cover", ["bug_fender_FR"]],
+    ],
+},
+"bug_fender_grille": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Grille",
+        "value":75,
+    },
+    "slotType" : "bug_fender_grille",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+		
+        ["fender_FL_grille", ["bug_fender_FL"]],
+		["fender_FR_grille", ["bug_fender_FR"]],
+    ],
+},
 "bug_fender_gravel_guards": {
     "information":{
         "authors":"BeamNG",
@@ -179,19 +208,20 @@
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-		["fender_FR", ["bug_fender_FR"]],
-		["fender_FR_grille", ["bug_fender_FR"]],
+
+        ["fender_FR", ["bug_fender_FR"]],
+        ["headlight_R_case",  ["bug_fender_FR"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
 
         {"nodeMaterial":"|NM_METAL"},
         {"frictionCoef":0.5},
-        {"collision":true}
+        {"collision":true},
         {"selfCollision":true},
 
         {"group":"bug_fender_FR"},
-        {"nodeWeight":1.0},
+        {"nodeWeight":0.8},
         ["feFR1l", -0.30309, -1.77743,  0.27232],
         ["feFR1r", -0.59157, -1.74309,  0.31632],
         ["feFR2l", -0.41266, -1.70702,  0.51402],
@@ -224,7 +254,7 @@
         ["id1:", "id2:"],
 
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":552460,"beamDamp":150},
+        {"beamSpring":450000,"beamDamp":130},
         {"beamDeform":3000,"beamStrength":"FLT_MAX"},
         {"deformationTriggerRatio":0.05},
 
@@ -402,8 +432,9 @@
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-		["fender_FL", ["bug_fender_FL"]],
-        ["fender_FL_grille", ["bug_fender_FL"]],
+
+        ["fender_FL", ["bug_fender_FL"]],
+        ["headlight_L_case",  ["bug_fender_FL"]],
     ],
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
@@ -417,7 +448,7 @@
          {"collision":true},
          {"selfCollision":true},
          {"group":"bug_fender_FL"},
-         {"nodeWeight":1.0},
+         {"nodeWeight":0.8},
          ["feFL1r",  0.30309, -1.77743,  0.27232],
          ["feFL1l",  0.59157, -1.74309,  0.31632],
          ["feFL2r",  0.41266, -1.70702,  0.51402],
@@ -450,7 +481,7 @@
         ["id1:", "id2:"],
 
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":552460,"beamDamp":150},
+        {"beamSpring":450000,"beamDamp":130},
         {"beamDeform":3000,"beamStrength":"FLT_MAX"},
 
         //fender main shape
@@ -672,7 +703,7 @@
         ["id1:", "id2:"],
 
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":552460,"beamDamp":150},
+        {"beamSpring":450000,"beamDamp":130},        
         {"beamDeform":3000,"beamStrength":"FLT_MAX"},
 
         ["feRL1l", "feRL1m"],
@@ -769,7 +800,7 @@
         ["feRL7r", "feRL8"],
 
         // mounting
-        {"disableTriangleBreaking":true}
+        {"disableTriangleBreaking":true},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":460460,"beamDamp":50},
         {"beamDeform":3000,"beamStrength":10000},
@@ -810,8 +841,8 @@
     "triangles": [
         ["id1:","id2:","id3:"],
 
-        {"groundModel":"metal"},
         {"group":"bug_fender_RL"},
+        {"groundModel":"metal"},
         {"dragCoef":10},
         ["feRL1r", "feRL1m", "feRL2r"],
         ["feRL2r", "feRL1m", "feRL2m"],
@@ -906,7 +937,7 @@
         ["id1:", "id2:"],
 
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":552460,"beamDamp":150},
+        {"beamSpring":450000,"beamDamp":130},
         {"beamDeform":3000,"beamStrength":"FLT_MAX"},
 
         ["feRR1r", "feRR1m"],
@@ -1003,7 +1034,7 @@
         ["feRR7l", "feRR8"],
 
         // mounting
-        {"disableTriangleBreaking":true}
+        {"disableTriangleBreaking":true},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":460460,"beamDamp":50},
         {"beamDeform":3000,"beamStrength":10000},
@@ -1045,6 +1076,7 @@
         ["id1:","id2:","id3:"],
 
         {"group":"bug_fender_RR"},
+        {"groundModel":"metal"},
         {"dragCoef":10},
         ["feRR1m", "feRR1l", "feRR2l"],
         ["feRR1m", "feRR2l", "feRR2m"],

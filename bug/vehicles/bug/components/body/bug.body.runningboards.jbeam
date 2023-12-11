@@ -7,10 +7,132 @@
         "value": 50,
     },
     "slotType" : "skin_runningboards",
-    "skinName" : "black",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["runningboards_trim", "runningboards_trim", "License Plate Design"],
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["runningboards", ["bug_runningboards"]],
+        ["runningboards_black", ["bug_runningboards"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //--SPOILER--
+        {"nodeWeight":0.8},
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_RUBBER"},
+        {"group":"bug_runningboards"},
+        {"collision":true},
+        {"selfCollision":false},
+
+        ["brb1l",  0.737  , -0.670  , 0.275],
+        ["brb2l",  0.737  ,  0.650  , 0.275],
+        ["brb3l",  0.61537, -0.65071, 0.29000, {"couplerTag":"bug_runningboards_L1","couplerLock":true,"couplerStrength":20000,"couplerRadius":1.35,"couplerStartRadius":0.1,"couplerLockRadius":0.001,"couplerLatchSpeed":0.8, "breakGroup":"bug_runningboards_La"}],
+        ["brb4l",  0.66680,  0.68449, 0.29000, {"couplerTag":"bug_runningboards_L2","couplerLock":true,"couplerStrength":20000,"couplerRadius":1.35,"couplerStartRadius":0.1,"couplerLockRadius":0.001,"couplerLatchSpeed":0.8, "breakGroup":"bug_runningboards_Lb"}],
+
+        ["brb1r", -0.737  , -0.670  , 0.275],
+        ["brb2r", -0.737  ,  0.650  , 0.275],
+        ["brb3r", -0.61537, -0.65071, 0.29000, {"couplerTag":"bug_runningboards_R1","couplerLock":true,"couplerStrength":20000,"couplerRadius":1.35,"couplerStartRadius":0.1,"couplerLockRadius":0.001,"couplerLatchSpeed":0.8, "breakGroup":"bug_runningboards_Ra"}],
+        ["brb4r", -0.66680,  0.68449, 0.29000, {"couplerTag":"bug_runningboards_R2","couplerLock":true,"couplerStrength":20000,"couplerRadius":1.35,"couplerStartRadius":0.1,"couplerLockRadius":0.001,"couplerLatchSpeed":0.8, "breakGroup":"bug_runningboards_Rb"}],
+       
+        {"group":""},
+        {"collision":true},
+        {"selfCollision":false},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":650000,"beamDamp":80},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+        //hood main shape L
+        ["brb1l","brb2l"],
+        ["brb3l","brb4l"],
+        ["brb1l","brb3l"],
+        ["brb2l","brb4l"],
+        ["brb1l","brb4l"],
+        ["brb2l","brb3l"],
+        //hood main shape R
+        ["brb1r","brb2r"],
+        ["brb3r","brb4r"],
+        ["brb1r","brb3r"],
+        ["brb2r","brb4r"],
+        ["brb1r","brb4r"],
+        ["brb2r","brb3r"],
+
+        // runningboards <> frame/body
+        {"beamDeform":8000,"beamStrength":20000},
+        {"breakGroup":"bug_runningboards_La"},
+        ["brb1l","f3l"],
+        ["brb1l","f4l"],
+        {"breakGroup":"bug_runningboards_Lb"},
+        ["brb2l","f5l"],
+        ["brb2l","f6l"],
+
+        {"breakGroup":"bug_runningboards_Ra"},
+        ["brb1r","f3r"],
+        ["brb1r","f4r"],
+        {"breakGroup":"bug_runningboards_Rb"},
+        ["brb2r","f5r"],
+        ["brb2r","f6r"],
+
+        {"beamDeform":8000,"beamStrength":40000},
+        {"breakGroup":"bug_runningboards_Lc"},
+        ["brb1l","feFL6l"],
+        ["brb1l","feFL7l"],
+        ["brb1l","feFL7r"],
+        {"breakGroup":"bug_runningboards_Ld"},
+        ["brb2l","feRL1l"],
+        ["brb2l","feRL1r"],
+        ["brb2l","feRL2l"],
+
+        {"breakGroup":"bug_runningboards_Rc"},
+        ["brb1r","feFR6r"],
+        ["brb1r","feFR7r"],
+        ["brb1r","feFR7l"],
+        {"breakGroup":"bug_runningboards_Rd"},
+        ["brb2r","feRR1r"],
+        ["brb2r","feRR1l"],
+        ["brb2r","feRR2r"],
+        {"breakGroup":""},
+        {"beamPrecompression":1.0},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0}
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":10000, "damp":1, "deform":30000, "strength":20000},
+        ["brb3l", "brb1l", "brb2l", "brb4l"],
+        ["brb3r", "brb1r", "brb2r", "brb4r"],
+    ],
+   "triangles": [
+        ["id1:","id2:","id3:"],
+        //hood
+        {"groundModel":"rubber"},
+        {"group":"bug_runningboards"},
+        {"dragCoef":10},
+        ["brb1l","brb2l","brb3l"],
+        ["brb3l","brb2l","brb4l"],
+        ["brb2r","brb1r","brb4r"],
+        ["brb4r","brb1r","brb3r"],
+        {"group":""},
+    ],
+},
+"runningboards_gray": {
+    "information":{
+        "authors": "53_herbie_53",
+        "name": "Gray Runningboards",
+        "value": 50,
+    },
+    "slotType" : "skin_runningboards",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["runningboards_trim", "runningboards_trim", "License Plate Design"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["runningboards_gray", ["bug_runningboards"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -117,14 +239,18 @@
 "runningboards_white": {
 	"information":{
         "authors": "53_herbie_53",
-        "name": "White Runningboards",
+        "name": "Pearl White Runningboards",
         "value": 50,
     },
     "slotType" : "skin_runningboards",
-    "skinName" : "white",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["runningboards_trim", "runningboards_trim", "License Plate Design"],
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["runningboards", ["bug_runningboards"]],
+        ["runningboards_white", ["bug_runningboards"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -228,5 +354,138 @@
         {"group":""},
     ],
 },
+"runningboards_white2": {
+	"information":{
+        "authors": "53_herbie_53",
+        "name": "Cream White Runningboards",
+        "value": 50,
+    },
+    "slotType" : "skin_runningboards",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["runningboards_trim", "runningboards_trim", "License Plate Design"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["runningboards_white2", ["bug_runningboards"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //--SPOILER--
+        {"nodeWeight":0.8},
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_RUBBER"},
+        {"group":"bug_runningboards"},
+        {"collision":true},
+        {"selfCollision":false},
+
+        ["brb1l",  0.737  , -0.670  , 0.275],
+        ["brb2l",  0.737  ,  0.650  , 0.275],
+        ["brb3l",  0.61537, -0.65071, 0.29000, {"couplerTag":"bug_runningboards_L1","couplerLock":true,"couplerStrength":20000,"couplerRadius":1.35,"couplerStartRadius":0.1,"couplerLockRadius":0.001,"couplerLatchSpeed":0.8, "breakGroup":"bug_runningboards_La"}],
+        ["brb4l",  0.66680,  0.68449, 0.29000, {"couplerTag":"bug_runningboards_L2","couplerLock":true,"couplerStrength":20000,"couplerRadius":1.35,"couplerStartRadius":0.1,"couplerLockRadius":0.001,"couplerLatchSpeed":0.8, "breakGroup":"bug_runningboards_Lb"}],
+
+        ["brb1r", -0.737  , -0.670  , 0.275],
+        ["brb2r", -0.737  ,  0.650  , 0.275],
+        ["brb3r", -0.61537, -0.65071, 0.29000, {"couplerTag":"bug_runningboards_R1","couplerLock":true,"couplerStrength":20000,"couplerRadius":1.35,"couplerStartRadius":0.1,"couplerLockRadius":0.001,"couplerLatchSpeed":0.8, "breakGroup":"bug_runningboards_Ra"}],
+        ["brb4r", -0.66680,  0.68449, 0.29000, {"couplerTag":"bug_runningboards_R2","couplerLock":true,"couplerStrength":20000,"couplerRadius":1.35,"couplerStartRadius":0.1,"couplerLockRadius":0.001,"couplerLatchSpeed":0.8, "breakGroup":"bug_runningboards_Rb"}],
+       
+        {"group":""},
+        {"collision":true},
+        {"selfCollision":false},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":650000,"beamDamp":80},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+        //hood main shape L
+        ["brb1l","brb2l"],
+        ["brb3l","brb4l"],
+        ["brb1l","brb3l"],
+        ["brb2l","brb4l"],
+        ["brb1l","brb4l"],
+        ["brb2l","brb3l"],
+        //hood main shape R
+        ["brb1r","brb2r"],
+        ["brb3r","brb4r"],
+        ["brb1r","brb3r"],
+        ["brb2r","brb4r"],
+        ["brb1r","brb4r"],
+        ["brb2r","brb3r"],
+
+        // runningboards <> frame/body
+        {"beamDeform":8000,"beamStrength":20000},
+        {"breakGroup":"bug_runningboards_La"},
+        ["brb1l","f3l"],
+        ["brb1l","f4l"],
+        {"breakGroup":"bug_runningboards_Lb"},
+        ["brb2l","f5l"],
+        ["brb2l","f6l"],
+
+        {"breakGroup":"bug_runningboards_Ra"},
+        ["brb1r","f3r"],
+        ["brb1r","f4r"],
+        {"breakGroup":"bug_runningboards_Rb"},
+        ["brb2r","f5r"],
+        ["brb2r","f6r"],
+
+        {"beamDeform":8000,"beamStrength":40000},
+        {"breakGroup":"bug_runningboards_Lc"},
+        ["brb1l","feFL6l"],
+        ["brb1l","feFL7l"],
+        ["brb1l","feFL7r"],
+        {"breakGroup":"bug_runningboards_Ld"},
+        ["brb2l","feRL1l"],
+        ["brb2l","feRL1r"],
+        ["brb2l","feRL2l"],
+
+        {"breakGroup":"bug_runningboards_Rc"},
+        ["brb1r","feFR6r"],
+        ["brb1r","feFR7r"],
+        ["brb1r","feFR7l"],
+        {"breakGroup":"bug_runningboards_Rd"},
+        ["brb2r","feRR1r"],
+        ["brb2r","feRR1l"],
+        ["brb2r","feRR2r"],
+        {"breakGroup":""},
+        {"beamPrecompression":1.0},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0}
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":10000, "damp":1, "deform":30000, "strength":20000},
+        ["brb3l", "brb1l", "brb2l", "brb4l"],
+        ["brb3r", "brb1r", "brb2r", "brb4r"],
+    ],
+   "triangles": [
+        ["id1:","id2:","id3:"],
+        //hood
+        {"groundModel":"rubber"},
+        {"group":"bug_runningboards"},
+        {"dragCoef":10},
+        ["brb1l","brb2l","brb3l"],
+        ["brb3l","brb2l","brb4l"],
+        ["brb2r","brb1r","brb4r"],
+        ["brb4r","brb1r","brb3r"],
+        {"group":""},
+    ],
+},
+
+
+"runningboards_trim": {
+    "information":{
+        "authors": "53_herbie_53",
+        "name": "Trim",
+        "value": 50,
+    },
+    "slotType" : "runningboards_trim",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["runningboards_trim", ["bug_runningboards"]]
+    ]
+}
 
 }

@@ -36,56 +36,32 @@
     "mainEngine": {
         "torque":[
             ["rpm", "torque"],
-            [    0,   0.00 ],
-            [  500,  47.52 ],
-            [ 1000,  86.93 ],
-            [ 1500, 112.62 ],
-            [ 2000, 132.85 ],
-            [ 2500, 146.26 ],
-            [ 3000, 155.87 ],
-            [ 3500, 161.53 ],
-            [ 4000, 162.15 ],
-            [ 4500, 157.10 ],
-            [ 5000, 150.83 ],
-            [ 5500, 140.43 ],
-            [ 6000, 128.41 ],
-            [ 6500, 116.80 ],
-            [ 7000, 107.48 ],
-            [ 7500, 100.75 ],
-            [ 8000,  96.72 ],
-            // [	0		,	"$=$torque*0.00"	], 
-			// [	500		,	"$=$torque*105.31"	], 
-			// [	1000	,	"$=$torque*126.62"	], 
-			// [	1500	,	"$=$torque*142.93"	], 
-			// [	2000	,	"$=$torque*159.24"	], 
-			// [	2500	,	"$=$torque*170.54"	], 
-			// [	3000	,	"$=$torque*176.85"	], 
-			// [	3550	,	"$=$torque*175.18"	], 
-			// [	3764	,	"$=$torque*170.76"	], 
-			// [	4000	,	"$=$torque*167.23"	], 
-			// [	4258	,	"$=$torque*180.35"	], 
-			// [	4500	,	"$=$torque*202.57"	], 
-			// [	4758	,	"$=$torque*212.10"	], 
-			// [	5000	,	"$=$torque*213.01"	], 
-			// [	5258	,	"$=$torque*215.07"	], 
-			// [	5500	,	"$=$torque*216.26"	], 
-			// [	5775	,	"$=$torque*218.36"	], 
-			// [	6000	,	"$=$torque*216.46"	], 
-			// [	6275	,	"$=$torque*210.26"	], 
-			// [	6500	,	"$=$torque*208.91"	], 
-			// [	6544	,	"$=$torque*206.26"	], 
-			// [	7000	,	"$=$torque*187.33"	], 
-			// [	7500	,	"$=$torque*163.63"	], 
-			// [	8000	,	"$=$torque*139.94"	], 
+            [    0,   0 ],
+            [  500,  86 ],
+            [ 1000, 135 ],
+            [ 1500, 161 ],
+            [ 2000, 174 ],
+            [ 2500, 179 ],
+            [ 3000, 182 ],
+            [ 3500, 179 ],
+            [ 4000, 173 ],
+            [ 4500, 163 ],
+            [ 5000, 146 ],
+            [ 5500, 124 ],
+            [ 6000, 104 ],
+            [ 6500,  88 ],
+            [ 7000,  77 ],
+            [ 7500,  70 ],
+            [ 8000,  64 ] 
 		],
-		"idleRPM":950,
+		"idleRPM":850,
         "idleRPMRoughness":150,
         "maxRPM": 5800,
         "hasRevLimiter":false,
-        "inertia":0.062, 
-        "friction":7,
-        "dynamicFriction":0.025,
-        "engineBrakeTorque":22,
+        "inertia":0.11, 
+        "friction":13,
+        "dynamicFriction":0.029,
+        "engineBrakeTorque":28,
 
         "burnEfficiency":[
             [0, 0.10],
@@ -117,6 +93,7 @@
         "connectingRodDamageThreshold":2000000,
         "maxTorqueRating": 280,
         "maxOverTorqueDamage": 350,
+        "maxOverRevDamage": 4500,
 
         //exhaust
         // Using defaults for now, as they seems to sound weird?
@@ -159,9 +136,9 @@
     },
     "soundConfig": {
         "sampleName": "B4_2_engine_rear",
-        "intakeMuffling": 0.7,
+        "intakeMuffling": 0.6,
 
-        "mainGain": -10,
+        "mainGain": -12,
         "onLoadGain":1.0,
         "offLoadGain":0.67,
 
@@ -188,7 +165,7 @@
     "soundConfigExhaust": {
         "sampleName": "B4_2_exhaust",
 
-        "mainGain": -5,
+        "mainGain": 1.5,
         "onLoadGain":1.0,
         "offLoadGain":0.7,
 
@@ -246,15 +223,15 @@
         ["engine_heat_exchanger",       ["bug_engine"]],
     ],
     "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        ["func"      , "mesh"                        , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
 
         // pedal
-        ["throttle",     "inputs_pedals_throttle",  "f4m","f4l","f4tm",       {"x":30, "y":0, "z":0},   	{"x":25, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["throttle", "inputs_pedals_throttle",         "f4m","f4l","f4tm",       {"x":25, "y":0, "z":0}, {"x":20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 	0, 1, 0, 1],
 
         // engine 
-        ["rpmspin",  "engine_alternator_belt_pulley",  "e2r","e2l","e4r",          {"x":0, "y":0, "z":0},   {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1],
-        ["rpmspin",  "engine_belt_pulley",              "e2r","e2l","e4r",       {"x":0, "y":0, "z":0},   {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1],
-        ["rpmspin",  "engine_fan",              "e2r","e2l","e4r",       {"x":0, "y":0, "z":0},   {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1],
+        ["rpmspin",  "engine_alternator_belt_pulley",  "e2r","e2l","e4r",        {"x":0, "y":0, "z":0},  {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1],
+        ["rpmspin",  "engine_belt_pulley",             "e2r","e2l","e4r",        {"x":0, "y":0, "z":0},  {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1],
+        ["rpmspin",  "engine_fan",                     "e2r","e2l","e4r",        {"x":0, "y":0, "z":0},  {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1]
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -270,12 +247,13 @@
         ["e1r", -0.36, 1.37, 0.22],
         ["e2l",  0.36, 1.68, 0.22,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
         ["e2r", -0.36, 1.68, 0.22],
-        {"engineGroup":["engine_block","engine_intake"]},
+        {"engineGroup":"engine_block"},
         {"nodeWeight":6.0},
         ["e3l",  0.34, 1.37, 0.56,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
         ["e3r", -0.34, 1.37, 0.56],
         ["e4l",  0.34, 1.68, 0.56, {"isExhaust":"mainEngine","chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
         ["e4r", -0.34, 1.68, 0.56, {"isExhaust":"mainEngine","chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
+        {"engineGroup":["engine_block","engine_intake"]},
         {"nodeWeight":1.3},
         ["e5l",  0.18, 1.37, 0.79,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.5,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
         ["e5r", -0.18, 1.37, 0.79,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.5,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.13}],
@@ -389,6 +367,7 @@
     "triangles": [
             ["id1:","id2:","id3:"],
             {"groundModel":"metal"},
+            {"dragCoef":0},
             /*
             ["e5l", "e1l", "e3l"],
             ["e4r", "e3r", "e2r"],

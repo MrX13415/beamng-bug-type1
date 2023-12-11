@@ -18,8 +18,7 @@
 		["bug_body", "bug_body", "Body"],
         ["bug_interior", "bug_interior", "Interior"],
 
-		["bug_float","bug_float", "Water Float"],
-		["bug_thrusters","bug_water_thrust", "Thrusters"],
+		["bug_waterfloat","", "Water Float"],
 
         //engine
         ["bug_radsupport","bug_radsupport", "Radiator Support"],
@@ -91,13 +90,13 @@
 		{"collision":true},
 		{"frictionCoef":0.5},
 		{"group":"bug_frame"},
-		{"nodeWeight":4.0},
+		{"nodeWeight":2.0},
 		["f1ml",  0.15993, -1.36559, 0.21500],
 		["f1mr", -0.15993, -1.36559, 0.21500],
 		["f2m",   0.00000, -1.02968, 0.21500],
 		["f3m",   0.00000, -0.69101, 0.21500],
-		{"nodeWeight":4.0},
 		["f4m",   0.00000, -0.19767, 0.21500],		// refNode "ref"
+		{"nodeWeight":4.0},
 		["f5m",   0.00000,  0.31389, 0.21500],		// refNode "back"
 		["f6ml",  0.22655,  0.71449, 0.21500],
 		["f6mr", -0.22655,  0.71449, 0.21500],

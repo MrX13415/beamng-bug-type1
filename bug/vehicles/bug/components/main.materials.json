@@ -25,6 +25,32 @@
     "translucentBlendOp": "None",
     "version": 1.5
   },
+  "bug_metal_black": {
+    "name": "bug_metal_black",
+    "mapTo": "bug_metal_black",
+    "class": "material",
+    "persistentId": "7a323df1-c1d8-497f-b677-ab7d3273ac17",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.03,
+          0.03,
+          0.03,
+          1
+        ],
+        "baseColorMap": "vehicles/common/null.dds",
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.05
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 255,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
   "bug_interior_chrome": {
     "name": "bug_interior_chrome",
     "mapTo": "bug_interior_chrome",

@@ -35,7 +35,7 @@ local function updateGFX(dt)
 end
 
 local function onInit(jbeamData)
-  print("[Bug:Clock] Initialized")
+  log("D", "", "[Bug:Clock] Initialized")
 
   electrics.values["clockh"] = 0
   electrics.values["clockmin"] = 0

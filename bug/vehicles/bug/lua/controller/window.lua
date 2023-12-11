@@ -76,6 +76,11 @@ local function updateGFX(dt)
   updateTimer = 0
 end
 
+local function onReset()
+  value = electrics.values[name .. "_state"]
+  log("D", "", "[Bug:Window] ".. name.. ": " .. tostring(value*100) .. "% open")
+end
+
 local function onInit(jbeamData)
   name = jbeamData.name or name
   speed = jbeamData.speed or speed
@@ -83,7 +88,7 @@ local function onInit(jbeamData)
   sfxEvent = jbeamData.sfx
   value = jbeamData.state or 0
   electrics.values[name .. "_state"] = value
-  print("[Bug:Window] Window \"".. name.. "\" Initialized")
+  log("D", "", "[Bug:Window] ".. name.. ": Initialized " .. tostring(value*100) .. "% open")
 end
 
 local function open(value)
@@ -95,6 +100,7 @@ local function close(value)
 end
 
 M.init      = onInit
+M.reset     = onReset
 M.updateGFX = updateGFX
 
 -- Console: controller.getController('windowFL').open()

@@ -102,23 +102,23 @@
          //     ["radio_knobs",        ["bug_dashboard"]],
          ["radio_frame",        ["bug_dashboard"]],
          ["radio_knobs_socket", ["bug_dashboard"]],
-         ["radio_text",         ["bug_dashboard"]],
+         ["radio_scale",        ["bug_dashboard"]],
 
          ["radio_speaker",      ["bug_dashboard"]],
     ],
     "props": [
         ["func",           "mesh",               "idRef:", "idX:", "idY:", "baseRotation",          "rotation",             "translation",          "min", "max", "offset", "multiplier"],
 
-        ["radio_needle",   "radio_needle",       "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":-0.14, "y":0, "z":0}, 0, 1, -0.5, 1],
+        ["radio_needle",   "radio_needle",       "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":-0.163, "y":0, "z":0}, 0, 1, -0.515, 1],
      
-        ["radio_buttons1", "radio_buttons.1",    "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
-        ["radio_buttons2", "radio_buttons.2",    "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
-        ["radio_buttons3", "radio_buttons.3",    "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
-        ["radio_buttons4", "radio_buttons.4",    "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
-        ["radio_buttons5", "radio_buttons.5",    "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons1", "radio_buttons.1",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons2", "radio_buttons.2",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons3", "radio_buttons.3",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons4", "radio_buttons.4",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons5", "radio_buttons.5",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
 
-        ["radio_needle",   "radio_knobs_tune",   "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 1440, 0, 1440],
-        ["radio_volume",   "radio_knobs_volume", "f4m","f4l","f4tm",       {"x":0, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 90, 300],
+        ["radio_needle",   "radio_knobs_tune",   "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 1440, 0, 1440],
+        ["radio_volume",   "radio_knobs_volume", "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 90, 300],
     ]
 },
 
@@ -167,11 +167,20 @@
 "skin_console_white": {
     "information":{
         "authors":"MrX13415",
-        "name":"White",
+        "name":"Pearl White",
         "value":30,
     },
     "slotType" : "skin_console",
-    "skinName": "White"
+    "skinName": "white"
+},
+"skin_console_white2": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Cream White",
+        "value":30,
+    },
+    "slotType" : "skin_console",
+    "skinName": "white2"
 },
 "skin_console_silver": {
     "information":{
@@ -228,6 +237,11 @@
         "value":300,
     },
     "slotType" : "bug_glovebox",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_glovebox_things", "bug_glovebox_things", "Things"]
+    ],
     "controller": [
         ["fileName"],
         ["advancedCouplerControl", {"name":"gloveboxCoupler"}],
@@ -273,11 +287,13 @@
         {"group": "bug_glovebox"},
 
         //dash nodes
-        {"nodeWeight": 0.5},
+        {"nodeWeight": 0.3},
         ["dgb1l", -0.12132, -0.53654, 0.88347],
         ["dgb1r", -0.45869, -0.55879, 0.87663],
+        {"nodeWeight": 0.4},
         ["dgb2l", -0.12132, -0.54466, 1.01010],
         ["dgb2r", -0.45869, -0.56279, 0.98610],
+        {"nodeWeight": 0.3},
         ["dgb3",  -0.28617, -0.58279, 0.97],
 
 
@@ -291,7 +307,7 @@
         {"beamPrecompression":1.0},
 
         {"disableMeshBreaking":false},
-        {"beamSpring":501000,"beamDamp":100},
+        {"beamSpring":201000,"beamDamp":50},
         {"beamDeform":15000,"beamStrength":"FLT_MAX"},
         {"group": "bug_glovebox"},
         ["dgb1l", "dgb1r"],
@@ -309,7 +325,7 @@
 
 
         {"group": ""},
-        {"beamSpring":201000,"beamDamp":100},
+        {"beamSpring":201000,"beamDamp":50},
         {"beamDeform":30000,"beamStrength":"FLT_MAX"},
         ["dgb1l", "dgb4"],
         ["dgb1r", "dgb4"],
@@ -337,27 +353,28 @@
         {"breakGroup":"glovebox"},
         {"beamType":"|SUPPORT", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":500,"beamDamp":100},
-        {"beamDeform":4000,"beamStrength":6000},
+        {"beamDeform":4000,"beamStrength":4000},
         {"beamPrecompression":0.8},
         ["dgb2l", "f4tm"],
         ["dgb2l", "f4r"],
         {"beamPrecompression":1},
 
         {"beamPrecompression":1, "beamType":"|BOUNDED", "beamShortBound":1},
-        {"beamSpring":0,"beamDamp":100},
-        {"beamLimitSpring":601000,"beamLimitDamp":150},
+        {"beamSpring":0,"beamDamp":50},
+        {"beamLimitSpring":401000,"beamLimitDamp":150},
         {"beamDeform":2000,"beamStrength":6000},
         ["dgb2l", "bd1r", {"beamLongBound":0.7}],
         ["dgb2r", "bd1r", {"beamLongBound":0.4}],
 
         // limiter
         {"beamType":"|SUPPORT", "beamLongBound":4},
-        {"beamSpring":601000,"beamDamp":120},
+        {"beamSpring":401000,"beamDamp":80},
         {"beamDeform":14000,"beamStrength":6000},
         {"beamPrecompression":1.001},
         ["dgb2l", "bc2r"],
         ["dgb2r", "bc2r"],
         {"beamPrecompression":1.0},
+        {"beamLimitSpring":1,"beamLimitDamp":1},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"breakGroup":""},
         {"breakGroupType":0},
@@ -397,9 +414,9 @@
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
         //clock
-        ["clockh",    "clock_needle_h",    "f4m","f4l","f4tm",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
-        ["clockmin",  "clock_needle_min",  "f4m","f4l","f4tm",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
-        ["clocksec",  "clock_needle_sec",  "f4m","f4l","f4tm",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
+        ["clockh",    "needle_clock_h",    "dsh","dshl","bd1",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
+        ["clockmin",  "needle_clock_min",  "dsh","dshl","bd1",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
+        ["clocksec",  "needle_clock_sec",  "dsh","dshl","bd1",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
     ],
 },
 
@@ -438,37 +455,6 @@
     },
     "slotType" : "bug_radio_output",
 },
-
-// --- Stations:
-
-"bug_radio_station_piano": {
-    "information":{
-        "authors":"BeamNG", // Claude Debussy?
-        "name":"Piano",
-        "song": "event:>Special>piano_music",
-        "builtIn": true,    // Is a built in radio station
-        "value":300,
-    },
-    "slotType" : "bug_radio_station",
-    "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-    ],
-},
-
-// No longer present
-// "bug_radio_station_lonle": {
-//     "information":{
-//         "authors":"BeamNG",
-//         "name":"lonle (Credits Theme)",
-//         "song": "ui/modules/credits/lonle.ogg",
-//         "builtIn": true,    // Is a built in radio station
-//         "value":300,
-//     },
-//     "slotType" : "bug_radio_station",
-//     "flexbodies": [
-//          ["mesh", "[group]:", "nonFlexMaterials"],
-//     ],
-// },
 
 }
 

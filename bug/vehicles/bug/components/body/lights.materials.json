@@ -18,7 +18,9 @@
       {}
     ],
     "alphaRef": 0,
+    "doubleSided": true,
     "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
     "translucent": true,
@@ -205,6 +207,8 @@
     ],
     "alphaRef": 20,
     "alphaTest": true,
+    "doubleSided": true,
+    "invertBackFaceNormals": true,
     "castShadows": false,
     "dynamicCubemap": true,
     "materialTag0": "beamng",
@@ -235,7 +239,9 @@
       {}
     ],
     "alphaRef": 0,
+    "doubleSided": true,
     "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
     "translucent": true,
@@ -422,6 +428,8 @@
     ],
     "alphaRef": 20,
     "alphaTest": true,
+    "doubleSided": true,
+    "invertBackFaceNormals": true,
     "castShadows": false,
     "dynamicCubemap": true,
     "materialTag0": "beamng",
@@ -548,9 +556,9 @@
   },
 
 
-  "bug_licenseplate_light": {
-    "name": "bug_licenseplate_light",
-    "mapTo": "bug_licenseplate_light",
+  "bug_license_light": {
+    "name": "bug_license_light",
+    "mapTo": "bug_license_light",
     "class": "Material",
     "persistentId": "893b07c7-8e4f-4252-9ec1-7dad161772fa",
     "Stages": [
@@ -569,9 +577,9 @@
     ],
     "version": 1.5
   },
-  "bug_licenseplate_light_on": {
-    "name": "bug_licenseplate_light_on",
-    "mapTo": "bug_licenseplate_light_on",
+  "bug_license_light_on": {
+    "name": "bug_license_light_on",
+    "mapTo": "bug_license_light_on",
     "class": "Material",
     "persistentId": "821cbbb4-2697-4d26-9192-707ec7609179",
     "Stages": [

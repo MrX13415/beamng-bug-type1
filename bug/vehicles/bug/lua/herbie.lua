@@ -124,6 +124,8 @@ local function hasPower() return electrics.values.ignitionLevel > 0 end
 local function isEnabled() return enabled end
 local function isHerbieEngine() return herbieEngine end
 local function getPlayerTrust() return playerTrust end
+local function IsExcited() return getPlayerTrust() >= 330 end
+local function isAngry() return getPlayerTrust() <= -20 end
 local function state() return vState end
 
 local function beamCount()
@@ -190,13 +192,10 @@ local function getBrakeEvents()
 	end
 end
 
-
 local function loadCurrentTrust()
 	local herbie = storage.data().herbie or {}
 	playerTrust = herbie.trust or playerTrustDefault
 end
-
-
 local function writeCurrentTrust()
 	local d = storage.data()
 	d.herbie = {}
@@ -217,9 +216,20 @@ local function getMaxMinDefaultTorqueCurves()
 			defaultTorqueGraph = graph
 		end
 	end
+
+	-- TODO: This feature needs a rewrite to better archive the goal as since upate 0.30 there is an issue where engine just locks up.
+
+	-- Amplify the original min torque curve by a factor of 3 because, 
+	-- the friction of the engine is higher then it was before. 
+	-- This prevents the engine to lock up when on min. trust.
+	for i,v in pairs(minTorqueGraph) do
+		minTorqueGraph[i] = minTorqueGraph[i] * 3
+	end
+	-- The default torque curve has the same issue, amplify it by a factor of 1.5.
+	for i,v in pairs(defaultTorqueGraph) do
+		defaultTorqueGraph[i] = defaultTorqueGraph[i] * 3
+	end
 end
-
-
 local function createNewTorqueCurve()	
 	writeCurrentTrust()
 	
@@ -229,13 +239,13 @@ local function createNewTorqueCurve()
 	
 	if playerTrust >= playerTrustMax then
 		torqueAmplifier = 1.0
-		message("Maximum Thrust Reached")
+		message("100% Trust (max)")
 		
 		newTorqueCurve = maxTorqueGraph
 	
 	elseif playerTrustMax > playerTrust and playerTrust > 0 then
 		torqueAmplifier = playerTrust / playerTrustMax
-		message(tostring(torqueAmplifier * 100) .. " % of Maximum Thrust Reached")
+		message(tostring(math.floor(torqueAmplifier * 100)) .. "% Trust")
 		
 		for i,_ in pairs(defaultTorqueGraph) do
 			newTorqueCurve[i] = defaultTorqueGraph[i] + ((maxTorqueGraph[i] - defaultTorqueGraph[i]) * torqueAmplifier)
@@ -244,7 +254,7 @@ local function createNewTorqueCurve()
 		
 	elseif playerTrustMin < playerTrust and playerTrust < 0 then
 		torqueAmplifier = playerTrust / playerTrustMin
-		message(tostring(torqueAmplifier * 100) .. " % of Minimum Thrust Reached")
+		message(tostring(math.floor(torqueAmplifier * -100)) .. "% Trust")
 		
 		for i,_ in pairs(defaultTorqueGraph) do
 			newTorqueCurve[i] = defaultTorqueGraph[i] - ((defaultTorqueGraph[i] - minTorqueGraph[i]) * torqueAmplifier)
@@ -253,7 +263,7 @@ local function createNewTorqueCurve()
 		
 	elseif playerTrust <= playerTrustMin then
 		torqueAmplifier = -1.0
-		message("Minimum Thrust Reached")
+		message("-100% Trust (min)")
 		
 		newTorqueCurve = minTorqueGraph
 		
@@ -261,7 +271,7 @@ local function createNewTorqueCurve()
 		playerTrust = playerTrustMin
 		
 	else
-		message("Default Thrust Reached")
+		message("0% Trust (default)")
 		newTorqueCurve = defaultTorqueGraph
 	end
 	
@@ -270,9 +280,9 @@ end
 
 
 local function setNewTorqueCurve()
-	local newTorqueCurve = createNewTorqueCurve()
-	
 	if not herbieEngine then return end
+
+	local newTorqueCurve = createNewTorqueCurve()	
 	local engine = powertrain.getDevice("mainEngine")
 	
 	--[[newTorqueList = {}
@@ -298,6 +308,7 @@ local function setNewTorqueCurve()
 			editTorqueList[i] = newTorqueCurve[i]
 		end
 	end
+	
 	engine.torqueCurve = editTorqueList	
 end
 
@@ -536,7 +547,6 @@ local function updateWheelie(dt)
 	end
 end
 
-
 local function updateGFX(dt)
 	updateWheelie(dt)
 
@@ -653,6 +663,8 @@ M.hasPower       = hasPower
 M.isEnabled      = isEnabled
 M.isHerbieEngine = isHerbieEngine
 M.getPlayerTrust = getPlayerTrust
+M.IsExcited      = IsExcited
+M.isAngry        = isAngry
 M.state          = state
 
 M.resetTrust = resetTrust

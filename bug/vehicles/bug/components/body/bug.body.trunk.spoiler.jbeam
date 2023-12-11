@@ -138,11 +138,25 @@
 "bug_spoilerR_white": {
     "information":{
         "authors": "MrX13415",
-        "name": "White Spoiler",
+        "name": "Pearl White Spoiler",
         "value": 50,
     },
     "slotType" : "skin_spoilerR",
     "skinName" : "white",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["spoiler_R", ["bug_spoilerR"]]
+   ],
+},
+"bug_spoilerR_white2": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Cream White Spoiler",
+        "value": 50,
+    },
+    "slotType" : "skin_spoilerR",
+    "skinName" : "white2",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 

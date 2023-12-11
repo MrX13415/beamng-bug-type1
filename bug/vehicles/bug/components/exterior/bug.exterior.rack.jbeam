@@ -155,7 +155,7 @@
         {"beamSpring":90100,"beamDamp":50},
         {"beamDeform":10000,"beamStrength":1500},
         {"breakGroup":"roofrack"},
-		//ATTACHMENT LEFT
+		// ATTACHMENT
 		["rora1l", "brf2lll"],
 		["rora1l", "brf3lll"],
 		["rora2l", "brf3lll"],
@@ -169,6 +169,7 @@
 		["rora2l", "brf4ll"],
 		["rora3l", "brf3ll"],
 		["rora3l", "brf5ll"],
+		["rora3l", "brf6ll"],
 
 		["rora1r", "brf2rrr"],
 		["rora1r", "brf3rrr"],
@@ -183,6 +184,7 @@
 		["rora2r", "brf4rr"],
 		["rora3r", "brf3rr"],
 		["rora3r", "brf5rr"],
+		["rora3r", "brf6rr"],
 
         ["rora1", "brf2l"],
 		["rora1", "brf3l"],
@@ -237,7 +239,7 @@
 "bug_roof_rack_luggage": {
     "information":{
         "authors":"53_herbie_53",
-        "name":"Roof Rack Luggage",
+        "name":"Camping Luggage",
         "value":0,
     },
     "slotType" : "bug_roof_rack_luggage",
@@ -348,6 +350,8 @@
         {"groundModel":"metal"},
         {"dragCoef":10},
 
+       // {"pressureGroup":"bag"},
+     //   {"pressurePSI":0.01},
         //bag
         ["lgg18", "lgg16", "lgg20"],
         ["lgg18", "lgg20", "lgg22"],
@@ -361,6 +365,7 @@
         ["lgg20", "lgg23", "lgg22"],
         ["lgg18", "lgg19", "lgg17"],
         ["lgg18", "lgg17", "lgg16"],
+       // {"pressureGroup":""},
     ],
 },
 "bug_roof_rack_luggage_coolingbox": {
@@ -386,10 +391,10 @@
         {"collision":true},
 			
         //coolingbox
-        ["lgg0", 0.07544, 0.73202, 1.54008],
-        ["lgg1", -0.24039, 0.73202, 1.54008],
-        ["lgg2", 0.06521, 0.44245, 1.58483],
-        ["lgg3", -0.24039, 0.43536, 1.57660],
+        ["lgg0", 0.07444, 0.72202, 1.56008],
+        ["lgg1", -0.23039, 0.72202, 1.56008],
+        ["lgg2", 0.06521, 0.44245, 1.59483],
+        ["lgg3", -0.24039, 0.43536, 1.59660],
         ["lgg4", 0.07544, 0.76264, 1.84893],
         ["lgg5", -0.24039, 0.76264, 1.84893],
         ["lgg6", 0.07544, 0.46597, 1.88545],
@@ -466,6 +471,8 @@
         {"groundModel":"metal"},
         {"dragCoef":10},
 
+       // {"pressureGroup":"coolingbox"},
+        //{"pressurePSI":0.01},
         //coolingbox
         ["lgg0", "lgg1", "lgg5"],
         ["lgg0", "lgg5", "lgg4"],
@@ -479,6 +486,7 @@
         ["lgg5", "lgg6", "lgg4"],
         ["lgg1", "lgg0", "lgg2"],
         ["lgg1", "lgg2", "lgg3"],
+       // {"pressureGroup":""},
     ],
 },
 "bug_roof_rack_luggage_tricycle": {
@@ -641,22 +649,23 @@
         {"collision":true},
 		
         //surfboard
-        ["lgg40", -0.38563, 1.11970, 1.53011],
-        ["lgg41", -0.49909, 1.11970, 1.51215],
-        ["lgg42", -0.33350, -0.38922, 1.55508],
-        ["lgg43", -0.47455, -0.40134, 1.53901],
-        ["lgg44", -0.30911, 0.14665, 1.57323],
-        ["lgg45", -0.53332, 0.13452, 1.54968],
-        ["lgg48", -0.34663, 0.80451, 1.56380],
-        ["lgg49", -0.52625, 0.79239, 1.53373],
-        ["lgg52", -0.39737, -0.54100, 1.54901],
-        ["lgg56", -0.43673, 0.72955, 1.57737, {"collision":false, "selfCollision":false}],
+        ["lgg40", -0.38563, 1.11970, 1.54011],
+        ["lgg41", -0.49909, 1.11970, 1.52215],
+        ["lgg42", -0.33350, -0.38922, 1.56508],
+        ["lgg43", -0.47455, -0.38922, 1.54901],
+        ["lgg44", -0.30911, 0.14665, 1.58323],
+        ["lgg45", -0.53332, 0.13452, 1.55968],
+        ["lgg48", -0.34663, 0.80451, 1.57380],
+        ["lgg49", -0.52625, 0.79239, 1.54373],
+        ["lgg52", -0.39737, -0.54100, 1.53901],
+
+        ["lgg56", -0.43673, 0.72955, 1.58737, {"collision":false, "selfCollision":false}],
         ["lgg57", -0.45284, 1.01904, 1.55826, {"collision":false, "selfCollision":false}],
         ["lgg58", -0.45284, 1.02816, 1.61659],
 		{"nodeWeight":0.8},
-        ["lgg53", -0.41126, -0.10151, 1.650019, {"collision":false, "selfCollision":false}],
-        ["lgg54", -0.42673, 0.405636, 1.66901, {"collision":false, "selfCollision":false}],
-        ["lgg55", -0.44657, 0.80066, 1.65042, {"collision":false, "selfCollision":false}],
+        ["lgg53", -0.38447, -0.35779, 1.48114, {"collision":false, "selfCollision":false}],
+        ["lgg54", -0.40624,  0.40800, 1.48914, {"collision":false, "selfCollision":false}],
+        ["lgg55", -0.42626,  0.80300, 1.47212, {"collision":false, "selfCollision":false}],
     ],
     "beams":[
         ["id1:", "id2:"],
@@ -677,6 +686,7 @@
         ["lgg44", "lgg42"],
         ["lgg45", "lgg43"],
         ["lgg42", "lgg43"],
+        ["lgg42", "lgg52"],
         ["lgg43", "lgg52"],
         //-
         ["lgg40", "lgg49"],
@@ -731,8 +741,8 @@
         ["lgg52", "lgg53"],
 
         //support
+        ["lgg40", "lgg52"],
         ["lgg41", "lgg52"],
-        ["lgg42", "lgg52"],
 
         //attach
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
@@ -743,6 +753,8 @@
         ["lgg42", "rora4r"],
         ["lgg43", "rora1r"],
         ["lgg43", "rora4r"],
+        ["lgg44", "rora1"],
+        ["lgg44", "rora4"],
         ["lgg48", "rora6"],
         ["lgg48", "rora3"],
         ["lgg48", "rora6r"],
@@ -751,28 +763,257 @@
         ["lgg49", "rora3"],
         ["lgg49", "rora6r"],
         ["lgg49", "rora3r"],
+
+        ["lgg58", "rora6r"],
+        ["lgg58", "rora3r"],
         {"breakGroup":""},
     ],
     "triangles":[
         ["id1:", "id2:", "id3:"],
         
-        {"groundModel":"metal"},
-        {"dragCoef":10},
+        {"groundModel":"wood"},
 
         //surfboard
-       // {"pressurePSI":0.15},
-       // {"pressureGroup":"surfboard"},
-        ["lgg40", "lgg48", "lgg41"],
-        ["lgg41", "lgg48", "lgg49"],
-        ["lgg48", "lgg44", "lgg49"],
-        ["lgg49", "lgg44", "lgg45"],
-        ["lgg44", "lgg42", "lgg45"],
-        ["lgg45", "lgg42", "lgg43"],
-        ["lgg43", "lgg42", "lgg52"],
-       // {"pressureGroup":""},
-        ["lgg57", "lgg56", "lgg58"]
+        // sword
+        ["lgg57", "lgg56", "lgg58"],
+        {"pressureGroup":"surfboard"},
+        {"pressurePSI":0.02},
+        {"dragCoef":30},
+        // top
+        ["lgg48", "lgg40", "lgg41"],
+        ["lgg48", "lgg41", "lgg49"],
+        ["lgg44", "lgg48", "lgg49"],
+        ["lgg44", "lgg49", "lgg45"],
+        ["lgg42", "lgg44", "lgg45"],
+        ["lgg42", "lgg45", "lgg43"],
+        ["lgg42", "lgg43", "lgg52"],
+        // bottom
+        ["lgg42", "lgg43", "lgg53"],
+        ["lgg45", "lgg53", "lgg43"],
+        ["lgg45", "lgg54", "lgg53"],
+        ["lgg49", "lgg54", "lgg45"],
+        ["lgg49", "lgg55", "lgg54"],
+        ["lgg42", "lgg53", "lgg44"],
+        ["lgg44", "lgg53", "lgg54"],
+        ["lgg48", "lgg44", "lgg54"],
+        ["lgg48", "lgg54", "lgg55"],
+        ["lgg49", "lgg48", "lgg55"],
+        {"pressureGroup":""},
     ],
 },
+
+
+"bug_roof_rack_offroad": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Offroad Luggage",
+        "value":0,
+    },
+    "slotType" : "bug_roof_rack_luggage",
+    "slots": [
+        ["type", "default", "description"],
+        ["bug_roof_rack_offroad_tire","bug_roof_rack_offroad_tire", "Spare Wheel"],
+        ["bug_roof_rack_offroad_box","bug_roof_rack_offroad_box", "Box"],
+    ]
+},
+
+"bug_roof_rack_offroad_tire": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Spare Wheel",
+        "value":130,
+    },
+    "slotType" : "bug_roof_rack_offroad_tire",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        
+        ["roofrack_sparerim_15x6", ["rack_wheel_spare"]],
+        ["roofrack_sparetire_offroad", ["rack_wheel_spare"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"collision":false},
+        {"selfCollision":false},
+        //front wheels
+        {"nodeWeight":5.0},
+        {"nodeMaterial":"|NM_METAL"},
+        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        {"frictionCoef":0.5},
+        {"group":"rack_wheel_spare"},
+        ["rospare1", 0.16212, 0.30901, 1.59565, {"staticCollision":false}],
+        ["rospare2", 0.17029, 0.30915, 1.72986, {"staticCollision":false}],
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":1501000,"beamDamp":25},
+        {"beamDeform":78500,"beamStrength":434000},
+        // spare wheel
+        ["rospare1","rospare2"],
+
+        {"optional":true},
+        {"beamDeform":1000,"beamStrength":5000},
+        {"beamSpring":81000,"beamDamp":100},
+        //attach to wheel
+        {"breakGroup":"rack_wheel_spare"},
+        ["rospare1", "rora1"],
+        ["rospare1", "rora1l"],
+        ["rospare1", "rora3"],
+        ["rospare1", "rora3l"],
+        {"breakGroup":""},
+        {"optional":false},
+        
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+
+        //general settings
+        {"hubRadius":0.348},
+        {"wheelOffset":0},
+        {"hubWidth":0.165},
+        {"numRays":6},
+        {"hasTire":false},
+
+        //hub options
+        {"hubBeamSpring":251000, "hubBeamDamp":5},
+        {"hubBeamDeform":40000, "hubBeamStrength":160000},
+        {"hubNodeWeight":0.1},
+        {"hubNodeMaterial":"|NM_RUBBER"},
+        {"hubFrictionCoef":0.8},
+
+        //wheel
+        {"propulsed":0},
+        {"brakeTorque":0},
+        {"parkingTorque":0},
+        {"selfCollision":true},
+        {"collision":true},
+        ["rack_spare", "rack_wheel_spare", "rack_tire_spare", "rospare2", "rospare1", 9999,  "", -1, {"speedo":false}],
+        {"propulsed":0},
+        {"hasTire":true},
+    ],
+},
+"bug_roof_rack_offroad_box": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Crate",
+        "value":50,
+    },
+    "slotType" : "bug_roof_rack_offroad_box",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["roofrack_crate", ["luggage_roofrack_create"]],
+    ],
+	"nodes":[
+		["id", "posX", "posY", "posZ"],
+
+		{"nodeWeight":1.5},
+		{"frictionCoef":2.0},
+		{"nodeMaterial":"|NM_RUBBER"},
+		{"group":"luggage_roofrack_create"},
+		{"selfCollision":true},
+        {"collision":true},
+		
+        //crate
+        ["rocrt1l", -0.22998, -0.05192, 1.75871],
+        ["rocrt1r", -0.51168, -0.05192, 1.72634],
+        ["rocrt2l", -0.23229,  0.42024, 1.77889],
+        ["rocrt2r", -0.51400,  0.42024, 1.74653],
+        ["rocrt3l", -0.20842, -0.04379, 1.57108],
+        ["rocrt3r", -0.49013, -0.04379, 1.53872],
+        ["rocrt4l", -0.21074,  0.42837, 1.59126],
+        ["rocrt4r", -0.49245,  0.42837, 1.55890]
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+  
+        {"breakGroupType":0},
+        {"deformLimitExpansion":1.1},
+
+        //bag
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":1000000,"beamDamp":50},
+        {"beamDeform":800000,"beamStrength":"FLT_MAX"},
+
+        ["rocrt1l", "rocrt1r"],
+        ["rocrt2l", "rocrt2r"],
+        ["rocrt3l", "rocrt3r"],
+        ["rocrt4l", "rocrt4r"],
+        ["rocrt1l", "rocrt2l"],
+        ["rocrt1r", "rocrt2r"],
+        ["rocrt3l", "rocrt4l"],
+        ["rocrt3r", "rocrt4r"],
+        ["rocrt1l", "rocrt3r"],
+        ["rocrt3l", "rocrt1r"],
+        ["rocrt2l", "rocrt4r"],
+        ["rocrt4l", "rocrt2r"],
+        ["rocrt1l", "rocrt4l"],
+        ["rocrt3l", "rocrt2l"],
+        ["rocrt1r", "rocrt4r"],
+        ["rocrt3r", "rocrt2r"],
+        ["rocrt1l", "rocrt2r"],
+        ["rocrt2l", "rocrt1r"],
+        ["rocrt3l", "rocrt4r"],
+        ["rocrt4l", "rocrt3r"],
+        ["rocrt1l", "rocrt4r"],
+        ["rocrt1r", "rocrt4l"],
+        ["rocrt2l", "rocrt3r"],
+        ["rocrt2r", "rocrt3l"],
+
+        //attach
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":20000,"beamDamp":50},
+        {"beamDeform":1000,"beamStrength":1000},
+        {"breakGroup":"roofrack_create"},
+        ["rocrt1l", "rora1"],
+        ["rocrt1r", "rora1"],
+        ["rocrt1l", "rora1r"],
+        ["rocrt1r", "rora1r"],
+        ["rocrt3l", "rora1"],
+        ["rocrt3r", "rora1"],
+        ["rocrt3l", "rora1r"],
+        ["rocrt3r", "rora1r"],
+        ["rocrt2l", "rora3"],
+        ["rocrt2r", "rora3"],
+        ["rocrt2l", "rora3r"],
+        ["rocrt2r", "rora3r"],
+        ["rocrt4l", "rora3"],
+        ["rocrt4r", "rora3"],
+        ["rocrt4l", "rora3r"],
+        ["rocrt4r", "rora3r"],
+        {"breakGroup":""},
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        
+        {"groundModel":"wood"},
+        {"dragCoef":10},
+
+        ["rocrt3l", "rocrt4l", "rocrt1l"],
+        ["rocrt1l", "rocrt4l", "rocrt2l"],
+        ["rocrt4r", "rocrt3r", "rocrt1r"],
+        ["rocrt4r", "rocrt1r", "rocrt2r"],
+
+        ["rocrt1l", "rocrt2l", "rocrt1r"],
+        ["rocrt1r", "rocrt2l", "rocrt2r"],
+
+        ["rocrt4l", "rocrt3l", "rocrt3r"],
+        ["rocrt4l", "rocrt3r", "rocrt4r"],
+
+        ["rocrt3r", "rocrt3l", "rocrt1r"],
+        ["rocrt1r", "rocrt3l", "rocrt1l"],
+
+        ["rocrt4l", "rocrt4r", "rocrt2l"],
+        ["rocrt2l", "rocrt4r", "rocrt2r"],
+    ],
+},
+
+
 
 "bug_rearrack": {
     "information":{
@@ -1069,6 +1310,250 @@
             ["lgg86", "lgg88", "lgg85"],
             ["lgg84", "lgg86", "lgg85"],
             ["lgg84", "lgg85", "lgg82"],
+    ],
+},
+
+"bug_jerrycan_cage": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Jerrycan Cage",
+        "value":80,
+    },
+    "slotType" : "bug_jerrycan_cage",
+    "slots": [
+        ["type", "default", "description"],
+        ["bug_jerrycan","bug_jerrycan", "20L Jerrycan"],	
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["jerrycan_holder", ["jerrycan_cage"]],
+    ],
+	"nodes":[
+		["id", "posX", "posY", "posZ"],
+
+		{"frictionCoef":2.0},
+		{"nodeMaterial":"|NM_METAL"},
+		{"group":"jerrycan_cage"},
+		{"selfCollision":true},
+        {"collision":true},
+		{"nodeWeight":0.8},
+        ["jyc1", 0.85, 0.36, 0.58],
+        ["jyc2", 0.83, 0.70, 0.58],
+        ["jyc3", 0.86, 0.36, 0.33],
+        ["jyc4", 0.84, 0.70, 0.33],
+        {"collision":false},
+        {"selfCollision":false},
+        ["jyc5", 0.67, 0.52, 0.46],
+		{"group":""},
+        {"collision":true}
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+  
+        {"breakGroupType":0},
+        {"deformLimitExpansion":1.1},
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":1001000,"beamDamp":50},
+        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+
+        ["jyc1", "jyc2"],
+        ["jyc3", "jyc4"],
+        ["jyc1", "jyc3"],
+        ["jyc2", "jyc4"],
+        ["jyc1", "jyc4"],
+        ["jyc2", "jyc3"],
+
+        ["jyc1", "jyc5"],
+        ["jyc2", "jyc5"],
+        ["jyc3", "jyc5"],
+        ["jyc4", "jyc5"],
+
+        //attach
+        {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":0, "beamShortBound":0},
+        {"beamSpring":1001000,"beamDamp":50},
+        {"beamDeform":"FLT_MAX","beamStrength":80000},
+        {"breakGroup":"jerrycan_cage"},
+        ["jyc1", "bq3l"],
+        ["jyc1", "bq4l"],
+        ["jyc1", "bq5l"],
+        ["jyc1", "bq6l"],
+        ["jyc2", "bq3l"],
+        ["jyc2", "bq4l"],
+        ["jyc2", "bq5l"],
+        ["jyc2", "bq6l"],
+        ["jyc3", "bq3l"],
+        ["jyc3", "bq4l"],
+        ["jyc3", "bq5l"],
+        ["jyc3", "bq6l"],
+        ["jyc4", "bq3l"],
+        ["jyc4", "bq4l"],
+        ["jyc4", "bq5l"],
+        ["jyc4", "bq6l"],
+        {"breakGroup":""},
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        
+        {"groundModel":"metal"},
+        {"dragCoef":0},
+        ["jyc3", "jyc4", "jyc1"],
+        ["jyc1", "jyc4", "jyc2"],
+        ["bq3l", "bq4l", "jyc3"],
+        ["jyc3", "bq4l", "jyc4"],
+
+        ["bq3l", "jyc3", "bq5l"],
+        ["bq5l", "jyc3", "jyc1"],
+        ["jyc4", "bq4l", "jyc2"],
+        ["jyc2", "bq4l", "bq6l"],
+
+    ],
+},
+"bug_jerrycan": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Jerrycan",
+        "value":30,
+    },
+    "slotType" : "bug_jerrycan",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["Jerrycan", ["jerrycan"]],
+    ],
+	"nodes":[
+		["id", "posX", "posY", "posZ"],
+
+		{"frictionCoef":1.0},
+		{"nodeMaterial":"|NM_METAL"},
+		{"selfCollision":true},
+        {"collision":true},
+		{"nodeWeight":1.1},
+		{"group":"jerrycan"},
+        {"chemEnergy":50,"burnRate":1.2,"flashPoint":220,"vaporPoint":97,"specHeat":0.03,"selfIgnitionCoef":0.4,"smokePoint":220,"containerBeam":"jerrycan", "ignoreContainerBeamBreakMessage":true},
+        ["jry1l", 0.835, 0.38, 0.72],
+        ["jry2l", 0.815, 0.67, 0.75],
+        ["jry3l", 0.825, 0.38, 0.35],
+        ["jry4l", 0.805, 0.67, 0.35],
+        ["jry1r", 0.735, 0.38, 0.72],
+        ["jry2r", 0.725, 0.66, 0.76],
+        ["jry3r", 0.725, 0.38, 0.36],
+        ["jry4r", 0.705, 0.66, 0.36],
+        // Collision support nodes
+        ["jry5l", 0.825, 0.38, 0.57],
+        ["jry6l", 0.805, 0.67, 0.57],
+        ["jry5r", 0.735, 0.38, 0.57],
+        ["jry6r", 0.715, 0.66, 0.57],
+		{"group":""}
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"vaporPoint":false,"specHeat":false,"selfIgnitionCoef":false,"smokePoint":false,"containerBeam":false},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+  
+        {"disableMeshBreaking":true},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":800000,"beamDamp":50},
+        {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+        
+        {"deformLimitExpansion":0},
+		{"group":"jerrycan"},
+        {"breakGroup":"jerrycan"},
+        ["jry1l", "jry3l", {"beamStrength":20000, "containerBeam": "jerrycan"}],
+        ["jry2l", "jry4l", {"beamStrength":20000, "containerBeam": "jerrycan"}],
+        ["jry1r", "jry3r", {"beamStrength":20000, "containerBeam": "jerrycan"}],
+        ["jry2r", "jry4r", {"beamStrength":20000, "containerBeam": "jerrycan"}],
+        {"breakGroup":""},
+
+        ["jry1l", "jry2l"],
+        ["jry3l", "jry4l"],
+        ["jry1l", "jry4l"],
+        ["jry2l", "jry3l"],
+        //-
+        ["jry1r", "jry2r"],
+        ["jry3r", "jry4r"],
+        ["jry1r", "jry4r"],
+        ["jry2r", "jry3r"],
+        //-
+        ["jry1l", "jry1r"],
+        ["jry2l", "jry2r"],
+        ["jry3l", "jry3r"],
+        ["jry4l", "jry4r"],
+        //-
+        ["jry1l", "jry2r"],
+        ["jry1r", "jry2l"],
+        ["jry1l", "jry3r"],
+        ["jry1r", "jry3l"],
+        ["jry2l", "jry4r"],
+        ["jry2r", "jry4l"],
+        ["jry3l", "jry4r"],
+        ["jry3r", "jry4l"],
+        //-
+        ["jry1l", "jry4r"],
+        ["jry1r", "jry4l"],
+        ["jry2l", "jry3r"],
+        ["jry2r", "jry3l"],
+		{"group":""},
+
+        ["jry5l", "jry5r"],
+        ["jry6l", "jry6r"],
+        ["jry5l", "jry6l"],
+        ["jry5r", "jry6r"],
+        ["jry5l", "jry6r"],
+        ["jry5r", "jry6l"],
+        //-
+        ["jry5l", "jry2l"],
+        ["jry5l", "jry2r"],
+        ["jry5l", "jry4l"],
+        ["jry5l", "jry4r"],
+        ["jry5r", "jry2l"],
+        ["jry5r", "jry2r"],
+        ["jry5r", "jry4l"],
+        ["jry5r", "jry4r"],
+        //-
+        ["jry6l", "jry1l"],
+        ["jry6l", "jry1r"],
+        ["jry6l", "jry3l"],
+        ["jry6l", "jry3r"],
+        ["jry6r", "jry1l"],
+        ["jry6r", "jry1r"],
+        ["jry6r", "jry3l"],
+        ["jry6r", "jry3r"],
+
+        //attach
+        {"beamPrecompression":0.9, "beamType":"|SUPPORT", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":10000,"beamDamp":50},
+        {"beamDeform":5000,"beamStrength":1000},
+        {"breakGroup":"jerrycan_attach"},
+        ["jry1r", "jyc1"],
+        ["jry1r", "jyc2"],
+        ["jry1r", "jyc3"],
+        ["jry1r", "jyc4"],
+        ["jry2r", "jyc1"],
+        ["jry2r", "jyc2"],
+        ["jry2r", "jyc3"],
+        ["jry2r", "jyc4"],
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"disableMeshBreaking":false}
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        
+        {"groundModel":"metal"},
+        {"dragCoef":2},
+        ["jry1l", "jry2l", "jry1r"],
+        ["jry1r", "jry2l", "jry2r"],
+        ["jry3l", "jry4l", "jry1l"],
+        ["jry1l", "jry4l", "jry2l"],
+        ["jry4r", "jry3r", "jry1r"],
+        ["jry4r", "jry1r", "jry2r"],
+        ["jry3r", "jry3l", "jry1r"],
+        ["jry1r", "jry3l", "jry1l"],
+        ["jry4l", "jry4r", "jry2l"],
+        ["jry2l", "jry4r", "jry2r"],
+        ["jry3r", "jry4r", "jry3l"],
+        ["jry3l", "jry4r", "jry4l"],
     ],
 },
 

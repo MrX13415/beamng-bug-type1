@@ -47,12 +47,12 @@
         //overwritten by wide or offroad suspension
         {"group":"lowermounts_F"},
         ["fx1r", -0.460, -1.362, 0.243],
-        ["fx1", -0.000, -1.362, 0.243, {"nodeWeight":3.2}],
+        ["fx1",   0.000, -1.362, 0.243, {"nodeWeight":3.2}],
         ["fx1l",  0.460, -1.362, 0.243],
 
         {"group":["bonnetsupport","uppermounts_F"]},
         ["fx2r", -0.460, -1.364, 0.381],
-        ["fx2",  0.000, -1.364, 0.381, {"nodeWeight":3.2}],
+        ["fx2",   0.000, -1.364, 0.381, {"nodeWeight":3.2}],
         ["fx2l",  0.460, -1.364, 0.381],
 
         ["fx0",   -0.00, -1.025, 0.300, {"nodeWeight":3.2,"group":"","collision":false,"selfCollision":false}],
@@ -71,31 +71,34 @@
         {"frictionCoef":0.4},
         //front hub
         //this is the steering axis
-        {"nodeWeight":4.0},
+        {"nodeWeight":6.0},
         {"group":["hub_F", "lowerarm_F","tierod_F"]},
-        ["fh1r", -0.579, "$=-1.222-$caster_F", 0.248],
-        ["fh1l",  0.579, "$=-1.222-$caster_F", 0.248],
-        {"nodeWeight":3.5},
+        ["fh1r", -0.59, "$=-1.229-$caster_F", 0.248],
+        ["fh1l",  0.59, "$=-1.229-$caster_F", 0.248],
+        {"nodeWeight":5.5},
         {"group":["hub_F", "upperarm_F","tierod_F"]},
-        ["fh2r", -0.579, "$=-1.222+$caster_F", 0.405],
-        ["fh2l",  0.579, "$=-1.222+$caster_F", 0.405],
+        ["fh2r", -0.565, "$=-1.215+$caster_F", 0.405],
+        ["fh2l",  0.565, "$=-1.215+$caster_F", 0.405],
         {"selfCollision":false},
         //tie rod goes here
-        {"nodeWeight":4.5},
+        {"nodeWeight":6.5},
         {"group":["hub_F","tierod_F"]},
-        ["fh3r", -0.534, -1.115, 0.417],
-        ["fh3l",  0.534, -1.115, 0.417],
+        ["fh3r", -0.55, -1.107, 0.387],
+        ["fh3l",  0.55, -1.107, 0.387],
 
-        {"nodeWeight":3.25},
+        {"nodeWeight":5.25},
         {"group":["hub_F", "brakearm_F"]},
-        ["fh5r", -0.621, -1.306, 0.335],
-        ["fh5l",  0.621, -1.306, 0.335],
+        ["fh5r", -0.61, -1.342, 0.335],
+        ["fh5l",  0.61, -1.342, 0.335],
         //flexbody help only
         {"group":["hub_F"]},
-        {"nodeWeight":0.5},
-        ["fh6r", -0.621, -1.102, 0.335],
-        ["fh6l",  0.621, -1.102, 0.335],
+        {"nodeWeight":2.5},
+        ["fh6r", -0.61, -1.082, 0.335],
+        ["fh6l",  0.61, -1.082, 0.335],
         {"group":""},
+        // rigidify
+        ["fh7r", -0.45, -1.25, 0.3, {"group":"", "collision":false}],
+        ["fh7l",  0.45, -1.25, 0.3, {"group":"", "collision":false}]
     ],
     "torsionbars": [
         ["id1:", "id2:", "id3:", "id4:"],
@@ -111,9 +114,13 @@
     "beams":[
         ["id1:", "id2:"],
 
+        {"deformLimitExpansion":1.2},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":1.2},
+
         //FRONT TORSION BAR TUBES
         {"beamSpring":3801000,"beamDamp":50},
-        {"beamDeform":65000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":100000,"beamStrength":"FLT_MAX"},
         //main shape
         ["fx1r", "fx1l"],
         ["fx2r", "fx2l"],
@@ -142,13 +149,13 @@
 
         //shock tower rigififiers
         {"beamSpring":2501000,"beamDamp":100},
-        {"beamDeform":20000, "beamStrength":350000},
+        {"beamDeform":80000, "beamStrength":350000},
         ["fs1l", "f2l", {"breakGroup": "suspension_F"}],
         ["fs1r", "f2r", {"breakGroup": "suspension_F"}],
 
         //front torsion tubes middle nodes
         {"beamSpring":2001000,"beamDamp":50},
-        {"beamDeform":16000, "beamStrength":"FLT_MAX"},
+        {"beamDeform":60000, "beamStrength":"FLT_MAX"},
         ["fx1", "fx2"],
         ["fx1", "fx0"],
         ["fx2", "fx0"],
@@ -165,7 +172,7 @@
 
         //front torsion tubes to front bulkhead
         {"beamSpring":3501000,"beamDamp":80},
-        {"beamDeform":50000, "beamStrength":350000},
+        {"beamDeform":100000, "beamStrength":350000},
         {"breakGroup": "suspension_F"},
         ["fx1r", "f2r"],
         ["fx2r", "f3r"],
@@ -184,7 +191,7 @@
 
         //extra
         {"beamSpring":2001000,"beamDamp":80},
-        {"beamDeform":9000},
+        {"beamDeform":50000},
         ["fx1l", "f1ml"],
         ["fx1l", "f1tml"],
         ["fx1r", "f1mr"],
@@ -199,7 +206,7 @@
         //double wishbone suspension
         {"deformLimitExpansion":1.2},
         {"beamPrecompression":1.0,"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamDeform":50000,"beamStrength":"FLT_MAX"}, //was beamStrength 350000
+        {"beamDeform":100000,"beamStrength":"FLT_MAX"}, //was beamStrength 350000
         {"beamSpring":8001000,"beamDamp":100},
         //front hub
         ["fh1r","fh2r"],
@@ -217,7 +224,7 @@
         ["fh1r","fh5r"],
         ["fh1l","fh5l"],
 
-        {"beamSpring":901000,"beamDamp":25},
+        {"beamSpring":2001000,"beamDamp":25},
         ["fh6r", "fh3r"],
         ["fh6r", "fh2r"],
         ["fh6r", "fh5r"],
@@ -228,8 +235,20 @@
         ["fh6l", "fh5l"],
         ["fh6l", "fh1l"],
 
+        ["fh7r", "fh1r"],
+        ["fh7r", "fh2r"],
+        ["fh7r", "fh3r"],
+        ["fh7r", "fh5r"],
+        ["fh7r", "fh6r"],
+
+        ["fh7l", "fh1l"],
+        ["fh7l", "fh2l"],
+        ["fh7l", "fh3l"],
+        ["fh7l", "fh5l"],
+        ["fh7l", "fh6l"],
+
         {"optional":true},
-        {"beamDeform":50000,"beamStrength":155000},
+        {"beamDeform":100000,"beamStrength":155000},
         {"beamSpring":8001000,"beamDamp":100},
         //attach to wheel
         {"breakGroup":"wheel_FR"},
@@ -255,7 +274,7 @@
 
         //suspension arms
         {"beamSpring":6001000,"beamDamp":500},
-        {"beamDeform":45000,"beamStrength":"FLT_MAX"}, //was beamStrength 375000
+        {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"}, //was beamStrength 375000
         ["fx1r","fh1r", {"dampCutoffHz":500}],
         ["fx1l","fh1l", {"dampCutoffHz":500}],
         ["fx2r","fh2r", {"dampCutoffHz":500}],
@@ -276,7 +295,7 @@
 
         //front limiters
         {"beamPrecompression":1, "beamType":"|SUPPORT","beamLongBound":2.0},
-        {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":100000,"beamStrength":"FLT_MAX"},
         {"beamSpring":2501000,"beamDamp":100},
         {"beamPrecompression":0.69},
         //steering anti invert
@@ -295,7 +314,7 @@
         ["fh1l", "fx2l"],
         ["fh2l", "fx1l"],
 
-        {"beamDeform":65000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":85000,"beamStrength":"FLT_MAX"},
         //suspension travel hard upward limiter
         {"beamPrecompression":0.7},
         ["fh1r", "fs1r"],
@@ -303,7 +322,7 @@
 
         //firewall crash limiter
         {"beamSpring":2001000,"beamDamp":10},
-        {"beamDeform":50000,"beamStrength":250000},
+        {"beamDeform":100000,"beamStrength":250000},
         {"beamPrecompression":0.7},
         {"breakGroup": "suspension_F"},
         ["fh2l", "f2m", {"beamPrecompression":0.8}],
@@ -321,6 +340,8 @@
     ],
     "triangles": [
         ["id1:","id2:","id3:"],
+        
+        {"groundModel":"metal"},
         {"dragCoef":0},
         {"triangleType":"NONCOLLIDABLE"},
         ["fh2l", "fh5l", "fh6l"],
@@ -371,13 +392,13 @@
         {"frictionCoef":0.7},
         {"group":["tierod_F","pitman_F"]},
         {"nodeWeight":4.0},
-        ["st1r", -0.216, -1.262, 0.387],
         ["st1l",  0.216, -1.262, 0.387],
-        {"group":["idler_F","pitman_F"]},
+        ["st1r", -0.216, -1.262, 0.387],
+        {"group":["tierod_F","idler_F","pitman_F"]},
         {"nodeWeight":3.0},
         ["st2r", -0.216, -1.351, 0.24],
         ["st3r", -0.216, -1.430, 0.395],
-        {"group":["steeringbox_F","pitman_F"]},
+        {"group":["tierod_F","steeringbox_F","pitman_F"]},
         {"nodeWeight":3.0},
         ["st2l",  0.216, -1.351, 0.24],
         ["st3l",  0.216, -1.430, 0.395],
@@ -389,7 +410,6 @@
         ["st4l",  0.216, -1.362, 0.243],
         ["st5r", -0.216, -1.364, 0.381],
         ["st5l",  0.216, -1.364, 0.381],
-        {"group":""}
     ],
     "rails": {
        "beam_upper":{"links:":["fx2r", "fx2l"], "broken:":[], "looped":false, "capped":true},
@@ -511,7 +531,9 @@
     ],
     "triangles": [
         ["id1:","id2:","id3:"],
-        {"dragCoef":0},
+
+        {"groundModel":"metal"},
+        {"dragCoef":0},        
         {"triangleType":"NONCOLLIDABLE"},
         ["st3l", "st2l", "st1l"],
         ["st3r", "st2r", "st1r"],
@@ -531,8 +553,8 @@
     "torsionHydros": [
         ["id1:","id2:","id3:","id4:"],
         {"spring":200000, "damp":20, "deform":"FLT_MAX", "strength":50000},
-        ["st2r","st2l","st3l","st1l", {"factor":-0.54,"steeringWheelLock":540,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
-        ["st2l","st2r","st3r","st1r", {"factor":-0.54,"steeringWheelLock":540,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
+        ["st2r","st2l","st3l","st1l", {"factor":-0.57,"steeringWheelLock":570,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
+        ["st2l","st2r","st3r","st1r", {"factor":-0.57,"steeringWheelLock":570,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
     ],
     "input": {
         "FFBcoef":"$=$ffbstrength*20",

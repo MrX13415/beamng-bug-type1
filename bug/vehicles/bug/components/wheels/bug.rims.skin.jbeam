@@ -1,130 +1,331 @@
 {
 
-    "bug_rim_F_white": {
+    "bug_rim1_F_white": {
         "information":{
             "authors":"BeamNG",
-            "name":"White",
+            "name":"Pearl White",
             "value":300,
         },
-        "slotType": "skin_rim_F",
+        "slotType": "skin_rim1_F",
         "skinName" : "white"
     },
-    "bug_rim_F_black": {
+    "bug_rim1_F_white2": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Cream White",
+            "value":300,
+        },
+        "slotType": "skin_rim1_F",
+        "skinName" : "white2"
+    },
+    "bug_rim1_F_black": {
         "information":{
             "authors":"BeamNG",
             "name":"Black",
             "value":300,
         },
-        "slotType" : "skin_rim_F",
+        "slotType" : "skin_rim1_F",
         "skinName" : "black"
     },
-    "bug_rim_F_silver": {
+    "bug_rim1_F_chrome": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Chrome",
+            "value":300,
+        },
+        "slotType" : "skin_rim1_F",
+        "skinName" : "chrome"
+    },
+    "bug_rim1_F_silver": {
         "information":{
             "authors":"BeamNG",
             "name":"Silver",
             "value":300,
         },
-        "slotType" : "skin_rim_F",
+        "slotType" : "skin_rim1_F",
         "skinName" : "silver"
     },
-    "bug_rim_F_paint1": {
+    "bug_rim1_F_paint1": {
         "information":{
             "authors":"BeamNG",
             "name":"Colored (Exterior)",
             "value":300,
         },
-        "slotType" : "skin_rim_F",
+        "slotType" : "skin_rim1_F",
         "skinName" : "paint1"
     },
-    "bug_rim_F_paint2": {
+    "bug_rim1_F_paint2": {
         "information":{
             "authors":"BeamNG",
             "name":"Colored (Exterior, Secondary)",
             "value":300,
         },
-        "slotType" : "skin_rim_F",
+        "slotType" : "skin_rim1_F",
         "skinName" : "paint2"
     },
-    "bug_rim_F_paint3": {
+    "bug_rim1_F_paint3": {
         "information":{
             "authors":"BeamNG",
             "name":"Colored (Interior)",
             "value":300,
         },
-        "slotType" : "skin_rim_F",
+        "slotType" : "skin_rim1_F",
         "skinName" : "paint3"
     },
-    "bug_rim_F_rusty": {
+    "bug_rim1_F_rusty": {
         "information":{
             "authors":"BeamNG",
             "name":"Rusty",
             "value":300,
         },
-        "slotType" : "skin_rim_F",
+        "slotType" : "skin_rim1_F",
         "skinName" : "rusty"
     },
 
-    "bug_rim_R_white": {
+    "bug_rim2_F_white": {
         "information":{
             "authors":"BeamNG",
-            "name":"White",
+            "name":"Pearl White",
             "value":300,
         },
-        "slotType": "skin_rim_R",
+        "slotType": "skin_rim2_F",
         "skinName" : "white"
     },
-    "bug_rim_R_black": {
+    "bug_rim2_F_white2": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Cream White",
+            "value":300,
+        },
+        "slotType": "skin_rim2_F",
+        "skinName" : "white2"
+    },
+    "bug_rim2_F_black": {
         "information":{
             "authors":"BeamNG",
             "name":"Black",
             "value":300,
         },
-        "slotType" : "skin_rim_R",
+        "slotType" : "skin_rim2_F",
         "skinName" : "black"
     },
-    "bug_rim_R_silver": {
+    "bug_rim2_F_chrome": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Chrome",
+            "value":300,
+        },
+        "slotType" : "skin_rim2_F",
+        "skinName" : "chrome"
+    },
+    "bug_rim2_F_silver": {
         "information":{
             "authors":"BeamNG",
             "name":"Silver",
             "value":300,
         },
-        "slotType" : "skin_rim_R",
+        "slotType" : "skin_rim2_F",
         "skinName" : "silver"
     },
-    "bug_rim_R_paint1": {
+    "bug_rim2_F_paint1": {
         "information":{
             "authors":"BeamNG",
             "name":"Colored (Exterior)",
             "value":300,
         },
-        "slotType" : "skin_rim_R",
+        "slotType" : "skin_rim2_F",
         "skinName" : "paint1"
     },
-    "bug_rim_R_paint2": {
+    "bug_rim2_F_paint2": {
         "information":{
             "authors":"BeamNG",
             "name":"Colored (Exterior, Secondary)",
             "value":300,
         },
-        "slotType" : "skin_rim_R",
+        "slotType" : "skin_rim2_F",
         "skinName" : "paint2"
     },
-    "bug_rim_R_paint3": {
+    "bug_rim2_F_paint3": {
         "information":{
             "authors":"BeamNG",
             "name":"Colored (Interior)",
             "value":300,
         },
-        "slotType" : "skin_rim_R",
+        "slotType" : "skin_rim2_F",
         "skinName" : "paint3"
     },
-    "bug_rim_R_rusty": {
+    "bug_rim2_F_rusty": {
         "information":{
             "authors":"BeamNG",
             "name":"Rusty",
             "value":300,
         },
-        "slotType" : "skin_rim_R",
+        "slotType" : "skin_rim2_F",
+        "skinName" : "rusty"
+    },
+
+
+    "bug_rim1_R_white": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Pearl White",
+            "value":300,
+        },
+        "slotType": "skin_rim1_R",
+        "skinName" : "white"
+    },
+    "bug_rim1_R_white2": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Cream White",
+            "value":300,
+        },
+        "slotType": "skin_rim1_R",
+        "skinName" : "white2"
+    },
+    "bug_rim1_R_black": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Black",
+            "value":300,
+        },
+        "slotType" : "skin_rim1_R",
+        "skinName" : "black"
+    },
+    "bug_rim1_R_chrome": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Chrome",
+            "value":300,
+        },
+        "slotType" : "skin_rim1_R",
+        "skinName" : "chrome"
+    },
+    "bug_rim1_R_silver": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Silver",
+            "value":300,
+        },
+        "slotType" : "skin_rim1_R",
+        "skinName" : "silver"
+    },
+    "bug_rim1_R_paint1": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Colored (Exterior)",
+            "value":300,
+        },
+        "slotType" : "skin_rim1_R",
+        "skinName" : "paint1"
+    },
+    "bug_rim1_R_paint2": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Colored (Exterior, Secondary)",
+            "value":300,
+        },
+        "slotType" : "skin_rim1_R",
+        "skinName" : "paint2"
+    },
+    "bug_rim1_R_paint3": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Colored (Interior)",
+            "value":300,
+        },
+        "slotType" : "skin_rim1_R",
+        "skinName" : "paint3"
+    },
+    "bug_rim1_R_rusty": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Rusty",
+            "value":300,
+        },
+        "slotType" : "skin_rim1_R",
+        "skinName" : "rusty"
+    },
+
+    "bug_rim2_R_white": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Pearl White",
+            "value":300,
+        },
+        "slotType": "skin_rim2_R",
+        "skinName" : "white"
+    },
+    "bug_rim2_R_white2": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Cream White",
+            "value":300,
+        },
+        "slotType": "skin_rim2_R",
+        "skinName" : "white2"
+    },
+    "bug_rim2_R_black": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Black",
+            "value":300,
+        },
+        "slotType" : "skin_rim2_R",
+        "skinName" : "black"
+    },
+    "bug_rim2_R_chrome": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Chrome",
+            "value":300,
+        },
+        "slotType" : "skin_rim2_R",
+        "skinName" : "chrome"
+    },
+    "bug_rim2_R_silver": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Silver",
+            "value":300,
+        },
+        "slotType" : "skin_rim2_R",
+        "skinName" : "silver"
+    },
+    "bug_rim2_R_paint1": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Colored (Exterior)",
+            "value":300,
+        },
+        "slotType" : "skin_rim2_R",
+        "skinName" : "paint1"
+    },
+    "bug_rim2_R_paint2": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Colored (Exterior, Secondary)",
+            "value":300,
+        },
+        "slotType" : "skin_rim2_R",
+        "skinName" : "paint2"
+    },
+    "bug_rim2_R_paint3": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Colored (Interior)",
+            "value":300,
+        },
+        "slotType" : "skin_rim2_R",
+        "skinName" : "paint3"
+    },
+    "bug_rim2_R_rusty": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Rusty",
+            "value":300,
+        },
+        "slotType" : "skin_rim2_R",
         "skinName" : "rusty"
     }
 

@@ -1,0 +1,52 @@
+{
+
+"bug_radio_station_piano": {
+    "information":{
+        "authors":"Claude Debussy",
+        "name":"Piano",
+        "songName":"Claire De Lune Loop",
+        "song": "event:>Special>piano_music",
+        "builtIn": true,    // Is a built in radio station and not a mod
+        "value":300,
+    },
+    "slotType" : "bug_radio_station",
+},
+"bug_radio_station_dicta": {
+    "information":{
+        "authors":"Gabester",
+        "name":"Dicta",
+        "song": "art/sound/music/dicta",
+        "volume":1,
+        "builtIn": true,
+        "value":300,
+    },
+    "slotType" : "bug_radio_station",
+},
+/* Disabled: Won't loop :(
+"bug_radio_station_credits": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Credits",
+        "song": "event:>Music>credits",
+        "volume":4,
+        "builtIn": true,
+        "value":300,
+    },
+    "slotType" : "bug_radio_station",
+},*/
+"bug_radio_station_synthwave": {
+    // There seems to be some sort of built-in sound filter on this
+    // where it sound diffrently in the car
+    "information":{
+        "authors":"Mark TDK Knight",
+        "name":"Synthwave",
+        "songName":"Lightrunner Theme Loop",
+        "song": "event:>Music>synthwave",
+        "volume":4,
+        "builtIn": true,
+        "value":300,
+    },
+    "slotType" : "bug_radio_station",
+}
+
+}

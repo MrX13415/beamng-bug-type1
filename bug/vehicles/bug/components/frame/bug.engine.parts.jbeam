@@ -144,6 +144,151 @@
         {"group":""},
     ]
 },
+"bug_fueltank_diesel": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Diesel Fuel Tank",
+        "value":300,
+    },
+    "slotType" : "bug_fueltank",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["fueltank",        ["fueltank"]],
+        ["fueltank_cap",    ["fueltank"]],
+        ["fueltank_sensor", ["fueltank"]],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$fuel", "range", "L", "Engine", 40, 0, 40, "Fuel Volume", "Initial Fuel Volume", {"stepDis":0.5}]
+    ],
+    "energyStorage": [
+        ["type", "name"],
+        ["fuelTank", "mainTank"],
+    ],
+    "mainTank": {
+        "energyType":"diesel",
+        "fuelCapacity": 40,
+        "startingFuelCapacity": "$fuel",
+        "fuel": {"[engineGroup]:":["fuel"]},
+        "breakTriggerBeam": "fuelTank",
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //fuel tank particles
+         {"nodeMaterial":"|NM_PLASTIC"},
+         {"frictionCoef":1},
+         {"collision":true},
+         {"selfCollision":true},
+         {"nodeWeight":1.0},
+         {"engineGroup":["fuel"]},
+         {"chemEnergy":50,"burnRate":1.2,"flashPoint":220,"vaporPoint":97,"specHeat":0.03,"selfIgnitionCoef":0.4,"smokePoint":220,"containerBeam":"fuelTank"},
+         {"group":"fueltank"},
+         ["ft1l",  0.33, -1.42, 0.7],
+         ["ft1r", -0.33, -1.42, 0.7],
+         {"selfIgnitionCoef":false,"selfCollision":false},
+         ["ft2l",  0.33, -1.07, 0.7],
+         ["ft2r", -0.33, -1.07, 0.7],
+         ["ft3l",  0.24, -1.42, 0.5],
+         ["ft3r", -0.24, -1.42, 0.5],
+         ["ft4l",  0.24, -1.07, 0.5],
+         ["ft4r", -0.24, -1.07, 0.5],
+         {"group":""},
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false,"vaporPoint":false,"specHeat":false,"selfIgnitionCoef":false,"smokePoint":false,"containerBeam":false},
+         {"engineGroup":""}
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":535000,"beamDamp":200},
+          {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+          {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+          {"deformLimitExpansion":1.1},
+
+          // Main shape
+          ["ft2l","ft2r"],
+          ["ft3l","ft3r"],
+          ["ft4l","ft4r"],
+          ["ft1l","ft2l"],
+          ["ft1r","ft2r"],
+          ["ft3l","ft4l"],
+          ["ft3r","ft4r"],
+          ["ft1l","ft3l"],
+          ["ft1r","ft3r"],
+          ["ft2l","ft4l"],
+          ["ft2r","ft4r"],
+          // X
+          ["ft1l","ft2r"],
+          ["ft1r","ft2l"],
+          ["ft3l","ft4r"],
+          ["ft3r","ft4l"],
+          ["ft1r","ft4r"],
+          ["ft2r","ft3r"],
+          ["ft1l","ft4l"],
+          ["ft2l","ft3l"],
+          ["ft1l","ft3r"],
+          ["ft1r","ft3l"],
+          ["ft2l","ft4r"],
+          ["ft2r","ft4l"],
+          // rigidify
+          ["ft1l","ft4r"],
+          ["ft1r","ft4l"],
+          ["ft2l","ft3r"],
+          ["ft2r","ft3l"],
+
+          // Connection to frame:
+          {"beamDeform":5000,"beamStrength":20000},
+          {"breakGroup":"fueltank_mount"},
+          {"breakGroupType":0},
+          ["ft3l","f1tml"],
+          ["ft3r","f1tmr"],
+          ["ft3l","f1tmr"],
+          ["ft3r","f1tml"],
+          ["ft3l","f2l"],
+          ["ft3l","f2r"],
+          ["ft3r","f2l"],
+          ["ft3r","f2r"],
+
+          ["ft4l","f1tmr"],
+          ["ft4r","f1tml"],
+          ["ft4l","f1tml"],
+          ["ft4r","f1tmr"],
+          ["ft4l","f2tm"],
+          ["ft4r","f2tm"],
+          ["ft4l","f3l"],
+          ["ft4l","f3r"],
+          ["ft4r","f3l"],
+          ["ft4r","f3r"],
+
+          {"breakGroup":""},
+          {"breakGroupType":1},
+
+          {"breakGroup":"fueltank"},
+          {"beamDeform":5000,"beamStrength":20000},
+          ["ft1l","ft1r", {"name":"fuelTank","containerBeam": "fuelTank"}],
+          {"breakGroup":""},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"groundModel":"metal"},
+        {"dragCoef":0},
+        {"group":"fueltank"},
+        ["ft1r", "ft1l", "ft2r"],
+        ["ft2r", "ft1l", "ft2l"],
+        ["ft3r", "ft3l", "ft1r"],
+        ["ft1r", "ft3l", "ft1l"],
+        ["ft4r", "ft3r", "ft2r"],
+        ["ft2r", "ft3r", "ft1r"],
+        ["ft3l", "ft4l", "ft2l"],
+        ["ft3l", "ft2l", "ft1l"],
+        ["ft4l", "ft4r", "ft2l"],
+        ["ft2l", "ft4r", "ft2r"],
+        ["ft4r", "ft4l", "ft3r"],
+        ["ft3r", "ft4l", "ft3l"],
+        {"group":""},
+    ]
+},
+
 "bug_battery": {
     "information":{
         "authors":"MrX13415",
@@ -166,6 +311,7 @@
         {"collision":true},
         {"selfCollision":true},
         {"nodeWeight":0.4},
+        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
         ["bty1", -0.22720, 0.41500, 0.41002],
         ["bty2", -0.22720, 0.59831, 0.41002],
         ["bty3", -0.22720, 0.41500, 0.23237],
@@ -179,6 +325,7 @@
         ["bty2C", -0.18059,  0.55111,  0.28711],
         ["bty3C", -0.19091,  0.67174,  0.33568],
         {"group":""},
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
     ],
     "beams": [
         ["id1:", "id2:"],
@@ -279,12 +426,21 @@
         ["id1:","id2:","id3:"],
 
         {"dragCoef":0},
+        {"groundModel":"plastic"},
         {"group":"bug_battery"},
         ["bty7", "bty3", "bty5"],
         ["bty5", "bty3", "bty1"],
-        ["bty7", "bty3", "bty5"],
         ["bty3", "bty4", "bty1"],
         ["bty1", "bty4", "bty2"],
+        ["bty8", "bty7", "bty6"],
+        ["bty6", "bty7", "bty5"],
+        ["bty4", "bty8", "bty2"],
+        ["bty2", "bty8", "bty6"],
+        ["bty5", "bty1", "bty6"],
+        ["bty6", "bty1", "bty2"],
+        ["bty8", "bty4", "bty7"],
+        ["bty7", "bty4", "bty3"],
+        {"group":""}
     ]
 },
 
@@ -694,6 +850,43 @@
         "highShiftUpRPM":"$=$revLimiterRPM - 200",
     },
 },
+"bug_engine_ecu_old": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Damaged",
+        "value":3450,
+    },
+    "slotType" : "bug_engine_ecu",
+    "mainEngine":{
+
+        "idleRPMRoughness":2000,
+        "friction":8,
+        "burnEfficiency":[
+            [0, 0.05],
+            [0.05, 0.105],
+            [0.4, 0.17],
+            [0.7, 0.225],
+            [1, 0.16],
+        ],
+
+        "engineBlockAirCoolingEfficiency":16,
+
+        "headGasketBlownOverride": true,
+        "pistonRingsDamagedOverride": true,
+        "connectingRodBearingsDamagedOverride": true,
+        "hasOilStarvingDamage": true,
+
+        //exhaust
+        "particulates":0.2,
+        "idleParticulates":0.1,
+        "instantAfterFireCoef": 0.5,
+
+        //starter motor
+        "starterThrottleKillTime":3.0,
+        "idleRPMStartCoef":1.0,
+    },
+},
+
 
 // -- Internals
 "bug_engine_internals": {
@@ -733,7 +926,8 @@
         "connectingRodDamageThreshold":2200000,
         "$*maxTorqueRating": 1.5,
         "$*maxOverTorqueDamage": 2.0,
-    },
+        "$*maxOverRevDamage": 2.0
+    }
 },
 "bug_engine_internals_ultra": {
     "information":{
@@ -760,7 +954,8 @@
         "connectingRodDamageThreshold":2200000,
         "$*maxTorqueRating": 1.9,
         "$*maxOverTorqueDamage": 2.5,
-    },
+        "$*maxOverRevDamage": 2.5
+    }
 },
 "bug_engine_internals_stage1": {
     "information":{
@@ -799,6 +994,7 @@
         "cylinderWallTemperatureDamageThreshold":280,
         "$*maxTorqueRating": 1.1,
         "$*maxOverTorqueDamage": 1.25,
+        "$*maxOverRevDamage": 1.25,
         //exhaust
         "$*instantAfterFireCoef": 1.15,
         "$*sustainedAfterFireCoef": 1.15,
@@ -841,6 +1037,7 @@
         "cylinderWallTemperatureDamageThreshold":300,
         "$*maxTorqueRating": 1.25,
         "$*maxOverTorqueDamage": 1.25,
+        "$*maxOverRevDamage": 1.25,
         //exhaust
         "$*instantAfterFireCoef": 1.3,
         "$*sustainedAfterFireCoef": 1.3,
@@ -883,6 +1080,7 @@
         "cylinderWallTemperatureDamageThreshold":340,
         "$*maxTorqueRating": 1.3,
         "$*maxOverTorqueDamage": 1.3,
+        "$*maxOverRevDamage": 1.3,
         //exhaust
         "$*instantAfterFireCoef": 1.35,
         "$*sustainedAfterFireCoef": 1.35,
@@ -936,11 +1134,11 @@
         "torqueModIntake":[
              ["rpm", "torque"],
              [0, 0],
-             [1000, -4],
-             [1500, -8],
-             [2000, -7.5],
-             [2500, -6],
-             [3000, -2],
+             [1000, -2],
+             [1500, -3],
+             [2000, -5.5],
+             [2500, -4],
+             [3000, 0],
              [3500, 4.5],
              [4000, 12.5],
              [4500, 26],
@@ -949,7 +1147,7 @@
              [6000, 42],
              [7000, 29],
              [8000, 20],
-        ],        
+        ],
         "blockFanMaxAirSpeed":32,
         "$+idleRPM":100,
         "$+idleRPMRoughness":100,
@@ -980,7 +1178,7 @@
 "bug_flywheel": {
     "information":{
         "authors":"BeamNG",
-        "name":"bug Flywheel",
+        "name":"Flywheel",
         
         "value":150,
     },
@@ -994,7 +1192,7 @@
 "bug_flywheel_race": {
     "information":{
         "authors":"BeamNG",
-        "name":"bug Ultra Light Flywheel",
+        "name":"Ultra Light Flywheel",
         "value":400,
     },
     "slotType" : "bug_flywheel",
@@ -1007,7 +1205,7 @@
 "bug_flywheel_light": {
     "information":{
         "authors":"BeamNG",
-        "name":"bug Lightened Flywheel",
+        "name":"Lightened Flywheel",
         "value":200,
     },
     "slotType" : "bug_flywheel",

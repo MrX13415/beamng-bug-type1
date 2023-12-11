@@ -1,0 +1,11 @@
+{
+    "license_plate_bug_antarctica_2_1": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Antarctica Plate Design",
+        "value":50,
+    },
+    "slotType" : "licenseplate_design_2_1",
+    "licenseplate_path" : "vehicles/common/licenseplates/bug_antarctica/licenseplate-bug-antarctica1.json",
+    },
+}

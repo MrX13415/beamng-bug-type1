@@ -2,14 +2,28 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
--- v1.0
+-- v1.1
 -- by MrX13415
 
 local M = {}
 local updateTimer = 2   -- Make sure the first call is immediately
 local openingUpdateTimer = 2   -- Make sure the first call is immediately
 
-local currentCabinFilterCoef = 1
+local NodeNameSoundSFX = "dsh"
+local nodeSFX = nil
+
+local parts = {
+  ventL    = {broken = false, deformGroup = "ventglass_FL_break"},
+  ventR    = {broken = false, deformGroup = "ventglass_FR_break"},
+  windowFL = {broken = false, deformGroup = "doorglass_FL_break"},
+  windowFR = {broken = false, deformGroup = "doorglass_FR_break"},
+  windowRL = {broken = false, deformGroup = "sidewindow_RL_break"},
+  windowRR = {broken = false, deformGroup = "sidewindow_RR_break"},
+  windowR  = {broken = false, deformGroup = "rearwindow_break"},
+  ragtop   = {broken = false, name = "ragtopF", cid = nil},
+}
+
+local cabinFilterCoef = 1
 
 local wipersSpeed1 = 0.02   -- 833ms (60fps)
 local wipersSpeed2 = 0.021  -- 793ms (60fps)
@@ -46,17 +60,67 @@ local function createSFX(event, node, eventID)
   return sound
 end
 
-local function setCabinFilterCoef(cabinFilterCoef)
-  currentCabinFilterCoef = cabinFilterCoef or currentCabinFilterCoef
-  log("D", "", "[Bug] CabinFilterCoef: " .. currentCabinFilterCoef)
-  obj:queueGameEngineLua(string.format("core_sounds.cabinFilterStrength = %f", clamp(currentCabinFilterCoef, 0, 1)))
+local function playSound(soundname)
+  sounds.playSoundOnceAtNode(soundname, nodeSFX, 1, 1, 0, 0)
 end
 
-local function updateCabinFilterCoef(cabinFilterCoef)
-  -- write value only when changed
-  if currentCabinFilterCoef ~= cabinFilterCoef then
-    setCabinFilterCoef(cabinFilterCoef)
+local function updatePartBroken(part)
+  if part.broken then return true end
+  if #part.deformGroup == 0 then return part.broken end
+
+  local group = beamstate.deformGroupDamage[part.deformGroup]
+  if group and group.eventCount > 0 then 
+    part.broken = true
   end
+  return part.broken
+end
+local function updatePartBrokenBeam(part)
+  if part.broken then return true end
+  if part.cid then    
+    part.broken = obj:beamIsBroken(part.cid)
+  end
+  return part.broken
+end
+local function checkPartsBroken()
+  updatePartBroken(parts.ventL)
+  updatePartBroken(parts.ventR)
+  updatePartBroken(parts.windowFL)
+  updatePartBroken(parts.windowFR)
+  updatePartBroken(parts.windowRL)
+  updatePartBroken(parts.windowRR)
+  updatePartBroken(parts.windowR)
+
+  updatePartBrokenBeam(parts.ragtop)
+end
+local function resetParts()
+  parts.ventL.broken = false
+  parts.ventR.broken = false
+  parts.windowFL.broken = false
+  parts.windowFR.broken = false
+  parts.windowRL.broken = false
+  parts.windowRR.broken = false
+  parts.windowR.broken = false
+  parts.ragtop.broken = false
+end
+
+local function setCabinFilterCoef(newCabinFilterCoef)
+  if not playerInfo.firstPlayerSeated then return end
+
+  if cabinFilterCoef ~= newCabinFilterCoef then
+    cabinFilterCoef = newCabinFilterCoef
+
+    obj:queueGameEngineLua(string.format([[
+      core_sounds.cabinFilterStrength = %f
+      log("D", "", "[Bug] CabinFilterCoef: " .. core_sounds.cabinFilterStrength)
+    ]], clamp(cabinFilterCoef, 0, 1)))
+  end
+end
+
+local function updateCabinFilter(open)
+  local minFactor = 1 - 1 / v.data.sounds.cabinFilterCoef * 0.15 -- Keep at least 15%
+  local openCurve = 1 - (open*1.3)/(open+0.3) * minFactor 
+
+  setCabinFilterCoef( math.abs(openCurve * v.data.sounds.cabinFilterCoef) )
 end
 
 local function getControllerState(name)
@@ -69,11 +133,107 @@ local function getControllerState(name)
   result = 1
   if state == 'attached' then result = 0 end
   if state == 'desyncedAttached' then result = 0 end
-  if state == 'broken' then result = 0 end
-
+  if state == 'broken' then result = 1 end
+  
   return result
 end
+local function setControllerState(name, state)
+  if state then
+    controller.getControllerSafe(name).detachGroup()
+  else
+    controller.getControllerSafe(name).tryAttachGroupImpulse()
+  end
+end
 
+local function isDoorLOpen() 
+  return getControllerState('doorLCoupler') > 0
+end
+local function isDoorROpen() 
+  return getControllerState('doorRCoupler') > 0
+end
+local function isDoorsOpen() 
+  return isDoorLOpen() or isDoorROpen()
+end
+local function setDoorL(open) 
+  setControllerState('doorLCoupler', open)
+end
+local function setDoorR(open) 
+  setControllerState('doorLCoupler', open)
+end
+local function closeDoors()
+  if isDoorLOpen() then setDoorL(false) end
+  if isDoorROpen() then setDoorR(false) end
+end
+
+local function updateElectrics()
+
+  local running = electrics.values.engineRunning > 0
+
+  local oil = electrics.values["oilpressure"] or 0    -- PSI
+  local oildefault = 42
+
+  if running and (oil < oildefault) then
+    oil = oil + 0.6
+  end
+  if not running and (oil > 0) then
+    oil = oil - 1
+  end
+  oil = math.max(math.min(oil, oildefault), 0)
+
+  electrics.values["oilpressure"] = oil
+
+  -----------------------------------------------------
+
+  local ampere = 0   -- A
+
+  -- Stuff can be on ...
+  if electrics.values.ignitionLevel > 0 then
+    ampere = ampere - 2 -- A
+
+    -- headlights
+    if electrics.values.lights_state > 0 then
+      ampere = ampere - 10
+    end
+    if electrics.values.lights_state > 1 then
+      ampere = ampere - 3
+    end
+
+    if electrics.values.wipersstate > 0 then
+      ampere = ampere - 4
+    end
+    if electrics.values.wipersstate > 1 then
+      ampere = ampere - 2
+    end
+
+    -- radio 
+    if electrics.values.radio_state > 0 then
+      ampere = ampere - 7
+    end
+  end
+  -- Ignition
+  if electrics.values.ignitionLevel == 3 then
+    ampere = ampere - 25 -- A
+  end
+  -- Engine runngin
+  if running and electrics.values.ignitionLevel > 1 then
+    ampere = ampere + 30 -- A
+    ampere = math.min(ampere, 17)
+  end
+  
+  electrics.values["ampere"] = ampere
+
+  -----------------------------------------------------
+
+  local amp_sm = electrics.values["ampere_smooth"] or 0
+
+  if amp_sm < ampere then
+    amp_sm = math.min(amp_sm + 0.6, ampere)
+  elseif amp_sm > ampere then
+    amp_sm = math.max(amp_sm - 0.6, ampere)
+  end
+
+  electrics.values["ampere_smooth"] = amp_sm
+end
 
 local function updateInteriorlight(doors)
   local lightstate = electrics.values["interiorlightstate"] or 0
@@ -143,15 +303,15 @@ end
 local function updateParts()
   updateAshTray()
   updateWipers()
+  updateElectrics()
 end
 
 local function updateOpenings()
+  checkPartsBroken()
 
   local doorL = getControllerState('doorLCoupler')
   local doorR = getControllerState('doorRCoupler')
   local doors = clamp((doorL + doorR) / 2, 0, 3)
-
-  -- TODO: Check breakgroups
 
   electrics.values["opendoor_L"] = doorL
   electrics.values["opendoor_R"] = doorR
@@ -159,14 +319,15 @@ local function updateOpenings()
 
   updateInteriorlight(doors)
 
-
-  local ventFL = electrics.values["doorventFL_state"] or 0
-  local ventFR = electrics.values["doorventFR_state"] or 0
-  local windowFL = electrics.values["windowFL_state"] or 0
-  local windowFR = electrics.values["windowFR_state"] or 0
+  local brokenWindowL = (parts.windowFL.broken and 1) or (parts.windowRL.broken and 1) or (parts.windowR.broken and 1) or 0
+  local brokenWindowR = (parts.windowFR.broken and 1) or (parts.windowRR.broken and 1) or (parts.windowR.broken and 1) or 0
+  local ventFL = math.max(parts.ventL.broken and 1 or 0, electrics.values["doorventFL_state"] or 0)
+  local ventFR = math.max(parts.ventR.broken and 1 or 0, electrics.values["doorventFR_state"] or 0)
+  local windowFL = math.max(brokenWindowL, electrics.values["windowFL_state"] or 0)
+  local windowFR = math.max(brokenWindowR, electrics.values["windowFR_state"] or 0) 
   --local windows = clamp((windowFL + windowFR) / 2, 0, 1)
   
-  local ragtop = electrics.values["ragtop_state"] or 0
+  local ragtop = math.max(parts.ragtop.broken and 1 or 0, electrics.values["ragtop_state"] or 0) 
 
   local openL = clamp(doorL + (windowFL * 0.75) + (ventFL * 0.1) + (ragtop * 0.5), 0, 1)
   local openR = clamp(doorR + (windowFR * 0.75) + (ventFR * 0.1) + (ragtop * 0.5), 0, 1)
@@ -176,12 +337,7 @@ local function updateOpenings()
   electrics.values["vehicleopenR"] = openR
   electrics.values["vehicleopen"] = open
 
-  local openCurve = (open*1.3)/(open+0.3)
-  -- Keep at least 15%
-  local cabinFilterCoef = math.abs(1 - (openCurve*0.85))
-  if playerInfo.firstPlayerSeated then
-    updateCabinFilterCoef(cabinFilterCoef)
-  end
+  updateCabinFilter(open)
 
   return open
 end
@@ -262,7 +418,6 @@ local function updateGFX(dt)
     openingUpdateTimer = 0
     updateOpenings()
   end
-  
 end
 
 local function onInit(jbeamData)
@@ -270,6 +425,20 @@ local function onInit(jbeamData)
   electrics.values["interiorlightstate"] = 0
   electrics.values["ashtray"] = 0
   electrics.values["ashtraystate"] = 0
+  electrics.values["wipersstate"] = 0
+
+  electrics.values["ampere"] = 0
+  electrics.values["ampere_smooth"] = 0
+  electrics.values["oilpressure"] = 0
+
+	nodeSFX = getNodeIDbyName(NodeNameSoundSFX)
+
+  for _, b in pairs(v.data.beams) do
+    if b.breakGroup == parts.ragtop.name then
+      parts.ragtop.cid = b.cid
+      break
+    end
+  end
 
   --debugCheckNodes()
   
@@ -278,19 +447,16 @@ local function onInit(jbeamData)
 end
 
 local function onReset()
-  print("[Bug] Version 20.5 - 2023-06-07")
+  print("[Bug] Version 21 - 2023-12-11")
   ----------------------------------------
 
-  setCabinFilterCoef()
+  resetParts()
 
   --dTShow = {}
   --dTRounds = 0
 end
 
 local function onPlayersChanged()
-  if playerInfo.firstPlayerSeated then
-    setCabinFilterCoef()
-  end
 end
 
 local function toggleInteriorLight()  
@@ -309,7 +475,10 @@ end
 local function toggleWipers()
   local state = electrics.values["wipersstate"] or 0
   if state <= 0 then wipersStateDirection = 1 end
-  if state >= 3 then wipersStateDirection = -1 end
+  if state >= 3 then 
+    wipersStateDirection = -1
+  end
+  playSound(state > 0 and "event:>Vehicle>Interior>Light>FIPA_On" or "event:>Vehicle>Interior>Light>FIPA_Off")
   state = state + wipersStateDirection
   electrics.values["wipersstate"] = state
   guihooks.message({txt = wipersMessageLookup[state], context = {}}, 4, "vehicle.wipers")
@@ -317,14 +486,20 @@ end
 
 local function wipersUp()
   local state = electrics.values["wipersstate"] or 0
-  if state < 3 then state = state + 1 end
+  if state < 3 then
+    state = state + 1
+    playSound("event:>Vehicle>Interior>Light>FIPA_On")
+  end
   electrics.values["wipersstate"] = state
   guihooks.message({txt = wipersMessageLookup[state], context = {}}, 4, "vehicle.wipers")
 end
 
 local function wipersDown()
   local state = electrics.values["wipersstate"] or 0
-  if state > 0 then state = state - 1 end
+  if state > 0 then 
+    state = state - 1
+    playSound("event:>Vehicle>Interior>Light>FIPA_Off")
+  end
   electrics.values["wipersstate"] = state
   guihooks.message({txt = wipersMessageLookup[state], context = {}}, 4, "vehicle.wipers")
 end
@@ -337,6 +512,8 @@ local function toggle(var)
   electrics.values[var] = state
 end
 
+
+
 M.onInit    = onInit
 M.onReset   = onReset
 M.updateGFX = updateGFX
@@ -345,11 +522,18 @@ M.onPlayersChanged = onPlayersChanged
 -- public interface
 M.hasPower            = hasPower
 
+M.toggle              = toggle
 M.toggleInteriorLight = toggleInteriorLight
 M.toggleAshTray       = toggleAshTray
 M.toggleWipers        = toggleWipers
 M.wipersUp            = wipersUp
 M.wipersDown          = wipersDown
-M.toggle              = toggle
+
+M.isDoorLOpen         = isDoorLOpen
+M.isDoorROpen         = isDoorROpen
+M.isDoorsOpen         = isDoorsOpen
+M.setDoorL            = setDoorL
+M.setDoorR            = setDoorR
+M.closeDoors          = closeDoors
 
 return M

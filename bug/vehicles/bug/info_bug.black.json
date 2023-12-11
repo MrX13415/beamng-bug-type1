@@ -1,0 +1,43 @@
+{
+  "0-100 km/h":6.2,
+  "0-100 mph":12.9,
+  "0-200 km/h":21.5,
+  "0-60 mph":5.9,
+  "100-0 km/h":45.7,
+  "100-200 km/h":15.3,
+  "60-0 mph":138.5,
+  "60-100 mph":6.9,
+  "BoundingBox":[
+    [
+      -0.783,
+      -1.77119,
+      -0.217979
+    ],
+    [
+      0.783,
+      2.29767,
+      1.28392
+    ]
+  ],
+  "Braking G":0.86,
+  "Config Type":"Custom",
+  "Configuration":"Black Edition (M)",
+  "Description":"Almost all black with a tuned 1800cc engine and rollbar",
+  "Drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":28,
+  "Performance Class":"2",
+  "Power":188,
+  "PowerPeakRPM":"5050 - 5700",
+  "Propulsion":"ICE",
+  "Top Speed":56.82513385,
+  "Torque":265,
+  "TorquePeakRPM":"4550 - 5200",
+  "Transmission":"Manual",
+  "Value":8500,
+  "Weight":1020,
+  "Weight/Power":5.425531915,
+  "defaultPaintName1":"Jet Black",
+  "defaultPaintName3":"Jet Black"
+}

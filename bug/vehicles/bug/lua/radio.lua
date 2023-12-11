@@ -3,8 +3,8 @@
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
 -- Lua Radio for the VW Beetle mod.
--- v2.1
--- by MrX13415 (2023-06-06)
+-- v2.2
+-- by MrX13415 (2023-11-18)
 
 -- Please give credit when using this :)
 
@@ -81,14 +81,15 @@ function SoundObj:load(filepath, loop)
 			obj:deleteSFXSource(self.obj)
 		end
 		if not filepath then return end
+		local name = string.gsub(filepath, "/", ":")
 
 		-- Note: The sfx description value here does nothing when using sounds defined as material in a json file.
 		--       We are using the relative file paths here instead.
-		self.obj = obj:createSFXSource(filepath, sfxDescription, filepath, self.nodeId or 0)
+		self.obj = obj:createSFXSource(filepath, sfxDescription, name, self.nodeId or 0)
 		-- Note:
 		-- obj:createSFXSource			-- Not reseted
 		-- obj:createSFXSource2			-- Gets reset on vehicle restore/reset
-		
+
 		--if sound then
 		  --sound:setTransform(obj:getTransform())
 		  --sound:setParameter("distance_vehicle", 10000)
@@ -136,6 +137,7 @@ function Station:new(freq, name, shuffle)
 	self.elapsed = 0
 	self.trackIndex = 1
 	self.trackIndexLast = 0
+	self.volumeMod = 1
 
 	self.speaker = SoundObj:new(NodeNameSpeaker, 0)	-- Muted by default 
 
@@ -192,7 +194,7 @@ function Station:playTrack()
 	if track == nil then return end
 
 	local loop = #self.tracks == 1
-	self.speaker:load(track.path, loop)
+	self.speaker:load(track.path, loop, track.volume)
 	self:showInfo()
 end
 
@@ -229,7 +231,10 @@ function Station:showInfo(force)
 
 	local msg = "Radio: " ..tostring(self.frequency).. "MHz - " ..self.name
 	if track and #track.name > 0 then
-		msg = msg .. "\n#" ..tostring(self.trackIndex).. " "
+		msg = msg .. "\n"
+		if #self.tracks > 1 then
+			 msg = msg .. "#" ..tostring(self.trackIndex).. " "
+		end
 		if track.duration > 0 then
 			if self.elapsed > 3 then
 				msg = msg ..media.toTimeStr(self.elapsed).. "/"
@@ -292,7 +297,7 @@ function Radio:new()
 
 	self.volume = 0
 	self.volume2D = 1							-- Default volume for 2D mode. Use "Music slider" in game options to adjust.
-	self.volume3D = 0.9							-- Default volume reduced by 30% in 3D mode as it is a lot louder compared to 2D.
+	self.volume3D = 0.6							-- Default volume reduced by 40% in 3D mode as it is a lot louder compared to 2D.
 	self.defaultVolumeModifier = 1				-- No boost or reduction
 	self.exteriorClosedVolumeModifier = 0.1		-- Interor only mode: Very silent when everything is closed.
 	self.exteriorOpenVolumeModifier = 1			-- Interor only mode: No boost or reduction as the cabin filter is modified directly now. (= 0.8	-- Reduce volume by 20% to boost interior volume due to the cabin filter.)
@@ -343,7 +348,7 @@ function Radio:initalize()
 	self.power = electrics.values.ignitionLevel > 0
 	self.open = electrics.values["vehicleopen"] or 0
 
-	print("[Bug:Radio] Initialized")
+	log("D", "", "[Bug:Radio] Initialized")
 	log("D", "", "[Bug:Radio]    driver:   " .. (self.nodeDriver or 0) .. " (" .. NodeNameDriver .. ")")
 	log("D", "", "[Bug:Radio]    sfx:      " .. (self.nodeSFX or 0) .. " (" .. NodeNameSoundSFX .. ")")
 	log("D", "", "[Bug:Radio]    speaker:  " .. (self.speaker.nodeId or 0) .. " (" .. NodeNameSpeaker .. ")")
@@ -702,7 +707,7 @@ function Radio:addTrack(frequency, stationName, shuffle, filepath, name, trackDu
 	track.path = filepath
 	track.name = name or ""
 	track.duration = trackDuration or 0
-	track.type = trackType
+	track.type = trackType or "built-in"
 
 	table.insert(s.tracks, track)
 
@@ -714,10 +719,11 @@ function Radio:addTrackMod(partInformation)
 	if not i then return end
 	if not i.song then return end
 
-	local s, isNew = self:addTrack(self:nextEmptyFrequency(), i.name, false, i.song)
-	if s and isNew then 
-		s.mod = true 
+	local s, isNew = self:addTrack(self:nextEmptyFrequency(), i.name, false, i.song, i.songName)
+	if s and isNew then
+		s.mod = true
 		s.builtIn = i.builtIn or false
+		s.volumeMod = i.volume or 1
 	end
 end
 
@@ -1036,6 +1042,7 @@ function Radio:updateRadio(dt)
 	local oL = math.max(0.2, camL) * (electrics.values["vehicleopenL"] or 0)
 	local oR = math.max(0.2, camR) * (electrics.values["vehicleopenR"] or 0)
 	local open = clamp(oL + oR, 0, 1)
+	open = (open*1.3)/(open+0.3)	-- Apply open curve. (See also "vehicle.lua" line 180)
 
 	local volumeModifier = self.defaultVolumeModifier
 
@@ -1052,6 +1059,9 @@ function Radio:updateRadio(dt)
 	else
 		self.volume = self.volume2D * volumeModifier * self.userVolume
 	end
+
+	local s = self:station()
+	if s then self.volume = self.volume * (s.volumeMod or 1) end
 
 	if interior == true or self.interiorOnly then
 		self.volume = self:volumeAtRangeDistance(self.volume, distance)

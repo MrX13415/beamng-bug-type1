@@ -1,0 +1,35 @@
+{
+  "bindings":[
+    {"control": "k", "action": "wiperstoggle"},
+
+    {"control": "alt numpad4", "action": "windowFLclose"},
+    {"control": "alt numpad1", "action": "windowFLopen"},
+    {"control": "alt numpad6", "action": "windowFRclose"},
+    {"control": "alt numpad3", "action": "windowFRopen"},
+
+    {"control": "alt numpad5", "action": "ragtopclose"},
+    {"control": "alt numpad2", "action": "ragtopopen"},
+    
+    //{"control": "", "action": "doorventFLclose"},
+    //{"control": "", "action": "doorventFLopen"},
+    //{"control": "", "action": "doorventFRclose"},
+    //{"control": "", "action": "doorventFRopen"},
+
+    //{"control": "", "action": "sunvisorLtoggle"},
+    //{"control": "", "action": "sunvisorRtoggle"},
+    //{"control": "", "action": "interiorlighttoggle"},
+
+    //{"control": "ctrl alt numpad4", "action": "doorLtoggle"},
+    //{"control": "ctrl alt numpad6", "action": "doorRtoggle"},
+    //{"control": "ctrl alt numpad8", "action": "hoodtoggle"},
+    //{"control": "ctrl alt numpad2", "action": "trunktoggle"},
+
+    //{"control": "ctrl alt numpad7", "action": "ashtraytoggle"},
+    //{"control": "ctrl alt numpad9", "action": "gloveboxtoggle"}
+  ], 
+  "name": "Keyboard", 
+  "version": 1, 
+  "devicetype": "keyboard", 
+  "vidpid": "6F1D2B61", 
+  "guid": "{6F1D2B61-D5A0-11CF-BFC7-444553540000}"
+}

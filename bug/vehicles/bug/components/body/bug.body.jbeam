@@ -37,70 +37,30 @@
 		["bug_gascap","", "Gascap"],
 		["antenna","antenna_default_R", "Antenna"],
 
-        ["bug_lettering","bug_lettering", "Lettering"],
+        ["bug_lettering","", "Lettering"],
         ["bug_fenderflare_R","", "Rear Fender Flares"],
 
         ["bug_fascia","bug_fascia", "Front Fascia"],
         ["bug_licenseplate_R","bug_licenseplate_R", "Rear License Plate"],
         ["bug_spoilerF","", "Front Spoiler"],
+
+        ["bug_wheel_spare","bug_wheel_spare", "Spare Wheel"],
+        ["bug_jerrycan_cage","", "Jerrycan Cage"],
+
+        ["bug_rearvents_cover","", "Rear Vents Cover"],
+        ["bug_heatvents","bug_heatvents", "Heat Vents", {"coreSlot":true}],
+        ["bug_interiorlight","bug_interiorlight", "Interior Light"]
     ],
-    "glowMap":{
-        "bug_interiorlight":       {"simpleFunction":{"interiorlight":0.49}, "off":"bug_int_lights", "on":"bug_int_lights_on"},
-        "bug_interiorlight_glass": {"simpleFunction":{"interiorlight":0.49}, "off":"bug_int_lights_glass", "on":"bug_int_lights_glass_on"}
+    "sounds": {
+        "$+cabinFilterCoef": 0.1
     },
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["interiorlight", "", "brf4lll","brf4ll","brf5lll", "box", {"x":0.018, "y":0.005, "z":0.01}, {"x":0, "y":5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.055, "y":0.071, "z":-0.04}],    
-    ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
-        ["interiorlight", "action0", "interiorlight"],
-    ],
-    "events":[
-        ["id", "title", "desc"],
-        // TODO: Where are these texts shown?
-        ["interiorlight", "ui.inputActions.bug.interiorlight.title", "ui.inputActions.bug.interiorlight.description", {"onUp":"vehicle.toggleInteriorLight()"}],
-    ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["wipers",    "wiper_L",   "f4m","f4l","f4tm",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
-        ["wipers",    "wiper_R",   "f4m","f4l","f4tm",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
+        ["wipers",    "wiper_L",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
+        ["wipers",    "wiper_R",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
 
-        ["brake",        "inputs_pedals_brake",     "f4m","f4l","f4tm",       {"x":20, "y":0, "z":0},   	{"x":25, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
-
-
-
-        //needles
-
-     //   ["rpm",         "needle_tacho",  "f4m","f4l","f4tm",          {"x":-85, "y":0, "z":0},   {"x":0, "y":0, "z":-0.041}, {"x":0, "y":0, "z":0}, 			0,     6000,  -5000,  1],
-     //   ["volts",        "needle_volts", "f4m","f4l","f4tm",          {"x":-85, "y":0, "z":0},   {"x":0, "y":0, "z":0},      {"x":0, "y":0, "z":0}, 			0,     1,        0,       1],
-
-        //pedals
-        // see engine > transmission for clutch
-
-        //clock
-     //   ["clockh",    "bug_needle_clock_h",   "f4m","f4l","f4tm",         {"x":-85, "y":0, "z":0}, 	{"x":0, "y":0, "z":-1},     {"x":0, "y":0, "z":0}, 			0, 		360, -360, 1],
-      //  ["clockmin",  "bug_needle_clock_min", "f4m","f4l","f4tm",         {"x":-85, "y":0, "z":0}, 	{"x":0, "y":0, "z":-1},     {"x":0, "y":0, "z":0}, 			0, 		360, -360, 1],
-
-        // Interior light:
-        {
-            "lightInnerAngle":80,
-            "lightOuterAngle":179,
-            "lightBrightness":1,
-            "lightRange":1.4,
-            "flareScale":0,
-            "lightColor":{"r":255, "g":193, "b":141, "a":255},  // 3000K
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            // No Falre!
-            //"flareName":"",
-            // No Cookie!
-            //"cookieName":"art/special/BNG_light_cookie_headlight.png",
-            "texSize":512,
-            "shadowSoftness":0.1,
-        },
-        ["interiorlight" ,  "SPOTLIGHT", "brf4lll","brf4ll","brf5lll", {"x":0, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.1, "z":-0.03},"deformGroup":""}],
+        ["brake",        "inputs_pedals_brake",     "f4m","f4l","f4tm",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
    "flexbodies": [
         // new mesh
@@ -115,18 +75,18 @@
         ["body_door_hinges",               ["bug_body", "bug_body_sides"]],
         ["body_engine_panel_bottom",       ["bug_body", "bug_body_rear"]],
         ["body_engine_panel_top",          ["bug_body", "bug_body_rear"]],
+        ["body_engine_vents_back",         ["bug_body", "bug_body_rear"]],
         ["body_engine_vents",              ["bug_body", "bug_body_rear"]],
         ["body_firewall",                  ["bug_body", "bug_body_cowl"]],
 
         ["body_front",                     ["bug_body", "bug_body_front"]],
         ["body_front_fenders",             ["bug_body", "bug_body_front"]],
         ["body_front_frame",               ["bug_body", "bug_body_front"]],
-
+        
         ["body_heatpipes",                 ["bug_body", "bug_body_interior"]],
         ["body_interior_rear",             ["bug_body", "bug_body_interior"]],
         ["body_interior_sides_back",       ["bug_body", "bug_body_interior"]],
         ["body_interior_wheelarch_front",  ["bug_body", "bug_body_interior"]],
-        ["body_interior_wheelarch_rear",   ["bug_body", "bug_body_interior"]],
         ["body_interior_steer_mount",      ["bug_body", "bug_body_interior"]],
         ["body_backseat_base",             ["bug_body", "bug_body_interior"]],
         ["body_heatpipe_R",                ["bug_body", "bug_body_interior"]],
@@ -137,22 +97,15 @@
 
         // name?
         ["hood_parts",                     ["bug_body"]],
-
-        ["heatvent_F",                     ["bug_body", "bug_body_interior"]],
-        ["heatvent_R",                     ["bug_body", "bug_body_interior"]],
-
-        ["body_interiorlight",             ["bug_body", "bug_body_sides"]],
-        ["body_interiorlight_glass",       ["bug_body", "bug_body_sides"]],
-
     ],
-     "nodes": [
+    "nodes": [
         ["id", "posX", "posY", "posZ"],
 
         {"group":"bug_body"},
         {"collision":true},
         {"selfCollision":true},
 
-        {"nodeWeight":2.3},
+        {"nodeWeight":2.0},
         //{"group":"bug_body_cowl"},
         // cowl
         ["bc1r",  -0.53553, -0.59897,  1.00919],
@@ -169,7 +122,7 @@
         ["bc5r",  -0.58949, -0.60467,  0.98144],
         ["bc5l",   0.58949, -0.60467,  0.98144],
 
-        {"nodeWeight":1.5},
+        {"nodeWeight":1.0},
         {"group":["bug_body","bug_body_dashboard","gps"]},
         // dashboard
         ["bd1r", -0.26598, -0.57707,  1.05118],
@@ -181,7 +134,7 @@
         ["bd1ll",  0.53351, -0.56437,  1.00449],
         ["bd2l",  0.54279, -0.56437,  0.87868],
 
-        {"nodeWeight":1.5},
+        {"nodeWeight":1.0},
         //{"group":"bug_body_front"},
         // front
         ["bf1",  0.00000, -1.77911,  0.24608],
@@ -209,10 +162,10 @@
         ["bf8r", -0.36479, -1.03030,  0.640711],
         ["bf8l",  0.36479, -1.03030,  0.640711],
 
-        {"nodeWeight":1.5},
+        {"nodeWeight":1.0},
         //{"group":"bug_body_interior"},
         // interior
-        ["bi1",  0.00000,  0.03775,  1.00000, {"nodeWeight":4.0}],
+        ["bi1",  0.00000,  0.03775,  1.00000, {"nodeWeight":4.0, "selfCollision":false, "collision":false}],
         ["bi2",  0.00000,  0.94428,  0.60145, {"nodeWeight":2.0}],
         ["bi2r", -0.46992,  0.94428,  0.60145],
         ["bi2l",  0.46992,  0.94428,  0.60145],
@@ -223,7 +176,7 @@
         ["bi4r", -0.46992,  1.32859,  0.96075],
         ["bi4l",  0.46992,  1.32859,  0.96075],
 
-        {"nodeWeight":1.3},
+        {"nodeWeight":1.0},
         //{"group":"bug_body_sides"},
         // sides
         ["bq1r", -0.61537, -0.65071,  0.29000, {"tag":"bug_runningboards_R1"}],
@@ -344,7 +297,7 @@
 
         // door support
         {"group":""},
-        {"nodeWeight":1.2},
+        {"nodeWeight":1.0},
         ["bqd1l",  0.61373, -0.55971,  0.36911],
         ["bqd1r", -0.61373, -0.55971,  0.36911],
         ["bqd2l",  0.66788,  0.26364,  0.36913],
@@ -383,8 +336,8 @@
     /*    {"spring":700000, "damp":50, "deform":3000, "strength":100000},
         ["f6l", "f1l", "f1r", "f3r"],
         ["f6r", "f1r", "f1l", "f3l"],
-        ["f19ll", "f5l", "f5r", "f8r"],
-        ["f19rr", "f5r", "f5l", "f8l"],
+        ["f19ll", "f5l", "f5r", "bf8r"],
+        ["f19rr", "f5r", "f5l", "bf8l"],
         //rigidifiy rear frame
         {"spring":300000, "damp":50, "deform":5000, "strength":100000},
         ["f4l", "r1l", "r1r", "r2r"],
@@ -1690,5 +1643,103 @@
         ["f6tml", "f5m", "f5tm"],
         {"group":""}
     ],
-}
+},
+
+
+"bug_interiorlight": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Interior Light",
+        "value":25,
+    },
+    "slotType" : "bug_interiorlight",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["body_interiorlight",             ["bug_body", "bug_body_sides"]],
+        ["body_interiorlight_glass",       ["bug_body", "bug_body_sides"]]
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["interiorlight", "", "brf4lll","brf4ll","brf5lll", "box", {"x":0.018, "y":0.005, "z":0.01}, {"x":0, "y":5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.055, "y":0.071, "z":-0.04}],    
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],
+        ["interiorlight", "action0", "interiorlight"],
+    ],
+    "events":[
+        ["id", "title", "desc"],
+        // TODO: Where are these texts shown?
+        ["interiorlight", "ui.inputActions.bug.interiorlight.title", "ui.inputActions.bug.interiorlight.description", {"onUp":"vehicle.toggleInteriorLight()"}],
+    ],
+    "glowMap":{
+        "bug_interiorlight":       {"simpleFunction":{"interiorlight":0.49}, "off":"bug_int_lights", "on":"bug_int_lights_on"},
+        "bug_interiorlight_glass": {"simpleFunction":{"interiorlight":0.49}, "off":"bug_int_lights_glass", "on":"bug_int_lights_glass_on"}
+    },
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+
+        // Interior light:
+        {
+            "lightInnerAngle":80,
+            "lightOuterAngle":179,
+            "lightBrightness":1,
+            "lightRange":1.4,
+            "flareScale":0,
+            "lightColor":{"r":255, "g":193, "b":141, "a":255},  // 3000K
+            "lightAttenuation":{"x":0, "y":1, "z":1},
+            "lightCastShadows":false,
+            // No Falre!
+            //"flareName":"",
+            // No Cookie!
+            //"cookieName":"art/special/BNG_light_cookie_headlight.png",
+            "texSize":512,
+            "shadowSoftness":0.1,
+        },
+        ["interiorlight" ,  "SPOTLIGHT", "brf4lll","brf4ll","brf5lll", {"x":0, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.1, "z":-0.03},"deformGroup":""}],
+    ],
+},
+
+"bug_heatvents_none": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Empty",
+        "value":0,
+    },
+    "slotType" : "bug_heatvents",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["heatvent_F_covers",                     ["bug_body", "bug_body_interior"]],
+        ["heatvent_R_covers",                     ["bug_body", "bug_body_interior"]]
+    ]
+},
+"bug_heatvents": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Heat Vents",
+        "value":30,
+    },
+    "slotType" : "bug_heatvents",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["heatvent_F",                     ["bug_body", "bug_body_interior"]],
+        ["heatvent_R",                     ["bug_body", "bug_body_interior"]]
+    ]
+},
+
+"bug_rearvents_cover": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Rear Vents Cover",
+        "value":30,
+    },
+    "slotType" : "bug_rearvents_cover",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["body_roof_vent_cover", ["bug_body"]],
+    ]
+},
 }

@@ -8,8 +8,10 @@
     "slotType" : "bug_trunk",
     "slots": [
         ["type", "default", "description"],
+
         ["bug_spoilerR","","Rear Spoiler"],
         ["bug_trunk_handle","trunk_handle","Handle"],
+        ["bug_trunk_light","bug_trunk_light","License Light"],
     ],
     "controller": [
         ["fileName"],
@@ -35,7 +37,7 @@
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         //                                                default baseRotation {"x":-15, "y":-5, "z":20}
-        ["trunk", "", "t3","t2ll","t2", "box", {"x":0.12, "y":0.05, "z":0.04}, {"x":-15, "y":-6, "z":20}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.032, "y":-0.288, "z":-0.1}],
+        ["trunk", "", "t3","t2ll","t2", "box", {"x":0.12, "y":0.05, "z":0.04}, {"x":-15, "y":-6, "z":20}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.032, "y":-0.304, "z":-0.1}],
     ],
     "triggerEventLinks":[
         ["triggerId:triggers", "action", "targetEventId:events"],
@@ -50,10 +52,6 @@
 
         ["trunk",        ["bug_trunk"]],
         ["trunk_hinges", ["bug_body"]],
-        ["trunk_light",  ["bug_trunk"]],
-
-       // ["licenseplate_light", ["bug_trunk"]],
-
     ],
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -71,7 +69,11 @@
         },
         ["lowhighbeam" ,  "SPOTLIGHT", "t3","t2ll","t2", {"x":-110, "y":-6, "z":20}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, 
         {"baseTranslation":{"x":-0.007, "y":0.01, "z":0.02}, "lightRange":0.3,"lightBrightness":1,"lightOuterAngle":170,"flareScale":0.00, "deformGroup":"licenseplate_light_break"}],
-     ],
+    ],
+    "glowMap":{
+        // exterior lights
+        "bug_license_light":   {"simpleFunction":{"lowbeam":0.3, "highbeam":0.6},   "off":"bug_license_light",  "on":"bug_license_light_on",  "on_intense":"bug_license_light_on"},
+    },
     "nodes": [
         ["id", "posX", "posY", "posZ"],
         //--TRUNK--
@@ -258,6 +260,7 @@
         {"breakGroup":""},
         {"breakGroupType":0},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamLimitSpring":1,"beamLimitDamp":1},
 
         //pop open
         {"breakGroupType":1},
@@ -345,6 +348,33 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["trunk_handle_paint", ["bug_trunk"]],
+    ],
+},
+
+"bug_trunk_light": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"License Light",
+        "value":25,
+    },
+    "slotType" : "bug_trunk_light",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["trunk_light",  ["bug_trunk"]],
+    ],
+},
+"bug_trunk_light_wide": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Wide License Light",
+        "value":25,
+    },
+    "slotType" : "bug_trunk_light",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["trunk_light_wide",  ["bug_trunk"]],
     ],
 },
 

@@ -64,8 +64,8 @@
     "Stages": [
       {
         "baseColorFactor": [
-          0.101961002,
-          0.580392003,
+          0.389389008,
+          0.636765003,
           0.827450991,
           1
         ],
@@ -176,9 +176,9 @@
     "Stages": [
       {
         "baseColorFactor": [
-          0.419607997,
-          0.639216006,
-          0.254902005,
+          0.56991899,
+          0.647059023,
+          0.301961005,
           1
         ],
         "baseColorMap": "/vehicles/bug/components/body/roof/textures/ragtop_d.color.png",
@@ -204,9 +204,9 @@
     "Stages": [
       {
         "baseColorFactor": [
-          0.674510002,
-          0.203922004,
-          0.203922004,
+          0.647,
+          0.330,
+          0.302,
           1
         ],
         "baseColorMap": "/vehicles/bug/components/body/roof/textures/ragtop_d.color.png",
@@ -232,9 +232,9 @@
     "Stages": [
       {
         "baseColorFactor": [
-          1,
-          0.980391979,
-          0.850979984,
+          0.94,
+          0.92,
+          0.75,
           1
         ],
         "baseColorMap": "/vehicles/bug/components/body/roof/textures/ragtop_d.color.png",
@@ -252,6 +252,119 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
+  "bug_ragtop_fabric.skin_ragtop.white2": {
+    "name": "bug_ragtop_fabric.skin_ragtop.white2",
+    "mapTo": "bug_ragtop_fabric.skin_ragtop.white2",
+    "class": "material",
+    "persistentId": "a4f8b9b0-502a-4be4-8adf-455cb8edb9b6",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.988762021,
+          0.932579994,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/roof/textures/ragtop_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "bug_ragtop_fabric.skin_ragtop.yellow": {
+    "name": "bug_ragtop_fabric.skin_ragtop.yellow",
+    "mapTo": "bug_ragtop_fabric.skin_ragtop.yellow",
+    "class": "material",
+    "persistentId": "346a6b68-a57e-4cb1-88df-4911440784a9",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.779515982,
+          0.305882007,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/roof/textures/ragtop_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "bug_ragtop_fabric.skin_ragtop.orange": {
+    "name": "bug_ragtop_fabric.skin_ragtop.orange",
+    "mapTo": "bug_ragtop_fabric.skin_ragtop.orange",
+    "class": "material",
+    "persistentId": "ea786402-14db-4a67-ab7a-de37e1b17193",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.456,
+          0.216,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/roof/textures/ragtop_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "bug_ragtop_fabric.skin_ragtop.purple": {
+    "name": "bug_ragtop_fabric.skin_ragtop.purple",
+    "mapTo": "bug_ragtop_fabric.skin_ragtop.purple",
+    "class": "material",
+    "persistentId": "d33784ba-3786-4e5f-a2f2-f21d727b3a4e",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.403921992,
+          0.352941006,
+          0.513725996,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/roof/textures/ragtop_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  
 
   "bug_ragtop_fabric.skin_ragtop.paint1": {
     "name": "bug_ragtop_fabric.skin_ragtop.paint1",
@@ -269,6 +382,7 @@
         "baseColorMap": "/vehicles/bug/components/body/roof/textures/ragtop_d.color.png",
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
         "instanceDiffuse": true
       },
       {},
@@ -343,6 +457,34 @@
     "version": 1.5
   },
 
+  "bug_ragtop_fabric.skin_ragtop.old": {
+    "name": "bug_ragtop_fabric.skin_ragtop.old",
+    "mapTo": "bug_ragtop_fabric.skin_ragtop.old",
+    "class": "Material",
+    "persistentId": "fe7cd501-188b-4120-8905-dd439a481f25",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.603922009,
+          0.575450003,
+          0.461822003,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/roof/textures/ragtop_old_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_old_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_old_r.data.png"
+      },
+      { },
+      { },
+      { }
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
 
   "bug_ragtop_fabric.skin_ragtop.herbie-fl": {
     "name": "bug_ragtop_fabric.skin_ragtop.herbie-fl",

@@ -220,7 +220,7 @@
               "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>leaf_compress_01","colorFactor":0.0,"attackFactor":7,"volumeFactor":2.5,"decayFactor":7,"pitchFactor":0.2,"maxStress":13}],
           ["fh1l","fs1l", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500,
               "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>leaf_compress_01","colorFactor":0.0,"attackFactor":7,"volumeFactor":2.5,"decayFactor":7,"pitchFactor":0.2,"maxStress":13}],
-          {"beamLimitSpring":0,"beamLimitDamp":0},
+          {"beamLimitSpring":1,"beamLimitDamp":1},
           {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
     ],
 },

@@ -78,21 +78,55 @@
 },
 
 
-"bug_lettering": {
+"bug_lettering_vw": {
     "information":{
         "authors":"BeamNG",
-        "name":"Lettering",
+        "name":"Volkswagen Lettering",
         "value":25,
     },
     "slotType" : "bug_lettering",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["lettering", ["bug_trunk"]],
-        //  ["bug_lettering_bug", ["bug_body"]],
-        //  ["bug_lettering_bug_FL", ["bug_fender_L"]],
-        //  ["bug_lettering_bug_FR", ["bug_fender_R"]],
+        ["lettering_Volkswagen", ["bug_trunk"]],
     ],
 },
+"bug_lettering_vw1200": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"VW1200 Lettering",
+        "value":25,
+    },
+    "slotType" : "bug_lettering",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["lettering_VW1200", ["bug_trunk"]],
+    ],
+},
+"bug_lettering_vw1600": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"VW1600 Lettering",
+        "value":25,
+    },
+    "slotType" : "bug_lettering",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["lettering_VW1600", ["bug_trunk"]],
+    ],
+},
+"bug_lettering_vw1800": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"VW1800 Lettering",
+        "value":25,
+    },
+    "slotType" : "bug_lettering",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["lettering_VW1800", ["bug_trunk"]],
+    ],
+},
+
 "bug_logo": {
 	"information":{
         "authors":"53_herbie_53",

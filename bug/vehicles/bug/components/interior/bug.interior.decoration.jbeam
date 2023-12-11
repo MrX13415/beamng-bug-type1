@@ -1,0 +1,508 @@
+{
+
+"bug_decoration1_tree": {
+    "information":{
+        "authors": "BeamNG",
+        "name": "Air Freshener",
+        "value": 8,
+    },
+    "slotType" : "bug_decoration1",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["deco1_tree",   ["bug_deco1_tree"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"nodeMaterial":"|NM_CLOTH"},
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeWeight":0.2},
+        {"group":"bug_deco1_tree"},
+        ["id1_tree1",  0.0, -0.38,  1.25],
+        ["id1_tree2",  0.0, -0.355,  1.18],
+        {"collision":false},
+        {"selfCollision":false},
+        ["id1_tree3", -0.0, -0.395,  1.19],
+        {"group":""},
+        {"collision":true},
+        {"selfCollision":false}
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"deformLimitExpansion":1.1},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":200000,"beamDamp":50},
+        {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+
+        ["id1_tree1","id1_tree2"],
+
+        ["id1_tree1","id1_tree3"],
+        ["id1_tree2","id1_tree3"],
+
+        // dive <> body
+        
+        {"beamSpring":200000,"beamDamp":50},
+        {"beamDeform":1500,"beamStrength":1500},
+        {"breakGroup":"bug_deco1_tree"},
+        ["id1_tree1","brf1"],
+        ["id1_tree1","brf2"],
+        ["id1_tree1","brf2l"],
+        ["id1_tree1","brf2r"],
+
+        // damp
+        {"beamSpring":10,"beamDamp":0.5},
+        {"breakGroup":"bug_deco1_tree"},
+        ["id1_tree2","brf1"],
+        ["id1_tree2","brf1l"],
+        ["id1_tree2","brf2l"],
+        ["id1_tree2","brf1r"],
+        ["id1_tree2","brf2r"],
+        {"breakGroup":""},
+
+        // support beams
+        {"beamType":"|SUPPORT", "beamLongBound":4},
+        {"beamPrecompression":0.988},
+        {"beamSpring":10,"beamDamp":2},
+        {"breakGroup":"bug_deco1_tree"},
+        ["id1_tree2","brf3"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"breakGroup":""},
+    ]
+},
+"bug_decoration1_dice": {
+    "information":{
+        "authors": "BeamNG",
+        "name": "Dice",
+        "value": 7,
+    },
+    "slotType" : "bug_decoration1",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["skin_deco1_dice","bug_decoration1_dice_white", "Color", {"coreSlot": true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["deco1_dice",   ["bug_deco1_dice"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"nodeMaterial":"|NM_CLOTH"},
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeWeight":0.2},
+        {"group":"bug_deco1_dice"},
+        ["id1_dice1",  0.0, -0.38,  1.25],
+        ["id1_dice2",  0.0, -0.355,  1.18],
+        {"collision":false},
+        {"selfCollision":false},
+        ["id1_dice3", -0.0, -0.395,  1.19],
+        {"group":""},
+        {"collision":true},
+        {"selfCollision":false}
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"deformLimitExpansion":1.1},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":200000,"beamDamp":50},
+        {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+
+        ["id1_dice1","id1_dice2"],
+
+        ["id1_dice1","id1_dice3"],
+        ["id1_dice2","id1_dice3"],
+
+        // dive <> body
+        
+        {"beamSpring":200000,"beamDamp":50},
+        {"beamDeform":1500,"beamStrength":1500},
+        {"breakGroup":"bug_deco1_dice"},
+        ["id1_dice1","brf1"],
+        ["id1_dice1","brf2"],
+        ["id1_dice1","brf2l"],
+        ["id1_dice1","brf2r"],
+
+        // damp
+        {"beamSpring":10,"beamDamp":0.5},
+        {"breakGroup":"bug_deco1_dice"},
+        ["id1_dice2","brf1"],
+        ["id1_dice2","brf1l"],
+        ["id1_dice2","brf2l"],
+        ["id1_dice2","brf1r"],
+        ["id1_dice2","brf2r"],
+        {"breakGroup":""},
+
+        // support beams
+        {"beamType":"|SUPPORT", "beamLongBound":4},
+        {"beamPrecompression":0.988},
+        {"beamSpring":10,"beamDamp":2},
+        {"breakGroup":"bug_deco1_dice"},
+        ["id1_dice2","brf3"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"breakGroup":""},
+    ]
+},
+"bug_decoration1_twindice": {
+    "information":{
+        "authors": "BeamNG",
+        "name": "Twin Dice",
+        "value": 10,
+    },
+    "slotType" : "bug_decoration1",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["skin_deco1_dice","bug_decoration1_dice_white", "Color", {"coreSlot": true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["deco1_diceL",   ["bug_deco1_diceL"]],
+        ["deco1_diceR",   ["bug_deco1_diceR"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"nodeMaterial":"|NM_CLOTH"},
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeWeight":0.2},
+        {"group":"bug_deco1_diceL"},
+        ["id1_dice2l",  0.035, -0.37,  1.18],
+        {"group":"bug_deco1_diceR"},
+        ["id1_dice2r", -0.025, -0.37,  1.18],
+        {"group":["bug_deco1_diceL", "bug_deco1_diceR"]},
+        ["id1_dice1",  0.0, -0.38,  1.25],
+        {"collision":false},
+        {"selfCollision":false},
+        ["id1_dice3", -0.0, -0.41,  1.22],
+        {"group":""},
+        {"collision":true},
+        {"selfCollision":false}
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"deformLimitExpansion":1.1},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":200000,"beamDamp":50},
+        {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+
+        ["id1_dice1","id1_dice2l"],
+        ["id1_dice1","id1_dice2r"],
+
+        ["id1_dice1","id1_dice3"],
+        ["id1_dice2l","id1_dice3"],
+        ["id1_dice2r","id1_dice3"],
+
+        // dive <> body
+        
+        {"beamSpring":200000,"beamDamp":50},
+        {"beamDeform":1500,"beamStrength":1500},
+        {"breakGroup":"bug_deco1_dice"},
+        ["id1_dice1","brf1"],
+        ["id1_dice1","brf2"],
+        ["id1_dice1","brf2l"],
+        ["id1_dice1","brf2r"],
+
+        // damp
+        {"beamSpring":10,"beamDamp":0.5},
+        {"breakGroup":"bug_deco1_dice"},
+        ["id1_dice2l","brf1"],
+        ["id1_dice2l","brf1l"],
+        ["id1_dice2l","brf2l"],
+        ["id1_dice2r","brf1"],
+        ["id1_dice2r","brf1r"],
+        ["id1_dice2r","brf2r"],
+        {"breakGroup":""},
+
+        // support beams
+        {"beamType":"|SUPPORT", "beamLongBound":4},
+        {"beamSpring":50,"beamDamp":2},
+        ["id1_dice2l","id1_dice2r"],
+        {"beamPrecompression":0.988},
+        {"beamSpring":10,"beamDamp":2},
+        {"breakGroup":"bug_deco1_dice"},
+        ["id1_dice2l","brf3"],
+        ["id1_dice2r","brf3"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"breakGroup":""},
+
+    ]
+},
+"bug_decoration1_dice_white": {
+    "information":{
+        "authors": "BeamNG",
+        "name": "White",
+        "value": 1,
+    },
+    "slotType": "skin_deco1_dice",
+    "skinName":"White",
+},
+"bug_decoration1_dice_black": {
+    "information":{
+        "authors": "BeamNG",
+        "name": "Black",
+        "value": 1,
+    },
+    "slotType": "skin_deco1_dice",
+    "skinName":"black",
+},
+
+
+// -- Door Pockets
+"bug_doorpocket_FL_empty": {
+	"information":{
+        "authors": "MrX13415",
+        "name": "Empty",
+        "value": 0,
+    },
+    "slotType" : "bug_doorpocket_FL",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["interior_panels_FL_bag", ["bug_door_FL"]],
+    ],
+},
+"bug_doorpocket_FL_maps": {
+	"information":{
+        "authors": "MrX13415",
+        "name": "Maps",
+        "value": 100,
+    },
+    "slotType" : "bug_doorpocket_FL",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["interior_panels_FL_bag_maps", ["bug_door_FL"]],
+    ],
+},
+"bug_doorpocket_FL_bottle": {
+	"information":{
+        "authors": "MrX13415",
+        "name": "Bottle",
+        "value": 2,
+    },
+    "slotType" : "bug_doorpocket_FL",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["interior_panels_FL_bag_bottle", ["bug_door_FL"]],
+    ],
+},
+
+"bug_doorpocket_FR_empty": {
+	"information":{
+        "authors": "MrX13415",
+        "name": "Empty",
+        "value": 0,
+    },
+    "slotType" : "bug_doorpocket_FR",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["interior_panels_FR_bag", ["bug_door_FR"]],
+    ],
+},
+"bug_doorpocket_FR_maps": {
+	"information":{
+        "authors": "MrX13415",
+        "name": "Maps",
+        "value": 100,
+    },
+    "slotType" : "bug_doorpocket_FR",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["interior_panels_FR_bag_maps", ["bug_door_FR"]],
+    ],
+},
+"bug_doorpocket_FR_bottle": {
+	"information":{
+        "authors": "MrX13415",
+        "name": "Bottle",
+        "value": 2,
+    },
+    "slotType" : "bug_doorpocket_FR",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["interior_panels_FR_bag_bottle", ["bug_door_FR"]],
+    ],
+},
+
+// -- Ignition key fob
+"bug_ignition_keyfob": {
+    "information":{
+        "authors": "BeamNG",
+        "name": "Keyfob",
+        "value": 10,
+    },
+    "slotType" : "bug_ignition_keyfob",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["dashboard_keyfob",   ["bug_ignition_keyfob"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"nodeMaterial":"|NM_CLOTH"},
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeWeight":0.2},
+        {"group":"bug_ignition_keyfob"},
+        ["ikey_f1",  0.086661, -0.530385, 0.808019], 
+        ["ikey_f2",  0.055157, -0.530385, 0.808019],
+        ["ikey_f3",  0.070912, -0.538514, 0.842946],
+        {"group":""},
+        {"collision":true},
+        {"selfCollision":false}
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"disableMeshBreaking":true},
+        {"deformLimitExpansion":1.1},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":200000,"beamDamp":50},
+        {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+
+        ["ikey_f1","ikey_f2"],
+        ["ikey_f2","ikey_f3"],
+        ["ikey_f3","ikey_f1"],
+
+        // connection
+        {"beamDeform":1500,"beamStrength":1500},
+        {"breakGroup":"bug_ignition_keyfob"},
+        ["ikey_f1","ikey"],
+        ["ikey_f2","ikey"],
+        ["ikey_f3","ikey"],
+
+        // damp
+        {"beamSpring":20,"beamDamp":5},
+        {"breakGroup":"bug_ignition_keyfob"},
+        ["ikey_f1","dsh"],
+        ["ikey_f2","dsh"],
+        ["ikey_f3","dsh"],
+        {"breakGroup":""},
+
+        {"disableMeshBreaking":false},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"breakGroup":""},
+    ]
+},
+
+// -- Suitcase
+"bug_rear_suitcase": {
+    "information":{
+        "authors": "BeamNG",
+        "name": "Suitcase",
+        "value": 100,
+    },
+    "slotType" : "bug_decoration2",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["rear_suitcase",   ["rear_suitcase"]]
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"nodeMaterial":"|NM_PLASTIC"}, //?
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeWeight":2},
+        {"group":"rear_suitcase"},
+        ["rsc1l",  0.05, 1.10, 0.96],
+        ["rsc1r", -0.42, 1.10, 0.96],
+        ["rsc2l",  0.05, 1.24, 0.96],
+        ["rsc2r", -0.42, 1.24, 0.96],
+        ["rsc3l",  0.05, 1.10, 0.63],
+        ["rsc3r", -0.42, 1.10, 0.63],
+        ["rsc4l",  0.05, 1.24, 0.63],
+        ["rsc4r", -0.42, 1.24, 0.63],
+        {"group":""},
+        {"collision":true},
+        {"selfCollision":false}
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":250000,"beamDamp":140},
+        {"beamDeform":80000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":0},
+        ["rsc1l","rsc1r"],
+        ["rsc2l","rsc2r"],
+        ["rsc3l","rsc3r"],
+        ["rsc4l","rsc4r"],
+        ["rsc1l","rsc2l"],
+        ["rsc3l","rsc4l"],
+        ["rsc1r","rsc2r"],
+        ["rsc3r","rsc4r"],
+        ["rsc1l","rsc3l"],
+        ["rsc2l","rsc4l"],
+        ["rsc1r","rsc3r"],
+        ["rsc2r","rsc4r"],
+
+        ["rsc1l","rsc3r"],
+        ["rsc1r","rsc3l"],
+        ["rsc2l","rsc4r"],
+        ["rsc2r","rsc4l"],
+        ["rsc1l","rsc4l"],
+        ["rsc2l","rsc3l"],
+        ["rsc1r","rsc4r"],
+        ["rsc2r","rsc3r"],
+        ["rsc1l","rsc2r"],
+        ["rsc1r","rsc2l"],
+        ["rsc3l","rsc4r"],
+        ["rsc3r","rsc4l"],
+
+        ["rsc1l","rsc4r"],
+        ["rsc1r","rsc4l"],
+        ["rsc2l","rsc3r"],
+        ["rsc2r","rsc3l"],
+
+        // support beams
+        {"beamType":"|SUPPORT", "beamLongBound":2},
+        {"beamSpring":80,"beamDamp":10},
+        {"breakGroup":"rear_suitcase"},
+        {"beamLongBound":10},
+        ["rsc2l","bi4l"],
+        ["rsc2l","bi4r"],
+        ["rsc2r","bi4l"],
+        ["rsc2r","bi4r"],
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":1.1}
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        //front bumper
+        {"groundModel":"plastic"},
+        {"dragCoef":0},
+        ["rsc1l", "rsc2l", "rsc2r"],
+        ["rsc1l", "rsc2r", "rsc1r"],
+        ["rsc1l", "rsc3r", "rsc3l"],
+        ["rsc1l", "rsc1r", "rsc3r"],
+        ["rsc3r", "rsc4r", "rsc4l"],
+        ["rsc3r", "rsc4l", "rsc3l"],
+        ["rsc2l", "rsc4l", "rsc4r"],
+        ["rsc2l", "rsc4r", "rsc2r"],
+        ["rsc1r", "rsc2r", "rsc4r"],
+        ["rsc1r", "rsc4r", "rsc3r"],
+        ["rsc3l", "rsc4l", "rsc2l"],
+        ["rsc3l", "rsc2l", "rsc1l"],
+],
+},
+
+
+}

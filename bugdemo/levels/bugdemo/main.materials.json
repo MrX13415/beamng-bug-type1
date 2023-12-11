@@ -1,0 +1,23 @@
+{
+  "GroundGrid" : {
+    "name" : "GroundGrid",
+    "mapTo" : "grid_10_diff",
+    "internalName" : "Grid",
+    "class" : "Material",
+    "persistentId" : "c4d9708b-cd62-4c49-ba76-813a9e4d8bf8",
+    "Stages" : [
+      {
+        "colorMap" : "/levels/smallgrid/grid_10_diff.dds",
+        "detailScale" : [ 50, 50 ],
+        "useAnisotropic" : true
+      },
+      {},
+      {},
+      {}
+    ],
+    "detailDistance" : "2000",
+    "detailSize" : "1",
+    "diffuseSize" : "1",
+    "materialTag0" : "Miscellaneous"
+  }
+}

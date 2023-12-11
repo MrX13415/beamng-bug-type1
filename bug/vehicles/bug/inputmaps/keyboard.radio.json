@@ -1,0 +1,22 @@
+{
+  "bindings":[
+    {"control": "numpaddivide", "action": "radio"},
+    {"control": "alt numpaddivide", "action": "radioinfo"},
+    
+    {"control": "acute", "action": "radiovolumeup"},
+    {"control": "minus", "action": "radiovolumedown"},
+
+    {"control": "numpadmult", "action": "radiotuneprev"},
+    {"control": "numpadminus", "action": "radiotunenext"},
+    {"control": "alt numpadmult", "action": "radiotrackprev"},
+    {"control": "alt numpadminus", "action": "radiotracknext"},
+
+    //{"control": "", "action": "radiotunedown"},
+    //{"control": "", "action": "radiotuneup"},
+  ], 
+  "name": "Keyboard", 
+  "version": 1, 
+  "devicetype": "keyboard", 
+  "vidpid": "6F1D2B61", 
+  "guid": "{6F1D2B61-D5A0-11CF-BFC7-444553540000}"
+}

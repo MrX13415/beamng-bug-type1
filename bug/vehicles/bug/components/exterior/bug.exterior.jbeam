@@ -136,8 +136,9 @@
     },
     "slotType" : "bug_towhitch",
     "flexbodies": [
-            ["mesh", "[group]:", "nonFlexMaterials"],
-            ["towhitch_altc", ["bug_body","bug_towhitch"],[],{"pos":{"x":0.0, "y":0.0, "z":0.0}}],
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        
+        ["towhitch_altc", ["bug_frame","bug_towhitch"],[],{"pos":{"x":0.0, "y":0.0, "z":0.0}}],
     ],
     "slots": [
         ["type", "default", "description"],
@@ -167,30 +168,31 @@
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         //--TOW HITCH--
         {"beamSpring":1344840,"beamDamp":195},
-        {"beamDeform":129000,"beamStrength":890000},
+        {"beamDeform":129000,"beamStrength":"FLT_MAX"},
         ["tw","f7ml"],
         ["tw","f7mr"],
         ["tw","f7tml"],
         ["tw","f7tmr"],
-        ["tw","br4l"],
-        ["tw","br4r"],
-        ["tw","br5l"],
-        ["tw","br5r"],
-
         ["tw2","f7ml"],
         ["tw2","f7mr"],
         ["tw2","f7tml"],
         ["tw2","f7tmr"],
+        ["tw","tw2"],
+
+        {"breakGroup": "body", "beamStrength":50000},
+        ["tw","br4l"],
+        ["tw","br4r"],
+        ["tw","br5l"],
+        ["tw","br5r"],
         ["tw2","br4l"],
         ["tw2","br4r"],
         ["tw2","br5l"],
         ["tw2","br5r"],
-
-        ["tw","tw2"],
+        {"breakGroup": ""}
     ],
     "triangles": [
         ["id1:","id2:","id3:"],
-        {"group":"towhitch"},
+        {"group":"bug_towhitch"},
         {"triangleType":"NONCOLLIDABLE"},
        // ["f7ml","f7mr","tw2"],
        // ["r4","r7","tw"],

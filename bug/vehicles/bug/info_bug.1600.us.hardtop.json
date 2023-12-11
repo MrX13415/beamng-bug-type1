@@ -1,0 +1,39 @@
+{
+  "0-100 km/h":14.6,
+  "0-60 mph":13.1,
+  "100-0 km/h":44.1,
+  "60-0 mph":136.2,
+  "BoundingBox":[
+    [
+      -0.783,
+      -1.77119,
+      -0.242979
+    ],
+    [
+      0.783,
+      2.29767,
+      1.43586
+    ]
+  ],
+  "Braking G":0.891,
+  "Config Type":"Factory",
+  "Configuration":"1600 US (M)",
+  "Description":"US premium model with 1600cc engine",
+  "drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":28,
+  "Performance Class":"2",
+  "Power":60,
+  "PowerPeakRPM":"3650 - 4300",
+  "Propulsion":"ICE",
+  "Top Speed":42.70563394,
+  "Torque":130,
+  "TorquePeakRPM":"2100 - 3150",
+  "Transmission":"Manual",
+  "Value":8500,
+  "Weight":1035,
+  "Weight/Power":17.25,
+  "defaultPaintName1":"Forest Green",
+  "defaultPaintName3":"Forest Green"
+}

@@ -1,0 +1,10 @@
+{
+    "title": "VW Beetle Demo",
+    "description": "Shows all variants and configurations for the VW Beetle",
+    "previews": ["bugdemo_preview.jpg"],
+    "size": [-1,-1],
+    "biome": "VR",
+    "roads": "None",
+    "authors": "MrX13415",
+    "defaultSpawnPointName":"spawn_default"
+}

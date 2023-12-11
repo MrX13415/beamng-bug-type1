@@ -1,0 +1,1 @@
+git --no-pager log --pretty=format:"%%h %%cD: %%s" > changes.txt

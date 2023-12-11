@@ -1,0 +1,39 @@
+{
+  "0-100 km/h":16.5,
+  "0-60 mph":15.1,
+  "100-0 km/h":43.7,
+  "60-0 mph":134.9,
+  "BoundingBox":[
+    [
+      -0.783,
+      -1.77119,
+      -0.234979
+    ],
+    [
+      0.783,
+      2.29767,
+      1.27506
+    ]
+  ],
+  "Braking G":0.899,
+  "Config Type":"Factory",
+  "Configuration":"1200 EU (M)",
+  "Description":"European base model with 1200cc engine",
+  "drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":28,
+  "Performance Class":"2",
+  "Power":60,
+  "PowerPeakRPM":"3650 - 4300",
+  "Propulsion":"ICE",
+  "Top Speed":41.52343487,
+  "Torque":130,
+  "TorquePeakRPM":"2100 - 3150",
+  "Transmission":"Automatic",
+  "Value":8500,
+  "Weight":1020,
+  "Weight/Power":17,
+  "defaultPaintName1":"Solar Yellow",
+  "defaultPaintName3":"Solar Yellow"
+}

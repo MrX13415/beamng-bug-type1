@@ -13,7 +13,7 @@
 "bug_skin_ragtop_black": {
     "information":{
        "authors":"MrX13415",
-       "name":"Black Cover",
+       "name":"Coal Black Cover",
        "value":200,
     },
     "slotType": "skin_ragtop",
@@ -22,11 +22,20 @@
 "bug_skin_ragtop_white": {
     "information":{
        "authors":"MrX13415",
-       "name":"Cream White Cover",
+       "name":"Pearl White Cover",
        "value":200,
     },
     "slotType": "skin_ragtop",
     "skinName": "white",
+},
+"bug_skin_ragtop_white2": {
+    "information":{
+       "authors":"MrX13415",
+       "name":"Cream White Cover",
+       "value":200,
+    },
+    "slotType": "skin_ragtop",
+    "skinName": "white2",
 },
 "bug_skin_ragtop_brown": {
     "information":{
@@ -73,6 +82,33 @@
     "slotType" : "skin_ragtop",
     "skinName" : "brown2",
 },
+"bug_skin_ragtop_yellow": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Sun Yellow Cover",
+        "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "yellow",
+},
+"bug_skin_ragtop_orange": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Flame Orange Cover",
+        "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "orange",
+},
+"bug_skin_ragtop_purple": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Lilac Purple Cover",
+        "value":200,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "purple",
+},
 
 "bug_skin_ragtop_paint1": {
     "information":{
@@ -100,6 +136,16 @@
     },
     "slotType" : "skin_ragtop",
     "skinName" : "paint3",
+},
+
+"bug_skin_ragtop_old": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Old Beaten Cover",
+        "value":20,
+    },
+    "slotType" : "skin_ragtop",
+    "skinName" : "old",
 },
 
 // No stripes:

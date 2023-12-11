@@ -13,15 +13,9 @@
           1
         ]
       },
-      {
-        "diffuseColor": null
-      },
-      {
-        "diffuseColor": null
-      },
-      {
-        "diffuseColor": null
-      }
+      {},
+      {},
+      {}
     ],
     "translucentBlendOp": "None"
   },
@@ -88,32 +82,6 @@
           0.241345197,
           0.241345197,
           0.241345197,
-          1
-        ]
-      },
-      {
-        "diffuseColor": null
-      },
-      {
-        "diffuseColor": null
-      },
-      {
-        "diffuseColor": null
-      }
-    ],
-    "translucentBlendOp": "None"
-  },
-  "bug_license_glass": {
-    "name": "bug_license_glass",
-    "mapTo": "bug_license_glass",
-    "class": "material",
-    "persistentId": "b6091a6c-e81c-4188-93fb-d0e5b8a14e86",
-    "Stages": [
-      {
-        "diffuseColor": [
-          0,
-          0,
-          0,
           1
         ]
       },
@@ -585,15 +553,9 @@
           1
         ]
       },
-      {
-        "diffuseColor": null
-      },
-      {
-        "diffuseColor": null
-      },
-      {
-        "diffuseColor": null
-      }
+      {},
+      {},
+      {}
     ],
     "translucentBlendOp": "None"
   },

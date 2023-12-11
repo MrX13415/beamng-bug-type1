@@ -1,0 +1,39 @@
+{
+  "0-100 km/h":7.1,
+  "0-100 mph":15.2,
+  "0-60 mph":6.7,
+  "100-0 km/h":35,
+  "60-0 mph":107.9,
+  "60-100 mph":8.5,
+  "BoundingBox":[
+    [
+      -0.8105,
+      -1.31292,
+      -0.222979
+    ],
+    [
+      0.8105,
+      2.29767,
+      1.025
+    ]
+  ],
+  "Braking G":1.123,
+  "Config Type":"Custom",
+  "Configuration":"Bare Bone (M)",
+  "Description":"Only the bare minimum of parts and equipped with an 1800cc engine",
+  "Drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":34,
+  "Performance Class":"2",
+  "Power":79,
+  "PowerPeakRPM":"4000 - 4700",
+  "Propulsion":"ICE",
+  "Top Speed":50.00451289,
+  "Torque":160,
+  "TorquePeakRPM":"1950 - 3250",
+  "Transmission":"Manual",
+  "Value":8500,
+  "Weight":565,
+  "Weight/Power":7.151898734
+}

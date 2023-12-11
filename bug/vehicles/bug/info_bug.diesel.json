@@ -1,0 +1,38 @@
+{
+  "0-100 km/h":31.6,
+  "0-60 mph":29.1,
+  "100-0 km/h":44.3,
+  "60-0 mph":132.7,
+  "BoundingBox":[
+    [
+      -0.783,
+      -1.77119,
+      -0.260979
+    ],
+    [
+      0.783,
+      2.29767,
+      1.27506
+    ]
+  ],
+  "Config Type":"Prototype ",
+  "Configuration":"Diesel (M)",
+  "Description":"European base model with a prototype diesel engine from 1951",
+  "drivetrain":"RWD",
+  "Fuel Type":"Diesel",
+  "Induction Type":"NA",
+  "Off-Road Score":34,
+  "Performance Class":"2",
+  "Power":35,
+  "PowerPeakRPM":3000,
+  "Propulsion":"ICE",
+  "Top Speed":33.68004059,
+  "Torque":95,
+  "TorquePeakRPM":"1550 - 2450",
+  "Transmission":"Manual",
+  "Value":8500,
+  "Weight":1055,
+  "Weight/Power":30.14285714,
+  "defaultPaintName1":"Jet Black",
+  "defaultPaintName3":"Alpine White"
+}

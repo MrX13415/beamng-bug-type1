@@ -183,13 +183,15 @@ local function updateGFX(dt)
 end
 
 local function onReset()
+  value = electrics.values["ragtop_state"]
+  log("D", "", "[Bug:Ragtop] " .. tostring(value*100) .. "% open")
 end
 
 local function onInit(jbeamData)
   sfxNode = jbeamData.node or ""
   value = jbeamData.state or 0
   electrics.values["ragtop_state"] = value
-  print("[Bug:Ragtop] Initialized")
+  log("D", "", "[Bug:Ragtop] Initialized " .. tostring(value*100) .. "% open")
 end
 
 local function open(value)

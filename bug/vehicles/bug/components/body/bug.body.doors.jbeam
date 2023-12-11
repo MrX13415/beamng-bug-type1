@@ -13,6 +13,9 @@
         ["bug_mirror_R","bug_mirror_teardrop_R", "Mirror"],
         ["bug_doorhandle_R","bug_door_handle_R", "Handle"],
     ],
+    "sounds": {
+        "$+cabinFilterCoef": 0.1
+    },
     "controller": [
         ["fileName"],
         ["advancedCouplerControl", {"name":"doorRCoupler"}],
@@ -43,7 +46,7 @@
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         ["door_R", "", "d9r","d8r","d6r", "box", {"x":0.13, "y":-0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.03, "y":0.07, "z":0.04}],
-        ["door_R_int", "", "dh1r","d8r","d4r", "box", {"x":0.05, "y":0.05, "z":0.10}, {"x":4, "y":1, "z":2}, {"x":0, "y":15, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.293, "y":0.075, "z":0.06}],
+        ["door_R_int", "", "dh1r","d8r","d4r", "box", {"x":0.05, "y":0.05, "z":0.10}, {"x":4, "y":1, "z":2}, {"x":0, "y":15, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.279, "y":0.07, "z":0.06}],
     ],
     "triggerEventLinks":[
         ["triggerId:triggers", "action", "targetEventId:events"],
@@ -67,7 +70,7 @@
         ["d2r",  -0.665573, -0.250102, 0.328229],
         ["d3r",  -0.700539,  0.294437, 0.328229],
         ["d4r",  -0.648047, -0.605883, 0.603074],
-        ["d5r",  -0.678370, -0.25389,  0.60235, {"nodeWeight":2.5, "selfCollision":false}],
+        ["d5r",  -0.678370, -0.25389,  0.60235, {"nodeWeight":1.8, "selfCollision":false}],
         ["d6r",  -0.722429,  0.294437, 0.60157],
         ["d8r",  -0.652307, -0.24872,  0.94392, {"selfCollision":false}],
         ["d9r",  -0.691250,  0.294437, 0.95028, {"nodeWeight":1.0}],
@@ -79,8 +82,8 @@
         {"collision":false},
         {"nodeWeight":3.0},
         // hinge
-        ["dh1r", -0.641329, -0.631622, 0.92798],
-        ["dh2r", -0.640595, -0.625111, 0.328229],
+        ["dh1r", -0.642601, -0.616547, 0.92798],
+        ["dh2r", -0.642799, -0.613628, 0.328229],
         //rigidifier
         ["d14r", -0.39500, -0.17000, 0.95000, {"nodeWeight":1.0}],
         {"group":""},
@@ -101,7 +104,7 @@
 
         {"disableMeshBreaking":true},
         {"beamPrecompression":1, "beamType":"|NORMAL","beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":601000,"beamDamp":141},
+        {"beamSpring":501000,"beamDamp":110},
         {"beamDeform":4000,"beamStrength":"FLT_MAX"},
         //front door main shape
         ["dh2r","d2r"],
@@ -219,7 +222,7 @@
 
         // support beams
         {"beamType":"|SUPPORT","beamLongBound":4},
-        {"beamSpring":601000,"beamDamp":10},
+        {"beamSpring":501000,"beamDamp":10},
         {"beamDeform":5000,"beamStrength":200000},
         {"disableTriangleBreaking":true},
         {"beamPrecompression":1},
@@ -245,6 +248,7 @@
         {"breakGroupType":0},
         {"breakGroup":"door_FR_latch"},
         ["d9r", "bq9r"],
+        {"beamLimitSpring":1,"beamLimitDamp":1},
 
         //pop open
         {"breakGroupType":1},
@@ -320,6 +324,9 @@
         ["bug_mirror_L","bug_mirror_teardrop_L", "Mirror"],
         ["bug_doorhandle_L","bug_door_handle_L", "Handle"],
     ],
+    "sounds": {
+        "$+cabinFilterCoef": 0.1
+    },
     "controller": [
         ["fileName"],
         ["advancedCouplerControl", {"name":"doorLCoupler"}],
@@ -350,7 +357,7 @@
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         ["door_L", "", "d9l","d8l","d6l", "box", {"x":0.13, "y":0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.03, "y":0.07, "z":-0.04}],
-        ["door_L_int", "", "dh1l","d8l","d4l", "box", {"x":0.05, "y":-0.05, "z":0.10}, {"x":4, "y":1, "z":2}, {"x":-5, "y":15, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.293, "y":0.075, "z":-0.06}],
+        ["door_L_int", "", "dh1l","d8l","d4l", "box", {"x":0.05, "y":-0.05, "z":0.10}, {"x":4, "y":1, "z":2}, {"x":-5, "y":15, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.279, "y":0.07, "z":-0.06}],
     ],
     "triggerEventLinks":[
         ["triggerId:triggers", "action", "targetEventId:events"],
@@ -374,7 +381,7 @@
         ["d2l",  0.665573, -0.250102, 0.328229],
         ["d3l",  0.700539,  0.294437, 0.328229],
         ["d4l",  0.648047, -0.605883, 0.603074],
-        ["d5l",  0.678370, -0.25389,  0.60235, {"nodeWeight":2.5, "selfCollision":false}],
+        ["d5l",  0.678370, -0.25389,  0.60235, {"nodeWeight":1.8, "selfCollision":false}],
         ["d6l",  0.722429,  0.294437, 0.60157],
         ["d8l",  0.652307, -0.24872,  0.94392, {"selfCollision":false}],
         ["d9l",  0.691250,  0.294437, 0.95028, {"nodeWeight":1.0}],
@@ -386,8 +393,8 @@
         {"collision":false},
         {"nodeWeight":3.0},
         // hinge
-        ["dh1l",  0.641329, -0.631622, 0.92798],
-        ["dh2l",  0.640595, -0.625111, 0.328229],
+        ["dh1l",  0.642601, -0.616547, 0.92798],
+        ["dh2l",  0.642799, -0.613628, 0.328229],
         //rigidifier
         ["d14l", 0.39500, -0.19000, 0.95000, {"nodeWeight":1.0}],
         {"group":""},
@@ -407,7 +414,7 @@
 
         {"disableMeshBreaking":true},
         {"beamPrecompression":1, "beamType":"|NORMAL","beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":601000,"beamDamp":141},
+        {"beamSpring":501000,"beamDamp":110},
         {"beamDeform":4000,"beamStrength":"FLT_MAX"},
         //front door main shape
         ["dh2l","d2l"],
@@ -525,7 +532,7 @@
 
         // support beams
         {"beamType":"|SUPPORT","beamLongBound":5},
-        {"beamSpring":601000,"beamDamp":10},
+        {"beamSpring":501000,"beamDamp":10},
         {"beamDeform":5000,"beamStrength":200000},
         {"disableTriangleBreaking":true},
         {"beamPrecompression":1},
@@ -551,6 +558,7 @@
         {"breakGroupType":0},
         {"breakGroup":"door_FL_latch"},
         ["d9l", "bq9l"],
+        {"beamLimitSpring":1,"beamLimitDamp":1},
 
         //pop open
         {"breakGroupType":1},
@@ -695,7 +703,7 @@
     "slotType" : "bug_mirror_L",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_L_mirror_circle", ["bug_door_FL"]],
+         ["door_L_mirror_circle.001", ["bug_door_FL"]],
     ],
 },
 "bug_mirror_teardrop_L": {
@@ -707,7 +715,7 @@
     "slotType" : "bug_mirror_L",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_L_mirror_teardrop", ["bug_door_FL"]],
+         ["door_L_mirror_teardrop.001", ["bug_door_FL"]],
     ],
 },
 

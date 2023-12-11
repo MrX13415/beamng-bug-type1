@@ -222,6 +222,79 @@
     "version": 1.5
   },
 
+  "bug_crate_wood": {
+    "name": "bug_crate_wood",
+    "mapTo": "bug_crate_wood",
+    "class": "Material",
+    "persistentId": "7bfd533a-3a03-4b02-8b9f-b9800cf2caaa",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.600202024,
+          0.541999996,
+          0.458855003,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/wood_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/wood_n.normal.png",
+        "roughnessFactor": 0.72,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/wood_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "bug_crate_metal": {
+    "name": "bug_crate_metal",
+    "mapTo": "bug_crate_metal",
+    "class": "Material",
+    "persistentId": "ebcef68a-aa28-494f-91e0-7b523684641e",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.5,
+          0.5,
+          0.5,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.200000003
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_crate_paint": {
+    "name": "bug_crate_paint",
+    "mapTo": "bug_crate_paint",
+    "class": "Material",
+    "persistentId": "8860dbe2-344f-414b-92e2-c175ee23132c",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.2,
+          0.2,
+          0.2,
+          1
+        ],
+        "metallicFactor": 0.200000003,
+        "roughnessFactor": 0.280000001
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+
   "bug_roofrack_tricycle_leather": {
     "name": "bug_roofrack_tricycle_leather",
     "mapTo": "bug_roofrack_tricycle_leather",
@@ -335,6 +408,7 @@
       {},
       {}
     ],
+    "dynamicCubemap": true,
     "version": 1.5
   },
   "bug_drinkbox_paint": {
@@ -357,9 +431,75 @@
       {},
       {}
     ],
+    "dynamicCubemap": true,
     "version": 1.5
   },
-
+  "bug_jerrycan": {
+    "name": "bug_jerrycan",
+    "mapTo": "bug_jerrycan",
+    "class": "Material",
+    "persistentId": "4781a707-accc-4dc3-a381-973530ca15fb",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.435294002,
+          0.371852994,
+          0.235570997,
+          1
+        ],
+        "metallicFactor": 0.300000012,
+        "roughnessFactor": 0.200000003
+      },
+      {
+        "baseColorFactor": [
+          0.852128983,
+          0.852128983,
+          0.852128983,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/rustyiron_d.color.dds",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/rustyiron_m.data.dds",
+        "normalMap": "/vehicles/bug/components/common/textures/rustyiron_n.normal.dds",
+        "opacityFactor": 0.616999984,
+        "opacityMap": "/vehicles/bug/components/common/textures/rustyiron_o2.data.dds",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/common/textures/rustyiron_r.data.dds"
+      },
+      {
+        "baseColorFactor": [
+          0.529004991,
+          0.330280006,
+          0,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/dirty_d.color.dds",
+        "metallicFactor": null,
+        "normalMap": "/vehicles/bug/components/common/textures/dirty_n.normal.dds",
+        "opacityFactor": 0.481000006,
+        "opacityMap": "/vehicles/bug/components/common/textures/dirty_o.data.dds",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/common/textures/dirty_r.data.dds"
+      },
+      {}
+    ],
+    "activeLayers": 3,
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_spoilerR": {
+    "name": "bug_spoilerR",
+    "mapTo": "bug_spoilerR",
+    "class": "material",
+    "persistentId": "a8969821-2ecc-42a2-8319-5ffbc3f327f4",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None"
+  },
   "bug_spoilerR.skin_spoilerR.black": {
     "name": "bug_spoilerR.skin_spoilerR.black",
     "mapTo": "bug_spoilerR.skin_spoilerR.black",
@@ -390,9 +530,31 @@
     "Stages": [
       {
         "baseColorFactor": [
-          0.976471007,
-          0.980391979,
-          0.788235009,
+          0.94,
+          0.92,
+          0.75,
+          1
+        ],
+        "metallicFactor": 0.300000012,
+        "roughnessFactor": 0.100000001
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5
+  },
+  "bug_spoilerR.skin_spoilerR.white2": {
+    "name": "bug_spoilerR.skin_spoilerR.white2",
+    "mapTo": "bug_spoilerR.skin_spoilerR.white2",
+    "class": "Material",
+    "persistentId": "4ed53c0e-a41e-4c27-a2ec-a987deae627d",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.89,
+          0.88,
+          0.83,
           1
         ],
         "metallicFactor": 0.300000012,
@@ -506,6 +668,20 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
+
+  "bug_spoilerF": {
+    "name": "bug_spoilerF",
+    "mapTo": "bug_spoilerF",
+    "class": "material",
+    "persistentId": "7fdd54d5-795a-4b16-a55f-2a9e4445ead3",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None"
+  },
   "bug_spoilerF.skin_spoilerF.black": {
     "name": "bug_spoilerF.skin_spoilerF.black",
     "mapTo": "bug_spoilerF.skin_spoilerF.black",
@@ -536,9 +712,31 @@
     "Stages": [
       {
         "baseColorFactor": [
-          0.976471007,
-          0.980391979,
-          0.788235009,
+          0.94,
+          0.92,
+          0.75,
+          1
+        ],
+        "metallicFactor": 0.300000012,
+        "roughnessFactor": 0.100000001
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5
+  },
+  "bug_spoilerF.skin_spoilerF.white2": {
+    "name": "bug_spoilerF.skin_spoilerF.white2",
+    "mapTo": "bug_spoilerF.skin_spoilerF.white2",
+    "class": "Material",
+    "persistentId": "badb510c-5885-4bb5-90ee-6135c9655698",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.89,
+          0.88,
+          0.83,
           1
         ],
         "metallicFactor": 0.300000012,

@@ -64,6 +64,8 @@
     "translucentBlendOp": "None",
     "version": 1.5
   },
+
+  /*
   "bug_body_paint_rubber": {
     "name": "bug_body_paint_rubber",
     "mapTo": "bug_body_paint_rubber",
@@ -86,6 +88,31 @@
       {}
     ],
     "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },*/
+
+
+  "bug_body_paint_rubber": {
+    "name": "bug_body_paint_rubber",
+    "mapTo": "bug_body_paint_rubber",
+    "class": "Material",
+    "persistentId": "5e10b626-db6d-4baf-a691-36d335fb7126",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.18,
+          0.18,
+          0.18,
+          1
+        ]
+      },
+      {},
+      {}
+    ],
     "doubleSided": true,
     "dynamicCubemap": true,
     "invertBackFaceNormals": true,
@@ -255,23 +282,9 @@
     "version": 1.5
   },
 
-  "bug_runningboard_rubber": {
-    "name": "bug_runningboard_rubber",
-    "mapTo": "bug_runningboard_rubber",
-    "class": "Material",
-    "persistentId": "11c54212-6fa7-4b49-bd09-4ec6cb047c8f",
-    "Stages": [
-      {},
-      {},
-      {},
-      {}
-    ],
-    "dynamicCubemap": true,
-    "version": 1.5
-  },
-  "bug_runningboard_rubber.skin_runningboards.black": {
-    "name": "bug_runningboard_rubber.skin_runningboards.black",
-    "mapTo": "bug_runningboard_rubber.skin_runningboards.black",
+  "bug_runningboard_black": {
+    "name": "bug_runningboard_black",
+    "mapTo": "bug_runningboard_black",
     "class": "Material",
     "persistentId": "397fa47d-a749-4590-ace6-473d60a7ecdf",
     "Stages": [
@@ -293,17 +306,65 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  "bug_runningboard_rubber.skin_runningboards.white": {
-    "name": "bug_runningboard_rubber.skin_runningboards.white",
-    "mapTo": "bug_runningboard_rubber.skin_runningboards.white",
+  "bug_runningboard_gray": {
+    "name": "bug_runningboard_gray",
+    "mapTo": "bug_runningboard_gray",
+    "class": "Material",
+    "persistentId": "42226b8d-0be0-4b20-87a0-2166f7d71999",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.65,
+          0.65,
+          0.65,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/textures/Runningboards_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/textures/Runningboards_n.normal.png",
+        "roughnessFactor": 0.899999976
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_runningboard_white": {
+    "name": "bug_runningboard_white",
+    "mapTo": "bug_runningboard_white",
     "class": "Material",
     "persistentId": "de3f8be7-03b4-4244-9910-f922374aa99e",
     "Stages": [
       {
         "baseColorFactor": [
-          0.993616998,
-          0.99506402,
-          0.872272015,
+          1.000,
+          0.979,
+          0.798,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/textures/Runningboards_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/textures/Runningboards_n.normal.png",
+        "roughnessFactor": 0.899999976
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_runningboard_white2": {
+    "name": "bug_runningboard_white2",
+    "mapTo": "bug_runningboard_white2",
+    "class": "Material",
+    "persistentId": "f4ace7be-7050-412c-8280-79fb835aad69",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.000,
+          0.989,
+          0.933,
           1
         ],
         "baseColorMap": "/vehicles/bug/components/body/textures/Runningboards_d.color.png",
@@ -317,4 +378,5 @@
     "dynamicCubemap": true,
     "version": 1.5
   }
+
 }

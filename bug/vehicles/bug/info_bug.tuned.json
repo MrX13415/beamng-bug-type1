@@ -1,0 +1,44 @@
+{
+  "0-100 km/h":4.8,
+  "0-100 mph":10.2,
+  "0-200 km/h":16.3,
+  "0-60 mph":4.5,
+  "100-0 km/h":42.1,
+  "100-200 km/h":11.5,
+  "60-0 mph":129.6,
+  "60-100 mph":5.6,
+  "BoundingBox":[
+    [
+      -0.77029,
+      -1.77119,
+      -0.223979
+    ],
+    [
+      0.77029,
+      2.29767,
+      1.27506
+    ]
+  ],
+  "Braking G":0.934,
+  "Config Type":"Custom",
+  "Configuration":"Tuned (M)",
+  "Description":"Equipped with racing parts, a rollcage and a tuned 1800cc engine",
+  "Drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":21,
+  "Performance Class":"2",
+  "Power":301,
+  "PowerPeakRPM":"5400 - 6000",
+  "Propulsion":"ICE",
+  "Top Speed":70.42743127,
+  "Torque":405,
+  "TorquePeakRPM":"4050 - 5250",
+  "Transmission":"Manual",
+  "Value":8500,
+  "Weight":1010,
+  "Weight/Power":3.355481728,
+  "defaultPaintName1":"Bermuda Blue",
+  "defaultPaintName2":"Sky Blue",
+  "defaultPaintName3":"Pure Black"
+}

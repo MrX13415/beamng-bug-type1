@@ -23,16 +23,21 @@
         ["wiper_mounts", ["bug_body","bug_windshield", "bug_roof"]],
         ["wiper_jet", ["bug_body","bug_windshield", "bug_roof"]],
     ],
+    "sounds": {
+        "$+cabinFilterCoef": 0.1
+    },
     "nodes": [
          ["id", "posX", "posY", "posZ"],
-         {"selfCollision":true},
-         {"collision":true},
+         {"selfCollision":false},
+         {"collision":false},
          {"frictionCoef":0.5},
          {"nodeMaterial":"|NM_GLASS"},
          {"nodeWeight":1.0},
          {"group":""},
          ["wi1", 0.00000, -0.30000, 1.15000, {"group":["bug_windshield","gps"]}],
          {"group":""},
+         {"collision":true},
+         {"selfCollision":false}
     ],
     "beams": [
           ["id1:", "id2:"],
@@ -107,6 +112,9 @@
         ["body_window_R_glass_dmg", ["bug_body", "bug_roof"]],
         {"deformGroup":""},
     ],
+    "sounds": {
+        "$+cabinFilterCoef": 0.1
+    },
     "nodes": [
         ["id", "posX", "posY", "posZ"],
         {"selfCollision":true},
@@ -195,37 +203,44 @@
         ["body_window_RL", ["bug_body", "bug_roof"]],
         ["body_window_RR", ["bug_body", "bug_roof"]],
 
-        {"deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound4", "deformVolume":0.6, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"bug_window_glass_dmg"},
-        {"deformGroup":"sidewindow_RL_break"},
+        {"deformGroup":"sidewindow_RL_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"bug_window_glass_dmg"},
         ["body_window_RL_glass", ["bug_body", "bug_roof"]],
-        {"deformGroup":"sidewindow_RR_break"},
-        ["body_window_RR_glass", ["bug_body", "bug_roof"]],
+        {"deformGroup":"sidewindow_RL_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound4", "deformVolume":0.6, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
+        ["body_window_RL_glass_dmg", ["bug_body", "bug_roof"]],
         {"deformGroup":""},
 
-        {"deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
-        {"deformGroup":"sidewindow_RL_break"},
-        ["body_window_RL_glass_dmg", ["bug_body", "bug_roof"]],
-        {"deformGroup":"sidewindow_RR_break"},
+        {"deformGroup":"sidewindow_RR_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"bug_window_glass_dmg"},
+        ["body_window_RR_glass", ["bug_body", "bug_roof"]],
+        {"deformGroup":"sidewindow_RR_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound4", "deformVolume":0.6, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
         ["body_window_RR_glass_dmg", ["bug_body", "bug_roof"]],
-        {"deformGroup":""},
+        {"deformGroup":""}
     ],
+    "sounds": {
+        "$+cabinFilterCoef": 0.08
+    },
     "beams": [
         ["id1:", "id2:"],
-        {"beamType":"|NORMAL", "beamPrecompression":1, "beamLongBound":1.0, "beamShortBound":1.0},
-        //brittle glass beams
-        {"beamSpring":800000,"beamDamp":90},
-        {"beamDeform":4000,"beamStrength":3500},
+
         {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":800000,"beamDamp":90},
+        {"beamDeform":4000,"beamStrength":"FLT_MAX"},   //3500
+        
+        // side glass L
+        {"deformGroup":"sidewindow_RL_break", "deformationTriggerRatio":0.025},
         {"breakGroup":"sidewindow_RL"},
-        {"deformGroup":"sidewindow_RL_break","deformationTriggerRatio":0.5},
         ["bq9l", "brf5lll"],
         ["bq9l", "bq13l"],
         ["bq10l", "bq13l"],
         ["bq10l", "brf4lll"],
         ["bq11l", "brf5lll"],
         ["bq11l", "brf4lll"],
+        {"breakGroup":""},
+        {"deformGroup":""},
+        
+        // side glass R
+        {"deformGroup":"sidewindow_RR_break", "deformationTriggerRatio":0.025},
         {"breakGroup":"sidewindow_RR"},
-        {"deformGroup":"sidewindow_RR_break","deformationTriggerRatio":0.5},
         ["bq9r", "brf5rrr"],
         ["bq9r", "bq13r"],
         ["bq10r", "brf4rrr"],
@@ -234,6 +249,8 @@
         ["bq11r", "brf4rrr"],
         {"breakGroup":""},
         {"deformGroup":""},
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"disableMeshBreaking":false,"disableTriangleBreaking":false},
     ],
     "triangles": [
@@ -270,6 +287,9 @@
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$windowFRInitState", "range", "", "Body", 0, 0, 1.0, "Window Open Right", "Inital open position of the right window.", {"minDis":0, "maxDis":100}],
 	],
+    "sounds": {
+        "$+cabinFilterCoef": 0.04
+    },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
@@ -283,7 +303,7 @@
     ],
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["window_FR", "", "dh1r","d8r","d4r", "box", {"x":0.06, "y":0.05, "z":0.06}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.16, "y":0.05, "z":0.06}],
+        ["window_FR", "", "dh1r","d8r","d4r", "box", {"x":0.06, "y":0.05, "z":0.06}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.149, "y":0.05, "z":0.06}],
     ],
     "triggerEventLinks":[
         ["triggerId:triggers", "action", "targetEventId:events"],
@@ -385,6 +405,9 @@
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$windowFLInitState", "range", "", "Body", 0, 0, 1.0, "Window Open Left", "Inital open position of the left window.", {"minDis":0, "maxDis":100}],
 	],
+    "sounds": {
+        "$+cabinFilterCoef": 0.04
+    },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
@@ -398,7 +421,7 @@
     ],
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["window_FL", "", "dh1l","d8l","d4l", "box", {"x":0.06, "y":-0.05, "z":0.06}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.16, "y":0.05, "z":-0.06}],
+        ["window_FL", "", "dh1l","d8l","d4l", "box", {"x":0.06, "y":-0.05, "z":0.06}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.149, "y":0.05, "z":-0.06}],
     ],
     "triggerEventLinks":[
         ["triggerId:triggers", "action", "targetEventId:events"],
@@ -501,6 +524,9 @@
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$doorventFRInitState", "range", "", "Body", 0, 0, 1.0, "Vent Window Open Right", "Inital open position of the right vent window.", {"minDis":0, "maxDis":100}],
     ],
+    "sounds": {
+        "$+cabinFilterCoef": 0.02
+    },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
@@ -514,7 +540,7 @@
     ],
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["doorvent_FR", "", "dh1r","d8r","d4r", "box", {"x":0.02, "y":0.02, "z":0.02}, {"x":0, "y":3, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.325, "y":-0.08, "z":0.07}],
+        ["doorvent_FR", "", "dh1r","d8r","d4r", "box", {"x":0.02, "y":0.02, "z":0.02}, {"x":0, "y":3, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.305, "y":-0.08, "z":0.06}],
     ],
     "triggerEventLinks":[
         ["triggerId:triggers", "action", "targetEventId:events"],
@@ -627,6 +653,9 @@
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$doorventFLInitState", "range", "", "Body", 0, 0, 1.0, "Vent Window Open Left", "Inital open position of the left vent window.", {"minDis":0, "maxDis":100}],
 	],
+    "sounds": {
+        "$+cabinFilterCoef": 0.02
+    },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
@@ -640,7 +669,7 @@
     ],
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["doorvent_FL", "", "dh1l","d8l","d4l", "box", {"x":0.02, "y":-0.02, "z":0.02}, {"x":0, "y":3, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.325, "y":-0.08, "z":-0.07}],
+        ["doorvent_FL", "", "dh1l","d8l","d4l", "box", {"x":0.02, "y":-0.02, "z":0.02}, {"x":0, "y":3, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.305, "y":-0.08, "z":-0.06}],
     ],
     "triggerEventLinks":[
         ["triggerId:triggers", "action", "targetEventId:events"],

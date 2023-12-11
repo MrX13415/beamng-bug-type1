@@ -28,6 +28,9 @@
         ["$brakestrength", "range", "", "Brakes", 1, 0.6, 1.0, "Brake Force Multiplier", "Scales the overall brake torque for this setup", {"minDis":60, "maxDis":100}],
         ["$ffbstrength", "range", "", "Chassis", 1, 0.5, 1.5, "Setup-Specific Force Feedback Multiplier", "Scales the force feedback strength for THIS SETUP ONLY", {"minDis":50, "maxDis":150}]
     ],
+    "sounds": {
+        "cabinFilterCoef": 0
+    },
     "soundscape": [
         ["name", "src"],
 
@@ -54,11 +57,7 @@
 
         //affects horn location because horn soundscape is loaded after
         {"node:":"bf2l"}, // TODO?
-    ],
-    "glowMap":{
-        // exterior lights
-        "bug_licenseplate_light":   {"simpleFunction":{"lowbeam":0.3, "highbeam":0.6},   "off":"bug_licenseplate_light",  "on":"bug_licenseplate_light_on",  "on_intense":"bug_licenseplate_light_on"},
-    },
+    ]
 }
 
 }

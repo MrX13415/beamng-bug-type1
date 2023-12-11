@@ -1,0 +1,41 @@
+{
+  "0-100 km/h":14.1,
+  "0-100 mph":77.4,
+  "0-60 mph":13.2,
+  "100-0 km/h":44.5,
+  "60-0 mph":134.5,
+  "60-100 mph":64.2,
+  "BoundingBox":[
+    [
+      -0.783,
+      -1.77119,
+      -0.242979
+    ],
+    [
+      0.783,
+      2.29767,
+      1.28392
+    ]
+  ],
+  "Braking G":0.884,
+  "Config Type":"Factory",
+  "Configuration":"1600 US Ragtop (M)",
+  "Description":"US premium model with 1600cc engine and ragtop roof",
+  "drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":28,
+  "Performance Class":"2",
+  "Power":60,
+  "PowerPeakRPM":"3650 - 4300",
+  "Propulsion":"ICE",
+  "Top Speed":44.75756775,
+  "Torque":130,
+  "TorquePeakRPM":"2100 - 3150",
+  "Transmission":"Manual",
+  "Value":8500,
+  "Weight":1040,
+  "Weight/Power":17.33333333,
+  "defaultPaintName1":"Tropical Sea",
+  "defaultPaintName3":"Tropical Sea"
+}

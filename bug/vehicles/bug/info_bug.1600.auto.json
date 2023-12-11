@@ -1,0 +1,39 @@
+{
+  "0-100 km/h":17,
+  "0-60 mph":15.6,
+  "100-0 km/h":44.2,
+  "60-0 mph":134.9,
+  "BoundingBox":[
+    [
+      -0.783,
+      -1.77119,
+      -0.242979
+    ],
+    [
+      0.783,
+      2.29767,
+      1.28392
+    ]
+  ],
+  "Braking G":0.889,
+  "Config Type":"Factory",
+  "Configuration":"1600 US (A)",
+  "Description":"US premium model with 1600cc engine and automatic transmission",
+  "drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":28,
+  "Performance Class":"2",
+  "Power":60,
+  "PowerPeakRPM":"3650 - 4300",
+  "Propulsion":"ICE",
+  "Top Speed":41.8626307,
+  "Torque":130,
+  "TorquePeakRPM":"2100 - 3150",
+  "Transmission":"Automatic",
+  "Value":8500,
+  "Weight":1040,
+  "Weight/Power":17.33333333,
+  "defaultPaintName1":"Cream White",
+  "defaultPaintName3":"Cream White"
+}

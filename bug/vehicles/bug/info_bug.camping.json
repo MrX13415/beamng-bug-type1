@@ -1,0 +1,39 @@
+{
+  "0-100 km/h":13.1,
+  "0-60 mph":12.3,
+  "100-0 km/h":44.7,
+  "60-0 mph":135.1,
+  "BoundingBox":[
+    [
+      -0.783,
+      -1.77119,
+      -0.242979
+    ],
+    [
+      0.783,
+      2.39767,
+      1.70231
+    ]
+  ],
+  "Braking G":0.88,
+  "Config Type":"Factory",
+  "Configuration":"Camping (M)",
+  "Description":"European premium model with 1600cc engine and fully equipped to go camping",
+  "drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":28,
+  "Performance Class":"2",
+  "Power":77,
+  "PowerPeakRPM":"4750 - 5350",
+  "Propulsion":"ICE",
+  "Top Speed":39.37792018,
+  "Torque":125,
+  "TorquePeakRPM":"2550 - 3700",
+  "Transmission":"Manual",
+  "Value":8500,
+  "Weight":1105,
+  "Weight/Power":14.35064935,
+  "defaultPaintName1":"Chestnut",
+  "defaultPaintName3":"Cream White"
+}

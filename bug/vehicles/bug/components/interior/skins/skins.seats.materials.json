@@ -1,0 +1,2286 @@
+{
+
+  // --- Vinyl Color 1 ---
+  "bug_interior4a": {
+    "name": "bug_interior4a",
+    "mapTo": "bug_interior4a",
+    "class": "material",
+    "persistentId": "651b59a8-c975-48ea-a363-4c9eaeea8202",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "castShadows": false,
+    "translucent": true
+  },
+  "bug_interior4a.skin_interior4.black": {
+    "name": "bug_interior4a.skin_interior4.black",
+    "mapTo": "bug_interior4a.skin_interior4.black",
+    "class": "material",
+    "persistentId": "c31e252c-e363-4c97-93f0-d97c790effaf",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.337,
+          0.337,
+          0.337,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4a.skin_interior4.blue": {
+    "name": "bug_interior4a.skin_interior4.blue",
+    "mapTo": "bug_interior4a.skin_interior4.blue",
+    "class": "Material",
+    "persistentId": "2ff469d9-fccc-402a-b1c7-77418eb436d6",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.389389008,
+          0.636765003,
+          0.827450991,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.600000024,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4a.skin_interior4.brown": {
+    "name": "bug_interior4a.skin_interior4.brown",
+    "mapTo": "bug_interior4a.skin_interior4.brown",
+    "class": "material",
+    "persistentId": "521f143c-65ed-4b5a-88b7-96b091e9672a",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.854902029,
+          0.615685999,
+          0.458824009,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4a.skin_interior4.brown2": {
+    "name": "bug_interior4a.skin_interior4.brown2",
+    "mapTo": "bug_interior4a.skin_interior4.brown2",
+    "class": "material",
+    "persistentId": "22653fa7-bffb-4f9f-87a6-c774175a1746",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.721569002,
+          0.423528999,
+          0.290196002,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4a.skin_interior4.gray": {
+    "name": "bug_interior4a.skin_interior4.gray",
+    "mapTo": "bug_interior4a.skin_interior4.gray",
+    "class": "material",
+    "persistentId": "f7ebd8a7-8e1b-4932-a014-1a338f247949",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.600000024,
+          0.600000024,
+          0.600000024,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4a.skin_interior4.green": {
+    "name": "bug_interior4a.skin_interior4.green",
+    "mapTo": "bug_interior4a.skin_interior4.green",
+    "class": "Material",
+    "persistentId": "e5e4603c-c0b4-4cfa-abf5-cd653e6b8722",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.56991899,
+          0.647059023,
+          0.301961005,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.600000024,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4a.skin_interior4.red": {
+    "name": "bug_interior4a.skin_interior4.red",
+    "mapTo": "bug_interior4a.skin_interior4.red",
+    "class": "material",
+    "persistentId": "7b9ec02c-8c28-4858-b74b-ce2bb5ba27fc",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.647,
+          0.330,
+          0.302,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4a.skin_interior4.white": {
+    "name": "bug_interior4a.skin_interior4.white",
+    "mapTo": "bug_interior4a.skin_interior4.white",
+    "class": "material",
+    "persistentId": "70728ed9-c134-4b35-ba0b-8251cd035270",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.94,
+          0.92,
+          0.75,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4a.skin_interior4.white2": {
+    "name": "bug_interior4a.skin_interior4.white2",
+    "mapTo": "bug_interior4a.skin_interior4.white2",
+    "class": "material",
+    "persistentId": "6fe796d5-76ae-4b4e-b47d-329d86dbf027",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.89,
+          0.88,
+          0.83,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4a.skin_interior4.yellow": {
+    "name": "bug_interior4a.skin_interior4.yellow",
+    "mapTo": "bug_interior4a.skin_interior4.yellow",
+    "class": "material",
+    "persistentId": "a2221b11-d678-4064-a1b8-8d16fb4ea2da",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.779515982,
+          0.305882007,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4a.skin_interior4.orange": {
+    "name": "bug_interior4a.skin_interior4.orange",
+    "mapTo": "bug_interior4a.skin_interior4.orange",
+    "class": "material",
+    "persistentId": "1da0feaa-ac0a-423f-acdd-850807b4145f",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.456,
+          0.216,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4a.skin_interior4.purple": {
+    "name": "bug_interior4a.skin_interior4.purple",
+    "mapTo": "bug_interior4a.skin_interior4.purple",
+    "class": "material",
+    "persistentId": "067c14dd-37bf-42b4-94a3-d3bddb7218c6",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.403921992,
+          0.352941006,
+          0.513725996,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+
+  "bug_interior4a.skin_interior4.old": {
+    "name": "bug_interior4a.skin_interior4.old",
+    "mapTo": "bug_interior4a.skin_interior4.old",
+    "class": "Material",
+    "persistentId": "3891d98c-43e6-40b1-bd84-8e05df83fb50",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.670588017,
+          0.53826499,
+          0.431279987,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.600000024,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {
+        "baseColorFactor": [
+          0.517647028,
+          0.419993013,
+          0.341037989,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_old_d.color.dds",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_old_n.normal.dds",
+        "opacityMap": "/vehicles/bug/components/interior/textures/interior_seat_old_o.data.dds",
+        "roughnessFactor": null,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_old_r.data.dds"
+      },
+      {
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/bug/components/common/textures/dirty_d.color.dds",
+        "detailScale": null,
+        "normalMap": "/vehicles/bug/components/common/textures/dirty_n.normal.dds",
+        "opacityFactor": 0.644999981,
+        "opacityMap": "/vehicles/bug/components/common/textures/dirty_o.data.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/dirty_r.data.dds"
+      },
+      {}
+    ],
+    "activeLayers": 3,
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  
+  "bug_interior4a.skin_interior4.paint1": {
+    "name": "bug_interior4a.skin_interior4.paint1",
+    "mapTo": "bug_interior4a.skin_interior4.paint1",
+    "class": "material",
+    "persistentId": "4d0c6a4f-e42d-491b-bcc0-23a8a0828b23",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4a.skin_interior4.paint2": {
+    "name": "bug_interior4a.skin_interior4.paint2",
+    "mapTo": "bug_interior4a.skin_interior4.paint2",
+    "class": "material",
+    "persistentId": "207888f4-c9ef-44dc-a500-c1dde5307c97",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4a.skin_interior4.paint3": {
+    "name": "bug_interior4a.skin_interior4.paint3",
+    "mapTo": "bug_interior4a.skin_interior4.paint3",
+    "class": "material",
+    "persistentId": "4f190399-8132-4c91-9446-3fd9df2f95b4",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+
+
+  // --- Vinyl Color 2 ---
+  "bug_interior4e": {
+    "name": "bug_interior4e",
+    "mapTo": "bug_interior4e",
+    "class": "material",
+    "persistentId": "651b59a8-c975-48ea-a363-4c9eaeea8202",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "castShadows": false,
+    "translucent": true
+  },
+  "bug_interior4e.skin_interior4b.black": {
+    "name": "bug_interior4e.skin_interior4b.black",
+    "mapTo": "bug_interior4e.skin_interior4b.black",
+    "class": "material",
+    "persistentId": "c31e252c-e363-4c97-93f0-d97c790effaf",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.337,
+          0.337,
+          0.337,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4e.skin_interior4b.blue": {
+    "name": "bug_interior4e.skin_interior4b.blue",
+    "mapTo": "bug_interior4e.skin_interior4b.blue",
+    "class": "Material",
+    "persistentId": "2ff469d9-fccc-402a-b1c7-77418eb436d6",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.389389008,
+          0.636765003,
+          0.827450991,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.600000024,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4e.skin_interior4b.brown": {
+    "name": "bug_interior4e.skin_interior4b.brown",
+    "mapTo": "bug_interior4e.skin_interior4b.brown",
+    "class": "material",
+    "persistentId": "521f143c-65ed-4b5a-88b7-96b091e9672a",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.854902029,
+          0.615685999,
+          0.458824009,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4e.skin_interior4b.brown2": {
+    "name": "bug_interior4e.skin_interior4b.brown2",
+    "mapTo": "bug_interior4e.skin_interior4b.brown2",
+    "class": "material",
+    "persistentId": "22653fa7-bffb-4f9f-87a6-c774175a1746",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.721569002,
+          0.423528999,
+          0.290196002,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4e.skin_interior4b.gray": {
+    "name": "bug_interior4e.skin_interior4b.gray",
+    "mapTo": "bug_interior4e.skin_interior4b.gray",
+    "class": "material",
+    "persistentId": "f7ebd8a7-8e1b-4932-a014-1a338f247949",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.600000024,
+          0.600000024,
+          0.600000024,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4e.skin_interior4b.green": {
+    "name": "bug_interior4e.skin_interior4b.green",
+    "mapTo": "bug_interior4e.skin_interior4b.green",
+    "class": "Material",
+    "persistentId": "e5e4603c-c0b4-4cfa-abf5-cd653e6b8722",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.56991899,
+          0.647059023,
+          0.301961005,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.600000024,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4e.skin_interior4b.red": {
+    "name": "bug_interior4e.skin_interior4b.red",
+    "mapTo": "bug_interior4e.skin_interior4b.red",
+    "class": "material",
+    "persistentId": "7b9ec02c-8c28-4858-b74b-ce2bb5ba27fc",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.647,
+          0.330,
+          0.302,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4e.skin_interior4b.white": {
+    "name": "bug_interior4e.skin_interior4b.white",
+    "mapTo": "bug_interior4e.skin_interior4b.white",
+    "class": "material",
+    "persistentId": "70728ed9-c134-4b35-ba0b-8251cd035270",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.94,
+          0.92,
+          0.75,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4e.skin_interior4b.white2": {
+    "name": "bug_interior4e.skin_interior4b.white2",
+    "mapTo": "bug_interior4e.skin_interior4b.white2",
+    "class": "material",
+    "persistentId": "6fe796d5-76ae-4b4e-b47d-329d86dbf027",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.89,
+          0.88,
+          0.83,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4e.skin_interior4b.yellow": {
+    "name": "bug_interior4e.skin_interior4b.yellow",
+    "mapTo": "bug_interior4e.skin_interior4b.yellow",
+    "class": "material",
+    "persistentId": "a2221b11-d678-4064-a1b8-8d16fb4ea2da",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.779515982,
+          0.305882007,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4e.skin_interior4b.orange": {
+    "name": "bug_interior4e.skin_interior4b.orange",
+    "mapTo": "bug_interior4e.skin_interior4b.orange",
+    "class": "material",
+    "persistentId": "34f6e38f-ea2c-41fd-bd92-46567047e835",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.456,
+          0.216,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4e.skin_interior4b.purple": {
+    "name": "bug_interior4e.skin_interior4b.purple",
+    "mapTo": "bug_interior4e.skin_interior4b.purple",
+    "class": "material",
+    "persistentId": "067c14dd-37bf-42b4-94a3-d3bddb7218c6",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.403921992,
+          0.352941006,
+          0.513725996,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.6,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  
+  "bug_interior4e.skin_interior4b.old": {
+    "name": "bug_interior4e.skin_interior4b.old",
+    "mapTo": "bug_interior4e.skin_interior4b.old",
+    "class": "Material",
+    "persistentId": "3891d98c-43e6-40b1-bd84-8e05df83fb50",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.670588017,
+          0.53826499,
+          0.431279987,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 0.600000024,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {
+        "baseColorFactor": [
+          0.517647028,
+          0.419993013,
+          0.341037989,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_old_d.color.dds",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_old_n.normal.dds",
+        "opacityMap": "/vehicles/bug/components/interior/textures/interior_seat_old_o.data.dds",
+        "roughnessFactor": null,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_old_r.data.dds"
+      },
+      {
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/bug/components/common/textures/dirty_d.color.dds",
+        "detailScale": null,
+        "normalMap": "/vehicles/bug/components/common/textures/dirty_n.normal.dds",
+        "opacityFactor": 0.644999981,
+        "opacityMap": "/vehicles/bug/components/common/textures/dirty_o.data.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/dirty_r.data.dds"
+      },
+      {}
+    ],
+    "activeLayers": 3,
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  
+  "bug_interior4e.skin_interior4b.paint1": {
+    "name": "bug_interior4e.skin_interior4b.paint1",
+    "mapTo": "bug_interior4e.skin_interior4b.paint1",
+    "class": "material",
+    "persistentId": "4d0c6a4f-e42d-491b-bcc0-23a8a0828b23",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4e.skin_interior4b.paint2": {
+    "name": "bug_interior4e.skin_interior4b.paint2",
+    "mapTo": "bug_interior4e.skin_interior4b.paint2",
+    "class": "material",
+    "persistentId": "207888f4-c9ef-44dc-a500-c1dde5307c97",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4e.skin_interior4b.paint3": {
+    "name": "bug_interior4e.skin_interior4b.paint3",
+    "mapTo": "bug_interior4e.skin_interior4b.paint3",
+    "class": "material",
+    "persistentId": "4f190399-8132-4c91-9446-3fd9df2f95b4",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  
+
+  // --- Farbric Color 2 ---
+  "bug_interior4b": {
+    "name": "bug_interior4b",
+    "mapTo": "bug_interior4b",
+    "class": "material",
+    "persistentId": "91782905-6b5f-4818-9e22-66a306c610e0",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "castShadows": false,
+    "translucent": true
+  },
+  "bug_interior4b.skin_interior4b.black": {
+    "name": "bug_interior4b.skin_interior4b.black",
+    "mapTo": "bug_interior4b.skin_interior4b.black",
+    "class": "material",
+    "persistentId": "949f3441-5910-4937-9717-93f3b3a3cace",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.337,
+          0.337,
+          0.337,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4b.skin_interior4b.blue": {
+    "name": "bug_interior4b.skin_interior4b.blue",
+    "mapTo": "bug_interior4b.skin_interior4b.blue",
+    "class": "Material",
+    "persistentId": "45fb8300-3f9e-4427-a1c2-d7b50acebfe9",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.389389008,
+          0.636765003,
+          0.827450991,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {
+        "baseColorFactor": null
+      },
+      {
+        "baseColorFactor": null
+      },
+      {
+        "baseColorFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4b.skin_interior4b.brown": {
+    "name": "bug_interior4b.skin_interior4b.brown",
+    "mapTo": "bug_interior4b.skin_interior4b.brown",
+    "class": "material",
+    "persistentId": "fdea40dd-7b6d-4750-b5a4-cbd1315f5cc0",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.854902029,
+          0.615685999,
+          0.458824009,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4b.skin_interior4b.brown2": {
+    "name": "bug_interior4b.skin_interior4b.brown2",
+    "mapTo": "bug_interior4b.skin_interior4b.brown2",
+    "class": "material",
+    "persistentId": "df202755-2a5c-43d9-9eee-49747935ebc3",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.721569002,
+          0.423528999,
+          0.290196002,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4b.skin_interior4b.gray": {
+    "name": "bug_interior4b.skin_interior4b.gray",
+    "mapTo": "bug_interior4b.skin_interior4b.gray",
+    "class": "material",
+    "persistentId": "54a9d799-20b9-4a4d-a74c-f6f0ee3574da",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.600000024,
+          0.600000024,
+          0.600000024,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4b.skin_interior4b.green": {
+    "name": "bug_interior4b.skin_interior4b.green",
+    "mapTo": "bug_interior4b.skin_interior4b.green",
+    "class": "Material",
+    "persistentId": "891a2f82-7894-42f0-a7af-ac0dae4f8717",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.568627,
+          0.647059023,
+          0.301961005,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {
+        "baseColorFactor": null
+      },
+      {
+        "baseColorFactor": null
+      },
+      {
+        "baseColorFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4b.skin_interior4b.red": {
+    "name": "bug_interior4b.skin_interior4b.red",
+    "mapTo": "bug_interior4b.skin_interior4b.red",
+    "class": "material",
+    "persistentId": "99d2dae2-a296-4c69-a1f7-2542cda7d166",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.647,
+          0.330,
+          0.302,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4b.skin_interior4b.white": {
+    "name": "bug_interior4b.skin_interior4b.white",
+    "mapTo": "bug_interior4b.skin_interior4b.white",
+    "class": "material",
+    "persistentId": "e4681e6a-22ad-4bb0-944a-5c3c4336ca35",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.94,
+          0.92,
+          0.75,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4b.skin_interior4b.white2": {
+    "name": "bug_interior4b.skin_interior4b.white2",
+    "mapTo": "bug_interior4b.skin_interior4b.white2",
+    "class": "material",
+    "persistentId": "88c8cee6-155e-4b61-9069-3ad42918136b",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.89,
+          0.88,
+          0.83,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4b.skin_interior4b.yellow": {
+    "name": "bug_interior4b.skin_interior4b.yellow",
+    "mapTo": "bug_interior4b.skin_interior4b.yellow",
+    "class": "material",
+    "persistentId": "57dd9f33-0695-4b5f-b6b2-0f370c5927b4",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.779515982,
+          0.305882007,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4b.skin_interior4b.orange": {
+    "name": "bug_interior4b.skin_interior4b.orange",
+    "mapTo": "bug_interior4b.skin_interior4b.orange",
+    "class": "material",
+    "persistentId": "2cf4b676-e60d-4a74-af8f-4617f467013c",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.456,
+          0.216,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4b.skin_interior4b.purple": {
+    "name": "bug_interior4b.skin_interior4b.purple",
+    "mapTo": "bug_interior4b.skin_interior4b.purple",
+    "class": "material",
+    "persistentId": "c71199d5-e73a-46b0-acaf-a2d84f35aa95",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.403921992,
+          0.352941006,
+          0.513725996,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+
+  "bug_interior4b.skin_interior4b.old": {
+    "name": "bug_interior4b.skin_interior4b.old",
+    "mapTo": "bug_interior4b.skin_interior4b.old",
+    "class": "Material",
+    "persistentId": "c02d8277-d711-4dcf-a666-87631eb97775",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.670588017,
+          0.537254989,
+          0.431373,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "detailScale": null,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "opacityFactor": null,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {
+        "baseColorFactor": [
+          0.381134003,
+          0.313654006,
+          0.260066986,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_old_d.color.dds",
+        "detailScale": [
+          1,
+          1
+        ],
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_old_n.normal.dds",
+        "opacityFactor": 0.800000012,
+        "opacityMap": "/vehicles/bug/components/interior/textures/interior_seat_old_o.data.dds",
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_old_r.data.dds"
+      },
+      {
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/bug/components/common/textures/dirty_d.color.dds",
+        "detailScale": null,
+        "normalMap": "/vehicles/bug/components/common/textures/dirty_n.normal.dds",
+        "opacityFactor": 0.644999981,
+        "opacityMap": "/vehicles/bug/components/common/textures/dirty_o.data.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/dirty_r.data.dds"
+      },
+      {}
+    ],
+    "activeLayers": 3,
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+
+  "bug_interior4b.skin_interior4b.paint1": {
+    "name": "bug_interior4b.skin_interior4b.paint1",
+    "mapTo": "bug_interior4b.skin_interior4b.paint1",
+    "class": "material",
+    "persistentId": "cef4b2a3-24c3-4f4c-93e4-bd6acc7b12cb",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4b.skin_interior4b.paint2": {
+    "name": "bug_interior4b.skin_interior4b.paint2",
+    "mapTo": "bug_interior4b.skin_interior4b.paint2",
+    "class": "material",
+    "persistentId": "2f9d2162-7397-4bfe-a49e-358bb53bc16c",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4b.skin_interior4b.paint3": {
+    "name": "bug_interior4b.skin_interior4b.paint3",
+    "mapTo": "bug_interior4b.skin_interior4b.paint3",
+    "class": "material",
+    "persistentId": "62841483-6afd-4b61-9d15-26302fdd60b2",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+
+
+  // --- Leather Color 1 ---
+  "bug_interior4d": {
+    "name": "bug_interior4d",
+    "mapTo": "bug_interior4d",
+    "class": "material",
+    "persistentId": "651b59a8-c975-48ea-a363-4c9eaeea8202",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "castShadows": false,
+    "translucent": true
+  },
+  "bug_interior4d.skin_interior4.black": {
+    "name": "bug_interior4d.skin_interior4.black",
+    "mapTo": "bug_interior4d.skin_interior4.black",
+    "class": "material",
+    "persistentId": "c31e252c-e363-4c97-93f0-d97c790effaf",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.337,
+          0.337,
+          0.337,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4d.skin_interior4.blue": {
+    "name": "bug_interior4d.skin_interior4.blue",
+    "mapTo": "bug_interior4d.skin_interior4.blue",
+    "class": "Material",
+    "persistentId": "2ff469d9-fccc-402a-b1c7-77418eb436d6",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.389389008,
+          0.636765003,
+          0.827450991,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 0.600000024,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4d.skin_interior4.brown": {
+    "name": "bug_interior4d.skin_interior4.brown",
+    "mapTo": "bug_interior4d.skin_interior4.brown",
+    "class": "material",
+    "persistentId": "521f143c-65ed-4b5a-88b7-96b091e9672a",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.854902029,
+          0.615685999,
+          0.458824009,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4d.skin_interior4.brown2": {
+    "name": "bug_interior4d.skin_interior4.brown2",
+    "mapTo": "bug_interior4d.skin_interior4.brown2",
+    "class": "material",
+    "persistentId": "22653fa7-bffb-4f9f-87a6-c774175a1746",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.721569002,
+          0.423528999,
+          0.290196002,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4d.skin_interior4.gray": {
+    "name": "bug_interior4d.skin_interior4.gray",
+    "mapTo": "bug_interior4d.skin_interior4.gray",
+    "class": "material",
+    "persistentId": "f7ebd8a7-8e1b-4932-a014-1a338f247949",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.600000024,
+          0.600000024,
+          0.600000024,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4d.skin_interior4.green": {
+    "name": "bug_interior4d.skin_interior4.green",
+    "mapTo": "bug_interior4d.skin_interior4.green",
+    "class": "Material",
+    "persistentId": "e5e4603c-c0b4-4cfa-abf5-cd653e6b8722",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.56991899,
+          0.647059023,
+          0.301961005,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 0.600000024,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4d.skin_interior4.red": {
+    "name": "bug_interior4d.skin_interior4.red",
+    "mapTo": "bug_interior4d.skin_interior4.red",
+    "class": "material",
+    "persistentId": "7b9ec02c-8c28-4858-b74b-ce2bb5ba27fc",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.647,
+          0.330,
+          0.302,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4d.skin_interior4.white": {
+    "name": "bug_interior4d.skin_interior4.white",
+    "mapTo": "bug_interior4d.skin_interior4.white",
+    "class": "material",
+    "persistentId": "70728ed9-c134-4b35-ba0b-8251cd035270",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.94,
+          0.92,
+          0.75,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4d.skin_interior4.white2": {
+    "name": "bug_interior4d.skin_interior4.white2",
+    "mapTo": "bug_interior4d.skin_interior4.white2",
+    "class": "material",
+    "persistentId": "6fe796d5-76ae-4b4e-b47d-329d86dbf027",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.89,
+          0.88,
+          0.83,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4d.skin_interior4.yellow": {
+    "name": "bug_interior4d.skin_interior4.yellow",
+    "mapTo": "bug_interior4d.skin_interior4.yellow",
+    "class": "material",
+    "persistentId": "a2221b11-d678-4064-a1b8-8d16fb4ea2da",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.779515982,
+          0.305882007,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4d.skin_interior4.orange": {
+    "name": "bug_interior4d.skin_interior4.orange",
+    "mapTo": "bug_interior4d.skin_interior4.orange",
+    "class": "material",
+    "persistentId": "a2f699a8-656b-4b36-9ffe-6c23007bf098",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.456,
+          0.216,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4d.skin_interior4.purple": {
+    "name": "bug_interior4d.skin_interior4.purple",
+    "mapTo": "bug_interior4d.skin_interior4.purple",
+    "class": "material",
+    "persistentId": "067c14dd-37bf-42b4-94a3-d3bddb7218c6",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.403921992,
+          0.352941006,
+          0.513725996,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+
+  "bug_interior4d.skin_interior4.old": {
+    "name": "bug_interior4d.skin_interior4.old",
+    "mapTo": "bug_interior4d.skin_interior4.old",
+    "class": "Material",
+    "persistentId": "3891d98c-43e6-40b1-bd84-8e05df83fb50",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.670588017,
+          0.53826499,
+          0.431279987,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 0.600000024,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {
+        "baseColorFactor": [
+          0.517647028,
+          0.419993013,
+          0.341037989,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_old_d.color.dds",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_old_n.normal.dds",
+        "opacityMap": "/vehicles/bug/components/interior/textures/interior_seat_old_o.data.dds",
+        "roughnessFactor": null,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_old_r.data.dds"
+      },
+      {
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/bug/components/common/textures/dirty_d.color.dds",
+        "detailScale": null,
+        "normalMap": "/vehicles/bug/components/common/textures/dirty_n.normal.dds",
+        "opacityFactor": 0.644999981,
+        "opacityMap": "/vehicles/bug/components/common/textures/dirty_o.data.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/dirty_r.data.dds"
+      },
+      {}
+    ],
+    "activeLayers": 3,
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  
+  "bug_interior4d.skin_interior4.paint1": {
+    "name": "bug_interior4d.skin_interior4.paint1",
+    "mapTo": "bug_interior4d.skin_interior4.paint1",
+    "class": "material",
+    "persistentId": "4d0c6a4f-e42d-491b-bcc0-23a8a0828b23",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4d.skin_interior4.paint2": {
+    "name": "bug_interior4d.skin_interior4.paint2",
+    "mapTo": "bug_interior4d.skin_interior4.paint2",
+    "class": "material",
+    "persistentId": "207888f4-c9ef-44dc-a500-c1dde5307c97",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4d.skin_interior4.paint3": {
+    "name": "bug_interior4d.skin_interior4.paint3",
+    "mapTo": "bug_interior4d.skin_interior4.paint3",
+    "class": "material",
+    "persistentId": "4f190399-8132-4c91-9446-3fd9df2f95b4",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+
+
+// --- Leather Color 2 ---
+  "bug_interior4c": {
+    "name": "bug_interior4c",
+    "mapTo": "bug_interior4c",
+    "class": "material",
+    "persistentId": "6ca0ebb7-ada0-469e-aed8-ec34a452d1b1",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "castShadows": false,
+    "translucent": true
+  },
+  "bug_interior4c.skin_interior4b.black": {
+    "name": "bug_interior4c.skin_interior4b.black",
+    "mapTo": "bug_interior4c.skin_interior4b.black",
+    "class": "material",
+    "persistentId": "fe078580-9328-45d2-a3e3-b1565b491e7c",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.337,
+          0.337,
+          0.337,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4c.skin_interior4b.blue": {
+    "name": "bug_interior4c.skin_interior4b.blue",
+    "mapTo": "bug_interior4c.skin_interior4b.blue",
+    "class": "Material",
+    "persistentId": "7cde9056-0f7c-4a0a-975a-f04912f39429",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.389389008,
+          0.636765003,
+          0.827450991,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 0.600000024,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4c.skin_interior4b.brown": {
+    "name": "bug_interior4c.skin_interior4b.brown",
+    "mapTo": "bug_interior4c.skin_interior4b.brown",
+    "class": "material",
+    "persistentId": "2eba894c-f730-4d55-a1b6-9687546c348a",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.854902029,
+          0.615685999,
+          0.458824009,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4c.skin_interior4b.brown2": {
+    "name": "bug_interior4c.skin_interior4b.brown2",
+    "mapTo": "bug_interior4c.skin_interior4b.brown2",
+    "class": "material",
+    "persistentId": "06e0ea57-872d-4a5b-8e29-8b78dd4aff43",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.721569002,
+          0.423528999,
+          0.290196002,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4c.skin_interior4b.gray": {
+    "name": "bug_interior4c.skin_interior4b.gray",
+    "mapTo": "bug_interior4c.skin_interior4b.gray",
+    "class": "material",
+    "persistentId": "686d923e-ff4f-476d-b178-83aa6b074b7a",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.600000024,
+          0.600000024,
+          0.600000024,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4c.skin_interior4b.green": {
+    "name": "bug_interior4c.skin_interior4b.green",
+    "mapTo": "bug_interior4c.skin_interior4b.green",
+    "class": "Material",
+    "persistentId": "10c77456-f7ae-4b07-9815-eb8428ee8ace",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.56991899,
+          0.647059023,
+          0.301961005,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 0.600000024,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4c.skin_interior4b.red": {
+    "name": "bug_interior4c.skin_interior4b.red",
+    "mapTo": "bug_interior4c.skin_interior4b.red",
+    "class": "material",
+    "persistentId": "4076bb0b-4458-4f48-a78d-2e2023757eb8",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.647,
+          0.330,
+          0.302,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4c.skin_interior4b.white": {
+    "name": "bug_interior4c.skin_interior4b.white",
+    "mapTo": "bug_interior4c.skin_interior4b.white",
+    "class": "material",
+    "persistentId": "a33cd989-ced0-42d4-996f-cf0479b9ce53",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.94,
+          0.92,
+          0.75,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4c.skin_interior4b.white2": {
+    "name": "bug_interior4c.skin_interior4b.white2",
+    "mapTo": "bug_interior4c.skin_interior4b.white2",
+    "class": "material",
+    "persistentId": "381c780a-6ac0-45d2-9e77-c88e057ecd35",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.89,
+          0.88,
+          0.83,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4c.skin_interior4b.yellow": {
+    "name": "bug_interior4c.skin_interior4b.yellow",
+    "mapTo": "bug_interior4c.skin_interior4b.yellow",
+    "class": "material",
+    "persistentId": "a031bbcf-5c9a-43a3-ad56-c219bdeb254a",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.779515982,
+          0.305882007,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4c.skin_interior4b.orange": {
+    "name": "bug_interior4c.skin_interior4b.orange",
+    "mapTo": "bug_interior4c.skin_interior4b.orange",
+    "class": "material",
+    "persistentId": "7def55db-9a94-4304-a66e-24abfaf54e63",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.456,
+          0.216,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4c.skin_interior4b.purple": {
+    "name": "bug_interior4c.skin_interior4b.purple",
+    "mapTo": "bug_interior4c.skin_interior4b.purple",
+    "class": "material",
+    "persistentId": "54ff6d2d-0d6f-4e35-9ddc-a95cb8a45853",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.403921992,
+          0.352941006,
+          0.513725996,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  
+  "bug_interior4c.skin_interior4b.old": {
+    "name": "bug_interior4c.skin_interior4b.old",
+    "mapTo": "bug_interior4c.skin_interior4b.old",
+    "class": "Material",
+    "persistentId": "3796296d-dfd0-41bb-967f-687102a39ed2",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.670588017,
+          0.53826499,
+          0.431279987,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 0.600000024,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {
+        "baseColorFactor": [
+          0.517647028,
+          0.419993013,
+          0.341037989,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_old_d.color.dds",
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_old_n.normal.dds",
+        "opacityMap": "/vehicles/bug/components/interior/textures/interior_seat_old_o.data.dds",
+        "roughnessFactor": null,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_old_r.data.dds"
+      },
+      {
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/bug/components/common/textures/dirty_d.color.dds",
+        "detailScale": null,
+        "normalMap": "/vehicles/bug/components/common/textures/dirty_n.normal.dds",
+        "opacityFactor": 0.644999981,
+        "opacityMap": "/vehicles/bug/components/common/textures/dirty_o.data.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/dirty_r.data.dds"
+      },
+      {}
+    ],
+    "activeLayers": 3,
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  
+  "bug_interior4c.skin_interior4b.paint1": {
+    "name": "bug_interior4c.skin_interior4b.paint1",
+    "mapTo": "bug_interior4c.skin_interior4b.paint1",
+    "class": "material",
+    "persistentId": "69561747-955c-4428-b52e-b18f66a78601",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4c.skin_interior4b.paint2": {
+    "name": "bug_interior4c.skin_interior4b.paint2",
+    "mapTo": "bug_interior4c.skin_interior4b.paint2",
+    "class": "material",
+    "persistentId": "08fb10a9-c70b-4e8f-81c8-bb4291885cde",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_interior4c.skin_interior4b.paint3": {
+    "name": "bug_interior4c.skin_interior4b.paint3",
+    "mapTo": "bug_interior4c.skin_interior4b.paint3",
+    "class": "material",
+    "persistentId": "3c7d7e83-f354-4e4b-904b-1c2520e829c2",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "instanceDiffuse": true,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  }
+
+}
+
+
+
