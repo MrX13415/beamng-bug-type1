@@ -82,7 +82,7 @@
         {"collision":false},
         {"nodeWeight":3.0},
         // hinge
-        ["dh1r", -0.642601, -0.616547, 0.92798],
+        ["dh1r", -0.642601, -0.616547, 0.92798], 
         ["dh2r", -0.642799, -0.613628, 0.328229],
         //rigidifier
         ["d14r", -0.39500, -0.17000, 0.95000, {"nodeWeight":1.0}],
@@ -670,40 +670,192 @@
     ],
 },
 
+"bug_mirror_circular_L": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":"Left Circular Shaped Mirror",
+        "value":150,
+    },
+    "slotType" : "bug_mirror_L",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["door_L_mirror_circle", ["door_mirror_L"]],
+    ],
+    "mirrors": [
+        ["mesh", "idRef:", "id1:", "id2:"],
+        ["door_L_mirror_circle","mi3l","mi2l","mi1l",{"refBaseTranslation":{"x":0.055,"y":0.015,"z":-0.004},"baseRotationGlobal":{"x":-7.6,"y":0,"z":-17},"offsetRotationGlobal":{"x":0,"y":0,"z":7}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+
+        //mirror
+        {"nodeWeight":0.3},
+        {"group":"door_mirror_L"},
+        ["mi1l", 0.7535, -0.5790, 1.0732],
+        ["mi2l", 0.7531, -0.5699, 1.0000],
+        ["mi3l", 0.6565, -0.6016, 1.0360],
+        ["mi4l", 0.67, -0.60, 0.95, {"nodeWeight":0.4}],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"disableMeshBreaking":false},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        //mirror
+        {"beamSpring":301000,"beamDamp":30},
+        {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["mi1l", "mi2l"],
+        ["mi2l", "mi3l"],
+        ["mi3l", "mi1l"],
+
+        //rigidifier
+        {"deformLimitExpansion":""},
+        ["mi4l", "mi1l"],
+        ["mi4l", "mi2l"],
+        ["mi4l", "mi3l"],
+
+         //attach
+        {"beamSpring":151000,"beamDamp":30},
+        {"beamDeform":8000,"beamStrength":6000},
+        {"breakGroup":"mirror_L"},
+        ["mi1l", "dh1l"],
+        ["mi1l", "dh2l"],
+        ["mi1l", "d5l"],
+        ["mi1l", "d8l"],
+        ["mi2l", "dh1l"],
+        ["mi2l", "dh2l"],
+        ["mi2l", "d5l"],
+        ["mi2l", "d8l"],
+        ["mi3l", "dh1l"],
+        ["mi3l", "dh2l"],
+        ["mi3l", "d5l"],
+        ["mi3l", "d8l"],
+
+        ["mi4l", "dh1l"],
+        ["mi4l", "d4l"],
+        ["mi4l", "d10l"],
+        ["mi4l", "d5l"],
+        ["mi4l", "d8l"],
+
+        //dampers
+        {"beamSpring":0,"beamDamp":250},
+        ["mi1l", "d8l"],
+        ["mi1l", "d11l"],
+        ["mi2l", "d8l"],
+        ["mi2l", "d11l"],
+
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":1.2},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        //mirror
+        {"group":"door_mirror_L"},
+        ["mi1l",  "mi2l", "mi3l"],
+        {"group":""},
+        {"dragCoef":4},
+    ],
+},
 "bug_mirror_circular_R": {
     "information":{
         "authors":"53_herbie_53",
         "name":"Right Circular Shaped Mirror",
-        "value":60,
-    },
-    "slotType" : "bug_mirror_R",
-    "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_R_mirror_circle", ["bug_door_FR"]],
-    ],
-},
-"bug_mirror_teardrop_R": {
-    "information":{
-        "authors":"53_herbie_53",
-        "name":"Right Teardrop Shaped Mirror",
         "value":150,
     },
     "slotType" : "bug_mirror_R",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_R_mirror_teardrop", ["bug_door_FR"]],
+         ["door_R_mirror_circle", ["door_mirror_R"]],
     ],
-},
-"bug_mirror_circular_L": {
-    "information":{
-        "authors":"53_herbie_53",
-        "name":"Left Circular Shaped Mirror",
-        "value":60,
-    },
-    "slotType" : "bug_mirror_L",
-    "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_L_mirror_circle.001", ["bug_door_FL"]],
+    "mirrors": [
+        ["mesh", "idRef:", "id1:", "id2:"],
+        ["door_R_mirror_circle","mi3r","mi2r","mi1r",{"refBaseTranslation":{"x":-0.055,"y":0.015,"z":-0.004},"baseRotationGlobal":{"x":-7.6,"y":0,"z":17},"offsetRotationGlobal":{"x":0,"y":0,"z":20}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+
+        //mirror
+        {"nodeWeight":0.3},
+        {"group":"door_mirror_R"},
+        ["mi1r", -0.7535, -0.5093, 1.0732],  // y = L + 0.069772
+        ["mi2r", -0.7531, -0.5001, 1.0000],
+        ["mi3r", -0.6565, -0.5318, 1.0360],
+        ["mi4r", -0.67, -0.60, 0.95, {"nodeWeight":0.4}],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"disableMeshBreaking":false},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        //mirror
+        {"beamSpring":301000,"beamDamp":30},
+        {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["mi1r", "mi2r"],
+        ["mi2r", "mi3r"],
+        ["mi3r", "mi1r"],
+
+        //rigidifier
+        {"deformLimitExpansion":""},
+        ["mi4r", "mi1r"],
+        ["mi4r", "mi2r"],
+        ["mi4r", "mi3r"],
+
+         //attach
+        {"beamSpring":151000,"beamDamp":30},
+        {"beamDeform":8000,"beamStrength":6000},
+        {"breakGroup":"mirror_R"},
+        ["mi1r", "dh1r"],
+        ["mi1r", "dh2r"],
+        ["mi1r", "d5r"],
+        ["mi1r", "d8r"],
+        ["mi2r", "dh1r"],
+        ["mi2r", "dh2r"],
+        ["mi2r", "d5r"],
+        ["mi2r", "d8r"],
+        ["mi3r", "dh1r"],
+        ["mi3r", "dh2r"],
+        ["mi3r", "d5r"],
+        ["mi3r", "d8r"],
+
+        ["mi4r", "dh1r"],
+        ["mi4r", "d4r"],
+        ["mi4r", "d10r"],
+        ["mi4r", "d5r"],
+        ["mi4r", "d8r"],
+
+        //dampers
+        {"beamSpring":0,"beamDamp":250},
+        ["mi1r", "d8r"],
+        ["mi1r", "d11r"],
+        ["mi2r", "d8r"],
+        ["mi2r", "d11r"],
+
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":1.2},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        //mirror
+        {"group":"door_mirror_R"},
+        ["mi1r",  "mi2r", "mi3r"],
+        {"group":""},
+        {"dragCoef":4},
     ],
 },
 "bug_mirror_teardrop_L": {
@@ -715,7 +867,183 @@
     "slotType" : "bug_mirror_L",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_L_mirror_teardrop.001", ["bug_door_FL"]],
+         ["door_L_mirror_teardrop", ["door_mirror_L"]],
+    ],
+    "mirrors": [
+        ["mesh", "idRef:", "id1:", "id2:"],
+        ["door_L_mirror_teardrop","mi3l","mi2l","mi1l",{"refBaseTranslation":{"x":0.063,"y":0.015,"z":-0.004},"baseRotationGlobal":{"x":-7.6,"y":0,"z":-17},"offsetRotationGlobal":{"x":0,"y":0,"z":7}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+
+        //mirror
+        {"nodeWeight":0.3},
+        {"group":"door_mirror_L"},
+        ["mi1l", 0.7535, -0.5790, 1.0732],
+        ["mi2l", 0.7531, -0.5699, 1.0000],
+        ["mi3l", 0.6565, -0.6016, 1.0360],
+        ["mi4l", 0.67, -0.60, 0.95, {"nodeWeight":0.4}],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"disableMeshBreaking":false},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        //mirror
+        {"beamSpring":301000,"beamDamp":30},
+        {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["mi1l", "mi2l"],
+        ["mi2l", "mi3l"],
+        ["mi3l", "mi1l"],
+
+        //rigidifier
+        {"deformLimitExpansion":""},
+        ["mi4l", "mi1l"],
+        ["mi4l", "mi2l"],
+        ["mi4l", "mi3l"],
+
+         //attach
+        {"beamSpring":151000,"beamDamp":30},
+        {"beamDeform":8000,"beamStrength":6000},
+        {"breakGroup":"mirror_L"},
+        ["mi1l", "dh1l"],
+        ["mi1l", "dh2l"],
+        ["mi1l", "d5l"],
+        ["mi1l", "d8l"],
+        ["mi2l", "dh1l"],
+        ["mi2l", "dh2l"],
+        ["mi2l", "d5l"],
+        ["mi2l", "d8l"],
+        ["mi3l", "dh1l"],
+        ["mi3l", "dh2l"],
+        ["mi3l", "d5l"],
+        ["mi3l", "d8l"],
+
+        ["mi4l", "dh1l"],
+        ["mi4l", "d4l"],
+        ["mi4l", "d10l"],
+        ["mi4l", "d5l"],
+        ["mi4l", "d8l"],
+
+        //dampers
+        {"beamSpring":0,"beamDamp":250},
+        ["mi1l", "d8l"],
+        ["mi1l", "d11l"],
+        ["mi2l", "d8l"],
+        ["mi2l", "d11l"],
+
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":1.2},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        //mirror
+        {"group":"door_mirror_L"},
+        ["mi1l",  "mi2l", "mi3l"],
+        {"group":""},
+        {"dragCoef":4},
+    ],
+},
+"bug_mirror_teardrop_R": {
+    "information":{
+        "authors":"53_herbie_53",
+        "name":"Right Teardrop Shaped Mirror",
+        "value":150,
+    },
+    "slotType" : "bug_mirror_R",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["door_R_mirror_teardrop", ["door_mirror_R"]],
+    ],
+    "mirrors": [
+        ["mesh", "idRef:", "id1:", "id2:"],
+        ["door_R_mirror_teardrop","mi3r","mi2r","mi1r",{"refBaseTranslation":{"x":-0.063,"y":0.015,"z":-0.004},"baseRotationGlobal":{"x":-7.6,"y":0,"z":17},"offsetRotationGlobal":{"x":0,"y":0,"z":20}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+
+        //mirror
+        {"nodeWeight":0.3},
+        {"group":"door_mirror_R"},
+        ["mi1r", -0.7535, -0.5093, 1.0732],  // y = L + 0.069772
+        ["mi2r", -0.7531, -0.5001, 1.0000],
+        ["mi3r", -0.6565, -0.5318, 1.0360],
+        ["mi4r", -0.67, -0.60, 0.95, {"nodeWeight":0.4}],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"disableMeshBreaking":false},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        //mirror
+        {"beamSpring":301000,"beamDamp":30},
+        {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["mi1r", "mi2r"],
+        ["mi2r", "mi3r"],
+        ["mi3r", "mi1r"],
+
+        //rigidifier
+        {"deformLimitExpansion":""},
+        ["mi4r", "mi1r"],
+        ["mi4r", "mi2r"],
+        ["mi4r", "mi3r"],
+
+         //attach
+        {"beamSpring":151000,"beamDamp":30},
+        {"beamDeform":8000,"beamStrength":6000},
+        {"breakGroup":"mirror_R"},
+        ["mi1r", "dh1r"],
+        ["mi1r", "dh2r"],
+        ["mi1r", "d5r"],
+        ["mi1r", "d8r"],
+        ["mi2r", "dh1r"],
+        ["mi2r", "dh2r"],
+        ["mi2r", "d5r"],
+        ["mi2r", "d8r"],
+        ["mi3r", "dh1r"],
+        ["mi3r", "dh2r"],
+        ["mi3r", "d5r"],
+        ["mi3r", "d8r"],
+
+        ["mi4r", "dh1r"],
+        ["mi4r", "d4r"],
+        ["mi4r", "d10r"],
+        ["mi4r", "d5r"],
+        ["mi4r", "d8r"],
+
+        //dampers
+        {"beamSpring":0,"beamDamp":250},
+        ["mi1r", "d8r"],
+        ["mi1r", "d11r"],
+        ["mi2r", "d8r"],
+        ["mi2r", "d11r"],
+
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":1.2},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        //mirror
+        {"group":"door_mirror_R"},
+        ["mi1r",  "mi2r", "mi3r"],
+        {"group":""},
+        {"dragCoef":4},
     ],
 },
 

@@ -18,13 +18,13 @@
         ["bug_dashboard", "bug_dashboard", "Dashboard"],
 
         ["bug_sunvisor", "bug_sunvisors", "Sunvisors"],
+        ["bug_interior_mirror", "bug_interior_mirror", "Mirror"],
         ["bug_interior_handles", "bug_interior_handles", "Pillar Grab Straps"],
         ["bug_seats", "bug_seats", "Seats"],
 
         ["bug_rollbar","", "Rollbar"],
         ["bug_window_decals", "", "Window Decals"],
 
-        ["bug_decoration1","", "Mirror Decoration"],
         ["bug_decoration2","", "Luggage"]
     ],
     "camerasInternal":[
@@ -44,14 +44,121 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         // roof
-        ["int_mirror",         ["bug_body"]],
         ["sunvisor_mount",     ["bug_body"]],
+    ],
+},
 
-       //["int_sidewall_F",     ["bug_body"]],
-		//["int_sidewall_L",     ["bug_body"]],
-		//["int_sidewall_R",     ["bug_body"]],
-       //["panel_B",            ["bug_body"]],
-		//["int_sidewall_B",     ["bug_body"]],
+"bug_interior_mirror": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Mirror",
+        "value":150,
+    },
+    "slotType" : "bug_interior_mirror",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_decoration1","", "Decoration"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["int_mirror", ["int_mirror_M"]],
+    ],
+    "mirrors": [
+        ["mesh", "idRef:", "id1:", "id2:"],
+        ["int_mirror","mi2mr","mi2ml","mi1mr",{"refBaseTranslation":{"x":0.063,"y":0.0,"z":0.024},"baseRotationGlobal":{"x":2.9,"y":0,"z":14.3},"offsetRotationGlobal":{"x":-0.9,"y":0,"z":2.5}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+
+        //mirror
+        {"nodeWeight":0.25},
+        {"group":"int_mirror_M"},
+        ["mi1ml",  0.0712, -0.3704, 1.2750],
+        ["mi1mr", -0.0551, -0.3396, 1.2750],
+        ["mi2ml",  0.0704, -0.3728, 1.2260],
+        ["mi2mr", -0.0557, -0.3411, 1.2256],
+        ["mi6m", 0.006, -0.34, 1.38],
+        {"group":""},
+        ["mi5m", 0.00, -0.38, 1.25, {"group":""}],
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"disableMeshBreaking":false},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        //mirror
+        {"beamSpring":301000,"beamDamp":30},
+        {"beamDeform":12000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        ["mi1ml", "mi1mr"],
+        ["mi2ml", "mi2mr"],        
+        ["mi1ml", "mi2ml"],
+        ["mi1mr", "mi2mr"],
+
+        //rigidifier
+        {"deformLimitExpansion":""},
+        ["mi5m", "mi1ml"],
+        ["mi5m", "mi1mr"],
+        ["mi5m", "mi2ml"],
+        ["mi5m", "mi2mr"],
+        ["mi5m", "mi6m"],
+        ["mi6m", "mi1ml"],
+        ["mi6m", "mi1mr"],
+        ["mi6m", "mi2ml"],
+        ["mi6m", "mi2mr"],
+
+         //attach
+        {"beamSpring":301000,"beamDamp":30},
+        {"beamDeform":8000,"beamStrength":6000},
+        {"breakGroup":"mirror_M"},
+        ["mi1ml", "brf1l"],
+        ["mi1ml", "brf1r"],
+        ["mi1mr", "brf1l"],
+        ["mi1mr", "brf1r"],
+        ["mi1ml", "brf2l"],
+        ["mi1ml", "brf2r"],
+        ["mi1mr", "brf2l"],
+        ["mi1mr", "brf2r"],
+        ["mi2ml", "brf1l"],
+        ["mi2ml", "brf1r"],
+        ["mi2mr", "brf1l"],
+        ["mi2mr", "brf1r"],
+        ["mi2ml", "brf2l"],
+        ["mi2ml", "brf2r"],
+        ["mi2mr", "brf2l"],
+        ["mi2mr", "brf2r"],
+        
+        ["mi6m", "brf1l"],
+        ["mi6m", "brf1r"],
+        ["mi6m", "brf2l"],
+        ["mi6m", "brf2r"],
+
+        //dampers
+        {"beamSpring":0,"beamDamp":250},
+        ["mi2ml", "brf3l"],
+        ["mi2ml", "brf3r"],
+        ["mi2mr", "brf3l"],
+        ["mi2mr", "brf3r"],
+        
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":1.2},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        //mirror
+        {"group":"int_mirror_M"},
+        ["mi2ml",  "mi2mr", "mi1ml"],
+        ["mi1ml",  "mi2mr", "mi1mr"],
+        {"group":""},
+        {"dragCoef":4},
     ],
 },
 
