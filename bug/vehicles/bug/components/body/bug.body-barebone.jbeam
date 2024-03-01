@@ -14,7 +14,7 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["brake",        "inputs_pedals_brake",     "f4m","f4l","f4tm",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["brake",        "inputs_pedals_brake",     "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
 },
 
@@ -80,15 +80,16 @@
     "slots": [
         ["type", "default", "description"],
 
-        ["bug_shifter", "bug_shifter_M", "Shifter"],
+        ["bug_shifter", "bug_shifter_4M", "Shifter"],
         ["skin_speedometer", "bug_speedo_km_140", "Speedometer", {"coreSlot":true}],
+        ["skin_interior_theme", "bug_inputs_white", "Controls"],
                 
         ["bug_ignition_key_barebone", "bug_ignition_key_barebone", "Ignition Key", {"coreSlot":true, "nodeMove": {"x":0.102671,"y":0.006238,"z":0.034791}}],
     ],
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
 
-        ["parkingbreak",  "",         "f4m","f4l","f4tm", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.006, "y":0.202, "z":-0.16}]
+        ["parkingbreak",  "",         "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.202, "z":-0.16}]
     ],
     "triggerEventLinks":[
         ["triggerId:triggers", "action", "targetEventId:events"],        
@@ -134,34 +135,28 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["turnsignal",   "indicatorlever",    "f4m","f4l","f4tm",   {"x":-63, "y":0, "z":0},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
-        ["parkingbrake", "controls_handbreak",  "f4m","f4l","f4tm",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["turnsignal",   "indicatorlever",    "f4mr","f4ml","refup",   {"x":-63, "y":0, "z":0},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["parkingbrake", "controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
-        //dash anti-deform nodes
-
         {"collision":true},
-        {"selfCollision":true},
-
+        {"selfCollision":false},
+        
         {"nodeWeight":1.3},
-        {"group":["bug_body_dashboard"]},
-        // dashboard
-        ["bd0", 0.265, -0.75,  0.94],
-
-        ["bd1",  0.00000, -0.56437,  1.03, {"nodeWeight":2.0}],
-        ["bd1l",  0.50000, -0.56437,  1.03],
-
         {"group": "bug_dashboard"},
 
+        // dashboard
+        ["bd0",  0.265, -0.750,  0.940, {"collision":false}],
+
+        ["bd1",  0.200, -0.555,  1.030, {"nodeWeight":2.0}],
+        ["bd1l", 0.320, -0.560,  1.030],
+        
         //dash nodes
         {"nodeWeight": 1.1},
-        ["dshl", 0.50000, -0.57000, 0.83000],
-        ["dsh", 0.00000, -0.57000, 0.83000, {"nodeWeight": 2.0}],
-        ["dsh2", 0.00000, -0.57000, 0.40000],
-
-        // speaker node
+        ["dshl", 0.400, -0.552, 0.830],
+        ["dsh",  0.120, -0.545, 0.830, {"nodeWeight": 2.0}],
+        ["dsh2", 0.000, -0.570, 0.400, {"collision":false}],
         {"group": ""},
-        ["speaker", 0.395000, -0.59000, 0.93800],
     ],
     "beams": [
         ["id1:", "id2:"],
@@ -214,16 +209,6 @@
         {"beamStrength":"FLT_MAX", "breakGroup": ""},
         {"deformGroup":""},
 
-        // speaker <> frame
-        ["speaker", "f3tm", {"beamStrength":50000, "breakGroup": "body"}],
-        ["speaker", "f2l", {"beamStrength":50000, "breakGroup": "body"}],
-        ["speaker", "f4l", {"beamStrength":50000, "breakGroup": "body"}],
-
-        // speaker <> body
-        ["speaker", "dshl"],
-        ["speaker", "dsh"],
-        ["speaker", "dsh2"],
-
         {"deformLimitExpansion":1.1},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
 
@@ -265,7 +250,7 @@
     ],
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["ignition",  "",            "dsh","dshl","dsh2", "box", {"x":0.02, "y":0.02, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.1642, "y":-0.0737, "z":-0.033}],
+        ["ignition",  "",            "dsh","dshl","dsh2", "box", {"x":0.02, "y":0.02, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.023, "y":-0.077, "z":-0.025}],
     ],
     "triggerEventLinks":[
         ["triggerId:triggers", "action", "targetEventId:events"],        
@@ -282,11 +267,11 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["dashboard_key_frame", ["bug_dashboard"], [], {"pos":{"x":0.113027,"y":0.047837,"z":0.063676}, "rot":{"x":3, "y":0, "z":-1}}],
+        ["dashboard_key_frame", ["bug_dashboard"], [], {"pos":{"x":0.01,"y":0.0456,"z":0.0288}, "rot":{"x":3, "y":0, "z":-1}}],
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
-        ["ignitionLevel",  "ignition_key",  "dsh","dshl","bd1",  {"x":1, "y":-90, "z":5},  {"x":0, "y":-45, "z":0},  {"x":0, "y":0, "z":0},  0,  3,  0,  1, {"baseTranslation":{"x":0.1741,"y":0.0643,"z":0.0281}}],
+        ["ignitionLevel",  "ignition_key",  "dsh","dshl","bd1",  {"x":0, "y":-90, "z":0.5},  {"x":0, "y":-45, "z":0},  {"x":0, "y":0, "z":0},  0,  3,  0,  1, {"baseTranslation":{"x":0.0285,"y":0.0680,"z":0.0088}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

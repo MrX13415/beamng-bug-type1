@@ -81,12 +81,12 @@
         {"frictionCoef":0.3},
         {"group":"bug_trunk"},
         {"collision":true},
-        {"nodeWeight":0.5},
         {"selfCollision":true},
+        {"nodeWeight":0.6},
         ["t1ll",  0.49788, 1.50000, 0.83011],
-        ["t1l",   0.30788, 1.57000, 0.94011],
+        ["t1l",   0.30788, 1.57000, 0.94011, {"nodeWeight":0.7}],
         ["t1",    0.00000, 1.59000, 0.99000],
-        ["t1r",  -0.30788, 1.57000, 0.94011],
+        ["t1r",  -0.30788, 1.57000, 0.94011, {"nodeWeight":0.7}],
         ["t1rr", -0.49788, 1.50000, 0.83011],
         ["t2ll",  0.40444, 1.69248, 0.61994],
         ["t2l",   0.18444, 1.73248, 0.76011, {"nodeWeight":0.7}],
@@ -104,7 +104,7 @@
         {"collision":true},
         {"group":""},
         {"selfCollision":false},
-        {"nodeWeight":0.8}
+        {"nodeWeight":0.8},
         ["th1l",  0.20446, 1.5693, 0.90135],
         ["th1r", -0.20446, 1.5693, 0.90135],
 
@@ -118,7 +118,7 @@
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         //--TRUNK--
         {"beamSpring":501000,"beamDamp":80},
-        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":2500,"beamStrength":"FLT_MAX"},
         //trunk main shape length
         ["t1ll", "t2ll"],
         ["t1l", "t2l"],
@@ -146,7 +146,7 @@
         ["t2r", "t2rr"],
         ["t3l", "t3"],
         ["t3", "t3r"],
-        {"beamDeform":5000},
+        {"beamDeform":3000},
         //cross
         ["t1l", "t2"],
         ["t1", "t2l"],
@@ -289,11 +289,13 @@
 
         //trunk support beams
         {"beamType":"|SUPPORT", "beamLongBound":8},
-        {"beamSpring":601000,"beamDamp":125},
-        {"beamDeform":8050,"beamStrength":5000},
+        {"beamSpring":1001000,"beamDamp":500},
+        {"beamDeform":18050,"beamStrength":5000},
         {"beamPrecompression":1.0},
         ["t1ll", "bq8l"],
+        ["t1ll", "bq12l"],
         ["t1rr", "bq8r"],
+        ["t1rr", "bq12r"],
         ["t3l", "br5ll"],
         ["t3r", "br5rr"],
         //["t4", "br6"],

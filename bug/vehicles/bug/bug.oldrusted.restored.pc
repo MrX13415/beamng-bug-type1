@@ -116,7 +116,7 @@
     "bug_interior_handles":"bug_interior_handles",
     "bug_interiorlight":"bug_interiorlight",
     "bug_jerrycan_cage":"",
-    "bug_lettering":"",
+    "bug_lettering":"bug_lettering_vw1200",
     "bug_licenseplate_F2":"bug_licenseplate_F2_US",
     "bug_licenseplate_R":"bug_licenseplate_R",
     "bug_logo":"bug_logo",

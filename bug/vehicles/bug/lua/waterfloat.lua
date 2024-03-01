@@ -74,7 +74,7 @@ local function updateThrusters()
       local w = obj:inWater(t.id)
       inWater = w and 1.0 or inWater
 
-      local f = t.factor * factorMod * engine.engineLoad
+      local f = t.factor * factorMod
       f = f * inWater * running
       thruster.factor = f
       

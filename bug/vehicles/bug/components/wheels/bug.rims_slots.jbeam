@@ -162,7 +162,7 @@
         ["type", "default", "description"],
 		["hubcap_F","hubcap_smoothie_F", "Hubcaps"],
         ["tire_F_14x5.5","tire_F_175_65_14_standard", "Tires", {"nodeOffset":{"x":0.176,"y":-1.20559,"z":0.33198}}],
-        ["skin_rim1_F","bug_rim1_F_paint1", "Outer Color", {"coreSlot":true}]
+        ["skin_rim1_F","bug_rim1_F_paint1", "Outer Color", {"coreSlot":true}],
         ["skin_rim2_F","bug_rim2_F_paint1", "inner Color", {"coreSlot":true}],
     ],
     "flexbodies": [

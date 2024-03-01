@@ -73,7 +73,7 @@
 		["bug_roof_rack", "", "Roof Rack"],
 	],
     "sounds": {
-        "$+cabinFilterCoef": 0.02
+        "$+cabinFilterCoef": 0.05
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -122,7 +122,7 @@
 		["skin_ragtop", "bug_skin_ragtop_white", "Color", {"coreSlot":true}]
 	],
     "sounds": {
-        "$+cabinFilterCoef": 0.08
+        "$+cabinFilterCoef": 0.1
     },
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -297,7 +297,7 @@
         {"deformLimitExpansion":1.1},
 
         {"beamSpring":20100,"beamDamp":100},
-        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":5000,"beamStrength":"FLT_MAX"},
 
         // fabric
         ["rtf1l", "rtf1"],
@@ -346,7 +346,7 @@
 
         {"beamPrecompression":1.0},
         {"beamSpring":401000,"beamDamp":140},
-        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
 
         {"highlight":{"radius":0.002, "col":"#888888ff" }},
 
@@ -381,7 +381,7 @@
         ["rtf4", "rtb3r"],
 
         {"beamSpring":401000,"beamDamp":140},
-        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
 
         {"highlight":{"radius":0.002, "col":"#0088ffff" }},
 
@@ -459,7 +459,7 @@
 
         // rear mount <> body (should not break from the body)
         {"beamSpring":401000,"beamDamp":75},
-        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":5000,"beamStrength":"FLT_MAX"},
         ["rtc1l", "brf5ll"],
         ["rtc1", "brf5"],
         ["rtc1r", "brf5rr"],
@@ -511,10 +511,10 @@
 
         {"highlight":{"radius":0.002, "col":"#ffff00ff" }},
 
-        //rear bumper support beams
+        // support beams
         {"beamType":"|SUPPORT", "beamLongBound":4},
         {"beamSpring":200,"beamDamp":100},
-        {"beamDeform":14000,"beamStrength":3000},
+        {"beamDeform":8000,"beamStrength":3000},
         {"beamPrecompression":1.4},
 
         // to front

@@ -130,9 +130,9 @@
     },
     "soundConfig": {
         "sampleName": "I4D_engine",
-        "intakeMuffling": 0.5,
+        "intakeMuffling": 0.3,
 
-        "mainGain": -10,
+        "mainGain": -11,
         "onLoadGain":1.0,
         "offLoadGain":0.67,
 
@@ -154,34 +154,34 @@
         "eqHighWidth": 0.3,
 
         "fundamentalFrequencyCylinderCount":4,
-        "eqFundamentalGain":-4,
+        "eqFundamentalGain": -1,
     },
     "soundConfigExhaust": {
         "sampleName": "B4_2_exhaust",
 
-        "mainGain": 1,
+        "mainGain":1,
         "onLoadGain":1.0,
         "offLoadGain":0.7,
 
-        "maxLoadMix": 0.6,
-        "minLoadMix": 0,
+        "maxLoadMix": 0.75,
+        "minLoadMix": 0.0,
 
-        "lowShelfGain":-10,
+        "lowShelfGain":-1,
         "lowShelfFreq":140,
 
-        "highShelfGain":-30,
-        "highShelfFreq":15000,
+        "highShelfGain":-5,
+        "highShelfFreq":8500,
 
-        "eqLowGain": 0,
-        "eqLowFreq": 450,
+        "eqLowGain": 2,
+        "eqLowFreq": 350,
         "eqLowWidth": 0.1,
 
-        "eqHighGain": 20,
+        "eqHighGain": 5,
         "eqHighFreq": 8000,
         "eqHighWidth": 0.05,
 
         "fundamentalFrequencyCylinderCount":4,
-        "eqFundamentalGain": -2,
+        "eqFundamentalGain": 0,
     },
     "vehicleController": {
         "clutchLaunchStartRPM":1600,
@@ -223,7 +223,7 @@
         ["func"      , "mesh"                        , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
 
         // pedal
-        ["throttle", "inputs_pedals_throttle",         "f4m","f4l","f4tm",       {"x":25, "y":0, "z":0}, {"x":20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 	0, 1, 0, 1],
+        ["throttle", "inputs_pedals_throttle",         "f4mr","f4ml","refup",       {"x":25, "y":0, "z":0}, {"x":20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 	0, 1, 0, 1],
 
         // engine 
         ["rpmspin",  "engine_alternator_belt_pulley",  "e2r","e2l","e4r",        {"x":0, "y":0, "z":0},  {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1],

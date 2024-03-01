@@ -11,7 +11,7 @@
         ["type", "default", "description"],
 
         ["bug_converter","bug_torque_converter","Torque Converter", {"coreSlot":true}],
-        ["bug_differential_R","bug_differential_R", "Rear Differential"{"coreSlot":true}],
+        ["bug_differential_R","bug_differential_R", "Rear Differential", {"coreSlot":true}],
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -117,7 +117,7 @@
         ["type", "default","description"],
 
         ["bug_flywheel","bug_flywheel","Flywheel", {"coreSlot":true}],
-        ["bug_differential_R","bug_differential_R", "Rear Differential"{"coreSlot":true}],
+        ["bug_differential_R","bug_differential_R", "Rear Differential", {"coreSlot":true}],
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -149,7 +149,7 @@
     "props": [
         ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         //pedal
-        ["clutch",       "inputs_pedals_clutch",    "f4m","f4l","f4tm",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["clutch",       "inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -224,7 +224,7 @@
         ["type", "default","description"],
 
         ["bug_flywheel","bug_flywheel","Flywheel", {"coreSlot":true}],
-        ["bug_differential_R","bug_differential_R", "Rear Differential"{"coreSlot":true}],
+        ["bug_differential_R","bug_differential_R", "Rear Differential", {"coreSlot":true}],
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -256,7 +256,7 @@
     "props": [
         ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         //pedal
-        ["clutch",       "inputs_pedals_clutch",    "f4m","f4l","f4tm",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["clutch",       "inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -331,7 +331,7 @@
         ["type", "default","description"],
 
         ["bug_flywheel","bug_flywheel","Flywheel", {"coreSlot":true}],
-        ["bug_differential_R","bug_differential_R", "Rear Differential"{"coreSlot":true}],
+        ["bug_differential_R","bug_differential_R", "Rear Differential", {"coreSlot":true}],
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -363,7 +363,7 @@
     "props": [
         ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         //pedal
-        ["clutch",       "inputs_pedals_clutch",    "f4m","f4l","f4tm",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["clutch",       "inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -434,9 +434,9 @@
     },
     "slotType" : "bug_transaxle",
     "slots": [
-        ["type", "default","description"]
+        ["type", "default","description"],
         ["bug_flywheel","bug_flywheel_race","Flywheel", {"coreSlot":true}],
-        ["bug_differential_R","bug_differential_R", "Rear Differential"{"coreSlot":true}],
+        ["bug_differential_R","bug_differential_R", "Rear Differential", {"coreSlot":true}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -476,12 +476,13 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["transmission", ["transaxle"]],
+        ["transaxle", ["transaxle"]],
+        ["transaxle_starter_motor", ["transaxle"]],
     ],
     "props": [
         ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         //pedal
-        ["clutch",       "inputs_pedals_clutch",    "f4m","f4l","f4tm",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["clutch",       "inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

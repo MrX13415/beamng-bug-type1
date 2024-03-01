@@ -112,7 +112,7 @@
         {"disableMeshBreaking":true},
         {"beamPrecompression":1, "beamType":"|NORMAL","beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":501000,"beamDamp":110},
-        {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":3000,"beamStrength":"FLT_MAX"},
         //front door main shape
         ["dh2r","d2r"],
         ["d2r","d3r"],
@@ -222,9 +222,9 @@
         {"beamDeform":77280,"beamStrength":448560},
         {"beamSpring":0,"beamDamp":42.77},
         {"breakGroup":"door_FR_hinge_b"},
-        ["d3r","f5m"],
+        ["d3r","f5mr"],
         {"breakGroup":"door_FR_hinge_a"},
-        ["d9r","f5m"],
+        ["d9r","f5mr"],
         {"breakGroup":""},
 
         // support beams
@@ -429,7 +429,7 @@
         {"disableMeshBreaking":true},
         {"beamPrecompression":1, "beamType":"|NORMAL","beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":501000,"beamDamp":110},
-        {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":3000,"beamStrength":"FLT_MAX"},
         //front door main shape
         ["dh2l","d2l"],
         ["d2l","d3l"],
@@ -539,9 +539,9 @@
         {"beamDeform":77280,"beamStrength":448560},
         {"beamSpring":0,"beamDamp":42.77},
         {"breakGroup":"door_FL_hinge_b"},
-        ["d3l","f5m"],
+        ["d3l","f5ml"],
         {"breakGroup":"door_FL_hinge_a"},
-        ["d9l","f5m"],
+        ["d9l","f5ml"],
         {"breakGroup":""},
 
         // support beams

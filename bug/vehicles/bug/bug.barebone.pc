@@ -104,6 +104,7 @@
     "skin_interior1":"bug_skin_interior1_gray",
     "skin_interior4":"bug_skin_interior4_red",
     "skin_interior4b":"bug_skin_interior4b_red",
+    "skin_interior_theme":"bug_inputs_paint2",
     "skin_steer":"bug_steer_paint2",
     "soundscape":"",
     "soundscape_horn":"soundscape_horn_2",

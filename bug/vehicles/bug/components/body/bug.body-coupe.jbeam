@@ -50,8 +50,12 @@
 
         ["bug_interior", "bug_interior", "Interior"],
     ],
+    "refNodes":[
+        ["ref:", "back:", "left:", "up:", "leftCorner:", "rightCorner:"],
+        ["f4mr", "f5mr", "f4ml", "refup", "bf1l", "bf1r"],
+    ],
     "sounds": {
-        "$+cabinFilterCoef": 0.1
+        "$+cabinFilterCoef": 0.2
     },
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -59,7 +63,7 @@
         ["wipers",    "wiper_L",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
         ["wipers",    "wiper_R",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
 
-        ["brake",        "inputs_pedals_brake",     "f4m","f4l","f4tm",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["brake",        "inputs_pedals_brake",     "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
    "flexbodies": [
         // new mesh
@@ -75,7 +79,6 @@
         ["body_engine_panel_bottom",       ["bug_body", "bug_body_rear"]],
         ["body_engine_panel_top",          ["bug_body", "bug_body_rear"]],
         ["body_engine_vents_back",         ["bug_body", "bug_body_rear"]],
-        ["body_engine_vents",              ["bug_body", "bug_body_rear"]],
         ["body_firewall",                  ["bug_body", "bug_body_cowl"]],
 
         ["body_front",                     ["bug_body", "bug_body_front"]],
@@ -91,7 +94,7 @@
         ["body_heatpipe_R",                ["bug_body", "bug_body_interior"]],
 
         ["body_rear",                      ["bug_body", "bug_body_rear"]],
-        ["body_rear_frame",                ["bug_body", "bug_body_rear"]],
+        ["trunk_latch",                    ["bug_body", "bug_body_rear"]],
         ["trunk_mounts",                   ["bug_body", "bug_body_rear"]],
 
         ["hood_parts",                     ["bug_body"]],
@@ -122,7 +125,7 @@
         ["bc5l",   0.58949, -0.60467,  0.98144],
 
         {"nodeWeight":1.3},
-        {"group":["bug_body","bug_body_dashboard","gps"]},
+        {"group":["bug_body","bug_dashboard","gps"]},
         // dashboard
         ["bd1r", -0.26598, -0.57707,  1.05118],
         ["bd1l",  0.26598, -0.57707,  1.05118],
@@ -355,8 +358,8 @@
         ["q14r", "bq9r", "bq10r", "f6r"],
         ["q14l", "bq9l", "bq10l", "f6l"],
         {"spring":50000, "damp":1, "deform":420000, "strength":100000},
-        ["q14r", "bq9r", "bq5r", "f5m"],
-        ["q14l", "bq9l", "bq5l", "f5m"],
+        ["q14r", "bq9r", "bq5r", "f5mr"],
+        ["q14l", "bq9l", "bq5l", "f5ml"],
 
     ],
     "beams": [
@@ -785,7 +788,9 @@
         ["brf7", "brf7r"],
         ["brf7r", "brf7rr"],
         ["brf7l", "brf7ll"],
+
         // roof: rigidify
+        {"beamDeform":2000},
         ["brf1", "bi1"],
         ["brf1r", "bi1"],
         ["brf1l", "bi1"],
@@ -832,6 +837,7 @@
         ["brf7rr", "bi1"],
         ["brf7ll", "bi1"],
 
+        {"beamDeform":3000},
 
         // roof <> sides
         ["brf4rrr", "bq13r"],
@@ -872,7 +878,7 @@
 
 
         {"beamSpring":701000,"beamDamp":75},
-        {"beamDeform":3000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":4000,"beamStrength":"FLT_MAX"},
 
         // interior
         ["bi2", "bi2l"],
@@ -1643,14 +1649,7 @@
         ["f6tml", "bi2", "bi2l"],
         //-
         ["f6r", "bq4r", "f6tmr"],
-        ["f6mr", "f6r", "f6tmr"],
         ["bq4l", "f6l", "f6tml"],
-        ["f6l", "f6ml", "f6tml"],
-        ["f5m", "f6mr", "f6tmr"],
-        ["f5m", "f6tmr", "f5tm"],
-        ["f6tml", "f5tm", "f6tmr"],
-        ["f6ml", "f5m", "f6tml"],
-        ["f6tml", "f5m", "f5tm"],
         {"group":""}
     ],
 },

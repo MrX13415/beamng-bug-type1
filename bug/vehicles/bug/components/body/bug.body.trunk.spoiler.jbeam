@@ -14,12 +14,12 @@
     "nodes": [
          ["id", "posX", "posY", "posZ"],
          //--SPOILER--
-         {"nodeWeight":0.3},
          {"frictionCoef":0.5},
          {"nodeMaterial":"|NM_PLASTIC"},
          {"group":"bug_spoilerR"},
          {"collision":true},
          {"selfCollision":true},
+         {"nodeWeight":0.4},
          ["sp1rr",-0.63, 1.58, 0.95],
          ["sp1r", 0.0, 1.62, 0.95],
          ["sp1rl", 0.63, 1.58, 0.95],
@@ -34,7 +34,7 @@
     "beams": [
           ["id1:", "id2:"],
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},//--FRONT BUMPER--
-          {"beamSpring":151000,"beamDamp":50},
+          {"beamSpring":151000,"beamDamp":80},
           {"beamDeform":19450,"beamStrength":"FLT_MAX"},
           //main shape
           ["sp1rr","sp1r"],

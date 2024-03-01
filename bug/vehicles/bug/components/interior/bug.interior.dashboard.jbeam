@@ -10,7 +10,7 @@
     "slots": [
         ["type", "default", "description"],
 
-        ["bug_shifter", "bug_shifter_M", "Shifter"],
+        ["bug_shifter", "bug_shifter_4M", "Shifter"],
         ["skin_speedometer", "bug_speedo_km_140", "Speedometer", {"coreSlot":true}],
         ["bug_tachometer", "bug_tacho_empty", "Tachometer", {"coreSlot":true}],
         ["skin_interior_theme", "bug_inputs_white", "Controls"],
@@ -34,7 +34,7 @@
         ["headlights", "",           "dsh","dshl","dsh2", "box", {"x":0.02, "y":0.03, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.059, "y":-0.1845, "z":-0.05}],
         ["wipers",  "",              "dsh","dshl","dsh2", "box", {"x":0.02, "y":0.03, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.079, "y":-0.1845, "z":-0.05}],
 
-        ["parkingbreak",  "",         "f4m","f4l","f4tm", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.006, "y":0.202, "z":-0.16}]
+        ["parkingbreak",  "",         "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.202, "z":-0.16}]
     ],
     "triggerEventLinks":[
         ["triggerId:triggers", "action", "targetEventId:events"],        
@@ -114,14 +114,16 @@
         ["lights_state", "controls_dashboard_light_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
         ["wipersstate", "controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
 
-        ["turnsignal",   "indicatorlever",    "f4m","f4l","f4tm",   {"x":-63, "y":0, "z":0},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
-        ["parkingbrake", "controls_handbreak",  "f4m","f4l","f4tm",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["turnsignal",   "indicatorlever",    "f4mr","f4ml","refup",   {"x":-63, "y":0, "z":0},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["parkingbrake", "controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
 
         ["fuel",      "needle_fuelgauge",   "dsh","dshl","bd1",  {"x":5, "y":0, "z":-3},  {"x":0, "y":-70, "z":0},  {"x":0, "y":0, "z":0},  0,  1,  -0.5,  1],
     ],
     "nodes": [
         //dash anti-deform nodes
-        {"selfCollision":true},
+        {"collision":false},
+        {"selfCollision":false},
+        
         {"group": "bug_dashboard"},
 
         //dash nodes
@@ -134,12 +136,15 @@
         // speaker node
         {"group": ""},
         ["speaker", 0.395000, -0.59000, 0.93800],
+
+        {"collision":true},
+        {"selfCollision":false},
     ],
     "beams": [
 
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1.0},
         {"beamSpring":1001000,"beamDamp":50},
-        {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
 
         //dashboard
         {"deformGroup":"dashboard_break","deformationTriggerRatio":0.025},
@@ -260,7 +265,7 @@
     "slots": [
         ["type", "default", "description"],
 
-        ["bug_shifter", "bug_shifter_M", "Shifter"],
+        ["bug_shifter", "bug_shifter_4M", "Shifter"],
         ["skin_speedometer", "bug_speedo_km_140", "Speedometer", {"coreSlot":true}],
         ["skin_interior_theme", "bug_inputs_white", "Controls"],
         
@@ -281,7 +286,7 @@
         ["headlights", "",           "dsh","dshl","dsh2", "box", {"x":0.02, "y":0.03, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.059, "y":-0.1845, "z":-0.05}],
         ["wipers",  "",              "dsh","dshl","dsh2", "box", {"x":0.02, "y":0.03, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.079, "y":-0.1845, "z":-0.05}],
 
-        ["parkingbreak",  "",         "f4m","f4l","f4tm", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.006, "y":0.202, "z":-0.16}]
+        ["parkingbreak",  "",         "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.202, "z":-0.16}]
     ],
     "triggerEventLinks":[
         ["triggerId:triggers", "action", "targetEventId:events"],        
@@ -346,8 +351,8 @@
         ["lights_state", "controls_dashboard_light_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
         ["wipersstate", "controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
 
-        ["turnsignal",   "indicatorlever",    "f4m","f4l","f4tm",   {"x":-63, "y":0, "z":0},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
-        ["parkingbrake", "controls_handbreak",  "f4m","f4l","f4tm",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["turnsignal",   "indicatorlever",    "f4mr","f4ml","refup",   {"x":-63, "y":0, "z":0},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["parkingbrake", "controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
         //dash anti-deform nodes
@@ -368,7 +373,7 @@
     "beams": [
         //--INTERIOR STRUCTURE--
         {"beamSpring":1001000,"beamDamp":50},
-        {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
         
         //dashboard
         {"deformGroup":"dashboard_break","deformationTriggerRatio":0.025},
@@ -506,11 +511,213 @@
 
 // --- Shifter
 
-"bug_shifter_M": {
+"bug_shifter_4M": {
     "information":{
         "authors":"MrX13415",
-        "name":"Manual Shifter",
+        "name":"4-Speed Manual Shifter",
         "value":280,
+    },
+    "slotType" : "bug_shifter",
+    "controller": [
+        ["fileName"],
+        ["propAnimation/hPattern", {"name":"hPattern"}],
+    ],
+    "hPattern": {
+        "gearCoordinates": [
+            ["gearIndex",  "x",  "y"],
+
+            [-1,           -1,   -1],
+            [ 0,            0,    0],
+            [ 1,            0,    1],
+            [ 2,            0,   -1],
+            [ 3,            1,    1],
+            [ 4,            1,   -1],
+        ],
+        "shiftSoundNode:":["sh_b5"],
+        "shiftSoundEventHPatternGearIn": "event:>Vehicle>Interior>Gearshift>manual_modern_06_in",
+        "shiftSoundEventHPatternGearOut": "event:>Vehicle>Interior>Gearshift>manual_modern_06_out",
+        "shiftSoundVolumeHPatternGearIn": 1,
+        "shiftSoundVolumeHPatternGearOut": 1,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["controls_shifter_M_boot", ["bug_shifter_boot_M","bug_frame","bug_shifterbase_M"]],
+        ["controls_shifter_M",      ["bug_shifter_M"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+
+         {"frictionCoef":0.8},
+         {"nodeMaterial":"|NM_METAL"},
+         {"collision":true},
+         {"selfCollision":false},
+
+         //--SHIFTER---  has to be jbeamed to allow for realistic movement
+         {"group":"bug_shifterbase_M"},
+         {"nodeWeight":0.45},
+         ["sh_b1",  0.040, -0.579, 0.408],
+         ["sh_b2", -0.040, -0.579, 0.408],
+         ["sh_b3",  0.040, -0.447, 0.408],
+         ["sh_b4", -0.040, -0.447, 0.408],
+         ["sh_b5",  0.000, -0.513, 0.399],
+         {"selfCollision":true},
+         {"group":"bug_shifter_boot_M"},
+         {"nodeWeight":0.5},
+         ["sh_l0",  0.000, -0.513000, 0.450],
+         ["sh_l1",  0.000, -0.483821, 0.673],
+         {"selfCollision":false},
+         {"nodeWeight":0.30},
+         {"group":["bug_shifter_M"]},
+         ["sh_l2",  0.030, -0.539, 0.530],
+         ["sh_l3", -0.030, -0.539, 0.530],
+         ["sh_l4",  0.030, -0.487, 0.530],
+         ["sh_l5", -0.030, -0.487, 0.530],
+         {"selfCollision":true},
+         {"group":""},
+    ],
+     "beams":[
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //main shape
+        {"beamSpring":201000,"beamDamp":55},
+        {"beamDeform":259000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":0.01},
+        ["sh_b1", "sh_b2"],
+        ["sh_b1", "sh_b3"],
+        ["sh_b1", "sh_b4"],
+        ["sh_b2", "sh_b3"],
+        ["sh_b2", "sh_b4"],
+        ["sh_b3", "sh_b4"],
+
+        ["sh_b1", "sh_b5"],
+        ["sh_b2", "sh_b5"],
+        ["sh_b3", "sh_b5"],
+        ["sh_b4", "sh_b5"],
+        //lever
+        {"beamSpring":121000,"beamDamp":35},
+        ["sh_l1", "sh_l2"],
+        ["sh_l1", "sh_l3"],
+        ["sh_l1", "sh_l4"],
+        ["sh_l1", "sh_l5"],
+
+        ["sh_l2", "sh_l3"],
+        ["sh_l2", "sh_l4"],
+        ["sh_l2", "sh_l5"],
+
+        ["sh_l3", "sh_l4"],
+        ["sh_l3", "sh_l5"],
+        ["sh_l4", "sh_l5"],
+
+        ["sh_l0", "sh_l1"],
+        ["sh_l0", "sh_l2"],
+        ["sh_l0", "sh_l3"],
+        ["sh_l0", "sh_l4"],
+        ["sh_l0", "sh_l5"],
+
+        //hinge
+        {"beamSpring":121000,"beamDamp":25},
+        ["sh_b5", "sh_l1"],
+        ["sh_b5", "sh_l2"],
+        ["sh_b5", "sh_l3"],
+        ["sh_b5", "sh_l4"],
+        ["sh_b5", "sh_l5"],
+
+        //stabilize the shifter
+        {"beamSpring":0,"beamDamp":175},
+        ["sh_b1", "sh_l1"],
+        ["sh_b2", "sh_l1"],
+        ["sh_b3", "sh_l1"],
+        ["sh_b4", "sh_l1"],
+        {"breakGroup":""},
+        //attach to body
+        {"beamSpring":200000,"beamDamp":70},
+        {"beamDeform":1000,"beamStrength":2000},
+        {"breakGroup": "shifter_M"},
+        {"breakGroupType":0},
+        ["sh_b1", "f4r"],
+        ["sh_b2", "f4r"],
+        ["sh_b3", "f4r"],
+        ["sh_b4", "f4r"],
+        ["sh_b5", "f4r"],
+
+        ["sh_b1", "f4l"],
+        ["sh_b2", "f4l"],
+        ["sh_b3", "f4l"],
+        ["sh_b4", "f4l"],
+        ["sh_b5", "f4l"],
+
+        ["sh_b1", "f2r"],
+        ["sh_b2", "f2r"],
+        ["sh_b3", "f2r"],
+        ["sh_b4", "f2r"],
+        ["sh_b5", "f2r"],
+
+        ["sh_b1", "f2l"],
+        ["sh_b2", "f2l"],
+        ["sh_b3", "f2l"],
+        ["sh_b4", "f2l"],
+        ["sh_b5", "f2l"],
+
+        ["sh_b1", "f3r"],
+        ["sh_b2", "f3r"],
+        ["sh_b3", "f3r"],
+        ["sh_b4", "f3r"],
+        ["sh_b5", "f3r"],
+
+        ["sh_b1", "f3l"],
+        ["sh_b2", "f3l"],
+        ["sh_b3", "f3l"],
+        ["sh_b4", "f3l"],
+        ["sh_b5", "f3l"],
+        {"beamSpring":120000,"beamDamp":20},
+        {"breakGroup": ["shifter_M","body"]},
+        {"breakGroupType":1},
+        ["sh_b1", "dsh"],
+        ["sh_b2", "dsh"],
+        ["sh_b3", "dsh"],
+        ["sh_b4", "dsh"],
+        ["sh_b5", "dsh"],
+        {"breakGroup": ""},
+        {"breakGroupType":0},
+        //support beams
+        {"beamType":"|SUPPORT","beamPrecompression":0.83,"beamLongBound":5},
+        {"beamSpring":101000,"beamDamp":50},
+        {"beamDeform":16000,"beamStrength":"FLT_MAX"},
+        ["sh_l3", "sh_b3"],
+        ["sh_l5", "sh_b1"],
+        ["sh_l4", "sh_b2"],
+        ["sh_l2", "sh_b4"],
+        {"beamPrecompression":0.82},
+        ["sh_l1", "sh_b1"],
+        ["sh_l1", "sh_b2"],
+        ["sh_l1", "sh_b3"],
+        ["sh_l1", "sh_b4"],
+        {"beamPrecompression":1,"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "torsionHydros": [
+        ["id1:","id2:","id3:","id4:"],
+        {"spring":200, "damp":1, "deform":"FLT_MAX", "strength":1000},
+        ["sh_b3","sh_b1","sh_b2","sh_l1",  {"inputSource":"hPatternAxisY","factor":-0.25}],
+        ["sh_b2","sh_b1","sh_b3","sh_l1",  {"inputSource":"hPatternAxisX","factor":-0.30}],
+        ["sh_b2","sh_b4","sh_b3","sh_l1",  {"inputSource":"hPatternAxisY","factor":0.25}],
+        ["sh_b3","sh_b4","sh_b2","sh_l1",  {"inputSource":"hPatternAxisX","factor":0.30}],
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        {"spring":100, "damp":0.2, "deform":30000, "strength":1000},
+        ["sh_b2", "sh_b5", "sh_l1", "sh_l3"],
+        ["sh_b4", "sh_b5", "sh_l1", "sh_l5"],
+        ["sh_b3", "sh_b5", "sh_l1", "sh_l4"],
+        ["sh_b1", "sh_b5", "sh_l1", "sh_l2"],
+    ],
+},
+"bug_shifter_5M": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"5-Speed Manual Shifter",
+        "value":300,
     },
     "slotType" : "bug_shifter",
     "controller": [
@@ -527,7 +734,7 @@
             [ 2,           -1,   -1],
             [ 3,            0,    1],
             [ 4,            0,   -1],
-            [ 5,            1,    1]
+            [ 5,            1,    1],
         ],
         "shiftSoundNode:":["sh_b5"],
         "shiftSoundEventHPatternGearIn": "event:>Vehicle>Interior>Gearshift>manual_modern_06_in",
@@ -737,7 +944,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
         //automatic transmission
-        ["gearModeIndex",   "controls_shifter_A",    "f4m","f4l","f4tm",   {"x":10, "y":0, "z":0},     {"x":25, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   -0.5,  1],
+        ["gearModeIndex",   "controls_shifter_A",    "f4mr","f4ml","refup",   {"x":10, "y":0, "z":0},     {"x":25, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   -0.5,  1],
     ],
 },
 
@@ -998,7 +1205,7 @@
         {"deformGroup":""},
     ],
     "props": [
-        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"]
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
         // a = angle range of the needle. (all angles in deg)
         // m = speed in km/h or mph on the max angle of the needle.
@@ -1038,7 +1245,7 @@
         {"deformGroup":""},
     ],
     "props": [
-        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"]
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
         // a = angle range of the needle. (all angles in deg)
         // m = speed in km/h or mph on the max angle of the needle.

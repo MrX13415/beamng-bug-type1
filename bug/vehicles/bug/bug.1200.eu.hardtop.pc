@@ -72,7 +72,7 @@
     "bug_doorpocket_FR":"bug_doorpocket_FR_empty",
     "bug_doorvent_FL":"bug_doorvent_FL",
     "bug_doorvent_FR":"bug_doorvent_FR",
-    "bug_engine":"bug_engine_1.6",
+    "bug_engine":"bug_engine_1.2",
     "bug_engine_ecu":"",
     "bug_engine_internals":"bug_engine_internals",
     "bug_exhaust":"bug_exhaust",

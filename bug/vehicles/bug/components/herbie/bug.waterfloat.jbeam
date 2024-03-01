@@ -206,9 +206,12 @@
         ["wf4r", "f4r"],
         ["wf4r", "f5r"],
 
-        ["wf5", "f3m"],
-        ["wf5", "f4m"],
-        ["wf5", "f5m"],
+        ["wf5", "f3ml"],
+        ["wf5", "f3mr"],
+        ["wf5", "f4ml"],
+        ["wf5", "f4mr"],
+        ["wf5", "f5ml"],
+        ["wf5", "f5mr"],
         ["wf5", "f4l"],
         ["wf5", "f4r"],
 
@@ -313,12 +316,12 @@
 		["thrustRStart", "f7tmr"],
 
         // rigidify (to water float)
-        ["thrustL", "br4l"],
-        ["thrustL", "br4r"],
+        ["thrustL", "br4l", {"beamStrength":10000, "breakGroup": "body"}],
+        ["thrustL", "br4r", {"beamStrength":10000, "breakGroup": "body"}],
         ["thrustL", "wf4l"],
         ["thrustL", "wf4r"],
-		["thrustR", "br4l"],
-		["thrustR", "br4r"],
+		["thrustR", "br4l", {"beamStrength":10000, "breakGroup": "body"}],
+		["thrustR", "br4r", {"beamStrength":10000, "breakGroup": "body"}],
         ["thrustR", "wf4l"],
         ["thrustR", "wf4r"],
 	],
@@ -336,7 +339,12 @@
 		["thrustL","thrustLStart", {"control": "brake"}],
 		["thrustR","thrustRStart", {"control": "brake"}],
 	
-		{"factor": "$=$thrusterpower*0.8"},
+		{"factor": "$=$thrusterpower*1.5"},
+		{"thrustLimit": 10000},
+		["f1tmr","f1tml", {"control": "steering_input"}],
+		["f1mr","f1mr", {"control": "steering_input"}],
+
+		{"factor": "$=$thrusterpower*0.3"},
 		{"thrustLimit": 5000},
 		["thrustL","thrustR", {"control": "steering_input"}],
 		["thrustLStart","thrustRStart", {"control": "steering_input"}],

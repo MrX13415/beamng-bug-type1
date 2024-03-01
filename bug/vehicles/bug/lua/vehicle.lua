@@ -6,8 +6,8 @@
 -- by MrX13415
 
 local M = {}
-M.version = "21.2"
-M.versionDate = "2024-01-13"
+M.version = "21.3"
+M.versionDate = "2024-03-09"
 
 local updateTimer = 2   -- Make sure the first call is immediately
 local openingUpdateTimer = 2   -- Make sure the first call is immediately
