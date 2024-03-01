@@ -81,7 +81,7 @@
         {"frictionCoef":0.3},
         {"group":"bug_trunk"},
         {"collision":true},
-        {"nodeWeight":0.81},
+        {"nodeWeight":0.5},
         {"selfCollision":true},
         ["t1ll",  0.49788, 1.50000, 0.83011],
         ["t1l",   0.30788, 1.57000, 0.94011],
@@ -89,21 +89,22 @@
         ["t1r",  -0.30788, 1.57000, 0.94011],
         ["t1rr", -0.49788, 1.50000, 0.83011],
         ["t2ll",  0.40444, 1.69248, 0.61994],
-        ["t2l",   0.18444, 1.73248, 0.76011],
+        ["t2l",   0.18444, 1.73248, 0.76011, {"nodeWeight":0.7}],
         ["t2",    0.00000, 1.71617, 0.82468],
-        ["t2r",  -0.18444, 1.73248, 0.76011],
+        ["t2r",  -0.18444, 1.73248, 0.76011, {"nodeWeight":0.7}],
         ["t2rr", -0.40444, 1.69248, 0.61994],
         ["t3l",  0.25722, 1.88728, 0.42833],
         ["t3",   0.00000, 1.83288, 0.67459],
         ["t3r", -0.25722, 1.88728, 0.42833],
-        ["t4",   0.00000, 1.98180, 0.38522, {"selfCollision":false}],
+        ["t4",   0.00000, 1.98180, 0.38522, {"nodeWeight":0.7, "selfCollision":false}],
         //rigidifier
         {"collision":false},
         {"selfCollision":false},
-        ["t5", 0.00000, 1.60000, 0.65000],
+        ["t5", 0.00000, 1.60000, 0.65000, {"nodeWeight":1.0}],
         {"collision":true},
         {"group":""},
         {"selfCollision":false},
+        {"nodeWeight":0.8}
         ["th1l",  0.20446, 1.5693, 0.90135],
         ["th1r", -0.20446, 1.5693, 0.90135],
 
@@ -116,7 +117,7 @@
 
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         //--TRUNK--
-        {"beamSpring":601000,"beamDamp":80},
+        {"beamSpring":501000,"beamDamp":80},
         {"beamDeform":8000,"beamStrength":"FLT_MAX"},
         //trunk main shape length
         ["t1ll", "t2ll"],
@@ -225,7 +226,7 @@
         ["th1r", "t2"],
         ["th1r", "t5"],
         {"breakGroup":""},
-        {"beamSpring":644460,"beamDamp":58},
+        {"beamSpring":501000,"beamDamp":58},
         {"beamDeform":100380,"beamStrength":"FLT_MAX"},
         //hinge to body
         {"breakGroup":"trunkhinge_R"},

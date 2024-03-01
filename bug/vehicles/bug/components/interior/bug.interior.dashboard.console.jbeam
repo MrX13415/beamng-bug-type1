@@ -240,8 +240,113 @@
     "slots": [
         ["type", "default", "description"],
 
+        ["bug_glovebox_lid", "bug_glovebox_lid", "Lid"],
         ["bug_glovebox_things", "bug_glovebox_things", "Things"]
     ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["dashboard_glovebox_case", ["bug_glovebox", "bug_body", "bug_dashboard"]],
+    ],
+    "nodes": [
+        {"selfCollision":true},
+        //dash nodes
+        {"nodeWeight": 0.3},
+        {"group": "bug_glovebox"},
+        ["dgb6l", -0.15, -0.55, 1.01],
+        ["dgb6r", -0.42, -0.58, 0.99],
+        ["dgb7l", -0.12, -0.63, 1.00],
+        ["dgb7r", -0.45, -0.65, 0.98],
+        ["dgb8l", -0.12, -0.65, 0.90],
+        ["dgb8r", -0.45, -0.66, 0.90],
+        ["dgb9l", -0.12, -0.56, 0.90],
+        ["dgb9r", -0.45, -0.58, 0.90],
+        {"group": ""},
+    ],
+    "beams": [
+        {"beamPrecompression":1.0},
+
+        {"disableMeshBreaking":false},
+        {"beamSpring":201000,"beamDamp":50},
+        {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+        {"group": "bug_glovebox"},
+        ["dgb6l", "dgb6r"],
+        ["dgb7l", "dgb7r"],
+        ["dgb8l", "dgb8r"],
+        ["dgb6l", "dgb7l"],
+        ["dgb7l", "dgb8l"],
+        ["dgb8l", "dgb9l"],
+        ["dgb6r", "dgb7r"],
+        ["dgb7r", "dgb8r"],
+        ["dgb8r", "dgb9r"],
+        ["dgb6l", "dgb8l"],
+        ["dgb7l", "dgb9l"],
+        ["dgb6r", "dgb8r"],
+        ["dgb7r", "dgb9r"],
+        ["dgb8l", "dgb9r"],
+        ["dgb9l", "dgb8r"],
+        ["dgb8l", "dgb7r"],
+        ["dgb7l", "dgb8r"],
+        ["dgb7l", "dgb6r"],
+        ["dgb6l", "dgb7r"],
+        ["dgb8l", "dgb6r"],
+        ["dgb9l", "dgb7r"],
+        ["dgb6l", "dgb8r"],
+        ["dgb7l", "dgb9r"],
+
+        {"group": ""},
+        {"beamSpring":201000,"beamDamp":50},
+        {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+        ["dgb8l", "bc2"],
+        ["dgb8l", "bc2rr"],
+        ["dgb8r", "bc2"],
+        ["dgb8r", "bc2rr"],
+        ["dgb7l", "bd1"],
+        ["dgb7l", "bd1rr"],
+        ["dgb7r", "bd1"],
+        ["dgb7r", "bd1rr"],
+        ["dgb9l", "dsh"],
+        ["dgb9l", "dshr"],
+        ["dgb9l", "bd1"],
+        ["dgb9l", "bf8r"],
+        ["dgb9r", "dsh"],
+        ["dgb9r", "dshr"],
+        ["dgb9r", "bf8r"],
+        ["dgb9r", "bd1rr"],
+
+        {"beamPrecompression":1.0},
+        {"beamLimitSpring":1,"beamLimitDamp":1},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"breakGroup":""},
+        {"breakGroupType":0},
+        {"group": ""}
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        //front left door
+        {"groundModel":"metal"},
+        {"dragCoef":0},
+        //Box
+        {"group":"bug_glovebox"},
+        ["dgb9l", "dgb9r", "dgb8l"],
+        ["dgb8l", "dgb9r", "dgb8r"],
+        ["dgb8l", "dgb8r", "dgb7l"],
+        ["dgb7l", "dgb8r", "dgb7r"],
+        ["dgb7l", "dgb7r", "dgb6l"],
+        ["dgb6l", "dgb7r", "dgb6r"],
+        ["dgb9l", "dgb8l", "dgb6l"],
+        ["dgb6l", "dgb8l", "dgb7l"],
+        ["dgb8r", "dgb9r", "dgb7r"],
+        ["dgb7r", "dgb9r", "dgb6r"],
+        {"group":""}
+    ]
+},
+"bug_glovebox_lid": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Glovebox Lid",
+        "value":20,
+    },
+    "slotType" : "bug_glovebox_lid",
     "controller": [
         ["fileName"],
         ["advancedCouplerControl", {"name":"gloveboxCoupler"}],
@@ -265,12 +370,11 @@
     },
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["dashboard_glovebox_hatch", ["bug_glovebox"]],
-         ["dashboard_glovebox_case", ["bug_body", "bug_dashboard"]],
+         ["dashboard_glovebox_hatch", ["bug_glovebox_door"]],
     ],
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["gloveboxLatch", "", "dgb1l","dgb1r","dgb2l", "box", {"x":0.02, "y":0.015, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1547, "y":0.103, "z":-0.013}],
+        ["gloveboxLatch", "", "dgb1l","dgb1r","dgb2l", "box", {"x":0.02, "y":0.015, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1547, "y":0.103, "z":-0.003}],
     ],
     "triggerEventLinks":[
         ["triggerId:triggers", "action", "targetEventId:events"],
@@ -282,22 +386,20 @@
         ["gloveboxLatch", "ui.inputActions.bug.gloveboxLatch.title", "ui.inputActions.bug.gloveboxLatch.description", {"onUp":"controller.getControllerSafe('gloveboxCoupler').toggleGroup()"}],
     ],
     "nodes": [
-        //dash anti-deform nodes
-        {"selfCollision":true},
-        {"group": "bug_glovebox"},
-
+        
         //dash nodes
+        {"selfCollision":true},
+        {"group": "bug_glovebox_door"},
         {"nodeWeight": 0.3},
-        ["dgb1l", -0.12132, -0.53654, 0.88347],
-        ["dgb1r", -0.45869, -0.55879, 0.87663],
+        ["dgb1l", -0.12132, -0.52654, 0.88347],
+        ["dgb1r", -0.45869, -0.54879, 0.87663],
         {"nodeWeight": 0.4},
-        ["dgb2l", -0.12132, -0.54466, 1.01010],
-        ["dgb2r", -0.45869, -0.56279, 0.98610],
+        ["dgb2l", -0.12132, -0.53466, 1.01010],
+        ["dgb2r", -0.44569, -0.55279, 0.97610],
         {"nodeWeight": 0.3},
         ["dgb3",  -0.28617, -0.58279, 0.97],
+        {"group":""},
 
-
-        {"group": ""},
         {"collision":false},
         {"selfCollision":false},
         ["dgb4",  -0.28617, -0.50279, 1.01610, {"couplerTag":"gloveboxLatch","couplerLock":true,"couplerStrength":2000,"couplerRadius":1.35,"couplerStartRadius":0.2,"couplerLockRadius":0.05,"couplerLatchSpeed":0.8, "breakGroup":"gloveboxLatch"}],
@@ -309,14 +411,15 @@
         {"disableMeshBreaking":false},
         {"beamSpring":201000,"beamDamp":50},
         {"beamDeform":15000,"beamStrength":"FLT_MAX"},
-        {"group": "bug_glovebox"},
+        // door
+        {"group": "bug_glovebox_door"},
         ["dgb1l", "dgb1r"],
         ["dgb2l", "dgb2r"],
         ["dgb1l", "dgb2l"],
         ["dgb1r", "dgb2r"],
         ["dgb1l", "dgb2r"],
         ["dgb1r", "dgb2l"],
-
+        //-
         ["dgb1l", "dgb3"],
         ["dgb1r", "dgb3"],
         ["dgb2l", "dgb3"],
@@ -336,8 +439,8 @@
         ["dgb5", "bd1"],
         ["dgb5", "dsh"],
         ["dgb5", "dshr"],
-
-        {"breakGroup":"glovebox"},
+        
+        {"breakGroup":"glovebox_door"},
         {"beamDeform":15000,"beamStrength":6000},
         ["dgb1l", "dsh"],
         ["dgb1l", "dshr"],
@@ -379,18 +482,17 @@
         {"breakGroup":""},
         {"breakGroupType":0},
         {"group": ""},
-    ]
-},
-"bug_glovebox_nolid": {
-    "information":{
-        "authors":"MrX13415",
-        "name":"Glovebox (No Lid)",
-        "value":300,
-    },
-    "slotType" : "bug_glovebox",
-    "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["dashboard_glovebox_case", ["bug_body", "bug_dashboard"]],
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        //front left door
+        {"groundModel":"metal"},
+        {"dragCoef":0},
+        {"group":"bug_glovebox_door"},
+        //Door
+        ["dgb1l", "dgb1r", "dgb2l"],
+        ["dgb2l", "dgb1r", "dgb2r"],
+        {"group":""}
     ]
 },
 
@@ -408,7 +510,11 @@
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
+
          ["clock", ["bug_body", "bug_dashboard"]],
+         {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
+         ["clock_glass", ["bug_dashboard"]],
+         {"deformGroup":""},
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],

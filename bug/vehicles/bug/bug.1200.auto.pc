@@ -1,6 +1,5 @@
 {
   "format":2,
-  "licenseName":"IDY-8444",
   "mainPartName":"bug",
   "model":"bug",
   "paints":[

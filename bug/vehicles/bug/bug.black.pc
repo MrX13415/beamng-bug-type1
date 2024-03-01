@@ -1,6 +1,5 @@
 {
   "format":2,
-  "licenseName":"MrX13415",
   "mainPartName":"bug",
   "model":"bug",
   "paints":[
@@ -140,12 +139,12 @@
     "bug_seat_R":"",
     "bug_seats":"bug_seats",
     "bug_shelf":"",
-    "bug_shifter":"bug_shifter_M",
+    "bug_shifter":"bug_shifter_4M",
     "bug_shock_F":"bug_shock_F_race",
     "bug_shock_R":"bug_shock_R_race",
     "bug_side_panels":"bug_side_panels",
     "bug_side_panels_rear":"",
-    "bug_spoilerF":"",
+    "bug_spoilerF":"bug_spoilerF",
     "bug_spoilerR":"bug_spoilerR",
     "bug_spring_F":"bug_spring_F_race",
     "bug_spring_R":"bug_spring_R_race",

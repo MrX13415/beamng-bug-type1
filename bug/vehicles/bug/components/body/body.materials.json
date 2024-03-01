@@ -29,7 +29,7 @@
     "activeLayers": 2,
     "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
+    //"invertBackFaceNormals": true, causes issues with mirrors
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
     "version": 1.5
@@ -58,8 +58,8 @@
       {},
       {}
     ],
-    "doubleSided": true,
-    "invertBackFaceNormals": true,
+    //"doubleSided": true,
+    //"invertBackFaceNormals": true,
     "dynamicCubemap": true,
     "translucentBlendOp": "None",
     "version": 1.5
@@ -115,7 +115,7 @@
     ],
     "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
+    //"invertBackFaceNormals": true,
     "translucentBlendOp": "None",
     "version": 1.5
   },

@@ -39,9 +39,15 @@
     },
     "flexbodies": [
         ["mesh","[group]:","nonFlexMaterials"],
-        ["door_R",       ["bug_door_FR"]],
-        ["door_R_hinge", ["bug_door_FR"]],
-        ["door_R_panel", ["bug_door_FR"]],
+        ["door_R",          ["bug_door_FR"]],
+        ["door_R_hinge",    ["bug_door_FR"]],
+        ["door_R_panel",    ["bug_door_FR"]],
+        ["door_FR_handles", ["bug_door_FR"]],
+    ],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+        // base translation would be {"x":0, "y":0, "z":-6} but some adjustment due to the node positons is required.
+        ["windowFR_state",    "door_FR_window_handle",  "d14r","d8r","d11r",   {"x":-3, "y":7, "z":168},   {"x":-1800, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
     ],
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -65,38 +71,39 @@
         {"frictionCoef":0.5},
         {"selfCollision":true},
         {"collision":true},
-        {"nodeWeight":0.8},
+        {"nodeWeight":0.6},
         {"group":"bug_door_FR"},
         ["d2r",  -0.665573, -0.250102, 0.328229],
         ["d3r",  -0.700539,  0.294437, 0.328229],
         ["d4r",  -0.648047, -0.605883, 0.603074],
-        ["d5r",  -0.678370, -0.25389,  0.60235, {"nodeWeight":1.8, "selfCollision":false}],
+        ["d5r",  -0.678370, -0.25389,  0.60235, {"nodeWeight":1.5, "selfCollision":false}],
         ["d6r",  -0.722429,  0.294437, 0.60157],
-        ["d8r",  -0.652307, -0.24872,  0.94392, {"selfCollision":false}],
-        ["d9r",  -0.691250,  0.294437, 0.95028, {"nodeWeight":1.0}],
+        ["d8r",  -0.652307, -0.24872,  0.94392, {"nodeWeight":0.8, "selfCollision":false}],
+        ["d9r",  -0.691250,  0.294437, 0.95028, {"nodeWeight":0.8}],
         ["d10r", -0.568596, -0.405212, 1.24026],
         ["d11r", -0.566714, -0.243084, 1.32514],
         ["d12r", -0.595103,  0.294437, 1.34054],
         ["d13r", -0.650399,  0.294437, 1.1518],
         {"selfCollision":false},
         {"collision":false},
-        {"nodeWeight":3.0},
+        {"nodeWeight":1.5},
         // hinge
         ["dh1r", -0.642601, -0.616547, 0.92798], 
         ["dh2r", -0.642799, -0.613628, 0.328229],
         //rigidifier
         ["d14r", -0.39500, -0.17000, 0.95000, {"nodeWeight":1.0}],
         {"group":""},
+        {"nodeWeight":0.6},
         // vent window hinge
         ["dvh1r", -0.557100, -0.377531, 1.20948],
         ["dvh2r", -0.581476, -0.416249, 1.00879],
-        ["d15r",  -0.500000, -0.00000, 1.00000, {"nodeWeight":1.0}],
+        ["d15r",  -0.500000, -0.00000, 1.00000, {"nodeWeight":0.9}],
         {"selfCollision":true},
         {"collision":true},
         {"group":""},
 
         //latch node
-        {"nodeWeight":1.6},
+        {"nodeWeight":1.4},
         ["d14rr", -0.55, 0.29, 0.8, {"couplerTag":"doorLatch_R","couplerLock":true,"couplerStrength":35000,"couplerRadius":1.35,"couplerStartRadius":0.1,"couplerLockRadius":0.001,"couplerLatchSpeed":0.8, "breakGroup":"doorLatch_R"}],
     ],
     "beams": [
@@ -350,9 +357,15 @@
     },
     "flexbodies": [
         ["mesh","[group]:","nonFlexMaterials"],
-        ["door_L",       ["bug_door_FL"]],
-        ["door_L_hinge", ["bug_door_FL"]],
-        ["door_L_panel", ["bug_door_FL"]],
+        ["door_L",          ["bug_door_FL"]],
+        ["door_L_hinge",    ["bug_door_FL"]],
+        ["door_L_panel",    ["bug_door_FL"]],
+        ["door_FL_handles", ["bug_door_FL"]],
+    ],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+        // base translation would be {"x":0, "y":0, "z":-6} but some adjustment due to the node positons is required.
+        ["windowFL_state",    "door_FL_window_handle",  "d14l","d8l","d11l",   {"x":-3, "y":7, "z":9},     {"x":1800, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
     ],
     "triggers":[
         ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -376,37 +389,38 @@
         {"frictionCoef":0.5},
         {"selfCollision":true},
         {"collision":true},
-        {"nodeWeight":0.8},
+        {"nodeWeight":0.6},
         {"group":"bug_door_FL"},
         ["d2l",  0.665573, -0.250102, 0.328229],
         ["d3l",  0.700539,  0.294437, 0.328229],
         ["d4l",  0.648047, -0.605883, 0.603074],
-        ["d5l",  0.678370, -0.25389,  0.60235, {"nodeWeight":1.8, "selfCollision":false}],
+        ["d5l",  0.678370, -0.25389,  0.60235, {"nodeWeight":1.0, "selfCollision":false}],
         ["d6l",  0.722429,  0.294437, 0.60157],
-        ["d8l",  0.652307, -0.24872,  0.94392, {"selfCollision":false}],
-        ["d9l",  0.691250,  0.294437, 0.95028, {"nodeWeight":1.0}],
+        ["d8l",  0.652307, -0.24872,  0.94392, {"nodeWeight":0.8, "selfCollision":false}],
+        ["d9l",  0.691250,  0.294437, 0.95028, {"nodeWeight":0.8}],
         ["d10l", 0.568596, -0.405212, 1.24026],
         ["d11l", 0.566714, -0.243084, 1.32514],
         ["d12l", 0.595103,  0.294437, 1.34054],
         ["d13l", 0.650399,  0.294437, 1.1518],
         {"selfCollision":false},
         {"collision":false},
-        {"nodeWeight":3.0},
+        {"nodeWeight":1.5},
         // hinge
         ["dh1l",  0.642601, -0.616547, 0.92798],
         ["dh2l",  0.642799, -0.613628, 0.328229],
         //rigidifier
         ["d14l", 0.39500, -0.19000, 0.95000, {"nodeWeight":1.0}],
         {"group":""},
+        {"nodeWeight":0.6},
         // vent window hinge
         ["dvh1l", 0.557100, -0.377531, 1.20948],
         ["dvh2l", 0.581476, -0.416249, 1.00879],
-        ["d15l",  0.500000, -0.00000, 1.00000, {"nodeWeight":1.0}],
+        ["d15l",  0.500000, -0.00000, 1.00000, {"nodeWeight":0.9}],
         {"selfCollision":true},
         {"collision":true},
 
         //latch node
-        {"nodeWeight":1.6},
+        {"nodeWeight":1.4},
         ["d14ll", 0.55, 0.29, 0.8, {"couplerTag":"doorLatch_L","couplerLock":true,"couplerStrength":35000,"couplerRadius":1.35,"couplerStartRadius":0.1,"couplerLockRadius":0.001,"couplerLatchSpeed":0.8, "breakGroup":"doorLatch_L"}],
     ],
     "beams": [
@@ -693,7 +707,7 @@
         {"frictionCoef":0.5},
 
         //mirror
-        {"nodeWeight":0.3},
+        {"nodeWeight":0.25},
         {"group":"door_mirror_L"},
         ["mi1l", 0.7535, -0.5790, 1.0732],
         ["mi2l", 0.7531, -0.5699, 1.0000],
@@ -707,7 +721,7 @@
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 
         //mirror
-        {"beamSpring":301000,"beamDamp":30},
+        {"beamSpring":201000,"beamDamp":30},
         {"beamDeform":12000,"beamStrength":"FLT_MAX"},
         {"deformLimitExpansion":1.1},
         ["mi1l", "mi2l"],
@@ -721,7 +735,7 @@
         ["mi4l", "mi3l"],
 
          //attach
-        {"beamSpring":151000,"beamDamp":30},
+        {"beamSpring":101000,"beamDamp":30},
         {"beamDeform":8000,"beamStrength":6000},
         {"breakGroup":"mirror_L"},
         ["mi1l", "dh1l"],
@@ -787,7 +801,7 @@
         {"frictionCoef":0.5},
 
         //mirror
-        {"nodeWeight":0.3},
+        {"nodeWeight":0.25},
         {"group":"door_mirror_R"},
         ["mi1r", -0.7535, -0.5093, 1.0732],  // y = L + 0.069772
         ["mi2r", -0.7531, -0.5001, 1.0000],
@@ -801,7 +815,7 @@
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 
         //mirror
-        {"beamSpring":301000,"beamDamp":30},
+        {"beamSpring":201000,"beamDamp":30},
         {"beamDeform":12000,"beamStrength":"FLT_MAX"},
         {"deformLimitExpansion":1.1},
         ["mi1r", "mi2r"],
@@ -815,7 +829,7 @@
         ["mi4r", "mi3r"],
 
          //attach
-        {"beamSpring":151000,"beamDamp":30},
+        {"beamSpring":101000,"beamDamp":30},
         {"beamDeform":8000,"beamStrength":6000},
         {"breakGroup":"mirror_R"},
         ["mi1r", "dh1r"],
@@ -881,7 +895,7 @@
         {"frictionCoef":0.5},
 
         //mirror
-        {"nodeWeight":0.3},
+        {"nodeWeight":0.25},
         {"group":"door_mirror_L"},
         ["mi1l", 0.7535, -0.5790, 1.0732],
         ["mi2l", 0.7531, -0.5699, 1.0000],
@@ -895,7 +909,7 @@
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 
         //mirror
-        {"beamSpring":301000,"beamDamp":30},
+        {"beamSpring":201000,"beamDamp":30},
         {"beamDeform":12000,"beamStrength":"FLT_MAX"},
         {"deformLimitExpansion":1.1},
         ["mi1l", "mi2l"],
@@ -909,7 +923,7 @@
         ["mi4l", "mi3l"],
 
          //attach
-        {"beamSpring":151000,"beamDamp":30},
+        {"beamSpring":101000,"beamDamp":30},
         {"beamDeform":8000,"beamStrength":6000},
         {"breakGroup":"mirror_L"},
         ["mi1l", "dh1l"],
@@ -975,7 +989,7 @@
         {"frictionCoef":0.5},
 
         //mirror
-        {"nodeWeight":0.3},
+        {"nodeWeight":0.25},
         {"group":"door_mirror_R"},
         ["mi1r", -0.7535, -0.5093, 1.0732],  // y = L + 0.069772
         ["mi2r", -0.7531, -0.5001, 1.0000],
@@ -989,7 +1003,7 @@
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 
         //mirror
-        {"beamSpring":301000,"beamDamp":30},
+        {"beamSpring":201000,"beamDamp":30},
         {"beamDeform":12000,"beamStrength":"FLT_MAX"},
         {"deformLimitExpansion":1.1},
         ["mi1r", "mi2r"],
@@ -1003,7 +1017,7 @@
         ["mi4r", "mi3r"],
 
          //attach
-        {"beamSpring":151000,"beamDamp":30},
+        {"beamSpring":101000,"beamDamp":30},
         {"beamDeform":8000,"beamStrength":6000},
         {"breakGroup":"mirror_R"},
         ["mi1r", "dh1r"],

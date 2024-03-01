@@ -1,6 +1,5 @@
 {
   "format":2,
-  "licenseName":"DGV-0799",
   "mainPartName":"bug",
   "model":"bug",
   "paints":[

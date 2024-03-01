@@ -1,0 +1,321 @@
+{
+"bug_body_barebone": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Barebone",
+        "value":20,
+    },
+    "slotType" : "bug_body",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_interior_barebone", "bug_interior_barebone", "Interior"],
+    ],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+
+        ["brake",        "inputs_pedals_brake",     "f4m","f4l","f4tm",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+    ],
+},
+
+"bug_interior_barebone": {
+	"information":{
+        "authors":"MrX13415",
+        "name":"Interior",
+        "value":20,
+    },
+    "slotType" : "bug_interior_barebone",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["skin_floor_carpet", "bug_floor_carpet_black", "Carpet"],
+
+        ["skin_steer", "bug_steer_white", "Steering Wheel", {"coreSlot":true}],
+        ["bug_dashboard_barebone", "bug_dashboard_barebone", "Dashboard"],
+
+        ["bug_seats_barebone", "bug_seats_barebone", "Seats"],
+
+     // TODO:   ["bug_rollbar","", "Rollbar"],
+    ],
+    "camerasInternal":[
+        ["name", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
+
+        {"nodeWeight":1.0},
+        {"beamSpring":800,"beamDamp":100},
+        {"selfCollision":true},
+        {"collision":true},		
+        {"rightHandCamera":false},   // set to true for right steering wheel otherwise false
+        // driver camera (make first value negative for right steering wheel)
+        ["driver",     0.2555, 0.18, 1.24, 55, "f3l","f4l","f5l","f3tm","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+        // passenger seat
+        ["passenger", -0.2555, 0.18, 1.24, 55, "f3r","f4r","f5r","f3tm","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+    ], 
+},
+
+"bug_seats_barebone": {
+	"information":{
+        "authors":"MrX13415",
+        "name":"Seats",
+        "value":20,
+    },
+    "slotType" : "bug_seats_barebone",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["skin_interior4", "bug_skin_interior4_white", "Seat Color 1", {"coreSlot":true}],
+        ["skin_interior4b", "bug_skin_interior4b_white", "Seat Color 2", {"coreSlot":true}],
+
+        ["bug_seat_FL", "bug_seat_lowback_FL", "Front Seat Left"],
+        ["bug_seat_FR", "bug_seat_lowback_FR", "Front Seat Right"],
+    ],
+},
+
+"bug_dashboard_barebone": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Dashboard",
+        "value": 300,
+    },
+    "slotType" : "bug_dashboard_barebone",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_shifter", "bug_shifter_M", "Shifter"],
+        ["skin_speedometer", "bug_speedo_km_140", "Speedometer", {"coreSlot":true}],
+                
+        ["bug_ignition_key_barebone", "bug_ignition_key_barebone", "Ignition Key", {"coreSlot":true, "nodeMove": {"x":0.102671,"y":0.006238,"z":0.034791}}],
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+
+        ["parkingbreak",  "",         "f4m","f4l","f4tm", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.006, "y":0.202, "z":-0.16}]
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],        
+
+        ["parkingbreak", "action0", "parkingbreakToggle"],
+    ],
+    "events":[
+        ["id", "title", "desc"],
+
+        ["parkingbreakToggle",  "ui.inputActions.bug.parkingbreak.title", "ui.inputActions.bug.parkingbreak.description", {"onUp":"input.toggleEvent('parkingbrake')"}]
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["dashboard_barebone",        ["bug_dashboard"]],
+        ["dashboard_barebone_cables", ["bug_dashboard"]],
+
+        ["controls_shifter_M_mount",  ["bug_frame", "bug_body"]],
+        ["controls_handbreak_case",   ["bug_frame", "bug_body"]],
+    ],
+    "glowMap":{
+        // dashboard gauges
+        "bug_gauges":               {"simpleFunction":"lowhighbeam",  "off":"bug_gauges",         "on":"bug_gauges_light",         "on_intense":"bug_gauges_light"},
+        "bug_speedometer":          {"simpleFunction":"lowhighbeam",  "off":"bug_speedometer",    "on":"bug_speedometer_light",    "on_intense":"bug_speedometer_light"},
+        "bug_tachometer":           {"simpleFunction":"lowhighbeam",  "off":"bug_tachometer",     "on":"bug_tachometer_light",     "on_intense":"bug_tachometer_light"},
+        "bug_oil_ammeter":          {"simpleFunction":"lowhighbeam",  "off":"bug_oil_ammeter",    "on":"bug_oil_ammeter_light",    "on_intense":"bug_oil_ammeter_light"},
+        "bug_speedo_needle":        {"simpleFunction":"lowhighbeam",  "off":"bug_speedo_needle",  "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light"},
+        "bug_tacho_needle":         {"simpleFunction":"lowhighbeam",  "off":"bug_tacho_needle",   "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light"},
+        "bug_clock_back":           {"simpleFunction":"lowhighbeam",  "off":"bug_clock_back",     "on":"bug_clock_light",          "on_intense":"bug_clock_light"},
+        "bug_clock_needle":         {"simpleFunction":"lowhighbeam",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light"},
+
+        // dashboard lights
+        "bug_dash_light_signal":    {"simpleFunction":["(signal_L or 0)", "(signal_R or 0)"],     "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on"},
+        "bug_dash_light_highbeam":  {"simpleFunction":"highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on"},
+        // use the "oil" LED to indicate regeneration beeing active (blinking)
+        "bug_dash_light_oil":       {"simpleFunction":{"oil":0.3, "regeneration":0.6},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on"},
+        "bug_dash_light_engine":    {"simpleFunction":"checkengine",                              "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on"},
+
+        // misc
+        "bug_radio_scale":          {"simpleFunction":"radio_state",  "off":"bug_radio_scale",    "on":"bug_radio_scale_on",       "on_intense":"bug_radio_scale_on"},
+        "bug_radio_needle":         {"simpleFunction":"radio_state",  "off":"bug_radio_needle",   "on":"bug_radio_needle_light",   "on_intense":"bug_radio_needle_light"},
+    },
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+
+        ["turnsignal",   "indicatorlever",    "f4m","f4l","f4tm",   {"x":-63, "y":0, "z":0},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["parkingbrake", "controls_handbreak",  "f4m","f4l","f4tm",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+    ],
+    "nodes": [
+        //dash anti-deform nodes
+
+        {"collision":true},
+        {"selfCollision":true},
+
+        {"nodeWeight":1.3},
+        {"group":["bug_body_dashboard"]},
+        // dashboard
+        ["bd0", 0.265, -0.75,  0.94],
+
+        ["bd1",  0.00000, -0.56437,  1.03, {"nodeWeight":2.0}],
+        ["bd1l",  0.50000, -0.56437,  1.03],
+
+        {"group": "bug_dashboard"},
+
+        //dash nodes
+        {"nodeWeight": 1.1},
+        ["dshl", 0.50000, -0.57000, 0.83000],
+        ["dsh", 0.00000, -0.57000, 0.83000, {"nodeWeight": 2.0}],
+        ["dsh2", 0.00000, -0.57000, 0.40000],
+
+        // speaker node
+        {"group": ""},
+        ["speaker", 0.395000, -0.59000, 0.93800],
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"disableMeshBreaking":true},
+        {"deformLimitExpansion":1.1},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":701000,"beamDamp":75, "beamStrength":"FLT_MAX"},
+
+        // dashboard
+        {"beamDeform":3000},
+        ["bd1l", "bd1"],
+        ["dsh", "dshl"],
+        ["dsh", "bd1"],
+        ["dsh", "bd1l"],
+        ["bd1", "dshl"],
+        ["bd1l", "dshl"],
+        // dashboard: rigidify
+        ["dsh", "bd0"],
+        ["dshl", "bd0"],
+        ["dsh2", "bd0"],
+        ["bd1", "bd0"],
+        ["bd1l", "bd0"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1.0},
+        {"beamSpring":1001000,"beamDamp":50},
+        {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+
+        //dashboard
+        {"deformGroup":"dashboard_break","deformationTriggerRatio":0.025},
+        ["dsh", "dsh2"],
+        ["dsh", "dshl"],
+        ["dsh2", "dshl"],
+
+        ["dshl", "bd1l"],
+        ["dsh", "bd1l"],
+
+        // dashboard <> frame
+        {"beamStrength":50000, "breakGroup": "body"},
+        ["dsh", "f2tm"],
+        ["dsh", "f3tm"],
+        ["dsh", "f4tm"],
+        ["dshl", "f2l"],
+        ["dshl", "f3l"],
+        ["dshl", "f3r"],
+        ["dshl", "f4l"],
+        ["dsh2", "f3l"],
+        ["dsh2", "f3r"],
+        ["dsh2", "f3tm"],
+        {"beamStrength":"FLT_MAX", "breakGroup": ""},
+        {"deformGroup":""},
+
+        // speaker <> frame
+        ["speaker", "f3tm", {"beamStrength":50000, "breakGroup": "body"}],
+        ["speaker", "f2l", {"beamStrength":50000, "breakGroup": "body"}],
+        ["speaker", "f4l", {"beamStrength":50000, "breakGroup": "body"}],
+
+        // speaker <> body
+        ["speaker", "dshl"],
+        ["speaker", "dsh"],
+        ["speaker", "dsh2"],
+
+        {"deformLimitExpansion":1.1},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+
+        {"optional":true},
+        {"beamSpring":300000,"beamDamp":50},
+        {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+        ["ikey", "bd1l"],
+        ["ikey", "dshl"],
+        {"optional":false},
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        {"deformLimitExpansion":1.1},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1.0},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        //front left door
+        {"groundModel":"metal"},
+        {"group":"bug_dashboard"},
+        {"dragCoef":0},
+        //L
+        ["bd1l", "dsh", "bd1"],
+        ["bd1l", "dshl", "dsh"],
+        {"group":""}
+    ]
+},
+"bug_ignition_key_barebone": {
+    "information":{
+        "authors": "BeamNG",
+        "name": "Ignition Key",
+        "value": 35,
+    },
+    "slotType" : "bug_ignition_key_barebone",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_ignition_keyfob", "bug_ignition_keyfob", "Key Fob"],
+    ],
+    "triggers":[
+        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["ignition",  "",            "dsh","dshl","dsh2", "box", {"x":0.02, "y":0.02, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.1642, "y":-0.0737, "z":-0.033}],
+    ],
+    "triggerEventLinks":[
+        ["triggerId:triggers", "action", "targetEventId:events"],        
+        
+        ["ignition", "action0", "ignition"],
+        ["ignition", "action1", "ignition"],
+        ["ignition", "action2", "ignition"],
+    ],
+    "events":[
+        ["id", "title", "desc"],
+
+        ["ignition",  "ui.inputActions.bug.ignition.title", "ui.inputActions.bug.ignition.description", {"onDown":"electrics.toggleIgnitionLevelOnDown()", "onUp":"electrics.toggleIgnitionLevelOnUp()"}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["dashboard_key_frame", ["bug_dashboard"], [], {"pos":{"x":0.113027,"y":0.047837,"z":0.063676}, "rot":{"x":3, "y":0, "z":-1}}],
+    ],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+        ["ignitionLevel",  "ignition_key",  "dsh","dshl","bd1",  {"x":1, "y":-90, "z":5},  {"x":0, "y":-45, "z":0},  {"x":0, "y":0, "z":0},  0,  3,  0,  1, {"baseTranslation":{"x":0.1741,"y":0.0643,"z":0.0281}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+         
+        {"nodeMaterial":"|NM_METAL"},
+        {"collision":false},
+        {"selfCollision":false},
+        {"nodeWeight":0.2},
+        ["ikey", 0.070919, -0.533485, 0.860583],
+        {"group":""},
+        {"collision":true},
+        {"selfCollision":false}
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"deformLimitExpansion":1.1},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+
+        {"beamSpring":300000,"beamDamp":50},
+        {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+        ["ikey", "bc2ll"],
+        ["ikey", "bc2rr"],
+        ["ikey", "bf8l"],
+        ["ikey", "bf8r"],
+        ["ikey", "bd1"],
+        ["ikey", "dsh"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ]
+},
+}

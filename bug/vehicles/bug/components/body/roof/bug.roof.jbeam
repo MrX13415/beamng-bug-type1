@@ -189,7 +189,7 @@
         // rail nodes
         {"nodeMaterial":"|NM_METAL"},
         {"frictionCoef":0.5},
-        {"nodeWeight":0.5},
+        {"nodeWeight":0.6},
         // 1st bar
         {"group":"bug_racktop_bar1"},
         ["rta1l",  0.428780, -0.255840, 1.40688],

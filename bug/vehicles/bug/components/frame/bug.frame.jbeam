@@ -16,7 +16,6 @@
 
 		// bodywork
 		["bug_body", "bug_body", "Body"],
-        ["bug_interior", "bug_interior", "Interior"],
 
 		["bug_waterfloat","", "Water Float"],
 
@@ -34,8 +33,7 @@
     ],
     "refNodes":[
         ["ref:", "back:", "left:", "up:", "leftCorner:", "rightCorner:"],
-       // ["f2r", "f3r", "f2l", "f7r", "f12ll", "f12rr"],
-        ["f4m", "f5m", "f4l", "f4tm", "fx1l", "fx2l"],
+        ["f4m", "f5m", "f4l", "f4tm", "f1ml", "f1mr"],
     ],
     "cameraChase":{
         "distance":5.5,
@@ -90,55 +88,64 @@
 		{"collision":true},
 		{"frictionCoef":0.5},
 		{"group":"bug_frame"},
+		{"nodeWeight":4.5},
+		["f1ml",  0.15993, -1.36200, 0.24300],
+		["f1mr", -0.15993, -1.36200, 0.24300],
 		{"nodeWeight":2.0},
-		["f1ml",  0.15993, -1.36559, 0.21500],
-		["f1mr", -0.15993, -1.36559, 0.21500],
 		["f2m",   0.00000, -1.02968, 0.21500],
 		["f3m",   0.00000, -0.69101, 0.21500],
 		["f4m",   0.00000, -0.19767, 0.21500],		// refNode "ref"
-		{"nodeWeight":4.0},
-		["f5m",   0.00000,  0.31389, 0.21500],		// refNode "back"
-		["f6ml",  0.22655,  0.71449, 0.21500],
-		["f6mr", -0.22655,  0.71449, 0.21500],
+		["f5m",   0.00000,  0.31389, 0.21500, {"nodeWeight":5.0}],		// refNode "back"
+		["f6ml",  0.22655,  0.71449, 0.21500, {"nodeWeight":4.0}],
+		["f6mr", -0.22655,  0.71449, 0.21500, {"nodeWeight":4.0}],
 		["f7ml",  0.22655,  1.34987, 0.21500],
 		["f7mr", -0.22655,  1.34987, 0.21500],
 		//-
-		{"nodeWeight":4.0},
+		{"nodeWeight":3.0},
 		["f2l",  0.38112, -1.02968, 0.21500],
 		["f2r", -0.38112, -1.02968, 0.21500],
-		["f3l",  0.52485, -0.69101, 0.21500],
-		["f3r", -0.52485, -0.69101, 0.21500],
-		{"nodeWeight":4.0},
+		["f3l",  0.52485, -0.69101, 0.21500, {"nodeWeight":3.5}],
+		["f3r", -0.52485, -0.69101, 0.21500, {"nodeWeight":3.5}],
 		["f4l",  0.56635, -0.19767, 0.21500],		// refNode "left"
 		["f4r", -0.56635, -0.19767, 0.21500],
-		["f5l",  0.60752,  0.31389, 0.21500],
-		["f5r", -0.60752,  0.31389, 0.21500],
+		["f5l",  0.60752,  0.31389, 0.21500, {"nodeWeight":5.0}],
+		["f5r", -0.60752,  0.31389, 0.21500, {"nodeWeight":5.0}],
 		["f6l",  0.60752,  0.71449, 0.21500],
 		["f6r", -0.60752,  0.71449, 0.21500],
 		//-
+		{"nodeWeight":4.5},
+		["f1tml",  0.15993, -1.36400, 0.38100],
+		["f1tmr", -0.15993, -1.36400, 0.38100],
 		{"nodeWeight":4.0},
-		["f1tml",  0.15993, -1.36559, 0.40800],
-		["f1tmr", -0.15993, -1.36559, 0.40800],
 		["f2tm",   0.00000, -1.02968, 0.40800],
 		["f3tm",   0.00000, -0.69101, 0.40800],
-		{"nodeWeight":4.0},
 		["f4tm",   0.00000, -0.19767, 0.40800],	// refNode "up"
-		["f5tm",   0.00000,  0.31389, 0.40800],
-		["f6tml",  0.22655,  0.71449, 0.40800],
-		["f6tmr", -0.22655,  0.71449, 0.40800],
+		["f5tm",   0.00000,  0.31389, 0.40800, {"nodeWeight":7.0}],
+		["f6tml",  0.22655,  0.71449, 0.40800, {"nodeWeight":7.0}],
+		["f6tmr", -0.22655,  0.71449, 0.40800, {"nodeWeight":7.0}],
 		["f7tml",  0.22655,  1.34987, 0.40800],
 		["f7tmr", -0.22655,  1.34987, 0.40800],
 		{"group":""},
 
 	],
+	"torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        //rigidify front
+        {"spring":501000, "damp":0, "deform":15000, "strength":"FLT_MAX"},
+        ["f3l", "f1ml", "f1mr", "f3r"],
+        ["f3l", "f1tml", "f1tmr", "f3r"],
+        ["f4l", "f2l", "f2r", "f4r"],
+		//rigidify rear
+        ["f5l", "f6l", "f6r", "f5r"],
+		["f6l", "f7ml", "f7mr", "f6r"],
+	],
 	"beams": [
 		["id1:", "id2:"],
 
-		//{"highlight":{"radius":0.002, "col":"#ff0000ff" }},
 		{"deformLimitExpansion":1.1},
 		{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
-		{"beamSpring":1001000,"beamDamp":100},
-		{"beamDeform":6000,"beamStrength":"FLT_MAX"},
+		{"beamSpring":2001000,"beamDamp":100},
+		{"beamDeform":8000,"beamStrength":"FLT_MAX"},
 
 		// Main
 		// Y
@@ -152,8 +159,8 @@
 		["f6ml", "f7ml"],
 		["f6mr", "f7mr"],
 		//-
-		["f1ml", "f2l"],
-		["f1mr", "f2r"],
+		["f1ml", "f2l", {"beamDamp":250}],
+		["f1mr", "f2r", {"beamDamp":250}],
 		["f2l", "f3l"],
 		["f2r", "f3r"],
 		["f3l", "f4l"],
@@ -174,7 +181,7 @@
 		["f6tmr", "f7tmr"],
 
 		// X
-		["f1ml", "f1mr"],
+		["f1ml", "f1mr", {"breakGroup": "suspension_F"}],
 		["f2l", "f2m"],
 		["f2m", "f2r"],
 		["f3l", "f3m"],
@@ -188,7 +195,7 @@
 		["f6mr", "f6r"],
 		["f7ml", "f7mr"],
 		//-
-		["f1tml", "f1tmr"],
+		["f1tml", "f1tmr", {"breakGroup": "suspension_F"}],
 		["f2l", "f2tm"],
 		["f2tm", "f2r"],
 		["f3l", "f3tm"],
@@ -201,6 +208,9 @@
 		["f6tml", "f6tmr"],
 		["f6tmr", "f6r"],
 		["f7tml", "f7tmr"],
+
+		{"beamSpring":2001000,"beamDamp":100},
+		{"beamDeform":8000,"beamStrength":"FLT_MAX"},
 
 		// Z
 		["f2l", "f3m"],
@@ -257,8 +267,10 @@
 		// rigidify:
 		["f1tmr", "f1ml"],
 		["f1tml", "f1mr"],
-		["f1tml", "f2r"],
-		["f1tmr", "f2l"],
+		["f1tml", "f2l", {"beamDamp":250}],
+		["f1tmr", "f2l", {"beamDamp":250}],
+		["f1tml", "f2r", {"beamDamp":250}],
+		["f1tmr", "f2r", {"beamDamp":250}],
 
 		["f2tm", "f5r"],
 		["f2tm", "f5l"],
@@ -267,7 +279,8 @@
 
 		// Center 
 		// Z
-		{"beamDeform":"FLT_MAX"},
+		{"beamSpring":3001000,"beamDamp":100},
+		{"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
 		["f1ml", "f1tml"],
 		["f1mr", "f1tmr"],
 		["f2m", "f2tm"],
@@ -278,7 +291,7 @@
 		["f6mr", "f6tmr"],
 		["f7ml", "f7tml"],
 		["f7mr", "f7tmr"],
-		{"beamDeform":4000},
+		{"beamDeform":8000},
 		// Cross
 		["f1tml", "f2m"],
 		["f1ml", "f2tm"],
@@ -300,7 +313,7 @@
 		["f6mr", "f7tmr"],
 
 		//rigidify
-		{"beamSpring":601000,"beamDamp":120},
+		{"beamSpring":1001000,"beamDamp":120},
 		["f3l", "f5r"],
 		["f3r", "f5l"],
 		{"beamDeform":15000,"beamStrength":20000},
@@ -310,10 +323,10 @@
 		["fs1r", "bs1l"],
 		["fs1r", "bs1r"],
 		{"breakGroup": "suspension_F"},
-		["fs1l", "f4l"],
-		["fs1l", "f4r"],
-		["fs1r", "f4l"],
-		["fs1r", "f4r"],
+	    ["fs1l", "f4l"],
+	    ["fs1l", "f4r"],
+	    ["fs1r", "f4l"],
+	    ["fs1r", "f4r"],
 		{"breakGroup": "suspension_R"},
 		["bs1l", "f4l"],
 		["bs1l", "f4r"],

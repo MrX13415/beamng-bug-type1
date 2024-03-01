@@ -188,7 +188,7 @@
         ["fb5rr", "fb2r"],
         //attach
         {"beamSpring":651000,"beamDamp":120},
-        {"beamDeform":12000,"beamStrength":18000},
+        {"beamDeform":12000,"beamStrength":10000},
         {"optional":true},
         {"breakGroup":"frontbumper_a_R"},
         ["fb1r", "bf3r"],
@@ -208,7 +208,7 @@
         ["fb3l", "bf3l"],
         ["fb3l", "f1mr"],
         ["fb3l", "f1ml"],
-        {"beamDeform":6000,"beamStrength":12000},
+        {"beamDeform":6000,"beamStrength":10000},
         {"breakGroupType":1},
         {"breakGroup":"frontbumper_a_L"},
         ["fb5ll", "f2l"],
@@ -224,7 +224,7 @@
         //front bumper support beams
         {"beamPrecompression":1,"beamType":"|SUPPORT", "beamLongBound":6},
         {"beamSpring":601000,"beamDamp":120},
-        {"beamDeform":21000,"beamStrength":200000},
+        {"beamDeform":21000,"beamStrength":100000},
         {"beamPrecompression":0.90},
         ["fb5ll", "bf1l"],
         ["fb5ll", "bf1ll"],
@@ -233,7 +233,7 @@
         ["fb3rr", "bf1r"],
         ["fb3ll", "bf1l"],
         //to wheel hub
-        {"beamDeform":32000,"beamStrength":200000},
+        {"beamDeform":32000,"beamStrength":100000},
         {"beamPrecompression":0.8},
         ["fb2ll", "fh1l"],
         ["fb2rr", "fh1r"],
@@ -471,7 +471,7 @@
         ["rb1ll", "rb1"],
         //attach
         {"beamSpring":801000,"beamDamp":120},
-        {"beamDeform":12000,"beamStrength":20000},
+        {"beamDeform":12000,"beamStrength":10000},
         {"breakGroup":"rearbumper_a_R"},
         ["rb1r", "br6r"],
         ["rb3r", "br5r"],
@@ -503,7 +503,7 @@
         //rear bumper support beams
         {"beamType":"|SUPPORT", "beamLongBound":4},
         {"beamSpring":601000,"beamDamp":120},
-        {"beamDeform":14000,"beamStrength":20000},
+        {"beamDeform":14000,"beamStrength":10000},
         {"beamPrecompression":0.99},
         ["rb3", "br7l"],
         ["rb3", "br7r"],
@@ -749,8 +749,8 @@
         ["fb4rr", "fb2r"],
         ["fb5rr", "fb2r"],
         //attach
-        {"beamSpring":651000,"beamDamp":120},
-        {"beamDeform":12000,"beamStrength":18000},
+        {"beamSpring":601000,"beamDamp":120},
+        {"beamDeform":12000,"beamStrength":10000},
         {"optional":true},
         {"breakGroup":"frontbumper_a_R"},
         ["fb1r", "bf3r"],
@@ -770,7 +770,7 @@
         ["fb3l", "bf3l"],
         ["fb3l", "f1mr"],
         ["fb3l", "f1ml"],
-        {"beamDeform":6000,"beamStrength":12000},
+        {"beamDeform":6000,"beamStrength":10000},
         {"breakGroupType":1},
         {"breakGroup":"frontbumper_a_L"},
         ["fb5ll", "f2l"],
@@ -786,7 +786,7 @@
         //front bumper support beams
         {"beamPrecompression":1,"beamType":"|SUPPORT", "beamLongBound":6},
         {"beamSpring":601000,"beamDamp":120},
-        {"beamDeform":21000,"beamStrength":200000},
+        {"beamDeform":21000,"beamStrength":100000},
         {"beamPrecompression":0.90},
         ["fb5ll", "bf1l"],
         ["fb5ll", "bf1ll"],
@@ -795,7 +795,7 @@
         ["fb3rr", "bf1r"],
         ["fb3ll", "bf1l"],
         //to wheel hub
-        {"beamDeform":32000,"beamStrength":200000},
+        {"beamDeform":32000,"beamStrength":100000},
         {"beamPrecompression":0.8},
         ["fb2ll", "fh1l"],
         ["fb2rr", "fh1r"],
@@ -1030,7 +1030,7 @@
          ["rb1ll", "rb1"],
          //attach
          {"beamSpring":801000,"beamDamp":120},
-         {"beamDeform":12000,"beamStrength":20000},
+         {"beamDeform":12000,"beamStrength":10000},
          {"breakGroup":"rearbumper_a_R"},
          ["rb1r", "br6r"],
          ["rb3r", "br5r"],
@@ -1062,7 +1062,7 @@
          //rear bumper support beams
          {"beamType":"|SUPPORT", "beamLongBound":4},
          {"beamSpring":601000,"beamDamp":120},
-         {"beamDeform":14000,"beamStrength":20000},
+         {"beamDeform":14000,"beamStrength":10000},
          {"beamPrecompression":0.99},
          ["rb3", "br7l"],
          ["rb3", "br7r"],
@@ -1308,7 +1308,7 @@
         ["fb5rr", "fb2r"],
         //attach
         {"beamSpring":651000,"beamDamp":120},
-        {"beamDeform":12000,"beamStrength":18000},
+        {"beamDeform":12000,"beamStrength":10000},
         {"optional":true},
         {"breakGroup":"frontbumper_a_R"},
         ["fb1r", "bf3r"],
@@ -1328,7 +1328,7 @@
         ["fb3l", "bf3l"],
         ["fb3l", "f1mr"],
         ["fb3l", "f1ml"],
-        {"beamDeform":6000,"beamStrength":12000},
+        {"beamDeform":6000,"beamStrength":10000},
         {"breakGroupType":1},
         {"breakGroup":"frontbumper_a_L"},
         ["fb5ll", "f2l"],
@@ -1344,7 +1344,7 @@
         //front bumper support beams
         {"beamPrecompression":1,"beamType":"|SUPPORT", "beamLongBound":6},
         {"beamSpring":601000,"beamDamp":120},
-        {"beamDeform":21000,"beamStrength":200000},
+        {"beamDeform":21000,"beamStrength":100000},
         {"beamPrecompression":0.90},
         ["fb5ll", "bf1l"],
         ["fb5ll", "bf1ll"],
@@ -1353,7 +1353,7 @@
         ["fb3rr", "bf1r"],
         ["fb3ll", "bf1l"],
         //to wheel hub
-        {"beamDeform":32000,"beamStrength":200000},
+        {"beamDeform":32000,"beamStrength":100000},
         {"beamPrecompression":0.8},
         ["fb2ll", "fh1l"],
         ["fb2rr", "fh1r"],
@@ -1588,7 +1588,7 @@
          ["rb1ll", "rb1"],
          //attach
          {"beamSpring":801000,"beamDamp":120},
-         {"beamDeform":12000,"beamStrength":20000},
+         {"beamDeform":12000,"beamStrength":10000},
          {"breakGroup":"rearbumper_a_R"},
          ["rb1r", "br6r"],
          ["rb3r", "br5r"],
@@ -1620,7 +1620,7 @@
          //rear bumper support beams
          {"beamType":"|SUPPORT", "beamLongBound":4},
          {"beamSpring":601000,"beamDamp":120},
-         {"beamDeform":14000,"beamStrength":20000},
+         {"beamDeform":14000,"beamStrength":10000},
          {"beamPrecompression":0.99},
          ["rb3", "br7l"],
          ["rb3", "br7r"],

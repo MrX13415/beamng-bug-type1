@@ -6,15 +6,15 @@
   "paints":[
     {
       "baseColor":[
-        0.94,
-        0.92,
-        0.75,
-        1.45
+        0.82,
+        0.83,
+        0.71,
+        1.51
       ],
-      "clearcoat":0.44,
-      "clearcoatRoughness":0.43,
-      "metallic":0,
-      "roughness":0.49
+      "clearcoat":1,
+      "clearcoatRoughness":0.7,
+      "metallic":0.4,
+      "roughness":0.2
     },
     {
       "baseColor":[
@@ -30,9 +30,9 @@
     },
     {
       "baseColor":[
-        0.53,
-        0.55,
-        0.55,
+        0.46,
+        0.48,
+        0.48,
         1
       ],
       "clearcoat":0.44,
@@ -125,7 +125,7 @@
     "bug_mirror_L":"bug_mirror_teardrop_L",
     "bug_mirror_R":"",
     "bug_mod":"",
-    "bug_odometer":"bug_odometer_metric",
+    "bug_odometer":"bug_odometer_imperial",
     "bug_oilcooler":"",
     "bug_oilpan":"bug_oilpan",
     "bug_radsupport":"",

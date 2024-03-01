@@ -59,7 +59,7 @@
         "maxRPM": 5800,
         "hasRevLimiter":false,
         "inertia":0.11, 
-        "friction":13,
+        "friction":10,
         "dynamicFriction":0.029,
         "engineBrakeTorque":28,
 

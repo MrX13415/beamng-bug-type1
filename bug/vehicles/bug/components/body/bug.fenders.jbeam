@@ -448,7 +448,7 @@
          {"collision":true},
          {"selfCollision":true},
          {"group":"bug_fender_FL"},
-         {"nodeWeight":0.8},
+         {"nodeWeight":0.6},
          ["feFL1r",  0.30309, -1.77743,  0.27232],
          ["feFL1l",  0.59157, -1.74309,  0.31632],
          ["feFL2r",  0.41266, -1.70702,  0.51402],
@@ -462,7 +462,7 @@
          ["feFL4l",  0.76182, -1.39273,  0.65686],
          ["feFL5r",  0.52384, -1.15463,  0.81046],
          ["feFL5m",  0.68495, -1.15463,  0.78817],
-         ["feFL5l",  0.76077, -1.15463,  0.69922],
+         ["feFL5l",  0.76077, -1.15463,  0.69922, {"nodeWeight":0.70}],
          ["feFL6r",  0.60399, -0.79593,  0.60644],
          ["feFL6m",  0.70532, -0.81527,  0.58435],
          ["feFL6l",  0.76187, -0.92422,  0.52039],
@@ -481,7 +481,7 @@
         ["id1:", "id2:"],
 
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":450000,"beamDamp":130},
+        {"beamSpring":301000,"beamDamp":130},
         {"beamDeform":3000,"beamStrength":"FLT_MAX"},
 
         //fender main shape
@@ -581,7 +581,7 @@
         // mounting
         {"disableTriangleBreaking":true},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":460460,"beamDamp":50},
+        {"beamSpring":401000,"beamDamp":50},
         {"beamDeform":3000,"beamStrength":10000},
         {"breakGroup":"fender_FL_a"},
         // fender <> front
@@ -669,7 +669,7 @@
         {"frictionCoef":0.5},
         {"collision":true},
         {"selfCollision":true},
-        {"nodeWeight":0.80},
+        {"nodeWeight":0.60},
         {"group":"bug_fender_RL"},
         ["feRL1l",  0.74655,  0.79880,  0.26610],
         ["feRL2l",  0.76245,  0.89884,  0.55114],
@@ -688,7 +688,7 @@
         ["feRL2r",  0.68991,  0.76634,  0.59285],
         ["feRL3r",  0.67010,  0.95818,  0.78829],
         ["feRL4r",  0.58304,  1.28421,  0.83210],
-        ["feRL5r",  0.48830,  1.59690,  0.64632],
+        ["feRL5r",  0.48830,  1.59690,  0.64632, {"nodeWeight":0.70}],
         ["feRL6r",  0.48830,  1.72616,  0.47585],
         ["feRL7r",  0.36793,  1.91359,  0.24426],
 
@@ -703,7 +703,7 @@
         ["id1:", "id2:"],
 
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":450000,"beamDamp":130},        
+        {"beamSpring":301000,"beamDamp":130},        
         {"beamDeform":3000,"beamStrength":"FLT_MAX"},
 
         ["feRL1l", "feRL1m"],
@@ -802,7 +802,7 @@
         // mounting
         {"disableTriangleBreaking":true},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":460460,"beamDamp":50},
+        {"beamSpring":401000,"beamDamp":50},
         {"beamDeform":3000,"beamStrength":10000},
         {"breakGroup":"fender_RL_a"},
         // fender <> sides

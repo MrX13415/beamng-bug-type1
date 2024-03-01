@@ -53,8 +53,8 @@
         "idleRPMRoughness":180,
         "maxRPM":3900,
         "inertia":0.08, //for 200mm 14lbs flywheel + other rotational mass of engine
-        "friction":10,
-        "dynamicFriction":0.022,
+        "friction":8,
+        "dynamicFriction":0.020,
         "engineBrakeTorque":23,
 
         "burnEfficiency":[

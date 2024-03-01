@@ -84,17 +84,17 @@
          {"collision":true},
          {"selfCollision":true},
          {"group":"bug_hood"},
-         {"nodeWeight":0.81},
+         {"nodeWeight":0.4},
          ["h1rrr", -0.54, -0.71, 0.99],
          ["h1rr", -0.44138, -0.74, 1.01],
          ["h1r", -0.23260, -0.77, 1.04],
          ["h1l", 0.23260, -0.77, 1.04],
          ["h1ll", 0.44138, -0.74, 1.01],
          ["h1lll", 0.54, -0.71, 0.99],
-         ["h2rr", -0.48173, -1.15531, 0.90778],
-         ["h2r", -0.24140, -1.27000, 0.96000],
-         ["h2l", 0.24140, -1.27000, 0.96000],
-         ["h2ll", 0.48173, -1.15531, 0.90778],
+         ["h2rr", -0.48173, -1.15531, 0.90778, {"nodeWeight":0.7}],
+         ["h2r", -0.24140, -1.27000, 0.96000, {"nodeWeight":0.7}],
+         ["h2l",  0.24140, -1.27000, 0.96000, {"nodeWeight":0.7}],
+         ["h2ll", 0.48173, -1.15531, 0.90778, {"nodeWeight":0.7}],
          ["h3rr", -0.39570, -1.50196, 0.81004],
          ["h3r", -0.23133, -1.52984, 0.84002],
          ["h3", 0.00000, -1.52984, 0.86502],
@@ -112,7 +112,7 @@
          {"collision":false},
          //rigidifier
          {"group":""},
-         ["h6", 0.00000, -1.30000, 0.50000],
+         ["h6", 0.00000, -1.30000, 0.50000, {"nodeWeight":0.7}],
          ["h7r", -0.44138, -0.75, 0.85],
          ["h7l", 0.44138, -0.75, 0.85],
 
@@ -125,6 +125,7 @@
 
          // hinge nodes
          {"group":""},
+         {"nodeWeight":1.5},
          ["h8r", -0.503, -0.6001, 0.993],
          ["h8l", 0.503, -0.6001, 0.993],
 
@@ -143,8 +144,8 @@
 
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         //--HOOD--
-        {"beamSpring":644460,"beamDamp":58},
-        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+        {"beamSpring":501000,"beamDamp":58},
+        {"beamDeform":4000,"beamStrength":"FLT_MAX"},
         //hood main shape
         ["h1rrr","h2rr"],
         ["h1r","h2r"],
@@ -209,12 +210,12 @@
         ["h7br", "bf8"],
         ["h7br", "bf8r"],
 
-        {"beamSpring":414460,"beamDamp":58},
+        {"beamSpring":401000,"beamDamp":58},
         //front
         ["h4r","h5r"],
         ["h4l","h5l"],
         //surficial crossing
-        {"beamSpring":644460,"beamDamp":58},
+        {"beamSpring":501000,"beamDamp":58},
         {"beamDeform":2000,"beamStrength":"FLT_MAX"},
         ["h1rrr","h2r"],
         ["h1r","h2rr"],
@@ -253,7 +254,7 @@
         ["h5r","h4rr"],
         ["h5l","h4ll"],
         //rigids
-        {"beamSpring":300600,"beamDamp":50},
+        {"beamSpring":301000,"beamDamp":50},
         {"beamDeform":1200,"beamStrength":"FLT_MAX"},
         ["h2rr","h4rr"],
         ["h2r","h4r"],
@@ -272,7 +273,7 @@
         ["h3l","h5l"],
         ["h3ll","h5l"],
         //rigidifier
-        {"beamSpring":500460,"beamDamp":48},
+        {"beamSpring":401000,"beamDamp":48},
         {"beamDeform":1000,"beamStrength":"FLT_MAX"},
         ["h6","h1rrr"],
         ["h6","h2rr", {"beamDeform":5000}],
@@ -300,7 +301,7 @@
         ["h7l","h1rrr"],
         ["h7r","h1lll"],
 
-        {"beamSpring":644460,"beamDamp":58},
+        {"beamSpring":501000,"beamDamp":58},
         {"beamDeform":5000,"beamStrength":"FLT_MAX"},
         //hood hinge
         ["h8r","h8l"],
@@ -329,7 +330,7 @@
         ["h7al","h7bl", {"breakGroup":"hoodhinge_L"}],
         ["h7ar","h7br", {"breakGroup":"hoodhinge_R"}],
 
-        {"beamSpring":828460,"beamDamp":58},
+        {"beamSpring":701000,"beamDamp":58},
         {"beamDeform":19640,"beamStrength":30100},
         {"breakGroup":"hoodhinge_R"},
         //r
@@ -349,7 +350,7 @@
         ["f3r", "h8l"],
         {"breakGroup":""},
         {"beamDeform":195000,"beamStrength":"FLT_MAX"},
-        {"beamSpring":300000,"beamDamp":80},
+        {"beamSpring":301000,"beamDamp":80},
         //{"breakGroup":"hoodlatch"},
         //hood latch
         ["h5r","h9"],
@@ -474,6 +475,12 @@
         ["h4l","h4ll","h3l"],
         ["h3","h4l","h3l"],
         ["h4","h4l","h3"],
+        ["h4rr","h5r","h4r"],
+        ["h4l","h5l","h4ll"],
+        ["h4r","h5r","h5"],
+        ["h4r","h5","h4"],
+        ["h4","h5","h4l"],
+        ["h4l","h5","h5l"],
         {"group":""},
     ],
 },

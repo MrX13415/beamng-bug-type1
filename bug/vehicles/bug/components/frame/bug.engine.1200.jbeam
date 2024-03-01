@@ -54,7 +54,7 @@
         "maxRPM":5000,
         "hasRevLimiter":false,
         "inertia":0.08, //for 200mm 14lbs flywheel + other rotational mass of engine
-        "friction":10,
+        "friction":9,
         "dynamicFriction":0.023,
         "engineBrakeTorque":24,
 

@@ -11,7 +11,7 @@
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.2
       },
       {},
       {},
@@ -232,7 +232,7 @@
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.2
       },
       {},
       {},

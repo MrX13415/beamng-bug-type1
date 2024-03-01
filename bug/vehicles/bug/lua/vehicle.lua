@@ -6,8 +6,12 @@
 -- by MrX13415
 
 local M = {}
+M.version = "21.2"
+M.versionDate = "2024-01-13"
+
 local updateTimer = 2   -- Make sure the first call is immediately
 local openingUpdateTimer = 2   -- Make sure the first call is immediately
+local cabinFilterTimer = 2
 
 local NodeNameSoundSFX = "dsh"
 local nodeSFX = nil
@@ -104,19 +108,22 @@ local function resetParts()
 end
 
 local function setCabinFilterCoef(newCabinFilterCoef)
-  if not playerInfo.firstPlayerSeated then return end
-
-  if cabinFilterCoef ~= newCabinFilterCoef then
-    cabinFilterCoef = newCabinFilterCoef
-
-    obj:queueGameEngineLua(string.format([[
-      core_sounds.cabinFilterStrength = %f
-      log("D", "", "[Bug] CabinFilterCoef: " .. core_sounds.cabinFilterStrength)
-    ]], clamp(cabinFilterCoef, 0, 1)))
-  end
+  cabinFilterCoef = newCabinFilterCoef
 end
 
-local function updateCabinFilter(open)
+local function updateCabinFilter()
+  if not playerInfo.firstPlayerSeated then return end
+
+  obj:queueGameEngineLua(string.format([[
+    local newCoef = %f
+    if core_sounds.cabinFilterStrength ~= newCoef then
+      core_sounds.cabinFilterStrength = newCoef
+      log("D", "", "[Bug] CabinFilterCoef: " .. core_sounds.cabinFilterStrength)
+    end
+  ]], clamp(cabinFilterCoef, 0, 1)))  
+end
+
+local function setCabinFilter(open)
   local minFactor = 1 - 1 / v.data.sounds.cabinFilterCoef * 0.15 -- Keep at least 15%
   local openCurve = 1 - (open*1.3)/(open+0.3) * minFactor 
 
@@ -337,7 +344,7 @@ local function updateOpenings()
   electrics.values["vehicleopenR"] = openR
   electrics.values["vehicleopen"] = open
 
-  updateCabinFilter(open)
+  setCabinFilter(open)
 
   return open
 end
@@ -418,6 +425,13 @@ local function updateGFX(dt)
     openingUpdateTimer = 0
     updateOpenings()
   end
+
+  cabinFilterTimer = cabinFilterTimer + dt
+	-- update rate: 10 fps (0.1 == 100ms)
+	if cabinFilterTimer > 0.1 then 
+    cabinFilterTimer = 0
+    updateCabinFilter()
+  end  
 end
 
 local function onInit(jbeamData)
@@ -447,7 +461,7 @@ local function onInit(jbeamData)
 end
 
 local function onReset()
-  print("[Bug] Version 21 - 2023-12-11")
+  print("[Bug] Version " ..M.version.. " - " ..M.versionDate)
   ----------------------------------------
 
   resetParts()

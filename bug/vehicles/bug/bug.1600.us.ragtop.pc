@@ -141,7 +141,7 @@
     "bug_seat_R":"bug_seat_A_R",
     "bug_seats":"bug_seats",
     "bug_shelf":"",
-    "bug_shifter":"bug_shifter_M",
+    "bug_shifter":"bug_shifter_4M",
     "bug_shock_F":"bug_shock_F",
     "bug_shock_R":"bug_shock_R",
     "bug_side_panels":"bug_side_panels",

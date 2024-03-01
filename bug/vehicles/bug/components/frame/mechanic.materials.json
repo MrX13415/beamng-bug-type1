@@ -260,5 +260,29 @@
     ],
     "dynamicCubemap": true,
     "version": 1.5
-  }
+  },
+  "bug_fuel": {
+    "name": "bug_fuel",
+    "mapTo": "bug_fuel",
+    "class": "material",
+    "persistentId": "3272d03b-9430-4b04-b72e-360168e9de66",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.0130,
+          0.0153,
+          0.0173,
+          1
+        ],
+        "metallicFactor": 0.1,
+        "roughnessFactor": 0.1
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "translucent": true,
+    "version": 1.5
+  },
 }

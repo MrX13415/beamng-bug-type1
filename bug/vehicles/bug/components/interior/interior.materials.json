@@ -928,6 +928,33 @@
     ],
     "version": 1.5
   },
+  "bug_interior_electrics": {
+    "name": "bug_interior_electrics",
+    "mapTo": "bug_interior_electrics",
+    "class": "Material",
+    "persistentId": "03e3ec54-e9aa-43f7-888c-2d742b66ae0e",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/interior/textures/gauges_m.data.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/gauges_r.data.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/gauges_n.normal.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
 
   "bug_interior_theme": {
     "name": "bug_interior_theme",
@@ -1932,6 +1959,33 @@
           1
         ],
         "opacityMap": "/vehicles/bug/components/interior/textures/interior_glass_o.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.1
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "bug_interior_glass_dmg": {
+    "name": "bug_interior_glass_dmg",
+    "mapTo": "bug_interior_glass_dmg",
+    "class": "Material",
+    "persistentId": "018843c8-a948-45cb-bf42-f6e7161a20ec",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/interior/textures/interior_glass_dmg_d.color.png",
+        "metallicFactor": 0.7,
+        "normalMap": "/vehicles/bug/components/interior/textures/interior_glass_dmg_n.normal.dds",
+        "opacityMap": "/vehicles/bug/components/interior/textures/interior_glass_dmg_o.data.png",
         "pixelSpecular": true,
         "roughnessFactor": 0.1
       },

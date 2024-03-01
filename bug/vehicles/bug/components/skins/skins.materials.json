@@ -30,7 +30,6 @@
     "activeLayers": 2,
     "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
     "version": 1.5
@@ -245,7 +244,6 @@
     "activeLayers": 3,
     "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
     "version": 1.5

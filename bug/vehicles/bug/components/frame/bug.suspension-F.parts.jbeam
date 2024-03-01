@@ -50,9 +50,6 @@
     ],
     "torsionbars": [
         ["id1:", "id2:", "id3:", "id4:"],
-        //rigidify subframe in torsion
-        {"spring":200000, "damp":0, "deform":15000, "strength":"FLT_MAX"},
-        ["fx1l", "fx2l", "fx2r", "fx1r"],
         //10mm 187.4
         //11mm 274.3
         //11.5mm 327.7
@@ -106,7 +103,7 @@
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$springheight_F", "range", "+m", "Suspension", 0.0, -0.08, 0.04, "Spring Height", "Raise or lower the suspension height", {"stepDis":0.005, "subCategory":"Front"}],
-        ["$spring_F", "range", "N/m", "Suspension", 30000, 10000, 100000, "Spring Rate", "Spring stiffness", {"stepDis":500, "subCategory":"Front"}]
+        ["$spring_F", "range", "N/m", "Suspension", 30000, 10000, 100000, "Spring Rate", "Spring stiffness", {"stepDis":500, "subCategory":"Front"}],
         ["$damp_bump_F", "range", "N/m/s", "Suspension", 2000, 500, 4000, "Bump Damping", "Damper rate in compression", {"stepDis":100, "subCategory":"Front"}],
         ["$damp_rebound_F", "range", "N/m/s", "Suspension", 4300, 1000, 8000, "Rebound Damping", "Damper rate in extension", {"stepDis":100, "subCategory":"Front"}],
     ],
@@ -151,11 +148,11 @@
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$springheight_F", "range", "+m", "Suspension", 0.0, -0.04, 0.08, "Spring Height", "Raise or lower the suspension height", {"stepDis":0.005, "subCategory":"Front"}],
-        ["$spring_F", "range", "N/m", "Suspension", 12000, 10000, 50000, "Spring Rate", "Spring stiffness", {"stepDis":500, "subCategory":"Front"}]
-        ["$damp_bump_F", "range", "N/m/s", "Suspension", 1200, 500, 10000, "Bump Damping", "Damper rate in compression", {"stepDis":100, "subCategory":"Front"}]
-        ["$damp_bump_F_fast", "range", "N/m/s", "Suspension", 900, 500, 20000, "Fast Bump Damping", "Damper rate in fast compression", {"stepDis":100, "subCategory":"Front"}]
-        ["$damp_rebound_F", "range", "N/m/s", "Suspension", 1700, 500, 10000, "Front Rebound Damping", "Damper rate in extension", {"stepDis":100, "subCategory":"Front"}]
-        ["$damp_rebound_F_fast", "range", "N/m/s", "Suspension", 900, 500, 10000, "Fast Rebound Damping", "Damper rate in fast extension", {"stepDis":100,"subCategory":"Front"}]
+        ["$spring_F", "range", "N/m", "Suspension", 12000, 10000, 50000, "Spring Rate", "Spring stiffness", {"stepDis":500, "subCategory":"Front"}],
+        ["$damp_bump_F", "range", "N/m/s", "Suspension", 1200, 500, 10000, "Bump Damping", "Damper rate in compression", {"stepDis":100, "subCategory":"Front"}],
+        ["$damp_bump_F_fast", "range", "N/m/s", "Suspension", 900, 500, 20000, "Fast Bump Damping", "Damper rate in fast compression", {"stepDis":100, "subCategory":"Front"}],
+        ["$damp_rebound_F", "range", "N/m/s", "Suspension", 1700, 500, 10000, "Front Rebound Damping", "Damper rate in extension", {"stepDis":100, "subCategory":"Front"}],
+        ["$damp_rebound_F_fast", "range", "N/m/s", "Suspension", 900, 500, 10000, "Fast Rebound Damping", "Damper rate in fast extension", {"stepDis":100,"subCategory":"Front"}],
     ],
     "beams": [
           ["id1:", "id2:"],

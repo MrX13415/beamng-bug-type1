@@ -149,7 +149,6 @@
     "activeLayers": 3,
     "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
     "version": 1.5
@@ -183,7 +182,6 @@
     "activeLayers": 2,
     "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "translucentBlendOp": "None",
     "version": 1.5
   },
@@ -299,9 +297,8 @@
       {}
     ],
     "activeLayers": 3,
-    "doubleSided": true,
+   // "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
     "version": 1.5
@@ -637,7 +634,6 @@
     ],
     "activeLayers": 3,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "version": 1.5
   },
   "bug_engine_housing.skin.rusty": {
@@ -676,7 +672,6 @@
     "activeLayers": 3,
     "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "version": 1.5
   },
   "bug_engine_parts.skin.rusty": {
@@ -717,7 +712,6 @@
     "activeLayers": 3,
     "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "version": 1.5
   },
   "bug_transaxle.skin.rusty": {
@@ -758,7 +752,6 @@
     "activeLayers": 3,
     "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "version": 1.5
   },
   "bug_exhaust.skin.rusty": {
@@ -799,7 +792,6 @@
     "activeLayers": 3,
     "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "version": 1.5
   },
   "bug_front_tanks.skin.rusty": {
@@ -906,7 +898,6 @@
     "activeLayers": 3,
     "dynamicCubemap": true,
     "doubleSided": true,
-    "invertBackFaceNormals": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
     "order_simset": 0,
@@ -965,7 +956,6 @@
     "activeLayers": 3,
     "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
     "version": 1.5
@@ -1015,7 +1005,6 @@
     "activeLayers": 3,
     "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
     "order_simset": 0,
@@ -1065,7 +1054,6 @@
     "activeLayers": 3,
     "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
     "version": 1.5
