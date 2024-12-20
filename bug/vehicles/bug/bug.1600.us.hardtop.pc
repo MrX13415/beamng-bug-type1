@@ -1,45 +1,6 @@
 {
   "format":2,
-  "mainPartName":"bug",
   "model":"bug",
-  "paints":[
-    {
-      "baseColor":[
-        0.11,
-        0.27,
-        0.15,
-        1.45
-      ],
-      "clearcoat":1,
-      "clearcoatRoughness":0.06,
-      "metallic":0.7,
-      "roughness":0.4
-    },
-    {
-      "baseColor":[
-        0.25,
-        0.3,
-        0.35,
-        1.45
-      ],
-      "clearcoat":1,
-      "clearcoatRoughness":0.06,
-      "metallic":0.7,
-      "roughness":0.4
-    },
-    {
-      "baseColor":[
-        0.11,
-        0.27,
-        0.15,
-        1.45
-      ],
-      "clearcoat":1,
-      "clearcoatRoughness":0.06,
-      "metallic":0.7,
-      "roughness":0.4
-    }
-  ],
   "parts":{
     "antenna":"antenna_default_R",
     "brakepad_F":"brakepad_F",
@@ -91,7 +52,7 @@
     "bug_frame":"bug_frame",
     "bug_fueltank":"bug_fueltank",
     "bug_gascap":"",
-    "bug_gauges_console":"",
+    "bug_console_accessory":"",
     "bug_glass":"bug_glass",
     "bug_glovebox":"bug_glovebox",
     "bug_glovebox_things":"bug_glovebox_things",
@@ -116,7 +77,7 @@
     "bug_interior_handles":"bug_interior_handles",
     "bug_interiorlight":"bug_interiorlight",
     "bug_jerrycan_cage":"",
-    "bug_lettering":"bug_lettering_vw1600",
+    "bug_lettering":"bug_lettering_1600cc",
     "bug_licenseplate_F2":"bug_licenseplate_F2_US",
     "bug_licenseplate_R":"bug_licenseplate_R",
     "bug_logo":"bug_logo",
@@ -134,7 +95,7 @@
     "bug_rearwindow":"bug_rearwindow",
     "bug_rollbar":"",
     "bug_roof":"bug_roof_hardtop",
-    "bug_roof_rack":"bug_roof_rack",
+    "bug_roof_accessory":"bug_roof_rack",
     "bug_roof_rack_luggage":"",
     "bug_seat_FL":"bug_seat_leather_FL",
     "bug_seat_FR":"bug_seat_leather_FR",
@@ -199,7 +160,7 @@
     "skin_speedometer":"bug_speedo_mph_90",
     "skin_steer":"bug_steer_white2",
     "soundscape":"",
-    "soundscape_horn":"soundscape_horn_2",
+    "soundscape_horn":"soundscape_horn_116",
     "tire_F_14x6":"tire_F_695_14",
     "tire_R_14x6":"tire_R_695_14",
     "tire_spare":"tire_spare",
@@ -214,8 +175,8 @@
     "$ffbstrength":1,
     "$fuel":40,
     "$steer_center_F":0,
-    "$tirepressure_F":32,
-    "$tirepressure_R":32,
+    "$tirepressure_F":20,
+    "$tirepressure_R":24,
     "$toe_F":0.9995,
     "$toe_R":1.0005,
     "$trackoffset_F":0,

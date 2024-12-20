@@ -16,7 +16,7 @@
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$tirepressure_F", "range", "psi", "Wheels", 24, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
+        ["$tirepressure_F", "range", "psi", "Wheels", 20, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -91,7 +91,7 @@
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$tirepressure_F", "range", "psi", "Wheels", 24, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
+        ["$tirepressure_F", "range", "psi", "Wheels", 20, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -168,7 +168,7 @@
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$tirepressure_F", "range", "psi", "Wheels", 24, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
+        ["$tirepressure_F", "range", "psi", "Wheels", 20, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -243,7 +243,7 @@
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$tirepressure_F", "range", "psi", "Wheels", 24, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
+        ["$tirepressure_F", "range", "psi", "Wheels", 20, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -320,7 +320,7 @@
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$tirepressure_F", "range", "psi", "Wheels", 24, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
+        ["$tirepressure_F", "range", "psi", "Wheels", 20, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -395,7 +395,7 @@
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$tirepressure_F", "range", "psi", "Wheels", 24, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
+        ["$tirepressure_F", "range", "psi", "Wheels", 20, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -472,7 +472,7 @@
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$tirepressure_F", "range", "psi", "Wheels", 24, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
+        ["$tirepressure_F", "range", "psi", "Wheels", 20, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -547,7 +547,7 @@
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$tirepressure_F", "range", "psi", "Wheels", 24, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
+        ["$tirepressure_F", "range", "psi", "Wheels", 20, 0, 50, "Tire Pressure", "Relative to atmospheric pressure", {"subCategory":"Front"}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],

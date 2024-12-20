@@ -126,6 +126,11 @@
         "idleRPMStartCoef":1.25,
         "maxIdleThrottle":0.1,
 
+        // electric power
+        "generatorPower": 700,   // Watt
+        "enginePower": 40,       // Watt
+        "starterPower": 800,     // Watt
+
         //engine deform groups
         "deformGroups":["mainEngine", "mainEngine_intake"]
     },

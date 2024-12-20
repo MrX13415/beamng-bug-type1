@@ -1,39 +1,41 @@
 {
-  "0-100 km/h":18.1,
-  "0-60 mph":16.9,
-  "100-0 km/h":45,
-  "60-0 mph":136.3,
+  "0-100 km/h":16.8,
+  "0-60 mph":15.8,
+  "100-0 km/h":39.9,
+  "60-0 mph":122.4,
   "BoundingBox":[
     [
-      -0.783,
+      -0.703,
       -1.77119,
-      -0.242979
+      -0.267979
     ],
     [
-      0.783,
+      0.863,
       2.29767,
-      1.28392
+      1.25892
     ]
   ],
-  "Braking G":0.873,
+  "Braking G":0.985,
+  "Country": "United States",
   "Config Type":"Factory",
   "Configuration":"Restored Rusted (M)",
   "Description":"The barn find, fully restored to pristine condition",
-  "drivetrain":"RWD",
+  "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
-  "Off-Road Score":33,
+  "Off-Road Score":28,
   "Performance Class":"2",
-  "Power":56,
+  "Population":100,
+  "Power":57,
   "PowerPeakRPM":4850,
   "Propulsion":"ICE",
-  "Top Speed":43.85072487,
+  "Top Speed":44.02409744,
   "Torque":95,
   "TorquePeakRPM":"2300 - 3250",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1040,
-  "Weight/Power":18.57142857,
+  "Weight":995,
+  "Weight/Power":17.45614035,
   "defaultPaintName1":"Savannah Yellow",
   "defaultPaintName3":"Fiesta Yellow"
 }

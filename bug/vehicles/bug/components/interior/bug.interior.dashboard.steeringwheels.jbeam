@@ -1,4 +1,20 @@
 {
+
+// OEM  ------------
+"bug_steer_oem": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Original Steering Wheel",
+        "value":310,
+    },
+    "slotType" : "bug_steer",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["skin_steer", "bug_steer_white", "Steering Wheel", {"coreSlot":true}],
+    ],
+},
+//---
 "bug_steer_white": {
     "information":{
         "authors":"BeamNG",
@@ -10,7 +26,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "f4mr","f4ml","refup", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_white2": {
@@ -24,7 +40,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "f4mr","f4ml","refup", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_black": {
@@ -38,7 +54,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "f4mr","f4ml","refup", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_paint1": {
@@ -52,7 +68,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "f4mr","f4ml","refup", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_paint2": {
@@ -66,7 +82,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "f4mr","f4ml","refup", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_paint3": {
@@ -80,7 +96,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "f4mr","f4ml","refup", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_wood": {
@@ -94,7 +110,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "f4mr","f4ml","refup", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_old": {
@@ -108,9 +124,120 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "f4mr","f4ml","refup", {"x":-63, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 
+// BeamNG ------------
+"bug_steer_other": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Aftermarket Steering Wheel",
+        "value":310,
+    },
+    "slotType" : "bug_steer",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["skin_steer_beamng", "bug_steer_01a", "Steering Wheel", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+		["steering_tube_adaptor",     ["bug_steeringcolumn", "bug_steeringbox"]],
+    ]
+},
+//---
+"bug_steer_01a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi Mod.301 Racing Wheel",
+        "value":310,
+    },
+    "slotType" : "skin_steer_beamng",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering", "steer_01a",  "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1, {"baseTranslation":{"x":0.0,"y":0.95650,"z":0}}]
+     ],
+},
+"bug_steer_02a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi Mod.307 Racing Wheel",
+        "value":330,
+    },
+    "slotType" : "skin_steer_beamng",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering", "steer_02a",  "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1, {"baseTranslation":{"x":0.0,"y":0.95650,"z":0}}]
+     ],
+},
+"bug_steer_02b": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi Mod.307R Racing Wheel",
+        "value":330,
+    },
+    "slotType" : "skin_steer_beamng",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering", "steer_02b",  "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1, {"baseTranslation":{"x":0.0,"y":0.95650,"z":0}}]
+    ],
+},
+"bug_steer_02c": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi Mod.207R Drift Wheel",
+        "value":250,
+    },
+    "slotType" : "skin_steer_beamng",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering", "steer_02c",  "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1, {"baseTranslation":{"x":0.0,"y":0.95650,"z":0}}]
+     ],
+},
+"bug_steer_03a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Arnida Sportivo Racing Wheel",
+        "value":370,
+    },
+    "slotType" : "skin_steer_beamng",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering", "steer_03a",  "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1, {"baseTranslation":{"x":0.0,"y":0.95650,"z":0}}]
+     ],
+},
+"bug_steer_04a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Arnida Corsa Racing Wheel",
+        "value":400,
+    },
+    "slotType" : "skin_steer_beamng",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering", "steer_04a",  "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1, {"baseTranslation":{"x":0.0,"y":0.95650,"z":0}}]
+     ],
+},
+"bug_steer_05a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Legno Classico Steering Wheel",
+        "value":440,
+    },
+    "slotType" : "skin_steer_beamng",
+    "props": [
+        ["func",     "mesh",      "idRef:","idX:","idY:", "baseRotation",           "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering", "steer_05a",  "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1, {"baseTranslation":{"x":0.0,"y":0.95650,"z":0}}]
+     ],
+},
 
 }

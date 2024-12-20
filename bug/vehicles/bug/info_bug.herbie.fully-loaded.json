@@ -9,36 +9,38 @@
   "60-100 mph":5,
   "BoundingBox":[
     [
-      -0.778,
-      -1.77119,
-      -0.259479
+      -1.42,
+      -2.60233,
+      -0.284479
     ],
     [
-      0.778,
-      2.29767,
-      1.28392
+      1.58,
+      2.99767,
+      1.25892
     ]
   ],
   "Braking G":0.92,
+  "Country": "United States",
   "Config Type":"Herbie",
   "Configuration":"Herbie (Fully Loaded)",
   "Description":"Herbie as seen in the movie \"Herbie: Fully Loaded\" from 2005",
-  "drivetrain":"RWD",
+  "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Licenseplate":"Herbie California Plate Design",
-  "Off-Road Score":28,
+  "Off-Road Score":3,
   "Performance Class":"2",
-  "Power":723,
+  "Population":0,
+  "Power":807,
   "PowerPeakRPM":7900,
   "Propulsion":"ICE",
   "Top Speed":76.76704406,
-  "Torque":645,
-  "TorquePeakRPM":6950,
+  "Torque":720,
+  "TorquePeakRPM":7200,
   "Transmission":"Automatic",
   "Value":8500,
-  "Weight":1045,
-  "Weight/Power":1.445366528,
+  "Weight":1060,
+  "Weight/Power":1.313506815,
   "defaultPaintName1":"Pearl White",
   "defaultPaintName3":"Pearl White"
 }

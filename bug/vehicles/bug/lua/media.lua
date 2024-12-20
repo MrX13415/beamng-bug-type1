@@ -15,7 +15,6 @@ local M = {}
 --------------------------------------------------
 -- Cache
 
-local cacheLoaded = false
 local cacheA = {}
 local cacheB = {}
 
@@ -34,13 +33,15 @@ local function cacheSet(data)
 end
 
 local function cacheLoad(path)
-	cacheA = jsonReadFile(path)
-	log("D", "", "[Bug:Media] Cache loaded")
-	cacheLoaded = true
+	local cache = jsonReadFile(path)
+	if not cache then
+		cacheA = {}
+		return false
+	end
 
-	if cacheA ~= nil then return true end
-	cacheA = {}
-	return false
+	cacheA = cache 
+	log("D", "", "[Bug:Media] Cache loaded")
+	return true
 end
 
 local function cacheSave(path)
@@ -52,7 +53,7 @@ end
 --------------------------------------------------
 -- Common
 
-function numberLE(bytes, index, count)
+local function numberLE(bytes, index, count)
 	if bytes == nil then return 0 end
 	local i = index or 1
 	local c = i + (count or 1) -1
@@ -65,7 +66,7 @@ function numberLE(bytes, index, count)
 	return v
 end
 
-function numberBE(bytes, index, count)
+local function numberBE(bytes, index, count)
 	if bytes == nil then return 0 end
 	local i = index or 1
 	local c = i + (count or 1) -1
@@ -78,14 +79,14 @@ function numberBE(bytes, index, count)
 	return v
 end
 
-function shortLE(bytes, index) return numberLE(bytes, index, 2) end
-function intLE(bytes, index) return numberLE(bytes, index, 4) end
+local function shortLE(bytes, index) return numberLE(bytes, index, 2) end
+local function intLE(bytes, index) return numberLE(bytes, index, 4) end
 
-function shortBE(bytes, index) return numberBE(bytes, index, 2) end
-function intBE(bytes, index) return numberBE(bytes, index, 4) end
+local function shortBE(bytes, index) return numberBE(bytes, index, 2) end
+local function intBE(bytes, index) return numberBE(bytes, index, 4) end
 
 
-function str(bytes, index, count)
+local function str(bytes, index, count)
 	local i = index or 1
 	local c = i + (count or 1) -1
 	return bytes:sub(i, c)
@@ -104,7 +105,7 @@ mt.__index["str"]      = str
 --------------------------------------------------
 -- WAV
 
-function waveChunk(stream)
+local function waveChunk(stream)
 	local bytes = stream:read(8)
 
 	local chunk = {}
@@ -113,7 +114,7 @@ function waveChunk(stream)
 	return chunk
 end
 
-function readWave(stream, data)
+local function readWave(stream, data)
 	stream:seek("set", 0) -- go to file begin
 
 	local bytes = stream:read(12)
@@ -207,12 +208,12 @@ local mp3Samples = {
 	[20] = { [1] = 384, [2] = 1152, [3] =  576, }  -- MPEGv2/2.5, Layers 1,2,3
 }
 
-function decodeSyncSafe(v)
+local function decodeSyncSafe(v)
 	-- Google for "mp3 safe sync integer"
 	return bit.band(v, 0x7F) + bit.rshift(bit.band(v, 0x7F00), 1) + bit.rshift(bit.band(v, 0x7F0000), 2) + bit.rshift(bit.band(v, 0x7F000000), 3)
 end
 
-function mp3FindFrameOffset(bytes, offset)
+local function mp3FindFrameOffset(bytes, offset)
 	for o=(offset or 0),#bytes-4 do -- a frame has at least 4 bytes
 		-- Find frame sync bytes indicating a frame section: Check 11 bits, 0x7FF
 		if bytes:byte(o+1) ~= 0xFF or bit.band(bytes:byte(o+2), 0xE0) ~= 0xE0 then 
@@ -223,7 +224,7 @@ function mp3FindFrameOffset(bytes, offset)
 	return -1
 end
 
-function mp3Frame(bytes, offset)
+local function mp3Frame(bytes, offset)
 	if not bytes then return nil end
 
 	-- find next frame on current offset ...
@@ -281,7 +282,7 @@ function mp3Frame(bytes, offset)
 	return frame
 end
 
-function readMP3(stream, data)
+local function readMP3(stream, data)
 	stream:seek("set", 0) -- go to file begin
 	
 	-- Read and skip ID3v2 header
@@ -355,7 +356,7 @@ function readMP3(stream, data)
 			if not estimated then
 				local kbps = (frame.bitrate*1000)/8
 				estimatedDuration = totalFrameSize / kbps
-				estimated = turned
+				estimated = true
 			end
 		end
 
@@ -377,7 +378,7 @@ end
 --------------------------------------------------
 -- Common
 
-function readAudioData(stream, file)
+local function readAudioData(stream, file)
 	local dir, name, ext = path.splitWithoutExt(file)
 
 	local data = {}
@@ -404,7 +405,7 @@ end
 --------------------------------------------------
 -- Public
 
-function toTimeStr(seconds)
+local function toTimeStr(seconds)
 	if seconds < 1 then
 		return string.format("%dms", seconds*1000)
 	end
@@ -415,7 +416,7 @@ function toTimeStr(seconds)
 	return h > 0 and string.format("%d:%02d:%02d", h, m, s) or string.format("%d:%02d", m, s) 
 end
 
-function getAudioData(file)
+local function getAudioData(file)
 	if not file then return nil end
 	if not FS:fileExists(file) then return nil end
 
@@ -423,9 +424,9 @@ function getAudioData(file)
 	--       i.e. "Myfile...mp3" won't be found!
 
 	local stream = io.open(file, "rb")
+	if not stream then return nil end
 	local data = readAudioData(stream, file)
 	stream:close()
-
 	if data then cacheSet(data) end
 
 	return data

@@ -57,6 +57,20 @@
     "version": 1.5
   },
 
+  "bug_rim_paint1": {
+    "name": "bug_rim_paint1",
+    "mapTo": "bug_rim_paint1",
+    "class": "material",
+    "persistentId": "6294d5ea-4ec9-4571-afbf-74ab90325e54",
+    "Stages": [
+      { },
+      { },
+      { },
+      { }
+    ],
+    "castShadows": false,
+    "translucent": true
+  },
   "bug_rim_paint1_F": {
     "name": "bug_rim_paint1_F",
     "mapTo": "bug_rim_paint1_F",
@@ -216,7 +230,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -249,7 +263,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -282,7 +296,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -329,6 +343,20 @@
     "version": 1.5
   },
 
+  "bug_rim_paint2": {
+    "name": "bug_rim_paint2",
+    "mapTo": "bug_rim_paint2",
+    "class": "material",
+    "persistentId": "10e03d50-792c-4314-b081-d3ccdf405b39",
+    "Stages": [
+      { },
+      { },
+      { },
+      { }
+    ],
+    "castShadows": false,
+    "translucent": true
+  },
   "bug_rim_paint2_F": {
     "name": "bug_rim_paint2_F",
     "mapTo": "bug_rim_paint2_F",
@@ -488,7 +516,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -521,7 +549,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -554,7 +582,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -760,7 +788,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -793,7 +821,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -826,7 +854,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -1032,7 +1060,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -1065,7 +1093,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -1098,7 +1126,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,

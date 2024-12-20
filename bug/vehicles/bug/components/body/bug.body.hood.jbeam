@@ -12,7 +12,11 @@
 		["bug_logo","bug_logo", "Logo"],
 		["hood_trim","hood_trim", "Hood Trim"],
         ["bug_hood_handle","hood_handle","Handle"],
-	],
+
+        ["cargo_load_box_S_frunk","", "Hood Cargo Load", {
+            "nodeMove":{"x":-0.15, "y":-1.1, "z":0.75},
+        }],
+    ],
     "controller": [
         ["fileName"],
         ["advancedCouplerControl", {"name":"hoodLatchCoupler"}],
@@ -52,19 +56,14 @@
         "closeForceMagnitude": 200,
         "closeForceDuration": 1.5
     },
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["hood", "", "h4","h4r","h5", "box", {"x":0.04, "y":0.06, "z":0.16}, {"x":0, "y":0, "z":0}, {"x":0, "y":-2, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.021, "y":0.122, "z":-0.07}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["hood", "h4","h4r","h5", "box", {"x":0.04, "y":0.06, "z":0.16}, {"x":0, "y":0, "z":0}, {"x":0, "y":-2, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.021, "y":0.122, "z":-0.07},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
         ["hood", "action0", "hoodCatch"],
         ["hood_int", "action0", "hoodRelease"],
-    ],
-    "events":[
-        ["id", "title", "desc"],
-        ["hoodCatch", "ui.inputActions.bug.hoodCatch.title", "ui.inputActions.bug.hoodCatch.description", {"onDown":"controller.getControllerSafe('hoodCatchCoupler').toggleGroupConditional({{'hoodLatchCoupler','attached','vehicle.advancedCouplerControl.releaseHoodFirstInterior'}})"}],
-        ["hoodRelease", "ui.inputActions.bug.hoodLatch.title", "ui.inputActions.bug.hoodLatch.description", {"onDown":"controller.getControllerSafe('hoodLatchCoupler').toggleGroup()"}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -142,6 +141,7 @@
     "beams": [
         ["id1:", "id2:"],
 
+        {"disableMeshBreaking":true},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         //--HOOD--
         {"beamSpring":501000,"beamDamp":58},
@@ -327,8 +327,8 @@
         // springs
         {"beamSpring":5000,"beamDamp":58},
         {"beamDeform":15000,"beamStrength":30100},
-        ["h7al","h7bl", {"breakGroup":"hoodhinge_L"}],
-        ["h7ar","h7br", {"breakGroup":"hoodhinge_R"}],
+        ["h7al","h7bl", {"disableMeshBreaking":false, "breakGroup":"hoodhinge_L"}],
+        ["h7ar","h7br", {"disableMeshBreaking":false, "breakGroup":"hoodhinge_R"}],
 
         {"beamSpring":701000,"beamDamp":58},
         {"beamDeform":19640,"beamStrength":30100},
@@ -362,6 +362,19 @@
         ["h6","h9"],
         //{"breakGroup":""},
 
+        //cargo load box
+        {"beamPrecompression":0.9, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":5001,"beamDamp":250},
+        {"beamDeform":5100,"beamStrength":1000},
+        {"optional":true},
+        ["frunk_box_11", "bf7ll"],
+        ["frunk_box_12", "bf7ll"],
+        ["frunk_box_7", "bf7rr"],
+        ["frunk_box_8", "bf7rr"],
+        {"optional":false},
+
+
+        {"disableMeshBreaking":false},
         //pop open
         {"breakGroupType":1},
         {"beamType":"|SUPPORT", "beamLongBound":4},

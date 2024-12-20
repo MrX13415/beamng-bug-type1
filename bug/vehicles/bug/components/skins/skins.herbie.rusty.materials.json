@@ -19,19 +19,19 @@
           0.999989986,
           1
         ],
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_gb-rusty_d.color.png",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_d.color.png",
         "clearCoatFactor": 0.3,
         "clearCoatRoughnessFactor": 0.5,
-        "colorPaletteMap": "/vehicles/bug/components/skins/textures/bug_skin_gb-rusty_cm.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_cm.color.png",
         "colorPaletteMapUseUV": 1,
         "diffuseMapUseUV": 1,
         "metallicFactor": 0.5,
         "metallicMapUseUV": 1,
         "normalMap": "/vehicles/bug/components/skins/textures/bug_skin_rusty_n.normal.dds",
         "normalMapUseUV": 1,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_gb-rusty_o.data.dds",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_o.data.dds",
         "opacityMapUseUV": 1,
-        "roughnessMap": "/vehicles/bug/components/skins/textures/bug_skin_gb-rusty_r.data.png",
+        "roughnessMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_r.data.png",
         "roughnessMapUseUV": 1
       },
       {
@@ -159,11 +159,11 @@
           0.239849001,
           1
         ],
-        "metallicFactor": 1,
-        "normalMap": "/vehicles/bug/components/frame/textures/frame_n.normal.png",
-        "normalMapStrength": 0.5,
-        "roughnessFactor": 0.736999989,
-        "roughnessMap": "/vehicles/bug/components/frame/textures/frame_r.data.png"
+        "baseColorMap": "/vehicles/bug/components/common/textures/frame_d.color.png",
+        "metallicFactor": 0.3,
+        "normalMap": "/vehicles/bug/components/common/textures/frame_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/common/textures/frame_r.data.png"
       },
       {
         "baseColorFactor": [
@@ -208,7 +208,7 @@
           1
         ],
         "clearCoatFactor": 0.5,
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "colorPaletteMapUseUV": 1,
         "diffuseMapUseUV": 1,
         "instanceDiffuse": true,
@@ -226,7 +226,7 @@
           1
         ],
         "clearCoatFactor": 0.5,
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "colorPaletteMapUseUV": 1,
         "diffuseMapUseUV": 1,
         "instanceDiffuse": true,
@@ -337,26 +337,24 @@
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dmg_dirty.color.png",
-        "normalMap": "vehicles/common/glass_dmg_n.dds",
+        "normalMap": "/vehicles/bug/components/body/textures/window_glass_dirty_n.normal.dds",
         "opacityMap": "/vehicles/bug/components/body/textures/window_glass_dmg_dirty_o.data.png",
         "pixelSpecular": true,
-        "roughnessFactor": 0,
+        "roughnessMap": "/vehicles/bug/components/body/textures/window_glass_dmg_r.data.dds",
         "useAnisotropic": true
       },
       {},
       {},
       {}
     ],
-    "alphaRef": 20,
+    "alphaRef": 1,
     "alphaTest": true,
     "castShadows": false,
     "dynamicCubemap": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
-    "order_simset": 1852795252,
     "translucent": true,
     "translucentBlendOp": "PreMulAlpha",
-    "translucentRecvShadows": true,
     "version": 1.5
   },
 
@@ -381,19 +379,19 @@
           0.999989986,
           1
         ],
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_gb-rusty-taxi_d.color.png",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty-taxi_d.color.png",
         "clearCoatFactor": 0.3,
         "clearCoatRoughnessFactor": 0.5,
-        "colorPaletteMap": "/vehicles/bug/components/skins/textures/bug_skin_gb-rusty-taxi_cm.color.png",
+        "colorPaletteMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty-taxi_cm.color.png",
         "colorPaletteMapUseUV": 1,
         "diffuseMapUseUV": 1,
         "metallicFactor": 0.5,
         "metallicMapUseUV": 1,
         "normalMap": "/vehicles/bug/components/skins/textures/bug_skin_rusty_n.normal.dds",
         "normalMapUseUV": 1,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_gb-rusty_o.data.dds",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_o.data.dds",
         "opacityMapUseUV": 1,
-        "roughnessMap": "/vehicles/bug/components/skins/textures/bug_skin_gb-rusty_r.data.png",
+        "roughnessMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_r.data.png",
         "roughnessMapUseUV": 1
       },
       {
@@ -521,11 +519,11 @@
           0.239849001,
           1
         ],
-        "metallicFactor": 1,
-        "normalMap": "/vehicles/bug/components/frame/textures/frame_n.normal.png",
-        "normalMapStrength": 0.5,
-        "roughnessFactor": 0.736999989,
-        "roughnessMap": "/vehicles/bug/components/frame/textures/frame_r.data.png"
+        "baseColorMap": "/vehicles/bug/components/common/textures/frame_d.color.png",
+        "metallicFactor": 0.3,
+        "normalMap": "/vehicles/bug/components/common/textures/frame_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/common/textures/frame_r.data.png"
       },
       {
         "baseColorFactor": [
@@ -570,7 +568,7 @@
           1
         ],
         "clearCoatFactor": 0.5,
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "colorPaletteMapUseUV": 1,
         "diffuseMapUseUV": 1,
         "instanceDiffuse": true,
@@ -588,7 +586,7 @@
           1
         ],
         "clearCoatFactor": 0.5,
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "colorPaletteMapUseUV": 1,
         "diffuseMapUseUV": 1,
         "instanceDiffuse": true,
@@ -699,26 +697,24 @@
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dmg_dirty.color.png",
-        "normalMap": "vehicles/common/glass_dmg_n.dds",
+        "normalMap": "/vehicles/bug/components/body/textures/window_glass_dirty_n.normal.dds",
         "opacityMap": "/vehicles/bug/components/body/textures/window_glass_dmg_dirty_o.data.png",
         "pixelSpecular": true,
-        "roughnessFactor": 0,
+        "roughnessMap": "/vehicles/bug/components/body/textures/window_glass_dmg_r.data.dds",
         "useAnisotropic": true
       },
       {},
       {},
       {}
     ],
-    "alphaRef": 20,
+    "alphaRef": 1,
     "alphaTest": true,
     "castShadows": false,
     "dynamicCubemap": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
-    "order_simset": 1852795252,
     "translucent": true,
     "translucentBlendOp": "PreMulAlpha",
-    "translucentRecvShadows": true,
     "version": 1.5
   }
 }

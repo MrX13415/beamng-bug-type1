@@ -11,3 +11,5 @@ bug-radiostation_K-DST/vehicles/bug/components/sounds/radio/*
 
 DetailedMirrors/*
 enhanced_chase_camera/*
+Tools/py/__pycache__/*
+unpacked.rar

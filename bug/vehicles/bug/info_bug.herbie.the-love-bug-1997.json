@@ -20,6 +20,7 @@
     ]
   ],
   "Braking G":0.913,
+  "Country": "United States",
   "Config Type":"Herbie",
   "Configuration":"Herbie (1997)",
   "Description":"Herbie as seen in the movie \"The Love Bug\" from 1997",
@@ -29,6 +30,7 @@
   "Licenseplate":"Herbie California Plate Design",
   "Off-Road Score":34,
   "Performance Class":"2",
+  "Population":0,
   "Power":672,
   "PowerPeakRPM":7900,
   "Propulsion":"ICE",

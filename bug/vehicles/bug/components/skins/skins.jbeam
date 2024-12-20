@@ -1,56 +1,125 @@
-{  
-   "bug_skin_tuned": {
-   "information":{
-       "authors":"VertexStyle",
-       "name":"Tuned Style",
-       "value":200,
-   },
-   "slotType" : "paint_design",
-   "globalSkin" : "tuned",
-   },
-   "bug_skin_chrome_paint1": {
-    "information":{
-       "authors":"MrX13415",
-       "name":"Colored Chrome Parts (Exterior)",
-       "value":200,
+{
+    // -- Tow Tone
+    "bug_skin_tuned": {
+        "information": {
+            "authors": "VertexStyle",
+            "name": "Two Tone: Sides",
+            "value": 80,
+        },
+        "slotType": "paint_design",
+        "globalSkin": "tuned",
     },
-    "slotType": "paint_design",
-    "globalSkin": "chrome_paint1",
-   },
-   "bug_skin_chrome_paint2": {
-       "information":{
-           "authors":"MrX13415",
-           "name":"Colored Chrome Parts (Exterior, Secondary)",
-           "value":200,
-       },
-       "slotType": "paint_design",
-       "globalSkin": "chrome_paint2",
-   },
-   "bug_skin_chrome_paint3": {
-       "information":{
-           "authors":"MrX13415",
-           "name":"Colored Chrome Parts (Interior)",
-           "value":200,
-       },
-       "slotType" : "paint_design",
-       "globalSkin" : "chrome_paint3",
-   },
-   "bug_skin_rusty": {
-    "information":{
-        "authors":"MrX13415",
-        "name":"Rusty",
-        "value":200,
+    "bug_skin_fenders": {
+        "information": {
+            "authors": "MrX13415",
+            "name": "Two Tone: Fenders",
+            "value": 50,
+        },
+        "slotType": "paint_design",
+        "globalSkin": "fenders",
     },
-    "slotType" : "paint_design",
-    "globalSkin" : "rusty",
-   },
-   "bug_skin_antarctica": {
-    "information":{
-        "authors":"MrX13415",
-        "name":"Antarctica Expeditions",
-        "value":200,
+    "bug_skin_lowerhalf": {
+        "information": {
+            "authors": "MrX13415",
+            "name": "Two Tone: Halved",
+            "value": 130,
+        },
+        "slotType": "paint_design",
+        "globalSkin": "lowerhalf",
     },
-    "slotType" : "paint_design",
-    "globalSkin" : "antarctica",
-   },
+    "bug_skin_wave": {
+        "information": {
+            "authors": "MrX13415",
+            "name": "Two Tone: Wave",
+            "value": 150,
+        },
+        "slotType": "paint_design",
+        "globalSkin": "wave",
+    },
+    "bug_skin_strip": {
+        "information": {
+            "authors": "MrX13415",
+            "name": "Two Tone: Side Strip",
+            "value": 50,
+        },
+        "slotType": "paint_design",
+        "globalSkin": "strip",
+    },
+    "bug_skin_lines": {
+        "information": {
+            "authors": "MrX13415",
+            "name": "Two Tone: Contours",
+            "value": 120,
+        },
+        "slotType": "paint_design",
+        "globalSkin": "lines",
+    },
+
+    // -- Parts
+    "bug_skin_chrome_paint1": {
+        "information": {
+            "authors": "MrX13415",
+            "name": "Colored Chrome Parts (Exterior)",
+            "value": 200,
+        },
+        "slotType": "paint_design",
+        "globalSkin": "chrome_paint1",
+    },
+    "bug_skin_chrome_paint2": {
+        "information": {
+            "authors": "MrX13415",
+            "name": "Colored Chrome Parts (Exterior, Secondary)",
+            "value": 200,
+        },
+        "slotType": "paint_design",
+        "globalSkin": "chrome_paint2",
+    },
+    "bug_skin_chrome_paint3": {
+        "information": {
+            "authors": "MrX13415",
+            "name": "Colored Chrome Parts (Interior)",
+            "value": 200,
+        },
+        "slotType": "paint_design",
+        "globalSkin": "chrome_paint3",
+    },
+
+    // -- Special
+    "bug_skin_rusty": {
+        "information": {
+            "authors": "MrX13415",
+            "name": "Rusty",
+            "value": 200,
+        },
+        "slotType": "paint_design",
+        "globalSkin": "rusty",
+    },
+    "bug_skin_antarctica": {
+        "information": {
+            "authors": "MrX13415",
+            "name": "Antarctica Expeditions",
+            "value": 200,
+        },
+        "slotType": "paint_design",
+        "globalSkin": "antarctica",
+    },
+    "bug_skin_police_german": {
+        "information": {
+            "authors": "MrX13415",
+            "name": "Polizei",
+            "value": 120,
+        },
+        "slotType": "paint_design",
+        "globalSkin": "police_german",
+    },
+    "bug_skin_police_usa": {
+        "information": {
+            "authors": "MrX13415",
+            "name": "Police",
+            "value": 120,
+        },
+        "slotType": "paint_design",
+        "globalSkin": "police_usa",
+    },
+
 }

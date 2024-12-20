@@ -18,9 +18,9 @@
     },
     "controller": [
         ["fileName"],
-        ["advancedCouplerControl", {"name":"doorRCoupler"}],
+        ["advancedCouplerControl", {"name":"door_FR_coupler"}],
     ],
-    "doorRCoupler":{
+    "door_FR_coupler":{
         "groupType": "autoCoupling",
         "couplerNodes":[
             ["cid1",    "cid2",     "autoCouplingStrength",    "autoCouplingRadius",   "autoCouplingLockRadius",   "autoCouplingSpeed"],
@@ -40,29 +40,22 @@
     "flexbodies": [
         ["mesh","[group]:","nonFlexMaterials"],
         ["door_R",          ["bug_door_FR"]],
-        ["door_R_hinge",    ["bug_door_FR"]],
-        ["door_R_panel",    ["bug_door_FR"]],
         ["door_FR_handles", ["bug_door_FR"]],
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
         // base translation would be {"x":0, "y":0, "z":-6} but some adjustment due to the node positons is required.
-        ["windowFR_state",    "door_FR_window_handle",  "d14r","d8r","d11r",   {"x":-3, "y":7, "z":168},   {"x":-1800, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
+        ["windowFR_state",    "door_FR_window_handle",  "d14r","d8r","d11r",   {"x":-3, "y":7, "z":168},   {"x":-2200, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
     ],
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["door_R", "", "d9r","d8r","d6r", "box", {"x":0.13, "y":-0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.03, "y":0.07, "z":0.04}],
-        ["door_R_int", "", "dh1r","d8r","d4r", "box", {"x":0.05, "y":0.05, "z":0.10}, {"x":4, "y":1, "z":2}, {"x":0, "y":15, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.279, "y":0.07, "z":0.06}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["door_R", "d9r","d8r","d6r", "box", {"x":0.13, "y":-0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.03, "y":0.07, "z":0.04},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["door_R_int", "dh1r","d8r","d4r", "box", {"x":0.05, "y":0.05, "z":0.10}, {"x":4, "y":1, "z":2}, {"x":0, "y":15, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.279, "y":0.07, "z":0.06},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
-        ["door_R", "action0", "doorLatch_R"],
-        ["door_R_int", "action0", "doorLatch_R"],
-    ],
-    "events":[
-        ["id", "title", "desc"],
-        // TODO: Where are these texts shown?
-        ["doorLatch_R", "ui.inputActions.bug.doorLatch_R.title", "ui.inputActions.bug.doorLatch_R.description", {"onUp":"controller.getControllerSafe('doorRCoupler').toggleGroup()"}],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["door_R", "action0", "door_FR"],
+        ["door_R_int", "action0", "door_FR"],
     ],
     "nodes": [
         ["id","posX","posY","posZ"],
@@ -217,6 +210,7 @@
         ["d5r","d14rr"],
         ["d12r","d14rr"],
         ["d13r","d14rr"],
+        {"disableMeshBreaking":false},
 
         //damping
         {"beamDeform":77280,"beamStrength":448560},
@@ -336,9 +330,9 @@
     },
     "controller": [
         ["fileName"],
-        ["advancedCouplerControl", {"name":"doorLCoupler"}],
+        ["advancedCouplerControl", {"name":"door_FL_coupler"}],
     ],
-    "doorLCoupler":{
+    "door_FL_coupler":{
         "groupType": "autoCoupling",
         "couplerNodes":[
             ["cid1",    "cid2",     "autoCouplingStrength",    "autoCouplingRadius",   "autoCouplingLockRadius",   "autoCouplingSpeed"],
@@ -358,30 +352,24 @@
     "flexbodies": [
         ["mesh","[group]:","nonFlexMaterials"],
         ["door_L",          ["bug_door_FL"]],
-        ["door_L_hinge",    ["bug_door_FL"]],
-        ["door_L_panel",    ["bug_door_FL"]],
         ["door_FL_handles", ["bug_door_FL"]],
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
         // base translation would be {"x":0, "y":0, "z":-6} but some adjustment due to the node positons is required.
-        ["windowFL_state",    "door_FL_window_handle",  "d14l","d8l","d11l",   {"x":-3, "y":7, "z":9},     {"x":1800, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
+        ["windowFL_state",    "door_FL_window_handle",  "d14l","d8l","d11l",   {"x":-3, "y":7, "z":9},     {"x":2200, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
     ],
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["door_L", "", "d9l","d8l","d6l", "box", {"x":0.13, "y":0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.03, "y":0.07, "z":-0.04}],
-        ["door_L_int", "", "dh1l","d8l","d4l", "box", {"x":0.05, "y":-0.05, "z":0.10}, {"x":4, "y":1, "z":2}, {"x":-5, "y":15, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.279, "y":0.07, "z":-0.06}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["door_L", "d9l","d8l","d6l", "box", {"x":0.13, "y":0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.03, "y":0.07, "z":-0.04},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["door_L_int", "dh1l","d8l","d4l", "box", {"x":0.05, "y":-0.05, "z":0.10}, {"x":4, "y":1, "z":2}, {"x":-5, "y":15, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.279, "y":0.07, "z":-0.06},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
-        ["door_L", "action0", "doorLatch_L"],
-        ["door_L_int", "action0", "doorLatch_L"],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["door_L", "action0", "door_FL"],
+        ["door_L_int", "action0", "door_FL"],
     ],
-    "events":[
-        ["id", "title", "desc"],
-        // TODO: Where are these texts shown?
-        ["doorLatch_L", "ui.inputActions.bug.doorLatch_L.title", "ui.inputActions.bug.doorLatch_L.description", {"onUp":"controller.getControllerSafe('doorLCoupler').toggleGroup()"}],
-    ],
+
     "nodes": [
         ["id","posX","posY","posZ"],
 
@@ -534,6 +522,7 @@
         ["d5l","d14ll"],
         ["d12l","d14ll"],
         ["d13l","d14ll"],
+        {"disableMeshBreaking":false},
 
         //damping
         {"beamDeform":77280,"beamStrength":448560},
@@ -697,7 +686,7 @@
     ],
     "mirrors": [
         ["mesh", "idRef:", "id1:", "id2:"],
-        ["door_L_mirror_circle","mi3l","mi2l","mi1l",{"refBaseTranslation":{"x":0.055,"y":0.015,"z":-0.004},"baseRotationGlobal":{"x":-7.6,"y":0,"z":-17},"offsetRotationGlobal":{"x":0,"y":0,"z":7}}],
+        ["door_L_mirror_circle","mi3l","mi2l","mi1l",{"refBaseTranslation":{"x":0.050,"y":0.007,"z":-0.004},"baseRotationGlobal":{"x":-7.5,"y":0,"z":-14}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -791,7 +780,7 @@
     ],
     "mirrors": [
         ["mesh", "idRef:", "id1:", "id2:"],
-        ["door_R_mirror_circle","mi3r","mi2r","mi1r",{"refBaseTranslation":{"x":-0.055,"y":0.015,"z":-0.004},"baseRotationGlobal":{"x":-7.6,"y":0,"z":17},"offsetRotationGlobal":{"x":0,"y":0,"z":20}}],
+        ["door_R_mirror_circle","mi3r","mi2r","mi1r",{"refBaseTranslation":{"x":-0.050,"y":0.01,"z":-0.004},"baseRotationGlobal":{"x":-7.5,"y":0,"z":14}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -885,7 +874,7 @@
     ],
     "mirrors": [
         ["mesh", "idRef:", "id1:", "id2:"],
-        ["door_L_mirror_teardrop","mi3l","mi2l","mi1l",{"refBaseTranslation":{"x":0.063,"y":0.015,"z":-0.004},"baseRotationGlobal":{"x":-7.6,"y":0,"z":-17},"offsetRotationGlobal":{"x":0,"y":0,"z":7}}],
+        ["door_L_mirror_teardrop","mi3l","mi2l","mi1l",{"refBaseTranslation":{"x":0.055,"y":0.017,"z":0.0},"baseRotationGlobal":{"x":-5.0,"y":0,"z":-15}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -979,7 +968,7 @@
     ],
     "mirrors": [
         ["mesh", "idRef:", "id1:", "id2:"],
-        ["door_R_mirror_teardrop","mi3r","mi2r","mi1r",{"refBaseTranslation":{"x":-0.063,"y":0.015,"z":-0.004},"baseRotationGlobal":{"x":-7.6,"y":0,"z":17},"offsetRotationGlobal":{"x":0,"y":0,"z":20}}],
+        ["door_R_mirror_teardrop","mi3r","mi2r","mi1r",{"refBaseTranslation":{"x":-0.055,"y":0.017,"z":0.0},"baseRotationGlobal":{"x":-5.0,"y":0,"z":15}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

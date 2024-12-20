@@ -5,7 +5,7 @@
         "name":"Roof Rack",
         "value":300,
     },
-    "slotType" : "bug_roof_rack",
+    "slotType" : ["bug_roof_accessory", "bug_ragroof_accessory"],
 	"slots": [
         ["type", "default", "description"],
         ["bug_roof_rack_luggage","bug_roof_rack_luggage", "Roof Rack Luggage"],	
@@ -23,7 +23,7 @@
         {"nodeMaterial":"|NM_METAL"},
 		{"selfCollision":false},
         {"collision":true},
-		{"nodeWeight":0.4},
+		{"nodeWeight":0.6},
         {"group":"roofrack"},
 		["rora1l", 0.56078, -0.15170, 1.50251],
 		["rora1", 0.00000, -0.15170, 1.53247],
@@ -59,8 +59,8 @@
 		{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 		{"selfCollision":true},
         {"collision":true},
-        {"beamSpring":50100,"beamDamp":50},		
-        {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+        {"beamSpring":600100,"beamDamp":50},		
+        {"beamDeform":200000,"beamStrength":40000},
 		{"group":"luggage_roofrack_surfboard"},
 
 
@@ -153,7 +153,7 @@
 
 		{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":90100,"beamDamp":50},
-        {"beamDeform":10000,"beamStrength":1500},
+        {"beamDeform":"FLT_MAX","beamStrength":4000},
         {"breakGroup":"roofrack"},
 		// ATTACHMENT
 		["rora1l", "brf2lll"],
@@ -234,7 +234,6 @@
         ["rora3l", "rora3", "rora6"],
         ["rora3l", "rora6", "rora6l"],
 	],
-
 },
 "bug_roof_rack_luggage": {
     "information":{
@@ -251,17 +250,27 @@
         ["bug_roof_rack_luggage_surfboard","bug_roof_rack_luggage_surfboard", "Surfboard"],
     ]
 },
+
+
 "bug_roof_rack_luggage_bag": {
     "information":{
-        "authors":"53_herbie_53",
-        "name":"Suitcase",
-        "value":50,
+        "authors":"MrX13415",
+        "name":"Leather Trunk",
+        "value":0,
     },
     "slotType" : "bug_roof_rack_luggage_bag",
-    "flexbodies": [
-        ["mesh", "[group]:", "nonFlexMaterials"],
-	
-        ["roofrack_bag", ["luggage_roofrack_bag"]],
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_roof_rack_luggage_bag_color","bug_roof_rack_luggage_bag_brown", "Color", {"coreSlot":true}]
+    ],
+    "cargoStorage":[
+        ["groupId","name","cargoTypes", "capacity"],
+        ["roofLeatherTrunkA","Roof Leather Trunk",["parcel"], 4],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$roofLeatherTrunk_weight", "range", "Kg", "Cargo", 0.000, 0.000, 50.000, "Roof Leather Trunk Mass", "Adjust the weight of the roof Leather Trunk",{"stepDis":1}],
     ],
 	"nodes":[
 		["id", "posX", "posY", "posZ"],
@@ -282,6 +291,7 @@
         ["lgg21", 0.12637, 0.64772, 1.84670],
         ["lgg22", 0.55333, -0.08073, 1.77241],
         ["lgg23", 0.12713, -0.08073, 1.85106],
+        ["lgg24", 0.31000, 0.33000, 1.70000, {"nodeWeight":"$=1+$roofLeatherTrunk_weight","nodeWeightFunction":"=1+($volume)","cargoGroup":"roofLeatherTrunkA", "selfCollision":false, "collision":false}],
     ],
     "beams":[
         ["id1:", "id2:"],
@@ -292,7 +302,7 @@
         //bag
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":800000,"beamDamp":50},
-        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":20000,"beamStrength":"FLT_MAX"},
 
         ["lgg20", "lgg17"],
         ["lgg17", "lgg21"],
@@ -323,22 +333,31 @@
         ["lgg22", "lgg17"],
         ["lgg19", "lgg20"],
         
+        ["lgg24", "lgg16"],
+        ["lgg24", "lgg17"],
+        ["lgg24", "lgg18"],
+        ["lgg24", "lgg19"],
+        ["lgg24", "lgg20"],
+        ["lgg24", "lgg21"],
+        ["lgg24", "lgg22"],
+        ["lgg24", "lgg23"],
+
         //attach
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":20000,"beamDamp":50},
-        {"beamDeform":1000,"beamStrength":1000},
+        {"beamSpring":350000,"beamDamp":50},
+        {"beamDeform":"FLT_MAX","beamStrength":3000},
         {"breakGroup":"roofrack_bag"},
-        ["lgg18", "rora1l"],
+        ["lgg18", "rora1"],
         ["lgg18", "rora4l"],
-        ["lgg16", "rora3l"],
+        ["lgg16", "rora3"],
         ["lgg16", "rora6l"],
         ["lgg20", "rora3l"],
         ["lgg20", "rora6l"],
         ["lgg17", "rora3"],
         ["lgg17", "rora6"],
-        ["lgg21", "rora3"],
+        ["lgg21", "rora3l"],
         ["lgg21", "rora6"],
-        ["lgg19", "rora1"],
+        ["lgg19", "rora1l"],
         ["lgg19", "rora4"],
         ["lgg23", "rora1"],
         ["lgg23", "rora4"],
@@ -368,6 +387,34 @@
        // {"pressureGroup":""},
     ],
 },
+"bug_roof_rack_luggage_bag_brown": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Brown",
+        "value":50,
+    },
+    "slotType" : "bug_roof_rack_luggage_bag_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["roofrack_bag", ["luggage_roofrack_bag"], [], {"materialOverride":[["bug_roofrack_bag","bug_rack_bag_brown"]]}]
+    ]
+},
+"bug_roof_rack_luggage_bag_black": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Black",
+        "value":50,
+    },
+    "slotType" : "bug_roof_rack_luggage_bag_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["roofrack_bag", ["luggage_roofrack_bag"], [], {"materialOverride":[["bug_roofrack_bag","bug_rack_bag_black"]]}]
+    ]
+},
+
+
 "bug_roof_rack_luggage_coolingbox": {
     "information":{
         "authors":"53_herbie_53",
@@ -380,6 +427,14 @@
 
 		["roofrack_coolingbox", ["luggage_roofrack_coolingbox"]],
     ],
+    "cargoStorage":[
+        ["groupId","name","cargoTypes", "capacity"],
+        ["roofCoolingboxA","Roof Coolingbox",["parcel"], 1],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$roofCoolingbox_weight", "range", "Kg", "Cargo", 0.000, 0.000, 15.000, "Roof Coolingbox Mass", "Adjust the weight of the roof Coolingbox",{"stepDis":1}],
+    ],
 	"nodes":[
 		["id", "posX", "posY", "posZ"],
 		
@@ -391,14 +446,15 @@
         {"collision":true},
 			
         //coolingbox
-        ["lgg0", 0.07444, 0.72202, 1.56008],
+        ["lgg0", 0.06644, 0.72202, 1.56008],
         ["lgg1", -0.23039, 0.72202, 1.56008],
-        ["lgg2", 0.06521, 0.44245, 1.59483],
+        ["lgg2", 0.06621, 0.44245, 1.59483],
         ["lgg3", -0.24039, 0.43536, 1.59660],
         ["lgg4", 0.07544, 0.76264, 1.84893],
         ["lgg5", -0.24039, 0.76264, 1.84893],
         ["lgg6", 0.07544, 0.46597, 1.88545],
         ["lgg7", -0.24039, 0.46597, 1.88545],
+        ["lgg8", -0.08000, 0.59500, 1.73000, {"nodeWeight":"$=1+$roofCoolingbox_weight","nodeWeightFunction":"=1+($volume)","cargoGroup":"roofCoolingboxA", "selfCollision":false, "collision":false}]
     ],
     "beams":[
         ["id1:", "id2:"],
@@ -410,7 +466,7 @@
         {"deformLimitExpansion":1.1},
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":50000,"beamDamp":50},
-        {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":30000,"beamStrength":"FLT_MAX"},
         
         //coolingbox
         ["lgg0", "lgg1"],
@@ -442,11 +498,22 @@
         ["lgg2", "lgg5"],
         ["lgg3", "lgg4"],
 
+        ["lgg8", "lgg0"],
+        ["lgg8", "lgg1"],
+        ["lgg8", "lgg2"],
+        ["lgg8", "lgg3"],
+        ["lgg8", "lgg4"],
+        ["lgg8", "lgg5"],
+        ["lgg8", "lgg6"],
+        ["lgg8", "lgg7"],
+
         //attach
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":20000,"beamDamp":50},
-        {"beamDeform":1000,"beamStrength":1000},
+        {"beamSpring":350000,"beamDamp":50},
+        {"beamDeform":"FLT_MAX","beamStrength":2400},
         {"breakGroup":"roofrack_coolingbox"},
+        ["lgg0", "rora3"],
+        ["lgg1", "rora3"],
         ["lgg0", "rora3l"],
         ["lgg0", "rora6l"],
         ["lgg4", "rora3l"],
@@ -579,8 +646,8 @@
 
         //attach
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":8000,"beamDamp":50},
-        {"beamDeform":200,"beamStrength":1000},
+        {"beamSpring":80000,"beamDamp":50},
+        {"beamDeform":"FLT_MAX","beamStrength":1000},
         {"breakGroup":"roofrack_tricycle"},
         ["lgg74", "rora4"],
         ["lgg74", "rora1"],
@@ -674,7 +741,7 @@
         {"deformLimitExpansion":1.1},
         
         //surfboard  
-        {"beamSpring":120000,"beamDamp":50},
+        {"beamSpring":300000,"beamDamp":50},
         {"beamDeform":800000,"beamStrength":"FLT_MAX"},
         ["lgg40", "lgg41"],
         ["lgg40", "lgg48"],
@@ -746,8 +813,8 @@
 
         //attach
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":70000,"beamDamp":50},
-        {"beamDeform":200,"beamStrength":2000},
+        {"beamSpring":100000,"beamDamp":50},
+        {"beamDeform":"FLT_MAX","beamStrength":1000},
         {"breakGroup":"roofrack_surfboard"},
         ["lgg42", "rora1r"],
         ["lgg42", "rora4r"],
@@ -909,6 +976,14 @@
 	
         ["roofrack_crate", ["luggage_roofrack_create"]],
     ],
+    "cargoStorage":[
+        ["groupId","name","cargoTypes", "capacity"],
+        ["roofCrateA","Roof Crate",["parcel"], 3],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$roofCrate_weight", "range", "Kg", "Cargo", 0.000, 0.000, 20.000, "Roof Crate Mass", "Adjust the weight of the roof Crate",{"stepDis":1}],
+    ],
 	"nodes":[
 		["id", "posX", "posY", "posZ"],
 
@@ -927,7 +1002,8 @@
         ["rocrt3l", -0.20842, -0.04379, 1.57108],
         ["rocrt3r", -0.49013, -0.04379, 1.53872],
         ["rocrt4l", -0.21074,  0.42837, 1.59126],
-        ["rocrt4r", -0.49245,  0.42837, 1.55890]
+        ["rocrt4r", -0.49245,  0.42837, 1.55890],
+        ["rocrt5" , -0.34000,  0.25000, 1.64000, {"nodeWeight":"$=1+$roofCrate_weight","nodeWeightFunction":"=1+($volume)","cargoGroup":"roofCrateA", "selfCollision":false, "collision":false}]
     ],
     "beams":[
         ["id1:", "id2:"],
@@ -964,6 +1040,15 @@
         ["rocrt1r", "rocrt4l"],
         ["rocrt2l", "rocrt3r"],
         ["rocrt2r", "rocrt3l"],
+
+        ["rocrt5", "rocrt1l"],
+        ["rocrt5", "rocrt1r"],
+        ["rocrt5", "rocrt2l"],
+        ["rocrt5", "rocrt2r"],
+        ["rocrt5", "rocrt3l"],
+        ["rocrt5", "rocrt3r"],
+        ["rocrt5", "rocrt4l"],
+        ["rocrt5", "rocrt4r"],
 
         //attach
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
@@ -1012,7 +1097,6 @@
         ["rocrt2l", "rocrt4r", "rocrt2r"],
     ],
 },
-
 
 
 "bug_rearrack": {
@@ -1204,49 +1288,56 @@
 		["rera2", "rera11", "rera13"],
 		["rera2", "rera3", "rera12"],
 		["rera2", "rera12", "rera11"],
-
-
 	],
 },
-"bug_rearrack_luggage": {
+"bug_rearrack_luggage_bag": {
     "information":{
         "authors":"53_herbie_53",
-        "name":"Rear Rack Luggage",
+        "name":"Leather Trunk",
         "value":60,
     },
     "slotType" : "bug_rearrack_luggage",
-    "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-	
-         ["rearrack_bag", ["luggage_rearrack"]],
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_rearrack_luggage_bag_color","bug_rearrack_luggage_bag_color_black", "Color", {"coreSlot":true}]
+    ],
+    "cargoStorage":[
+        ["groupId","name","cargoTypes", "capacity"],
+        ["rearLeatherTrunkA","Rear Leather Trunk",["parcel"], 4],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$rearLeatherTrunk_weight", "range", "Kg", "Cargo", 0.000, 0.000, 50.000, "Rear Leather Trunk Mass", "Adjust the weight of the roof Leather Trunk",{"stepDis":1}],
     ],
 	"nodes":	[
 		["id", "posX", "posY", "posZ"],
 		
+        {"nodeWeight":0.9},
+		{"frictionCoef":2.0},
+		{"nodeMaterial":"|NM_RUBBER"},
+		{"group":"luggage_rearrack"},
 		{"selfCollision":true},
         {"collision":true},
-		{"nodeWeight":0.9},
-		{"frictionCoef":1.0},
-		{"nodeMaterial":"|NM_METAL"},
-		{"group":"luggage_rearrack"},
 
 		//rearbag            
-        ["lgg81", -0.30982, 1.94579, 0.86347],
-        ["lgg82", 0.30751, 1.94712, 0.86611],
-        ["lgg83", -0.30948, 2.01639, 1.00453],
-        ["lgg84", 0.30787, 2.01770, 1.00716],
-        ["lgg85", 0.30751, 1.59058, 1.04530],
-        ["lgg86", 0.30787, 1.66116, 1.18635],
-        ["lgg87", -0.30948, 1.65985, 1.18372],
-        ["lgg88", -0.30982, 1.58926, 1.04267],
+        ["lgg81", -0.310, 1.925, 0.885],
+        ["lgg82",  0.308, 1.925, 0.885],
+        ["lgg83", -0.310, 2.015, 1.035],
+        ["lgg84",  0.308, 2.015, 1.035],
+        ["lgg86",  0.308, 1.710, 1.215],
+        ["lgg87", -0.310, 1.710, 1.215],
+        ["lgg85",  0.308, 1.620, 1.055],
+        ["lgg88", -0.310, 1.620, 1.055],
 
+        ["lgg89",  0.000, 1.820, 1.045, {"nodeWeight":"$=1+$rearLeatherTrunk_weight","nodeWeightFunction":"=1+($volume)","cargoGroup":"rearLeatherTrunkA", "selfCollision":false, "collision":false}],
 	],
     "beams":[
         ["id1:", "id2:"],
 		
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":800000,"beamDamp":50},
-        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":20000,"beamStrength":"FLT_MAX"},
 
 		//rearbag            
 		["lgg81", "lgg85"],
@@ -1277,7 +1368,16 @@
         ["lgg88", "lgg86"],
         ["lgg88", "lgg81"],
         ["lgg88", "lgg87"],
-		
+
+        ["lgg81", "lgg89"]
+        ["lgg82", "lgg89"]
+        ["lgg83", "lgg89"]
+        ["lgg84", "lgg89"]
+        ["lgg86", "lgg89"]
+        ["lgg87", "lgg89"]
+        ["lgg85", "lgg89"]
+        ["lgg88", "lgg89"]
+
 		//attach
 		{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 		{"beamSpring":20000,"beamDamp":50},
@@ -1296,22 +1396,48 @@
 		{"groundModel":"metal"},
         {"dragCoef":30},
 			
-		
 		//rearbag
-            ["lgg88", "lgg87", "lgg83"],
-            ["lgg88", "lgg83", "lgg81"],
-            ["lgg83", "lgg84", "lgg82"],
-            ["lgg83", "lgg82", "lgg81"],
-            ["lgg81", "lgg82", "lgg88"],
-            ["lgg88", "lgg82", "lgg85"],
-            ["lgg87", "lgg86", "lgg84"],
-            ["lgg87", "lgg84", "lgg83"],
-            ["lgg86", "lgg87", "lgg88"],
-            ["lgg86", "lgg88", "lgg85"],
-            ["lgg84", "lgg86", "lgg85"],
-            ["lgg84", "lgg85", "lgg82"],
+        ["lgg88", "lgg87", "lgg83"],
+        ["lgg88", "lgg83", "lgg81"],
+        ["lgg83", "lgg84", "lgg82"],
+        ["lgg83", "lgg82", "lgg81"],
+        ["lgg81", "lgg82", "lgg88"],
+        ["lgg88", "lgg82", "lgg85"],
+        ["lgg87", "lgg86", "lgg84"],
+        ["lgg87", "lgg84", "lgg83"],
+        ["lgg86", "lgg87", "lgg88"],
+        ["lgg86", "lgg88", "lgg85"],
+        ["lgg84", "lgg86", "lgg85"],
+        ["lgg84", "lgg85", "lgg82"],
     ],
 },
+"bug_rearrack_luggage_bag_color_brown": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Brown",
+        "value":50,
+    },
+    "slotType" : "bug_rearrack_luggage_bag_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["rearrack_bag", ["luggage_rearrack"], [], {"materialOverride":[["bug_rearrack_bag","bug_rack_bag_brown"]]}],
+    ],
+},
+"bug_rearrack_luggage_bag_color_black": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Black",
+        "value":50,
+    },
+    "slotType" : "bug_rearrack_luggage_bag_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["rearrack_bag", ["luggage_rearrack"], [], {"materialOverride":[["bug_rearrack_bag","bug_rack_bag_black"]]}]
+    ]
+},
+
 
 "bug_jerrycan_cage": {
     "information":{
@@ -1414,13 +1540,12 @@
     "information":{
         "authors":"MrX13415",
         "name":"Jerrycan",
-        "value":30,
+        "value":0,
     },
     "slotType" : "bug_jerrycan",
-    "flexbodies": [
-        ["mesh", "[group]:", "nonFlexMaterials"],
-	
-        ["Jerrycan", ["jerrycan"]],
+    "slots": [
+        ["type", "default", "description"],
+        ["bug_jerrycan_color","bug_jerrycan_green", "Color", {"coreSlot":true}],
     ],
 	"nodes":[
 		["id", "posX", "posY", "posZ"],
@@ -1554,6 +1679,85 @@
         ["jry2l", "jry4r", "jry2r"],
         ["jry3r", "jry4r", "jry3l"],
         ["jry3l", "jry4r", "jry4l"],
+    ],
+},
+
+"bug_jerrycan_paint1": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Colored (Exterior)",
+        "value":30,
+    },
+    "slotType" : "bug_jerrycan_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["Jerrycan", ["jerrycan"]],
+    ],
+},
+"bug_jerrycan_paint2": {
+    "information":{
+        "authors":"MrX13415",
+        "name": "Colored (Exterior, Secondary)",
+        "value":30,
+    },
+    "slotType" : "bug_jerrycan_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_paint2"]]}],
+    ],
+},
+"bug_jerrycan_paint3": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Colored (Interior)",
+        "value":30,
+    },
+    "slotType" : "bug_jerrycan_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_paint3"]]}],
+    ],
+},
+"bug_jerrycan_red": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Red",
+        "value":30,
+    },
+    "slotType" : "bug_jerrycan_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_red"]]}],
+    ],
+},
+"bug_jerrycan_green": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Green",
+        "value":30,
+    },
+    "slotType" : "bug_jerrycan_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_green"]]}],
+    ],
+},
+"bug_jerrycan_blue": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Blue",
+        "value":30,
+    },
+    "slotType" : "bug_jerrycan_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_blue"]]}],
     ],
 },
 

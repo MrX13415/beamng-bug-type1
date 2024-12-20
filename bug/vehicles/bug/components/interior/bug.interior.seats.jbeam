@@ -1,0 +1,198 @@
+{
+
+// --- Seats
+"bug_seats": {
+	"information":{
+        "authors":"MrX13415",
+        "name":"Seats",
+        "value":20,
+    },
+    "slotType" : "bug_seats",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["skin_interior4", "bug_skin_interior4_white", "Seat Color 1", {"coreSlot":true}],
+        ["skin_interior4b", "bug_skin_interior4b_white", "Seat Color 2", {"coreSlot":true}],
+
+        ["bug_seat_FL", "bug_seat_lowback_FL", "Front Seat Left"],
+        ["bug_seat_FR", "bug_seat_lowback_FR", "Front Seat Right"],
+        ["bug_seat_R", "bug_seat_A_R", "Rear Seats"],
+    ],
+},
+// - Variant Board
+"bug_seat_R_board": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Cargo Box Floor",
+        "value":300,
+    },
+    "slotType" : "bug_seat_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["bug_seat_cargo_load_box","", "Cargo Box"],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+	
+         ["seat_rear_board", ["bug_seat_R"]],
+    ],
+    "nodes": [
+        ["id","posX","posY","posZ"],
+
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.8},
+        {"selfCollision":true},
+        {"collision":true},
+        {"nodeWeight": 2.5},
+        {"group": "bug_seat_R"},
+        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+        ["isR1l",  0.60, 0.39, 0.46],
+        ["isR1r", -0.60, 0.39, 0.46],
+        ["isR2l",  0.58, 0.78, 0.46],
+        ["isR2r", -0.58, 0.78, 0.46],
+        {"group": ""},
+        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":501000,"beamDamp":300},
+        {"beamDeform":5000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+        {"group": "bug_seat_R"},
+        //main
+        ["isR1l", "isR1r"],
+        ["isR2l", "isR2r"],
+        ["isR1l", "isR2l"],
+        ["isR1r", "isR2r"],
+        //cross
+        ["isR1l", "isR2r"],
+        ["isR2l", "isR1r"],
+        {"group": ""},
+
+        // connection
+        {"breakGroup":"bug_seat_R"},
+        {"beamDeform":20000,"beamStrength":30000},
+        ["isR1l", "f5l"],
+        ["isR1l", "f5r"],
+        ["isR1r", "f5l"],
+        ["isR1r", "f5r"],
+        ["isR1l", "f6l"],
+        ["isR1l", "f6r"],
+        ["isR1r", "f6l"],
+        ["isR1r", "f6r"],
+        ["isR2l", "f5l"],
+        ["isR2l", "f5r"],
+        ["isR2r", "f5l"],
+        ["isR2r", "f5r"],
+        ["isR2l", "f6l"],
+        ["isR2l", "f6r"],
+        ["isR2r", "f6l"],
+        ["isR2r", "f6r"],
+        {"breakGroup":""},
+        {"deformLimitExpansion":1.0},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        //front bumper
+        {"groundModel":"WOOD"},
+        {"dragCoef":0},
+        ["isR1r", "isR1l", "isR2r"],
+        ["isR2r", "isR1l", "isR2l"],
+    ]
+},
+
+
+"bug_seats_R_cargo_load_floor": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Cargo Boxs",
+        "value":0,
+    },
+    "slotType" : "bug_seat_cargo_load_box",
+    "slots": [
+        ["type", "default", "description"],
+        ["cargo_load_box_L_seats_RA","cargo_load_box_L_seats_RA", "Cargo Box L A", {"nodeMove":{"x":0.00, "y":0.670, "z":0.71}, "variables":{"$group":"bug_seat_R"}, "coreSlot":true}],
+        ["cargo_load_box_M_seats_RB","cargo_load_box_M_seats_RB", "Cargo Box M B", {"nodeMove":{"x":0.00, "y":0.530, "z":0.96}, "variables":{"$group":"bug_seat_R", "$strapScale":0.85}}],
+        ["cargo_load_box_M_seats_RC","cargo_load_box_M_seats_RC", "Cargo Box M C", {"nodeMove":{"x":0.00, "y":0.810, "z":0.96}, "variables":{"$group":"bug_seat_R", "$strapScale":0.85}}],
+    ],
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+        // What are these for?
+        //  ["cargo_support_box", ["bug_seat_R"],[],{"pos":{"x":0.25,  "y":0.46, "z":0.28}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.6, "y":1, "z":2.3}}],
+        //  ["cargo_support_box", ["bug_seat_R"],[],{"pos":{"x":-0.25,  "y":0.46, "z":0.28}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.6, "y":1, "z":2.3}}],
+        //  ["cargo_support_box", ["bug_seat_R"],[],{"pos":{"x":0.25,  "y":0.87, "z":0.44}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.6, "y":1, "z":0.3}}],
+        //  ["cargo_support_box", ["bug_seat_R"],[],{"pos":{"x":-0.25,  "y":0.87, "z":0.44}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.6, "y":1, "z":0.3}}],
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        //attach
+        {"beamSpring":1501000,"beamDamp":30},
+        {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+
+        ["seat_box_RA_14", "isR1l"],
+        ["seat_box_RA_14", "isR2l"],
+
+        ["seat_box_RA_15", "isR2l"],
+        ["seat_box_RA_15", "isR2l"],
+        ["seat_box_RA_15", "isR2l"],
+        ["seat_box_RA_0", "isR1l"],
+        ["seat_box_RA_0", "isR1l"],
+        ["seat_box_RA_0", "isR1l"],
+
+        ["seat_box_RA_8",  "isR1l"],
+        ["seat_box_RA_8",  "isR1r"],
+        ["seat_box_RA_8",  "isR2r"],
+        ["seat_box_RA_8",  "isR2r"],
+
+        ["seat_box_RA_2", "isR1r"],
+        ["seat_box_RA_2", "isR1r"],
+        ["seat_box_RA_2", "isR1r"],
+        ["seat_box_RA_9", "isR2r"],
+        ["seat_box_RA_9", "isR2r"],
+        ["seat_box_RA_9", "isR2r"],
+
+        ["seat_box_RA_12", "isR1r"],
+        ["seat_box_RA_12", "isR2r"],
+
+
+        ["seat_box_RB_1", "isR1l"],
+        ["seat_box_RB_1", "isR2l"],
+        ["seat_box_RB_5", "isR1l"],
+        ["seat_box_RB_5", "isR2l"],
+        ["seat_box_RB_0", "isR1r"],
+        ["seat_box_RB_0", "isR2r"],
+        ["seat_box_RB_6", "isR1r"],
+        ["seat_box_RB_6", "isR2r"],
+
+        ["seat_box_RB_2", "isR1l"],
+        ["seat_box_RB_2", "isR2l"],
+        ["seat_box_RB_2", "isR1r"],
+        ["seat_box_RB_2", "isR2r"],
+
+        ["seat_box_RC_1", "isR1l"],
+        ["seat_box_RC_1", "isR2l"],
+        ["seat_box_RC_5", "isR1l"],
+        ["seat_box_RC_5", "isR2l"],
+        ["seat_box_RC_0", "isR1r"],
+        ["seat_box_RC_0", "isR2r"],
+        ["seat_box_RC_6", "isR1r"],
+        ["seat_box_RC_6", "isR2r"],
+
+        ["seat_box_RC_2", "isR1l"],
+        ["seat_box_RC_2", "isR2l"],
+        ["seat_box_RC_2", "isR1r"],
+        ["seat_box_RC_2", "isR2r"],
+
+
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":1.2},
+   ],
+},
+
+
+}

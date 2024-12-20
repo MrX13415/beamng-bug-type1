@@ -7,7 +7,7 @@
 
 local M = {}
 
-local filepath = "settings/vehicles/bug/data.json"
+local filepath = ""
 
 local saveTimer = 0
 local saveSuspended = false
@@ -16,7 +16,8 @@ local _data = {}
 
 -- common
 
-local function load()
+local function load(file)
+	filepath = file or filepath
 	_data = jsonReadFile(filepath)
 	loaded = true
 	log("D", "", "[Bug:Storage] Loaded")
@@ -47,7 +48,7 @@ local function updateGFX(dt)
 end
 
 local function onReset()
-	load()
+	load("settings"..v.vehicleDirectory.."data.json")
 end
 
 local function data()

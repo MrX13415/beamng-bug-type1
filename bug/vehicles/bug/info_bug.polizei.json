@@ -1,0 +1,37 @@
+{
+  "0-100 km/h":11.4,
+  "0-100 mph":35,
+  "0-60 mph":10.8,
+  "100-0 km/h":39.1,
+  "60-0 mph":119.6,
+  "60-100 mph":24.2,
+  "BoundingBox":[
+    [
+      -0.703,
+      -1.77119,
+      -0.259979
+    ],
+    [
+      0.863,
+      2.29767,
+      1.39
+    ]
+  ],
+  "Braking G":1.006,
+  "Config Type":"Police",
+  "Configuration":"Polizei (M)",
+  "Description":"German police variant",
+  "Drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":28,
+  "Power":79,
+  "PowerPeakRPM":"4750 - 5350",
+  "Propulsion":"ICE",
+  "Top Speed":47.23935318,
+  "Torque":130,
+  "TorquePeakRPM":"2550 - 3750",
+  "Transmission":"Manual",
+  "Weight":980,
+  "Weight/Power":12.40506329
+}

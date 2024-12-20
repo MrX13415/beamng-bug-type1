@@ -46,8 +46,8 @@
         ["rh2r",-0.60, 1.17, 0.447021, {"group":["lowerarm_R","hub_R"]}],
         ["rh2l", 0.60, 1.17, 0.447021, {"group":["lowerarm_R","hub_R"]}],
         {"nodeWeight":4.0},
-        ["rh4r",-0.40, 1.106, 0.25, {"group":["shockbottom_R","hub_R"]}],
-        ["rh4l", 0.40, 1.106, 0.25, {"group":["shockbottom_R","hub_R"]}],
+        ["rh4r",-0.46, 1.10, 0.20, {"group":["shockbottom_R","hub_R"]}],
+        ["rh4l", 0.46, 1.10, 0.20, {"group":["shockbottom_R","hub_R"]}],
         {"nodeWeight":3.5},
         ["rh5r",-0.60, 1.30, 0.297021, {"group":["hub_R","lowerarm_R"]}],
         ["rh5l", 0.60, 1.30, 0.297021, {"group":["hub_R","lowerarm_R"]}],
@@ -58,8 +58,8 @@
 
         //moved for coilovers!!
         {"nodeWeight":5.5},
-        ["bs1l", 0.438964, 1.12138, 0.531593, {"group":["lowermounts_R", "shocktop_R"]}],
-        ["bs1r",-0.438964, 1.12138, 0.531593, {"group":["lowermounts_R", "shocktop_R"]}],
+        ["bs1l", 0.47, 1.10, 0.53, {"group":["lowermounts_R", "shocktop_R"]}],
+        ["bs1r",-0.47, 1.10, 0.53, {"group":["lowermounts_R", "shocktop_R"]}],
 
         //redefined body nodes
         {"group":"lowermounts_R"},
@@ -184,26 +184,26 @@
         ["rh1r","rh5r"],
         ["rh2r","rh5r"],
 
-        ["bx2l","rh5l"],
-        ["bx2r","rh5r"],
-
-        ["bx1l","rh1l"],
-        ["bx1l","rh5l"],
         ["bx2l","rh1l"],
-
-        ["bx1r","rh1r"],
-        ["bx1r","rh5r"],
-        ["bx2r","rh1r"],
+        ["bx2l","rh2l"],
         
-        ["rh2l", "bx1r"],
-        ["rh2l", "bx1l"],
-        ["rh2l", "bx2r"],
-        ["rh2l", "bx2l"],
-
-        ["rh2r", "bx1r"],
-        ["rh2r", "bx1l"],
-        ["rh2r", "bx2r"],
-        ["rh2r", "bx2l"],
+        ["bx2r","rh1r"],
+        ["bx2r","rh2r"],
+        
+        ["bx1l","rh1l"],
+        ["bx1l","rh2l"],
+        ["bx1l","rh5l"],
+        
+        ["bx1r","rh1r"],
+        ["bx1r","rh2r"],
+        ["bx1r","rh5r"],
+        
+        ["bx1r","rh2l"],    //
+        ["bx1l","rh2r"],    //
+        ["bx2l","rh2r"],    //
+        ["bx2l","rh5l"],    //
+        ["bx2r","rh2l"],    //
+        ["bx2r","rh5r"],    //
 
         //{"highlight":{"radius":0.002, "col":"#00ffffff" }},
 
@@ -218,13 +218,13 @@
         ["rh4r","rh5r"],
         ["rh4l","rh5l"],
 
-        ["rh4r", "bx1l"],
-        ["rh4r", "bx1r"],
-        ["rh4r", "bx2r"],
-
-        ["rh4l", "bx1l"],
-        ["rh4l", "bx1r"],
-        ["rh4l", "bx2l"],
+        ["bx1l", "rh4l"],
+        ["bx1r", "rh4r"],
+        
+        ["bx1r", "rh4l"],
+        ["bx1l", "rh4r"],
+        ["bx2l", "rh4l"],
+        ["bx2r", "rh4r"],
 
         //REAR TORSION BAR TUBE
         {"beamSpring":4801000,"beamDamp":100},

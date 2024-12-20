@@ -6,9 +6,9 @@
     "information":{
         "authors":"MrX13415",
         "name":"Radio",
-        "value":300,
+        "value":300
     },
-    "slotType" : "bug_console_cage",
+    "slotType": "bug_console_cage",
     "slots": [
         ["type", "default", "description"],
 
@@ -18,81 +18,88 @@
         ["bug_radio_output", "bug_radio_output_2D", "Output", {"coreSlot": true}],
         // No longer used["bug_radio_station", "radio_station_piano", "Radio Station"],
     ],
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-
-        ["volDown",        "",   "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.02, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.0683, "y":-0.1270, "z":-0.0635}],
-        ["volUp",      "",   "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.02, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.0583, "y":-0.1270, "z":-0.0635}],
-        
-        ["tunePreset1",  "",   "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x": 0.02779, "y":-0.1095, "z":-0.05}],
-        ["tunePreset2",  "",   "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x": 0.01079, "y":-0.1095, "z":-0.05}],
-        ["tunePreset3",  "",   "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.00621, "y":-0.1095, "z":-0.05}],
-        ["tunePreset4",  "",   "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.02321, "y":-0.1095, "z":-0.05}],
-        ["tunePreset5",  "",   "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.04021, "y":-0.1095, "z":-0.05}],
-
-        ["tuneDown",  "",   "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.02, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.0683, "y":-0.1270, "z":-0.0635}],
-        ["tuneUp",    "",   "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.02, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.0783, "y":-0.1270, "z":-0.0635}],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$state", "range", " ", "Radio", 0, 0, 1, "Inital On/Off State", "Inital On/Off state of the radio", {"stepDis":1}],
+        ["$volume", "range", "", "Radio", 0.3, 0.05, 1.0, "Inital Volume", "Inital volume of the radio", {"minDis":5, "maxDis":100}],
+	],
+    "electricPower":[
+        ["power"],
+        [2, {"trigger": "electrics.values.radio_state"}],
+        [90, {"trigger": "electrics.values.radio_state", "ratio": "electrics.values.radio_volume * POWER"}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],        
-
-        ["volDown", "action0", "volDown"],
-        ["volDown", "action1", "radioOff"],
-        ["volDown", "action2", "radioOff"],
-        ["volUp", "action0", "volUp"],
-        ["volUp", "action1", "radioOff"],
-        ["volUp", "action2", "radioOff"],
-
-        ["tunePreset1", "action0", "tunePreset1"],
-        ["tunePreset2", "action0", "tunePreset2"],
-        ["tunePreset3", "action0", "tunePreset3"],
-        ["tunePreset4", "action0", "tunePreset4"],
-        ["tunePreset5", "action0", "tunePreset5"],
-
-        ["tunePreset1", "action1", "setPreset1"],
-        ["tunePreset2", "action1", "setPreset2"],
-        ["tunePreset3", "action1", "setPreset3"],
-        ["tunePreset4", "action1", "setPreset4"],
-        ["tunePreset5", "action1", "setPreset5"],
-
-        ["tunePreset1", "action2", "setPreset1"],
-        ["tunePreset2", "action2", "setPreset2"],
-        ["tunePreset3", "action2", "setPreset3"],
-        ["tunePreset4", "action2", "setPreset4"],
-        ["tunePreset5", "action2", "setPreset5"],
-        
-        ["tuneDown", "action0", "tuneDown"],
-        ["tuneDown", "action1", "tunePrev"],
-        ["tuneDown", "action2", "tunePrev"],
-        ["tuneUp", "action0", "tuneUp"],
-        ["tuneUp", "action1", "tuneNext"],
-        ["tuneUp", "action2", "tuneNext"],
+    "controller": [
+        ["fileName"],
+        ["radio"]
     ],
-    "events":[
-        ["id", "title", "desc"],
-        // TODO: texts
-        ["radioOff",  "ui.inputActions.bug.volDown.title", "ui.inputActions.bug.volDown.description", {"onDown":"radio.setState(false)"}],
+    "radio": {
+        "state": "$state",
+        "volume": "$volume",
+        "nodeOutput": "speaker",
+        "nodeSFX": "dsh",
+        "sfxPresetUse": "event:>Vehicle>Interior>Light>AU3_On",
+        "sfxPresetSet": "event:>Vehicle>Interior>Light>AU3_Off",
+        "sfxRadioOn": "event:>Vehicle>Interior>Light>AU5_AC_Dial_On",
+        "sfxRadioOff": "event:>Vehicle>Interior>Light>AU5_AC_Dial_On",  // AU5_AC_Dial_Off no sound?
+        "slotTypeStations": "bug_radio_station"
+    },
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
 
-        ["volDown",  "ui.inputActions.bug.volDown.title", "ui.inputActions.bug.volDown.description", {"onDown":"radio.volumeDown()"}],
-        ["volUp",  "ui.inputActions.bug.volUp.title", "ui.inputActions.bug.volUp.description", {"onDown":"radio.volumeUp()"}],
+        ["volDown",      "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.01, "z":0.014}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.0686, "y":-0.1240, "z":-0.0635},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["volUp",        "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.01, "z":0.014}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.0580, "y":-0.1240, "z":-0.0635},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        
+        ["tunePreset1",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x": 0.02779, "y":-0.1095, "z":-0.05},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["tunePreset2",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x": 0.01079, "y":-0.1095, "z":-0.05},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["tunePreset3",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.00621, "y":-0.1095, "z":-0.05},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["tunePreset4",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.02321, "y":-0.1095, "z":-0.05},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["tunePreset5",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.04021, "y":-0.1095, "z":-0.05},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
 
-        ["tunePreset1",  "ui.inputActions.bug.tunepreset1.title", "ui.inputActions.bug.tunepreset1.description", {"onDown":"radio.tunePreset(1)"}],
-        ["tunePreset2",  "ui.inputActions.bug.tunepreset2.title", "ui.inputActions.bug.tunepreset2.description", {"onDown":"radio.tunePreset(2)"}],
-        ["tunePreset3",  "ui.inputActions.bug.tunepreset3.title", "ui.inputActions.bug.tunepreset3.description", {"onDown":"radio.tunePreset(3)"}],
-        ["tunePreset4",  "ui.inputActions.bug.tunepreset4.title", "ui.inputActions.bug.tunepreset4.description", {"onDown":"radio.tunePreset(4)"}],
-        ["tunePreset5",  "ui.inputActions.bug.tunepreset5.title", "ui.inputActions.bug.tunepreset5.description", {"onDown":"radio.tunePreset(5)"}],
+        ["tuneDown",     "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.01, "z":0.014}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.0680, "y":-0.1240, "z":-0.0635},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["tuneUp",       "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.01, "z":0.014}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.0786, "y":-0.1240, "z":-0.0635},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["radio_Toggle"],
+        ["radio_VolumeDown"],
+        ["radio_VolumeUp"],
+        ["radio_TuneRev"],
+        ["radio_TuneNext"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
 
-        ["setPreset1",  "ui.inputActions.bug.tunepreset1.title", "ui.inputActions.bug.tunepreset1.description", {"onDown":"radio.setPreset(1)"}],
-        ["setPreset2",  "ui.inputActions.bug.tunepreset2.title", "ui.inputActions.bug.tunepreset2.description", {"onDown":"radio.setPreset(2)"}],
-        ["setPreset3",  "ui.inputActions.bug.tunepreset3.title", "ui.inputActions.bug.tunepreset3.description", {"onDown":"radio.setPreset(3)"}],
-        ["setPreset4",  "ui.inputActions.bug.tunepreset4.title", "ui.inputActions.bug.tunepreset4.description", {"onDown":"radio.setPreset(4)"}],
-        ["setPreset5",  "ui.inputActions.bug.tunepreset5.title", "ui.inputActions.bug.tunepreset5.description", {"onDown":"radio.setPreset(5)"}],
+        ["volDown", "action0", "radio_On_VolumeDown"],
+        ["volDown", "action1", "radio_Off"],
+        ["volDown", "action2", "radio_Off"],
+        ["volUp", "action0", "radio_On_VolumeUp"],
+        ["volUp", "action1", "radio_Off"],
+        ["volUp", "action2", "radio_Off"],
 
-        ["tuneDown",  "ui.inputActions.bug.tuneDown.title", "ui.inputActions.bug.tuneDown.description", {"onChange":"radio.tuneDown(VALUE)"}],
-        ["tuneUp",  "ui.inputActions.bug.tuneUp.title", "ui.inputActions.bug.tuneUp.description", {"onChange":"radio.tuneUp(VALUE)"}],
+        ["tunePreset1", "action0", "radio_TunePreset1"],
+        ["tunePreset2", "action0", "radio_TunePreset2"],
+        ["tunePreset3", "action0", "radio_TunePreset3"],
+        ["tunePreset4", "action0", "radio_TunePreset4"],
+        ["tunePreset5", "action0", "radio_TunePreset5"],
 
-        ["tunePrev",  "ui.inputActions.bug.tunePrev.title", "ui.inputActions.bug.tunePrev.description", {"onDown":"radio.tuneDown()"}],
-        ["tuneNext",  "ui.inputActions.bug.tuneNext.title", "ui.inputActions.bug.tuneNext.description", {"onDown":"radio.tuneUp()"}],
+        ["tunePreset1", "action1", "radio_SetPreset1"],
+        ["tunePreset2", "action1", "radio_SetPreset2"],
+        ["tunePreset3", "action1", "radio_SetPreset3"],
+        ["tunePreset4", "action1", "radio_SetPreset4"],
+        ["tunePreset5", "action1", "radio_SetPreset5"],
+
+        ["tunePreset1", "action2", "radio_SetPreset1"],
+        ["tunePreset2", "action2", "radio_SetPreset2"],
+        ["tunePreset3", "action2", "radio_SetPreset3"],
+        ["tunePreset4", "action2", "radio_SetPreset4"],
+        ["tunePreset5", "action2", "radio_SetPreset5"],
+        
+        ["tuneDown", "action0", "radio_TuneDown"],
+        ["tuneDown", "action1", "radio_TuneRev"],
+        ["tuneDown", "action2", "radio_TuneRev"],
+        ["tuneUp", "action0", "radio_TuneUp"],
+        ["tuneUp", "action1", "radio_TuneNext"],
+        ["tuneUp", "action2", "radio_TuneNext"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -265,7 +272,6 @@
     "beams": [
         {"beamPrecompression":1.0},
 
-        {"disableMeshBreaking":false},
         {"beamSpring":201000,"beamDamp":50},
         {"beamDeform":15000,"beamStrength":"FLT_MAX"},
         {"group": "bug_glovebox"},
@@ -372,18 +378,13 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["dashboard_glovebox_hatch", ["bug_glovebox_door"]],
     ],
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["gloveboxLatch", "", "dgb1l","dgb1r","dgb2l", "box", {"x":0.02, "y":0.015, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1547, "y":0.103, "z":-0.003}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["gloveboxLatch", "dgb1l","dgb1r","dgb2l", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1654, "y":0.1137, "z":0.005},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
         ["gloveboxLatch", "action0", "gloveboxLatch"],   // default: left mouse btn
-    ],
-    "events":[
-        ["id", "title", "desc"],
-        // TODO: Where are these texts shown?
-        ["gloveboxLatch", "ui.inputActions.bug.gloveboxLatch.title", "ui.inputActions.bug.gloveboxLatch.description", {"onUp":"controller.getControllerSafe('gloveboxCoupler').toggleGroup()"}],
     ],
     "nodes": [
         
@@ -503,6 +504,10 @@
         "name":"Clock",
         "value":300,
     },
+    "electricPower":[
+        ["power"],
+        [0.003]
+    ],
     "slotType" : "bug_console_clock",
     "controller": [
         ["fileName"],
@@ -525,6 +530,44 @@
         ["clocksec",  "needle_clock_sec",  "dsh","dshl","bd1",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
     ],
 },
+"bug_hazard_knob": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Hazard Light Switch",
+        "value":25,
+    },
+    "electricPower":[
+        ["power"],
+        [1]
+    ],
+    "slotType" : "bug_hazard_knob",
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        
+        ["hazard", "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.071, "y":-0.03, "z":-0.045},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        
+        ["hazard", "action0", "common:toggle_hazard_signal"],
+        ["hazard", "action1", "common:toggle_hazard_signal"],
+        ["hazard", "action2", "common:toggle_hazard_signal"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["controls_dashboard_hazard",  ["bug_body", "bug_dashboard"]],
+    ],
+    "glowMap":{
+        "bug_dash_hazard_knob_light":    {"simpleFunction":"power__hazard",     "off":"bug_dash_hazard_knob_light",   "on":"bug_dash_hazard_knob_light_on",  "on_intense":"bug_dash_hazard_knob_light_on", "materialEmissiveScaling":{"on_max":0.49}},
+    },
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+
+        ["hazard_enabled", "controls_dashboard_hazard_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
+    ],
+},
+
 
 // --- Radio Parts
 

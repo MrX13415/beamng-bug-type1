@@ -1,0 +1,6 @@
+{
+    "lua.targetVersion": "5.1",
+    "Lua.workspace.library": [
+        "D:\\SteamLibrary\\steamapps\\common\\BeamNG.drive"
+    ]
+}

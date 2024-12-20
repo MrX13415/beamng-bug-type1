@@ -1,0 +1,38 @@
+{
+  "0-100 km/h":11.7,
+  "0-100 mph":39.2,
+  "0-60 mph":11,
+  "100-0 km/h":39.1,
+  "60-0 mph":119.4,
+  "60-100 mph":28.2,
+  "BoundingBox":[
+    [
+      -0.703,
+      -1.77119,
+      -0.267979
+    ],
+    [
+      0.863,
+      2.29767,
+      1.39
+    ]
+  ],
+  "Braking G":1.006,
+  "Country": "United States",
+  "Config Type":"Police",
+  "Configuration":"US Police (A)",
+  "Description":"US police variant",
+  "Drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Off-Road Score":34,
+  "Power":79,
+  "PowerPeakRPM":"4750 - 5350",
+  "Propulsion":"ICE",
+  "Top Speed":45.92327499,
+  "Torque":130,
+  "TorquePeakRPM":"2550 - 3750",
+  "Transmission":"Automatic",
+  "Weight":980,
+  "Weight/Power":12.40506329
+}

@@ -1,38 +1,40 @@
 {
-  "0-100 km/h":22.9,
-  "0-60 mph":21,
+  "0-100 km/h":21.3,
+  "0-60 mph":19.6,
   "100-0 km/h":44.3,
   "60-0 mph":132.7,
   "BoundingBox":[
     [
-      -0.783,
+      -0.703,
       -1.77119,
-      -0.242979
+      -0.267979
     ],
     [
-      0.783,
+      0.863,
       2.29767,
-      1.27506
+      1.25006
     ]
   ],
   "Config Type":"Factory",
+  "Country": "United States",
   "Configuration":"1200 US (M)",
   "Description":"US base model with 1200cc engine",
-  "drivetrain":"RWD",
+  "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
-  "Off-Road Score":34,
+  "Off-Road Score":28,
   "Performance Class":"2",
+  "Population":300,
   "Power":41,
-  "PowerPeakRPM":"3300 - 4050",
+  "PowerPeakRPM":"3350 - 4050",
   "Propulsion":"ICE",
-  "Top Speed":38.10468283,
+  "Top Speed":38.08955002,
   "Torque":100,
   "TorquePeakRPM":"1800 - 2850",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1025,
-  "Weight/Power":25,
+  "Weight":980,
+  "Weight/Power":23.90243902,
   "defaultPaintName1":"Steel Blue",
   "defaultPaintName3":"Steel Blue"
 }

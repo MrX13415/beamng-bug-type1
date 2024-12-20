@@ -1,45 +1,6 @@
 {
   "format":2,
-  "mainPartName":"bug",
   "model":"bug",
-  "paints":[
-    {
-      "baseColor":[
-        0,
-        0.4,
-        0.6,
-        1.45
-      ],
-      "clearcoat":1,
-      "clearcoatRoughness":0.06,
-      "metallic":0.7,
-      "roughness":0.4
-    },
-    {
-      "baseColor":[
-        0.6,
-        0.2,
-        0.1,
-        1.45
-      ],
-      "clearcoat":1,
-      "clearcoatRoughness":0.06,
-      "metallic":0.7,
-      "roughness":0.4
-    },
-    {
-      "baseColor":[
-        0,
-        0.4,
-        0.6,
-        1.45
-      ],
-      "clearcoat":1,
-      "clearcoatRoughness":0.06,
-      "metallic":0.7,
-      "roughness":0.4
-    }
-  ],
   "parts":{
     "antenna":"antenna_default_R",
     "brakepad_F":"brakepad_F",
@@ -91,7 +52,7 @@
     "bug_frame":"bug_frame",
     "bug_fueltank":"bug_fueltank",
     "bug_gascap":"",
-    "bug_gauges_console":"",
+    "bug_console_accessory":"",
     "bug_glass":"bug_glass",
     "bug_glovebox":"bug_glovebox",
     "bug_glovebox_things":"bug_glovebox_things",
@@ -116,7 +77,7 @@
     "bug_interior_handles":"bug_interior_handles",
     "bug_interiorlight":"bug_interiorlight",
     "bug_jerrycan_cage":"",
-    "bug_lettering":"bug_lettering_vw1600",
+    "bug_lettering":"bug_lettering_1600cc",
     "bug_licenseplate_F2":"bug_licenseplate_F2_US",
     "bug_licenseplate_R":"bug_licenseplate_R",
     "bug_logo":"bug_logo",
@@ -135,7 +96,7 @@
     "bug_rearwindow":"bug_rearwindow",
     "bug_rollbar":"",
     "bug_roof":"bug_roof_ragtop",
-    "bug_roof_rack":"",
+    "bug_roof_accessory":"",
     "bug_seat_FL":"bug_seat_rollover_FL",
     "bug_seat_FR":"bug_seat_rollover_FR",
     "bug_seat_R":"bug_seat_A_R",
@@ -200,7 +161,7 @@
     "skin_speedometer":"bug_speedo_mph_90",
     "skin_steer":"bug_steer_white",
     "soundscape":"",
-    "soundscape_horn":"soundscape_horn_2",
+    "soundscape_horn":"soundscape_horn_116",
     "tire_F_14x6":"tire_F_695_14_ww",
     "tire_R_14x6":"tire_R_695_14_ww",
     "tire_spare":"tire_spare_ww",
@@ -217,8 +178,8 @@
     "$ragtopInitState":0.6,
     "$size_TC":0.1897,
     "$steer_center_F":0,
-    "$tirepressure_F":32,
-    "$tirepressure_R":32,
+    "$tirepressure_F":20,
+    "$tirepressure_R":24,
     "$toe_F":0.9995,
     "$toe_R":1.0005,
     "$trackoffset_F":0,

@@ -19,8 +19,8 @@
     //{"control": "", "action": "sunvisorRtoggle"},
     //{"control": "", "action": "interiorlighttoggle"},
 
-    //{"control": "ctrl alt numpad4", "action": "doorLtoggle"},
-    //{"control": "ctrl alt numpad6", "action": "doorRtoggle"},
+    //{"control": "ctrl alt numpad4", "action": "door_FL"},
+    //{"control": "ctrl alt numpad6", "action": "door_FR"},
     //{"control": "ctrl alt numpad8", "action": "hoodtoggle"},
     //{"control": "ctrl alt numpad2", "action": "trunktoggle"},
 

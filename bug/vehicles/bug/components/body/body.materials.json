@@ -16,7 +16,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -41,27 +41,29 @@
     "persistentId": "33497c25-b0e3-4e18-ae35-b4d47bbd35de",
     "Stages": [
       {
-        "baseColorFactor": [
-          0.999989986,
-          0.999996006,
-          1,
-          1
-        ],
-        "clearCoatFactor": 1,
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
-        "colorPaletteMapUseUV": 1,
-        "diffuseMapUseUV": 1,
-        "instanceDiffuse": true,
-        "metallicFactor": 1
+        "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/default_rough.data.png"
       },
-      {},
+      {
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
+        "colorPaletteMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png"
+      },
       {},
       {}
     ],
+    "activeLayers": 2,
     //"doubleSided": true,
     //"invertBackFaceNormals": true,
     "dynamicCubemap": true,
-    "translucentBlendOp": "None",
     "version": 1.5
   },
 
@@ -104,11 +106,14 @@
     "Stages": [
       {
         "baseColorFactor": [
-          0.18,
-          0.18,
-          0.18,
+          1,
+          1,
+          1,
           1
-        ]
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/rubber_d.color.png",
+        "roughnessMap": "/vehicles/bug/components/common/textures/rubber_r.data.png",
+        "roughnessFactor": 1
       },
       {},
       {}
@@ -127,17 +132,12 @@
     "persistentId": "95cfedc2-ca89-40e0-b6e1-42d9bf1fff26",
     "Stages": [
       {
-        "baseColorFactor": [
-          0.239850998,
-          0.239849001,
-          0.239849001,
-          1
-        ],
-        "metallicFactor": 1,
-        "normalMap": "/vehicles/bug/components/frame/textures/frame_n.normal.png",
-        "normalMapStrength": 0.5,
-        "roughnessFactor": 0.736999989,
-        "roughnessMap": "/vehicles/bug/components/frame/textures/frame_r.data.png"
+        "baseColorMap": "/vehicles/bug/components/common/textures/frame_d.color.png",
+        "clearCoatFactor": 1,
+        "clearCoatRoughnessFactor": 0.150000006,
+        "metallicFactor": 0.400000006,
+        "normalMap": "/vehicles/bug/components/common/textures/frame_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/common/textures/frame_r.data.png"
       },
       {},
       {},
@@ -165,10 +165,23 @@
         "pixelSpecular": true,
         "roughnessFactor": 0
       },
-      {},
+      {
+        "baseColorFactor": [
+          0.238739997,
+          0.236947,
+          0.233510002,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/textures/window_r.data.dds",
+        "opacityFactor": 0.35,
+        "opacityMap": "/vehicles/bug/components/body/textures/window_r.data.dds",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/body/textures/window_r.data.dds"
+      },
       {},
       {}
     ],
+    "activeLayers": 2,
     "alphaRef": 0,
     "dynamicCubemap": true,
     "materialTag0": "beamng",
@@ -185,27 +198,30 @@
     "persistentId": "d232a4fc-da29-4492-bd44-a86cbc4c2478",
     "Stages": [
       {
+        "baseColorFactor": [
+          0.774537981,
+          0.913185,
+          0.978093028,
+          1
+        ],
         "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dmg_b.color.png",
-        "normalMap": "vehicles/common/glass_dmg_n.dds",
+        "normalMap": "/vehicles/bug/components/body/textures/window_glass_dmg_n.normal.dds",
         "opacityMap": "/vehicles/bug/components/body/textures/window_glass_dmg_o.data.png",
         "pixelSpecular": true,
-        "roughnessFactor": 0,
-        "useAnisotropic": true
+        "roughnessMap": "/vehicles/bug/components/body/textures/window_glass_dmg_r.data.dds"
       },
       {},
       {},
       {}
     ],
-    "alphaRef": 20,
+    "alphaRef": 1,
     "alphaTest": true,
     "castShadows": false,
     "dynamicCubemap": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
-    "order_simset": 1852795252,
     "translucent": true,
     "translucentBlendOp": "PreMulAlpha",
-    "translucentRecvShadows": true,
     "version": 1.5
   },
   "bug_window_glass_int": {
@@ -225,10 +241,23 @@
         "pixelSpecular": true,
         "roughnessFactor": 0.075
       },
-      {},
+      {
+        "baseColorFactor": [
+          0.512574017,
+          0.512574017,
+          0.512574017,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/textures/window_r.data.dds",
+        "opacityFactor": 0.5,
+        "opacityMap": "/vehicles/bug/components/body/textures/window_r.data.dds",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/body/textures/window_r.data.dds"
+      },
       {},
       {}
     ],
+    "activeLayers": 2,
     "alphaRef": 0,
     "dynamicCubemap": true,
     "materialTag0": "beamng",
@@ -290,14 +319,15 @@
     "Stages": [
       {
         "baseColorFactor": [
-          0.289211988,
-          0.289209008,
-          0.289209008,
+          0.182375997,
+          0.195612997,
+          0.262744993,
           1
         ],
-        "baseColorMap": "/vehicles/bug/components/body/textures/Runningboards_d.color.png",
-        "normalMap": "/vehicles/bug/components/body/textures/Runningboards_n.normal.png",
-        "roughnessFactor": 0.899999976
+        "baseColorMap": "/vehicles/bug/components/body/textures/runningboards_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/textures/runningboards_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/body/textures/runningboards_r.data.png",
+        "roughnessFactor": 1
       },
       {},
       {},
@@ -319,9 +349,10 @@
           0.65,
           1
         ],
-        "baseColorMap": "/vehicles/bug/components/body/textures/Runningboards_d.color.png",
-        "normalMap": "/vehicles/bug/components/body/textures/Runningboards_n.normal.png",
-        "roughnessFactor": 0.899999976
+        "baseColorMap": "/vehicles/bug/components/body/textures/runningboards_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/textures/runningboards_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/body/textures/runningboards_r.data.png",
+        "roughnessFactor": 1
       },
       {},
       {},
@@ -338,14 +369,15 @@
     "Stages": [
       {
         "baseColorFactor": [
-          1.000,
-          0.979,
-          0.798,
+          1,
+          0.978999972,
+          0.797999978,
           1
         ],
-        "baseColorMap": "/vehicles/bug/components/body/textures/Runningboards_d.color.png",
-        "normalMap": "/vehicles/bug/components/body/textures/Runningboards_n.normal.png",
-        "roughnessFactor": 0.899999976
+        "baseColorMap": "/vehicles/bug/components/body/textures/runningboards_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/textures/runningboards_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/body/textures/runningboards_r.data.png",
+        "roughnessFactor": 1
       },
       {},
       {},
@@ -362,14 +394,66 @@
     "Stages": [
       {
         "baseColorFactor": [
-          1.000,
-          0.989,
-          0.933,
+          1,
+          0.989000022,
+          0.933000028,
           1
         ],
-        "baseColorMap": "/vehicles/bug/components/body/textures/Runningboards_d.color.png",
-        "normalMap": "/vehicles/bug/components/body/textures/Runningboards_n.normal.png",
-        "roughnessFactor": 0.899999976
+        "baseColorMap": "/vehicles/bug/components/body/textures/runningboards_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/textures/runningboards_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/body/textures/runningboards_r.data.png",
+        "roughnessFactor": 1
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+
+  "bug_mudflap": {
+    "name": "bug_mudflap",
+    "mapTo": "bug_mudflap",
+    "class": "Material",
+    "persistentId": "03dd7c11-0c8e-4af0-aac3-5f83e934228b",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/textures/mudflap_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/textures/mudflap_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/common/textures/rubber_r.data.png",
+        "roughnessFactor": 1
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_mudflap_white": {
+    "name": "bug_mudflap_white",
+    "mapTo": "bug_mudflap_white",
+    "class": "Material",
+    "persistentId": "6ceaf94c-4810-4752-904e-1c21540e6dec",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/textures/mudflap_w_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/textures/mudflap_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/common/textures/rubber_r.data.png",
+        "roughnessFactor": 1
       },
       {},
       {},

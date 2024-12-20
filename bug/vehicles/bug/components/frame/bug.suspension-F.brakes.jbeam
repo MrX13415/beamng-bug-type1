@@ -3,7 +3,7 @@
 "bug_brake_F_5lw_drum": {
     "information":{
         "authors":"BeamNG",
-        "name":"Front 5-Lug Wide Drum Brakes",
+        "name":"Front Wide 5-Lug Drum Brakes",
         "value":250,
     },
     "slotType" : "bug_brake_F_5lw",
@@ -25,21 +25,22 @@
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
         {"parkingTorque":0},
-        {"brakeSpring":125},
-        
+        {"brakeSpring":80},
         //brake thermals
         {"enableBrakeThermals":true},
         {"brakeDiameter":0.24},
-        {"brakeMass":3.75},
+        {"brakeMass":2.75},
         {"brakeType":"drum"},
         {"rotorMaterial":"steel"},
-        {"brakeVentingCoef":1.0},
+        {"brakeVentingCoef":0.8},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
     ],
 },
 "bug_brake_F_5lw_disc": {
     "information":{
         "authors":"BeamNG",
-        "name":"Front 5-Lug Wide Disc Brakes",
+        "name":"Front Wide 5-Lug Disc Brakes",
         "value":250,
     },
     "slotType" : "bug_brake_F_5lw",
@@ -63,26 +64,28 @@
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
         {"parkingTorque":0},
-        {"brakeSpring":30},
-        
+        {"brakeSpring":80},
+
         //brake thermals
         {"enableBrakeThermals":true},
-        {"brakeDiameter":0.27},
-        {"brakeMass":4.4},
+        {"brakeDiameter":0.22},
+        {"brakeMass":3.3},
         {"brakeType":"disc"},
         {"rotorMaterial":"steel"},
-        {"brakeVentingCoef":1.0},
+        {"brakeVentingCoef":0.8},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
     ],
 },
 "bug_brake_F_5lw_race": {
     "information":{
         "authors":"BeamNG",
-        "name":"Race Front 5-Lug Wide Disc Brakes",
+        "name":"Race Front Wide 5-Lug Disc Brakes",
         "value":250,
     },
     "slotType" : "bug_brake_F_5lw",
     "slots": [
-        ["type", "default", "description"]
+        ["type", "default", "description"],
         ["brakepad_F","brakepad_F_race", "Front Brake Pads", {"coreSlot":true}],
     ],    
     "flexbodies": [
@@ -96,34 +99,35 @@
        // ["bug_caliper_FL", ["hub_F","tierod_F","upperarm_F","lowerarm_F"],{"pos":{"x":-0.04, "y":0, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
     ],
     "variables": [
-        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
-        ["$braketorque_F", "range", "", "Brakes", 1600, 0, 3000, "Front Brake Torque", "Strength of the front brakes"{"minDis":0}]
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$brakebias", "range", "", "Brakes", 0.65, 0, 1, "Front/Rear Bias", "Percent of brake torque to the front wheels", {"minDis":0, "maxDis":100}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
-        {"enableABS":false},
-        {"brakeTorque":"$braketorque_F"},
+        {"brakeTorque":"$=$brakestrength*2100*$brakebias"},
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
         {"parkingTorque":0},
-        {"brakeSpring":30},
+        {"brakeSpring":80},
         
         //brake thermals
         {"enableBrakeThermals":true},
-        {"brakeDiameter":0.22},
-        {"brakeMass":5.0},
+        {"brakeDiameter":0.255},
+        {"brakeMass":3.5},
         {"brakeType":"vented-disc"},
         {"rotorMaterial":"steel"},
-        {"brakeVentingCoef":1.2},
+        {"brakeVentingCoef":1.0},
+        //brake sounds
+        {"squealCoefNatural": 1.0, "squealCoefLowSpeed": 1.0}
     ],
 },
 
-"bug_brake_F_hightorque": {
+"bug_brake_F": {
     "information":{
         "authors":"BeamNG",
-        "name":"High Torque Front Brakes",
-        "value":500,
+        "name":"Front Drum Brakes",
+        "value":250,
     },
     "slotType" : "bug_brake_F",
     "slots": [
@@ -132,27 +136,31 @@
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        //TODO:
-        //["bug_brakedrum_FR", ["wheel_FR","wheelhub_FR"], ["bug"]],
-        //["bug_brakedrum_FL", ["wheel_FL","wheelhub_FL"], ["bug"]],
+
+        //brake discs
+        ["brake_disc_plain",             ["wheel_FL","wheelhub_FL"],                        [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
+        ["brake_disc_plain",             ["wheel_FR","wheelhub_FR"],                        [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
+        ["brake_caliper_standard_plain", ["hub_F","tierod_F","upperarm_F","lowermounts_F"], [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
+        ["brake_caliper_standard_plain", ["hub_F","tierod_F","upperarm_F","lowermounts_F"], [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
         {"enableABS":false},
-        {"brakeTorque":6000},
+        {"brakeTorque":"$=$brakestrength*1000"},
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
         {"parkingTorque":0},
-        {"brakeSpring":30},
-        
+        {"brakeSpring":80},
         //brake thermals
         {"enableBrakeThermals":true},
-        {"brakeDiameter":0.23},
-        {"brakeMass":3.75},
+        {"brakeDiameter":0.24},
+        {"brakeMass":2.75},
         {"brakeType":"drum"},
         {"rotorMaterial":"steel"},
-        {"brakeVentingCoef":1.0},
+        {"brakeVentingCoef":0.8},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
     ],
 },
 "bug_brake_F_disc": {
@@ -179,19 +187,21 @@
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
         {"enableABS":false},
-        {"brakeTorque":1100},
+        {"brakeTorque":"$=$brakestrength*1100"},
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
         {"parkingTorque":0},
-        {"brakeSpring":30},
-        
+        {"brakeSpring":80},
+
         //brake thermals
         {"enableBrakeThermals":true},
-        {"brakeDiameter":0.27},
-        {"brakeMass":4.4},
+        {"brakeDiameter":0.22},
+        {"brakeMass":3.3},
         {"brakeType":"disc"},
         {"rotorMaterial":"steel"},
-        {"brakeVentingCoef":1.0},
+        {"brakeVentingCoef":0.8},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
     ],
 },
 "bug_brake_F_race": {
@@ -215,26 +225,27 @@
         ["brake_caliper_standard_red", ["hub_F","tierod_F","upperarm_F","lowermounts_F"], [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
     ],
     "variables": [
-        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
-        ["$braketorque_F", "range", "", "Brakes", 1500, 0, 3000, "Front Brake Torque", "Strength of the front brakes"{"minDis":0}]
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$brakebias", "range", "", "Brakes", 0.65, 0, 1, "Front/Rear Bias", "Percent of brake torque to the front wheels", {"minDis":0, "maxDis":100}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
-        {"enableABS":false},
-        {"brakeTorque":"$braketorque_F"},
+        {"brakeTorque":"$=$brakestrength*2100*$brakebias"},
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
         {"parkingTorque":0},
-        {"brakeSpring":30},
+        {"brakeSpring":80},
         
         //brake thermals
         {"enableBrakeThermals":true},
-        {"brakeDiameter":0.22},
-        {"brakeMass":5.0},
+        {"brakeDiameter":0.255},
+        {"brakeMass":3.5},
         {"brakeType":"vented-disc"},
         {"rotorMaterial":"steel"},
-        {"brakeVentingCoef":1.2},
+        {"brakeVentingCoef":1.0},
+        //brake sounds
+        {"squealCoefNatural": 1.0, "squealCoefLowSpeed": 1.0}
     ],
 },
 

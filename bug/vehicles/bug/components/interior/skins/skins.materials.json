@@ -345,7 +345,7 @@
         "normalMap": "/vehicles/bug/components/interior/textures/carpet_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/carpet_r.data.png",
         "roughness": 1,
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "instanceDiffuse": true
       },
       {},
@@ -374,7 +374,7 @@
         "normalMap": "/vehicles/bug/components/interior/textures/carpet_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/carpet_r.data.png",
         "roughness": 1,
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "instanceDiffuse": true
       },
       {},
@@ -403,7 +403,7 @@
         "normalMap": "/vehicles/bug/components/interior/textures/carpet_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/carpet_r.data.png",
         "roughness": 1,
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "instanceDiffuse": true
       },
       {},
@@ -775,7 +775,7 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/covering_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/covering_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/covering_r.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "instanceDiffuse": true
       },
       {},
@@ -801,7 +801,7 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/covering_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/covering_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/covering_r.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "instanceDiffuse": true
       },
       {},
@@ -827,7 +827,7 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/covering_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/covering_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/covering_r.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "instanceDiffuse": true
       },
       {},
@@ -1194,7 +1194,7 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/panels_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/panels_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/panels_r.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "instanceDiffuse": true
       },
       {},
@@ -1220,7 +1220,7 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/panels_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/panels_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/panels_r.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "instanceDiffuse": true
       },
       {},
@@ -1246,7 +1246,7 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/panels_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/panels_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/panels_r.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "instanceDiffuse": true
       },
       {},
@@ -1602,7 +1602,7 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/panels_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/panels_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/panels_r.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "instanceDiffuse": true
       },
       {},
@@ -1628,7 +1628,7 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/panels_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/panels_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/panels_r.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "instanceDiffuse": true
       },
       {},
@@ -1654,7 +1654,7 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/panels_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/panels_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/panels_r.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "instanceDiffuse": true
       },
       {},

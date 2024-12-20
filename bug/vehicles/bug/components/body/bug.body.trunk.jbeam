@@ -34,18 +34,14 @@
         "closeForceMagnitude": 120,
         "closeForceDuration": 1.6,
     },
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         //                                                default baseRotation {"x":-15, "y":-5, "z":20}
-        ["trunk", "", "t3","t2ll","t2", "box", {"x":0.12, "y":0.05, "z":0.04}, {"x":-15, "y":-6, "z":20}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.032, "y":-0.304, "z":-0.1}],
+        ["trunk", "t3","t2ll","t2", "box", {"x":0.12, "y":0.05, "z":0.04}, {"x":-15, "y":-6, "z":20}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.032, "y":-0.304, "z":-0.1},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
         ["trunk", "action0", "trunkLatch"],
-    ],
-    "events":[
-        ["id", "title", "desc"],
-        ["trunkLatch", "ui.inputActions.bug.trunkLatch.title", "ui.inputActions.bug.trunkLatch.description", {"onUp":"controller.getControllerSafe('trunkCoupler').toggleGroup()"}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -67,12 +63,12 @@
             "texSize":512,
             "shadowSoftness":0.5,
         },
-        ["lowhighbeam" ,  "SPOTLIGHT", "t3","t2ll","t2", {"x":-110, "y":-6, "z":20}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, 
-        {"baseTranslation":{"x":-0.007, "y":0.01, "z":0.02}, "lightRange":0.3,"lightBrightness":1,"lightOuterAngle":170,"flareScale":0.00, "deformGroup":"licenseplate_light_break"}],
+        ["power__lowhighbeam" ,  "SPOTLIGHT", "t3","t2ll","t2", {"x":-110, "y":-6, "z":20}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, 
+        {"baseTranslation":{"x":-0.007, "y":0.01, "z":0.02}, "lightRange":0.3,"lightBrightness":1,"lightOuterAngle":170,"flareScale":0.00, "deformGroup":"licenseplate_light_break", "lightScaling":{}}],
     ],
     "glowMap":{
         // exterior lights
-        "bug_license_light":   {"simpleFunction":{"lowbeam":0.3, "highbeam":0.6},   "off":"bug_license_light",  "on":"bug_license_light_on",  "on_intense":"bug_license_light_on"},
+        "bug_license_light":   {"simpleFunction":{"power__lowbeam":0.49, "power__highbeam":1},   "off":"bug_license_light",  "on":"bug_license_light_on",  "on_intense":"bug_license_light_on", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -360,6 +356,10 @@
         "name":"License Light",
         "value":25,
     },
+    "electricPower":[
+        ["power"],
+        [8, {"trigger": "electrics.values.lowhighbeam"}]
+    ],
     "slotType" : "bug_trunk_light",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -373,6 +373,10 @@
         "name":"Wide License Light",
         "value":25,
     },
+    "electricPower":[
+        ["power"],
+        [8, {"trigger": "electrics.values.lowhighbeam"}]
+    ],
     "slotType" : "bug_trunk_light",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

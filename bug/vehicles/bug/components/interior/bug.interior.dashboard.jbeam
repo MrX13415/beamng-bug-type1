@@ -13,66 +13,53 @@
         ["bug_shifter", "bug_shifter_4M", "Shifter"],
         ["skin_speedometer", "bug_speedo_km_140", "Speedometer", {"coreSlot":true}],
         ["bug_tachometer", "bug_tacho_empty", "Tachometer", {"coreSlot":true}],
+        ["bug_fuelgauge", "bug_fuelgauge", "Fuel Gauge", {"coreSlot":true}],
         ["skin_interior_theme", "bug_inputs_white", "Controls"],
         
-        ["bug_gauges_console", "", "Oil Pressure & Ammeter"],
+        ["bug_console_accessory", "", "Console Accessory"],
         ["bug_console_cage", "bug_console_cover", "Console"],
         ["bug_console_clock", "", "Clock"],
+        ["bug_hazard_knob", "", "Hazard Light Switch"],
         ["bug_glovebox", "bug_glovebox", "Glovebox", {"coreSlot":true}],
         ["bug_shelf", "", "Shelf"],
         ["bug_dashboard_handle", "", "Grab Handle"],
         ["bug_dashboard_backcover", "bug_dashboard_backcover", "Back Cover"],
-        ["bug_ignition_key", "bug_ignition_key", "Ignition Key", {"coreSlot":true}],
+        ["bug_ignition", "bug_ignition_stage4", "Ignition", {"coreSlot":true}],
 
         ["bug_gps", "", "Navigation Unit", {"nodeMove": {"x":0.0,"y":-0.475,"z":1.09}}],
     ],
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["hood_int", "Hood Release", "dshl","dsh","dsh2", "box", {"x":0.04, "y":0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.095, "y":0.127, "z":-0.14}],
-        ["ashtray",  "",             "dsh","dshl","dsh2", "box", {"x":0.02, "y":0.02, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.01, "y":-0.04, "z":-0.035}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["hood_int",     "dshl","dsh","dsh2", "sphere", 0.014, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.099, "y":0.158, "z":-0.12},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["ashtray",      "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.0, "y":-0.029, "z":-0.044},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         
-        ["headlights", "",           "dsh","dshl","dsh2", "box", {"x":0.02, "y":0.03, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.059, "y":-0.1845, "z":-0.05}],
-        ["wipers",  "",              "dsh","dshl","dsh2", "box", {"x":0.02, "y":0.03, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.079, "y":-0.1845, "z":-0.05}],
+        ["headlights",   "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.069, "y":-0.1745, "z":-0.048},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["wipers",       "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.069, "y":-0.1745, "z":-0.048},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
 
-        ["parkingbreak",  "",         "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.202, "z":-0.16}]
+        ["parkingbreak", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.202, "z":-0.16},{"color":[1,0.3,0,0], "alphaOnUsed":0}]
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],        
-        
-        ["ashtray", "action0", "ashtray"],
-
-        ["headlights", "action0", "headlights"],
-        ["headlights", "action1", "headlights"],
-        ["headlights", "action2", "headlights"],
-        ["wipers", "action0", "wipersToggle"],
-        ["wipers", "action1", "wipersDown"],
-        ["wipers", "action2", "wipersDown"],
-
-        ["parkingbreak", "action0", "parkingbreakToggle"],
+    "actionsEnabled": [
+        ["id"],
+        ["wiperstoggle"],
     ],
-    "events":[
-        ["id", "title", "desc"],
-
-        ["ashtray",  "ui.inputActions.bug.ashtray.title", "ui.inputActions.bug.ashtray.description", {"onUp":"vehicle.toggleAshTray()"}],
-        ["headlights",  "ui.inputActions.bug.headlights.title", "ui.inputActions.bug.headlights.description", {"onUp":"electrics.toggle_lights()"}],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],        
         
-        ["wipersToggle",  "ui.inputActions.bug.wipers.title", "ui.inputActions.bug.wipers.description", {"onUp":"vehicle.toggleWipers()"}],
-        ["wipersUp",  "ui.inputActions.bug.wipers.title", "ui.inputActions.bug.wipers.description", {"onUp":"vehicle.wipersUp()"}],
-        ["wipersDown",  "ui.inputActions.bug.wipers.title", "ui.inputActions.bug.wipers.description", {"onUp":"vehicle.wipersDown()"}],
+        ["ashtray", "action0", "ashtraytoggle"],
 
-        ["parkingbreakToggle",  "ui.inputActions.bug.parkingbreak.title", "ui.inputActions.bug.parkingbreak.description", {"onUp":"input.toggleEvent('parkingbrake')"}]
+        ["headlights", "action0", "common:toggle_headlights"],
+        ["headlights", "action1", "common:toggle_headlights"],
+        ["headlights", "action2", "common:toggle_headlights"],
+        ["wipers", "action0", "wiperstoggle"],
+        ["wipers", "action1", "wipersdown"],
+        ["wipers", "action2", "wipersdown"],
+
+        ["parkingbreak", "action0", "common:parkingbrake"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["dashboard_frame_right_fuelgauge", ["bug_dashboard"]],
-        ["dashboard_gauge_fuelgauge",       ["bug_dashboard"]],
-        {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
-        ["dashboard_gauge_fuelgauge_glass", ["bug_dashboard"]],
-        {"deformGroup":""},
-
         ["dashboard_cables", ["bug_dashboard"]],
-        ["fueltank_sensor", ["fueltank"]],
 
         // old: ["dashboard_ashtray",     ["bug_body", "bug_dashboard"]],  // Converted to prop
         ["dashboard_ashtray_box",     ["bug_body", "bug_dashboard"]],        
@@ -86,38 +73,36 @@
     ],
     "glowMap":{
         // dashboard gauges
-        "bug_gauges":               {"simpleFunction":"lowhighbeam",  "off":"bug_gauges",         "on":"bug_gauges_light",         "on_intense":"bug_gauges_light"},
-        "bug_speedometer":          {"simpleFunction":"lowhighbeam",  "off":"bug_speedometer",    "on":"bug_speedometer_light",    "on_intense":"bug_speedometer_light"},
-        "bug_tachometer":           {"simpleFunction":"lowhighbeam",  "off":"bug_tachometer",     "on":"bug_tachometer_light",     "on_intense":"bug_tachometer_light"},
-        "bug_oil_ammeter":          {"simpleFunction":"lowhighbeam",  "off":"bug_oil_ammeter",    "on":"bug_oil_ammeter_light",    "on_intense":"bug_oil_ammeter_light"},
-        "bug_speedo_needle":        {"simpleFunction":"lowhighbeam",  "off":"bug_speedo_needle",  "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light"},
-        "bug_tacho_needle":         {"simpleFunction":"lowhighbeam",  "off":"bug_tacho_needle",   "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light"},
-        "bug_clock_back":           {"simpleFunction":"lowhighbeam",  "off":"bug_clock_back",     "on":"bug_clock_light",          "on_intense":"bug_clock_light"},
-        "bug_clock_needle":         {"simpleFunction":"lowhighbeam",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light"},
+        "bug_gauges":               {"simpleFunction":"power__gauges",  "off":"bug_gauges",         "on":"bug_gauges_light",         "on_intense":"bug_gauges_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_speedometer":          {"simpleFunction":"power__gauges",  "off":"bug_speedometer",    "on":"bug_speedometer_light",    "on_intense":"bug_speedometer_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_tachometer":           {"simpleFunction":"power__gauges",  "off":"bug_tachometer",     "on":"bug_tachometer_light",     "on_intense":"bug_tachometer_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_oil_ammeter":          {"simpleFunction":"power__gauges",  "off":"bug_oil_ammeter",    "on":"bug_oil_ammeter_light",    "on_intense":"bug_oil_ammeter_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_speedo_needle":        {"simpleFunction":"power__gauges",  "off":"bug_speedo_needle",  "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_tacho_needle":         {"simpleFunction":"power__gauges",  "off":"bug_tacho_needle",   "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_clock_back":           {"simpleFunction":"power__gauges",  "off":"bug_clock_back",     "on":"bug_clock_light",          "on_intense":"bug_clock_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_clock_needle":         {"simpleFunction":"power__gauges",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
 
         // dashboard lights
-        "bug_dash_light_signal":    {"simpleFunction":["(signal_L or 0)", "(signal_R or 0)"],     "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on"},
-        "bug_dash_light_highbeam":  {"simpleFunction":"highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on"},
-        // use the "oil" LED to indicate regeneration beeing active (blinking)
-        "bug_dash_light_oil":       {"simpleFunction":{"oil":0.3, "regeneration":0.6},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on"},
-        "bug_dash_light_engine":    {"simpleFunction":"checkengine",                              "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on"},
+        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",               "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.49}},
+        // use the "oil" LED to indicate regeneration beeing active (blinking).
+        "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
+        "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},             "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
 
         // misc
-        "bug_radio_scale":          {"simpleFunction":"radio_state",  "off":"bug_radio_scale",    "on":"bug_radio_scale_on",       "on_intense":"bug_radio_scale_on"},
-        "bug_radio_needle":         {"simpleFunction":"radio_state",  "off":"bug_radio_needle",   "on":"bug_radio_needle_light",   "on_intense":"bug_radio_needle_light"},
+        "bug_radio_scale":          {"simpleFunction":"power__radio_state",  "off":"bug_radio_scale",    "on":"bug_radio_scale_on",       "on_intense":"bug_radio_scale_on", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_radio_needle":         {"simpleFunction":"power__radio_state",  "off":"bug_radio_needle",   "on":"bug_radio_needle_light",   "on_intense":"bug_radio_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["ashtray", "dashboard_ashtray_prop",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.075},        0,     1,        0,  1],
+        ["ashtray_anim", "dashboard_ashtray_prop",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.075},        0,     1,        0,  1],
 
         ["lights_state", "controls_dashboard_light_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
         ["wipersstate", "controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
 
-        ["turnsignal",   "indicatorlever",    "f4mr","f4ml","refup",   {"x":-63, "y":0, "z":0},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
-        ["parkingbrake", "controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
-
-        ["fuel",      "needle_fuelgauge",   "dsh","dshl","bd1",  {"x":5, "y":0, "z":-3},  {"x":0, "y":-70, "z":0},  {"x":0, "y":0, "z":0},  0,  1,  -0.5,  1],
+        ["turnsignal",   "indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["parkingbrake_anim", "controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
         //dash anti-deform nodes
@@ -156,17 +141,17 @@
 
         // dashboard <> body
         ["dshl", "bq1l"],
-        ["dshl", "bq3l"],
         ["dshr", "bq1r"],
-        ["dshr", "bq3r"],
+        ["dshl", "bq3l", {"beamStrength":50000,"breakGroup":"bodyFloorL"}],
+        ["dshr", "bq3r", {"beamStrength":50000,"breakGroup":"bodyFloorR"}],
         ["dsh", "bq1l"],
         ["dsh", "bq1r"],
         ["dsh", "bq2l"],
         ["dsh", "bq2r"],
         ["dsh2", "bq2l"],
         ["dsh2", "bq2r"],
-        ["dsh2", "bq3l"],
-        ["dsh2", "bq3r"],
+        ["dsh2", "bq3l", {"beamStrength":50000,"breakGroup":"bodyFloorL"}],
+        ["dsh2", "bq3r", {"beamStrength":50000,"breakGroup":"bodyFloorR"}],
 
         ["dshl", "bd1ll"],
         ["dshl", "bd2l"],
@@ -269,47 +254,41 @@
         ["skin_speedometer", "bug_speedo_km_140", "Speedometer", {"coreSlot":true}],
         ["skin_interior_theme", "bug_inputs_white", "Controls"],
         
-        ["bug_gauges_console", "", "Oil Pressure & Ammeter"],
+        ["bug_console_accessory", "", "Dashboard Accessory"],
         ["bug_console_clock", "", "Clock"],
+        ["bug_hazard_knob", "", "Hazard Light Switch"],
         ["bug_glovebox", "bug_glovebox", "Glovebox", {"coreSlot":true}],
         ["bug_shelf", "", "Shelf"],
         ["bug_dashboard_handle", "", "Grab Handle"],
         ["bug_dashboard_backcover", "bug_dashboard_backcover", "Back Cover"],
-        ["bug_ignition_key", "bug_ignition_key", "Ignition Key", {"coreSlot":true}],
+        ["bug_ignition", "bug_ignition_stage4", "Ignition", {"coreSlot":true}],
 
         ["bug_gps", "", "Navigation Unit", {"nodeMove": {"x":0.49,"y":-0.475,"z":1.04}}],
     ],
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["hood_int", "Hood Release", "dshl","dsh","dsh2", "box", {"x":0.04, "y":0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.095, "y":0.127, "z":-0.14}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["hood_int",     "dshl","dsh","dsh2", "sphere", 0.014, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.099, "y":0.158, "z":-0.12},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         
-        ["headlights", "",           "dsh","dshl","dsh2", "box", {"x":0.02, "y":0.03, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.059, "y":-0.1845, "z":-0.05}],
-        ["wipers",  "",              "dsh","dshl","dsh2", "box", {"x":0.02, "y":0.03, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.079, "y":-0.1845, "z":-0.05}],
+        ["headlights",   "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.069, "y":-0.1745, "z":-0.048},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["wipers",       "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.069, "y":-0.1745, "z":-0.048},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
 
-        ["parkingbreak",  "",         "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.202, "z":-0.16}]
+        ["parkingbreak", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.202, "z":-0.16},{"color":[1,0.3,0,0], "alphaOnUsed":0}]
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],        
-
-        ["headlights", "action0", "headlights"],
-        ["headlights", "action1", "headlights"],
-        ["headlights", "action2", "headlights"],
-        ["wipers", "action0", "wipersToggle"],
-        ["wipers", "action1", "wipersDown"],
-        ["wipers", "action2", "wipersDown"],
-
-        ["parkingbreak", "action0", "parkingbreakToggle"],
+    "actionsEnabled": [
+        ["id"],
+        ["wiperstoggle"],
     ],
-    "events":[
-        ["id", "title", "desc"],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],        
 
-        ["headlights",  "ui.inputActions.bug.headlights.title", "ui.inputActions.bug.headlights.description", {"onUp":"electrics.toggle_lights()"}],
-        
-        ["wipersToggle",  "ui.inputActions.bug.wipers.title", "ui.inputActions.bug.wipers.description", {"onUp":"vehicle.toggleWipers()"}],
-        ["wipersUp",  "ui.inputActions.bug.wipers.title", "ui.inputActions.bug.wipers.description", {"onUp":"vehicle.wipersUp()"}],
-        ["wipersDown",  "ui.inputActions.bug.wipers.title", "ui.inputActions.bug.wipers.description", {"onUp":"vehicle.wipersDown()"}],
+        ["headlights", "action0", "common:toggle_headlights"],
+        ["headlights", "action1", "common:toggle_headlights"],
+        ["headlights", "action2", "common:toggle_headlights"],
+        ["wipers", "action0", "wiperstoggle"],
+        ["wipers", "action1", "wipersdown"],
+        ["wipers", "action2", "wipersdown"],
 
-        ["parkingbreakToggle",  "ui.inputActions.bug.parkingbreak.title", "ui.inputActions.bug.parkingbreak.description", {"onUp":"input.toggleEvent('parkingbrake')"}]
+        ["parkingbreak", "action0", "common:parkingbrake"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -326,24 +305,24 @@
     ],
     "glowMap":{
         // dashboard gauges
-        "bug_gauges":               {"simpleFunction":"lowhighbeam",  "off":"bug_gauges",         "on":"bug_gauges_light",         "on_intense":"bug_gauges_light"},
-        "bug_speedometer":          {"simpleFunction":"lowhighbeam",  "off":"bug_speedometer",    "on":"bug_speedometer_light",    "on_intense":"bug_speedometer_light"},
-        "bug_tachometer":           {"simpleFunction":"lowhighbeam",  "off":"bug_tachometer",     "on":"bug_tachometer_light",     "on_intense":"bug_tachometer_light"},
-        "bug_speedo_needle":        {"simpleFunction":"lowhighbeam",  "off":"bug_speedo_needle",  "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light"},
-        "bug_tacho_needle":         {"simpleFunction":"lowhighbeam",  "off":"bug_tacho_needle",   "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light"},
-        "bug_clock_back":           {"simpleFunction":"lowhighbeam",  "off":"bug_clock_back",     "on":"bug_clock_light",          "on_intense":"bug_clock_light"},
-        "bug_clock_needle":         {"simpleFunction":"lowhighbeam",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light"},
+        "bug_gauges":               {"simpleFunction":"power__gauges",  "off":"bug_gauges",         "on":"bug_gauges_light",         "on_intense":"bug_gauges_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_speedometer":          {"simpleFunction":"power__gauges",  "off":"bug_speedometer",    "on":"bug_speedometer_light",    "on_intense":"bug_speedometer_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_tachometer":           {"simpleFunction":"power__gauges",  "off":"bug_tachometer",     "on":"bug_tachometer_light",     "on_intense":"bug_tachometer_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_speedo_needle":        {"simpleFunction":"power__gauges",  "off":"bug_speedo_needle",  "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_tacho_needle":         {"simpleFunction":"power__gauges",  "off":"bug_tacho_needle",   "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_clock_back":           {"simpleFunction":"power__gauges",  "off":"bug_clock_back",     "on":"bug_clock_light",          "on_intense":"bug_clock_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_clock_needle":         {"simpleFunction":"power__gauges",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
 
         // dashboard lights
-        "bug_dash_light_signal":    {"simpleFunction":["(signal_L or 0)", "(signal_R or 0)"],     "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on"},
-        "bug_dash_light_highbeam":  {"simpleFunction":"highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on"},
+        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",               "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.49}},
         // use the "oil" LED to indicate regeneration beeing active (blinking)
-        "bug_dash_light_oil":       {"simpleFunction":{"oil":0.3, "regeneration":0.6},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on"},
-        "bug_dash_light_engine":    {"simpleFunction":"checkengine",                              "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on"},
+        "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
+        "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},             "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
 
         // misc
-        "bug_radio_scale":          {"simpleFunction":"radio_state",  "off":"bug_radio_scale",    "on":"bug_radio_scale_on",       "on_intense":"bug_radio_scale_on"},
-        "bug_radio_needle":         {"simpleFunction":"radio_state",  "off":"bug_radio_needle",   "on":"bug_radio_needle_light",   "on_intense":"bug_radio_needle_light"},
+        "bug_radio_scale":          {"simpleFunction":"power__radio_state",  "off":"bug_radio_scale",    "on":"bug_radio_scale_on",       "on_intense":"bug_radio_scale_on", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_radio_needle":         {"simpleFunction":"power__radio_state",  "off":"bug_radio_needle",   "on":"bug_radio_needle_light",   "on_intense":"bug_radio_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -351,8 +330,8 @@
         ["lights_state", "controls_dashboard_light_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
         ["wipersstate", "controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
 
-        ["turnsignal",   "indicatorlever",    "f4mr","f4ml","refup",   {"x":-63, "y":0, "z":0},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
-        ["parkingbrake", "controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["turnsignal",   "indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["parkingbrake_anim", "controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
         //dash anti-deform nodes
@@ -494,6 +473,10 @@
         "name":"BeamNavigator",
         "value":250,
     },
+    "electricPower":[
+        ["power"],
+        [8, {"trigger": "electrics.values.ignitionLevel == 2"}],
+    ],
     "slotType" : "bug_gps",
     "controller": [
         ["fileName"],
@@ -970,7 +953,11 @@
         "authors":"MrX13415",
         "name":"Tachometer",
         "value":200,
-    },    
+    },
+    "electricPower":[
+        ["power"],
+        [4, {"trigger": "electrics.values.lowhighbeam"}],
+    ],
     "slotType" : "bug_tachometer",
     "slots": [
         ["type", "default", "description"],
@@ -1056,7 +1043,12 @@
         "authors":"MrX13415",
         "name":"Oil Pressure & Ammeter",
         "value":120,
-    },    
+    },
+    "electricPower":[
+        ["power"],
+        [4, {"trigger": "electrics.values.lowhighbeam"}],
+        [4, {"trigger": "electrics.values.lowhighbeam"}],
+    ],
     "slotType" : "bug_tachometer",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1064,6 +1056,8 @@
         ["dashboard_frame_left_oil_ammeter", ["bug_dashboard"]],
         ["dashboard_gauges_ammeter",  ["bug_dashboard"]],
         ["dashboard_gauges_oilgauge", ["bug_dashboard"]],
+        ["dashboard_gauges_ammeter_cable",  ["bug_dashboard"]],
+        ["dashboard_gauges_oilgauge_cable", ["bug_dashboard"]],
 
         {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
         ["dashboard_gauges_ammeter_glass", ["bug_dashboard"]],
@@ -1085,7 +1079,7 @@
         //    0 / 1.5 = 0
         //    90 / 1.5 = 60
         //
-        ["ampere_smooth",   "needle_ammeter",   "dsh","dshl","bd1",   {"x":4, "y":-0, "z":-4},   {"x":0, "y":-1.5, "z":0},    {"x":0, "y":0, "z":0},   -30, 30, 0, 1],
+        ["ammeter",   "needle_ammeter",   "dsh","dshl","bd1",   {"x":4, "y":-0, "z":-4},   {"x":0, "y":-1.5, "z":0},    {"x":0, "y":0, "z":0},   -30, 30, 0, 1],
         //
         //    90 / 80 = 1.125
         //    45 / 1.125 = 40
@@ -1100,8 +1094,13 @@
         "authors":"MrX13415",
         "name":"Oil Pressure & Ammeter",
         "value":60,
-    },    
-    "slotType" : "bug_gauges_console",
+    },
+    "electricPower":[
+        ["power"],
+        [4, {"trigger": "electrics.values.lowhighbeam"}],
+        [4, {"trigger": "electrics.values.lowhighbeam"}],
+    ],
+    "slotType" : "bug_console_accessory",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
@@ -1129,7 +1128,7 @@
         //    0 / 1.5 = 0
         //    90 / 1.5 = 60
         //
-        ["ampere_smooth",   "needle_ammeter",   "dsh","dshl","bd1",   {"x":31, "y":-2.5, "z":-1},   {"x":0, "y":-1.5, "z":0},  {"x":0, "y":0, "z":0},   -30, 30, 0, 1,   {"baseTranslation":{"x":-0.0285, "y":-0.028, "z":0.0245}}],
+        ["ammeter",   "needle_ammeter",   "dsh","dshl","bd1",   {"x":31, "y":-2.5, "z":-1},   {"x":0, "y":-1.5, "z":0},  {"x":0, "y":0, "z":0},   -30, 30, 0, 1,   {"baseTranslation":{"x":-0.0285, "y":-0.028, "z":0.0245}}],
         //
         //    90 / 80 = 1.125
         //    45 / 1.125 = 40
@@ -1139,6 +1138,205 @@
     ]
 },
 
+"bug_console_switchboad": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Switch Board",
+        "value":30,
+    },
+    "slotType" : "bug_console_accessory",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_console_switchboad_btn0", "bug_console_switchboad_btn_beacon", "Button 1", {"variables": {"$posX":0.0255,"$posY":0,"$posZ":0}}],
+        ["bug_console_switchboad_btn1", "bug_console_switchboad_btn_siren", "Button 2", {"variables": {"$posX":0.0085,"$posY":0,"$posZ":0}}],
+        ["bug_console_switchboad_btn2", "", "Button 3", {"variables": {"$posX":-0.0085,"$posY":0,"$posZ":0}}],
+        ["bug_console_switchboad_btn3", "", "Button 4", {"variables": {"$posX":-0.0255,"$posY":0,"$posZ":0}}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        
+        ["bug_switchboard", ["bug_dashboard"]],
+    ],
+},
+"bug_console_switchboad2": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Switch Board with Oil Pressure & Ammeter",
+        "value":30,
+    },
+    "electricPower":[
+        ["power"],
+        [4, {"trigger": "electrics.values.lowhighbeam"}],
+        [4, {"trigger": "electrics.values.lowhighbeam"}],
+    ],
+    "slotType" : "bug_console_accessory",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_console_switchboad_btn0", "", "Button 1", {"variables": {"$posX":-0.041541,"$posY":-0.005918,"$posZ":0.002748}}],
+        ["bug_console_switchboad_btn1", "bug_console_switchboad_btn_extlight", "Button 2", {"variables": {"$posX":-0.058541,"$posY":-0.005918,"$posZ":0.002748}}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        
+        ["bug_switchboard2", ["bug_dashboard"]],
+
+        ["dashboard_gauges_ammeter",  ["bug_dashboard"], [],  {"pos":{"x":-0.433, "y":0.272, "z":0.096}, "rot":{"x":21.2, "y":-2.6, "z":4.4}}],
+        ["dashboard_gauges_oilgauge", ["bug_dashboard"], [],  {"pos":{"x":-0.330, "y":0.272, "z":0.096}, "rot":{"x":21.2, "y":-2.6, "z":4.4}}],
+
+        {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
+        ["dashboard_gauges_ammeter_glass",  ["bug_dashboard"], [],  {"pos":{"x":-0.433, "y":0.272, "z":0.096}, "rot":{"x":21.2, "y":-2.6, "z":4.4}}],
+        ["dashboard_gauges_oilgauge_glass", ["bug_dashboard"], [],  {"pos":{"x":-0.330, "y":0.272, "z":0.096}, "rot":{"x":21.2, "y":-2.6, "z":4.4}}],
+        {"deformGroup":""},
+    ],
+    "props": [
+        ["func",   "mesh",   "idRef:", "idX:", "idY:",   "baseRotation",   "rotation",   "translation",   "min", "max", "offset", "multiplier"],
+
+        // a = angle range of the needle. (all angles in deg)
+        // m = value on the max angle of the needle.
+        // d = angle between target zero pos. and the "default" pos of the mesh.
+        //
+        // rotation-y = a / m
+        //     offset = d / rotation-y
+        //        max = a / rotation-y
+        //
+        //    90 / 60 = 1.5
+        //    0 / 1.5 = 0
+        //    90 / 1.5 = 60
+        //
+        ["ammeter",   "needle_ammeter",   "dsh","dshl","bd1",   {"x":24, "y":0, "z":0},   {"x":0, "y":-1.5, "z":0},  {"x":0, "y":0, "z":0},   -30, 30, 0, 1,   {"baseTranslationGlobal":{"x":-0.0067, "y":-0.5493, "z":0.7989}}],
+        //
+        //    90 / 80 = 1.125
+        //    45 / 1.125 = 40
+        //    90 / 1.125 = 80
+        //
+        ["oilpressure",   "needle_oil",       "dsh","dshl","bd1",   {"x":24, "y":0, "z":0},   {"x":0, "y":-1.125, "z":0},  {"x":0, "y":0, "z":0},   0, 80, -40, 1,   {"baseTranslationGlobal":{"x": 0.0433, "y":-0.5505, "z":0.7960}} ],
+    ]
+},
+"bug_console_switchboad_btn_beacon": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Beacon Button",
+        "value":8,
+    },
+    "slotType" : ["bug_console_switchboad_btn0","bug_console_switchboad_btn1","bug_console_switchboad_btn2","bug_console_switchboad_btn3"],
+    "props": [
+        ["func",   "mesh",   "idRef:", "idX:", "idY:",   "baseRotation",   "rotation",   "translation",   "min", "max", "offset", "multiplier"],
+        ["lightbar",   "bug_switchboard_beacon",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}}],
+    ],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+
+        ["switchboardBtnBeacon",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0085-$posY", "z":"$=-0.011-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        //["switchboardB1b",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0260-$posY", "z":"$=-0.019-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"], 
+
+        ["switchboardBtnBeacon", "action0", "switchboardBtnToggle_Beacon"],
+    ],
+},
+"bug_console_switchboad_btn_siren": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Siren Button",
+        "value":8,
+    },
+    "slotType" : ["bug_console_switchboad_btn0","bug_console_switchboad_btn1","bug_console_switchboad_btn2","bug_console_switchboad_btn3"],
+    "props": [
+        ["func",   "mesh",   "idRef:", "idX:", "idY:",   "baseRotation",   "rotation",   "translation",   "min", "max", "offset", "multiplier"],
+        ["lightbar",   "bug_switchboard_siren",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   1, 2, -1, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
+    ],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+
+        ["switchboardBtnSiren",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0085-$posY", "z":"$=-0.011-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        //["switchboardB2b",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0260-$posY", "z":"$=-0.019-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"], 
+
+        ["switchboardBtnSiren", "action0", "switchboardBtnToggle_Siren"],
+    ],
+},
+"bug_console_switchboad_btn_underglow": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Underglow Button",
+        "value":8,
+    },
+    "slotType" : ["bug_console_switchboad_btn0","bug_console_switchboad_btn1","bug_console_switchboad_btn2","bug_console_switchboad_btn3"],
+    "props": [
+        ["func",   "mesh",   "idRef:", "idX:", "idY:",   "baseRotation",   "rotation",   "translation",   "min", "max", "offset", "multiplier"],
+        ["underglow",   "bug_switchboard_underglow",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
+    ],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+
+        ["switchboardBtnUnderglown",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0085-$posY", "z":"$=-0.011-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        //["switchboardB2b",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0260-$posY", "z":"$=-0.019-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+
+        ["switchboardBtnUnderglown", "action0", "switchboardBtnToggle_Underglown"],
+    ],
+},
+"bug_console_switchboad_btn_extlight": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Exterior Lights Button",
+        "value":8,
+    },
+    "slotType" : ["bug_console_switchboad_btn0","bug_console_switchboad_btn1","bug_console_switchboad_btn2","bug_console_switchboad_btn3"],
+    "props": [
+        ["func",   "mesh",   "idRef:", "idX:", "idY:",   "baseRotation",   "rotation",   "translation",   "min", "max", "offset", "multiplier"],
+        ["extlight",   "bug_switchboard_extlight",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
+    ],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+
+       // ["switchboardBtnExtlight",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0085-$posY", "z":"$=-0.011-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        //["switchboardB2b",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0260-$posY", "z":"$=-0.019-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"], 
+
+        ["switchboardBtnExtlight", "action0", "switchboardBtnToggle_Extlight"],
+    ],
+},
+
+
+// --. fuel
+"bug_fuelgauge": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Fuel Gauge",
+        "value":25,
+    },
+    "electricPower":[
+        ["power"],
+        [4, {"trigger": "electrics.values.lowhighbeam"}]
+    ],
+    "slotType" : "bug_fuelgauge",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        
+        ["fueltank_sensor", ["fueltank"]],
+	
+        ["dashboard_frame_right_fuelgauge", ["bug_dashboard"]],
+        ["dashboard_gauge_fuelgauge",       ["bug_dashboard"]],
+        {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
+        ["dashboard_gauge_fuelgauge_glass", ["bug_dashboard"]],
+        {"deformGroup":""}
+    ],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+
+        ["fuel",      "needle_fuelgauge",   "dsh","dshl","bd1",  {"x":5, "y":0, "z":-3},  {"x":0, "y":-70, "z":0},  {"x":0, "y":0, "z":0},  0,  1,  -0.5,  1],
+    ]
+},
 
 
 // --- Speedo
@@ -1146,9 +1344,13 @@
 "bug_speedo_mph_90": {
     "information":{
         "authors":"MrX13415",
-        "name":"Imperial Speedometer",
-        "value":300,
+        "name":"Imperial Speedometer (90 mph)",
+        "value":30,
     },
+    "electricPower":[
+        ["power"],
+        [4, {"trigger": "electrics.values.lowhighbeam"}],
+    ],
     "slotType" : "skin_speedometer",
     "skinName" : "mph90",
     "slots": [
@@ -1183,12 +1385,60 @@
         ["wheelspeed",   "needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-6.71082, "z":0},   {"x":0, "y":0, "z":0},   0, 40.23353, -20.11677, 1],
     ],
 },
+"bug_speedo_mph_150": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Imperial Speedometer (150 mph)",
+        "value":30,
+    },
+    "electricPower":[
+        ["power"],
+        [4, {"trigger": "electrics.values.lowhighbeam"}],
+    ],
+    "slotType" : "skin_speedometer",
+    "skinName" : "mph150",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_odometer", "bug_odometer_imperial", "Odometer", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["dashboard_gauge_speedo", ["bug_dashboard"]],
+        {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
+        ["dashboard_gauge_speedo_glass", ["bug_dashboard"]],
+        {"deformGroup":""},
+    ],
+    "props": [
+        ["func",   "mesh",   "idRef:", "idX:", "idY:",   "baseRotation",   "rotation",   "translation",   "min", "max", "offset", "multiplier"],
+
+        // a = angle range of the needle. (all angles in deg)
+        // m = speed in km/h or mph on the max angle of the needle.
+        // d = angle between target zero pos. and the "default" pos of the mesh.
+        // x = 3.6 for km/h and 2.23694 for mph
+        //
+        // rotation-y = a / (m / x)
+        //     offset = d / rotation-y
+        //        max = a / rotation-y
+        //
+        //    270 / (150 / 2.23694) = 4.026492
+        //    135 / 4.026492 = 33.52794
+        //    270 / 4.026492 = 67.05589
+        //
+        ["wheelspeed",   "needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-4.026492, "z":0},   {"x":0, "y":0, "z":0},   0, 67.05589, -33.52794, 1],
+    ],
+},
 "bug_speedo_km_140": {
     "information":{
         "authors":"MrX13415",
         "name":"Metric Speedometer (140 km/h)",
-        "value":300,
+        "value":30,
     },
+    "electricPower":[
+        ["power"],
+        [4, {"trigger": "electrics.values.lowhighbeam"}],
+    ],
     "slotType" : "skin_speedometer",
     "skinName" : "km140",
     "slots": [
@@ -1223,14 +1473,18 @@
         ["wheelspeed",   "needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-6.94286, "z":0},   {"x":0, "y":0, "z":0},   0, 38.88887, -19.44444, 1],
     ],
 },
-"bug_speedo_km_200": {
+"bug_speedo_km_240": {
     "information":{
         "authors":"MrX13415",
-        "name":"Metric Speedometer (200 km/h)",
-        "value":300,
+        "name":"Metric Speedometer (240 km/h)",
+        "value":30,
     },
+    "electricPower":[
+        ["power"],
+        [4, {"trigger": "electrics.values.lowhighbeam"}],
+    ],
     "slotType" : "skin_speedometer",
-    "skinName" : "km200",
+    "skinName" : "km240",
     "slots": [
         ["type", "default", "description"],
 
@@ -1256,11 +1510,11 @@
         //     offset = d / rotation-y
         //        max = a / rotation-y
         //
-        //    270 / (200 / 3.6) = 4.86
-        //    135 / 4.86 = 27.77778
-        //    270 / 4.86 = 55.55556
+        //    270 / (240 / 3.6) = 4.05
+        //    135 / 4.86 = 33.33333
+        //    270 / 4.86 = 66.66666
         //
-        ["wheelspeed",   "needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-4.86, "z":0},   {"x":0, "y":0, "z":0},   0, 55.55556, -27.77778, 1],
+        ["wheelspeed",   "needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-4.05, "z":0},   {"x":0, "y":0, "z":0},   0, 66.66666, -33.33333, 1],
     ],
 },
 
@@ -1394,9 +1648,44 @@
 },
 
 
+// --- Ignition
 
-// --- Other
+/*
+"bug_ignition_stage3":{
+    "information":{
+        "authors": "MrX13415",
+        "name": "3-Stage Ignition",
+        "value": 30,
+    },
+    "slotType" : "bug_ignition",
+    "slots": [
+        ["type", "default", "description"],
 
+        ["bug_ignition_key", "bug_ignition_key", "Ignition Key", {"coreSlot":true}]
+    ],
+    "electrics": {
+        // There seems to a bug with this.
+        // The ignition key "V" can't skip forbidden states when goting up
+        // So 0 -> 2 is not working. But from 2 -> 0 is.
+        "allowedIgnitionLevels":[3, 2, 0]
+    }
+},*/
+"bug_ignition_stage4":{
+    "information":{
+        "authors": "MrX13415",
+        "name": "4-Stage Ignition",
+        "value": 40,
+    },
+    "slotType" : "bug_ignition",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_ignition_key", "bug_ignition_key", "Ignition Key", {"coreSlot":true}]
+    ],
+    "electrics": {
+        "allowedIgnitionLevels":[0, 1, 2, 3]
+    }
+},
 "bug_ignition_key": {
     "information":{
         "authors": "BeamNG",
@@ -1409,32 +1698,27 @@
 
         ["bug_ignition_keyfob", "bug_ignition_keyfob", "Key Fob"],
     ],
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
 
-        ["ignition",  "",            "dsh","dshl","dsh2", "box", {"x":0.02, "y":0.02, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.061, "y":-0.04, "z":-0.03}],
+        ["ignition", "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.071, "y":-0.03, "z":-0.03},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],        
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],        
         
-        ["ignition", "action0", "ignition"],
-        ["ignition", "action1", "ignition"],
-        ["ignition", "action2", "ignition"],
+        ["ignition", "action0", "common:activateStarterMotor"],
+        ["ignition", "action1", "common:activateStarterMotor"],
+        ["ignition", "action2", "common:activateStarterMotor"],
     ],
-    "events":[
-        ["id", "title", "desc"],
-
-        ["ignition",  "ui.inputActions.bug.ignition.title", "ui.inputActions.bug.ignition.description", {"onDown":"electrics.toggleIgnitionLevelOnDown()", "onUp":"electrics.toggleIgnitionLevelOnUp()"}],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+    
+        ["ignitionLevel_anim",  "ignition_key",  "dsh","dshl","bd1",  {"x":0, "y":-90, "z":0},  {"x":0, "y":-45, "z":0},  {"x":0, "y":0, "z":0},  0,  3,  0,  1],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         ["dashboard_key_frame",             ["bug_dashboard"]],
-    ],
-    "props": [
-        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
-    
-        ["ignitionLevel",  "ignition_key",  "dsh","dshl","bd1",  {"x":0, "y":-90, "z":0},  {"x":0, "y":-45, "z":0},  {"x":0, "y":0, "z":0},  0,  3,  0,  1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -1466,6 +1750,10 @@
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ]
 },
+
+
+// --- Other
+
 "bug_shelf": {
     "information":{
         "authors":"MrX13415",

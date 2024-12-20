@@ -1,39 +1,40 @@
 {
-  "0-100 km/h":16.6,
-  "0-60 mph":15.3,
-  "100-0 km/h":43.2,
-  "60-0 mph":133.2,
+  "0-100 km/h":13.5,
+  "0-60 mph":12.2,
+  "100-0 km/h":39,
+  "60-0 mph":119.3,
   "BoundingBox":[
     [
-      -0.783,
+      -0.703,
       -1.77119,
-      -0.234979
+      -0.259979
     ],
     [
-      0.783,
+      0.863,
       2.29767,
-      1.27506
+      1.25006
     ]
   ],
-  "Braking G":0.909,
+  "Braking G":1.009,
   "Config Type":"Factory",
   "Configuration":"1600 EU (M)",
   "Description":"European premium model with 1600cc engine",
-  "drivetrain":"RWD",
+  "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Off-Road Score":28,
   "Performance Class":"2",
-  "Power":60,
-  "PowerPeakRPM":"3650 - 4300",
+  "Population":0,
+  "Power":61,
+  "PowerPeakRPM":"3700 - 4350",
   "Propulsion":"ICE",
-  "Top Speed":41.51792299,
+  "Top Speed":42.66809845,
   "Torque":130,
   "TorquePeakRPM":"2100 - 3150",
-  "Transmission":"Automatic",
+  "Transmission":"Manual",
   "Value":8500,
-  "Weight":1025,
-  "Weight/Power":17.08333333,
+  "Weight":990,
+  "Weight/Power":16.2295082,
   "defaultPaintName1":"Sky Blue",
   "defaultPaintName3":"Sky Blue"
 }

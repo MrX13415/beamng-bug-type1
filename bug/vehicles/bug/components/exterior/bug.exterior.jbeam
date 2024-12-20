@@ -8,11 +8,29 @@
         "value":20,
     },
     "slotType" : "hood_trim",
+    "slots": [
+		["type", "default", "description"],
+		["hood_trim_badge","", "Badge"],
+    ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["trim_hood", ["bug_hood"]],
     ],
 },
+"hood_trim_badge": {
+	"information":{
+        "authors":"MrX13415",
+        "name":"Badge",
+        "value":20,
+    },
+    "slotType" : "hood_trim_badge",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["hood_trim_badge", ["bug_hood"]],
+    ],
+},
+
+
 "trim_F": {
     "information":{
         "authors":"MrX13415",
@@ -102,7 +120,7 @@
     ],
 },
 
-"bug_foglight_carello": {
+"bug_foglight": {
     "information":{
         "authors":"53_herbie_53",
         "name":"Carello Foglight",
@@ -112,20 +130,35 @@
     "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
     
-            ["foglight_carello", ["bug_hood"]],
+            ["foglight", ["bug_hood"]],
     ],
 },
 "bug_gascap": {
     "information":{
-        "authors":"53_herbie_53",
+        "authors":"MrX13415",
         "name":"Rally Gascap",
         "value":300,
     },
     "slotType" : "bug_gascap",
     "flexbodies": [
-            ["mesh", "[group]:", "nonFlexMaterials"],
+        ["mesh", "[group]:", "nonFlexMaterials"],
     
-            ["gascap", ["bug_body"]],
+        ["gascap", ["bug_body", "fueltank"]],
+    ],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+
+        ["gascap_anim", "gascap_lid",   "f4mr","f4ml","refup",   {"x":0.016721, "y":-1.63842, "z":10.6071},   {"x":0, "y":-150, "z":0},    {"x":0.0, "y":0.0, "z":0.0},        0,     1,        0,  1],
+    ],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        
+        ["gascap", "f4mr","f4ml","refup", "sphere", 0.04, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.6, "y":0.543, "z":-0.572},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        
+        ["gascap", "action0", "togglegascap"],
     ],
 },
 "bug_towhitch": {

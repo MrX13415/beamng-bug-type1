@@ -1,0 +1,12 @@
+{
+    "fileversion": 2,
+    "actions": {
+        // herbie
+        "herbiereset":         {"order":1.1, "onDown":"herbie.resetTrust()", "title":"Herbie Trust Reset", "desc":"Resets Herbie's trust in the player to the default value."},
+        "herbiehappy":         {"order":1.2, "onDown":"herbie.setHappy()", "title":"Herbie Trust Max.", "desc":"Sets Herbie's trust in the player to the max value."},
+        "herbiewheelie":       {"order":1.3, "onChange":"herbie.wheelie(VALUE)", "title": "Wheelie", "desc": "Herbie performs a wheelie. (Hold to continue the wheelie.)" },
+
+        //experimental:
+        //"herbiefollow":        {"order": 1.4, "onDown":"follow.toggle()", "title":"Herbie Follow", "desc":"Herbie followes you when you not driving."},
+    }
+}

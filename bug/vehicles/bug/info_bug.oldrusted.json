@@ -5,34 +5,36 @@
   "60-0 mph":132.7,
   "BoundingBox":[
     [
-      -0.783,
+      -0.703,
       -1.77119,
-      -0.242979
+      -0.267979
     ],
     [
-      0.783,
+      0.863,
       2.29767,
-      1.28392
+      1.25892
     ]
   ],
+  "Country": "United States",
   "Config Type":"Factory",
   "Configuration":"Rusted (M)",
   "Description":"Rusted barn find in a very bad condition and damaged engine",
-  "drivetrain":"RWD",
+  "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Off-Road Score":28,
   "Performance Class":"2",
+  "Population":10,
   "Power":58,
   "PowerPeakRPM":4850,
   "Propulsion":"ICE",
-  "Top Speed":28.35754051,
+  "Top Speed":18.30900192,
   "Torque":95,
   "TorquePeakRPM":"2300 - 3250",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1020,
-  "Weight/Power":17.5862069,
+  "Weight":975,
+  "Weight/Power":16.81034483,
   "defaultPaintName1":"Savannah Yellow",
   "defaultPaintName3":"Fiesta Yellow"
 }

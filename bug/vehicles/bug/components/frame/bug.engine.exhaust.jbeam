@@ -170,6 +170,7 @@
         ["ex6r", "e4r"],
 
         {"breakGroup":""},
+        {"disableMeshBreaking":false,"disableTriangleBreaking":false},
     ],
     "triangles": [
         ["id1:","id2:","id3:"],
@@ -356,6 +357,7 @@
         ["ex6r", "e4r"],
 
         {"breakGroup":""},
+        {"disableMeshBreaking":false,"disableTriangleBreaking":false},
     ],
     "triangles": [
         ["id1:","id2:","id3:"],
@@ -548,6 +550,7 @@
         ["ex6r", "e4r"],
 
         {"breakGroup":""},
+        {"disableMeshBreaking":false,"disableTriangleBreaking":false},
     ],
     "triangles": [
         ["id1:","id2:","id3:"],

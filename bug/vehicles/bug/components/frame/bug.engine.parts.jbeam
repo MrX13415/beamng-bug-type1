@@ -15,21 +15,16 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["fuelcap", "fueltank_cap",  "ft1l","ft1r","ft3r",   {"x":0, "y":180, "z":0},   {"x":-5, "y":-8, "z":0},    {"x":-0.39, "y":0.48, "z":0.1},        0,     1,        0,  1],
+        ["fuelcap_anim", "fueltank_cap",  "ft1l","ft1r","ft3r",   {"x":8.575, "y":177.328, "z":-9.340},   {"x":-5, "y":-8, "z":0},    {"x":-0.39, "y":0.48, "z":0.1},        0,     1,        0,  1],
     ],
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["fuelcap",  "", "ft1l","ft1r","ft3r", "box", {"x":0.04, "y":0.04, "z":0.01}, {"x":0, "y":0, "z":0}, {"x":-5, "y":8, "z":0}, {"x":0, "y":0, "z":0},{"x":0.255, "y":-0.28, "z":-0.012}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["fuelcap", "ft1l","ft1r","ft3r", "sphere", 0.02, {"x":0, "y":0, "z":0}, {"x":-5, "y":8, "z":0}, {"x":0, "y":0, "z":0},{"x":0.317, "y":-0.32, "z":-0.037},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],        
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],        
         
         ["fuelcap", "action0", "togglefuelcap"],
-    ],
-    "events":[
-        ["id", "title", "desc"],
-
-        ["togglefuelcap",  "ui.inputActions.bug.togglefuelcap.title", "ui.inputActions.bug.togglefuelcap.description", {"onDown":"vehicle.toggle('fuelcap')"}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -57,11 +52,11 @@
          {"engineGroup":["fuel"]},
          {"chemEnergy":50,"burnRate":1.2,"flashPoint":220,"vaporPoint":97,"specHeat":0.03,"selfIgnitionCoef":0.4,"smokePoint":220,"containerBeam":"fuelTank"},
          {"group":"fueltank"},
-         ["ft1l",  0.33, -1.42, 0.7],
-         ["ft1r", -0.33, -1.42, 0.7],
+         ["ft1l",  0.33, -1.39, 0.68],
+         ["ft1r", -0.33, -1.39, 0.68],
          {"selfIgnitionCoef":false,"selfCollision":false},
-         ["ft2l",  0.33, -1.07, 0.7],
-         ["ft2r", -0.33, -1.07, 0.7],
+         ["ft2l",  0.33, -1.07, 0.66],
+         ["ft2r", -0.33, -1.07, 0.66],
          ["ft3l",  0.24, -1.42, 0.5],
          ["ft3r", -0.24, -1.42, 0.5],
          ["ft4l",  0.24, -1.07, 0.5],
@@ -141,6 +136,7 @@
           {"beamDeform":5000,"beamStrength":20000},
           ["ft1l","ft1r", {"name":"fuelTank","containerBeam": "fuelTank"}],
           {"breakGroup":""},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
     ],
     "triangles": [
         ["id1:","id2:","id3:"],
@@ -280,6 +276,7 @@
 
           {"breakGroup":""},
           {"breakGroupType":1},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
 
           {"breakGroup":"fueltank"},
           {"beamDeform":5000,"beamStrength":20000},
@@ -315,13 +312,29 @@
     "slotType" : "bug_battery",
 	"flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-                                                    // for battery physics below
+
         ["battery",               ["bug_battery"]],
         ["battery_cable_fitting", ["bug_frame"]],
         ["battery_cable_red",     ["bug_battery", "bug_battery_cable"]],
         ["battery_cable_black",   ["bug_battery", "bug_battery_cable"]],
 	],
-    // Uncomment to enable battery physics :)
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$charge", "range", "", "Engine", 0.6, 0, 1.0, "Battery Charge", "Initial Battery Charging Level", {"minDis":0, "maxDis":100}]
+    ],
+    "controller": [
+        ["fileName"],
+        ["battery"]
+    ],
+    "battery": {
+        "voltage": 12,            // V
+        "capacity": 77,           // Ah
+        "charge": "$charge",      // %
+        "C": 20,                  // h
+        "k": 1.25,                // peukert constant
+        "selfDischarge": 0.0106,  // Ah
+        "breakTriggerBeam":"battery_cable"
+    },
     "nodes": [
         ["id", "posX", "posY", "posZ"],
 
@@ -390,7 +403,7 @@
         {"beamDeform":3000,"beamStrength":"FLT_MAX"},
         // cable: common
         ["bty1C", "bty2C"],
-        ["bty2C", "bty3C", {"breakGroupType":0, "beamStrength":1000, "breakGroup": "bug_battery_cable"}],
+        ["bty2C", "bty3C", {"breakGroupType":0, "beamStrength":1000, "breakGroup": "bug_battery_cable", "name": "battery_cable"}],
         ["bty1C", "bty3C", {"breakGroupType":0, "beamStrength":1000, "breakGroup": "bug_battery_cable"}],
         // rigidy:
         ["bty1C", "bty1"],
@@ -933,8 +946,6 @@
         //max rpm physically capable of
         "$+maxRPM":200,
         "$*inertia":1.1,
-        "$*friction":1.12,
-        "$*dynamicFriction":1.12,
         "$*engineBrakeTorque":1.2,
         "$+engineBlockAirCoolingEfficiency":6,
         //engine durability
@@ -961,8 +972,6 @@
         //max rpm physically capable of
         "$+maxRPM":300,
         "$*inertia":1.25,
-        "$*friction":1.25,
-        "$*dynamicFriction":1.25,
         "$*engineBrakeTorque":1.24,
         "$+engineBlockAirCoolingEfficiency":10,
         //engine durability

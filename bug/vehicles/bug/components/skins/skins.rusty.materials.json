@@ -119,7 +119,7 @@
         ],
         "clearCoatFactor": 0.3,
         "clearCoatRoughnessFactor": 0.5,
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.dds",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "colorPaletteMapUseUV": 1,
         "diffuseMapUseUV": 1,
         "metallicFactor": 0.5,
@@ -128,7 +128,7 @@
         "normalMapUseUV": 1,
         "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_rusty_o.data.dds",
         "opacityMapUseUV": 1,
-        "roughnessMap": "/vehicles/bug/components/skins/textures/bug_skin_gb-rusty_r.data.png",
+        "roughnessMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_r.data.png",
         "roughnessMapUseUV": 1
       },
       {
@@ -198,11 +198,11 @@
           0.239849001,
           1
         ],
-        "metallicFactor": 1,
-        "normalMap": "/vehicles/bug/components/frame/textures/frame_n.normal.png",
-        "normalMapStrength": 0.5,
-        "roughnessFactor": 0.736999989,
-        "roughnessMap": "/vehicles/bug/components/frame/textures/frame_r.data.png"
+        "baseColorMap": "/vehicles/bug/components/common/textures/frame_d.color.png",
+        "metallicFactor": 0.3,
+        "normalMap": "/vehicles/bug/components/common/textures/frame_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/common/textures/frame_r.data.png"
       },
       {
         "baseColorFactor": [
@@ -249,7 +249,7 @@
         ],
         "baseColorMap": "/vehicles/bug/components/common/textures/rustyiron_d.color.png",
         "clearCoatFactor": 0.5,
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "colorPaletteMapUseUV": 1,
         "diffuseMapUseUV": 1,
         "instanceDiffuse": true,
@@ -267,7 +267,7 @@
           1
         ],
         "clearCoatFactor": 0.5,
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "colorPaletteMapUseUV": 1,
         "diffuseMapUseUV": 1,
         "instanceDiffuse": true,
@@ -297,7 +297,6 @@
       {}
     ],
     "activeLayers": 3,
-   // "doubleSided": true,
     "dynamicCubemap": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
@@ -457,30 +456,28 @@
     "name": "bug_window_glass_dmg.skin.rusty",
     "mapTo": "bug_window_glass_dmg.skin.rusty",
     "class": "Material",
-    "persistentId": "838be096-bf5d-47fe-886a-8de4daead086",
+    "persistentId": "b30fe259-f037-4c76-ab38-7e0dc1774a1f",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dmg_dirty.color.png",
-        "normalMap": "vehicles/common/glass_dmg_n.dds",
+        "normalMap": "/vehicles/bug/components/body/textures/window_glass_dirty_n.normal.dds",
         "opacityMap": "/vehicles/bug/components/body/textures/window_glass_dmg_dirty_o.data.png",
         "pixelSpecular": true,
-        "roughnessFactor": 0,
+        "roughnessMap": "/vehicles/bug/components/body/textures/window_glass_dmg_r.data.dds",
         "useAnisotropic": true
       },
       {},
       {},
       {}
     ],
-    "alphaRef": 20,
+    "alphaRef": 1,
     "alphaTest": true,
     "castShadows": false,
     "dynamicCubemap": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
-    "order_simset": 1852795252,
     "translucent": true,
     "translucentBlendOp": "PreMulAlpha",
-    "translucentRecvShadows": true,
     "version": 1.5
   },
 
@@ -1059,44 +1056,149 @@
     "version": 1.5
   },
 
-  "mirror.skin.rusty": {
-    "name": "mirror.skin.rusty",
-    "mapTo": "mirror.skin.rusty",
-    "class": "material",
-    "persistentId": "aa6d840c-e9ee-47f6-a778-2c194846ab8b",
-    "Stages": [
-      {
-        "colorMap": "vehicles/common/null.dds",
-        "detailMap": "/vehicles/bug/components/common/textures/dirty_d.color.png",
-        "detailScale": [
-          0.400000006,
-          0.400000006
-        ],
-        "diffuseColor": [
-          0.432357013,
-          0.432352006,
-          0.432352006,
-          1
-        ],
-        "emissive": true,
-        "normalMap": "vehicles/common/mirror_n.png",
-        "opacityMap": "/vehicles/bug/components/common/textures/dirty_o.data.png",
-        "pixelSpecular": true,
-        "roughnessFactor": 0.445299804,
-        "specularMap": "vehicles/common/null.dds",
-        "useAnisotropic": true
-      },
-      {},
-      {},
-      {}
-    ],
-    "alphaRef": 0,
-    "dynamicCubemap": true,
-    "materialTag0": "beamng",
-    "materialTag1": "vehicle",
-    "translucent": true,
-    "translucentBlendOp": "None"
-  },
+  // No longer supported with the new mirror materials
+  // "mirror_CE.skin.rusty": {
+  //   "name": "mirror_CE.skin.rusty",
+  //   "mapTo": "mirror_CE.skin.rusty",
+  //   "class": "Material",
+  //   "persistentId": "7d11ba47-823b-42bc-a7ff-61cc336afac1",
+  //   "Stages": [
+  //     {
+  //       "baseColorMap": "vehicles/common/null.dds",
+  //       "emissive": true,
+  //       "metallicFactor": 1,
+  //       "normalMap": "vehicles/common/mirror_n.png",
+  //       "normalMapStrength": 0.35,
+  //       "pixelSpecular": true,
+  //      "roughnessFactor": 0
+  //     },
+  //     {
+  //       "baseColorMap": "vehicles/common/null.dds",
+  //       "emissive": true,
+  //       "metallicFactor": 1,
+  //       "normalMap": "vehicles/common/mirror_n.png",
+  //       "normalMapStrength": 0.35,
+  //       "pixelSpecular": true,
+  //      // "roughnessFactor": 0
+
+  //       "detailMap": "/vehicles/bug/components/common/textures/dirty_d.color.png",
+  //       "detailScale": [
+  //         0.400000006,
+  //         0.400000006
+  //       ],
+  //       "diffuseColor": [
+  //         0.432357013,
+  //         0.432352006,
+  //         0.432352006,
+  //         1
+  //       ],
+  //       "opacityMap": "/vehicles/bug/components/common/textures/dirty_o.data.png",
+  //       "roughnessFactor": 0.445299804,
+  //       "useAnisotropic": true
+  //     },
+  //     {},
+  //     {}
+  //   ],
+  //   "alphaRef": 0,
+  //   "dynamicCubemap": true,
+  //   "materialTag0": "beamng",
+  //   "materialTag1": "vehicle",
+  //   "translucent": true,
+  //   "translucentBlendOp": "None",
+  //   "version": 1.5
+  // },
+  // "mirror_CX": {
+  //   "name": "mirror_CX",
+  //   "mapTo": "mirror_CX",
+  //   "class": "Material",
+  //   "persistentId": "756b7ee6-8d9d-42c6-85cb-ab0540914466",
+  //   "Stages": [
+  //     {
+  //       "baseColorMap": "vehicles/common/null.dds",
+  //       "emissive": true,
+  //       "metallicFactor": 1,
+  //       "normalMap": "vehicles/common/mirror_n.png",
+  //       "normalMapStrength": 1.15,
+  //       "pixelSpecular": true,
+  //       "roughnessFactor": 0
+  //     },
+  //     {},
+  //     {},
+  //     {}
+  //   ],
+  //   "alphaRef": 0,
+  //   "dynamicCubemap": true,
+  //   "materialTag0": "beamng",
+  //   "materialTag1": "vehicle",
+  //   "translucent": true,
+  //   "translucentBlendOp": "None",
+  //   "version": 1.5
+  // },
+  // "mirror_F": {
+  //   "name": "mirror_F",
+  //   "mapTo": "mirror_F",
+  //   "class": "Material",
+  //   "persistentId": "10766a6b-14b6-40c5-8d1c-2de314168649",
+  //   "Stages": [
+  //     {
+  //       "baseColorMap": "vehicles/common/null.dds",
+  //       "emissive": true,
+  //       "metallicFactor": 1,
+  //       "normalMap": "vehicles/common/mirror_n.png",
+  //       "normalMapStrength": 0.25,
+  //       "pixelSpecular": true,
+  //       "roughnessFactor": 0
+  //     },
+  //     {},
+  //     {},
+  //     {}
+  //   ],
+  //   "alphaRef": 0,
+  //   "dynamicCubemap": true,
+  //   "materialTag0": "beamng",
+  //   "materialTag1": "vehicle",
+  //   "translucent": true,
+  //   "translucentBlendOp": "None",
+  //   "version": 1.5
+  // },
+  // "mirror.skin.rusty": {
+  //   "name": "mirror.skin.rusty",
+  //   "mapTo": "mirror.skin.rusty",
+  //   "class": "material",
+  //   "persistentId": "aa6d840c-e9ee-47f6-a778-2c194846ab8b",
+  //   "Stages": [
+  //     {
+  //       "colorMap": "vehicles/common/null.dds",
+  //       "detailMap": "/vehicles/bug/components/common/textures/dirty_d.color.png",
+  //       "detailScale": [
+  //         0.400000006,
+  //         0.400000006
+  //       ],
+  //       "diffuseColor": [
+  //         0.432357013,
+  //         0.432352006,
+  //         0.432352006,
+  //         1
+  //       ],
+  //       "emissive": true,
+  //       "normalMap": "vehicles/common/mirror_n.png",
+  //       "opacityMap": "/vehicles/bug/components/common/textures/dirty_o.data.png",
+  //       "pixelSpecular": true,
+  //       "roughnessFactor": 0.445299804,
+  //       "specularMap": "vehicles/common/null.dds",
+  //       "useAnisotropic": true
+  //     },
+  //     {},
+  //     {},
+  //     {}
+  //   ],
+  //   "alphaRef": 0,
+  //   "dynamicCubemap": true,
+  //   "materialTag0": "beamng",
+  //   "materialTag1": "vehicle",
+  //   "translucent": true,
+  //   "translucentBlendOp": "None"
+  // },
   "licenseplate.skin.rusty": {
     "name": "licenseplate.skin.rusty",
     "mapTo": "licenseplate.skin.rusty",

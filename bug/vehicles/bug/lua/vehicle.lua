@@ -6,12 +6,14 @@
 -- by MrX13415
 
 local M = {}
-M.version = "21.3"
-M.versionDate = "2024-03-09"
+M.version = "22"
+M.versionDate = "2024-12-20"
 
 local updateTimer = 2   -- Make sure the first call is immediately
 local openingUpdateTimer = 2   -- Make sure the first call is immediately
+
 local cabinFilterTimer = 2
+local cabinFilterCoef = 1
 
 local NodeNameSoundSFX = "dsh"
 local nodeSFX = nil
@@ -27,33 +29,12 @@ local parts = {
   ragtop   = {broken = false, name = "ragtopF", cid = nil},
 }
 
-local cabinFilterCoef = 1
-
-local wipersSpeed1 = 0.02   -- 833ms (60fps)
-local wipersSpeed2 = 0.021  -- 793ms (60fps)
-local wipersSpeed3 = 0.023  -- 757ms (60fps)
-local wipersBreak1 = 120    -- 2 sec. (60fps)
-local wipersBreak2 = 30     -- 0.5 sec. (60fps)
-local wipersBreak3 = 0      -- 0 sec.
-local wipersValue = 0
-local wipersBreak = 0
-local wipersDirection = 1
-local wipersStateDirection = 1
-local wipersSfxNode = "wi1"
-local wipersSfxEvent = "vehicles/bug/components/sounds/common/windshild-wipers.wav"
-local wipersSfxVolume = 0.31
-local wipersSfx = nil
-local wipersMessageLookup = {
-  [0] = "Wipers: Off",
-  [1] = "Wipers: Level 1",
-  [2] = "Wipers: Level 2",
-  [3] = "Wipers: Level 3"
-}
-
 local lightMessageLookup = {
   [0] = "Interior Light: Off",
   [1] = "Interior Light: On",
 }
+
+local hazardEnabled = false
 
 
 local function hasPower() return electrics.values.ignitionLevel > 0 end
@@ -65,7 +46,7 @@ local function createSFX(event, node, eventID)
 end
 
 local function playSound(soundname)
-  sounds.playSoundOnceAtNode(soundname, nodeSFX, 1, 1, 0, 0)
+  sounds.playSoundOnceAtNode(soundname, getNodeIDbyName(nodeSFX), 1, 1, 0, 0)
 end
 
 local function updatePartBroken(part)
@@ -133,7 +114,7 @@ end
 local function getControllerState(name)
   local result = 0
 
-  local controller = controller.getControllerSafe(name)
+  local controller = controller.getController(name)
   if not controller then return result end
   local state = controller.getGroupState()
 
@@ -145,179 +126,75 @@ local function getControllerState(name)
   return result
 end
 local function setControllerState(name, state)
+  local controller = controller.getController(name)
+  if not controller then return end
+
   if state then
-    controller.getControllerSafe(name).detachGroup()
+    controller.detachGroup()
   else
-    controller.getControllerSafe(name).tryAttachGroupImpulse()
+    controller.tryAttachGroupImpulse()
   end
 end
 
 local function isDoorLOpen() 
-  return getControllerState('doorLCoupler') > 0
+  return getControllerState('door_FL_coupler') > 0
 end
 local function isDoorROpen() 
-  return getControllerState('doorRCoupler') > 0
+  return getControllerState('door_FR_coupler') > 0
 end
 local function isDoorsOpen() 
   return isDoorLOpen() or isDoorROpen()
 end
 local function setDoorL(open) 
-  setControllerState('doorLCoupler', open)
+  setControllerState('door_FL_coupler', open)
 end
 local function setDoorR(open) 
-  setControllerState('doorLCoupler', open)
+  setControllerState('door_FL_coupler', open)
 end
 local function closeDoors()
   if isDoorLOpen() then setDoorL(false) end
   if isDoorROpen() then setDoorR(false) end
 end
 
-local function updateElectrics()
-
-  local running = electrics.values.engineRunning > 0
-
-  local oil = electrics.values["oilpressure"] or 0    -- PSI
-  local oildefault = 42
-
-  if running and (oil < oildefault) then
-    oil = oil + 0.6
-  end
-  if not running and (oil > 0) then
-    oil = oil - 1
-  end
-  oil = math.max(math.min(oil, oildefault), 0)
-
-  electrics.values["oilpressure"] = oil
-
-  -----------------------------------------------------
-
-  local ampere = 0   -- A
-
-  -- Stuff can be on ...
-  if electrics.values.ignitionLevel > 0 then
-    ampere = ampere - 2 -- A
-
-    -- headlights
-    if electrics.values.lights_state > 0 then
-      ampere = ampere - 10
-    end
-    if electrics.values.lights_state > 1 then
-      ampere = ampere - 3
-    end
-
-    if electrics.values.wipersstate > 0 then
-      ampere = ampere - 4
-    end
-    if electrics.values.wipersstate > 1 then
-      ampere = ampere - 2
-    end
-
-    -- radio 
-    if electrics.values.radio_state > 0 then
-      ampere = ampere - 7
-    end
-  end
-  -- Ignition
-  if electrics.values.ignitionLevel == 3 then
-    ampere = ampere - 25 -- A
-  end
-  -- Engine runngin
-  if running and electrics.values.ignitionLevel > 1 then
-    ampere = ampere + 30 -- A
-    ampere = math.min(ampere, 17)
-  end
-  
-  electrics.values["ampere"] = ampere
-
-  -----------------------------------------------------
-
-  local amp_sm = electrics.values["ampere_smooth"] or 0
-
-  if amp_sm < ampere then
-    amp_sm = math.min(amp_sm + 0.6, ampere)
-  elseif amp_sm > ampere then
-    amp_sm = math.max(amp_sm - 0.6, ampere)
-  end
-
-  electrics.values["ampere_smooth"] = amp_sm
-end
-
 local function updateInteriorlight(doors)
-  local lightstate = electrics.values["interiorlightstate"] or 0
-  lightstate = lightstate > 0 or doors > 0
-
-  electrics.values["interiorlight"] = lightstate
+  local lightstate = electrics.values.interiorlightstate > 0 or doors > 0
+  electrics.values.interiorlight = lightstate and 1 or 0
 end
 
-local function updateAshTray()
-  local delta = 0.05
-  if electrics.values["ashtraystate"] < 0.5 then 
-    delta = delta * -1 
+local function animateElectrics(name, speed)
+  -- Smooth ignition animation
+  local lvl = electrics.values[name] or 0
+  local anim = electrics.values[name .. "_anim"] or 0
+
+  local diff = math.abs(lvl - math.floor(anim))
+  local speedCoef = clamp(diff / (1/speed), speed, speed * 5)
+
+  local direction = lvl > anim and 1 or -1
+  local new = lvl
+  if math.abs(lvl - anim) > 0.01 then
+    new = anim + speedCoef * direction
+    if direction > 0 then new = clamp(new, anim, lvl) end
+    if direction < 0 then new = clamp(new, lvl, anim) end
   end
-  electrics.values["ashtray"] = clamp(electrics.values["ashtray"] + delta, 0, 1)
+
+  --print(tostring(lvl) .. " a " .. tostring(anim) .. " d " .. tostring(diff) .. " n " .. tostring(new) .. " s " .. tostring(speedCoef))
+  electrics.values[name .. "_anim"] = new
 end
 
-local function updateWipers()
-  local state = electrics.values["wipersstate"] or 0
+local function updateAnimations()
+  animateElectrics("ignitionLevel", 0.04)
+  animateElectrics("ashtray", 0.03)
+  animateElectrics("parkingbrake", 0.05)
 
-  if not hasPower() then
-    if wipersSfx then obj:cutSFX(wipersSfx) end
-    return 
-  end
-
-  if wipersBreak > 0 then
-    if wipersSfx then obj:cutSFX(wipersSfx) end
-    wipersBreak = wipersBreak - 1
-    return
-  end
-
-  if state > 0 or wipersValue > 0 then
-    local s = wipersSpeed3
-    if state < 2 then s = wipersSpeed1
-    elseif state < 3 then s = wipersSpeed2 
-    end
-    
-    wipersSfx = wipersSfx or createSFX(wipersSfxEvent, wipersSfxNode, "wipers")
-    if wipersSfx then 
-      obj:playSFX(wipersSfx) 
-      local sfxLength = 2100                     -- ms
-      local wiperDuration = 1000 / (60 * s) * 2  -- ms [1sec / (60fps * wiperSpeed) * 2]
-      local sfxMod = 1 / wiperDuration * sfxLength
-      obj:setVolumePitchCT(wipersSfx, wipersSfxVolume, sfxMod, 1, 1)
-    end
-
-    wipersValue = wipersValue + (s * wipersDirection)
-
-    if wipersValue >= 1 then
-       wipersDirection = -1 
-       wipersValue = 1
-    end
-
-    if wipersValue <= 0 then
-      wipersDirection = 1
-      wipersValue = 0
-      if state < 2 then wipersBreak = wipersBreak1
-      elseif state < 3 then wipersBreak = wipersBreak2
-      else wipersBreak = wipersBreak3
-      end
-      if wipersSfx then obj:cutSFX(wipersSfx) end
-    end
-  end
-
-  electrics.values["wipers"] = wipersValue
-end
-
-local function updateParts()
-  updateAshTray()
-  updateWipers()
-  updateElectrics()
+  animateElectrics("gascap", 0.03)
+  animateElectrics("fuelcap", 0.25)
 end
 
 local function updateOpenings()
   checkPartsBroken()
 
-  local doorL = getControllerState('doorLCoupler')
-  local doorR = getControllerState('doorRCoupler')
+  local doorL = getControllerState('door_FL_coupler')
+  local doorR = getControllerState('door_FR_coupler')
   local doors = clamp((doorL + doorR) / 2, 0, 3)
 
   electrics.values["opendoor_L"] = doorL
@@ -409,15 +286,19 @@ end
 -- 	end
 -- end
 
+local function handleHazard()
+  local state = electrics.values.hazard_enabled
+  if hazardEnabled ~= state then
+    playSound(state and "event:>Vehicle>Interior>Light>FIPA_On" or "event:>Vehicle>Interior>Light>FIPA_Off")
+  end
+  hazardEnabled = state
+end
+
 local function updateGFX(dt)
   -- debugUpdate(dt)
 
-  updateTimer = updateTimer + dt
-	-- update rate: 60 fps (0.016 == 16ms)
-	if updateTimer > 0.016 then 
-    updateTimer = 0
-    updateParts()
-  end  
+  handleHazard()
+  updateAnimations()
   
   openingUpdateTimer = openingUpdateTimer + dt
 	-- update rate: 10 fps (0.100 == 100ms)  
@@ -435,15 +316,13 @@ local function updateGFX(dt)
 end
 
 local function onInit(jbeamData)
-  electrics.values["interiorlight"] = 0
-  electrics.values["interiorlightstate"] = 0
-  electrics.values["ashtray"] = 0
-  electrics.values["ashtraystate"] = 0
-  electrics.values["wipersstate"] = 0
+  electrics.values.interiorlight = 0
+  electrics.values.interiorlightstate = 0
+  electrics.values.ashtray = 0
+  electrics.values.ashtraystate = 0
+  electrics.values.wipersstate = 0
 
-  electrics.values["ampere"] = 0
-  electrics.values["ampere_smooth"] = 0
-  electrics.values["oilpressure"] = 0
+  hazardEnabled = electrics.values.hazard_enabled
 
 	nodeSFX = getNodeIDbyName(NodeNameSoundSFX)
 
@@ -464,6 +343,7 @@ local function onReset()
   print("[Bug] Version " ..M.version.. " - " ..M.versionDate)
   ----------------------------------------
 
+  hazardEnabled = electrics.values.hazard_enabled
   resetParts()
 
   --dTShow = {}
@@ -473,10 +353,9 @@ end
 local function onPlayersChanged()
 end
 
-local function toggleInteriorLight()  
-  local lightstate = electrics.values["interiorlightstate"] or 0
-  lightstate = lightstate > 0 and 0 or 1
-  electrics.values["interiorlightstate"] = lightstate
+local function toggleInteriorLight() 
+  local lightstate = electrics.values.interiorlightstate > 0 and 0 or 1
+  electrics.values.interiorlightstate = lightstate
   guihooks.message({txt = lightMessageLookup[lightstate], context = {}}, 4, "vehicle.interiorlights")
 end
 
@@ -486,37 +365,35 @@ local function toggleAshTray()
   electrics.values["ashtraystate"] = state 
 end
 
-local function toggleWipers()
-  local state = electrics.values["wipersstate"] or 0
-  if state <= 0 then wipersStateDirection = 1 end
-  if state >= 3 then 
-    wipersStateDirection = -1
+local function toogleSwitchBoard(name)
+  if electrics.values.ignitionLevel == 0 then return end
+  local state = nil
+
+  if name == "beacon" then
+    local v = electrics.values.lightbar > 0 and 0 or 1
+    electrics.set_lightbar_signal(v)
+    if electrics.values.lightbar ~= v then
+      state = electrics.values.lightbar > v
+    end
+  elseif name == "siren" then
+    local v = electrics.values.lightbar < 2 and 2 or 1
+    electrics.set_lightbar_signal(v)
+    if electrics.values.lightbar ~= v then
+      state = electrics.values.lightbar > v
+    end
+  elseif name == "underglown" then
+    electrics.values.underglow = 1 - (electrics.values.underglow or 0)
+    state = electrics.values.underglow
+  elseif name == "extlight" then
+    electrics.values.extlight = 1 - (electrics.values.extlight or 0)
+    state = electrics.values.extlight
   end
-  playSound(state > 0 and "event:>Vehicle>Interior>Light>FIPA_On" or "event:>Vehicle>Interior>Light>FIPA_Off")
-  state = state + wipersStateDirection
-  electrics.values["wipersstate"] = state
-  guihooks.message({txt = wipersMessageLookup[state], context = {}}, 4, "vehicle.wipers")
+
+  if state ~= nil then
+    playSound(state and "event:>Vehicle>Interior>Light>PETE_On" or "event:>Vehicle>Interior>Light>PETE_Off")
+  end
 end
 
-local function wipersUp()
-  local state = electrics.values["wipersstate"] or 0
-  if state < 3 then
-    state = state + 1
-    playSound("event:>Vehicle>Interior>Light>FIPA_On")
-  end
-  electrics.values["wipersstate"] = state
-  guihooks.message({txt = wipersMessageLookup[state], context = {}}, 4, "vehicle.wipers")
-end
-
-local function wipersDown()
-  local state = electrics.values["wipersstate"] or 0
-  if state > 0 then 
-    state = state - 1
-    playSound("event:>Vehicle>Interior>Light>FIPA_Off")
-  end
-  electrics.values["wipersstate"] = state
-  guihooks.message({txt = wipersMessageLookup[state], context = {}}, 4, "vehicle.wipers")
-end
 
 local function toggle(var)
   if var == "" then return end
@@ -524,6 +401,10 @@ local function toggle(var)
   state = state > 0 and 0 or 1
   --print(tostring(var) .. " " .. tostring(state))
   electrics.values[var] = state
+end
+
+local function device(name)
+  return controller.getController(name)
 end
 
 
@@ -534,14 +415,14 @@ M.updateGFX = updateGFX
 M.onPlayersChanged = onPlayersChanged
 
 -- public interface
+M.device              = device
+
 M.hasPower            = hasPower
 
 M.toggle              = toggle
 M.toggleInteriorLight = toggleInteriorLight
 M.toggleAshTray       = toggleAshTray
-M.toggleWipers        = toggleWipers
-M.wipersUp            = wipersUp
-M.wipersDown          = wipersDown
+M.toogleSwitchBoard   = toogleSwitchBoard
 
 M.isDoorLOpen         = isDoorLOpen
 M.isDoorROpen         = isDoorROpen

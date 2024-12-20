@@ -68,7 +68,7 @@
 "bug_fender_mud_flaps": {
     "information":{
         "authors":"BeamNG",
-        "name":"Mud Flaps",
+        "name":"Black Mud Flaps",
         "value":75,
     },
     "slotType" : "bug_fender_mud_flaps",
@@ -191,7 +191,120 @@
 
 
 },
+"bug_fender_mud_flaps_white": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"White Mud Flaps",
+        "value":75,
+    },
+    "slotType" : "bug_fender_mud_flaps",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+		
+        ["fender_RL_mudflap", ["bug_fender_RL_mudflap"], [], {"materialOverride":[["bug_mudflap","bug_mudflap_white"]]}],
+        ["fender_RR_mudflap", ["bug_fender_RR_mudflap"], [], {"materialOverride":[["bug_mudflap","bug_mudflap_white"]]}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
 
+     //  {"nodeMaterial":"|NM_RUBBER"},
+        {"frictionCoef":1},
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeWeight":0.30},
+        {"group":"bug_fender_RL_mudflap"},
+        ["femRL1",  0.675,  1.560,  0.320],
+        ["femRL2",  0.500,  1.560,  0.320],
+        ["femRL3",  0.588,  1.560,  0.120],
+        {"group":"bug_fender_RR_mudflap"},
+        ["femRR1", -0.675,  1.560,  0.320],
+        ["femRR2", -0.500,  1.560,  0.320],
+        ["femRR3", -0.588,  1.560,  0.120],
+        {"group":""},
+        {"collision":false},
+        {"selfCollision":false},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":350000,"beamDamp":80},
+        {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":0.3},
+        {"group":"bug_fender_RL_mudflap"},
+        ["femRL1", "femRL2"],
+        ["femRL1", "femRL3"],
+        ["femRL2", "femRL3"],
+        {"group":"bug_fender_RR_mudflap"},
+        ["femRR1", "femRR2"],
+        ["femRR1", "femRR3"],
+        ["femRR2", "femRR3"],
+        {"group":""},
+
+        {"beamDeform":20000,"beamStrength":4000},
+        {"breakGroup":"bug_fender_RL_mudflap"},
+        {"breakGroupType":0},
+        ["femRL1", "feRL4r"],
+        ["femRL1", "feRL4m"],
+        ["femRL2", "feRL4r"],
+        ["femRL2", "feRL4m"],
+        ["femRL1", "feRL6r"],
+        ["femRL1", "feRL6m"],
+        ["femRL2", "feRL6r"],
+        ["femRL2", "feRL6m"],
+
+        ["femRL2", "feRR4m"],
+        ["femRL2", "feRR6m"],
+
+        {"breakGroup":"bug_fender_RR_mudflap"},
+        {"breakGroupType":0},
+        ["femRR1", "feRR4l"],
+        ["femRR1", "feRR4m"],
+        ["femRR2", "feRR4l"],
+        ["femRR2", "feRR4m"],
+        ["femRR1", "feRR6l"],
+        ["femRR1", "feRR6m"],
+        ["femRR2", "feRR6l"],
+        ["femRR2", "feRR6m"],
+
+        ["femRR2", "feRL4m"],
+        ["femRR2", "feRL6m"],
+
+        {"beamPrecompression":1,"beamType":"|SUPPORT", "beamLongBound":2},
+        {"beamSpring":80,"beamDamp":2.5},
+        {"beamDeform":20000,"beamStrength":4000},
+        {"breakGroup":"bug_fender_RL_mudflap"},
+        ["femRL3", "feRL4r"],
+        ["femRL3", "feRL4m"],
+        ["femRL3", "feRL6r"],
+        ["femRL3", "feRL6m"],
+        ["femRL3", "feRL1m", {"beamPrecompression":0.945, "beamLongBound":10, "beamSpring":80000,"beamDamp":100}],
+        ["femRL3", "feRL7m", {"beamPrecompression":0.4, "beamLongBound":10, "beamSpring":80000,"beamDamp":100}],
+        {"breakGroup":"bug_fender_RR_mudflap"},
+        ["femRR3", "feRR4l"],
+        ["femRR3", "feRR4m"],
+        ["femRR3", "feRR6l"],
+        ["femRR3", "feRR6m"],
+        ["femRR3", "feRR1m", {"beamPrecompression":0.945, "beamLongBound":10, "beamSpring":80000,"beamDamp":100}],
+        ["femRR3", "feRR7m", {"beamPrecompression":0.4, "beamLongBound":10, "beamSpring":80000,"beamDamp":100}],
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":1.1},
+        {"breakGroupType":1},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        {"groundModel":"rubber"},
+        {"dragCoef":1},
+        {"group":"bug_fender_RL_mudflap"},
+        ["femRL1", "femRL3", "femRL2"],
+        {"group":"bug_fender_RR_mudflap"},
+        ["femRR2", "femRR3", "femRR1"],
+        {"group":""},
+        {"dragCoef":0}
+    ],
+},
 
 // --- front
 "bug_fender_FR": {
@@ -253,9 +366,10 @@
     "beams": [
         ["id1:", "id2:"],
 
+        {"disableMeshBreaking":false},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":450000,"beamDamp":130},
-        {"beamDeform":3000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":3000,"beamStrength":100000},
         {"deformationTriggerRatio":0.05},
 
         //fender main shape
@@ -480,9 +594,10 @@
     "beams": [
         ["id1:", "id2:"],
 
+        {"disableMeshBreaking":false},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":301000,"beamDamp":130},
-        {"beamDeform":3000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":3000,"beamStrength":100000},
 
         //fender main shape
         ["feFL1r", "feFL1l"],
@@ -702,9 +817,10 @@
     "beams": [
         ["id1:", "id2:"],
 
+        {"disableMeshBreaking":false},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":301000,"beamDamp":130},        
-        {"beamDeform":3000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":3000,"beamStrength":100000},
 
         ["feRL1l", "feRL1m"],
         ["feRL1l", "feRL2l"],
@@ -936,9 +1052,10 @@
     "beams": [
         ["id1:", "id2:"],
 
+        {"disableMeshBreaking":false},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":450000,"beamDamp":130},
-        {"beamDeform":3000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":3000,"beamStrength":100000},
 
         ["feRR1r", "feRR1m"],
         ["feRR1r", "feRR2r"],

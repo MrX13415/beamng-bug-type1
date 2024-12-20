@@ -1,39 +1,44 @@
 {
-  "0-100 km/h":7.1,
-  "0-100 mph":15.2,
-  "0-60 mph":6.7,
-  "100-0 km/h":35,
-  "60-0 mph":107.9,
-  "60-100 mph":8.5,
+  "0-100 km/h":2.8,
+  "0-100 mph":5.6,
+  "0-200 km/h":8,
+  "0-200 mph":19.8,
+  "0-300 km/h":16.6,
+  "0-60 mph":2.7,
+  "100-0 km/h":26.1,
+  "100-200 km/h":5.1,
+  "60-0 mph":80.5,
+  "60-100 mph":2.8,
   "BoundingBox":[
     [
-      -0.8105,
-      -1.31292,
-      -0.222979
+      -0.7305,
+      -1.33792,
+      -0.298979
     ],
     [
-      0.8105,
+      0.8905,
       2.29767,
-      1.025
+      1
     ]
   ],
-  "Braking G":1.123,
+  "Braking G":1.506,
   "Config Type":"Custom",
   "Configuration":"Bare Bone (M)",
   "Description":"Only the bare minimum of parts and equipped with an 1800cc engine",
   "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
-  "Off-Road Score":34,
+  "Off-Road Score":39,
   "Performance Class":"2",
-  "Power":79,
-  "PowerPeakRPM":"4000 - 4700",
+  "Population":0,
+  "Power":236,
+  "PowerPeakRPM":"5450 - 5950",
   "Propulsion":"ICE",
-  "Top Speed":50.00451289,
-  "Torque":160,
-  "TorquePeakRPM":"1950 - 3250",
+  "Top Speed":94.15450287,
+  "Torque":310,
+  "TorquePeakRPM":"4600 - 5600",
   "Transmission":"Manual",
   "Value":8500,
   "Weight":565,
-  "Weight/Power":7.151898734
+  "Weight/Power":2.394067797
 }

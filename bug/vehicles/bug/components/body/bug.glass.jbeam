@@ -301,21 +301,20 @@
         ["door_window_R_glass_dmg",  ["doorwindow_FR"]],
         {"deformGroup":""}
     ],
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["window_FR", "", "dh1r","d8r","d4r", "box", {"x":0.06, "y":0.05, "z":0.06}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.149, "y":0.05, "z":0.06}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["window_FR", "dh1r","d8r","d4r", "sphere", 0.04, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1795, "y":0.082, "z":0.085},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
-        ["window_FR", "action0", "window_FR_down"],   // default: left mouse btn
-        ["window_FR", "action1", "window_FR_up"],     // default: SHIFT + left mouse btn
-        ["window_FR", "action2", "window_FR_up"],     // default: middle mouse btn
+    "actionsEnabled": [
+        ["id"],
+        ["windowFRopen"],
+        ["windowFRclose"],
     ],
-    "events":[
-        ["id", "title", "desc"],
-        // TODO: texts
-        ["window_FR_down", "ui.inputActions.bug.doorWindow_R_down.title", "ui.inputActions.bug.doorWindow_R_down.description", {"onChange":"controller.getControllerSafe('windowFR').open(VALUE)"}],
-        ["window_FR_up",   "ui.inputActions.bug.doorWindow_R_up.title", "ui.inputActions.bug.doorWindow_R_up.description", {"onChange":"controller.getControllerSafe('windowFR').close(VALUE)"}],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["window_FR", "action0", "windowFRopen"],      // default: left mouse btn
+        ["window_FR", "action1", "windowFRclose"],     // default: SHIFT + left mouse btn
+        ["window_FR", "action2", "windowFRclose"],     // default: middle mouse btn
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -359,14 +358,15 @@
         ["dw3fr","dw5fr"],
         ["dw4fr","dw5fr"],
         {"deformGroup":""},
+        {"disableMeshBreaking":false}
     ],
     "slidenodes": [
         ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
 
-        ["dw1fr", "doorglass_R_1", true, true, 0.0, 800100, "FLT_MAX", "FLT_MAX"],
-        ["dw2fr", "doorglass_R_2", true, true, 0.0, 800100, "FLT_MAX", "FLT_MAX"],
-        ["dw3fr", "doorglass_R_1", true, true, 0.0, 800100, "FLT_MAX", "FLT_MAX"],
-        ["dw4fr", "doorglass_R_2", true, true, 0.0, 800100, "FLT_MAX", "FLT_MAX"],
+        ["dw1fr", "doorglass_R_1", true, true, 0.0, 800100, 4000, "FLT_MAX"],
+        ["dw2fr", "doorglass_R_2", true, true, 0.0, 800100, 4000, "FLT_MAX"],
+        ["dw3fr", "doorglass_R_1", true, true, 0.0, 800100, 4000, "FLT_MAX"],
+        ["dw4fr", "doorglass_R_2", true, true, 0.0, 800100, 4000, "FLT_MAX"],
     ],
     "rails": {
         "doorglass_R_1":{"links:":["d11r", "d5r"], "broken:":[], "looped":false, "capped":true},
@@ -376,7 +376,7 @@
         ["id1:","id2:"],
 
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
-        {"beamSpring":8000,"beamDamp":50,"beamDeform":"FLT_MAX","beamStrength":12500},
+        {"beamSpring":8000,"beamDamp":50,"beamDeform":"FLT_MAX","beamStrength":4000},
         ["d11r","dw1fr", {"inputSource":"windowFR_state", "inLimit":1.0, "outLimit":8.5, "inRate":10, "outRate":10, "inputFactor":1.0}],
         ["d12r","dw2fr", {"inputSource":"windowFR_state", "inLimit":1.0, "outLimit":8.5, "inRate":10, "outRate":10, "inputFactor":1.0}],
     ],
@@ -419,21 +419,20 @@
         ["door_window_L_glass_dmg",  ["doorwindow_FL"]],
         {"deformGroup":""}
     ],
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["window_FL", "", "dh1l","d8l","d4l", "box", {"x":0.06, "y":-0.05, "z":0.06}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.149, "y":0.05, "z":-0.06}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["window_FL", "dh1l","d8l","d4l", "sphere", 0.04, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1795, "y":0.082, "z":-0.085},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
-        ["window_FL", "action0", "window_FL_down"],   // default: left mouse btn
-        ["window_FL", "action1", "window_FL_up"],     // default: SHIFT + left mouse btn
-        ["window_FL", "action2", "window_FL_up"],     // default: middle mouse btn
+    "actionsEnabled": [
+        ["id"],
+        ["windowFLopen"],
+        ["windowFLclose"],
     ],
-    "events":[
-        ["id", "title", "desc"],
-        // TODO: texts
-        ["window_FL_down", "ui.inputActions.bug.window_FL_down.title", "ui.inputActions.bug.window_FL_down.description", {"onChange":"controller.getControllerSafe('windowFL').open(VALUE)"}],
-        ["window_FL_up",   "ui.inputActions.bug.window_FL_up.title", "ui.inputActions.bug.window_FL_up.description", {"onChange":"controller.getControllerSafe('windowFL').close(VALUE)"}],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["window_FL", "action0", "windowFLopen"],      // default: left mouse btn
+        ["window_FL", "action1", "windowFLclose"],     // default: SHIFT + left mouse btn
+        ["window_FL", "action2", "windowFLclose"],     // default: middle mouse btn
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -480,10 +479,10 @@
     "slidenodes": [
         ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
 
-        ["dw1fl", "doorglass_L_1", true, true, 0.0, 800100, "FLT_MAX", "FLT_MAX"],
-        ["dw2fl", "doorglass_L_2", true, true, 0.0, 800100, "FLT_MAX", "FLT_MAX"],
-        ["dw3fl", "doorglass_L_1", true, true, 0.0, 800100, "FLT_MAX", "FLT_MAX"],
-        ["dw4fl", "doorglass_L_2", true, true, 0.0, 800100, "FLT_MAX", "FLT_MAX"],
+        ["dw1fl", "doorglass_L_1", true, true, 0.0, 800100, 4000, "FLT_MAX"],
+        ["dw2fl", "doorglass_L_2", true, true, 0.0, 800100, 4000, "FLT_MAX"],
+        ["dw3fl", "doorglass_L_1", true, true, 0.0, 800100, 4000, "FLT_MAX"],
+        ["dw4fl", "doorglass_L_2", true, true, 0.0, 800100, 4000, "FLT_MAX"],
     ],
     "rails": {
         "doorglass_L_1":{"links:":["d11l", "d5l"], "broken:":[], "looped":false, "capped":true},
@@ -493,7 +492,7 @@
         ["id1:","id2:"],
 
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
-        {"beamSpring":8000,"beamDamp":50,"beamDeform":"FLT_MAX","beamStrength":12500},
+        {"beamSpring":8000,"beamDamp":50,"beamDeform":"FLT_MAX","beamStrength":4000},
         ["d11l","dw1fl", {"inputSource":"windowFL_state", "inLimit":1.0, "outLimit":8.5, "inRate":10, "outRate":10, "inputFactor":1.0}],
         ["d12l","dw2fl", {"inputSource":"windowFL_state", "inLimit":1.0, "outLimit":8.5, "inRate":10, "outRate":10, "inputFactor":1.0}],
     ],
@@ -516,10 +515,10 @@
         "value":100,
     },
     "slotType" : "bug_doorvent_FR",
-   "controller": [
-       ["fileName"],
-       ["window", {"name": "doorventFR", "state": "$doorventFRInitState", "speed": 0.03, "sfxNode": "d8r", "sfx": ""}]
-   ],
+    "controller": [
+        ["fileName"],
+        ["window", {"name": "doorventFR", "state": "$doorventFRInitState", "speed": 0.03, "sfxNode": "d8r", "sfx": ""}]
+    ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$doorventFRInitState", "range", "", "Body", 0, 0, 1.0, "Vent Window Open Right", "Inital open position of the right vent window.", {"minDis":0, "maxDis":100}],
@@ -538,21 +537,20 @@
         ["door_vent_R_glass_dmg",  ["doorventglass_FR"]],
         {"deformGroup":""},
     ],
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["doorvent_FR", "", "dh1r","d8r","d4r", "box", {"x":0.02, "y":0.02, "z":0.02}, {"x":0, "y":3, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.305, "y":-0.08, "z":0.06}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["doorvent_FR", "dh1r","d8r","d4r", "sphere", 0.015, {"x":0, "y":3, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.315, "y":-0.07, "z":0.07},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
-        ["doorvent_FR", "action0", "doorvent_FR_open"],   // default: left mouse btn
-        ["doorvent_FR", "action1", "doorvent_FR_close"],     // default: SHIFT + left mouse btn
-        ["doorvent_FR", "action2", "doorvent_FR_close"],     // default: middle mouse btn
+    "actionsEnabled": [
+        ["id"],
+        ["doorventFRopen"],
+        ["doorventFRclose"],
     ],
-    "events":[
-        ["id", "title", "desc"],
-        // TODO: texts
-        ["doorvent_FR_open", "ui.inputActions.bug.doorVent_R_open.title", "ui.inputActions.bug.doorVent_R_open.description", {"onChange":"controller.getControllerSafe('doorventFR').open(VALUE)"}],
-        ["doorvent_FR_close", "ui.inputActions.bug.doorVent_R_close.title", "ui.inputActions.bug.doorVent_R_close.description", {"onChange":"controller.getControllerSafe('doorventFR').close(VALUE)"}],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["doorvent_FR", "action0", "doorventFRopen"],      // default: left mouse btn
+        ["doorvent_FR", "action1", "doorventFRclose"],     // default: SHIFT + left mouse btn
+        ["doorvent_FR", "action2", "doorventFRclose"],     // default: middle mouse btn
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -618,6 +616,7 @@
         ["dv3fr", "dvh2r"],
         ["dv4fr", "dvh2r"],
         {"breakGroup":""},
+        {"disableMeshBreaking":false}
     ],
     "hydros": [
         ["id1:","id2:"],
@@ -667,21 +666,20 @@
         ["door_vent_L_glass_dmg",  ["doorventglass_FL"]],
         {"deformGroup":""},
     ],
-    "triggers":[
-        ["id", "label", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["doorvent_FL", "", "dh1l","d8l","d4l", "box", {"x":0.02, "y":-0.02, "z":0.02}, {"x":0, "y":3, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.305, "y":-0.08, "z":-0.06}],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["doorvent_FL", "dh1l","d8l","d4l", "sphere", 0.015, {"x":0, "y":3, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.315, "y":-0.07, "z":-0.07},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
-    "triggerEventLinks":[
-        ["triggerId:triggers", "action", "targetEventId:events"],
-        ["doorvent_FL", "action0", "doorvent_FL_open"],   // default: left mouse btn
-        ["doorvent_FL", "action1", "doorvent_FL_close"],     // default: SHIFT + left mouse btn
-        ["doorvent_FL", "action2", "doorvent_FL_close"],     // default: middle mouse btn
+    "actionsEnabled": [
+        ["id"],
+        ["doorventFLopen"],
+        ["doorventFLclose"],
     ],
-    "events":[
-        ["id", "title", "desc"],
-        // TODO: texts
-        ["doorvent_FL_open", "ui.inputActions.bug.doorVent_L_open.title", "ui.inputActions.bug.doorVent_L_open.description", {"onChange":"controller.getControllerSafe('doorventFL').open(VALUE)"}],
-        ["doorvent_FL_close", "ui.inputActions.bug.doorVent_L_close.title", "ui.inputActions.bug.doorVent_L_close.description", {"onChange":"controller.getControllerSafe('doorventFL').close(VALUE)"}],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["doorvent_FL", "action0", "doorventFLopen"],      // default: left mouse btn
+        ["doorvent_FL", "action1", "doorventFLclose"],     // default: SHIFT + left mouse btn
+        ["doorvent_FL", "action2", "doorventFLclose"],     // default: middle mouse btn
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -747,6 +745,7 @@
         ["dv3fl", "dvh2l"],
         ["dv4fl", "dvh2l"],
         {"breakGroup":""},
+        {"disableMeshBreaking":false}
     ],
     "hydros": [
         ["id1:","id2:"],

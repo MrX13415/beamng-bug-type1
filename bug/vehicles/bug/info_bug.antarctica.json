@@ -1,39 +1,42 @@
 {
-  "0-100 km/h":24.8,
-  "0-60 mph":22.7,
-  "100-0 km/h":44.3,
-  "60-0 mph":132.7,
+  "0-100 km/h":20.5,
+  "0-60 mph":18.9,
+  "100-0 km/h":39.3,
+  "60-0 mph":119.6,
   "BoundingBox":[
     [
-      -0.783,
+      -0.703,
       -1.77119,
-      -0.238979
+      -0.263979
     ],
     [
-      0.783,
+      0.863,
       2.39767,
-      1.43586
+      1.41086
     ]
   ],
+  "Braking G":0.999,
+  "Country": "Australia",
   "Config Type":"Factory",
   "Configuration":"Antarctia 1 (M)",
   "Description":"The first production car to visit Antarctica",
-  "drivetrain":"RWD",
+  "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Licenseplate":"Antarctica Plate Design",
   "Off-Road Score":28,
   "Performance Class":"2",
-  "Power":38,
-  "PowerPeakRPM":"3200 - 4000",
+  "Population":1,
+  "Power":41,
+  "PowerPeakRPM":"3350 - 4050",
   "Propulsion":"ICE",
-  "Top Speed":37.05341182,
-  "Torque":95,
-  "TorquePeakRPM":"1750 - 2800",
+  "Top Speed":38.33440781,
+  "Torque":100,
+  "TorquePeakRPM":"1800 - 2850",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1045,
-  "Weight/Power":27.5,
+  "Weight":990,
+  "Weight/Power":24.14634146,
   "defaultPaintName1":"Ruby Red",
   "defaultPaintName3":"Ruby Red"
 }

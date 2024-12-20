@@ -1,0 +1,444 @@
+{
+
+// -- Rear seat luggage:
+"cargo_load_box_M_rear_luggage": {
+   "information":{
+       "authors":"BeamNG",
+       "name":"1x Cargo Load Box M",
+       "value":50,
+   },
+   "slotType" : "bug_decoration2",
+   "cargoStorage":[
+      ["groupId","name","cargoTypes", "capacity"],
+      ["luggageBoxA","Cargo Box A",["parcel"], 4],
+   ],
+   "flexbodies": [
+      ["mesh", "[group]:", "nonFlexMaterials"],
+      ["cargo_load_box_m", ["rear_luggage"],[],{"pos":{"x":0.005, "y":1.18, "z":0.61}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+      ["woodplanks_straps_boxutility_small", ["rear_luggage"],[],{"pos":{"x":0, "y":1.18, "z":0.61}, "rot":{"x":0, "y":0, "z":90}, "scale":{"x":0.246, "y":0.45, "z":0.261}}],
+   ],
+   "variables": [
+      ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+      ["$rear_luggage_box_weight", "range", "Kg", "Cargo", 0.0, 0.0, 25.0, "Luggage Box Mass", "Adjust the weight of the box", {"stepDis":1}],
+   ],
+   "nodes": [
+       ["id", "posX", "posY", "posZ"],
+       {"frictionCoef":0.5},
+       {"nodeMaterial":"|NM_PLASTIC"},
+       {"collision":false},
+       {"selfCollision":false},
+       {"group":"rear_luggage"},
+       ["rear_luggage_box_l",  0.15, 1.10, 0.70],
+       ["rear_luggage_box_r", -0.15, 1.10, 0.70],
+       ["rear_luggage_box", 0.0, 1.17, 0.79, {"nodeWeight":"$=12+$rear_luggage_box_weight","nodeWeightFunction":"=12+($volume)","cargoGroup":"luggageBoxA"}],
+       {"group":""},
+   ],
+   "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"deformLimitExpansion":0},
+
+        //cargo load box
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":500001,"beamDamp":250},
+        {"beamDeform":510000,"beamStrength":"FLT_MAX"},
+        {"optional":true},
+        ["rear_luggage_box_l", "rear_luggage_box_r"],
+        ["rear_luggage_box_l", "rear_luggage_box"],
+        ["rear_luggage_box_r", "rear_luggage_box"],
+
+        ["rear_luggage_box_l", "bi2"],
+        ["rear_luggage_box_l", "bi3"],
+        ["rear_luggage_box_l", "bi2l"],
+        ["rear_luggage_box_l", "bi3l"],
+
+        ["rear_luggage_box_r", "bi2"],
+        ["rear_luggage_box_r", "bi3"],
+        ["rear_luggage_box_r", "bi2r"],
+        ["rear_luggage_box_r", "bi3r"],
+
+        ["rear_luggage_box", "bi2l"],
+        ["rear_luggage_box", "bi2r"],
+        ["rear_luggage_box", "bi3l"],
+        ["rear_luggage_box", "bi3r"],
+        ["rear_luggage_box", "bi4l"],
+        ["rear_luggage_box", "bi4r"],
+        {"optional":false},
+        
+        {"breakGroup":""},
+        {"deformLimitExpansion":1.0},
+    ],
+},
+
+
+// - Suitcase
+"bug_interior_luggage": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Interior Luggage",
+        "value": 0,
+    },
+    "slotType" : "bug_interior_luggage",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_decoration2","", "Suitcase"],
+        ["bug_6pack","", "6-Ppack", {"nodeMove":{"x":-0.291, "y":-0.459, "z":0.294}}],
+    ],
+},
+
+// - Suitcase
+"bug_rear_suitcase": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Suitcase",
+        "value": 100,
+    },
+    "slotType" : "bug_decoration2",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_rear_suitcase_color","bug_rear_suitcase_white", "Color", {"coreSlot": true}],
+    ],
+    "cargoStorage":[
+        ["groupId","name","cargoTypes", "capacity"],
+        ["suitcaseA","Suitcase",["parcel"], 2],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$suitcase_weight", "range", "Kg", "Cargo", 0.000, 0.000, 25.000, "Suitcase Mass", "Adjust the weight of the suitcase",{"stepDis":1}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"nodeMaterial":"|NM_PLASTIC"}, //?
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeWeight":1},
+        {"group":"rear_suitcase"},
+        ["rsc1l",  0.05, 1.10, 0.96],
+        ["rsc1r", -0.42, 1.10, 0.96],
+        ["rsc2l",  0.05, 1.24, 0.96],
+        ["rsc2r", -0.42, 1.24, 0.96],
+        ["rsc3l",  0.05, 1.10, 0.63],
+        ["rsc3r", -0.42, 1.10, 0.63],
+        ["rsc4l",  0.05, 1.24, 0.63],
+        ["rsc4r", -0.42, 1.24, 0.63],
+        ["rsc5",  -0.19, 1.17, 0.79, {"nodeWeight":"$=1+$suitcase_weight","nodeWeightFunction":"=1+($volume)","cargoGroup":"suitcaseA", "selfCollision":false, "collision":false}],
+        {"group":""},
+        {"collision":true},
+        {"selfCollision":false}
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":250000,"beamDamp":140},
+        {"beamDeform":80000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":0},
+        ["rsc1l","rsc1r"],
+        ["rsc2l","rsc2r"],
+        ["rsc3l","rsc3r"],
+        ["rsc4l","rsc4r"],
+        ["rsc1l","rsc2l"],
+        ["rsc3l","rsc4l"],
+        ["rsc1r","rsc2r"],
+        ["rsc3r","rsc4r"],
+        ["rsc1l","rsc3l"],
+        ["rsc2l","rsc4l"],
+        ["rsc1r","rsc3r"],
+        ["rsc2r","rsc4r"],
+
+        ["rsc1l","rsc3r"],
+        ["rsc1r","rsc3l"],
+        ["rsc2l","rsc4r"],
+        ["rsc2r","rsc4l"],
+        ["rsc1l","rsc4l"],
+        ["rsc2l","rsc3l"],
+        ["rsc1r","rsc4r"],
+        ["rsc2r","rsc3r"],
+        ["rsc1l","rsc2r"],
+        ["rsc1r","rsc2l"],
+        ["rsc3l","rsc4r"],
+        ["rsc3r","rsc4l"],
+
+        ["rsc1l","rsc4r"],
+        ["rsc1r","rsc4l"],
+        ["rsc2l","rsc3r"],
+        ["rsc2r","rsc3l"],
+
+        ["rsc5", "rsc1l"],
+        ["rsc5", "rsc1r"],
+        ["rsc5", "rsc2l"],
+        ["rsc5", "rsc2r"],
+        ["rsc5", "rsc3l"],
+        ["rsc5", "rsc3r"],
+        ["rsc5", "rsc4l"],
+        ["rsc5", "rsc4r"],
+
+        // support beams
+        {"beamType":"|SUPPORT", "beamLongBound":2},
+        {"beamSpring":80,"beamDamp":10},
+        {"breakGroup":"rear_suitcase"},
+        {"beamLongBound":10},
+        ["rsc2l","bi4l"],
+        ["rsc2l","bi4r"],
+        ["rsc2r","bi4l"],
+        ["rsc2r","bi4r"],
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":1.1}
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        //front bumper
+        {"groundModel":"plastic"},
+        {"dragCoef":0},
+        ["rsc1l", "rsc2l", "rsc2r"],
+        ["rsc1l", "rsc2r", "rsc1r"],
+        ["rsc1l", "rsc3r", "rsc3l"],
+        ["rsc1l", "rsc1r", "rsc3r"],
+        ["rsc3r", "rsc4r", "rsc4l"],
+        ["rsc3r", "rsc4l", "rsc3l"],
+        ["rsc2l", "rsc4l", "rsc4r"],
+        ["rsc2l", "rsc4r", "rsc2r"],
+        ["rsc1r", "rsc2r", "rsc4r"],
+        ["rsc1r", "rsc4r", "rsc3r"],
+        ["rsc3l", "rsc4l", "rsc2l"],
+        ["rsc3l", "rsc2l", "rsc1l"],
+    ],
+},
+"bug_rear_suitcase_white": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "White Suitcase",
+        "value": 1,
+    },
+    "slotType" : "bug_rear_suitcase_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["rear_suitcase",   ["rear_suitcase"]]
+    ]
+},
+"bug_rear_suitcase_black": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Black Suitcase",
+        "value": 1,
+    },
+    "slotType" : "bug_rear_suitcase_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_black"]]}]
+    ]
+},
+"bug_rear_suitcase_gray": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Gray Suitcase",
+        "value": 1,
+    },
+    "slotType" : "bug_rear_suitcase_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_gray"]]}]
+    ]
+},
+"bug_rear_suitcase_red": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Red Suitcase",
+        "value": 1,
+    },
+    "slotType" : "bug_rear_suitcase_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_red"]]}]
+    ]
+},
+"bug_rear_suitcase_brown": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Brown Suitcase",
+        "value": 1,
+    },
+    "slotType" : "bug_rear_suitcase_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_brown"]]}]
+    ]
+},
+"bug_rear_suitcase_yellow": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Yellow Suitcase",
+        "value": 1,
+    },
+    "slotType" : "bug_rear_suitcase_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_yellow"]]}]
+    ]
+},
+"bug_rear_suitcase_green": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Green Suitcase",
+        "value": 1,
+    },
+    "slotType" : "bug_rear_suitcase_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_green"]]}]
+    ]
+},
+"bug_rear_suitcase_blue": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Blue Suitcase",
+        "value": 1,
+    },
+    "slotType" : "bug_rear_suitcase_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_blue"]]}]
+    ]
+},
+"bug_rear_suitcase_purple": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "Purple Suitcase",
+        "value": 1,
+    },
+    "slotType" : "bug_rear_suitcase_color",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_purple"]]}]
+    ]
+},
+
+
+// - 6 Pack
+"bug_6pack_saft": {
+    "information":{
+        "authors": "MrX13415",
+        "name": "6-Pack \"Saft\"",
+        "value": 100,
+    },
+    "slotType" : "bug_6pack",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["bug_6pack_saft",   ["bug_6pack"],[],{"pos":{"x":0.0, "y":0.0, "z":0.0}, "rot":{"x":"0", "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"nodeMaterial":"|NM_PLASTIC"},
+        {"collision":true},
+        {"selfCollision":true},
+        {"group":"bug_6pack"},
+        {"nodeWeight":0.55},
+        {"frictionCoef":1.0},
+        ["6pl1", -0.073,  0.048,  0.205],
+        ["6pl2", -0.073, -0.048,  0.205],
+        ["6pr1",  0.073,  0.048,  0.205],
+        ["6pr2",  0.073, -0.048,  0.205],
+        {"nodeWeight":1.02},
+        ["6pl3", -0.082,  0.059, -0.001],
+        ["6pl4", -0.082, -0.059, -0.001],
+        ["6pr3",  0.082,  0.059, -0.001],
+        ["6pr4",  0.082, -0.059, -0.001],
+        {"group":""},
+        {"collision":true},
+        {"selfCollision":false}
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":25000,"beamDamp":50},
+        {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":0},
+        ["6pl1","6pl2"],
+        ["6pr1","6pr2"],
+        ["6pl1","6pr1"],
+        ["6pl2","6pr2"],
+        ["6pl1","6pr2"],
+        ["6pr1","6pl2"],
+
+        ["6pl3","6pl4"],
+        ["6pr3","6pr4"],
+        ["6pl3","6pr3"],
+        ["6pl4","6pr4"],
+        ["6pl3","6pr4"],
+        ["6pr3","6pl4"],
+        ["6pl3","6pl1"],
+        ["6pr3","6pr1"],
+        ["6pl4","6pl2"],
+        ["6pr4","6pr2"],
+
+        ["6pl1","6pl4"],
+        ["6pl2","6pl3"],
+        ["6pr1","6pr4"],
+        ["6pr2","6pr3"],
+        ["6pl1","6pr3"],
+        ["6pr1","6pl3"],
+        ["6pl2","6pr4"],
+        ["6pr2","6pl4"],
+
+        ["6pl1","6pr4"],
+        ["6pl2","6pr3"],
+        ["6pr1","6pl4"],
+        ["6pr2","6pl3"],
+
+
+        // support beams
+        {"beamPrecompression":0.8, "beamType":"|SUPPORT", "beamLongBound":3},
+        {"beamSpring":25000,"beamDamp":10},
+        {"breakGroup":"rear_6pack"},
+        ["6pl3","f3r"],
+        ["6pl3","f4r"],
+        ["6pr3","f3mr"],
+        ["6pr3","f4mr"],
+        ["6pl4","f3r"],
+        ["6pl4","f4r"],
+        ["6pr4","f3mr"],
+        ["6pr4","f4mr"],
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"deformLimitExpansion":1.1}
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        //front bumper
+        {"groundModel":"plastic"},
+        {"dragCoef":0},
+        ["6pl1", "6pr2", "6pr1"],
+        ["6pl1", "6pl2", "6pr2"],
+        ["6pl3", "6pr4", "6pl4"],
+        ["6pr3", "6pr4", "6pl3"],
+
+        ["6pl1", "6pl4", "6pl2"],
+        ["6pl1", "6pl3", "6pl4"],
+        ["6pr2", "6pr3", "6pr1"],
+        ["6pr2", "6pr4", "6pr3"],
+
+        ["6pl2", "6pr4", "6pr2"],
+        ["6pl2", "6pl4", "6pr4"],
+        ["6pr1", "6pl3", "6pl1"],
+        ["6pr1", "6pr3", "6pl3"],
+    ],
+},
+
+}

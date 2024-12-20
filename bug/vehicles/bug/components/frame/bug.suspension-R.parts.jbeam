@@ -77,9 +77,11 @@
         //21.5mm 3460
         //22mm 3787
         //23mm 4525
+        //24mm 5376
+        //25mm 6329
         {"spring":4525, "damp":10, "deform":200000, "strength":9999999},
-        ["rh5l", "bx2l", "bx2r", "f5r", {"precompressionAngle":0.09}],
-        ["rh5r", "bx2r", "bx2l", "f5l", {"precompressionAngle":-0.09}],
+        ["rh4l", "bx2l", "bx2r", "bs1r", {"precompressionAngle":0.05}],
+        ["rh4r", "bx2r", "bx2l", "bs1l", {"precompressionAngle":-0.05}],
     ],
 },
 "bug_spring_R_race": {
@@ -109,8 +111,8 @@
         //24mm 5376
         //25mm 6329
         {"spring":"$=$spring_R*0.8*0.8", "damp":10, "deform":200000, "strength":9999999},
-        ["rh5l", "bx2l", "bx2r", "f5r", {"precompressionAngle":"$=($springheight_R-0.03)/0.5"}],
-        ["rh5r", "bx2r", "bx2l", "f5l", {"precompressionAngle":"$=-($springheight_R-0.03)/0.5"}],
+        ["rh4l", "bx2l", "bx2r", "bs1r", {"precompressionAngle":"$=($springheight_R-0.03)/0.5"}],
+        ["rh4r", "bx2r", "bx2l", "bs1l", {"precompressionAngle":"$=-($springheight_R-0.03)/0.5"}],
     ],
 },
 "bug_coilover_R_race": {
@@ -233,9 +235,9 @@
             "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>leaf_compress_01","colorFactor":0.0,"attackFactor":7,"volumeFactor":4.0,"decayFactor":7,"noiseFactor":0.01,"pitchFactor":0.2,"maxStress":13}],
         //bumpstop and extension limiter
         {"beamSpring":0,"beamDamp":0},
-        {"beamLimitSpring":501000,"beamLimitDamp":5000},
-        ["rh4r","bs1r", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
-        ["rh4l","bs1l", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+        {"beamLimitSpring":301000,"beamLimitDamp":8000},
+        ["rh4r","bs1r", {"longBoundRange":0.06,"shortBoundRange":0.06,"boundZone":0.03,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+        ["rh4l","bs1l", {"longBoundRange":0.06,"shortBoundRange":0.06,"boundZone":0.03,"beamLimitDampRebound":0,"dampCutoffHz":500}],
         {"beamLimitSpring":0,"beamLimitDamp":0},
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
     ],
@@ -269,9 +271,9 @@
             "soundFile":"event:>Vehicle>Suspension>car_vint_sml_01>leaf_compress_01","colorFactor":0.2,"attackFactor":16,"volumeFactor":2.6,"decayFactor":16,"noiseFactor":0.01,"pitchFactor":0.7,"maxStress":13}],
         //bumpstop and extension limiter
         {"beamSpring":0,"beamDamp":0},
-        {"beamLimitSpring":501000,"beamLimitDamp":5000},
-        ["rh4r","bs1r", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
-        ["rh4l","bs1l", {"longBoundRange":0.06,"shortBoundRange":0.08,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+        {"beamLimitSpring":25100,"beamLimitDamp":5000},
+        ["rh4r","bs1r", {"longBoundRange":0.08,"shortBoundRange":0.06,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
+        ["rh4l","bs1l", {"longBoundRange":0.08,"shortBoundRange":0.06,"boundZone":0.04,"beamLimitDampRebound":0,"dampCutoffHz":500}],
         {"beamLimitSpring":0,"beamLimitDamp":0},
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
     ],

@@ -29,11 +29,6 @@ local matVisible = "bug_ragtop_fabric"
 local matHidden = "invis"
 
 -- common
-function round(num, numDecimalPlaces)
-  local mult = 10^(numDecimalPlaces or 0)
-  return math.floor(num * mult + 0.5) / mult
-end
-
 local function createSFX(event, node)
   local soundNode = getNodeIDbyName(node)
   local sound = obj:createSFXSource2(event, "AudioClosestLoop3D", "ragtopmove", soundNode, 0)
@@ -206,6 +201,7 @@ M.init      = onInit
 M.reset     = onReset
 M.updateGFX = updateGFX
 
+-- Public Interface
 -- Console: controller.getController('ragtop').open()
 M.open = open
 M.close = close

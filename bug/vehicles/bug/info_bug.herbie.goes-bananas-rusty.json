@@ -20,6 +20,7 @@
     ]
   ],
   "Braking G":0.915,
+  "Country": "United States",
   "Config Type":"Herbie",
   "Configuration":"Herbie (Rusted)",
   "Description":"Herbie as seen in the movie \"Herbie Goes Bananas\" from 1980",
@@ -29,6 +30,7 @@
   "Licenseplate":"Herbie California Plate Design",
   "Off-Road Score":28,
   "Performance Class":"2",
+  "Population":0,
   "Power":594,
   "PowerPeakRPM":7900,
   "Propulsion":"ICE",

@@ -3,7 +3,7 @@
 "bug_brake_R_5lw_drum": {
     "information":{
         "authors":"BeamNG",
-        "name":"Rear 5-Lug Wide Drum Brakes",
+        "name":"Rear Drum Brakes",
         "value":200,
     },
     "slotType" : "bug_brake_R_5lw",
@@ -20,12 +20,12 @@
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
-        {"brakeTorque":"$=$brakestrength*750"}
+        {"enableABS":false},
+        {"brakeTorque":"$=$brakestrength*650"},
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
-        {"parkingTorque":1000},
-        {"brakeSpring":125},
-        {"enableABS":false},
+        {"parkingTorque":750},
+        {"brakeSpring":80},
 
         //brake thermals
         {"enableBrakeThermals":true},
@@ -34,12 +34,14 @@
         {"brakeType":"drum"},
         {"rotorMaterial":"steel"},
         {"brakeVentingCoef":0.7},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
     ],
 },
 "bug_brake_R_5lw_disc": {
     "information":{
         "authors":"BeamNG",
-        "name":"Rear 5-Lug Wide Disc Brakes",
+        "name":"Rear Disc Brakes",
         "value":200,
     },
     "slotType" : "bug_brake_R_5lw",
@@ -59,22 +61,63 @@
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
         {"enableABS":false},
-        {"brakeTorque":"$=$brakestrength*950"},
+        {"brakeTorque":"$=$brakestrength*700"},
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
-        {"parkingTorque":1200},
-        {"brakeSpring":125},
-        
+        {"parkingTorque":750},
+        {"brakeSpring":80},
+
         //brake thermals
         {"enableBrakeThermals":true},
-        {"brakeDiameter":0.27},
-        {"brakeMass":4.4},
+        {"brakeDiameter":0.22},
+        {"brakeMass":2.9},
         {"brakeType":"disc"},
         {"rotorMaterial":"steel"},
-        {"brakeVentingCoef":1},
+        {"brakeVentingCoef":0.7},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
     ],
 },
+"bug_brake_R_5lw_race": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Disc Brakes",
+        "value":200,
+    },
+    "slotType" : "bug_brake_R_5lw",
+    "slots": [
+        ["type", "default", "description"]
+        ["brakepad_R","brakepad_R", "Rear Brake Pads"{"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
 
+        ["brakedisc_5lw",  ["wheel_RL","wheelhub_RL"],                [], {"pos":{"x": 0.460, "y":0, "z":0}, "rot":{"x":   0, "y":0, "z":  0},   "scale":{"x": 1, "y":1, "z":1 }}],
+        ["brakedisc_5lw",  ["wheel_RR","wheelhub_RR"],                [], {"pos":{"x":-0.460, "y":0, "z":0}, "rot":{"x":   0, "y":0, "z":180},   "scale":{"x": 1, "y":1, "z":1 }}],
+        ["brake_caliper_standard_plain", ["hub_R","lowermounts_R"],   [], {"pos":{"x": 0.475, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":  0},   "scale":{"x": 0.88, "y":0.88, "z":0.88 }}],
+        ["brake_caliper_standard_plain", ["hub_R","lowermounts_R"],   [], {"pos":{"x":-0.475, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":  0},   "scale":{"x": 0.88, "y":0.88, "z":0.88 }}],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        //{"brakeTorque":"$=case($brakebias == nil, $brakestrength*700, $brakestrength*2100*(1-$brakebias))"},
+        {"brakeTorque":"$=$brakebias == nil and $brakestrength*700 or $brakestrength*2100*(1-$brakebias)"},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":900},
+        {"brakeSpring":80},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.24},
+        {"brakeMass":3.1},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
+    ],
+},
 
 "bug_brake_R": {
     "information":{
@@ -99,75 +142,61 @@
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
         {"enableABS":false},
-        {"brakeTorque":700},
-        {"brakeInputSplit":0.50},
-        {"brakeSplitCoef":0.25},
-        {"parkingTorque":2000},
-        {"brakeSpring":30},
-        
+        {"brakeTorque":"$=$brakestrength*650"},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":750},
+        {"brakeSpring":80},
+
         //brake thermals
         {"enableBrakeThermals":true},
-        {"brakeDiameter":0.20},
+        {"brakeDiameter":0.24},
         {"brakeMass":2.75},
         {"brakeType":"drum"},
         {"rotorMaterial":"steel"},
-        {"brakeVentingCoef":0.8},
+        {"brakeVentingCoef":0.7},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
     ],
 },
-"bug_brake_R_hightorque": {
+"bug_brake_R_disc": {
     "information":{
         "authors":"BeamNG",
-        "name":"High Torque Rear Brakes",
-        "value":500,
+        "name":"Rear Disc Brakes",
+        "value":200,
     },
     "slotType" : "bug_brake_R",
     "slots": [
         ["type", "default", "description"]
-        ["brakepad_R","brakepad_R", "Rear Brake Pads"{"coreSlot":true}],
+        ["brakepad_R","brakepad_R", "Rear Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        //brake discs       
-       //["bug_brakedrum_RR",             ["wheel_RL","wheelhub_RL"],      [], {"pos":{"x": 0.610, "y":1.17, "z":0.297021}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
-       //["bug_brakedrum_RL",             ["wheel_RR","wheelhub_RR"],      [], {"pos":{"x":-0.610, "y":1.17, "z":0.297021}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
-       //["brake_caliper_standard_plain", ["hub_R","lowermounts_R"],       [], {"pos":{"x": 0.610, "y":1.17, "z":0.297021}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
-       //["brake_caliper_standard_plain", ["hub_R","lowermounts_R"],       [], {"pos":{"x":-0.610, "y":1.17, "z":0.297021}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
+
+        ["brake_disc_plain",             ["wheel_RL","wheelhub_RL"],      [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
+        ["brake_disc_plain",             ["wheel_RR","wheelhub_RR"],      [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
+        ["brake_caliper_standard_plain", ["hub_R","lowermounts_R"],       [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
+        ["brake_caliper_standard_plain", ["hub_R","lowermounts_R"],       [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
         {"enableABS":false},
-        {"brakeTorque":5700},
-        {"brakeInputSplit":0.50},
-        {"brakeSplitCoef":0.25},
-        {"parkingTorque":2000},
-        {"brakeSpring":30},
-        
+        {"brakeTorque":"$=$brakestrength*700"},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":750},
+        {"brakeSpring":80},
+
         //brake thermals
         {"enableBrakeThermals":true},
-        {"brakeDiameter":0.20},
-        {"brakeMass":2.75},
-        {"brakeType":"drum"},
+        {"brakeDiameter":0.22},
+        {"brakeMass":2.9},
+        {"brakeType":"disc"},
         {"rotorMaterial":"steel"},
-        {"brakeVentingCoef":0.8},
-
-       // Infos about breaks values:
-       // {"brakeTorque":1302.744751}, //Rate of brake torque (Nm) increase per input (input is 0 to 1). If there is no knee point, it also indicates the maximum brake torque.
-       // {"brakeInputSplit":1}, //Creates a knee point in brake torque rate (value of 0.5 means knee occurs at half brake input)
-       // {"brakeSplitCoef":1}, //Reduces or increases the brake torque rate after the knee point. Value of 0.5 means brake torque will rise at half the rate defined by brakeTorque.
-       // {"parkingTorque":3796.266846}, //Maximum parking brake torque
-       // {"brakeSpring":118.652191}, //Stiffness of the brake system. Too high will make brake unstable, too low will cause wheel hop or rubber band effect.
-       //
-       // //brake thermals
-       // {"enableBrakeThermals":false},
-       // {"brakeDiameter":0.319000}, //Diameter (m)
-       // {"brakeMass":8.898415}, //Rotor mass (ignoring hub/bearing area) (kg)
-       // {"brakeType":"disc"}, //Type ("drum", "disc", "vented-disc")
-       // {"rotorMaterial":"steel"}, //Rotor material ("steel", "aluminum", "aluminium", "ceramic")
-       // {"padMaterial":"sport"}, //Pad material ("basic","premium","sport","semi-race","full-race","godmode")
-       // {"brakeVentingCoef":1.650000}, //Cooling multiplier (1 for typical unducted brakes)
-       // //abs
-       // {"absSlipRatioTarget":0.15},
+        {"brakeVentingCoef":0.7},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
     ],
 },
 "bug_brake_R_race": {
@@ -187,67 +216,27 @@
       // ["bug_brakedrum_RR", ["wheel_RR","wheelhub_RR"], ["bug"]],
       // ["bug_brakedrum_RL", ["wheel_RL","wheelhub_RL"], ["bug"]],
     ],
-    "variables": [
-        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
-        ["$braketorque_R", "range", "", "Brakes", 900, 0, 1500, "Rear Brake Torque", "Strength of the rear brakes"{"minDis":0}]
-    ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
-        {"enableABS":false},
-        {"brakeTorque":"$braketorque_R"},
-        {"brakeInputSplit":0.40},
-        {"brakeSplitCoef":0.20},
-        {"parkingTorque":2000},
-        {"brakeSpring":30},
-        
+        //{"brakeTorque":"$=case($brakebias == nil, $brakestrength*700, $brakestrength*2100*(1-$brakebias))"},
+        {"brakeTorque":"$=$brakebias == nil and $brakestrength*700 or $brakestrength*2100*(1-$brakebias)"},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":900},
+        {"brakeSpring":80},
+
         //brake thermals
         {"enableBrakeThermals":true},
-        {"brakeDiameter":0.20},
-        {"brakeMass":1.75},
-        {"brakeType":"drum"},
-        {"rotorMaterial":"aluminium"},
-        {"brakeVentingCoef":1.2},
+        {"brakeDiameter":0.24},
+        {"brakeMass":3.1},
+        {"brakeType":"vented-disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
     ],
 },
-"bug_brake_R_race_wide": {
-    "information":{
-        "authors":"BeamNG",
-        "name":"Race Rear Aluminum Drum Brakes",
-        "value":400,
-    },
-    "slotType" : "bug_brake_R_wide",
-    "slots": [
-        ["type", "default", "description"],
-        ["brakepad_R","brakepad_R_race", "Rear Brake Pads"{"coreSlot":true}],
-    ],
-    "flexbodies": [
-        ["mesh", "[group]:", "nonFlexMaterials"],
-        //brake discs
-      //  ["bug_brakedrum_RR", ["wheel_RR","wheelhub_RR"], ["bug"],{"pos":{"x":-0.04, "y":0, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
-      //  ["bug_brakedrum_RL", ["wheel_RL","wheelhub_RL"], ["bug"],{"pos":{"x":0.04, "y":0, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
-    ],
-    "variables": [
-        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
-        ["$braketorque_R", "range", "", "Brakes", 800, 0, 1500, "Rear Brake Torque", "Strength of the rear brakes"{"minDis":0}]
-    ],
-    "pressureWheels": [
-        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
-        //brakes
-        {"enableABS":false},
-        {"brakeTorque":"$braketorque_R"},
-        {"brakeInputSplit":0.40},
-        {"brakeSplitCoef":0.20},
-        {"parkingTorque":2000},
-        {"brakeSpring":30},
-        
-        //brake thermals
-        {"enableBrakeThermals":true},
-        {"brakeDiameter":0.20},
-        {"brakeMass":1.75},
-        {"brakeType":"drum"},
-        {"rotorMaterial":"aluminium"},
-        {"brakeVentingCoef":1.2},
-    ],
-},
+
+
 }

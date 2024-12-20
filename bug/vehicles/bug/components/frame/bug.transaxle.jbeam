@@ -23,7 +23,7 @@
         "gearRatios":[-3.88, 0, 2.06, 1.26, 0.89],
         "parkLockTorque":1500,
         "oneWayViscousCoef":2,
-        "friction": 5,
+        "friction": 1,
         "gearboxNode:":"tra1",
     },
     "vehicleController": {
@@ -574,7 +574,6 @@
     "beams": [
         ["id1:", "id2:"],
         {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"disableMeshBreaking":false},
         //halfshafts
         {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.12, "beamShortBound":0.12},
         {"beamSpring":0,"beamDamp":0,"beamDeform":5000,"beamStrength":8000},
@@ -605,7 +604,7 @@
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"],
 
-        ["differential", "differential_R", "torsionReactorR", 1, {"diffType":"open", "gearRatio": 1, "friction":6, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
+        ["differential", "differential_R", "torsionReactorR", 1, {"diffType":"open", "gearRatio": 1, "friction":5, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
     ],
 },
 "bug_differential_R_locked": {
@@ -621,7 +620,23 @@
     ],
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"],
-        ["differential", "differential_R", "torsionReactorR", 1, {"diffType":"locked", "gearRatio": 1, "lockTorque":10000, "uiName":"Rear Differential","defaultVirtualInertia":0.25}],
+        ["differential", "differential_R", "torsionReactorR", 1, {"diffType":"locked", "gearRatio": 1, "lockTorque":20000, "friction":5, "uiName":"Rear Differential","defaultVirtualInertia":0.25}],
+    ]
+},
+"bug_differential_R_locking": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Locking Rear Differential",
+        "value":400,
+    },
+    "slotType" : "bug_differential_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["bug_finaldrive_R","bug_finaldrive_R_437", "Rear Final Drive", {"coreSlot":true}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["differential", "differential_R", "torsionReactorR", 1, {"diffType":["open","locked"], "gearRatio": 1, "lockTorque":20000, "friction":5, "uiName":"Rear Differential","defaultVirtualInertia":0.25}],
     ]
 },
 "bug_differential_R_lsd": {
@@ -638,7 +653,7 @@
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"],
 
-        ["differential", "differential_R", "torsionReactorR", 1, {"diffType":"lsd", "gearRatio": 1, "lsdPreload":80, "lsdLockCoef":0.1, "lsdRevLockCoef":0.05, "friction":6, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
+        ["differential", "differential_R", "torsionReactorR", 1, {"diffType":"lsd", "gearRatio": 1, "lsdPreload":80, "lsdLockCoef":0.1, "lsdRevLockCoef":0.05, "friction":5, "uiName":"Rear Differential","defaultVirtualInertia":0.25}]
     ],
 },
 "bug_differential_R_race": {

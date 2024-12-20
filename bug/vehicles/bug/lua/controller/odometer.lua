@@ -2,10 +2,12 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
--- v1.1
+-- v1.2
 -- by MrX13415
 
+
 local M = {}
+
 local digits = 11               -- 11 digits. Support for up to 99.999.999 km
 local unit = "meter"            -- Default mode
 local unitMiles = 0.000621371   -- DO NOT CHANGE!
@@ -13,28 +15,45 @@ local updateTimer = 2           -- Make sure the first call is immediately
 local lastMileage = 0           -- in meters
 local mileage = 0               -- in meters
 
+function OnStatisticCallback(odometerValue)
+  lastMileage = odometerValue or 0
+  lastMileage = math.max(lastMileage, 0)  -- Ensure positive value
+
+  log("D", "", "[Bug:Odometer] Initialized " .. tostring(lastMileage) .. " meter, unit: " .. tostring(unit))
+end
+
+local function loadStatistic()
+  obj:queueGameEngineLua([[
+    extensions.load('gameplay_statistic')
+    local value = (gameplay_statistic.metricGet("vehicle/odometer/bug.length", true) or {value=0}).value
+    be:getPlayerVehicle(0):queueLuaCommand('OnStatisticCallback('..value..')')
+  ]])
+end
+
 -- common
-function round(num, numDecimalPlaces)
+local function round(num, numDecimalPlaces)
   local mult = 10^(numDecimalPlaces or 0)
   return math.floor(num * mult + 0.5) / mult
 end
 
-local function load()
-  local odometer = storage.data().odometer or {}
-  lastMileage = odometer.mileage or 0
-  lastMileage = math.max(lastMileage, 0)  -- Ensure positive value
-end
+-- local function load()
+--   local odometer = storage.data().odometer or {}
+--   lastMileage = odometer.mileage or 0
+--   lastMileage = math.max(lastMileage, 0)  -- Ensure positive value
 
-local function save()
-	local d = storage.data()
-	d.odometer = {}
-	d.odometer.mileage = mileage
-end
+--   log("D", "", "[Bug:Odometer] Initialized " .. tostring(lastMileage) .. " meter, unit: " .. tostring(unit))
+-- end
+
+-- local function save()
+-- 	local d = storage.data()
+-- 	d.odometer = {}
+-- 	d.odometer.mileage = mileage
+-- end
 
 local function set(value)
-  odometer.mileage = value
-  load()
-  print("[Bug:Odometer] Set: " .. lastMileage)
+  lastMileage = value or 0
+  lastMileage = math.max(lastMileage, 0)  -- Ensure positive value
+  print("[Bug:Odometer] Set: " ..lastMileage.. " meter")
 end
 
 local function updateOdometer(dt)
@@ -86,7 +105,8 @@ local function updateOdometer(dt)
   -- DEBUG:
   --print("[Bug:Odometer] Mileage: " .. distance .. " " .. unit .. " Odometer: " .. odometer)
   updateTimer = 0
-  save()
+
+  --save()  using game statistic now
 end
 
 local function updateGFX(dt)
@@ -98,10 +118,10 @@ local function updateGFX(dt)
   end
 end
 
+
 local function onReset()
-	save()
-  -- Disabled: milage no longer set to zero on vehicle reset
-  --lastMileage = mileage
+	--save()  -- Disabled: using game statistic now
+  --lastMileage = mileage  -- Disabled: milage no longer set to zero on vehicle reset
 end
 
 local function onInit(jbeamData)
@@ -116,15 +136,15 @@ local function onInit(jbeamData)
     end
   end
 
-  load()
-
-  log("D", "", "[Bug:Odometer] Initialized " .. tostring(lastMileage) .. " meter, unit: " .. tostring(unit))
+  --load() -- Disabled: using game statistic now
+  loadStatistic()
 end
 
 M.init      = onInit
 M.reset     = onReset
 M.updateGFX = updateGFX
 
+-- Public Interface
 -- Console: controller.getController('odometer').set(0)
 M.set       = set
 

@@ -1,38 +1,39 @@
 {
-  "0-100 km/h":23.7,
-  "0-60 mph":21.1,
+  "0-100 km/h":22.1,
+  "0-60 mph":20.2,
   "100-0 km/h":44.3,
   "60-0 mph":132.7,
   "BoundingBox":[
     [
-      -0.783,
+      -0.703,
       -1.77119,
-      -0.242979
+      -0.267979
     ],
     [
-      0.783,
+      0.863,
       2.29767,
-      1.28392
+      1.25892
     ]
   ],
   "Config Type":"Factory",
   "Configuration":"1200 EU Ragtop (M)",
   "Description":"European base model with 1200cc engine and ragtop roof",
-  "drivetrain":"RWD",
+  "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
-  "Off-Road Score":33,
+  "Off-Road Score":28,
   "Performance Class":"2",
+  "Population":0,
   "Power":41,
-  "PowerPeakRPM":"3300 - 4050",
+  "PowerPeakRPM":"3350 - 4050",
   "Propulsion":"ICE",
-  "Top Speed":38.78293607,
+  "Top Speed":37.83439636,
   "Torque":100,
   "TorquePeakRPM":"1800 - 2850",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1060,
-  "Weight/Power":25.85365854,
+  "Weight":1010,
+  "Weight/Power":24.63414634,
   "defaultPaintName1":"Shale Green",
   "defaultPaintName3":"Shale Green"
 }

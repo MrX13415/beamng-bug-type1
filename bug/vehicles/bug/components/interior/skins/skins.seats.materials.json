@@ -386,7 +386,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
         "roughnessFactor": 1,
@@ -413,7 +413,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
         "roughnessFactor": 1,
@@ -440,7 +440,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
         "roughnessFactor": 1,
@@ -841,7 +841,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
         "roughnessFactor": 1,
@@ -868,7 +868,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
         "roughnessFactor": 1,
@@ -895,7 +895,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_vinyl_n.normal.png",
         "roughnessFactor": 1,
@@ -1302,7 +1302,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
         "roughnessFactor": 1,
@@ -1329,7 +1329,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
         "roughnessFactor": 1,
@@ -1356,7 +1356,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_fabric_n.normal.png",
         "roughnessFactor": 1,
@@ -1757,7 +1757,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
         "roughnessFactor": 1,
@@ -1784,7 +1784,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
         "roughnessFactor": 1,
@@ -1811,7 +1811,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
         "roughnessFactor": 1,
@@ -2212,7 +2212,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
         "roughnessFactor": 1,
@@ -2239,7 +2239,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
         "roughnessFactor": 1,
@@ -2266,7 +2266,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_d.color.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "instanceDiffuse": true,
         "normalMap": "/vehicles/bug/components/interior/textures/interior_seat_leather_n.normal.png",
         "roughnessFactor": 1,

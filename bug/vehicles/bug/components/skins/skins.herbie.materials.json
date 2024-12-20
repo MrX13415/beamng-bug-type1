@@ -15,7 +15,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -23,10 +23,10 @@
         "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_fl_d.color.png",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_fl_d.color.png",
         "diffuseMapUseUV": 1,
         "metallicFactor": 0.7,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_fl_o.data.png",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_fl_o.data.png",
         "opacityMapUseUV": 1,
         "roughnessFactor": 0.4
       },
@@ -55,7 +55,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -63,10 +63,10 @@
         "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_ra-mc-gb_d.color.png",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_ra-mc-gb_d.color.png",
         "diffuseMapUseUV": 1,
         "metallicFactor": 0.7,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_ra-mc-gb_o.data.png",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_ra-mc-gb_o.data.png",
         "opacityMapUseUV": 1,
         "roughnessFactor": 0.4
       },
@@ -95,7 +95,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -103,10 +103,10 @@
         "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_tlb_d.color.png",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb_d.color.png",
         "diffuseMapUseUV": 1,
         "metallicFactor": 0.7,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_tlb_o.data.png",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb_o.data.png",
         "opacityMapUseUV": 1,
         "roughnessFactor": 0.4
       },
@@ -135,7 +135,7 @@
       {
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "colorPaletteMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
@@ -143,10 +143,10 @@
         "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_tlb97_d.color.png",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb97_d.color.png",
         "diffuseMapUseUV": 1,
         "metallicFactor": 0.7,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_tlb97_o.data.png",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb97_o.data.png",
         "opacityMapUseUV": 1,
         "roughnessFactor": 0.4
       },

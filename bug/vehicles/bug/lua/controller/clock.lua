@@ -36,7 +36,7 @@ end
 
 local function onInit(jbeamData)
   log("D", "", "[Bug:Clock] Initialized")
-
+  
   electrics.values["clockh"] = 0
   electrics.values["clockmin"] = 0
   electrics.values["clocksec"] = 0

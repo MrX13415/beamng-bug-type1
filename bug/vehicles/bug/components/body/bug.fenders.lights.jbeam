@@ -7,6 +7,11 @@
         "name":"Left Headlight",
         "value":90,
     },
+    "electricPower":[
+        ["power"],
+        [55, {"trigger": "electrics.values.lowbeam"}],
+        [60, {"trigger": "electrics.values.highbeam"}]
+    ],
     "slotType" : "bug_headlight_L",
     "slots": [
         ["type", "default", "description"],
@@ -25,8 +30,8 @@
         {"deformGroup":""},
     ],
     "glowMap":{
-        "bug_headlight":       {"simpleFunction":{"lowbeam":0.3, "highbeam":0.6}, "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense"},
-        "bug_headlight_glass": {"simpleFunction":{"lowbeam":0.3, "highbeam":0.6}, "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense"},
+        "bug_headlight":       {"simpleFunction":{"power__lowbeam":0.49, "power__highbeam":1}, "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_headlight_glass": {"simpleFunction":{"power__lowbeam":0.49, "power__highbeam":1}, "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -43,10 +48,10 @@
             "shadowSoftness":0.5,
         },
         // L
-        ["lowbeam" ,  "SPOTLIGHT", "he1l","he2l","he4l", {"x":30,"y":0,"z":5}, {"x":0,"y":0,"z":0}, {"x":0,"y":0,"z":0}, 0, 0, 0, 1,
-        {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"lightRange":50,"lightBrightness":0.5,"lightOuterAngle":70,"flareScale":0.07,"deformGroup":"headlightglass_L_break"}],
-        ["highbeam" , "SPOTLIGHT", "he1l","he2l","he4l", {"x":25,"y":0,"z":0}, {"x":0,"y":0,"z":0}, {"x":0,"y":0,"z":0}, 0, 0, 0, 1, 
-        {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"lightRange":80,"lightBrightness":0.7,"lightOuterAngle":80,"flareScale":0.09,"deformGroup":"headlightglass_L_break"}],
+        ["power__lowbeam" ,  "SPOTLIGHT", "he1l","he2l","he4l", {"x":30,"y":0,"z":5}, {"x":0,"y":0,"z":0}, {"x":0,"y":0,"z":0}, 0, 0, 0, 1,
+        {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"lightRange":50,"lightBrightness":0.5,"lightOuterAngle":70,"flareScale":0.07,"deformGroup":"headlightglass_L_break", "lightScaling":{}}],
+        ["power__highbeam" , "SPOTLIGHT", "he1l","he2l","he4l", {"x":25,"y":0,"z":0}, {"x":0,"y":0,"z":0}, {"x":0,"y":0,"z":0}, 0, 0, 0, 1,
+        {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"lightRange":80,"lightBrightness":0.7,"lightOuterAngle":80,"flareScale":0.09,"deformGroup":"headlightglass_L_break", "lightScaling":{}}],
 
     ],
     "nodes": [
@@ -129,6 +134,11 @@
         "name":"Right Headlight",
         "value":90,
     },
+    "electricPower":[
+        ["power"],
+        [55, {"trigger": "electrics.values.lowbeam"}],
+        [60, {"trigger": "electrics.values.highbeam"}]
+    ],
     "slotType" : "bug_headlight_R",
     "slots": [
         ["type", "default", "description"],
@@ -147,8 +157,8 @@
         {"deformGroup":""},
     ],
     "glowMap":{
-        "bug_headlight":       {"simpleFunction":{"lowbeam":0.49, "highbeam":0.49}, "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense"},
-        "bug_headlight_glass": {"simpleFunction":{"lowbeam":0.49, "highbeam":0.49}, "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense"},
+        "bug_headlight":       {"simpleFunction":{"power__lowbeam":0.49, "power__highbeam":1}, "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_headlight_glass": {"simpleFunction":{"power__lowbeam":0.49, "power__highbeam":1}, "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -165,10 +175,10 @@
             "shadowSoftness":0.5,
         },
         // R
-        ["lowbeam" ,  "SPOTLIGHT", "he1r","he2r","he4r", {"x":30,"y":0,"z":185}, {"x":0,"y":0,"z":0}, {"x":0,"y":0,"z":0}, 0, 0, 0, 1, 
-        {"baseTranslation":{"x":0.5,"y":0.5,"z":0},"lightRange":50,"lightBrightness":0.5,"lightOuterAngle":70,"flareScale":0.07,"deformGroup":"headlightglass_R_break"}],
-        ["highbeam" , "SPOTLIGHT", "he1r","he2r","he4r", {"x":25, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, 
-        {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"lightRange":80,"lightBrightness":0.7,"lightOuterAngle":80,"flareScale":0.09,"deformGroup":"headlightglass_R_break"}],
+        ["power__lowbeam" ,  "SPOTLIGHT", "he1r","he2r","he4r", {"x":30,"y":0,"z":185}, {"x":0,"y":0,"z":0}, {"x":0,"y":0,"z":0}, 0, 0, 0, 1, 
+        {"baseTranslation":{"x":0.5,"y":0.5,"z":0},"lightRange":50,"lightBrightness":0.5,"lightOuterAngle":70,"flareScale":0.07,"deformGroup":"headlightglass_R_break", "lightScaling":{}}],
+        ["power__highbeam" , "SPOTLIGHT", "he1r","he2r","he4r", {"x":25, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, 
+        {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"lightRange":80,"lightBrightness":0.7,"lightOuterAngle":80,"flareScale":0.09,"deformGroup":"headlightglass_R_break", "lightScaling":{}}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -231,6 +241,7 @@
           ["he5r","feFR8"],
           {"breakGroup": ""},
           {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"disableMeshBreaking":false,"disableTriangleBreaking":false},
     ],
     "triangles": [
           ["id1:","id2:","id3:"],
@@ -307,6 +318,10 @@
         "name":"EU Right Indicator",
         "value":90,
     },
+    "electricPower":[
+        ["power"],
+        [18, {"trigger": "electrics.values.signal_R"}],
+    ],
     "slotType" : "bug_indicator_FR",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -319,8 +334,8 @@
         {"deformGroup":""}
     ],
     "glowMap":{
-        "bug_signal_FR":       {"simpleFunction":{"signal_R":0.49},  "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense"},
-        "bug_signal_glass_FR": {"simpleFunction":{"signal_R":0.49},  "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense"},
+        "bug_signal_FR":       {"simpleFunction":{"power__signal_R":0.49},  "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_glass_FR": {"simpleFunction":{"power__signal_R":0.49},  "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -340,7 +355,7 @@
         "flareScale":0.1,
         "shadowSoftness":0.5,
         },
-        ["signal_R" ,   "SPOTLIGHT"   , "feFR4l", "feFR4m", "feFR5l", {"x":-90, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":0.05},"deformGroup":"indicator_FR_break"}],
+        ["power__signal_R" ,   "SPOTLIGHT"   , "feFR4l", "feFR4m", "feFR5l", {"x":-90, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":0.05},"deformGroup":"indicator_FR_break", "lightScaling":{}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -373,6 +388,10 @@
         "name":"EU Left Indicator",
         "value":90,
     },
+    "electricPower":[
+        ["power"],
+        [18, {"trigger": "electrics.values.signal_L"}],
+    ],
     "slotType" : "bug_indicator_FL",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -385,8 +404,8 @@
         {"deformGroup":""},
     ],
     "glowMap":{
-        "bug_signal_FL":       {"simpleFunction":{"signal_L":0.49},  "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense"},
-        "bug_signal_glass_FL": {"simpleFunction":{"signal_L":0.49},  "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense"},
+        "bug_signal_FL":       {"simpleFunction":{"power__signal_L":0.49},  "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_glass_FL": {"simpleFunction":{"power__signal_L":0.49},  "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -406,7 +425,7 @@
         "flareScale":0.1,
         "shadowSoftness":0.5,
         },
-        ["signal_L" ,   "SPOTLIGHT"   , "feFL4r", "feFL4m", "feFL5r", {"x":-90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":-0.05},"deformGroup":"indicator_FL_break"}],
+        ["power__signal_L" ,   "SPOTLIGHT"   , "feFL4r", "feFL4m", "feFL5r", {"x":-90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":-0.05},"deformGroup":"indicator_FL_break", "lightScaling":{}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -440,6 +459,10 @@
         "name":"US Right Indicator",
         "value":90,
     },
+    "electricPower":[
+        ["power"],
+        [18, {"trigger": "electrics.values.signal_R"}],
+    ],
     "slotType" : "bug_indicator_FR",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -452,8 +475,8 @@
         {"deformGroup":""}
     ],
     "glowMap":{
-        "bug_signal_us_FR":       {"simpleFunction":{"signal_R":0.49},  "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense"},
-        "bug_signal_us_glass_FR": {"simpleFunction":{"signal_R":0.49},  "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense"},
+        "bug_signal_us_FR":       {"simpleFunction":{"power__signal_R":0.49},  "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_us_glass_FR": {"simpleFunction":{"power__signal_R":0.49},  "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -464,7 +487,7 @@
         "lightOuterAngle":170,
         "lightBrightness":0.3,
         "lightRange":2,
-        "lightColor":{"r":255, "g":113, "b":0, "a":255},
+        "lightColor":{"r":255, "g":150, "b":80, "a":255},  // 3000K
         "lightAttenuation":{"x":0, "y":1, "z":1},
         "lightCastShadows":false,
         "cookieName":"",
@@ -473,7 +496,7 @@
         "flareScale":0.1,
         "shadowSoftness":0.5,
         },
-        ["signal_R" ,   "SPOTLIGHT"   , "feFR4l", "feFR4m", "feFR5l", {"x":-90, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":0.05},"deformGroup":"indicator_FR_break"}],
+        ["power__signal_R" ,   "SPOTLIGHT"   , "feFR4l", "feFR4m", "feFR5l", {"x":-90, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":0.05},"deformGroup":"indicator_FR_break", "lightScaling":{}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -506,6 +529,10 @@
         "name":"US Left Indicator",
         "value":90,
     },
+    "electricPower":[
+        ["power"],
+        [18, {"trigger": "electrics.values.signal_L"}],
+    ],
     "slotType" : "bug_indicator_FL",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -518,8 +545,8 @@
         {"deformGroup":""},
     ],
     "glowMap":{
-        "bug_signal_us_FL":       {"simpleFunction":{"signal_L":0.49},  "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense"},
-        "bug_signal_us_glass_FL": {"simpleFunction":{"signal_L":0.49},  "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense"},
+        "bug_signal_us_FL":       {"simpleFunction":{"power__signal_L":0.49},  "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_us_glass_FL": {"simpleFunction":{"power__signal_L":0.49},  "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -530,7 +557,7 @@
         "lightOuterAngle":170,
         "lightBrightness":0.3,
         "lightRange":2,
-        "lightColor":{"r":255, "g":113, "b":0, "a":255},
+        "lightColor":{"r":255, "g":150, "b":80, "a":255},  // 3000K
         "lightAttenuation":{"x":0, "y":1, "z":1},
         "lightCastShadows":false,
         "cookieName":"",
@@ -539,7 +566,7 @@
         "flareScale":0.1,
         "shadowSoftness":0.5,
         },
-        ["signal_L" ,   "SPOTLIGHT"   , "feFL4r", "feFL4m", "feFL5r", {"x":-90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":-0.05},"deformGroup":"indicator_FL_break"}],
+        ["power__signal_L" ,   "SPOTLIGHT"   , "feFL4r", "feFL4m", "feFL5r", {"x":-90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":-0.05},"deformGroup":"indicator_FL_break", "lightScaling":{}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -574,6 +601,12 @@
         "name":"EU Taillight Right",
         "value":160,
     },
+    "electricPower":[
+        ["power"],
+        [18, {"trigger": "electrics.values.signal_R"}],
+        [20, {"trigger": "electrics.values.lowhighbeam"}],
+        [20, {"trigger": "electrics.values.brake"}]
+    ],
     "slotType" : "bug_taillight_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -586,11 +619,11 @@
         {"deformGroup":""},
     ],
     "glowMap":{
-        "bug_signal_RR":       {"simpleFunction":{"signal_R":0.49}, "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense"},
-        "bug_signal_glass_RR": {"simpleFunction":{"signal_R":0.49}, "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense"},
+        "bug_signal_RR":       {"simpleFunction":{"power__signal_R":0.49}, "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_glass_RR": {"simpleFunction":{"power__signal_R":0.49}, "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
 
-        "bug_taillight_RR":       {"simpleFunction":{"brake":0.49,"lowhighbeam":0.49}, "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense"},
-        "bug_talilight_glass_RR": {"simpleFunction":{"brake":0.49,"lowhighbeam":0.49}, "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense"},
+        "bug_taillight_RR":       {"simpleFunction":{"power__brake":0.49,"power__lowhighbeam":0.49}, "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_talilight_glass_RR": {"simpleFunction":{"power__brake":0.49,"power__lowhighbeam":0.49}, "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -607,7 +640,7 @@
             "flareName":"vehicleBrakeLightFlare",
             "flareScale":0.15,
         },
-        ["lowhighbeam" ,   "SPOTLIGHT", "tl1r", "tl4r", "tl2r", {"x":0, "y":0, "z":180},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":0.05}, "deformGroup":"taillight_R_break"}],
+        ["power__lowhighbeam" ,   "SPOTLIGHT", "tl1r", "tl4r", "tl2r", {"x":0, "y":0, "z":180},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":0.05}, "deformGroup":"taillight_R_break", "lightScaling":{}}],
         {
             "lightInnerAngle":0,
             "lightOuterAngle":140,
@@ -621,7 +654,7 @@
             "flareName":"vehicleBrakeLightFlare",
             "flareScale":0.2,
         },
-        ["brake" ,   "SPOTLIGHT", "tl1r", "tl4r", "tl2r", {"x":0, "y":0, "z":180},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":0.05}, "deformGroup":"taillight_R_break"}],
+        ["power__brake" ,   "SPOTLIGHT", "tl1r", "tl4r", "tl2r", {"x":0, "y":0, "z":180},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":0.05}, "deformGroup":"taillight_R_break", "lightScaling":{}}],
 
         // signals
         {
@@ -638,7 +671,7 @@
             "flareScale":0.1,
             "shadowSoftness":0.5,
         },
-        ["signal_R" ,      "SPOTLIGHT", "tl1r", "tl4r", "tl2r", {"x":0, "y":0, "z":180},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.1, "z":0.05}, "deformGroup":"taillight_R_break"}],
+        ["power__signal_R" ,      "SPOTLIGHT", "tl1r", "tl4r", "tl2r", {"x":0, "y":0, "z":180},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.1, "z":0.05}, "deformGroup":"taillight_R_break", "lightScaling":{}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -721,6 +754,12 @@
         "name":"EU Taillight Left",
         "value":160,
     },
+    "electricPower":[
+        ["power"],
+        [18, {"trigger": "electrics.values.signal_L"}],
+        [20, {"trigger": "electrics.values.lowhighbeam"}],
+        [20, {"trigger": "electrics.values.brake"}]
+    ],
     "slotType" : "bug_taillight_L",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -732,14 +771,14 @@
         {"deformGroup":""},
     ],
     "glowMap":{
-        "bug_signal_RL":       {"simpleFunction":{"signal_L":0.49}, "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense"},
-        "bug_signal_glass_RL": {"simpleFunction":{"signal_L":0.49}, "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense"},
+        "bug_signal_RL":       {"simpleFunction":{"power__signal_L":0.49}, "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_glass_RL": {"simpleFunction":{"power__signal_L":0.49}, "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
 
-        "bug_taillight_RL":       {"simpleFunction":{"brake":0.49,"lowhighbeam":0.49}, "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense"},
-        "bug_talilight_glass_RL": {"simpleFunction":{"brake":0.49,"lowhighbeam":0.49}, "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense"},
+        "bug_taillight_RL":       {"simpleFunction":{"power__brake":0.49,"power__lowhighbeam":0.49}, "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_talilight_glass_RL": {"simpleFunction":{"power__brake":0.49,"power__lowhighbeam":0.49}, "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
         {
             "lightInnerAngle":0,
             "lightOuterAngle":140,
@@ -753,7 +792,7 @@
             "flareName":"vehicleBrakeLightFlare",
             "flareScale":0.15,
         },
-        ["lowhighbeam" ,   "SPOTLIGHT", "tl1l", "tl4l", "tl2l", {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":-0.05}, "deformGroup":"taillight_L_break"}],
+        ["power__lowhighbeam" ,   "SPOTLIGHT", "tl1l", "tl4l", "tl2l", {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":-0.05}, "deformGroup":"taillight_L_break", "lightScaling":{}}],
         {
             "lightInnerAngle":0,
             "lightOuterAngle":140,
@@ -767,7 +806,7 @@
             "flareName":"vehicleBrakeLightFlare",
             "flareScale":0.2,
         },
-        ["brake" ,   "SPOTLIGHT", "tl1l", "tl4l", "tl2l", {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":-0.05}, "deformGroup":"taillight_L_break"}],
+        ["power__brake" ,   "SPOTLIGHT", "tl1l", "tl4l", "tl2l", {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":-0.05}, "deformGroup":"taillight_L_break", "lightScaling":{}}],
 
         // signals
         {
@@ -784,7 +823,7 @@
             "flareScale":0.1,
             "shadowSoftness":0.5,
         },
-        ["signal_L" ,      "SPOTLIGHT", "tl1l", "tl4l", "tl2l", {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.1, "z":-0.05}, "deformGroup":"taillight_L_break"}],
+        ["power__signal_L" ,      "SPOTLIGHT", "tl1l", "tl4l", "tl2l", {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.1, "z":-0.05}, "deformGroup":"taillight_L_break", "lightScaling":{}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -867,6 +906,12 @@
         "name":"US Taillight Right",
         "value":160,
     },
+    "electricPower":[
+        ["power"],
+        [18, {"trigger": "electrics.values.signal_R"}],
+        [20, {"trigger": "electrics.values.lowhighbeam"}],
+        [20, {"trigger": "electrics.values.brake"}]
+    ],
     "slotType" : "bug_taillight_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -878,11 +923,11 @@
         {"deformGroup":""},
     ],
     "glowMap":{
-        "bug_signal_us_RR":       {"simpleFunction":{"signal_R":0.49}, "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense"},
-        "bug_signal_us_glass_RR": {"simpleFunction":{"signal_R":0.49}, "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense"},
+        "bug_signal_us_RR":       {"simpleFunction":{"power__signal_R":0.49}, "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_us_glass_RR": {"simpleFunction":{"power__signal_R":0.49}, "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
 
-        "bug_taillight_us_RR":       {"simpleFunction":{"brake":0.49,"lowhighbeam":0.49}, "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense"},
-        "bug_talilight_us_glass_RR": {"simpleFunction":{"brake":0.49,"lowhighbeam":0.49}, "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense"},
+        "bug_taillight_us_RR":       {"simpleFunction":{"power__brake":0.49,"power__lowhighbeam":0.49}, "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_talilight_us_glass_RR": {"simpleFunction":{"power__brake":0.49,"power__lowhighbeam":0.49}, "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -899,7 +944,7 @@
             "flareName":"vehicleBrakeLightFlare",
             "flareScale":0.15,
         },
-        ["lowhighbeam" ,   "SPOTLIGHT", "tl1r", "tl4r", "tl2r", {"x":0, "y":0, "z":180},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":0.05}, "deformGroup":"taillight_R_break"}],
+        ["power__lowhighbeam" ,   "SPOTLIGHT", "tl1r", "tl4r", "tl2r", {"x":0, "y":0, "z":180},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":0.05}, "deformGroup":"taillight_R_break", "lightScaling":{}}],
         {
             "lightInnerAngle":0,
             "lightOuterAngle":140,
@@ -913,7 +958,7 @@
             "flareName":"vehicleBrakeLightFlare",
             "flareScale":0.2,
         },
-        ["brake" ,   "SPOTLIGHT", "tl1r", "tl4r", "tl2r", {"x":0, "y":0, "z":180},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":0.05}, "deformGroup":"taillight_R_break"}],
+        ["power__brake" ,   "SPOTLIGHT", "tl1r", "tl4r", "tl2r", {"x":0, "y":0, "z":180},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":0.05}, "deformGroup":"taillight_R_break", "lightScaling":{}}],
 
         // signals
         {
@@ -930,7 +975,7 @@
             "flareScale":0.1,
             "shadowSoftness":0.5,
         },
-        ["signal_R" ,      "SPOTLIGHT", "tl1r", "tl4r", "tl2r", {"x":0, "y":0, "z":180},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.1, "z":0.05}, "deformGroup":"taillight_R_break"}],
+        ["power__signal_R" ,      "SPOTLIGHT", "tl1r", "tl4r", "tl2r", {"x":0, "y":0, "z":180},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.1, "z":0.05}, "deformGroup":"taillight_R_break", "lightScaling":{}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -1016,6 +1061,12 @@
         "name":"US Taillight Left",
         "value":160,
     },
+    "electricPower":[
+        ["power"],
+        [18, {"trigger": "electrics.values.signal_L"}],
+        [20, {"trigger": "electrics.values.lowhighbeam"}],
+        [20, {"trigger": "electrics.values.brake"}]
+    ],
     "slotType" : "bug_taillight_L",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1027,11 +1078,11 @@
         {"deformGroup":""},
     ],
     "glowMap":{
-        "bug_signal_us_RL":       {"simpleFunction":{"signal_L":0.49}, "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense"},
-        "bug_signal_us_glass_RL": {"simpleFunction":{"signal_L":0.49}, "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense"},
+        "bug_signal_us_RL":       {"simpleFunction":{"power__signal_L":0.49}, "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_us_glass_RL": {"simpleFunction":{"power__signal_L":0.49}, "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
 
-        "bug_taillight_us_RL":       {"simpleFunction":{"brake":0.49,"lowhighbeam":0.49}, "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense"},
-        "bug_talilight_us_glass_RL": {"simpleFunction":{"brake":0.49,"lowhighbeam":0.49}, "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense"},
+        "bug_taillight_us_RL":       {"simpleFunction":{"power__brake":0.49,"power__lowhighbeam":0.49}, "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_talilight_us_glass_RL": {"simpleFunction":{"power__brake":0.49,"power__lowhighbeam":0.49}, "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -1048,7 +1099,7 @@
             "flareName":"vehicleBrakeLightFlare",
             "flareScale":0.15,
         },
-        ["lowhighbeam" ,   "SPOTLIGHT", "tl1l", "tl4l", "tl2l", {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":-0.05}, "deformGroup":"taillight_L_break"}],
+        ["power__lowhighbeam" ,   "SPOTLIGHT", "tl1l", "tl4l", "tl2l", {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":-0.05}, "deformGroup":"taillight_L_break", "lightScaling":{}}],
         {
             "lightInnerAngle":0,
             "lightOuterAngle":140,
@@ -1063,7 +1114,7 @@
             "flareScale":0.2,
             "shadowSoftness":0.5,
         },
-        ["brake" ,   "SPOTLIGHT", "tl1l", "tl4l", "tl2l", {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":-0.05}, "deformGroup":"taillight_L_break"}],
+        ["power__brake" ,   "SPOTLIGHT", "tl1l", "tl4l", "tl2l", {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.5, "z":-0.05}, "deformGroup":"taillight_L_break", "lightScaling":{}}],
 
         // signals
         {
@@ -1080,7 +1131,7 @@
             "flareScale":0.1,
             "shadowSoftness":0.5,
         },
-        ["signal_L" ,      "SPOTLIGHT", "tl1l", "tl4l", "tl2l", {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.1, "z":-0.05}, "deformGroup":"taillight_L_break"}],
+        ["power__signal_L" ,      "SPOTLIGHT", "tl1l", "tl4l", "tl2l", {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.7, "y":0.1, "z":-0.05}, "deformGroup":"taillight_L_break", "lightScaling":{}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

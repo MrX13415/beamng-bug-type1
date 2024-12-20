@@ -18,9 +18,7 @@
       {}
     ],
     "alphaRef": 0,
-    "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
     "translucent": true,
@@ -39,7 +37,7 @@
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.4
       },
       {},
       {},
@@ -63,17 +61,17 @@
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_d.color.png",
-        "emissiveFactor": [
-          1.5,
-          1.5,
-          1.5
-        ],
-        "emissiveMap": "/vehicles/bug/components/body/textures/lights_g.color.png",
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
-        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.dds",
+        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.4,
+        "emissiveFactor": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/lights_g.color.png"
       },
       {},
       {},
@@ -97,17 +95,17 @@
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
+        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
+        "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
+        "roughnessFactor": 0.4,
         "emissiveFactor": [
           1.5,
           1.5,
           1.5
         ],
-        "emissiveMap": "/vehicles/bug/components/body/textures/lights_g_intense.color.png",
-        "metallicFactor": 1,
-        "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
-        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.dds",
-        "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
-        "roughnessFactor": 0
+        "emissiveMap": "/vehicles/bug/components/body/textures/lights_g.color.png"
       },
       {},
       {},
@@ -132,16 +130,16 @@
       {
         "ambientOcclusionMap": "/vehicles/bug/components/body/textures/lights_ao.data.png",
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_d.color.png",
-        "emissiveFactor": [
-          1,
-          0.999989986,
-          0.999989986
-        ],
-        "emissiveMap": "/vehicles/bug/components/body/textures/lights_g.color.png",
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.2,
+        "emissiveFactor": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/lights_g.color.png"
       },
       {},
       {},
@@ -164,16 +162,16 @@
       {
         "ambientOcclusionMap": "/vehicles/bug/components/body/textures/lights_ao.data.png",
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_d.color.png",
-        "emissiveFactor": [
-          1,
-          0.999989986,
-          0.999989986
-        ],
-        "emissiveMap": "/vehicles/bug/components/body/textures/lights_g_intense.color.png",
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.2,
+        "emissiveFactor": [
+          1.5,
+          1.5,
+          1.5
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/lights_g.color.png"
       },
       {},
       {},
@@ -199,7 +197,7 @@
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "opacityMap": "/vehicles/bug/components/body/textures/lights_dmg_o.data.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.4
       },
       {},
       {},
@@ -239,9 +237,7 @@
       {}
     ],
     "alphaRef": 0,
-    "doubleSided": true,
     "dynamicCubemap": true,
-    "invertBackFaceNormals": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",
     "translucent": true,
@@ -260,7 +256,7 @@
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.4
       },
       {},
       {},
@@ -284,17 +280,17 @@
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_us_d.color.png",
-        "emissiveFactor": [
-          1.5,
-          1.5,
-          1.5
-        ],
-        "emissiveMap": "/vehicles/bug/components/body/textures/lights_us_g.color.png",
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
-        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.dds",
+        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.4,
+        "emissiveFactor": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/lights_us_g.color.png"
       },
       {},
       {},
@@ -318,17 +314,17 @@
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_us_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
+        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
+        "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
+        "roughnessFactor": 0.4,
         "emissiveFactor": [
           1.5,
           1.5,
           1.5
         ],
-        "emissiveMap": "/vehicles/bug/components/body/textures/lights_us_g_intense.color.png",
-        "metallicFactor": 1,
-        "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
-        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.dds",
-        "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
-        "roughnessFactor": 0
+        "emissiveMap": "/vehicles/bug/components/body/textures/lights_us_g.color.png"
       },
       {},
       {},
@@ -353,16 +349,16 @@
       {
         "ambientOcclusionMap": "/vehicles/bug/components/body/textures/lights_ao.data.png",
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_us_d.color.png",
-        "emissiveFactor": [
-          1,
-          0.999989986,
-          0.999989986
-        ],
-        "emissiveMap": "/vehicles/bug/components/body/textures/lights_us_g.color.png",
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.2,
+        "emissiveFactor": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/lights_us_g.color.png"
       },
       {},
       {},
@@ -385,16 +381,16 @@
       {
         "ambientOcclusionMap": "/vehicles/bug/components/body/textures/lights_ao.data.png",
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_us_d.color.png",
-        "emissiveFactor": [
-          1,
-          0.999989986,
-          0.999989986
-        ],
-        "emissiveMap": "/vehicles/bug/components/body/textures/lights_us_g_intense.color.png",
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.2,
+        "emissiveFactor": [
+          1.5,
+          1.5,
+          1.5
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/lights_us_g.color.png"
       },
       {},
       {},
@@ -420,7 +416,7 @@
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "opacityMap": "/vehicles/bug/components/body/textures/lights_dmg_o.data.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.4
       },
       {},
       {},
@@ -452,7 +448,7 @@
         "baseColorMap": "/vehicles/bug/components/body/textures/interiorlight_d.color.png",
         "metallicFactor": 1,
         "normalMap": "/vehicles/bug/components/body/textures/interiorlight_n.normal.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.2
       },
       {},
       {},
@@ -476,7 +472,7 @@
         "baseColorMap": "/vehicles/bug/components/body/textures/interiorlight_d.color.png",
         "metallicFactor": 0,
         "normalMap": "/vehicles/bug/components/body/textures/interiorlight_n.normal.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.4
       },
       {},
       {},
@@ -500,15 +496,15 @@
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/interiorlight_d.color.png",
-        "emissiveFactor": [
-          1.5,
-          1.5,
-          1.5
-        ],
-        "emissiveMap": "/vehicles/bug/components/body/textures/interiorlight_g.color.png",
         "metallicFactor": 0,
-        "normalMap": "/vehicles/bug/components/body/textures/interiorlight_n.normal.dds",
-        "roughnessFactor": 0
+        "normalMap": "/vehicles/bug/components/body/textures/interiorlight_n.normal.png",
+        "roughnessFactor": 0.4,
+        "emissiveFactor": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/interiorlight_g.color.png"
       },
       {},
       {},
@@ -532,15 +528,15 @@
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/interiorlight_d.color.png",
-        "emissiveFactor": [
-          1,
-          0.999989986,
-          0.999989986
-        ],
-        "emissiveMap": "/vehicles/bug/components/body/textures/interiorlight_g.color.png",
         "metallicFactor": 1,
         "normalMap": "/vehicles/bug/components/body/textures/interiorlight_n.normal.png",
-        "roughnessFactor": 0
+        "roughnessFactor": 0.2,
+        "emissiveFactor": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "emissiveMap": "/vehicles/bug/components/body/textures/interiorlight_g.color.png"
       },
       {},
       {},
@@ -564,12 +560,12 @@
     "Stages": [
       {
         "baseColorFactor": [
-          0.190491006,
-          0.190488994,
-          0.190488994,
+          0.490491006,
+          0.490488994,
+          0.490488994,
           1
         ],
-        "roughnessFactor": 0.699999988
+        "roughnessFactor": 0.7
       },
       {},
       {},
@@ -584,28 +580,743 @@
     "persistentId": "821cbbb4-2697-4d26-9192-707ec7609179",
     "Stages": [
       {
-        "colorMap": "/vehicles/common/light_generic_g.dds",
-        "diffuseColor": [
-          1,
-          0.941648006,
-          0.708773971,
-          0.511332989
-        ],
-        "emissive": true,
-        "emissiveFactor": [
-          1,
-          1,
+        "baseColorFactor": [
+          0.490491006,
+          0.490488994,
+          0.490488994,
           1
         ],
-        "pixelSpecular": true
+        "roughnessFactor": 0.7,
+        "emissiveFactor": [
+          3.706,
+          1.972,
+          0.698
+        ]
       },
       {},
       {},
       {}
     ],
-    "alphaRef": 0,
-    "castShadows": false,
-    "subSurfacaae0": "0",
+    "version": 1.5
+  },
+
+
+
+
+  "bug_headlight": {
+    "name": "bug_headlight",
+    "mapTo": "bug_headlight",
+    "class": "material",
+    "persistentId": "ec72d416-7c0f-4c20-9839-4780e91cd9e5",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.241345197,
+          0.241345197,
+          0.241345197,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_headlight_glass": {
+    "name": "bug_headlight_glass",
+    "mapTo": "bug_headlight_glass",
+    "class": "material",
+    "persistentId": "b6c9892e-72cf-4af7-9a44-7dc8f57cb95d",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          0.800000012
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
     "translucent": true
+  },
+  "bug_interiorlight": {
+    "name": "bug_interiorlight",
+    "mapTo": "bug_interiorlight",
+    "class": "material",
+    "persistentId": "7dac1f98-4fbf-4f93-bad4-65ca24b7ea55",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.241345197,
+          0.241345197,
+          0.241345197,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_interiorlight_glass": {
+    "name": "bug_interiorlight_glass",
+    "mapTo": "bug_interiorlight_glass",
+    "class": "material",
+    "persistentId": "e00815c2-dab9-4ea6-8b73-6d2bbf094a8c",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.241345197,
+          0.241345197,
+          0.241345197,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_FL": {
+    "name": "bug_signal_FL",
+    "mapTo": "bug_signal_FL",
+    "class": "material",
+    "persistentId": "c18d8220-2048-4bf8-8f4b-140719e0ddd9",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_FR": {
+    "name": "bug_signal_FR",
+    "mapTo": "bug_signal_FR",
+    "class": "material",
+    "persistentId": "c8bc01f8-eb42-41f7-92ce-205641e1ea01",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_RL": {
+    "name": "bug_signal_RL",
+    "mapTo": "bug_signal_RL",
+    "class": "material",
+    "persistentId": "aec62134-dbf9-4faa-92f1-24c148567d4c",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_RR": {
+    "name": "bug_signal_RR",
+    "mapTo": "bug_signal_RR",
+    "class": "material",
+    "persistentId": "34986cfc-5a93-4f9a-8874-46f853c1cc25",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_glass_FL": {
+    "name": "bug_signal_glass_FL",
+    "mapTo": "bug_signal_glass_FL",
+    "class": "material",
+    "persistentId": "da4ebfe4-4571-45b7-9d76-dd6df75dba24",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_glass_FR": {
+    "name": "bug_signal_glass_FR",
+    "mapTo": "bug_signal_glass_FR",
+    "class": "material",
+    "persistentId": "77c290da-fefc-4623-89dc-5e980fa1c63a",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_glass_RL": {
+    "name": "bug_signal_glass_RL",
+    "mapTo": "bug_signal_glass_RL",
+    "class": "material",
+    "persistentId": "3f7c639b-a8a2-4c69-bc4e-6028f5f5dfa4",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_glass_RR": {
+    "name": "bug_signal_glass_RR",
+    "mapTo": "bug_signal_glass_RR",
+    "class": "material",
+    "persistentId": "27aa70da-bca3-4b76-b040-eed4165ec1fd",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_us_FL": {
+    "name": "bug_signal_us_FL",
+    "mapTo": "bug_signal_us_FL",
+    "class": "material",
+    "persistentId": "c015088a-dfbd-4aaf-94be-8a373ab36d3a",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_us_FR": {
+    "name": "bug_signal_us_FR",
+    "mapTo": "bug_signal_us_FR",
+    "class": "material",
+    "persistentId": "a516a5e3-9229-4e09-b14f-615fa501a76c",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_us_RL": {
+    "name": "bug_signal_us_RL",
+    "mapTo": "bug_signal_us_RL",
+    "class": "material",
+    "persistentId": "35b3c00f-d8cc-4911-b85b-e1f8dbfcf69f",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_us_RR": {
+    "name": "bug_signal_us_RR",
+    "mapTo": "bug_signal_us_RR",
+    "class": "material",
+    "persistentId": "8d25a763-67ff-4b6b-b6c7-af1032f525df",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_us_glass_FL": {
+    "name": "bug_signal_us_glass_FL",
+    "mapTo": "bug_signal_us_glass_FL",
+    "class": "material",
+    "persistentId": "e51ed9f5-db80-4fb8-a503-79a4f0ec24f1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_us_glass_FR": {
+    "name": "bug_signal_us_glass_FR",
+    "mapTo": "bug_signal_us_glass_FR",
+    "class": "material",
+    "persistentId": "1361027b-4ca9-430c-8768-e0aa099bb9e1",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_us_glass_RL": {
+    "name": "bug_signal_us_glass_RL",
+    "mapTo": "bug_signal_us_glass_RL",
+    "class": "material",
+    "persistentId": "92b7ace1-7048-4c11-b724-df4942944ae2",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_signal_us_glass_RR": {
+    "name": "bug_signal_us_glass_RR",
+    "mapTo": "bug_signal_us_glass_RR",
+    "class": "material",
+    "persistentId": "de937e53-3d63-4038-9c4e-7855cad11a05",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_taillight_RL": {
+    "name": "bug_taillight_RL",
+    "mapTo": "bug_taillight_RL",
+    "class": "material",
+    "persistentId": "ccf0446c-fcf9-4358-963c-ac25a665494b",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_taillight_RR": {
+    "name": "bug_taillight_RR",
+    "mapTo": "bug_taillight_RR",
+    "class": "material",
+    "persistentId": "ba4ee9c4-c342-4065-ad13-5a34ce38541c",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_taillight_us_RL": {
+    "name": "bug_taillight_us_RL",
+    "mapTo": "bug_taillight_us_RL",
+    "class": "material",
+    "persistentId": "9248efcb-17e0-4f88-b33c-434be1db3619",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_taillight_us_RR": {
+    "name": "bug_taillight_us_RR",
+    "mapTo": "bug_taillight_us_RR",
+    "class": "material",
+    "persistentId": "33f61386-f478-471d-8aed-7152d00d8ac7",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_talilight_glass_RL": {
+    "name": "bug_talilight_glass_RL",
+    "mapTo": "bug_talilight_glass_RL",
+    "class": "material",
+    "persistentId": "07d1ffa6-9345-4268-968d-5d65b4a378fb",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_talilight_glass_RR": {
+    "name": "bug_talilight_glass_RR",
+    "mapTo": "bug_talilight_glass_RR",
+    "class": "material",
+    "persistentId": "902ef44f-895a-4eab-96e4-bf402b401b4b",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_talilight_us_glass_RL": {
+    "name": "bug_talilight_us_glass_RL",
+    "mapTo": "bug_talilight_us_glass_RL",
+    "class": "material",
+    "persistentId": "de94408a-81a6-429e-91c1-b9869bcd9555",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
+  },
+  "bug_talilight_us_glass_RR": {
+    "name": "bug_talilight_us_glass_RR",
+    "mapTo": "bug_talilight_us_glass_RR",
+    "class": "material",
+    "persistentId": "7c1b288f-2933-4e90-b9dc-694295b93f09",
+    "Stages": [
+      {
+        "diffuseColor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ]
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      },
+      {
+        "diffuseColor": null
+      }
+    ],
+    "translucentBlendOp": "None"
   }
 }

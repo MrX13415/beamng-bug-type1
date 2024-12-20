@@ -16,11 +16,11 @@ local name = "window"
 
 local sfxNode = nil
 local sfxEvent = nil
-local sfxVolume = 0.28
+local sfxVolume = 0.7
 local sfx = nil
 
 -- common
-function round(num, numDecimalPlaces)
+local function round(num, numDecimalPlaces)
   local mult = 10^(numDecimalPlaces or 0)
   return math.floor(num * mult + 0.5) / mult
 end
@@ -103,6 +103,7 @@ M.init      = onInit
 M.reset     = onReset
 M.updateGFX = updateGFX
 
+-- Public Interface
 -- Console: controller.getController('windowFL').open()
 M.open = open
 M.close = close

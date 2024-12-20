@@ -382,7 +382,7 @@
         "baseColorMap": "/vehicles/bug/components/body/roof/textures/ragtop_d.color.png",
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
         "instanceDiffuse": true
       },
       {},
@@ -412,7 +412,7 @@
         "baseColorMap": "/vehicles/bug/components/body/roof/textures/ragtop_d.color.png",
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p1.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskG.dds",
         "instanceDiffuse": true
       },
       {},
@@ -442,7 +442,7 @@
         "baseColorMap": "/vehicles/bug/components/body/roof/textures/ragtop_d.color.png",
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png",
-        "colorPaletteMap": "/vehicles/bug/components/common/textures/default_p2.color.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
         "instanceDiffuse": true
       },
       {},
@@ -504,9 +504,9 @@
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_fl_d.color.dds",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_fl_d.color.dds",
         "diffuseMapUseUV": 1,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_fl_o.data.dds",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_fl_o.data.dds",
         "opacityMapUseUV": 1,
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
@@ -540,9 +540,9 @@
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_gb-rusty_d.color.png",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_d.color.png",
         "diffuseMapUseUV": 1,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_gb-rusty_ragtop_o.data.png",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_ragtop_o.data.png",
         "opacityMapUseUV": 1,
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
@@ -576,9 +576,9 @@
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_gb-rusty-taxi_d.color.png",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty-taxi_d.color.png",
         "diffuseMapUseUV": 1,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_gb-rusty_ragtop_o.data.png",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_ragtop_o.data.png",
         "opacityMapUseUV": 1,
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
@@ -612,9 +612,9 @@
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_ra-mc-gb_d.color.dds",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_ra-mc-gb_d.color.dds",
         "diffuseMapUseUV": 1,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_ra-mc-gb_o.data.dds",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_ra-mc-gb_o.data.dds",
         "opacityMapUseUV": 1,
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
@@ -648,9 +648,9 @@
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_tlb_d.color.dds",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb_d.color.dds",
         "diffuseMapUseUV": 1,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_tlb_o.data.dds",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb_o.data.dds",
         "opacityMapUseUV": 1,
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
@@ -684,9 +684,9 @@
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_tlb97_d.color.dds",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb97_d.color.dds",
         "diffuseMapUseUV": 1,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_tlb97_o.data.dds",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb97_o.data.dds",
         "opacityMapUseUV": 1,
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"

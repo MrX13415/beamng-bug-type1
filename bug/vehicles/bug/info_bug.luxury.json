@@ -1,41 +1,42 @@
 {
-  "0-100 km/h":12.6,
-  "0-100 mph":38.5,
-  "0-60 mph":11.9,
-  "100-0 km/h":43.7,
-  "60-0 mph":134.7,
-  "60-100 mph":26.5,
+  "0-100 km/h":11.7,
+  "0-100 mph":35.9,
+  "0-60 mph":11.1,
+  "100-0 km/h":38.2,
+  "60-0 mph":116.5,
+  "60-100 mph":24.8,
   "BoundingBox":[
     [
-      -0.783,
+      -0.703,
       -1.77119,
-      -0.242979
+      -0.267979
     ],
     [
-      0.783,
+      0.863,
       2.29767,
-      1.28392
+      1.25892
     ]
   ],
-  "Braking G":0.9,
+  "Braking G":1.03,
   "Config Type":"Factory",
   "Configuration":"Luxury Coupé (M)",
   "Description":"European luxury model with 1600cc engine and ragtop roof",
-  "drivetrain":"RWD",
+  "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
-  "Off-Road Score":33,
+  "Off-Road Score":34,
   "Performance Class":"2",
-  "Power":77,
+  "Population":50,
+  "Power":79,
   "PowerPeakRPM":"4750 - 5350",
   "Propulsion":"ICE",
-  "Top Speed":48.2631632,
-  "Torque":125,
-  "TorquePeakRPM":"2550 - 3700",
+  "Top Speed":48.27902603,
+  "Torque":130,
+  "TorquePeakRPM":"2550 - 3750",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1045,
-  "Weight/Power":13.57142857,
+  "Weight":1000,
+  "Weight/Power":12.65822785,
   "default_color":"Pearl White",
   "default_color_3":"Cream White"
 }

@@ -1,15 +1,15 @@
 {
   "bindings":[
-    {"control": "numpaddivide", "action": "radio"},
-    {"control": "alt numpaddivide", "action": "radioinfo"},
+    {"control": "numpaddivide", "action": "radio_Toggle"},
+    {"control": "alt numpaddivide", "action": "radio_Info"},
     
-    {"control": "acute", "action": "radiovolumeup"},
-    {"control": "minus", "action": "radiovolumedown"},
+    {"control": "acute", "action": "radio_VolumeUp"},
+    {"control": "minus", "action": "radio_VolumeDown"},
 
-    {"control": "numpadmult", "action": "radiotuneprev"},
-    {"control": "numpadminus", "action": "radiotunenext"},
-    {"control": "alt numpadmult", "action": "radiotrackprev"},
-    {"control": "alt numpadminus", "action": "radiotracknext"},
+    {"control": "numpadmult", "action": "radio_TuneRev"},
+    {"control": "numpadminus", "action": "radio_TuneNext"},
+    {"control": "alt numpadmult", "action": "radio_TrackPrev"},
+    {"control": "alt numpadminus", "action": "radio_TrackNext"},
 
     //{"control": "", "action": "radiotunedown"},
     //{"control": "", "action": "radiotuneup"},

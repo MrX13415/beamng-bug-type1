@@ -1,41 +1,40 @@
 {
-  "0-100 km/h":14.2,
-  "0-100 mph":78.5,
-  "0-60 mph":13.2,
-  "100-0 km/h":45.1,
-  "60-0 mph":136.5,
-  "60-100 mph":65.3,
+  "0-100 km/h":13.7,
+  "0-60 mph":12.4,
+  "100-0 km/h":39.5,
+  "60-0 mph":120.7,
   "BoundingBox":[
     [
-      -0.783,
+      -0.703,
       -1.77119,
-      -0.242979
+      -0.267979
     ],
     [
-      0.783,
+      0.863,
       2.29767,
-      1.28392
+      1.25892
     ]
   ],
-  "Braking G":0.872,
+  "Braking G":0.996,
   "Config Type":"Factory",
   "Configuration":"1600 EU Ragtop (M)",
   "Description":"European premium model with 1600cc engine and ragtop roof",
-  "drivetrain":"RWD",
+  "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Off-Road Score":28,
   "Performance Class":"2",
-  "Power":60,
-  "PowerPeakRPM":"3650 - 4300",
+  "Population":0,
+  "Power":61,
+  "PowerPeakRPM":"3700 - 4350",
   "Propulsion":"ICE",
-  "Top Speed":44.64332992,
+  "Top Speed":42.56720352,
   "Torque":130,
   "TorquePeakRPM":"2100 - 3150",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1045,
-  "Weight/Power":17.41666667,
+  "Weight":1005,
+  "Weight/Power":16.47540984,
   "defaultPaintName1":"Garnet Red",
   "defaultPaintName3":"Garnet Red"
 }
