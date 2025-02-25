@@ -132,14 +132,32 @@
     "persistentId": "95cfedc2-ca89-40e0-b6e1-42d9bf1fff26",
     "Stages": [
       {
-        "baseColorMap": "/vehicles/bug/components/common/textures/frame_d.color.png",
-        "clearCoatFactor": 1,
-        "clearCoatRoughnessFactor": 0.150000006,
-        "metallicFactor": 0.400000006,
+        "baseColorFactor": [
+          0.0917709991,
+          0.0917700008,
+          0.0917700008,
+          1
+        ],
+        "clearCoatFactor": 0.4,
+        "clearCoatRoughnessFactor": 0.08,
+        "metallicFactor": 0.2,
+        "normalMapStrength": 0.5,
         "normalMap": "/vehicles/bug/components/common/textures/frame_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/common/textures/frame_r.data.png"
       },
-      {},
+      {
+        "baseColorFactor": [
+          0.249678999,
+          0.241099,
+          0.241099,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/dirty_d.color.dds",
+        "normalMap": "/vehicles/bug/components/common/textures/dirty_n.normal.dds",
+        "opacityFactor": 0.392,
+        "opacityMap": "/vehicles/bug/components/common/textures/dirty_o.data.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/dirty_r.data.dds"
+      },
       {},
       {}
     ],

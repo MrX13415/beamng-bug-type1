@@ -41,8 +41,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["transaxle", ["transaxle"]],
-        ["transaxle_starter_motor", ["transaxle"]],
+        ["bug_transaxle", ["transaxle"]],
+        ["bug_transaxle_starter_motor", ["transaxle"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -143,13 +143,13 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["transaxle", ["transaxle"]],
-        ["transaxle_starter_motor", ["transaxle"]],
+        ["bug_transaxle", ["transaxle"]],
+        ["bug_transaxle_starter_motor", ["transaxle"]],
     ],
     "props": [
         ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         //pedal
-        ["clutch",       "inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["clutch",       "bug_inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -250,13 +250,13 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["transaxle", ["transaxle"]],
-        ["transaxle_starter_motor", ["transaxle"]],
+        ["bug_transaxle", ["transaxle"]],
+        ["bug_transaxle_starter_motor", ["transaxle"]],
     ],
     "props": [
         ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         //pedal
-        ["clutch",       "inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["clutch",       "bug_inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -357,13 +357,13 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["transaxle", ["transaxle"]],
-        ["transaxle_starter_motor", ["transaxle"]],
+        ["bug_transaxle", ["transaxle"]],
+        ["bug_transaxle_starter_motor", ["transaxle"]],
     ],
     "props": [
         ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         //pedal
-        ["clutch",       "inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["clutch",       "bug_inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -476,13 +476,13 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["transaxle", ["transaxle"]],
-        ["transaxle_starter_motor", ["transaxle"]],
+        ["bug_transaxle", ["transaxle"]],
+        ["bug_transaxle_starter_motor", ["transaxle"]],
     ],
     "props": [
         ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         //pedal
-        ["clutch",       "inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["clutch",       "bug_inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -555,8 +555,8 @@
     "slotType" : "bug_halfshafts_R",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["axle_R_halfshaft_L", ["transaxle","wheelhub_RL"]],
-         ["axle_R_halfshaft_R", ["transaxle","wheelhub_RR"]],
+         ["bug_axle_R_halfshaft_L", ["transaxle","wheelhub_RL"]],
+         ["bug_axle_R_halfshaft_R", ["transaxle","wheelhub_RR"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

@@ -1,6 +1,0 @@
-{"name":"VW1200","class":"SimGroup","persistentId":"87e7bb63-77d4-46db-a044-64bc967d4239","__parent":"Vehicles"}
-{"name":"VW1300","class":"SimGroup","persistentId":"c9d65da7-b99f-4a25-aaf9-a9de69e4b795","__parent":"Vehicles"}
-{"name":"VW1600","class":"SimGroup","persistentId":"6ae087ee-0c8a-49bb-a8e9-c5028c1161d3","__parent":"Vehicles"}
-{"name":"VW1800","class":"SimGroup","persistentId":"f394eb58-cdde-461a-9a0e-3052df80763d","__parent":"Vehicles"}
-{"name":"Special","class":"SimGroup","persistentId":"f73ee80c-5b50-4d5a-93dc-24a7d8917266","__parent":"Vehicles"}
-{"name":"Herbie","class":"SimGroup","persistentId":"12ff3727-36ca-4e4f-aa70-c335af684fb9","__parent":"Vehicles"}

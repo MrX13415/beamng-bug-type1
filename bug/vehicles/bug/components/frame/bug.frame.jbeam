@@ -30,6 +30,7 @@
 
 		// misc
 		["bug_towhitch","", "Tow Hitch",{"nodeOffset":{"x":0.0, "y":-0.56, "z":-0.22}}],
+        ["bug_indicators_style", "bug_indicators_style_us", "Indicators", {"coreSlot":true}],
     ],
     "refNodes":[
         ["ref:", "back:", "left:", "up:", "leftCorner:", "rightCorner:"],
@@ -64,18 +65,18 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         // frame
-        ["frame",       ["bug_frame"]],		
+        ["bug_frame",       ["bug_frame"]],		
 		
-		["steering_tube",     ["bug_steeringcolumn", "bug_steeringbox"]],
-		["front_tanks",       ["fueltank"]],
-		["break_lines_front", ["bug_frameF"]],
-		["break_lines",       ["bug_frameR"]],
-		["break_lines_rear",  ["bug_frameR"]],
+		["bug_steering_tube",     ["bug_steeringcolumn", "bug_steeringbox"]],
+		["bug_front_tanks",       ["fueltank"]],
+		["bug_break_lines_front", ["bug_frameF"]],
+		["bug_break_lines",       ["bug_frameR"]],
+		["bug_break_lines_rear",  ["bug_frameR"]],
     ],
 	"props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steering_column_mount", "steer2","steer3","steer1", {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "bug_steering_column_mount", "steer2","steer3","steer1", {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
     ],
 	//--Nodes--
 	"nodes": [
@@ -392,10 +393,10 @@
 		//["fs1r", "bs1l"],
 		//["fs1r", "bs1r"],
 		{"breakGroup": "suspension_F"},
-	    ["fs1l", "f2l"],
+	    //["fs1l", "f2l"],
 	    ["fs1l", "f2r"],
 	    ["fs1r", "f2l"],
-	    ["fs1r", "f2r"],
+	    //["fs1r", "f2r"],
 		{"breakGroup": "suspension_R"},
 		["bs1l", "f2l"],
 		["bs1l", "f2r"],

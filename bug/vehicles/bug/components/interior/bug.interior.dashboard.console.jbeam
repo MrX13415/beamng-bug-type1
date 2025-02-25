@@ -30,7 +30,7 @@
     ],
     "controller": [
         ["fileName"],
-        ["radio"]
+        ["bug/radio", {"name": "radio"}]
     ],
     "radio": {
         "state": "$state",
@@ -104,28 +104,28 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 	
-         //old: ["radio", ["bug_dashboard"]],
-         //     ["radio_buttons",      ["bug_dashboard"]],
-         //     ["radio_knobs",        ["bug_dashboard"]],
-         ["radio_frame",        ["bug_dashboard"]],
-         ["radio_knobs_socket", ["bug_dashboard"]],
-         ["radio_scale",        ["bug_dashboard"]],
+         //old: ["bug_radio", ["bug_dashboard"]],
+         //     ["bug_radio_buttons",      ["bug_dashboard"]],
+         //     ["bug_radio_knobs",        ["bug_dashboard"]],
+         ["bug_radio_frame",        ["bug_dashboard"]],
+         ["bug_radio_knobs_socket", ["bug_dashboard"]],
+         ["bug_radio_scale",        ["bug_dashboard"]],
 
-         ["radio_speaker",      ["bug_dashboard"]],
+         ["bug_radio_speaker",      ["bug_dashboard"]],
     ],
     "props": [
         ["func",           "mesh",               "idRef:", "idX:", "idY:", "baseRotation",          "rotation",             "translation",          "min", "max", "offset", "multiplier"],
 
-        ["radio_needle",   "radio_needle",       "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":-0.163, "y":0, "z":0}, 0, 1, -0.515, 1],
+        ["radio_needle",   "bug_radio_needle",       "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":-0.163, "y":0, "z":0}, 0, 1, -0.515, 1],
      
-        ["radio_buttons1", "radio_buttons.1",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
-        ["radio_buttons2", "radio_buttons.2",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
-        ["radio_buttons3", "radio_buttons.3",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
-        ["radio_buttons4", "radio_buttons.4",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
-        ["radio_buttons5", "radio_buttons.5",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons1", "bug_radio_buttons.1",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons2", "bug_radio_buttons.2",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons3", "bug_radio_buttons.3",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons4", "bug_radio_buttons.4",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
+        ["radio_buttons5", "bug_radio_buttons.5",    "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":0},  {"x":0, "y":0, "z":-0.01}, -1, 1, 0, 1],
 
-        ["radio_needle",   "radio_knobs_tune",   "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 1440, 0, 1440],
-        ["radio_volume",   "radio_knobs_volume", "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 90, 300],
+        ["radio_needle",   "bug_radio_knobs_tune",   "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 1440, 0, 1440],
+        ["radio_volume",   "bug_radio_knobs_volume", "dsh","dshl","bd1",       {"x":0, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 90, 300],
     ]
 },
 
@@ -140,7 +140,7 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 
-         ["console_cover", ["bug_dashboard"]],
+         ["bug_console_cover", ["bug_dashboard"]],
     ],
 },
 "bug_console_tray": {
@@ -158,7 +158,7 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 
-         ["console_tray", ["bug_dashboard"]],
+         ["bug_console_tray", ["bug_dashboard"]],
     ],
 },
 
@@ -252,7 +252,7 @@
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["dashboard_glovebox_case", ["bug_glovebox", "bug_body", "bug_dashboard"]],
+         ["bug_dashboard_glovebox_case", ["bug_glovebox", "bug_body", "bug_dashboard"]],
     ],
     "nodes": [
         {"selfCollision":true},
@@ -376,7 +376,7 @@
     },
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["dashboard_glovebox_hatch", ["bug_glovebox_door"]],
+         ["bug_dashboard_glovebox_hatch", ["bug_glovebox_door"]],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -511,23 +511,23 @@
     "slotType" : "bug_console_clock",
     "controller": [
         ["fileName"],
-        ["clock"]
+        ["bug/clock", {"name": "clock"}]
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 
-         ["clock", ["bug_body", "bug_dashboard"]],
+         ["bug_clock", ["bug_body", "bug_dashboard"]],
          {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
-         ["clock_glass", ["bug_dashboard"]],
+         ["bug_clock_glass", ["bug_dashboard"]],
          {"deformGroup":""},
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
         //clock
-        ["clockh",    "needle_clock_h",    "dsh","dshl","bd1",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
-        ["clockmin",  "needle_clock_min",  "dsh","dshl","bd1",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
-        ["clocksec",  "needle_clock_sec",  "dsh","dshl","bd1",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
+        ["clockh",    "bug_needle_clock_h",    "dsh","dshl","bd1",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
+        ["clockmin",  "bug_needle_clock_min",  "dsh","dshl","bd1",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
+        ["clocksec",  "bug_needle_clock_sec",  "dsh","dshl","bd1",  {"x":4.14, "y":0, "z":0},  {"x":0, "y":-1, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, -360, 1],
     ],
 },
 "bug_hazard_knob": {
@@ -556,7 +556,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["controls_dashboard_hazard",  ["bug_body", "bug_dashboard"]],
+        ["bug_controls_dashboard_hazard",  ["bug_body", "bug_dashboard"]],
     ],
     "glowMap":{
         "bug_dash_hazard_knob_light":    {"simpleFunction":"power__hazard",     "off":"bug_dash_hazard_knob_light",   "on":"bug_dash_hazard_knob_light_on",  "on_intense":"bug_dash_hazard_knob_light_on", "materialEmissiveScaling":{"on_max":0.49}},
@@ -564,7 +564,7 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["hazard_enabled", "controls_dashboard_hazard_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
+        ["hazard_enabled", "bug_controls_dashboard_hazard_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
     ],
 },
 

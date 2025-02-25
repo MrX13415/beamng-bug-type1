@@ -21,12 +21,12 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["headlight_L_frame",  ["bug_headlight_L"]],
+        ["bug_headlight_L_frame",  ["bug_headlight_L"]],
         {"deformGroup":"headlightglass_L_break", "deformMaterialBase":"bug_headlight_glass", "deformMaterialDamaged":"bug_lights_glass_dmg"},
         {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.2},
-        ["headlight_L_glass", ["bug_headlight_L"]],
+        ["bug_headlight_L_glass", ["bug_headlight_L"]],
         {"deformMaterialBase":"bug_headlight", "deformMaterialDamaged":"bug_lights"},
-        ["headlight_L_socket", ["bug_headlight_L"]],
+        ["bug_headlight_L_socket", ["bug_headlight_L"]],
         {"deformGroup":""},
     ],
     "glowMap":{
@@ -148,12 +148,12 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["headlight_R_frame",  ["bug_headlight_R"]],
+        ["bug_headlight_R_frame",  ["bug_headlight_R"]],
         {"deformGroup":"headlightglass_R_break", "deformMaterialBase":"bug_headlight_glass", "deformMaterialDamaged":"bug_lights_glass_dmg"},
         {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.2},
-        ["headlight_R_glass", ["bug_headlight_R"]],
+        ["bug_headlight_R_glass", ["bug_headlight_R"]],
         {"deformMaterialBase":"bug_headlight", "deformMaterialDamaged":"bug_lights"},
-        ["headlight_R_socket", ["bug_headlight_R"]],
+        ["bug_headlight_R_socket", ["bug_headlight_R"]],
         {"deformGroup":""},
     ],
     "glowMap":{
@@ -267,7 +267,7 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 
-         ["headlight_L_tape", ["bug_headlight_L"]],
+         ["bug_headlight_L_tape", ["bug_headlight_L"]],
     ],
 },
 "bug_headlight_tlb_tape_R": {
@@ -280,7 +280,7 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 
-         ["headlight_R_tape", ["bug_headlight_R"]],
+         ["bug_headlight_R_tape", ["bug_headlight_R"]],
     ],
 },
 "bug_headlight_lid_L": {
@@ -293,7 +293,7 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 
-         ["headlight_L_lid", ["bug_headlight_L"]],
+         ["bug_headlight_L_lid", ["bug_headlight_L"]],
     ],
 },
 "bug_headlight_lid_R": {
@@ -306,7 +306,7 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 
-         ["headlight_R_lid", ["bug_headlight_R"]],
+         ["bug_headlight_R_lid", ["bug_headlight_R"]],
     ],
 },
 
@@ -326,16 +326,16 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["signal_FR_frame", ["bug_fender_FR"]],
+        ["bug_signal_FR_frame", ["bug_fender_FR"]],
         {"deformGroup":"indicator_FR_break", "deformMaterialBase":"bug_signal_glass_FR", "deformMaterialDamaged":"bug_lights_glass_dmg"},
         {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.2},
-        ["signal_FR_case", ["bug_fender_FR"]],
-        ["signal_FR_glass", ["bug_fender_FR"]],
+        ["bug_signal_FR_case", ["bug_fender_FR"]],
+        ["bug_signal_FR_glass", ["bug_fender_FR"]],
         {"deformGroup":""}
     ],
     "glowMap":{
-        "bug_signal_FR":       {"simpleFunction":{"power__signal_R":0.49},  "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_signal_glass_FR": {"simpleFunction":{"power__signal_R":0.49},  "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_FR":       {"simpleFunction":{"power__signal_FR":0.49},  "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_glass_FR": {"simpleFunction":{"power__signal_FR":0.49},  "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -355,7 +355,7 @@
         "flareScale":0.1,
         "shadowSoftness":0.5,
         },
-        ["power__signal_R" ,   "SPOTLIGHT"   , "feFR4l", "feFR4m", "feFR5l", {"x":-90, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":0.05},"deformGroup":"indicator_FR_break", "lightScaling":{}}],
+        ["power__signal_FR" ,   "SPOTLIGHT"   , "feFR4l", "feFR4m", "feFR5l", {"x":-90, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":0.05},"deformGroup":"indicator_FR_break", "lightScaling":{}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -396,16 +396,16 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["signal_FL_frame", ["bug_fender_FL"]],
+        ["bug_signal_FL_frame", ["bug_fender_FL"]],
         {"deformGroup":"indicator_FL_break", "deformMaterialBase":"bug_signal_glass_FL", "deformMaterialDamaged":"bug_lights_glass_dmg"},
         {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.2},
-        ["signal_FL_case", ["bug_fender_FL"]],
-        ["signal_FL_glass", ["bug_fender_FL"]],
+        ["bug_signal_FL_case", ["bug_fender_FL"]],
+        ["bug_signal_FL_glass", ["bug_fender_FL"]],
         {"deformGroup":""},
     ],
     "glowMap":{
-        "bug_signal_FL":       {"simpleFunction":{"power__signal_L":0.49},  "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_signal_glass_FL": {"simpleFunction":{"power__signal_L":0.49},  "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_FL":       {"simpleFunction":{"power__signal_FL":0.49},  "off":"bug_lights", "on":"bug_lights_on", "on_intense":"bug_lights_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_glass_FL": {"simpleFunction":{"power__signal_FL":0.49},  "off":"bug_lights_glass", "on":"bug_lights_glass_on", "on_intense":"bug_lights_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -425,7 +425,7 @@
         "flareScale":0.1,
         "shadowSoftness":0.5,
         },
-        ["power__signal_L" ,   "SPOTLIGHT"   , "feFL4r", "feFL4m", "feFL5r", {"x":-90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":-0.05},"deformGroup":"indicator_FL_break", "lightScaling":{}}],
+        ["power__signal_FL" ,   "SPOTLIGHT"   , "feFL4r", "feFL4m", "feFL5r", {"x":-90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":-0.05},"deformGroup":"indicator_FL_break", "lightScaling":{}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -467,16 +467,16 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["signal_FR_frame", ["bug_fender_FR"]],
+        ["bug_signal_FR_frame", ["bug_fender_FR"]],
         {"deformGroup":"indicator_FR_break", "deformMaterialBase":"bug_signal_us_glass_FR", "deformMaterialDamaged":"bug_lights_us_glass_dmg"},
         {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.2},
-        ["signal_us_FR_case", ["bug_fender_FR"]],
-        ["signal_us_FR_glass", ["bug_fender_FR"]],
+        ["bug_signal_us_FR_case", ["bug_fender_FR"]],
+        ["bug_signal_us_FR_glass", ["bug_fender_FR"]],
         {"deformGroup":""}
     ],
     "glowMap":{
-        "bug_signal_us_FR":       {"simpleFunction":{"power__signal_R":0.49},  "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_signal_us_glass_FR": {"simpleFunction":{"power__signal_R":0.49},  "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_us_FR":       {"simpleFunction":{"power__signal_FR":0.49},  "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_us_glass_FR": {"simpleFunction":{"power__signal_FR":0.49},  "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -496,7 +496,7 @@
         "flareScale":0.1,
         "shadowSoftness":0.5,
         },
-        ["power__signal_R" ,   "SPOTLIGHT"   , "feFR4l", "feFR4m", "feFR5l", {"x":-90, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":0.05},"deformGroup":"indicator_FR_break", "lightScaling":{}}],
+        ["power__signal_FR" ,   "SPOTLIGHT"   , "feFR4l", "feFR4m", "feFR5l", {"x":-90, "y":0, "z":180} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":0.05},"deformGroup":"indicator_FR_break", "lightScaling":{}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -537,16 +537,16 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["signal_FL_frame", ["bug_fender_FL"]],
+        ["bug_signal_FL_frame", ["bug_fender_FL"]],
         {"deformGroup":"indicator_FL_break", "deformMaterialBase":"bug_signal_us_glass_FL", "deformMaterialDamaged":"bug_lights_us_glass_dmg"},
         {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.2},
-        ["signal_us_FL_case", ["bug_fender_FL"]],
-        ["signal_us_FL_glass", ["bug_fender_FL"]],
+        ["bug_signal_us_FL_case", ["bug_fender_FL"]],
+        ["bug_signal_us_FL_glass", ["bug_fender_FL"]],
         {"deformGroup":""},
     ],
     "glowMap":{
-        "bug_signal_us_FL":       {"simpleFunction":{"power__signal_L":0.49},  "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_signal_us_glass_FL": {"simpleFunction":{"power__signal_L":0.49},  "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_us_FL":       {"simpleFunction":{"power__signal_FL":0.49},  "off":"bug_lights_us", "on":"bug_lights_us_on", "on_intense":"bug_lights_us_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_signal_us_glass_FL": {"simpleFunction":{"power__signal_FL":0.49},  "off":"bug_lights_us_glass", "on":"bug_lights_us_glass_on", "on_intense":"bug_lights_us_glass_on_intense", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -566,7 +566,7 @@
         "flareScale":0.1,
         "shadowSoftness":0.5,
         },
-        ["power__signal_L" ,   "SPOTLIGHT"   , "feFL4r", "feFL4m", "feFL5r", {"x":-90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":-0.05},"deformGroup":"indicator_FL_break", "lightScaling":{}}],
+        ["power__signal_FL" ,   "SPOTLIGHT"   , "feFL4r", "feFL4m", "feFL5r", {"x":-90, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.35, "y":0.05, "z":-0.05},"deformGroup":"indicator_FL_break", "lightScaling":{}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -594,6 +594,61 @@
     ],
 },
 
+// indicator style
+"bug_indicators_style_us": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"USDM Indicators",
+        "value":45,
+    },
+    "slotType": "bug_indicators_style",
+    "components": {
+        "electrics": {
+            "customValues": [
+                ["electricsName", "electricsFunction"],
+
+                ["power__signal_FL", "electrics.power__usdm_signal_L"],
+                ["power__signal_FR", "electrics.power__usdm_signal_R"],
+            ],
+            "smoothers": [
+                // smoothers: exponential, temporal, temporalNonLinear
+
+                ["electricsName", "smootherType", "params"],
+                
+                ["power__signal_FL","temporalNonLinear", [15,15]],
+                ["power__signal_FR","temporalNonLinear", [15,15]],
+            ]
+        }
+    }
+},
+"bug_indicators_style_eu": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Standard Indicators",
+        "value":30,
+    },
+    "slotType": "bug_indicators_style",
+    "components": {
+        "electrics": {
+            "customValues": [
+                ["electricsName", "electricsFunction"],
+
+                ["power__signal_FL", "electrics.power__signal_L"],
+                ["power__signal_FR", "electrics.power__signal_R"],
+            ],
+            "smoothers": [
+                // smoothers: exponential, temporal, temporalNonLinear
+
+                ["electricsName", "smootherType", "params"],
+                
+                ["power__signal_FL","temporalNonLinear", [15,15]],
+                ["power__signal_FR","temporalNonLinear", [15,15]],
+            ]
+        }
+    }
+},
+
+
 // taillights
 "bug_taillight_R": {
     "information":{
@@ -614,8 +669,8 @@
         
         {"deformGroup":"taillight_R_break", "deformMaterialBase":"bug_talilight_glass_RR", "deformMaterialDamaged":"bug_lights_glass_dmg"},
         {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.2},
-        ["taillight_R_case", ["bug_fender_RR"]],
-        ["taillight_R_glass", ["bug_fender_RR"]],
+        ["bug_taillight_R_case", ["bug_fender_RR"]],
+        ["bug_taillight_R_glass", ["bug_fender_RR"]],
         {"deformGroup":""},
     ],
     "glowMap":{
@@ -766,8 +821,8 @@
 
         {"deformGroup":"taillight_L_break", "deformMaterialBase":"bug_talilight_glass_RL", "deformMaterialDamaged":"bug_lights_glass_dmg"},
         {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.2},
-        ["taillight_L_case", ["bug_fender_RL"]],
-        ["taillight_L_glass", ["bug_fender_RL"]],
+        ["bug_taillight_L_case", ["bug_fender_RL"]],
+        ["bug_taillight_L_glass", ["bug_fender_RL"]],
         {"deformGroup":""},
     ],
     "glowMap":{
@@ -918,8 +973,8 @@
 
         {"deformGroup":"taillight_R_break", "deformMaterialBase":"bug_talilight_us_glass_RR", "deformMaterialDamaged":"bug_lights_us_glass_dmg"},
         {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.2},
-        ["taillight_us_R_case", ["bug_fender_RR"]],
-        ["taillight_us_R_glass", ["bug_fender_RR"]],
+        ["bug_taillight_us_R_case", ["bug_fender_RR"]],
+        ["bug_taillight_us_R_glass", ["bug_fender_RR"]],
         {"deformGroup":""},
     ],
     "glowMap":{
@@ -1073,8 +1128,8 @@
 
         {"deformGroup":"taillight_L_break", "deformMaterialBase":"bug_talilight_us_glass_RL", "deformMaterialDamaged":"bug_lights_us_glass_dmg"},
         {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound1", "deformVolume":0.2},
-        ["taillight_us_L_case", ["bug_fender_RL"]],
-        ["taillight_us_L_glass", ["bug_fender_RL"]],
+        ["bug_taillight_us_L_case", ["bug_fender_RL"]],
+        ["bug_taillight_us_L_glass", ["bug_fender_RL"]],
         {"deformGroup":""},
     ],
     "glowMap":{

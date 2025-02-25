@@ -31,8 +31,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		
-        ["fender_FL_grille_cover", ["bug_fender_FL"]],
-		["fender_FR_grille_cover", ["bug_fender_FR"]],
+        ["bug_fender_FL_grille_cover", ["bug_fender_FL"]],
+		["bug_fender_FR_grille_cover", ["bug_fender_FR"]],
     ],
 },
 "bug_fender_grille": {
@@ -45,8 +45,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		
-        ["fender_FL_grille", ["bug_fender_FL"]],
-		["fender_FR_grille", ["bug_fender_FR"]],
+        ["bug_fender_FL_grille", ["bug_fender_FL"]],
+		["bug_fender_FR_grille", ["bug_fender_FR"]],
     ],
 },
 "bug_fender_gravel_guards": {
@@ -59,10 +59,10 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		
-        ["fender_FL_gravel_guards", ["bug_fender_FL"]],
-        ["fender_FR_gravel_guards", ["bug_fender_FR"]],
-        ["fender_RL_gravel_guards", ["bug_fender_RL"]],
-        ["fender_RR_gravel_guards", ["bug_fender_RR"]],
+        ["bug_fender_FL_gravel_guards", ["bug_fender_FL"]],
+        ["bug_fender_FR_gravel_guards", ["bug_fender_FR"]],
+        ["bug_fender_RL_gravel_guards", ["bug_fender_RL"]],
+        ["bug_fender_RR_gravel_guards", ["bug_fender_RR"]],
     ],
 },
 "bug_fender_mud_flaps": {
@@ -75,8 +75,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		
-        ["fender_RL_mudflap", ["bug_fender_RL_mudflap"]],
-        ["fender_RR_mudflap", ["bug_fender_RR_mudflap"]],
+        ["bug_fender_RL_mudflap", ["bug_fender_RL_mudflap"]],
+        ["bug_fender_RR_mudflap", ["bug_fender_RR_mudflap"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -201,8 +201,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		
-        ["fender_RL_mudflap", ["bug_fender_RL_mudflap"], [], {"materialOverride":[["bug_mudflap","bug_mudflap_white"]]}],
-        ["fender_RR_mudflap", ["bug_fender_RR_mudflap"], [], {"materialOverride":[["bug_mudflap","bug_mudflap_white"]]}],
+        ["bug_fender_RL_mudflap", ["bug_fender_RL_mudflap"], [], {"materialOverride":[["bug_mudflap","bug_mudflap_white"]]}],
+        ["bug_fender_RR_mudflap", ["bug_fender_RR_mudflap"], [], {"materialOverride":[["bug_mudflap","bug_mudflap_white"]]}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -322,8 +322,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["fender_FR", ["bug_fender_FR"]],
-        ["headlight_R_case",  ["bug_fender_FR"]],
+        ["bug_fender_FR", ["bug_fender_FR"]],
+        ["bug_headlight_R_case",  ["bug_fender_FR"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -547,8 +547,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["fender_FL", ["bug_fender_FL"]],
-        ["headlight_L_case",  ["bug_fender_FL"]],
+        ["bug_fender_FL", ["bug_fender_FL"]],
+        ["bug_headlight_L_case",  ["bug_fender_FL"]],
     ],
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"]
@@ -775,7 +775,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-		    ["fender_RL", ["bug_fender_RL"]],
+		    ["bug_fender_RL", ["bug_fender_RL"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -1011,7 +1011,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 		
-        ["fender_RR", ["bug_fender_RR"]],
+        ["bug_fender_RR", ["bug_fender_RR"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

@@ -6,8 +6,8 @@
 -- by MrX13415
 
 local M = {}
-M.version = "22"
-M.versionDate = "2024-12-20"
+M.version = "23"
+M.versionDate = "2025-02-18"
 
 local updateTimer = 2   -- Make sure the first call is immediately
 local openingUpdateTimer = 2   -- Make sure the first call is immediately
@@ -321,6 +321,9 @@ local function onInit(jbeamData)
   electrics.values.ashtray = 0
   electrics.values.ashtraystate = 0
   electrics.values.wipersstate = 0
+
+  electrics.values.usdm_signal_L = 0
+  electrics.values.usdm_signal_R = 0
 
   hazardEnabled = electrics.values.hazard_enabled
 

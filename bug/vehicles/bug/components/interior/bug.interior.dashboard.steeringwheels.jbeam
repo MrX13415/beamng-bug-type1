@@ -26,7 +26,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_white2": {
@@ -40,7 +40,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_black": {
@@ -54,7 +54,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_paint1": {
@@ -68,7 +68,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_paint2": {
@@ -82,7 +82,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_paint3": {
@@ -96,7 +96,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_wood": {
@@ -110,7 +110,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 "bug_steer_old": {
@@ -124,7 +124,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
     ],
 },
 
@@ -144,7 +144,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-		["steering_tube_adaptor",     ["bug_steeringcolumn", "bug_steeringbox"]],
+		["bug_steering_tube_adaptor",     ["bug_steeringcolumn", "bug_steeringbox"]],
     ]
 },
 //---

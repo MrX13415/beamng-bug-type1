@@ -10,7 +10,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["deco1_tree",   ["bug_deco1_tree"]],
+        ["bug_deco1_tree",   ["bug_deco1_tree"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -81,7 +81,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["deco1_dice",   ["bug_deco1_dice"]],
+        ["bug_deco1_dice",   ["bug_deco1_dice"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -152,8 +152,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["deco1_diceL",   ["bug_deco1_diceL"]],
-        ["deco1_diceR",   ["bug_deco1_diceR"]],
+        ["bug_deco1_diceL",   ["bug_deco1_diceL"]],
+        ["bug_deco1_diceR",   ["bug_deco1_diceR"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -245,7 +245,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["interior_panels_FL_bag", ["bug_door_FL"]],
+        ["bug_interior_panels_FL_bag", ["bug_door_FL"]],
     ],
 },
 "bug_doorpocket_FL_maps": {
@@ -258,7 +258,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["interior_panels_FL_bag_maps", ["bug_door_FL"]],
+        ["bug_interior_panels_FL_bag_maps", ["bug_door_FL"]],
     ],
 },
 "bug_doorpocket_FL_bottle": {
@@ -271,7 +271,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["interior_panels_FL_bag_bottle", ["bug_door_FL"]],
+        ["bug_interior_panels_FL_bag_bottle", ["bug_door_FL"]],
     ],
 },
 
@@ -285,7 +285,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["interior_panels_FR_bag", ["bug_door_FR"]],
+        ["bug_interior_panels_FR_bag", ["bug_door_FR"]],
     ],
 },
 "bug_doorpocket_FR_maps": {
@@ -298,7 +298,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["interior_panels_FR_bag_maps", ["bug_door_FR"]],
+        ["bug_interior_panels_FR_bag_maps", ["bug_door_FR"]],
     ],
 },
 "bug_doorpocket_FR_bottle": {
@@ -311,7 +311,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["interior_panels_FR_bag_bottle", ["bug_door_FR"]],
+        ["bug_interior_panels_FR_bag_bottle", ["bug_door_FR"]],
     ],
 },
 
@@ -326,7 +326,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["dashboard_keyfob",   ["bug_ignition_keyfob"]],
+        ["bug_dashboard_keyfob",   ["bug_ignition_keyfob"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

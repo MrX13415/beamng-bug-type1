@@ -34,7 +34,7 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 	
-         ["seat_rear_board", ["bug_seat_R"]],
+         ["bug_seat_rear_board", ["bug_seat_R"]],
     ],
     "nodes": [
         ["id","posX","posY","posZ"],
@@ -121,10 +121,10 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
         // What are these for?
-        //  ["cargo_support_box", ["bug_seat_R"],[],{"pos":{"x":0.25,  "y":0.46, "z":0.28}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.6, "y":1, "z":2.3}}],
-        //  ["cargo_support_box", ["bug_seat_R"],[],{"pos":{"x":-0.25,  "y":0.46, "z":0.28}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.6, "y":1, "z":2.3}}],
-        //  ["cargo_support_box", ["bug_seat_R"],[],{"pos":{"x":0.25,  "y":0.87, "z":0.44}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.6, "y":1, "z":0.3}}],
-        //  ["cargo_support_box", ["bug_seat_R"],[],{"pos":{"x":-0.25,  "y":0.87, "z":0.44}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.6, "y":1, "z":0.3}}],
+        //  ["bug_cargo_support_box", ["bug_seat_R"],[],{"pos":{"x":0.25,  "y":0.46, "z":0.28}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.6, "y":1, "z":2.3}}],
+        //  ["bug_cargo_support_box", ["bug_seat_R"],[],{"pos":{"x":-0.25,  "y":0.46, "z":0.28}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.6, "y":1, "z":2.3}}],
+        //  ["bug_cargo_support_box", ["bug_seat_R"],[],{"pos":{"x":0.25,  "y":0.87, "z":0.44}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.6, "y":1, "z":0.3}}],
+        //  ["bug_cargo_support_box", ["bug_seat_R"],[],{"pos":{"x":-0.25,  "y":0.87, "z":0.44}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":0.6, "y":1, "z":0.3}}],
     ],
     "beams":[
         ["id1:", "id2:"],

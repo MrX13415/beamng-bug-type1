@@ -59,17 +59,17 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["dashboard_cables", ["bug_dashboard"]],
+        ["bug_dashboard_cables", ["bug_dashboard"]],
 
-        // old: ["dashboard_ashtray",     ["bug_body", "bug_dashboard"]],  // Converted to prop
-        ["dashboard_ashtray_box",     ["bug_body", "bug_dashboard"]],        
+        // old: ["bug_dashboard_ashtray",     ["bug_body", "bug_dashboard"]],  // Converted to prop
+        ["bug_dashboard_ashtray_box",     ["bug_body", "bug_dashboard"]],        
 
-        ["controls_dashboard_knobs",  ["bug_body", "bug_dashboard"]],
-        ["controls_hood_release",     ["bug_body", "bug_dashboard"]],
+        ["bug_controls_dashboard_knobs",  ["bug_body", "bug_dashboard"]],
+        ["bug_controls_hood_release",     ["bug_body", "bug_dashboard"]],
 
-        ["controls_heating_valve",    ["bug_frame", "bug_body"]],
-        ["controls_shifter_M_mount",  ["bug_frame", "bug_body"]],
-        ["controls_handbreak_case",   ["bug_frame", "bug_body"]],
+        ["bug_controls_heating_valve",    ["bug_frame", "bug_body"]],
+        ["bug_controls_shifter_M_mount",  ["bug_frame", "bug_body"]],
+        ["bug_controls_handbreak_case",   ["bug_frame", "bug_body"]],
     ],
     "glowMap":{
         // dashboard gauges
@@ -96,13 +96,13 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["ashtray_anim", "dashboard_ashtray_prop",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.075},        0,     1,        0,  1],
+        ["ashtray_anim", "bug_dashboard_ashtray_prop",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.075},        0,     1,        0,  1],
 
-        ["lights_state", "controls_dashboard_light_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
-        ["wipersstate", "controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
+        ["lights_state", "bug_controls_dashboard_light_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
+        ["wipersstate", "bug_controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
 
-        ["turnsignal",   "indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
-        ["parkingbrake_anim", "controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["turnsignal",   "bug_indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["parkingbrake_anim", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
         //dash anti-deform nodes
@@ -293,15 +293,15 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["body_interior_dashboard_covers", ["bug_dashboard"]],
-        ["dashboard_cables",               ["bug_dashboard"]],
-        ["fueltank_sensor",                ["fueltank"]],
+        ["bug_body_interior_dashboard_covers", ["bug_dashboard"]],
+        ["bug_dashboard_cables",               ["bug_dashboard"]],
+        ["bug_fueltank_sensor",                ["fueltank"]],
 
-        ["controls_dashboard_knobs",  ["bug_body", "bug_dashboard"]],
-        ["controls_hood_release",     ["bug_body", "bug_dashboard"]],
+        ["bug_controls_dashboard_knobs",  ["bug_body", "bug_dashboard"]],
+        ["bug_controls_hood_release",     ["bug_body", "bug_dashboard"]],
 
-        ["controls_shifter_M_mount",  ["bug_frame", "bug_body"]],
-        ["controls_handbreak_case",   ["bug_frame", "bug_body"]],
+        ["bug_controls_shifter_M_mount",  ["bug_frame", "bug_body"]],
+        ["bug_controls_handbreak_case",   ["bug_frame", "bug_body"]],
     ],
     "glowMap":{
         // dashboard gauges
@@ -327,11 +327,11 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["lights_state", "controls_dashboard_light_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
-        ["wipersstate", "controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
+        ["lights_state", "bug_controls_dashboard_light_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
+        ["wipersstate", "bug_controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
 
-        ["turnsignal",   "indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
-        ["parkingbrake_anim", "controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["turnsignal",   "bug_indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["parkingbrake_anim", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
         //dash anti-deform nodes
@@ -484,9 +484,9 @@
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["suctionmount_alt2", ["gps"], [],{"pos":{"x":0,"y":0,"z":0}}],
-         ["gpsholder", ["gps"], [],{"pos":{"x":0,"y":0,"z":0}}],
-         ["gps", ["gps"], [],{"pos":{"x":0,"y":0,"z":0}}],
+         ["bug_suctionmount_alt2", ["gps"], [],{"pos":{"x":0,"y":0,"z":0}}],
+         ["bug_gpsholder", ["gps"], [],{"pos":{"x":0,"y":0,"z":0}}],
+         ["bug_gps", ["gps"], [],{"pos":{"x":0,"y":0,"z":0}}],
     ],
 },
 
@@ -525,8 +525,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["controls_shifter_M_boot", ["bug_shifter_boot_M","bug_frame","bug_shifterbase_M"]],
-        ["controls_shifter_M",      ["bug_shifter_M"]],
+        ["bug_controls_shifter_M_boot", ["bug_shifter_boot_M","bug_frame","bug_shifterbase_M"]],
+        ["bug_controls_shifter_M",      ["bug_shifter_M"]],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -728,8 +728,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["controls_shifter_M_boot", ["bug_shifter_boot_M","bug_frame","bug_shifterbase_M"]],
-        ["controls_shifter_M",      ["bug_shifter_M"]],
+        ["bug_controls_shifter_M_boot", ["bug_shifter_boot_M","bug_frame","bug_shifterbase_M"]],
+        ["bug_controls_shifter_M",      ["bug_shifter_M"]],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -927,7 +927,7 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
         //automatic transmission
-        ["gearModeIndex",   "controls_shifter_A",    "f4mr","f4ml","refup",   {"x":10, "y":0, "z":0},     {"x":25, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   -0.5,  1],
+        ["gearModeIndex",   "bug_controls_shifter_A",    "f4mr","f4ml","refup",   {"x":10, "y":0, "z":0},     {"x":25, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   -0.5,  1],
     ],
 },
 
@@ -945,7 +945,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["dashboard_frame_left_empty",      ["bug_dashboard"]],
+        ["bug_dashboard_frame_left_empty",      ["bug_dashboard"]],
     ]
 },
 "bug_tachometer": {
@@ -967,7 +967,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["dashboard_frame_left_tacho",  ["bug_dashboard"]],
+        ["bug_dashboard_frame_left_tacho",  ["bug_dashboard"]],
     ]
 },
 "bug_tacho_6000": {
@@ -981,9 +981,9 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["dashboard_gauges_tacho",       ["bug_dashboard"]],
+        ["bug_dashboard_gauges_tacho",       ["bug_dashboard"]],
         {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
-        ["dashboard_gauges_tacho_glass", ["bug_dashboard"]],
+        ["bug_dashboard_gauges_tacho_glass", ["bug_dashboard"]],
         {"deformGroup":""},
     ],
     "props": [
@@ -1001,7 +1001,7 @@
         //    135 / 0.045 = 3000
         //    270 / 0.045 = 6000
         //
-        ["rpm",   "needle_tacho",   "dsh","dshl","bd1",   {"x":4, "y":-0, "z":-4},   {"x":0, "y":-0.045, "z":0},   {"x":0, "y":0, "z":0},   0, 6000, -3000, 1],
+        ["rpm",   "bug_needle_tacho",   "dsh","dshl","bd1",   {"x":4, "y":-0, "z":-4},   {"x":0, "y":-0.045, "z":0},   {"x":0, "y":0, "z":0},   0, 6000, -3000, 1],
     ]
 },
 "bug_tacho_8000": {
@@ -1015,9 +1015,9 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["dashboard_gauges_tacho",       ["bug_dashboard"]],
+        ["bug_dashboard_gauges_tacho",       ["bug_dashboard"]],
         {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
-        ["dashboard_gauges_tacho_glass", ["bug_dashboard"]],
+        ["bug_dashboard_gauges_tacho_glass", ["bug_dashboard"]],
         {"deformGroup":""},
     ],
     "props": [
@@ -1035,7 +1035,7 @@
         //    135 / 0.03375 = 4000
         //    270 / 0.03375 = 8000
         //
-        ["rpm",   "needle_tacho",   "dsh","dshl","bd1",   {"x":4, "y":-0, "z":-4},   {"x":0, "y":-0.03375, "z":0},   {"x":0, "y":0, "z":0},   0, 8000, -4000, 1],
+        ["rpm",   "bug_needle_tacho",   "dsh","dshl","bd1",   {"x":4, "y":-0, "z":-4},   {"x":0, "y":-0.03375, "z":0},   {"x":0, "y":0, "z":0},   0, 8000, -4000, 1],
     ]
 },
 "bug_tacho_oil_ammeter": {
@@ -1053,15 +1053,15 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-        ["dashboard_frame_left_oil_ammeter", ["bug_dashboard"]],
-        ["dashboard_gauges_ammeter",  ["bug_dashboard"]],
-        ["dashboard_gauges_oilgauge", ["bug_dashboard"]],
-        ["dashboard_gauges_ammeter_cable",  ["bug_dashboard"]],
-        ["dashboard_gauges_oilgauge_cable", ["bug_dashboard"]],
+        ["bug_dashboard_frame_left_oil_ammeter", ["bug_dashboard"]],
+        ["bug_dashboard_gauges_ammeter",  ["bug_dashboard"]],
+        ["bug_dashboard_gauges_oilgauge", ["bug_dashboard"]],
+        ["bug_dashboard_gauges_ammeter_cable",  ["bug_dashboard"]],
+        ["bug_dashboard_gauges_oilgauge_cable", ["bug_dashboard"]],
 
         {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
-        ["dashboard_gauges_ammeter_glass", ["bug_dashboard"]],
-        ["dashboard_gauges_oilgauge_glass", ["bug_dashboard"]],
+        ["bug_dashboard_gauges_ammeter_glass", ["bug_dashboard"]],
+        ["bug_dashboard_gauges_oilgauge_glass", ["bug_dashboard"]],
         {"deformGroup":""},
     ],
     "props": [
@@ -1079,13 +1079,13 @@
         //    0 / 1.5 = 0
         //    90 / 1.5 = 60
         //
-        ["ammeter",   "needle_ammeter",   "dsh","dshl","bd1",   {"x":4, "y":-0, "z":-4},   {"x":0, "y":-1.5, "z":0},    {"x":0, "y":0, "z":0},   -30, 30, 0, 1],
+        ["ammeter",   "bug_needle_ammeter",   "dsh","dshl","bd1",   {"x":4, "y":-0, "z":-4},   {"x":0, "y":-1.5, "z":0},    {"x":0, "y":0, "z":0},   -30, 30, 0, 1],
         //
         //    90 / 80 = 1.125
         //    45 / 1.125 = 40
         //    90 / 1.125 = 80
         //
-        ["oilpressure",   "needle_oil",       "dsh","dshl","bd1",   {"x":4, "y":-0, "z":-4},   {"x":0, "y":-1.125, "z":0},  {"x":0, "y":0, "z":0},   0, 80, -40, 1],
+        ["oilpressure",   "bug_needle_oil",       "dsh","dshl","bd1",   {"x":4, "y":-0, "z":-4},   {"x":0, "y":-1.125, "z":0},  {"x":0, "y":0, "z":0},   0, 80, -40, 1],
     ]
 },
 
@@ -1104,13 +1104,13 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-        ["dashboard_frame_center_oil_ammeter", ["bug_dashboard"]],
-        ["dashboard_gauges_ammeter",  ["bug_dashboard"], [],  {"pos":{"x":-0.447, "y":0.350, "z":0.191}, "rot":{"x":27, "y":-2.5, "z":3.0}}],
-        ["dashboard_gauges_oilgauge", ["bug_dashboard"], [],  {"pos":{"x":-0.339, "y":0.350, "z":0.191}, "rot":{"x":27, "y":-2.5, "z":3.0}}],
+        ["bug_dashboard_frame_center_oil_ammeter", ["bug_dashboard"]],
+        ["bug_dashboard_gauges_ammeter",  ["bug_dashboard"], [],  {"pos":{"x":-0.447, "y":0.350, "z":0.191}, "rot":{"x":27, "y":-2.5, "z":3.0}}],
+        ["bug_dashboard_gauges_oilgauge", ["bug_dashboard"], [],  {"pos":{"x":-0.339, "y":0.350, "z":0.191}, "rot":{"x":27, "y":-2.5, "z":3.0}}],
 
         {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
-        ["dashboard_gauges_ammeter_glass",  ["bug_dashboard"], [],  {"pos":{"x":-0.447, "y":0.350, "z":0.191}, "rot":{"x":27, "y":-2.5, "z":3.0}}],
-        ["dashboard_gauges_oilgauge_glass", ["bug_dashboard"], [],  {"pos":{"x":-0.339, "y":0.350, "z":0.191}, "rot":{"x":27, "y":-2.5, "z":3.0}}],
+        ["bug_dashboard_gauges_ammeter_glass",  ["bug_dashboard"], [],  {"pos":{"x":-0.447, "y":0.350, "z":0.191}, "rot":{"x":27, "y":-2.5, "z":3.0}}],
+        ["bug_dashboard_gauges_oilgauge_glass", ["bug_dashboard"], [],  {"pos":{"x":-0.339, "y":0.350, "z":0.191}, "rot":{"x":27, "y":-2.5, "z":3.0}}],
         {"deformGroup":""},
     ],
     "props": [
@@ -1128,13 +1128,13 @@
         //    0 / 1.5 = 0
         //    90 / 1.5 = 60
         //
-        ["ammeter",   "needle_ammeter",   "dsh","dshl","bd1",   {"x":31, "y":-2.5, "z":-1},   {"x":0, "y":-1.5, "z":0},  {"x":0, "y":0, "z":0},   -30, 30, 0, 1,   {"baseTranslation":{"x":-0.0285, "y":-0.028, "z":0.0245}}],
+        ["ammeter",   "bug_needle_ammeter",   "dsh","dshl","bd1",   {"x":31, "y":-2.5, "z":-1},   {"x":0, "y":-1.5, "z":0},  {"x":0, "y":0, "z":0},   -30, 30, 0, 1,   {"baseTranslation":{"x":-0.0285, "y":-0.028, "z":0.0245}}],
         //
         //    90 / 80 = 1.125
         //    45 / 1.125 = 40
         //    90 / 1.125 = 80
         //
-        ["oilpressure",   "needle_oil",       "dsh","dshl","bd1",   {"x":31, "y":-2.5, "z":-1},   {"x":0, "y":-1.125, "z":0},  {"x":0, "y":0, "z":0},   0, 80, -40, 1,   {"baseTranslation":{"x": 0.0263, "y":-0.028, "z":0.0245}} ],
+        ["oilpressure",   "bug_needle_oil",       "dsh","dshl","bd1",   {"x":31, "y":-2.5, "z":-1},   {"x":0, "y":-1.125, "z":0},  {"x":0, "y":0, "z":0},   0, 80, -40, 1,   {"baseTranslation":{"x": 0.0263, "y":-0.028, "z":0.0245}} ],
     ]
 },
 
@@ -1182,12 +1182,12 @@
         
         ["bug_switchboard2", ["bug_dashboard"]],
 
-        ["dashboard_gauges_ammeter",  ["bug_dashboard"], [],  {"pos":{"x":-0.433, "y":0.272, "z":0.096}, "rot":{"x":21.2, "y":-2.6, "z":4.4}}],
-        ["dashboard_gauges_oilgauge", ["bug_dashboard"], [],  {"pos":{"x":-0.330, "y":0.272, "z":0.096}, "rot":{"x":21.2, "y":-2.6, "z":4.4}}],
+        ["bug_dashboard_gauges_ammeter",  ["bug_dashboard"], [],  {"pos":{"x":-0.433, "y":0.272, "z":0.096}, "rot":{"x":21.2, "y":-2.6, "z":4.4}}],
+        ["bug_dashboard_gauges_oilgauge", ["bug_dashboard"], [],  {"pos":{"x":-0.330, "y":0.272, "z":0.096}, "rot":{"x":21.2, "y":-2.6, "z":4.4}}],
 
         {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
-        ["dashboard_gauges_ammeter_glass",  ["bug_dashboard"], [],  {"pos":{"x":-0.433, "y":0.272, "z":0.096}, "rot":{"x":21.2, "y":-2.6, "z":4.4}}],
-        ["dashboard_gauges_oilgauge_glass", ["bug_dashboard"], [],  {"pos":{"x":-0.330, "y":0.272, "z":0.096}, "rot":{"x":21.2, "y":-2.6, "z":4.4}}],
+        ["bug_dashboard_gauges_ammeter_glass",  ["bug_dashboard"], [],  {"pos":{"x":-0.433, "y":0.272, "z":0.096}, "rot":{"x":21.2, "y":-2.6, "z":4.4}}],
+        ["bug_dashboard_gauges_oilgauge_glass", ["bug_dashboard"], [],  {"pos":{"x":-0.330, "y":0.272, "z":0.096}, "rot":{"x":21.2, "y":-2.6, "z":4.4}}],
         {"deformGroup":""},
     ],
     "props": [
@@ -1205,13 +1205,13 @@
         //    0 / 1.5 = 0
         //    90 / 1.5 = 60
         //
-        ["ammeter",   "needle_ammeter",   "dsh","dshl","bd1",   {"x":24, "y":0, "z":0},   {"x":0, "y":-1.5, "z":0},  {"x":0, "y":0, "z":0},   -30, 30, 0, 1,   {"baseTranslationGlobal":{"x":-0.0067, "y":-0.5493, "z":0.7989}}],
+        ["ammeter",   "bug_needle_ammeter",   "dsh","dshl","bd1",   {"x":24, "y":0, "z":0},   {"x":0, "y":-1.5, "z":0},  {"x":0, "y":0, "z":0},   -30, 30, 0, 1,   {"baseTranslationGlobal":{"x":-0.0067, "y":-0.5493, "z":0.7989}}],
         //
         //    90 / 80 = 1.125
         //    45 / 1.125 = 40
         //    90 / 1.125 = 80
         //
-        ["oilpressure",   "needle_oil",       "dsh","dshl","bd1",   {"x":24, "y":0, "z":0},   {"x":0, "y":-1.125, "z":0},  {"x":0, "y":0, "z":0},   0, 80, -40, 1,   {"baseTranslationGlobal":{"x": 0.0433, "y":-0.5505, "z":0.7960}} ],
+        ["oilpressure",   "bug_needle_oil",       "dsh","dshl","bd1",   {"x":24, "y":0, "z":0},   {"x":0, "y":-1.125, "z":0},  {"x":0, "y":0, "z":0},   0, 80, -40, 1,   {"baseTranslationGlobal":{"x": 0.0433, "y":-0.5505, "z":0.7960}} ],
     ]
 },
 "bug_console_switchboad_btn_beacon": {
@@ -1323,18 +1323,18 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-        ["fueltank_sensor", ["fueltank"]],
+        ["bug_fueltank_sensor", ["fueltank"]],
 	
-        ["dashboard_frame_right_fuelgauge", ["bug_dashboard"]],
-        ["dashboard_gauge_fuelgauge",       ["bug_dashboard"]],
+        ["bug_dashboard_frame_right_fuelgauge", ["bug_dashboard"]],
+        ["bug_dashboard_gauge_fuelgauge",       ["bug_dashboard"]],
         {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
-        ["dashboard_gauge_fuelgauge_glass", ["bug_dashboard"]],
+        ["bug_dashboard_gauge_fuelgauge_glass", ["bug_dashboard"]],
         {"deformGroup":""}
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["fuel",      "needle_fuelgauge",   "dsh","dshl","bd1",  {"x":5, "y":0, "z":-3},  {"x":0, "y":-70, "z":0},  {"x":0, "y":0, "z":0},  0,  1,  -0.5,  1],
+        ["fuel",      "bug_needle_fuelgauge",   "dsh","dshl","bd1",  {"x":5, "y":0, "z":-3},  {"x":0, "y":-70, "z":0},  {"x":0, "y":0, "z":0},  0,  1,  -0.5,  1],
     ]
 },
 
@@ -1361,9 +1361,9 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["dashboard_gauge_speedo", ["bug_dashboard"]],
+        ["bug_dashboard_gauge_speedo", ["bug_dashboard"]],
         {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
-        ["dashboard_gauge_speedo_glass", ["bug_dashboard"]],
+        ["bug_dashboard_gauge_speedo_glass", ["bug_dashboard"]],
         {"deformGroup":""},
     ],
     "props": [
@@ -1382,7 +1382,7 @@
         //    135 / 6.94286 = 20.11677
         //    270 / 6.94286 = 40.23353
         //
-        ["wheelspeed",   "needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-6.71082, "z":0},   {"x":0, "y":0, "z":0},   0, 40.23353, -20.11677, 1],
+        ["wheelspeed",   "bug_needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-6.71082, "z":0},   {"x":0, "y":0, "z":0},   0, 40.23353, -20.11677, 1],
     ],
 },
 "bug_speedo_mph_150": {
@@ -1405,9 +1405,9 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["dashboard_gauge_speedo", ["bug_dashboard"]],
+        ["bug_dashboard_gauge_speedo", ["bug_dashboard"]],
         {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
-        ["dashboard_gauge_speedo_glass", ["bug_dashboard"]],
+        ["bug_dashboard_gauge_speedo_glass", ["bug_dashboard"]],
         {"deformGroup":""},
     ],
     "props": [
@@ -1426,7 +1426,7 @@
         //    135 / 4.026492 = 33.52794
         //    270 / 4.026492 = 67.05589
         //
-        ["wheelspeed",   "needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-4.026492, "z":0},   {"x":0, "y":0, "z":0},   0, 67.05589, -33.52794, 1],
+        ["wheelspeed",   "bug_needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-4.026492, "z":0},   {"x":0, "y":0, "z":0},   0, 67.05589, -33.52794, 1],
     ],
 },
 "bug_speedo_km_140": {
@@ -1449,9 +1449,9 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["dashboard_gauge_speedo", ["bug_dashboard"]],
+        ["bug_dashboard_gauge_speedo", ["bug_dashboard"]],
         {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
-        ["dashboard_gauge_speedo_glass", ["bug_dashboard"]],
+        ["bug_dashboard_gauge_speedo_glass", ["bug_dashboard"]],
         {"deformGroup":""},
     ],
     "props": [
@@ -1470,7 +1470,7 @@
         //    135 / 6.94286 = 19.44444
         //    270 / 6.94286 = 38.88887
         //
-        ["wheelspeed",   "needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-6.94286, "z":0},   {"x":0, "y":0, "z":0},   0, 38.88887, -19.44444, 1],
+        ["wheelspeed",   "bug_needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-6.94286, "z":0},   {"x":0, "y":0, "z":0},   0, 38.88887, -19.44444, 1],
     ],
 },
 "bug_speedo_km_240": {
@@ -1493,9 +1493,9 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["dashboard_gauge_speedo", ["bug_dashboard"]],
+        ["bug_dashboard_gauge_speedo", ["bug_dashboard"]],
         {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
-        ["dashboard_gauge_speedo_glass", ["bug_dashboard"]],
+        ["bug_dashboard_gauge_speedo_glass", ["bug_dashboard"]],
         {"deformGroup":""},
     ],
     "props": [
@@ -1514,7 +1514,7 @@
         //    135 / 4.86 = 33.33333
         //    270 / 4.86 = 66.66666
         //
-        ["wheelspeed",   "needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-4.05, "z":0},   {"x":0, "y":0, "z":0},   0, 66.66666, -33.33333, 1],
+        ["wheelspeed",   "bug_needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-4.05, "z":0},   {"x":0, "y":0, "z":0},   0, 66.66666, -33.33333, 1],
     ],
 },
 
@@ -1528,7 +1528,7 @@
     "slotType" : "bug_odometer",
     "controller": [
         ["fileName"],
-        ["odometer", {"unit": "imperial"}]
+        ["bug/odometer", {"name": "odometer", "unit": "imperial"}]
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1536,11 +1536,11 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["odometerdigit4",  "odometer_digit1",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
-        ["odometerdigit5",  "odometer_digit2",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
-        ["odometerdigit6",  "odometer_digit3",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
-        ["odometerdigit7",  "odometer_digit4",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
-        ["odometerdigit8",  "odometer_digit5",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
+        ["odometerdigit4",  "bug_odometer_digit1",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
+        ["odometerdigit5",  "bug_odometer_digit2",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
+        ["odometerdigit6",  "bug_odometer_digit3",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
+        ["odometerdigit7",  "bug_odometer_digit4",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
+        ["odometerdigit8",  "bug_odometer_digit5",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
 
     ],
 },
@@ -1553,7 +1553,7 @@
     "slotType" : "bug_odometer",
     "controller": [
         ["fileName"],
-        ["odometer", {"unit": "metric"}]
+        ["bug/odometer", {"name": "odometer", "unit": "metric"}]
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1561,11 +1561,11 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["odometerdigit4",  "odometer_digit1",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
-        ["odometerdigit5",  "odometer_digit2",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
-        ["odometerdigit6",  "odometer_digit3",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
-        ["odometerdigit7",  "odometer_digit4",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
-        ["odometerdigit8",  "odometer_digit5",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
+        ["odometerdigit4",  "bug_odometer_digit1",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
+        ["odometerdigit5",  "bug_odometer_digit2",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
+        ["odometerdigit6",  "bug_odometer_digit3",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
+        ["odometerdigit7",  "bug_odometer_digit4",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
+        ["odometerdigit8",  "bug_odometer_digit5",    "dsh","dshl","bd1",  {"x":5, "y":0, "z":0},  {"x":-1, "y":0, "z":0},  {"x":0, "y":0, "z":0}, 0, 360, 0, 1],
 
     ],
 },
@@ -1713,12 +1713,12 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
     
-        ["ignitionLevel_anim",  "ignition_key",  "dsh","dshl","bd1",  {"x":0, "y":-90, "z":0},  {"x":0, "y":-45, "z":0},  {"x":0, "y":0, "z":0},  0,  3,  0,  1],
+        ["ignitionLevel_anim",  "bug_ignition_key",  "dsh","dshl","bd1",  {"x":0, "y":-90, "z":0},  {"x":0, "y":-45, "z":0},  {"x":0, "y":0, "z":0},  0,  3,  0,  1],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["dashboard_key_frame",             ["bug_dashboard"]],
+        ["bug_dashboard_key_frame",             ["bug_dashboard"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -1764,7 +1764,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["dashboard_shelf", ["bug_shelf"]],
+        ["bug_dashboard_shelf", ["bug_shelf"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -1847,7 +1847,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["dashboard_handle", ["bug_dashboard"]],
+        ["bug_dashboard_handle", ["bug_dashboard"]],
     ],
 },
 "bug_dashboard_backcover": {
@@ -1860,7 +1860,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["hood_dashboard_cover",   ["bug_body", "bug_dashboard"]],
+        ["bug_hood_dashboard_cover",   ["bug_body", "bug_dashboard"]],
     ],
 },
 

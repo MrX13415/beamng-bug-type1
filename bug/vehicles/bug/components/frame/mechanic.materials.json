@@ -249,10 +249,12 @@
           0.0917700008,
           1
         ],
-        "clearCoatFactor": 0.400000006,
-        "clearCoatRoughnessFactor": 0,
-        "metallicFactor": 0.200000003,
-        "normalMapUseUV": 1
+        "clearCoatFactor": 0.4,
+        "clearCoatRoughnessFactor": 0.08,
+        "metallicFactor": 0.2,
+        "normalMapStrength": 0.5,
+        "normalMap": "/vehicles/bug/components/common/textures/frame_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/common/textures/frame_r.data.png"
       },
       {},
       {},

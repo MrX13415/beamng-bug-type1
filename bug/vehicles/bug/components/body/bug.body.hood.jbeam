@@ -68,12 +68,12 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-		["hood",        ["bug_hood"]],
-		["hood_hinges", ["bug_hood"]],
-		["hood_rubber", ["bug_body"]],
+		["bug_hood",        ["bug_hood"]],
+		["bug_hood_hinges", ["bug_hood"]],
+		["bug_hood_rubber", ["bug_body"]],
 
        //WIP: 
-       ["hood_springs", ["bug_hood_spring"]],
+       ["bug_hood_springs", ["bug_hood_spring"]],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -508,7 +508,7 @@
     "slotType" : "bug_hood_handle",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["hood_handle", ["bug_hood"]],
+         ["bug_hood_handle", ["bug_hood"]],
     ],
 },
 "hood_handle_paint": {
@@ -520,7 +520,7 @@
     "slotType" : "bug_hood_handle",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["hood_handle_paint", ["bug_hood"]],
+         ["bug_hood_handle_paint", ["bug_hood"]],
     ],
 },
 

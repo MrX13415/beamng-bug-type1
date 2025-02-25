@@ -21,6 +21,7 @@
           "fillStyle" : "rgb(0, 0, 255)"
         },
         "specular" : {
+          "spriteImg" : "vehicles/common/licenseplates/default/platefont_s.png",
           "fillStyle" : "rgb(233,233,233)"
         }
       }

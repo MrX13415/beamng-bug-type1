@@ -15,7 +15,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-        ["rim_14x6_Spare", ["wheel_spare"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"], ["bug_rim_paint2","bug_rim_paint2_F"]]}],
+        ["bug_rim_14x6_Spare", ["wheel_spare"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"], ["bug_rim_paint2","bug_rim_paint2_F"]]}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -103,7 +103,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-        ["rim_14x6_slots_Spare", ["wheel_spare"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"], ["bug_rim_paint2","bug_rim_paint2_F"]]}],
+        ["bug_rim_14x6_slots_Spare", ["wheel_spare"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"], ["bug_rim_paint2","bug_rim_paint2_F"]]}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -187,7 +187,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["tire_14x6_Spare_a", ["wheel_spare"]],
+        ["bug_tire_14x6_Spare_a", ["wheel_spare"]],
     ]
 },
 "tire_spare_ww": {
@@ -200,7 +200,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["tire_14x6_Spare_c", ["wheel_spare"]],
+        ["bug_tire_14x6_Spare_c", ["wheel_spare"]],
     ]
 },
 

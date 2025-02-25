@@ -154,15 +154,16 @@
     "Stages": [
       {
         "baseColorFactor": [
-          0.239850998,
-          0.239849001,
-          0.239849001,
+          0.0917709991,
+          0.0917700008,
+          0.0917700008,
           1
         ],
-        "baseColorMap": "/vehicles/bug/components/common/textures/frame_d.color.png",
-        "metallicFactor": 0.3,
+        "clearCoatFactor": 0.4,
+        "clearCoatRoughnessFactor": 0.08,
+        "metallicFactor": 0.2,
+        "normalMapStrength": 0.5,
         "normalMap": "/vehicles/bug/components/common/textures/frame_n.normal.png",
-        "roughnessFactor": 1,
         "roughnessMap": "/vehicles/bug/components/common/textures/frame_r.data.png"
       },
       {
@@ -514,15 +515,16 @@
     "Stages": [
       {
         "baseColorFactor": [
-          0.239850998,
-          0.239849001,
-          0.239849001,
+          0.0917709991,
+          0.0917700008,
+          0.0917700008,
           1
         ],
-        "baseColorMap": "/vehicles/bug/components/common/textures/frame_d.color.png",
-        "metallicFactor": 0.3,
+        "clearCoatFactor": 0.4,
+        "clearCoatRoughnessFactor": 0.08,
+        "metallicFactor": 0.2,
+        "normalMapStrength": 0.5,
         "normalMap": "/vehicles/bug/components/common/textures/frame_n.normal.png",
-        "roughnessFactor": 1,
         "roughnessMap": "/vehicles/bug/components/common/textures/frame_r.data.png"
       },
       {

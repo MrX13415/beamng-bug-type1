@@ -14,7 +14,7 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["brake",        "inputs_pedals_brake",     "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["brake",        "bug_inputs_pedals_brake",     "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
 },
 
@@ -99,11 +99,11 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["dashboard_barebone",        ["bug_dashboard"]],
-        ["dashboard_barebone_cables", ["bug_dashboard"]],
+        ["bug_dashboard_barebone",        ["bug_dashboard"]],
+        ["bug_dashboard_barebone_cables", ["bug_dashboard"]],
 
-        ["controls_shifter_M_mount",  ["bug_frame", "bug_body"]],
-        ["controls_handbreak_case",   ["bug_frame", "bug_body"]],
+        ["bug_controls_shifter_M_mount",  ["bug_frame", "bug_body"]],
+        ["bug_controls_handbreak_case",   ["bug_frame", "bug_body"]],
     ],
     "glowMap":{
         // dashboard gauges
@@ -129,8 +129,8 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["turnsignal",   "indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
-        ["parkingbrake_anim", "controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["turnsignal",   "bug_indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["parkingbrake_anim", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
         {"collision":true},
@@ -271,12 +271,12 @@
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
-        ["ignitionLevel_anim",  "ignition_key",  "dsh","dshl","bd1",  {"x":0, "y":-90, "z":0.5},  {"x":0, "y":-45, "z":0},  {"x":0, "y":0, "z":0},  0,  3,  0,  1, {"baseTranslation":{"x":0.0285,"y":0.0680,"z":0.0088}}],
+        ["ignitionLevel_anim",  "bug_ignition_key",  "dsh","dshl","bd1",  {"x":0, "y":-90, "z":0.5},  {"x":0, "y":-45, "z":0},  {"x":0, "y":0, "z":0},  0,  3,  0,  1, {"baseTranslation":{"x":0.0285,"y":0.0680,"z":0.0088}}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["dashboard_key_frame", ["bug_dashboard"], [], {"pos":{"x":0.01,"y":0.0456,"z":0.0288}, "rot":{"x":3, "y":0, "z":-1}}],
+        ["bug_dashboard_key_frame", ["bug_dashboard"], [], {"pos":{"x":0.01,"y":0.0456,"z":0.0288}, "rot":{"x":3, "y":0, "z":-1}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -298,10 +298,12 @@
 
         {"beamSpring":300000,"beamDamp":50},
         {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+        {"optional":true},
         ["ikey", "bc2ll"],
         ["ikey", "bc2rr"],
         ["ikey", "bf8l"],
         ["ikey", "bf8r"],
+        {"optional":false},
         ["ikey", "bd1"],
         ["ikey", "dsh"],
 

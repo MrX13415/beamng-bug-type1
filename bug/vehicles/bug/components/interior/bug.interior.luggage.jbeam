@@ -14,8 +14,8 @@
    ],
    "flexbodies": [
       ["mesh", "[group]:", "nonFlexMaterials"],
-      ["cargo_load_box_m", ["rear_luggage"],[],{"pos":{"x":0.005, "y":1.18, "z":0.61}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
-      ["woodplanks_straps_boxutility_small", ["rear_luggage"],[],{"pos":{"x":0, "y":1.18, "z":0.61}, "rot":{"x":0, "y":0, "z":90}, "scale":{"x":0.246, "y":0.45, "z":0.261}}],
+      ["bug_cargo_load_box_m", ["rear_luggage"],[],{"pos":{"x":0.005, "y":1.18, "z":0.61}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+      ["bug_woodplanks_straps_boxutility_small", ["rear_luggage"],[],{"pos":{"x":0, "y":1.18, "z":0.61}, "rot":{"x":0, "y":0, "z":90}, "scale":{"x":0.246, "y":0.45, "z":0.261}}],
    ],
    "variables": [
       ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -219,7 +219,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["rear_suitcase",   ["rear_suitcase"]]
+        ["bug_rear_suitcase",   ["rear_suitcase"]]
     ]
 },
 "bug_rear_suitcase_black": {
@@ -232,7 +232,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_black"]]}]
+        ["bug_rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_black"]]}]
     ]
 },
 "bug_rear_suitcase_gray": {
@@ -245,7 +245,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_gray"]]}]
+        ["bug_rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_gray"]]}]
     ]
 },
 "bug_rear_suitcase_red": {
@@ -258,7 +258,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_red"]]}]
+        ["bug_rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_red"]]}]
     ]
 },
 "bug_rear_suitcase_brown": {
@@ -271,7 +271,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_brown"]]}]
+        ["bug_rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_brown"]]}]
     ]
 },
 "bug_rear_suitcase_yellow": {
@@ -284,7 +284,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_yellow"]]}]
+        ["bug_rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_yellow"]]}]
     ]
 },
 "bug_rear_suitcase_green": {
@@ -297,7 +297,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_green"]]}]
+        ["bug_rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_green"]]}]
     ]
 },
 "bug_rear_suitcase_blue": {
@@ -310,7 +310,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_blue"]]}]
+        ["bug_rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_blue"]]}]
     ]
 },
 "bug_rear_suitcase_purple": {
@@ -323,7 +323,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_purple"]]}]
+        ["bug_rear_suitcase",   ["rear_suitcase"], [], {"materialOverride":[["bug_suitcase","bug_suitcase_purple"]]}]
     ]
 },
 

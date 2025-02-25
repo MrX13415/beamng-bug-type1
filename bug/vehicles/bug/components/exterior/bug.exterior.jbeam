@@ -14,7 +14,7 @@
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["trim_hood", ["bug_hood"]],
+         ["bug_trim_hood", ["bug_hood"]],
     ],
 },
 "hood_trim_badge": {
@@ -26,7 +26,7 @@
     "slotType" : "hood_trim_badge",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["hood_trim_badge", ["bug_hood"]],
+         ["bug_hood_trim_badge", ["bug_hood"]],
     ],
 },
 
@@ -40,7 +40,7 @@
     "slotType" : "bug_trim_F",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["trim_sides_F", ["bug_body"]],
+         ["bug_trim_sides_F", ["bug_body"]],
     ],
 },
 "trim_door": {
@@ -52,8 +52,8 @@
     "slotType" : "bug_trim_door",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["trim_door_L", ["bug_door_FL"]],
-         ["trim_door_R", ["bug_door_FR"]],
+         ["bug_trim_door_L", ["bug_door_FL"]],
+         ["bug_trim_door_R", ["bug_door_FR"]],
     ],
 },
 "trim_B": {
@@ -65,7 +65,7 @@
     "slotType" : "bug_trim_B",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["trim_sides_R", ["bug_body"]],
+         ["bug_trim_sides_R", ["bug_body"]],
     ],
 },
 
@@ -79,7 +79,7 @@
     "slotType" : "antenna",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["antenna_side", ["bug_body"]],
+         ["bug_antenna_side", ["bug_body"]],
     ],
 },
 "antenna_cowl": {
@@ -91,7 +91,7 @@
     "slotType" : "antenna",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["antenna_cowl_in", ["bug_body"]],
+         ["bug_antenna_cowl_in", ["bug_body"]],
     ],
 },
 "antenna_cowl_out": {
@@ -103,7 +103,7 @@
     "slotType" : "antenna",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["antenna_cowl_out", ["bug_body"]],
+         ["bug_antenna_cowl_out", ["bug_body"]],
     ],
 },
 
@@ -116,7 +116,7 @@
     "slotType" : "bug_exterior_sunvisor",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["exterior_sunvisor", ["bug_body"]],
+         ["bug_exterior_sunvisor", ["bug_body"]],
     ],
 },
 
@@ -130,7 +130,7 @@
     "flexbodies": [
             ["mesh", "[group]:", "nonFlexMaterials"],
     
-            ["foglight", ["bug_hood"]],
+            ["bug_foglight", ["bug_hood"]],
     ],
 },
 "bug_gascap": {
@@ -143,12 +143,12 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     
-        ["gascap", ["bug_body", "fueltank"]],
+        ["bug_gascap", ["bug_body", "fueltank"]],
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["gascap_anim", "gascap_lid",   "f4mr","f4ml","refup",   {"x":0.016721, "y":-1.63842, "z":10.6071},   {"x":0, "y":-150, "z":0},    {"x":0.0, "y":0.0, "z":0.0},        0,     1,        0,  1],
+        ["gascap_anim", "bug_gascap_lid",   "f4mr","f4ml","refup",   {"x":0.016721, "y":-1.63842, "z":10.6071},   {"x":0, "y":-150, "z":0},    {"x":0.0, "y":0.0, "z":0.0},        0,     1,        0,  1],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],

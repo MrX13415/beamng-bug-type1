@@ -217,38 +217,38 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["engine_cover",                ["bug_engine"]],
-        ["engine_cover_front",          ["bug_engine"]],
-        ["engine_fan_housing",          ["bug_engine"]],
-        ["engine_valve_cap",            ["bug_engine"]],
-        ["engine_valve_housing",        ["bug_engine"]],
+        ["bug_engine_cover",                ["bug_engine"]],
+        ["bug_engine_cover_front",          ["bug_engine"]],
+        ["bug_engine_fan_housing",          ["bug_engine"]],
+        ["bug_engine_valve_cap",            ["bug_engine"]],
+        ["bug_engine_valve_housing",        ["bug_engine"]],
 
-        ["engine_crank_case",           ["bug_engine"]],
-        ["engine_cylinders",            ["bug_engine"]],
-        ["engine_push_rods",            ["bug_engine"]],
-        ["engine_valve_cap_holder",     ["bug_engine"]],
+        ["bug_engine_crank_case",           ["bug_engine"]],
+        ["bug_engine_cylinders",            ["bug_engine"]],
+        ["bug_engine_push_rods",            ["bug_engine"]],
+        ["bug_engine_valve_cap_holder",     ["bug_engine"]],
         
-        ["engine_ignition",             ["bug_engine"]],
-        ["engine_alternator",           ["bug_engine"]],
-        ["engine_alternator_regulator", ["bug_engine"]],
-        ["engine_alternator_stand",     ["bug_engine"]],
-        ["engine_belt",                 ["bug_engine"]],
-        ["engine_fuel_pump",            ["bug_engine"]],
-        ["engine_oil_dipstick",         ["bug_engine"]],
-        ["engine_oil_inlet",            ["bug_engine"]],
-        ["engine_pipe",                 ["bug_engine"]],
-        ["engine_heat_exchanger",       ["bug_engine"]],
+        ["bug_engine_ignition",             ["bug_engine"]],
+        ["bug_engine_alternator",           ["bug_engine"]],
+        ["bug_engine_alternator_regulator", ["bug_engine"]],
+        ["bug_engine_alternator_stand",     ["bug_engine"]],
+        ["bug_engine_belt",                 ["bug_engine"]],
+        ["bug_engine_fuel_pump",            ["bug_engine"]],
+        ["bug_engine_oil_dipstick",         ["bug_engine"]],
+        ["bug_engine_oil_inlet",            ["bug_engine"]],
+        ["bug_engine_pipe",                 ["bug_engine"]],
+        ["bug_engine_heat_exchanger",       ["bug_engine"]],
     ],
     "props": [
         ["func"      , "mesh"                        , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
 
         // pedal
-        ["throttle", "inputs_pedals_throttle",         "f4mr","f4ml","refup",       {"x":25, "y":0, "z":0}, {"x":20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 	0, 1, 0, 1],
+        ["throttle", "bug_inputs_pedals_throttle",         "f4mr","f4ml","refup",       {"x":25, "y":0, "z":0}, {"x":20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 	0, 1, 0, 1],
 
         // engine 
-        ["rpmspin",  "engine_alternator_belt_pulley",  "e2r","e2l","e4r",        {"x":0, "y":0, "z":0},  {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1],
-        ["rpmspin",  "engine_belt_pulley",             "e2r","e2l","e4r",        {"x":0, "y":0, "z":0},  {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1],
-        ["rpmspin",  "engine_fan",                     "e2r","e2l","e4r",        {"x":0, "y":0, "z":0},  {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1]
+        ["rpmspin",  "bug_engine_alternator_belt_pulley",  "e2r","e2l","e4r",        {"x":0, "y":0, "z":0},  {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1],
+        ["rpmspin",  "bug_engine_belt_pulley",             "e2r","e2l","e4r",        {"x":0, "y":0, "z":0},  {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1],
+        ["rpmspin",  "bug_engine_fan",                     "e2r","e2l","e4r",        {"x":0, "y":0, "z":0},  {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1]
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

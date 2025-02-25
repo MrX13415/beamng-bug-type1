@@ -124,7 +124,7 @@
     "slotType":"bug_spring_R",
     "flexbodies":[
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["shock_R", ["shockbottom_R", "shocktop_R"]],
+        ["bug_shock_R", ["shockbottom_R", "shocktop_R"]],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -167,7 +167,7 @@
     "slotType":"bug_spring_R",
     "flexbodies":[
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["shock_R", ["shockbottom_R", "shocktop_R"]],
+        ["bug_shock_R", ["shockbottom_R", "shocktop_R"]],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -220,7 +220,7 @@
     "slotType" : "bug_shock_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["shock_R", ["shockbottom_R", "shocktop_R"]],
+        ["bug_shock_R", ["shockbottom_R", "shocktop_R"]],
     ],
     "beams": [
         ["id1:", "id2:"],
@@ -251,7 +251,7 @@
     "slotType" : "bug_shock_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["shock_R", ["shockbottom_R", "shocktop_R"]],
+        ["bug_shock_R", ["shockbottom_R", "shocktop_R"]],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

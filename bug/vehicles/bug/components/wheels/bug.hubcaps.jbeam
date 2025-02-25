@@ -9,8 +9,8 @@
     "slotType" : "hubcap_F",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth_color",   ["hubcap_FR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth_color",   ["hubcap_FL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_color",   ["hubcap_FR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_color",   ["hubcap_FL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -42,8 +42,8 @@
     "slotType" : "hubcap_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth_color",   ["hubcap_RR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth_color",   ["hubcap_RL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_color",   ["hubcap_RR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_color",   ["hubcap_RL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -76,8 +76,8 @@
     "slotType" : "hubcap_F",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth_logo_color_chrome",   ["hubcap_FR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth_logo_color_chrome",   ["hubcap_FL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_color_chrome",   ["hubcap_FR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_color_chrome",   ["hubcap_FL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -109,8 +109,8 @@
     "slotType" : "hubcap_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth_logo_color_chrome",   ["hubcap_RR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth_logo_color_chrome",   ["hubcap_RL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_color_chrome",   ["hubcap_RR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_color_chrome",   ["hubcap_RL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -143,8 +143,8 @@
     "slotType" : "hubcap_F",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth_logo_color",   ["hubcap_FR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth_logo_color",   ["hubcap_FL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_color",   ["hubcap_FR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_color",   ["hubcap_FL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -176,8 +176,8 @@
     "slotType" : "hubcap_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth_logo_color",   ["hubcap_RR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth_logo_color",   ["hubcap_RL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_color",   ["hubcap_RR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_color",   ["hubcap_RL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -210,8 +210,8 @@
     "slotType" : "hubcap_F",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth",   ["hubcap_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth",   ["hubcap_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth",   ["hubcap_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth",   ["hubcap_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -243,8 +243,8 @@
     "slotType" : "hubcap_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth",   ["hubcap_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth",   ["hubcap_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth",   ["hubcap_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth",   ["hubcap_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -277,8 +277,8 @@
     "slotType" : "hubcap_F",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth_logo",   ["hubcap_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth_logo",   ["hubcap_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo",   ["hubcap_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo",   ["hubcap_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -310,8 +310,8 @@
     "slotType" : "hubcap_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth_logo",   ["hubcap_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth_logo",   ["hubcap_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo",   ["hubcap_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo",   ["hubcap_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -344,8 +344,8 @@
     "slotType" : "hubcap_F",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth_logo_black",   ["hubcap_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth_logo_black",   ["hubcap_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_black",   ["hubcap_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_black",   ["hubcap_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -377,8 +377,8 @@
     "slotType" : "hubcap_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth_logo_black",   ["hubcap_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth_logo_black",   ["hubcap_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_black",   ["hubcap_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_black",   ["hubcap_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -411,8 +411,8 @@
     "slotType" : "hubcap_F",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth_logo_paint",   ["hubcap_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth_logo_paint",   ["hubcap_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_paint",   ["hubcap_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_paint",   ["hubcap_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -444,8 +444,8 @@
     "slotType" : "hubcap_R",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["hubcap_smooth_logo_paint",   ["hubcap_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["hubcap_smooth_logo_paint",   ["hubcap_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_paint",   ["hubcap_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_hubcap_smooth_logo_paint",   ["hubcap_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],

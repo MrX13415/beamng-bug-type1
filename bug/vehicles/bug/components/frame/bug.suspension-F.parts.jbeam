@@ -195,10 +195,10 @@
     "flexbodies":[
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["shock_FL_body", ["shocktop_F","lowerarm_F"]],
-        ["shock_FL_rod", ["shocktop_F","lowerarm_F"]],
-        ["shock_FR_body", ["shocktop_F","lowerarm_F"]],
-        ["shock_FR_rod", ["shocktop_F","lowerarm_F"]],
+        ["bug_shock_FL_body", ["shocktop_F","lowerarm_F"]],
+        ["bug_shock_FL_rod", ["shocktop_F","lowerarm_F"]],
+        ["bug_shock_FR_body", ["shocktop_F","lowerarm_F"]],
+        ["bug_shock_FR_rod", ["shocktop_F","lowerarm_F"]],
     ],
     "beams": [
           ["id1:", "id2:"],
@@ -231,10 +231,10 @@
     "flexbodies":[
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["shock_FL_body", ["shocktop_F","lowerarm_F"]],
-        ["shock_FL_rod", ["shocktop_F","lowerarm_F"]],
-        ["shock_FR_body", ["shocktop_F","lowerarm_F"]],
-        ["shock_FR_rod", ["shocktop_F","lowerarm_F"]],
+        ["bug_shock_FL_body", ["shocktop_F","lowerarm_F"]],
+        ["bug_shock_FL_rod", ["shocktop_F","lowerarm_F"]],
+        ["bug_shock_FR_body", ["shocktop_F","lowerarm_F"]],
+        ["bug_shock_FR_rod", ["shocktop_F","lowerarm_F"]],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

@@ -15,9 +15,9 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 
-         ["bumper_F_US",        ["bug_bumper_F"]],
-         ["bumper_F_mount",     ["bug_body"]],
-         ["bumper_F_mount_top", ["bug_body"]],
+         ["bug_bumper_F_US",        ["bug_bumper_F"]],
+         ["bug_bumper_F_mount",     ["bug_body"]],
+         ["bug_bumper_F_mount_top", ["bug_body"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -305,9 +305,9 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          
-         ["bumper_R_US",        ["bug_bumper_R"]],
-         ["bumper_R_mount",     ["bug_body"]],
-         ["bumper_R_mount_top", ["bug_body"]],
+         ["bug_bumper_R_US",        ["bug_bumper_R"]],
+         ["bug_bumper_R_mount",     ["bug_body"]],
+         ["bug_bumper_R_mount_top", ["bug_body"]],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -578,8 +578,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     
-        ["bumper_F_EU",        ["bug_bumper_F"]],
-        ["bumper_F_mount",     ["bug_body"]],
+        ["bug_bumper_F_EU",        ["bug_bumper_F"]],
+        ["bug_bumper_F_mount",     ["bug_body"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -867,8 +867,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-        ["bumper_R_EU",        ["bug_bumper_R"]],
-        ["bumper_R_mount",     ["bug_body"]],
+        ["bug_bumper_R_EU",        ["bug_bumper_R"]],
+        ["bug_bumper_R_mount",     ["bug_body"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -1136,8 +1136,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     
-        ["bumper_F_simple",    ["bug_bumper_F"]],
-        ["bumper_F_mount",     ["bug_body"]],
+        ["bug_bumper_F_simple",    ["bug_bumper_F"]],
+        ["bug_bumper_F_mount",     ["bug_body"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -1425,8 +1425,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-        ["bumper_R_simple",    ["bug_bumper_R"]],
-        ["bumper_R_mount",     ["bug_body"]],
+        ["bug_bumper_R_simple",    ["bug_bumper_R"]],
+        ["bug_bumper_R_mount",     ["bug_body"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

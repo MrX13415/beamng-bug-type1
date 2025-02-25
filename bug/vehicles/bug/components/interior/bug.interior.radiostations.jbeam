@@ -7,7 +7,7 @@
         "songName":"Claire De Lune Loop",
         "song": "event:>Special>piano_music",
         "builtIn": true,    // Is a built in radio station and not a mod
-        "value":300,
+        "value":0
     },
     "slotType" : "bug_radio_station",
 },
@@ -18,7 +18,7 @@
         "song": "art/sound/music/dicta",
         "volume":1,
         "builtIn": true,
-        "value":300,
+        "value":0
     },
     "slotType" : "bug_radio_station",
 },
@@ -30,7 +30,7 @@
         "song": "event:>Music>credits",
         "volume":1.5,
         "builtIn": true,
-        "value":300,
+        "value":0
     },
     "slotType" : "bug_radio_station",
 },*/
@@ -44,7 +44,7 @@
         "song": "event:>Music>synthwave",
         "volume":1.5,
         "builtIn": true,
-        "value":300,
+        "value":0
     },
     "slotType" : "bug_radio_station",
 }

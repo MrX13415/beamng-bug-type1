@@ -13,8 +13,8 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 	
-         ["roofrack_frame", ["roofrack"]],
-		 ["roofrack_base", ["roofrack"]],
+         ["bug_roofrack_frame", ["roofrack"]],
+		 ["bug_roofrack_base", ["roofrack"]],
     ],
 	"nodes":	[
 		["id", "posX", "posY", "posZ"],
@@ -397,7 +397,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["roofrack_bag", ["luggage_roofrack_bag"], [], {"materialOverride":[["bug_roofrack_bag","bug_rack_bag_brown"]]}]
+        ["bug_roofrack_bag", ["luggage_roofrack_bag"], [], {"materialOverride":[["bug_roofrack_bag","bug_rack_bag_brown"]]}]
     ]
 },
 "bug_roof_rack_luggage_bag_black": {
@@ -410,7 +410,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["roofrack_bag", ["luggage_roofrack_bag"], [], {"materialOverride":[["bug_roofrack_bag","bug_rack_bag_black"]]}]
+        ["bug_roofrack_bag", ["luggage_roofrack_bag"], [], {"materialOverride":[["bug_roofrack_bag","bug_rack_bag_black"]]}]
     ]
 },
 
@@ -425,7 +425,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-		["roofrack_coolingbox", ["luggage_roofrack_coolingbox"]],
+		["bug_roofrack_coolingbox", ["luggage_roofrack_coolingbox"]],
     ],
     "cargoStorage":[
         ["groupId","name","cargoTypes", "capacity"],
@@ -566,7 +566,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-		["roofrack_tricycle", ["luggage_roofrack_tricycle"]],
+		["bug_roofrack_tricycle", ["luggage_roofrack_tricycle"]],
     ],
 	"nodes":[
 		["id", "posX", "posY", "posZ"],
@@ -703,7 +703,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-		["roofrack_surfboard", ["luggage_roofrack_surfboard"]],
+		["bug_roofrack_surfboard", ["luggage_roofrack_surfboard"]],
     ],
 	"nodes":[
 		["id", "posX", "posY", "posZ"],
@@ -894,8 +894,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-        ["roofrack_sparerim_15x6", ["rack_wheel_spare"]],
-        ["roofrack_sparetire_offroad", ["rack_wheel_spare"]],
+        ["bug_roofrack_sparerim_15x6", ["rack_wheel_spare"]],
+        ["bug_roofrack_sparetire_offroad", ["rack_wheel_spare"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -974,7 +974,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["roofrack_crate", ["luggage_roofrack_create"]],
+        ["bug_roofrack_crate", ["luggage_roofrack_create"]],
     ],
     "cargoStorage":[
         ["groupId","name","cargoTypes", "capacity"],
@@ -1108,12 +1108,12 @@
     "slotType" : "bug_rearrack",
 	"slots": [
         ["type", "default", "description"],
-        ["bug_rearrack_luggage","bug_rearrack_luggage", "Rear Rack Luggage"],
+        ["bug_rearrack_luggage","bug_rearrack_luggage_bag", "Rear Rack Luggage"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 	
-         ["rearrack", ["rearrack"]],
+         ["bug_rearrack", ["rearrack"]],
 	],
 	"nodes":	[
 		["id", "posX", "posY", "posZ"],
@@ -1296,7 +1296,7 @@
         "name":"Leather Trunk",
         "value":60,
     },
-    "slotType" : "bug_rearrack_luggage",
+    "slotType": "bug_rearrack_luggage",
     "slots": [
         ["type", "default", "description"],
 
@@ -1421,7 +1421,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["rearrack_bag", ["luggage_rearrack"], [], {"materialOverride":[["bug_rearrack_bag","bug_rack_bag_brown"]]}],
+        ["bug_rearrack_bag", ["luggage_rearrack"], [], {"materialOverride":[["bug_rearrack_bag","bug_rack_bag_brown"]]}],
     ],
 },
 "bug_rearrack_luggage_bag_color_black": {
@@ -1434,7 +1434,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["rearrack_bag", ["luggage_rearrack"], [], {"materialOverride":[["bug_rearrack_bag","bug_rack_bag_black"]]}]
+        ["bug_rearrack_bag", ["luggage_rearrack"], [], {"materialOverride":[["bug_rearrack_bag","bug_rack_bag_black"]]}]
     ]
 },
 
@@ -1453,7 +1453,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["jerrycan_holder", ["jerrycan_cage"]],
+        ["bug_jerrycan_holder", ["jerrycan_cage"]],
     ],
 	"nodes":[
 		["id", "posX", "posY", "posZ"],
@@ -1692,7 +1692,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["Jerrycan", ["jerrycan"]],
+        ["bug_Jerrycan", ["jerrycan"]],
     ],
 },
 "bug_jerrycan_paint2": {
@@ -1705,7 +1705,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_paint2"]]}],
+        ["bug_Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_paint2"]]}],
     ],
 },
 "bug_jerrycan_paint3": {
@@ -1718,7 +1718,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_paint3"]]}],
+        ["bug_Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_paint3"]]}],
     ],
 },
 "bug_jerrycan_red": {
@@ -1731,7 +1731,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_red"]]}],
+        ["bug_Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_red"]]}],
     ],
 },
 "bug_jerrycan_green": {
@@ -1744,7 +1744,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_green"]]}],
+        ["bug_Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_green"]]}],
     ],
 },
 "bug_jerrycan_blue": {
@@ -1757,7 +1757,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_blue"]]}],
+        ["bug_Jerrycan", ["jerrycan"], [], {"materialOverride":[["bug_jerrycan","bug_jerrycan_blue"]]}],
     ],
 },
 

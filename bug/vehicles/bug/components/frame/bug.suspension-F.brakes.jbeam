@@ -14,8 +14,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-        ["brakedrum_5lw",  ["wheel_FL","wheelhub_FL"],  [], {"pos":{"x": 0.460, "y":0, "z":0}, "rot":{"x": 0, "y":0, "z":0 }, "scale":{"x": 1, "y":1, "z":1 }}],
-        ["brakedrum_5lw",  ["wheel_FR","wheelhub_FR"],  [], {"pos":{"x":-0.460, "y":0, "z":0}, "rot":{"x": 0, "y":0, "z":180 }, "scale":{"x": 1, "y":1, "z":1 }}],
+        ["bug_brakedrum_5lw",  ["wheel_FL","wheelhub_FL"],  [], {"pos":{"x": 0.460, "y":0, "z":0}, "rot":{"x": 0, "y":0, "z":0 }, "scale":{"x": 1, "y":1, "z":1 }}],
+        ["bug_brakedrum_5lw",  ["wheel_FR","wheelhub_FR"],  [], {"pos":{"x":-0.460, "y":0, "z":0}, "rot":{"x": 0, "y":0, "z":180 }, "scale":{"x": 1, "y":1, "z":1 }}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -51,8 +51,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["brakedisc_5lw",  ["wheel_FL","wheelhub_FL"],    [], {"pos":{"x": 0.460, "y":0, "z":0}, "rot":{"x": 0,   "y":0, "z":  0 },   "scale":{"x": 1, "y":1, "z":1 }}],
-        ["brakedisc_5lw",  ["wheel_FR","wheelhub_FR"],    [], {"pos":{"x":-0.460, "y":0, "z":0}, "rot":{"x": 0,   "y":0, "z":180 },   "scale":{"x": 1, "y":1, "z":1 }}],
+        ["bug_brakedisc_5lw",  ["wheel_FL","wheelhub_FL"],    [], {"pos":{"x": 0.460, "y":0, "z":0}, "rot":{"x": 0,   "y":0, "z":  0 },   "scale":{"x": 1, "y":1, "z":1 }}],
+        ["bug_brakedisc_5lw",  ["wheel_FR","wheelhub_FR"],    [], {"pos":{"x":-0.460, "y":0, "z":0}, "rot":{"x": 0,   "y":0, "z":180 },   "scale":{"x": 1, "y":1, "z":1 }}],
         ["brake_caliper_standard_plain", ["hub_F"],       [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":  0 },   "scale":{"x": 0.88, "y":0.88, "z":0.88 }}],
         ["brake_caliper_standard_plain", ["hub_F"],       [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":  0 },   "scale":{"x": 0.88, "y":0.88, "z":0.88 }}],
     ],

@@ -24,8 +24,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["axle_R_frame", ["lowermounts_R"]],
-        ["axle_R_arm",   ["lowermounts_R","hub_R"]],
+        ["bug_axle_R_frame", ["lowermounts_R"]],
+        ["bug_axle_R_arm",   ["lowermounts_R","hub_R"]],
 
        /// ["wheel_RL","wheelhub_RL"]]
 
@@ -151,6 +151,7 @@
         ["bs1r", "f7ml"],
         ["bs1r", "f7mr"],
         // to body: l
+        {"optional":true},
         ["bs1l", "bi2l"],
         ["bs1l", "bi2"],
         ["bs1l", "bi3l"],
@@ -160,6 +161,7 @@
         ["bs1r", "bi2"],
         ["bs1r", "bi3r"],
         ["bs1r", "bi3"],
+        {"optional":false},
         {"breakGroup": ""},
 
         // rear shock

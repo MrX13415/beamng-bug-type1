@@ -10,10 +10,10 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-        ["glovebox_notebook",    ["bug_body", "bug_dashboard"]],
-        ["glovebox_ownermanual", ["bug_body", "bug_dashboard"]],
-        ["glovebox_sponge",      ["bug_body", "bug_dashboard"]],
-        ["glovebox_sunglasses",  ["bug_body", "bug_dashboard"]]
+        ["bug_glovebox_notebook",    ["bug_body", "bug_dashboard"]],
+        ["bug_glovebox_ownermanual", ["bug_body", "bug_dashboard"]],
+        ["bug_glovebox_sponge",      ["bug_body", "bug_dashboard"]],
+        ["bug_glovebox_sunglasses",  ["bug_body", "bug_dashboard"]]
     ]
 },
 

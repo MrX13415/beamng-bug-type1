@@ -44,11 +44,6 @@
         "value":200,
     },
     "slotType" : "n2o_bottle",
-    "flexbodies": [
-        ["mesh", "[group]:", "nonFlexMaterials"],
-
-        ["n2o_bottle", "bug_body"],
-    ],
     "props": [
         ["func",     "mesh",        "idRef:", "idX:", "idY:", "baseRotation",            "rotation",            "translation",         "min", "max", "offset", "multiplier"]
         {"optional":true}

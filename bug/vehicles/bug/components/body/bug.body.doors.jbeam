@@ -39,13 +39,13 @@
     },
     "flexbodies": [
         ["mesh","[group]:","nonFlexMaterials"],
-        ["door_R",          ["bug_door_FR"]],
-        ["door_FR_handles", ["bug_door_FR"]],
+        ["bug_door_R",          ["bug_door_FR"]],
+        ["bug_door_FR_handles", ["bug_door_FR"]],
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
         // base translation would be {"x":0, "y":0, "z":-6} but some adjustment due to the node positons is required.
-        ["windowFR_state",    "door_FR_window_handle",  "d14r","d8r","d11r",   {"x":-3, "y":7, "z":168},   {"x":-2200, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
+        ["windowFR_state",    "bug_door_FR_window_handle",  "d14r","d8r","d11r",   {"x":-3, "y":7, "z":168},   {"x":-2200, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -351,13 +351,13 @@
     },
     "flexbodies": [
         ["mesh","[group]:","nonFlexMaterials"],
-        ["door_L",          ["bug_door_FL"]],
-        ["door_FL_handles", ["bug_door_FL"]],
+        ["bug_door_L",          ["bug_door_FL"]],
+        ["bug_door_FL_handles", ["bug_door_FL"]],
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
         // base translation would be {"x":0, "y":0, "z":-6} but some adjustment due to the node positons is required.
-        ["windowFL_state",    "door_FL_window_handle",  "d14l","d8l","d11l",   {"x":-3, "y":7, "z":9},     {"x":2200, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
+        ["windowFL_state",    "bug_door_FL_window_handle",  "d14l","d8l","d11l",   {"x":-3, "y":7, "z":9},     {"x":2200, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -633,7 +633,7 @@
     "slotType" : "bug_doorhandle_R",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_R_handle",   ["bug_door_FR"]],
+         ["bug_door_R_handle",   ["bug_door_FR"]],
     ],
 },
 "bug_door_handle_paint_R": {
@@ -645,7 +645,7 @@
     "slotType" : "bug_doorhandle_R",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_R_handle_paint",   ["bug_door_FR"]],
+         ["bug_door_R_handle_paint",   ["bug_door_FR"]],
     ],
 },
 "bug_door_handle_L": {
@@ -657,7 +657,7 @@
     "slotType" : "bug_doorhandle_L",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_L_handle",   ["bug_door_FL"]],
+         ["bug_door_L_handle",   ["bug_door_FL"]],
     ],
 },
 "bug_door_handle_paint_L": {
@@ -669,7 +669,7 @@
     "slotType" : "bug_doorhandle_L",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_L_handle_paint",   ["bug_door_FL"]],
+         ["bug_door_L_handle_paint",   ["bug_door_FL"]],
     ],
 },
 
@@ -682,11 +682,11 @@
     "slotType" : "bug_mirror_L",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_L_mirror_circle", ["door_mirror_L"]],
+         ["bug_door_L_mirror_circle", ["door_mirror_L"]],
     ],
     "mirrors": [
         ["mesh", "idRef:", "id1:", "id2:"],
-        ["door_L_mirror_circle","mi3l","mi2l","mi1l",{"refBaseTranslation":{"x":0.050,"y":0.007,"z":-0.004},"baseRotationGlobal":{"x":-7.5,"y":0,"z":-14}}],
+        ["bug_door_L_mirror_circle","mi3l","mi2l","mi1l",{"refBaseTranslation":{"x":0.050,"y":0.007,"z":-0.004},"baseRotationGlobal":{"x":-7.5,"y":0,"z":-14}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -776,11 +776,11 @@
     "slotType" : "bug_mirror_R",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_R_mirror_circle", ["door_mirror_R"]],
+         ["bug_door_R_mirror_circle", ["door_mirror_R"]],
     ],
     "mirrors": [
         ["mesh", "idRef:", "id1:", "id2:"],
-        ["door_R_mirror_circle","mi3r","mi2r","mi1r",{"refBaseTranslation":{"x":-0.050,"y":0.01,"z":-0.004},"baseRotationGlobal":{"x":-7.5,"y":0,"z":14}}],
+        ["bug_door_R_mirror_circle","mi3r","mi2r","mi1r",{"refBaseTranslation":{"x":-0.050,"y":0.01,"z":-0.004},"baseRotationGlobal":{"x":-7.5,"y":0,"z":14}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -870,11 +870,11 @@
     "slotType" : "bug_mirror_L",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_L_mirror_teardrop", ["door_mirror_L"]],
+         ["bug_door_L_mirror_teardrop", ["door_mirror_L"]],
     ],
     "mirrors": [
         ["mesh", "idRef:", "id1:", "id2:"],
-        ["door_L_mirror_teardrop","mi3l","mi2l","mi1l",{"refBaseTranslation":{"x":0.055,"y":0.017,"z":0.0},"baseRotationGlobal":{"x":-5.0,"y":0,"z":-15}}],
+        ["bug_door_L_mirror_teardrop","mi3l","mi2l","mi1l",{"refBaseTranslation":{"x":0.055,"y":0.017,"z":0.0},"baseRotationGlobal":{"x":-5.0,"y":0,"z":-15}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -964,11 +964,11 @@
     "slotType" : "bug_mirror_R",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["door_R_mirror_teardrop", ["door_mirror_R"]],
+         ["bug_door_R_mirror_teardrop", ["door_mirror_R"]],
     ],
     "mirrors": [
         ["mesh", "idRef:", "id1:", "id2:"],
-        ["door_R_mirror_teardrop","mi3r","mi2r","mi1r",{"refBaseTranslation":{"x":-0.055,"y":0.017,"z":0.0},"baseRotationGlobal":{"x":-5.0,"y":0,"z":15}}],
+        ["bug_door_R_mirror_teardrop","mi3r","mi2r","mi1r",{"refBaseTranslation":{"x":-0.055,"y":0.017,"z":0.0},"baseRotationGlobal":{"x":-5.0,"y":0,"z":15}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

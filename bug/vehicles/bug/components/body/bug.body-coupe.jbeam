@@ -63,42 +63,42 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["brake",        "inputs_pedals_brake",     "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["brake",        "bug_inputs_pedals_brake",     "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
    "flexbodies": [
         // new mesh
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["body_interior_dashboard",        ["bug_body", "bug_body_interior", "bug_body_cowl"]],
-        ["body_interior_hood",             ["bug_body", "bug_body_interior", "bug_body_cowl"]],
-        ["body_interior_rear_window",      ["bug_body", "bug_body_interior", "bug_body_roof"]],
-        ["body_interior_sides",            ["bug_body", "bug_body_interior", "bug_body_sides"]],
-        ["body_sides",                     ["bug_body", "bug_body_sides"]],
+        ["bug_body_interior_dashboard",        ["bug_body", "bug_body_interior", "bug_body_cowl"]],
+        ["bug_body_interior_hood",             ["bug_body", "bug_body_interior", "bug_body_cowl"]],
+        ["bug_body_interior_rear_window",      ["bug_body", "bug_body_interior", "bug_body_roof"]],
+        ["bug_body_interior_sides",            ["bug_body", "bug_body_interior", "bug_body_sides"]],
+        ["bug_body_sides",                     ["bug_body", "bug_body_sides"]],
 
-        ["body_door_hinges",               ["bug_body", "bug_body_sides"]],
-        ["body_engine_panel_bottom",       ["bug_body", "bug_body_rear"]],
-        ["body_engine_panel_top",          ["bug_body", "bug_body_rear"]],
-        ["body_engine_vents_back",         ["bug_body", "bug_body_rear"]],
-        ["body_firewall",                  ["bug_body", "bug_body_cowl"]],
+        ["bug_body_door_hinges",               ["bug_body", "bug_body_sides"]],
+        ["bug_body_engine_panel_bottom",       ["bug_body", "bug_body_rear"]],
+        ["bug_body_engine_panel_top",          ["bug_body", "bug_body_rear"]],
+        ["bug_body_engine_vents_back",         ["bug_body", "bug_body_rear"]],
+        ["bug_body_firewall",                  ["bug_body", "bug_body_cowl"]],
 
-        ["body_front",                     ["bug_body", "bug_body_front"]],
-        ["body_front_fenders",             ["bug_body", "bug_body_front"]],
-        ["body_front_frame",               ["bug_body", "bug_body_front"]],
+        ["bug_body_front",                     ["bug_body", "bug_body_front"]],
+        ["bug_body_front_fenders",             ["bug_body", "bug_body_front"]],
+        ["bug_body_front_frame",               ["bug_body", "bug_body_front"]],
         
-        ["body_heatpipes",                 ["bug_body", "bug_body_interior"]],
-        ["body_interior_rear",             ["bug_body", "bug_body_interior"]],
-        ["body_interior_sides_back",       ["bug_body", "bug_body_interior"]],
-        ["body_interior_wheelarch_front",  ["bug_body", "bug_body_interior"]],
-        ["body_interior_steer_mount",      ["bug_body", "bug_body_interior"]],
-        ["body_backseat_base",             ["bug_body", "bug_body_interior"]],
-        ["body_heatpipe_R",                ["bug_body", "bug_body_interior"]],
+        ["bug_body_heatpipes",                 ["bug_body", "bug_body_interior"]],
+        ["bug_body_interior_rear",             ["bug_body", "bug_body_interior"]],
+        ["bug_body_interior_sides_back",       ["bug_body", "bug_body_interior"]],
+        ["bug_body_interior_wheelarch_front",  ["bug_body", "bug_body_interior"]],
+        ["bug_body_interior_steer_mount",      ["bug_body", "bug_body_interior"]],
+        ["bug_body_backseat_base",             ["bug_body", "bug_body_interior"]],
+        ["bug_body_heatpipe_R",                ["bug_body", "bug_body_interior"]],
 
-        ["body_rear",                      ["bug_body", "bug_body_rear"]],
-        ["trunk_latch",                    ["bug_body", "bug_body_rear"]],
-        ["trunk_mounts",                   ["bug_body", "bug_body_rear"]],
+        ["bug_body_rear",                      ["bug_body", "bug_body_rear"]],
+        ["bug_trunk_latch",                    ["bug_body", "bug_body_rear"]],
+        ["bug_trunk_mounts",                   ["bug_body", "bug_body_rear"]],
 
-        ["hood_parts",                     ["bug_body"]],
-        ["body_door_parts",                ["bug_body"]],
+        ["bug_hood_parts",                     ["bug_body"]],
+        ["bug_body_door_parts",                ["bug_body"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -1700,7 +1700,7 @@
     ],
     "controller": [
         ["fileName"],
-        ["wipers"]
+        ["bug/wipers", {"name": "wipers"}]
     ],
     "wipers": {
         "maxSpeedLevel": 1,
@@ -1710,8 +1710,8 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["wipers",    "wiper_L",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
-        ["wipers",    "wiper_R",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
+        ["wipers",    "bug_wiper_L",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
+        ["wipers",    "bug_wiper_R",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
     ]
 },
 "bug_wipers_speed2": {
@@ -1727,7 +1727,7 @@
     ],
     "controller": [
         ["fileName"],
-        ["wipers"]
+        ["bug/wipers", {"name": "wipers"}]
     ],
     "wipers": {
         "maxSpeedLevel": 2,
@@ -1739,8 +1739,8 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["wipers",    "wiper_L",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
-        ["wipers",    "wiper_R",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
+        ["wipers",    "bug_wiper_L",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
+        ["wipers",    "bug_wiper_R",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
     ]
 },
 "bug_wipers_speed3": {
@@ -1756,7 +1756,7 @@
     ],
     "controller": [
         ["fileName"],
-        ["wipers"]
+        ["bug/wipers", {"name": "wipers"}]
     ],
     "wipers": {
         "maxSpeedLevel": 3,
@@ -1770,8 +1770,8 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["wipers",    "wiper_L",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
-        ["wipers",    "wiper_R",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
+        ["wipers",    "bug_wiper_L",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
+        ["wipers",    "bug_wiper_R",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
     ]
 },
 
@@ -1789,8 +1789,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["body_interiorlight",             ["bug_body", "bug_body_sides"]],
-        ["body_interiorlight_glass",       ["bug_body", "bug_body_sides"]]
+        ["bug_body_interiorlight",             ["bug_body", "bug_body_sides"]],
+        ["bug_body_interiorlight_glass",       ["bug_body", "bug_body_sides"]]
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -1839,8 +1839,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["heatvent_F_covers",                     ["bug_body", "bug_body_interior"]],
-        ["heatvent_R_covers",                     ["bug_body", "bug_body_interior"]]
+        ["bug_heatvent_F_covers",                     ["bug_body", "bug_body_interior"]],
+        ["bug_heatvent_R_covers",                     ["bug_body", "bug_body_interior"]]
     ]
 },
 "bug_heatvents": {
@@ -1853,8 +1853,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["heatvent_F",                     ["bug_body", "bug_body_interior"]],
-        ["heatvent_R",                     ["bug_body", "bug_body_interior"]]
+        ["bug_heatvent_F",                     ["bug_body", "bug_body_interior"]],
+        ["bug_heatvent_R",                     ["bug_body", "bug_body_interior"]]
     ]
 },
 
@@ -1868,7 +1868,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["body_roof_vent_cover", ["bug_body"]],
+        ["bug_body_roof_vent_cover", ["bug_body"]],
     ]
 },
 }

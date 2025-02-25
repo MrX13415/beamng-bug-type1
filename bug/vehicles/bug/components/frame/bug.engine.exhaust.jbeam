@@ -10,7 +10,7 @@
     "flexbodies": [
          ["mesh","[group]:","nonFlexMaterials"],
 
-         ["exhaust_dual", ["bug_exhaust"]],
+         ["bug_exhaust_dual", ["bug_exhaust"]],
     ],
     "mainEngine":{
         "torqueModExhaust":[
@@ -203,7 +203,7 @@
     "flexbodies": [
          ["mesh","[group]:","nonFlexMaterials"],
 
-         ["exhaust_single", ["bug_exhaust"]],
+         ["bug_exhaust_single", ["bug_exhaust"]],
     ],
     "mainEngine":{
         "torqueModExhaust":[
@@ -390,7 +390,7 @@
     "flexbodies": [
          ["mesh","[group]:","nonFlexMaterials"],
 
-         ["exhaust_dual", ["bug_exhaust"]],
+         ["bug_exhaust_dual", ["bug_exhaust"]],
     ],
     "mainEngine":{
         "torqueModExhaust":[

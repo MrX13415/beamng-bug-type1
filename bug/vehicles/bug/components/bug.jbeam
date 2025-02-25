@@ -63,16 +63,20 @@
             "customValues": [
                 ["electricsName", "electricsFunction"],
                 // Ext. Lights
-                ["power__lowbeam"               , "electrics.lowbeam      * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                ["power__highbeam"              , "electrics.highbeam     * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                ["power__lowhighbeam"           , "electrics.lowhighbeam  * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                ["power__brake"                 , "electrics.brake        * electrics.powerOn"],
+                ["power__lowbeam"               , "electrics.lowbeam                   * electrics.electricalLoadCoef * electrics.powerOnRatio"],
+                ["power__highbeam"              , "electrics.highbeam                  * electrics.electricalLoadCoef * electrics.powerOnRatio"],
+                ["power__lowhighbeam"           , "electrics.lowhighbeam               * electrics.electricalLoadCoef * electrics.powerOnRatio"],
+                ["power__brake"                 , "electrics.brake                     * electrics.powerOn"],
 
-                ["power__signal_L"              , "electrics.signal_L     * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                ["power__signal_R"              , "electrics.signal_R     * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                
-                ["power__underglow"             , "(electrics.underglow or 0) * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                ["power__lightbar"              , "electrics.lightbar         * electrics.electricalLoadCoef * electrics.powerOn"],
+                ["power__signal_L"              , "electrics.signal_L                  * electrics.electricalLoadCoef * electrics.powerOnRatio"],
+                ["power__signal_R"              , "electrics.signal_R                  * electrics.electricalLoadCoef * electrics.powerOnRatio"],
+                // unused ["power__lowhighbeam_signal_L"  , "electrics.lowhighbeam_signal_L      * electrics.electricalLoadCoef * electrics.powerOnRatio"],
+                // unused ["power__lowhighbeam_signal_R"  , "electrics.lowhighbeam_signal_R      * electrics.electricalLoadCoef * electrics.powerOnRatio"],
+                ["power__usdm_signal_L"         , "min(electrics.power__signal_L+electrics.power__lowhighbeam*0.49,1)"],
+                ["power__usdm_signal_R"         , "min(electrics.power__signal_R+electrics.power__lowhighbeam*0.49,1)"],
+
+                ["power__underglow"             , "(electrics.underglow or 0)          * electrics.electricalLoadCoef * electrics.powerOnRatio"],
+                ["power__lightbar"              , "electrics.lightbar                  * electrics.electricalLoadCoef * electrics.powerOn"],
 
                 // Interior
                 ["power__gauges"                , "electrics.lowhighbeam               * electrics.electricalLoadCoef * electrics.powerOn"],
@@ -98,8 +102,10 @@
                 ["power__lowhighbeam","temporalNonLinear", [10,10]],
                 ["power__brake","temporalNonLinear", [10,10]],
 
-                ["power__signal_L","temporalNonLinear", [15,15]],
-                ["power__signal_R","temporalNonLinear", [15,15]],
+                ["power__signal_L","temporalNonLinear", [10,10]],
+                ["power__signal_R","temporalNonLinear", [10,10]],
+                ["power__lowhighbeam_signal_L","temporalNonLinear", [10,10]],
+                ["power__lowhighbeam_signal_R","temporalNonLinear", [10,10]],
 
                 ["power__underglow","temporalNonLinear", [15,15]],
                 // Not working with props ["power__lightbar","temporalNonLinear", [5,5]],

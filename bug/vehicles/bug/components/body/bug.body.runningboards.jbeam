@@ -14,7 +14,7 @@
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["runningboards_black", ["bug_runningboards"]],
+        ["bug_runningboards_black", ["bug_runningboards"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -132,7 +132,7 @@
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["runningboards_gray", ["bug_runningboards"]],
+        ["bug_runningboards_gray", ["bug_runningboards"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -250,7 +250,7 @@
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["runningboards_white", ["bug_runningboards"]],
+        ["bug_runningboards_white", ["bug_runningboards"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -368,7 +368,7 @@
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["runningboards_white2", ["bug_runningboards"]],
+        ["bug_runningboards_white2", ["bug_runningboards"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -484,7 +484,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["runningboards_trim", ["bug_runningboards"]]
+        ["bug_runningboards_trim", ["bug_runningboards"]]
     ]
 }
 

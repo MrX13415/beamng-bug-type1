@@ -46,8 +46,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["trunk",        ["bug_trunk"]],
-        ["trunk_hinges", ["bug_body"]],
+        ["bug_trunk",        ["bug_trunk"]],
+        ["bug_trunk_hinges", ["bug_body"]],
     ],
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -334,7 +334,7 @@
     "slotType" : "bug_trunk_handle",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["trunk_handle", ["bug_trunk"]],
+         ["bug_trunk_handle", ["bug_trunk"]],
     ],
 },
 "trunk_handle_paint": {
@@ -346,7 +346,7 @@
     "slotType" : "bug_trunk_handle",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["trunk_handle_paint", ["bug_trunk"]],
+         ["bug_trunk_handle_paint", ["bug_trunk"]],
     ],
 },
 
@@ -364,7 +364,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["trunk_light",  ["bug_trunk"]],
+        ["bug_trunk_light",  ["bug_trunk"]],
     ],
 },
 "bug_trunk_light_wide": {
@@ -381,7 +381,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["trunk_light_wide",  ["bug_trunk"]],
+        ["bug_trunk_light_wide",  ["bug_trunk"]],
     ],
 },
 

@@ -133,7 +133,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["spoiler_F", ["bug_spoilerF"]]
+        ["bug_spoiler_F", ["bug_spoilerF"]]
    ],
 },
 "bug_spoilerF_white": {
@@ -147,7 +147,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["spoiler_F", ["bug_spoilerF"]]
+        ["bug_spoiler_F", ["bug_spoilerF"]]
    ],
 },
 "bug_spoilerF_white2": {
@@ -161,7 +161,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["spoiler_F", ["bug_spoilerF"]]
+        ["bug_spoiler_F", ["bug_spoilerF"]]
    ],
 },
 "bug_spoilerF_paint1": {
@@ -175,7 +175,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["spoiler_F", ["bug_spoilerF"]]
+        ["bug_spoiler_F", ["bug_spoilerF"]]
    ],
 },
 "bug_spoilerF_paint2": {
@@ -189,7 +189,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["spoiler_F", ["bug_spoilerF"]]
+        ["bug_spoiler_F", ["bug_spoilerF"]]
    ],
 },
 "bug_spoilerF_paint3": {
@@ -203,7 +203,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["spoiler_F", ["bug_spoilerF"]]
+        ["bug_spoiler_F", ["bug_spoilerF"]]
    ],
 },
 

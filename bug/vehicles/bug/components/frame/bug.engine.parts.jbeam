@@ -10,12 +10,12 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["fueltank",        ["fueltank"]],
+        ["bug_fueltank",        ["fueltank"]],
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["fuelcap_anim", "fueltank_cap",  "ft1l","ft1r","ft3r",   {"x":8.575, "y":177.328, "z":-9.340},   {"x":-5, "y":-8, "z":0},    {"x":-0.39, "y":0.48, "z":0.1},        0,     1,        0,  1],
+        ["fuelcap_anim", "bug_fueltank_cap",  "ft1l","ft1r","ft3r",   {"x":8.575, "y":177.328, "z":-9.340},   {"x":-5, "y":-8, "z":0},    {"x":-0.39, "y":0.48, "z":0.1},        0,     1,        0,  1],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -168,9 +168,9 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["fueltank",        ["fueltank"]],
-        ["fueltank_cap",    ["fueltank"]],
-        ["fueltank_sensor", ["fueltank"]],
+        ["bug_fueltank",        ["fueltank"]],
+        ["bug_fueltank_cap",    ["fueltank"]],
+        ["bug_fueltank_sensor", ["fueltank"]],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -313,10 +313,10 @@
 	"flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["battery",               ["bug_battery"]],
-        ["battery_cable_fitting", ["bug_frame"]],
-        ["battery_cable_red",     ["bug_battery", "bug_battery_cable"]],
-        ["battery_cable_black",   ["bug_battery", "bug_battery_cable"]],
+        ["bug_battery",               ["bug_battery"]],
+        ["bug_battery_cable_fitting", ["bug_frame"]],
+        ["bug_battery_cable_red",     ["bug_battery", "bug_battery_cable"]],
+        ["bug_battery_cable_black",   ["bug_battery", "bug_battery_cable"]],
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -324,7 +324,7 @@
     ],
     "controller": [
         ["fileName"],
-        ["battery"]
+        ["bug/battery", {"name": "battery"}]
     ],
     "battery": {
         "voltage": 12,            // V
@@ -1127,15 +1127,15 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
         
         // Single carburetor
-        ["engine_air_filter",        ["bug_engine"]],
-        ["engine_cables",            ["bug_engine"]],
-        ["engine_carburetor",        ["bug_engine"]],
-        ["engine_carburetor_spring", ["bug_engine"]],
-        ["engine_fuel_line",         ["bug_engine"]],
-        ["engine_ignition_coil",     ["bug_engine"]],
-        ["engine_intake_manifold",   ["bug_engine"]],
-        ["engine_warm_air_tube",     ["bug_engine"]],
-        ["engine_oil_tube",          ["bug_engine"]],
+        ["bug_engine_air_filter",        ["bug_engine"]],
+        ["bug_engine_cables",            ["bug_engine"]],
+        ["bug_engine_carburetor",        ["bug_engine"]],
+        ["bug_engine_carburetor_spring", ["bug_engine"]],
+        ["bug_engine_fuel_line",         ["bug_engine"]],
+        ["bug_engine_ignition_coil",     ["bug_engine"]],
+        ["bug_engine_intake_manifold",   ["bug_engine"]],
+        ["bug_engine_warm_air_tube",     ["bug_engine"]],
+        ["bug_engine_oil_tube",          ["bug_engine"]],
     ]
 },
 "bug_intake_dual": {
@@ -1149,14 +1149,14 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         // Dual carburetor
-        ["engine_dualcarburetor",               ["bug_engine"]],
-        ["engine_dualcarburetor_cables",        ["bug_engine"]],
-        ["engine_dualcarburetor_connector",     ["bug_engine"]],
-        ["engine_dualcarburetor_filter",        ["bug_engine"]],
-        ["engine_dualcarburetor_ignition_coil", ["bug_engine"]],
-        ["engine_dualcarburetor_intake",        ["bug_engine"]],
-        ["engine_dualcarburetor_linkage",       ["bug_engine"]],
-        ["engine_dualcarburetor_oil_tube",      ["bug_engine"]],
+        ["bug_engine_dualcarburetor",               ["bug_engine"]],
+        ["bug_engine_dualcarburetor_cables",        ["bug_engine"]],
+        ["bug_engine_dualcarburetor_connector",     ["bug_engine"]],
+        ["bug_engine_dualcarburetor_filter",        ["bug_engine"]],
+        ["bug_engine_dualcarburetor_ignition_coil", ["bug_engine"]],
+        ["bug_engine_dualcarburetor_intake",        ["bug_engine"]],
+        ["bug_engine_dualcarburetor_linkage",       ["bug_engine"]],
+        ["bug_engine_dualcarburetor_oil_tube",      ["bug_engine"]],
     ],
     "mainEngine":{
         "torqueModIntake":[

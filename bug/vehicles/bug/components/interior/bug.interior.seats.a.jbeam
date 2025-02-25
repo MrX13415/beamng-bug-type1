@@ -11,8 +11,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["seat_A_base_FL",   ["bug_seat_FL_base"]],
-        ["seat_A_back1_FL",  ["bug_seat_FL_back"]],
+        ["bug_seat_A_base_FL",   ["bug_seat_FL_base"]],
+        ["bug_seat_A_back1_FL",  ["bug_seat_FL_back"]],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -170,8 +170,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["seat_A_base_FR",   ["bug_seat_FR_base"]],
-        ["seat_A_back1_FR",  ["bug_seat_FR_back"]],
+        ["bug_seat_A_base_FR",   ["bug_seat_FR_base"]],
+        ["bug_seat_A_back1_FR",  ["bug_seat_FR_back"]],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -330,8 +330,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["seat_A_base_FL",   ["bug_seat_FL_base"]],
-        ["seat_A_back2_FL",  ["bug_seat_FL_back"]],
+        ["bug_seat_A_base_FL",   ["bug_seat_FL_base"]],
+        ["bug_seat_A_back2_FL",  ["bug_seat_FL_back"]],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -489,8 +489,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["seat_A_base_FR",   ["bug_seat_FR_base"]],
-        ["seat_A_back2_FR",  ["bug_seat_FR_back"]],
+        ["bug_seat_A_base_FR",   ["bug_seat_FR_base"]],
+        ["bug_seat_A_back2_FR",  ["bug_seat_FR_back"]],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -670,9 +670,9 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     
-        // ["seat_A_rear_back", ["bug_seat_R"]],
-        ["seat_A_rear_back", ["bug_seat_R"]],
-        ["seat_A_rear_base", ["bug_seat_R"]],
+        // ["bug_seat_A_rear_back", ["bug_seat_R"]],
+        ["bug_seat_A_rear_back", ["bug_seat_R"]],
+        ["bug_seat_A_rear_base", ["bug_seat_R"]],
     ],
     "nodes": [
         ["id","posX","posY","posZ"],
