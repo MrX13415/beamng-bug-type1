@@ -40,13 +40,17 @@ local function dump(engine)
   end
 end
 
+local function endswith(text, suffix)
+  return string.sub(text, -#suffix) == suffix
+end
+
 local function updateThrusters()
   if v.data.thrusters == nil then return end
   
   -- load thrusters ...
   if #thrusters == 0 then
     for index, thruster in pairs(v.data.thrusters) do
-      if thruster.partOrigin == "bug_water_thrusters" then
+      if endswith(thruster.partPath, "/bug_water_thrusters") then
         local t = {}
         t.id = thruster.id2
         t.factor = thruster.factor

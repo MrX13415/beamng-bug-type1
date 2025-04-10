@@ -53,7 +53,7 @@ local partBlacklist = {
 }
 
 local function isPartEnabled()
-	for _,part in pairs(v.data.activeParts) do
+	for _,part in pairs(v.data.activePartsData) do
 		if part.partName == "bug_herbie_regeneration" then return true end
 	end
   return false
@@ -68,14 +68,14 @@ local function stop()
   M.sendState()
 end
 
-local function getBeamPartOrigin(beam, getEndNode)
-  local partOrigin = nil
+local function getBeamPartPath(beam, getEndNode)
+  local partPath = nil
   if not getEndNode then
-    partOrigin = v.data.nodes[beam.id1].partOrigin
+    partPath = v.data.nodes[beam.id1].partPath
   else
-    partOrigin = v.data.nodes[beam.id2].partOrigin
+    partPath = v.data.nodes[beam.id2].partPath
   end
-  return partOrigin or ""
+  return partPath or ""
 end
 
 local function validRegenPart(partName)
@@ -98,28 +98,23 @@ local function start()
 
   --build the cache
   for k,beam in pairs(v.data.beams) do
-    
-    if beam.beamType ~= NORMALTYPE then goto next end
-    if obj:beamIsBroken(beam.cid) then goto next end
+    if beam.beamType == NORMALTYPE and not obj:beamIsBroken(beam.cid) then
+      local part1 = getBeamPartPath(beam,false)
+      local part2 = getBeamPartPath(beam,true)
 
-    local part1 = getBeamPartOrigin(beam,false)
-    local part2 = getBeamPartOrigin(beam,true)
+      if part1 == part2 and validRegenPart(part1) and validRegenPart(part2) then
+            
+        --Check if this is a 'weird' beam and if this is a 0 length beam
+        local currentLengthRatio = obj:getBeamLengthRefRatio(beam.cid)
+        local currentLength = obj:getBeamLength(beam.cid)
+        if currentLengthRatio > 0.001 and currentLength > 0.001 then
 
-    if part1 ~= part2 then goto next end
-    if not validRegenPart(part1) or not validRegenPart(part2) then goto next end
+          --add to cache
+          table.insert(regenBeamCache, beam)
 
-    --get beam length, check if this is a 'weird' beam?
-    local currentLengthRatio = obj:getBeamLengthRefRatio(beam.cid)
-    if currentLengthRatio < 0.001 then goto next end
-
-    --check if this is a 0 length beam
-    local currentLength = obj:getBeamLength(beam.cid)
-    if currentLength < 0.001 then goto next end
-
-    --add to cache
-    table.insert(regenBeamCache, beam)
-
-    ::next::
+        end
+      end
+    end
   end
 
   --finally, flag for regen
@@ -138,43 +133,43 @@ local function doRegen(dt, check)
 
     local currentLengthRatio = obj:getBeamLengthRefRatio(beam.cid)
     local currentLength = obj:getBeamLength(beam.cid)
+
     --mark as repaired when to small ratio or length
     if currentLengthRatio < 0.001 or currentLength < 0.001 then
       regenBeamStates[beam.cid] = true
       count = count + 1
-      goto next
-    end
 
-    --change length if we need to
-    local targetLength = (currentLength / currentLengthRatio)
-    local remainingLengthChange = math.abs(targetLength - currentLength)
-    local lengthScaledRate = math.min(timeScaledRate / targetLength, math.abs(1 - currentLengthRatio))
-
-    local repairedVal = math.max(repairErrorMargin, repairErrorMargin * (regenTime / 30))
-
-    --are we done repairing this beam?
-    if currentLengthRatio == 0 or remainingLengthChange < repairedVal then
-      regenBeamStates[beam.cid] = true
-      count = count + 1
-      goto next
-    end
-
-    --repair this beam!
-    if currentLength < targetLength then
-      obj:setBeamLengthRefRatio(beam.cid,currentLengthRatio + lengthScaledRate)
     else
-      obj:setBeamLengthRefRatio(beam.cid,currentLengthRatio - lengthScaledRate)
+      --change length if we need to
+      local targetLength = (currentLength / currentLengthRatio)
+      local remainingLengthChange = math.abs(targetLength - currentLength)
+      local lengthScaledRate = math.min(timeScaledRate / targetLength, math.abs(1 - currentLengthRatio))
+
+      local repairedVal = math.max(repairErrorMargin, repairErrorMargin * (regenTime / 30))
+
+      --are we done repairing this beam?
+      if currentLengthRatio == 0 or remainingLengthChange < repairedVal then
+        regenBeamStates[beam.cid] = true
+        count = count + 1
+      
+      else
+        --repair this beam!
+        if currentLength < targetLength then
+          obj:setBeamLengthRefRatio(beam.cid,currentLengthRatio + lengthScaledRate)
+        else
+          obj:setBeamLengthRefRatio(beam.cid,currentLengthRatio - lengthScaledRate)
+        end
+
+        --Debug:
+        --if progress > 0.99 then
+        --  local nodes = v.data.nodes[beam.id1].name .. "," .. v.data.nodes[beam.id2].name
+        --  local beamType = beam.beamType or 0
+        --  local name = tostring(getBeamPartPath(beam,false)) .. "->" .. tostring(getBeamPartPath(beam,true))
+        --  print("[Bug:Regeneration] " .. tostring(name) .. ": " .. nodes .. " " .. tostring(beamType) .. " | " .. tostring(remainingLengthChange) .. " | " .. tostring(currentLength) .. " / " .. tostring(targetLength) .. " 1:" .. tostring(currentLengthRatio))
+        --end
+        
+      end
     end
-
-    --Debug:
-    --if progress > 0.99 then
-    --  local nodes = v.data.nodes[beam.id1].name .. "," .. v.data.nodes[beam.id2].name
-    --  local beamType = beam.beamType or 0
-    --  local name = tostring(getBeamPartOrigin(beam,false)) .. "->" .. tostring(getBeamPartOrigin(beam,true))
-    --  print("[Bug:Regeneration] " .. tostring(name) .. ": " .. nodes .. " " .. tostring(beamType) .. " | " .. tostring(remainingLengthChange) .. " | " .. tostring(currentLength) .. " / " .. tostring(targetLength) .. " 1:" .. tostring(currentLengthRatio))
-    --end
-
-    ::next::
   end
 
   progress = count / total

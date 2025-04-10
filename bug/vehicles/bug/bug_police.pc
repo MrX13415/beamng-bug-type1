@@ -42,6 +42,7 @@
   ],
   "parts":{
     "antenna":"",
+    "beacon_color":"beacon_color_red",
     "brakepad_F":"brakepad_F",
     "brakepad_R":"brakepad_R",
     "bug_6pack":"",
@@ -143,7 +144,7 @@
     "bug_rearwindow":"bug_rearwindow",
     "bug_rollbar":"",
     "bug_roof":"bug_roof_hardtop",
-    "bug_roof_accessory":"bug_beaconlight_red",
+    "bug_roof_accessory":"bug_beaconlight",
     "bug_seat_FL":"bug_seat_lowback_FL",
     "bug_seat_FR":"bug_seat_lowback_FR",
     "bug_seat_R":"bug_seat_A_R",

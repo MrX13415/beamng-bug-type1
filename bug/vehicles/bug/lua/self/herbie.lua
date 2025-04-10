@@ -68,7 +68,7 @@ function round(num, numDecimalPlaces)
 	return math.floor(num * mult + 0.5) / mult
 end
 
-function loadcvs(f)
+local function loadcvs(f)
 	local state = 1
 	local r = function ()
 		if state == 1 then state = 2 return "return {" end
@@ -602,7 +602,7 @@ end
 
 local function onInit(jbeamData)
 	enabled = false
-	for _,part in pairs(v.data.activeParts) do
+	for _,part in pairs(v.data.activePartsData) do
 		if part.partName == "bug_herbie_personality" then enabled = true end
 		if part.partName == "bug_engine_1.8_herbie" then herbieEngine = true end
 	end

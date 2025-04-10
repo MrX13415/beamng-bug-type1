@@ -122,9 +122,6 @@
         // use the "oil" LED to indicate regeneration beeing active (blinking).
         "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
         "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},             "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
-
-        // misc
-        "bug_radio_scale":          {"simpleFunction":"power__radio_state",  "off":"bug_radio_scale",    "on":"bug_radio_scale_on",       "on_intense":"bug_radio_scale_on", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -133,6 +130,8 @@
         ["parkingbrake_anim", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        
         {"collision":true},
         {"selfCollision":false},
         

@@ -2,7 +2,7 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
--- v1.0
+-- v1.1
 -- by MrX13415
 
 local M = {}
@@ -145,11 +145,11 @@ local function calculateTotalPower()
   if battery then battery.clearPower() end
   
   --log("D", "", "[Bug:Power] " .. tostring(#powerParts) .. " items")
-  for _,item in pairs(powerParts) do
-    local power = calculatePower(item)
+  for _,part in pairs(powerParts) do
+    local power = calculatePower(part)
 
-    --log("D", "", "[Bug:Power]   " .. item.partName .. ": "  .. tostring(round(power)) .. "W")
-    if battery then battery.addPower(item.partName, power) end
+    --log("D", "", "[Bug:Power]   " .. item.partPath .. ": "  .. tostring(round(power)) .. "W")
+    if battery then battery.addPower(part.partPath, power) end
     total = total + power
   end
 
@@ -344,7 +344,7 @@ local function onInit()
   if v.data.electricPower then
     for _,item in pairs(v.data.electricPower) do
       local p = {}
-      p.partName = item.partOrigin
+      p.partPath = item.partPath
       p.power = item.power or 0
       p.trigger = _replaceCmd(item.trigger, item.power)
       p.ratio = _replaceCmd(item.ratio, item.power)
@@ -355,7 +355,7 @@ local function onInit()
       table.insert(powerParts, p)
     end
     table.sort(powerParts, function(a, b)
-      return a.partName < b.partName
+      return a.partPath < b.partPath
     end)
   end
 
@@ -386,7 +386,7 @@ local function onInit()
     local s = ""
     if p.trigger then s = s.."trigger: '"..tostring(p.trigger).."'" end
     if p.ratio then s = s.."; ratio: '"..tostring(p.ratio).."'" end
-    log("D", "", "[Bug:Power]   "..p.partName..": "..tostring(toUnit(p.power, "W")).." {"..s.."}")
+    log("D", "", "[Bug:Power]   "..tostring(toUnit(p.power, "W")).." "..p.partPath.." {"..s.."}")
   end
 end
 

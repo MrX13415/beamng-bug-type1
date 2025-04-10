@@ -39,10 +39,10 @@ local function update()
     return
   end
 
-  if isVeh ~= playerInfo.firstPlayerSeated then
-    isVeh = playerInfo.firstPlayerSeated
+  if inVeh ~= playerInfo.firstPlayerSeated then
+    inVeh = playerInfo.firstPlayerSeated
 
-    if isVeh then
+    if inVeh then
       print('[Bug:Follow] Player stepped into vehicle')
     else
       print('[Bug:Follow] Player stepped out of vehicle')
@@ -53,7 +53,7 @@ local function update()
       -- ai:startFollowing()
     end
 
-    setAIfollow(not isVeh)
+    setAIfollow(not inVeh)
   end
  
   -- Get player position

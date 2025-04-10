@@ -1,4 +1,4 @@
-Volkswagen Beetle 1963 (version 23)
+Volkswagen Beetle 1963 (version 24)
 Copyright (c) 2025 VertexStyle & MrX13415
 
 Distribution and uploading to other websites is strictly prohibited!

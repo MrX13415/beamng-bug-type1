@@ -45,7 +45,8 @@ local function getPowerGenerator()
 
   local factor = 0
   if genCurve then
-    local rpmRatio = clamp(math.floor(engine.outputRPM / engine.maxRPM * 1000), 0, 1000)
+    local targetRPM = 5000 -- 100% output power
+    local rpmRatio = clamp(math.floor(engine.outputRPM / targetRPM * 1000), 0, 2000)  -- 0-200%
     local v = math.max(0, genCurve[rpmRatio])
     if v then factor = genSmoother:get(v) or 0 end
   end
@@ -61,7 +62,12 @@ local function processOilPressure(dt)
     if v then psi = oilSmoother:get(v) or 0 end
   end
 
-  local oilRatio = (engine.thermals.debugData.engineThermalData.oilMass or 4) / (engine.oilVolume * 0.87) -- L to kg
+  local oilVolume = engine.oilVolume
+  local oilMass = engine.thermals.debugData.engineThermalData.oilMass
+  if oilVolume < 1 then oilMass = 4 end
+  if oilMass < 1 then oilMass = 4 end
+
+  local oilRatio = oilMass / (oilVolume * 0.87) -- L to kg
   local oilTemp = electrics.values.oiltemp
   psi = psi * oilRatio * (1 - oilTemp / 1000)
   --log("D", "", "[Bug:Engine] Oil Ratio: " .. tostring(oilRatio) .. " Temp: " .. tostring(oilTemp) .. " PSI: " .. tostring(psi))
@@ -72,12 +78,16 @@ local function processOilPressure(dt)
   elseif psi < pressure then
     pressure = pressure - 0.04
   end
-  --print("Pressure: "..tostring(pressure).. " PSI: "..tostring(psi))
+
+  local genPower = getPowerGenerator()
+  
+  --print("Pressure: "..tostring(pressure).." PSI: "..tostring(psi))
+  --print("Generator: "..tostring(genPower).." W")
 
   electrics.values.oilpressure = pressure
   electrics.values.oilpressure_low = electrics.values.ignitionLevel > 1 and pressure < 8
 
-  electrics.values.generatorPower_low = electrics.values.ignitionLevel > 1 and getPowerGenerator() < 200 -- W
+  electrics.values.generatorPower_low = electrics.values.ignitionLevel > 1 and genPower < 200 -- W
 end
 
 
@@ -145,6 +155,7 @@ local function onInit()
   electrics.values.oilpressure = 0
   electrics.values.oilpressure_low = 0
 
+  -- RPM
   oilCurve = createCurve({
     {    0,  0},
     {  700,  0},
@@ -154,18 +165,28 @@ local function onInit()
     {14000, 60}
   })
 
+  -- 0-200%
   genCurve = createCurve({
-    {    0,-0.50 },
+    {    0,-0.30 },
     {  100, 0.15 },
     {  200, 0.45 },
     {  300, 0.65 },
     {  400, 0.76 },
     {  500, 0.85 },
     {  600, 0.91 },
-    {  700, 0.94 },
-    {  800, 0.97 },
-    {  900, 0.98 },
-    { 1000, 1.00 }
+    {  700, 0.95 },
+    {  800, 0.98 },
+    {  900, 0.99 },
+    { 1000, 1.00 },
+    { 1100, 1.01 },
+    { 1200, 1.02 },
+    { 1300, 1.03 },
+    { 1400, 1.04 },
+    { 1500, 1.05 },
+    { 1600, 1.06 },
+    { 1700, 1.07 },
+    { 1800, 1.08 },
+    { 2000, 1.10 },
   })
 
   battery = controller.getControllerSafe('battery')

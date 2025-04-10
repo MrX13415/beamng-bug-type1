@@ -35,6 +35,7 @@
         ["bug_exterior_sunvisor","", "Exterior Sunvisor"],
         
         ["bug_wipers", "bug_wipers", "Wipers"],
+
 		["bug_gascap","", "Gascap"],
 		["antenna","antenna_default_R", "Antenna"],
 
@@ -1694,6 +1695,11 @@
         "value":60,
     },
     "slotType" : "bug_wipers",
+    "slots": [
+        ["type", "default", "description"],
+
+		["bug_wipers_washer","bug_wipers_washer", "Washer System"],
+    ],
     "electricPower":[
         ["power"],
         [50, {"trigger": "electrics.values.wipersstate"}]
@@ -1707,6 +1713,11 @@
         "wipersSpeed": 0.023,  // 757ms (60fps)
         "wipersBreak": 0,      // 0 sec. (60fps)
     },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["bug_wiper_mounts", ["bug_body", "bug_roof"]]
+    ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
@@ -1721,6 +1732,11 @@
         "value":90,
     },
     "slotType" : "bug_wipers",
+    "slots": [
+        ["type", "default", "description"],
+
+		["bug_wipers_washer","bug_wipers_washer", "Washer System"],
+    ],
     "electricPower":[
         ["power"],
         [50, {"trigger": "electrics.values.wipersstate"}]
@@ -1736,6 +1752,11 @@
         "wipersBreak1": 120,    // 2 sec. (60fps)
         "wipersBreak2": 0       // 0 sec.
     },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["bug_wiper_mounts", ["bug_body", "bug_roof"]]
+    ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
@@ -1750,6 +1771,11 @@
         "value":120,
     },
     "slotType" : "bug_wipers",
+    "slots": [
+        ["type", "default", "description"],
+
+		["bug_wipers_washer","bug_wipers_washer", "Washer System"],
+    ],
     "electricPower":[
         ["power"],
         [50, {"trigger": "electrics.values.wipersstate"}]
@@ -1767,6 +1793,11 @@
         "wipersBreak2": 30,     // 0.5 sec. (60fps)
         "wipersBreak3": 0       // 0 sec.
     },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["bug_wiper_mounts", ["bug_body", "bug_roof"]]
+    ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
@@ -1774,6 +1805,21 @@
         ["wipers",    "bug_wiper_R",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
     ]
 },
+"bug_wipers_washer": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Washer System",
+        "value":10,
+    },
+    "slotType" : "bug_wipers_washer",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["bug_wiper_jet",         ["bug_body", "bug_roof"]],
+		["bug_washer_reservoir",  ["fueltank"]],
+    ],
+},
+
 
 "bug_interiorlight": {
     "information":{

@@ -6,8 +6,8 @@
 -- by MrX13415
 
 local M = {}
-M.version = "23"
-M.versionDate = "2025-02-18"
+M.version = "24"
+M.versionDate = "2025-04-09"
 
 local updateTimer = 2   -- Make sure the first call is immediately
 local openingUpdateTimer = 2   -- Make sure the first call is immediately
@@ -226,7 +226,7 @@ local function updateOpenings()
   return open
 end
 
-function debugCheckNodes()
+local function debugCheckNodes()
   for i,node in pairs(v.data.nodes) do
     if node.pos.x > 0 then -- On left side ...
 

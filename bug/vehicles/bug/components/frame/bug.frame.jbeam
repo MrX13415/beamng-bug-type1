@@ -68,10 +68,10 @@
         ["bug_frame",       ["bug_frame"]],		
 		
 		["bug_steering_tube",     ["bug_steeringcolumn", "bug_steeringbox"]],
-		["bug_front_tanks",       ["fueltank"]],
-		["bug_break_lines_front", ["bug_frameF"]],
-		["bug_break_lines",       ["bug_frameR"]],
-		["bug_break_lines_rear",  ["bug_frameR"]],
+		["bug_brake_reservoir",   ["fueltank"]],
+		["bug_brake_lines_front", ["bug_frameF"]],
+		["bug_brake_lines",       ["bug_frameR"]],
+		["bug_brake_lines_rear",  ["bug_frameR"]],
     ],
 	"props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],

@@ -3,8 +3,8 @@
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
 -- Lua Radio for the VW Beetle mod.
--- v2.5
--- by MrX13415 (2025-02-18)
+-- v2.7
+-- by MrX13415 (2025-04-09)
 
 -- Please give credit when using this :)
 
@@ -19,7 +19,7 @@ local storage = require("storage")
 -- i.e '97.5 K-DST'
 local LocalStationsFolder = "settings"..v.vehicleDirectory.."radio"
 local TracksCacheFile = "settings"..v.vehicleDirectory.."radio/cache.json"
--- Station mods need an empty JBeam part with slotType descripted in "SlotTypeRadioStation" (see below),
+-- Station mods need an empty JBeam part with slotType descripted in "SlotTypeStations" (see below),
 -- with an additional field "song" containing the relative audio file path in the "information" section.
 local ModStationsFolder = v.vehicleDirectory
 
@@ -27,23 +27,21 @@ local NodeDriver = "driver"
 local NodeSFX = "dsh"
 local NodeOutput = "speaker"
 
+local SlotTypeStations = "bug_radio_station"
+
 local SFXRadioNoise = v.vehicleDirectory.."components/sounds/radio/radio-snow.ogg"
 local SFXPresetUse = ""
 local SFXPresetSet = ""
 local SFXRadioOn = ""
 local SFXRadioOff = ""
 
--- Parts
-local SlotTypeRadioStation = "bug_radio_station"
-local PartRadio = "bug_radio"
-local PartInteriorOnlyMode = "bug_radio_mode_interior"
-local PartOutput3D = "bug_radio_output_3D"
+-- global settings
+local audio3D = false
 
 -- Defaults
 local frequencyMin = 87.5	-- Mhz  Lower frequency limit
 local frequencyMax = 108	-- Mhz  Upper frequency limit
 local frequencyGrid = 0.2	-- Mhz  Frequency tolerance
-local output3D = false
 
 -- Local ---------------------------------------------
 
@@ -67,9 +65,8 @@ function SoundObj:new(node, volume)
 end
 
 function SoundObj:load(filepath, loop)
-
 	local sfxDescription = loop and "AudioMusicLoop2D" or "AudioMusic2D"
-	if output3D then 
+	if audio3D then
 		sfxDescription = loop and "AudioMusicLoop3D" or "AudioMusic3D"
 	end
 
@@ -86,11 +83,12 @@ function SoundObj:load(filepath, loop)
 		-- obj:createSFXSource			-- Not reseted
 		-- obj:createSFXSource2			-- Gets reset on vehicle restore/reset
 
-		--if sound then
-		  --sound:setTransform(obj:getTransform())
-		  --sound:setParameter("distance_vehicle", 10000)
-		  --sound:setVolume(1)
-		  --sound:play(-1)
+		--if self.sound > 0 then
+		--  --obj:setSFXparameter(self.sound, "distance", 10000)
+		--  --sound:setTransform(obj:getTransform())
+		--  --sound:setParameter("distance_vehicle", 10000)
+		--  --sound:setVolume(1)
+		--  --sound:play(-1)
 		--end
 	end
 	if self.sound then
@@ -207,7 +205,7 @@ function Station:playTrack()
 	if track == nil then return end
 
 	local loop = #self.tracks == 1
-	self.speaker:load(track.path, loop, track.volume)
+	self.speaker:load(track.path, loop)
 	self:showInfo()
 end
 
@@ -268,19 +266,11 @@ Radio.__index = Radio
 function Radio:new()
 	local self = setmetatable({}, Radio)
 
-	self.updateTimer = 0
-	self.workerCoroutine = nil
-	---------
-
 	-- car states
-	self.hasOpening = false
 	self.engineRunning = electrics.values.running
 	self.ignitionLevel = electrics.values.ignitionLevel
-
-	-- modes
-	self.interiorOnly = false
-	self.open = 0
 	
+	-- radio states
 	self.installed = false
 	self.power = false
 	self.state = false
@@ -317,8 +307,13 @@ function Radio:new()
 	
 	self.userVolume = 0.3						-- Default user volume at 30%
 	self.userVolumeDirection = 0
-
+	
+	---------
+	
 	self.speaker = nil
+
+	self.updateTimer = 0
+	self.workerCoroutine = nil
 
 	electrics.values.radio_state = 0
 	electrics.values.radio_volume = 0
@@ -340,44 +335,30 @@ function Radio:initalize(jbeam)
 	SFXRadioOn = jbeam.sfxRadioOn or SFXRadioOn
 	SFXRadioOff = jbeam.sfxRadioOff or SFXRadioOff
 	
-	SlotTypeRadioStation = jbeam.slotTypeStations or SlotTypeRadioStation
+	SlotTypeStations = jbeam.slotTypeStations or SlotTypeStations
 
-	-- Determine if a radio is installed ...
-	for _,part in pairs(v.data.activeParts) do
-		-- part settings
-		if part.partName == PartInteriorOnlyMode then
-			self.interiorOnly = true
-		end
-		if part.partName == PartOutput3D then
-			output3D = true
-		end
-		
-		-- No longer used
-		---- radio station
-		--if part.slotType == SlotTypeRadioStation then
-		--	local i = part.information
-		--end
-	end
-
+	-- Determine settings
+	self.power = electrics.values.ignitionLevel > 0 -- Just assuming power is available.
+	local state = (jbeam.state or 0) > 0
+	self.userVolume = jbeam.volume or self.userVolume
+	audio3D = (jbeam.audio3D or 0) > 0
+	
 	-- Initalize speaker for default static noise
 	self.speaker = SoundObj:new(NodeOutput)
-	self.userVolume = jbeam.volume or self.userVolume
-	
-	self.installed = true
-	self.power = electrics.values.ignitionLevel > 0 -- Just assuming power is available.
-	self.open = electrics.values.vehicleopen or 0
 
+	self.installed = true
 	log("D", "", "[Bug:Radio] Initialized")
 	log("D", "", "[Bug:Radio]    power:    " .. (self.power and "Yes" or "No"))
-	log("D", "", "[Bug:Radio]    open:     " .. (self.hasOpening and ("Yes ("..tostring(self.open * 100).."%)") or "No"))
-	log("D", "", "[Bug:Radio]    3D:       " .. (output3D and "Yes" or "No"))
-	log("D", "", "[Bug:Radio]    interior: " .. (self.interiorOnly and "Yes" or "No"))
+	log("D", "", "[Bug:Radio]    state:    " .. (state and "On" or "Off"))
+	log("D", "", "[Bug:Radio]    volume:   " .. (tostring(self.userVolume * 100).."%"))
+	log("D", "", "[Bug:Radio]    3D:       " .. (audio3D and "Yes" or "No"))
 
 	self:load()
 	self:loadStations()
 
-	self.button = (jbeam.state or 0) > 0
-	self:setState(self.button)
+	-- Finally set state
+	self.button = state -- Prevent SFX from playing
+	self:setState(state)
 end
 
 function Radio:isOn()
@@ -408,7 +389,7 @@ function Radio:save()
 	end
 end
 
-function Radio:reset()	
+function Radio:resetData()	
 	print("[Bug:Radio] Reset to default settings.")
 	
 	self.frequency = 0
@@ -512,7 +493,8 @@ end
 function Radio:loadStations()
 	if self.installed == false then return end
 
-	self:setState(false)
+	if self:isOn() then self:setState(false) end
+
 	self.workerCoroutine = coroutine.create(function()
 		return self:loadStationsTask()
 	end)
@@ -526,7 +508,7 @@ function Radio:findModStations()
 		local fileData = jsonReadFile(filepath)
 		if fileData then
 			for partName, part in pairs(fileData) do
-				if part.slotType == SlotTypeRadioStation then
+				if part.slotType == SlotTypeStations then
 					table.insert(mods, part.information)
 				end
 			end
@@ -933,9 +915,11 @@ function Radio:updateControls(dt)
 		local step = 0.05
 		-- tune faster after 800ms ...
 		if self.tuneTimer > 0.8 then step = 0.08 end
-		-- tune ven more faster after 1100ms ...
+		-- tune even more faster after 1100ms ...
 		if self.tuneTimer > 1.6 then step = 0.11 end
 		if self.tuneNext then step = 0.2 end
+		-- slow down when on a station
+		if self.stationIndex > 0 then step = 0.03 end
 
 		self:setFrequency(self.frequency + (step * self.tuneDirection))
 		self.tuning = true
@@ -946,7 +930,7 @@ function Radio:updateControls(dt)
 		-- tune to best frequency for current station when not tuning for more then 1200ms
 		if self.tuneTimer >= 1.2 then
 			self.tuning = false
-			self:tune() 
+			self:tune()
 			return
 		end
 	end
@@ -1032,6 +1016,11 @@ function Radio:updateRadio(dt)
 	if self.state == false then return end
 	if self.workerCoroutine then return end
 
+	-- Last state was 'On' with no power, ensure proper 'On' state.
+	if electrics.values.radio_state == 0 then
+		self:setState()
+	end
+
 	-- The camera position seems to "lag behind" when the ground speed increases.
 	-- This is not perfect but the hundredths of the ground speed seems to negate the lag quiet well.
 	local camFactor = obj:getGroundSpeed() / 100
@@ -1052,27 +1041,28 @@ function Radio:updateRadio(dt)
 	local interior = (camPos:distance(driverPos) - camFactor) < 0.6
 
 	-- Determine cam side in %
-	local camL = clamp((1.0/-1.2) * camRefX + 0.6, 0, 1)
-	local camR = clamp((1.0/1.2) * camRefX + 0.6, 0, 1)
+	local camL = clamp((1.0/-1.6) * camRefX + 0.5, 0, 1)
+	local camR = clamp((1.0/1.6) * camRefX + 0.5, 0, 1)
+	--log("D", "", "[Bug:Radio] cam side - L: " ..(tostring(camL * 100).."%").." R: " ..(tostring(camR * 100).."%"))
 
 	-- Determine how much open in % the car is depending on the cam position
-	-- When the car is open on one side, its at least 20% open at the closed side.
-	local oL = math.max(0.2, camL) * (electrics.values["vehicleopenL"] or 0)
-	local oR = math.max(0.2, camR) * (electrics.values["vehicleopenR"] or 0)
+	-- When the car is open on one side, its at least 15% open at the closed side.
+	local oL = math.max(0.15, camL) * (electrics.values["vehicleopenL"] or 0)
+	local oR = math.max(0.15, camR) * (electrics.values["vehicleopenR"] or 0)
 	local open = clamp(oL + oR, 0, 1)
 	open = (open*1.3)/(open+0.3)	-- Apply open curve. (See also "vehicle.lua" line 180)
 
 	local volumeModifier = self.defaultVolumeModifier
 
-	-- Outside the "interior" sphere and interior only mode
-	if interior == false and self.interiorOnly then
+	-- Outside the "interior" sphere
+	if interior == false then
 		local delta = self.exteriorClosedVolumeModifier - self.exteriorOpenVolumeModifier
 		delta = delta * math.abs(1 - open)
 
 		volumeModifier = self.exteriorOpenVolumeModifier + delta
 	end
-
-	if output3D then
+	
+	if audio3D then
 		self.volume = self.volume3D * volumeModifier * self.userVolume
 	else
 		self.volume = self.volume2D * volumeModifier * self.userVolume
@@ -1081,9 +1071,7 @@ function Radio:updateRadio(dt)
 	local s = self:station()
 	if s then self.volume = self.volume * (s.volumeMod or 1) end
 
-	if interior == true or self.interiorOnly then
-		self.volume = self:volumeAtRangeDistance(self.volume, distance)
-	end
+	self.volume = self:volumeAtRangeDistance(self.volume, distance)
 
 	-- Simulate radio interrupt on engine start ...
 	if not lastPower or electrics.values.ignitionLevel == 3 then
@@ -1143,7 +1131,7 @@ local function toggle() radio:toggleState() end
 local function unload() radio:unloadStations() end
 local function load() radio:loadStations() end
 local function info() radio:showInfo() end
-local function resetData() radio:reset() end
+local function resetData() radio:resetData() end
 
 local function prevTrack() radio:prevTrack() end
 local function nextTrack() radio:nextTrack() end

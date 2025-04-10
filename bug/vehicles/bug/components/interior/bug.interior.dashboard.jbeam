@@ -24,7 +24,7 @@
         ["bug_shelf", "", "Shelf"],
         ["bug_dashboard_handle", "", "Grab Handle"],
         ["bug_dashboard_backcover", "bug_dashboard_backcover", "Back Cover"],
-        ["bug_ignition", "bug_ignition_stage4", "Ignition", {"coreSlot":true}],
+        ["bug_ignition", "bug_ignition_stage3", "Ignition", {"coreSlot":true}],
 
         ["bug_gps", "", "Navigation Unit", {"nodeMove": {"x":0.0,"y":-0.475,"z":1.09}}],
     ],
@@ -88,10 +88,6 @@
         // use the "oil" LED to indicate regeneration beeing active (blinking).
         "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
         "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},             "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
-
-        // misc
-        "bug_radio_scale":          {"simpleFunction":"power__radio_state",  "off":"bug_radio_scale",    "on":"bug_radio_scale_on",       "on_intense":"bug_radio_scale_on", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_radio_needle":         {"simpleFunction":"power__radio_state",  "off":"bug_radio_needle",   "on":"bug_radio_needle_light",   "on_intense":"bug_radio_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -105,6 +101,8 @@
         ["parkingbrake_anim", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
         //dash anti-deform nodes
         {"collision":false},
         {"selfCollision":false},
@@ -126,6 +124,7 @@
         {"selfCollision":false},
     ],
     "beams": [
+        ["id1:", "id2:"],
 
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1.0},
         {"beamSpring":1001000,"beamDamp":50},
@@ -261,7 +260,7 @@
         ["bug_shelf", "", "Shelf"],
         ["bug_dashboard_handle", "", "Grab Handle"],
         ["bug_dashboard_backcover", "bug_dashboard_backcover", "Back Cover"],
-        ["bug_ignition", "bug_ignition_stage4", "Ignition", {"coreSlot":true}],
+        ["bug_ignition", "bug_ignition_stage3", "Ignition", {"coreSlot":true}],
 
         ["bug_gps", "", "Navigation Unit", {"nodeMove": {"x":0.49,"y":-0.475,"z":1.04}}],
     ],
@@ -319,10 +318,6 @@
         // use the "oil" LED to indicate regeneration beeing active (blinking)
         "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
         "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},             "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
-
-        // misc
-        "bug_radio_scale":          {"simpleFunction":"power__radio_state",  "off":"bug_radio_scale",    "on":"bug_radio_scale_on",       "on_intense":"bug_radio_scale_on", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_radio_needle":         {"simpleFunction":"power__radio_state",  "off":"bug_radio_needle",   "on":"bug_radio_needle_light",   "on_intense":"bug_radio_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
     },
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -334,6 +329,8 @@
         ["parkingbrake_anim", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
         //dash anti-deform nodes
         {"selfCollision":true},
         {"group": "bug_dashboard"},
@@ -350,6 +347,8 @@
         ["speaker", 0.395000, -0.59000, 0.93800],
     ],
     "beams": [
+        ["id1:", "id2:"],
+        
         //--INTERIOR STRUCTURE--
         {"beamSpring":1001000,"beamDamp":50},
         {"beamDeform":8000,"beamStrength":"FLT_MAX"},
@@ -1650,7 +1649,7 @@
 
 // --- Ignition
 
-/*
+
 "bug_ignition_stage3":{
     "information":{
         "authors": "MrX13415",
@@ -1663,13 +1662,16 @@
 
         ["bug_ignition_key", "bug_ignition_key", "Ignition Key", {"coreSlot":true}]
     ],
+    "controller": [
+        ["fileName"],
+        ["bug/ignition3stage", {"name": "ignition3stage"}]
+    ],
     "electrics": {
-        // There seems to a bug with this.
-        // The ignition key "V" can't skip forbidden states when goting up
-        // So 0 -> 2 is not working. But from 2 -> 0 is.
-        "allowedIgnitionLevels":[3, 2, 0]
+        // Skipping the ignition state '1' ist done in the lua controller
+        // as with this the desired behavior can't be archived. 
+        "allowedIgnitionLevels":[0, 1, 2, 3]
     }
-},*/
+},
 "bug_ignition_stage4":{
     "information":{
         "authors": "MrX13415",

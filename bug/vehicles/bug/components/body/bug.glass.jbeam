@@ -12,16 +12,14 @@
         ["bug_body_window_F",      ["bug_body","bug_windshield"]],
 
         {"deformGroup":"windshield_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"bug_window_glass_dmg"},
-        ["bug_body_window_F_glass",   ["bug_body","bug_windshield"]],
+        ["bug_body_window_F_glass",   ["bug_body", "bug_roof"]],
         {"deformGroup":"windshield_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound9", "deformVolume":0.8, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
-        ["bug_body_window_F_glass_dmg",  ["bug_body","bug_windshield"]],
+        ["bug_body_window_F_glass_dmg",  ["bug_body", "bug_roof"]],
         {"deformGroup":""},
 
         // exterior : details : fixtures
     //    ["bug_wiper_L", ["bug_body","bug_windshield", "bug_roof"]],   // Converted to props
     //    ["bug_wiper_R", ["bug_body","bug_windshield", "bug_roof"]],   // Converted to props
-        ["bug_wiper_mounts", ["bug_body","bug_windshield", "bug_roof"]],
-        ["bug_wiper_jet", ["bug_body","bug_windshield", "bug_roof"]],
     ],
     "sounds": {
         "$+cabinFilterCoef": 0.1
