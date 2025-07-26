@@ -7,35 +7,6 @@
 
 local M = {}
 
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.1200.auto.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.1200.eu.hardtop.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.1200.eu.ragtop.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.1200.us.hardtop.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.1200.us.ragtop.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.1600.auto.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.1600.eu.hardtop.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.1600.eu.ragtop.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.1600.us.hardtop.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.1600.us.ragtop.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.antarctica.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.barebone.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.black.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.camping.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.diesel.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.herbie.fully-loaded.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.herbie.goes-bananas-rusty.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.herbie.goes-to-monte-carlo.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.herbie.the-love-bug-1997.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.herbie.the-love-bug.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.luxury.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.offroad.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.oldrusted.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.oldrusted.restored.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.pedeboi.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.police.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.polizei.pc"});
--- core_vehicles.spawnNewVehicle("bug", {config = "vehicles/bug/bug.tuned.pc"});
-
 local function getConfigName(fn)
     return string.match(fn, "([^./]*).pc")
 end
@@ -53,8 +24,8 @@ local function findConfig(str)
 end
 
 local function listConfigs()
-    for _,config in ipairs(getConfigPaths()) do
-        print(getConfigName(config))
+    for index,config in ipairs(getConfigPaths()) do
+        print(tostring(index-1)..": "..getConfigName(config))
     end
 end
 
@@ -72,14 +43,33 @@ local function spawnConfig(name)
         return
     end
 
+    print("Spawning config: " .. config)
+
     obj:queueGameEngineLua(string.format([[
         local model, config = "%s","%s.pc"
         core_vehicles.spawnNewVehicle(model, {config = config})
     ]], model, config))
 end
 
+
+local function listInputActions()
+    print("Input Actions:")
+
+    local actions = {}
+    for name,_ in pairs(v.data.inputActions) do
+        table.insert(actions, name)
+    end
+
+    table.sort(actions)
+
+    for _,name in pairs(actions) do
+        print("  "..name)
+    end
+end
+
 -- public interface
 M.listConfigs = listConfigs
 M.spawnConfig = spawnConfig
+M.listInputActions = listInputActions
 
 return M

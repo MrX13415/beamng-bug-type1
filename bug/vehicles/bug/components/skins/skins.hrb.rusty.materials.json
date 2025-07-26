@@ -1,0 +1,722 @@
+{
+  "bug_body_paint.skin.hrb_1980_rusty": {
+    "name": "bug_body_paint.skin.hrb_1980_rusty",
+    "mapTo": "bug_body_paint.skin.hrb_1980_rusty",
+    "class": "Material",
+    "persistentId": "6bde1233-a72e-40ae-bb9a-319177431e07",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/common/textures/rust_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/rust_m.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/rust_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/common/textures/rust_r.data.png"
+      },
+      {
+        "baseColorFactor": [
+          1,
+          0.999994993,
+          0.999989986,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_d.color.png",
+        "clearCoatFactor": 0.3,
+        "clearCoatRoughnessFactor": 0.5,
+        "colorPaletteMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_cm.color.png",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "metallicFactor": 0.5,
+        "metallicMapUseUV": 1,
+        "normalMap": "/vehicles/bug/components/skins/textures/bug_skin_rusty_n.normal.dds",
+        "normalMapUseUV": 1,
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_o.data.dds",
+        "opacityMapUseUV": 1,
+        "roughnessMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_r.data.png",
+        "roughnessMapUseUV": 1
+      },
+      {
+        "baseColorFactor": [
+          0.63529402,
+          0.537837982,
+          0.398615986,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/rustyiron_r.data.dds",
+        "diffuseMapUseUV": 1,
+        "opacityFactor": 0.3,
+        "opacityMap": "/vehicles/bug/components/common/textures/rustyiron_r.data.dds",
+        "opacityMapUseUV": 1
+      },
+      {}
+    ],
+    "activeLayers": 3,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "bug_chrome.skin.hrb_1980_rusty": {
+    "name": "bug_chrome.skin.hrb_1980_rusty",
+    "mapTo": "bug_chrome.skin.hrb_1980_rusty",
+    "class": "material",
+    "persistentId": "d9cb434d-992f-4567-8192-51ecadddc3df",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/rustyiron_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/rustyiron_m.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/rustyiron_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/common/textures/rustyiron_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 255,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "bug_aluminum.skin.hrb_1980_rusty": {
+    "name": "bug_aluminum.skin.hrb_1980_rusty",
+    "mapTo": "bug_aluminum.skin.hrb_1980_rusty",
+    "class": "Material",
+    "persistentId": "a5335944-4c65-41ad-b876-67d3758c516b",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.2,
+          1.2,
+          1.2,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/rustyiron_d.color.png",
+        "metallicFactor": 0.7,
+        "metallicMap": "/vehicles/bug/components/common/textures/rustyiron_m.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/rustyiron_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/common/textures/rustyiron_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 255,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "bug_body_paint_rubber.skin.hrb_1980_rusty": {
+    "name": "bug_body_paint_rubber.skin.hrb_1980_rusty",
+    "mapTo": "bug_body_paint_rubber.skin.hrb_1980_rusty",
+    "class": "Material",
+    "persistentId": "d76d119f-e8f4-4983-b6fe-8276205df7de",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.299084008,
+          0.299080998,
+          0.299080998,
+          1
+        ]
+      },
+      {
+        "baseColorFactor": [
+          0.729,
+          0.359,
+          0.225,
+          1
+        ],
+        "instanceDiffuse": true
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "bug_frame_metal.skin.hrb_1980_rusty": {
+    "name": "bug_frame_metal.skin.hrb_1980_rusty",
+    "mapTo": "bug_frame_metal.skin.hrb_1980_rusty",
+    "class": "Material",
+    "persistentId": "dc3ce6e4-48c6-4724-962f-1161727539e2",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.0917709991,
+          0.0917700008,
+          0.0917700008,
+          1
+        ],
+        "clearCoatFactor": 0.4,
+        "clearCoatRoughnessFactor": 0.08,
+        "metallicFactor": 0.2,
+        "normalMapStrength": 0.5,
+        "normalMap": "/vehicles/bug/components/common/textures/frame_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/common/textures/frame_r.data.png"
+      },
+      {
+        "baseColorFactor": [
+          1.2,
+          1.2,
+          1.2,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/rustyiron_d.color.png",
+        "diffuseMapUseUV": 1,
+        "metallicFactor": 0.7,
+        "metallicMap": "/vehicles/bug/components/common/textures/rustyiron_m.data.png",
+        "metallicMapUseUV": 1,
+        "normalMap": "/vehicles/bug/components/common/textures/rustyiron_n.normal.png",
+        "normalMapUseUV": 1,
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/common/textures/rustyiron_r.data.png",
+        "roughnessMapUseUV": 1,
+        "opacityMap": "/vehicles/bug/components/common/textures/rustyiron_o.data.png",
+        "opacityMapUseUV": 1
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "alphaRef": 255,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "bug_body_interiorpaint.skin.hrb_1980_rusty": {
+    "name": "bug_body_interiorpaint.skin.hrb_1980_rusty",
+    "mapTo": "bug_body_interiorpaint.skin.hrb_1980_rusty",
+    "class": "material",
+    "persistentId": "f35fdb8c-bd87-491b-b945-2f605e5eed94",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.999989986,
+          0.999989986,
+          1
+        ],
+        "clearCoatFactor": 0.5,
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 0.5,
+        "metallicMapUseUV": 1,
+        "normalMapUseUV": 1,
+        "opacityMapUseUV": 1,
+        "roughnessMapUseUV": 1
+      },
+      {
+        "baseColorFactor": [
+          1,
+          0.99999398,
+          0.999989986,
+          1
+        ],
+        "clearCoatFactor": 0.5,
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 0.5,
+        "normalDetailMapUseUV": 1,
+        "normalMap": "/vehicles/bug/components/common/textures/rustyiron_n.normal.dds",
+        "normalMapUseUV": 1,
+        "opacityFactor": 0.75,
+        "opacityMap": "/vehicles/bug/components/common/textures/rustyiron_o2.data.dds",
+        "opacityMapUseUV": 1,
+        "roughnessMapUseUV": 1
+      },
+      {
+        "baseColorFactor": [
+          1,
+          0.99999398,
+          0.999989986,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/rustyiron_d.color.dds",
+        "diffuseMapUseUV": 1,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/rustyiron_m.data.dds",
+        "normalMap": "/vehicles/bug/components/common/textures/rustyiron_n.normal.dds",
+        "normalMapUseUV": 1,
+        "opacityFactor": 0.3,
+        "opacityMap": "/vehicles/bug/components/common/textures/rustyiron_o.data.dds",
+        "opacityMapUseUV": 1
+      },
+      {}
+    ],
+    "activeLayers": 3,
+    //"doubleSided": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "bug_window_glass.skin.hrb_1980_rusty": {
+    "name": "bug_window_glass.skin.hrb_1980_rusty",
+    "mapTo": "bug_window_glass.skin.hrb_1980_rusty",
+    "class": "material",
+    "persistentId": "5562aefe-2ecc-4113-9ba9-cff384ffe55c",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dirty_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/textures/window_glass_dirty_n.normal.png",
+        "opacityMap": "/vehicles/bug/components/body/textures/window_glass_dirty_o.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 1.0,
+        "roughnessMap": "/vehicles/bug/components/body/textures/window_glass_dirty_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "bug_window_glass_int.skin.hrb_1980_rusty": {
+    "name": "bug_window_glass_int.skin.hrb_1980_rusty",
+    "mapTo": "bug_window_glass_int.skin.hrb_1980_rusty",
+    "class": "material",
+    "persistentId": "a131de5d-5783-4f3c-9a92-cc6d77fe5489",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dirty_d.color.png",
+        "opacityMap": "/vehicles/bug/components/body/textures/window_glass_int_dirty_o.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.075
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "LerpAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "bug_window_glass_dmg.skin.hrb_1980_rusty": {
+    "name": "bug_window_glass_dmg.skin.hrb_1980_rusty",
+    "mapTo": "bug_window_glass_dmg.skin.hrb_1980_rusty",
+    "class": "Material",
+    "persistentId": "e5cbace3-fb02-4430-91e2-03c4d0d39e92",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dmg_dirty.color.png",
+        "normalMap": "/vehicles/bug/components/body/textures/window_glass_dirty_n.normal.dds",
+        "opacityMap": "/vehicles/bug/components/body/textures/window_glass_dmg_dirty_o.data.png",
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/bug/components/body/textures/window_glass_dmg_r.data.dds",
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 1,
+    "alphaTest": true,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "version": 1.5
+  },
+
+
+  "bug_body_paint.skin.hrb_1980_rustytaxi": {
+    "name": "bug_body_paint.skin.hrb_1980_rustytaxi",
+    "mapTo": "bug_body_paint.skin.hrb_1980_rustytaxi",
+    "class": "Material",
+    "persistentId": "3bd82575-f557-4e17-9363-ead5ce8b066d",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/common/textures/rust_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/rust_m.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/rust_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/common/textures/rust_r.data.png"
+      },
+      {
+        "baseColorFactor": [
+          1,
+          0.999994993,
+          0.999989986,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty-taxi_d.color.png",
+        "clearCoatFactor": 0.3,
+        "clearCoatRoughnessFactor": 0.5,
+        "colorPaletteMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty-taxi_cm.color.png",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "metallicFactor": 0.5,
+        "metallicMapUseUV": 1,
+        "normalMap": "/vehicles/bug/components/skins/textures/bug_skin_rusty_n.normal.dds",
+        "normalMapUseUV": 1,
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_o.data.dds",
+        "opacityMapUseUV": 1,
+        "roughnessMap": "/vehicles/bug/components/skins/textures/bug_skin_h_gb-rusty_r.data.png",
+        "roughnessMapUseUV": 1
+      },
+      {
+        "baseColorFactor": [
+          0.63529402,
+          0.537837982,
+          0.398615986,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/rustyiron_r.data.dds",
+        "diffuseMapUseUV": 1,
+        "opacityFactor": 0.3,
+        "opacityMap": "/vehicles/bug/components/common/textures/rustyiron_r.data.dds",
+        "opacityMapUseUV": 1
+      },
+      {}
+    ],
+    "activeLayers": 3,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "bug_chrome.skin.hrb_1980_rustytaxi": {
+    "name": "bug_chrome.skin.hrb_1980_rustytaxi",
+    "mapTo": "bug_chrome.skin.hrb_1980_rustytaxi",
+    "class": "material",
+    "persistentId": "532c60bf-b4b1-4d25-8616-6cfe9dbe7631",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/rustyiron_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/rustyiron_m.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/rustyiron_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/common/textures/rustyiron_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 255,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "bug_aluminum.skin.hrb_1980_rustytaxi": {
+    "name": "bug_aluminum.skin.hrb_1980_rustytaxi",
+    "mapTo": "bug_aluminum.skin.hrb_1980_rustytaxi",
+    "class": "Material",
+    "persistentId": "2316e53f-643f-4ba5-b4d0-7f9a8c124604",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.2,
+          1.2,
+          1.2,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/rustyiron_d.color.png",
+        "metallicFactor": 0.7,
+        "metallicMap": "/vehicles/bug/components/common/textures/rustyiron_m.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/rustyiron_n.normal.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/common/textures/rustyiron_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 255,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "bug_body_paint_rubber.skin.hrb_1980_rustytaxi": {
+    "name": "bug_body_paint_rubber.skin.hrb_1980_rustytaxi",
+    "mapTo": "bug_body_paint_rubber.skin.hrb_1980_rustytaxi",
+    "class": "Material",
+    "persistentId": "5e10b626-db6d-4baf-a691-36d335fb7126",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.299084008,
+          0.299080998,
+          0.299080998,
+          1
+        ]
+      },
+      {
+        "baseColorFactor": [
+          0.729,
+          0.359,
+          0.225,
+          1
+        ],
+        "instanceDiffuse": true
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "bug_frame_metal.skin.hrb_1980_rustytaxi": {
+    "name": "bug_frame_metal.skin.hrb_1980_rustytaxi",
+    "mapTo": "bug_frame_metal.skin.hrb_1980_rustytaxi",
+    "class": "Material",
+    "persistentId": "68d38ba3-88f4-4080-98a4-7a60fa47ccc4",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.0917709991,
+          0.0917700008,
+          0.0917700008,
+          1
+        ],
+        "clearCoatFactor": 0.4,
+        "clearCoatRoughnessFactor": 0.08,
+        "metallicFactor": 0.2,
+        "normalMapStrength": 0.5,
+        "normalMap": "/vehicles/bug/components/common/textures/frame_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/common/textures/frame_r.data.png"
+      },
+      {
+        "baseColorFactor": [
+          1.2,
+          1.2,
+          1.2,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/rustyiron_d.color.png",
+        "diffuseMapUseUV": 1,
+        "metallicFactor": 0.7,
+        "metallicMap": "/vehicles/bug/components/common/textures/rustyiron_m.data.png",
+        "metallicMapUseUV": 1,
+        "normalMap": "/vehicles/bug/components/common/textures/rustyiron_n.normal.png",
+        "normalMapUseUV": 1,
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/common/textures/rustyiron_r.data.png",
+        "roughnessMapUseUV": 1,
+        "opacityMap": "/vehicles/bug/components/common/textures/rustyiron_o.data.png",
+        "opacityMapUseUV": 1
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "alphaRef": 255,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "bug_body_interiorpaint.skin.hrb_1980_rustytaxi": {
+    "name": "bug_body_interiorpaint.skin.hrb_1980_rustytaxi",
+    "mapTo": "bug_body_interiorpaint.skin.hrb_1980_rustytaxi",
+    "class": "material",
+    "persistentId": "771c8b13-de8d-4406-9452-8a8ffc9580a2",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.999989986,
+          0.999989986,
+          1
+        ],
+        "clearCoatFactor": 0.5,
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 0.5,
+        "metallicMapUseUV": 1,
+        "normalMapUseUV": 1,
+        "opacityMapUseUV": 1,
+        "roughnessMapUseUV": 1
+      },
+      {
+        "baseColorFactor": [
+          1,
+          0.99999398,
+          0.999989986,
+          1
+        ],
+        "clearCoatFactor": 0.5,
+        "colorPaletteMap": "/vehicles/common/nullcolormask.dds",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 0.5,
+        "normalDetailMapUseUV": 1,
+        "normalMap": "/vehicles/bug/components/common/textures/rustyiron_n.normal.dds",
+        "normalMapUseUV": 1,
+        "opacityFactor": 0.5,
+        "opacityMap": "/vehicles/bug/components/common/textures/rustyiron_o.data.dds",
+        "opacityMapUseUV": 1,
+        "roughnessMapUseUV": 1
+      },
+      {
+        "baseColorFactor": [
+          1,
+          0.99999398,
+          0.999989986,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/rustyiron_d.color.dds",
+        "diffuseMapUseUV": 1,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/rustyiron_m.data.dds",
+        "normalMap": "/vehicles/bug/components/common/textures/rustyiron_n.normal.dds",
+        "normalMapUseUV": 1,
+        "opacityFactor": 0.75,
+        "opacityMap": "/vehicles/bug/components/common/textures/rustyiron_o2.data.dds",
+        "opacityMapUseUV": 1
+      },
+      {}
+    ],
+    "activeLayers": 3,
+    //"doubleSided": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },  
+  "bug_window_glass.skin.hrb_1980_rustytaxi": {
+    "name": "bug_window_glass.skin.hrb_1980_rustytaxi",
+    "mapTo": "bug_window_glass.skin.hrb_1980_rustytaxi",
+    "class": "material",
+    "persistentId": "6312df87-2869-488b-8af7-d8df8ff70791",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dirty_d.color.png",
+        "normalMap": "/vehicles/bug/components/body/textures/window_glass_dirty_n.normal.png",
+        "opacityMap": "/vehicles/bug/components/body/textures/window_glass_dirty_o.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 1.0,
+        "roughnessMap": "/vehicles/bug/components/body/textures/window_glass_dirty_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "bug_window_glass_int.skin.hrb_1980_rustytaxi": {
+    "name": "bug_window_glass_int.skin.hrb_1980_rustytaxi",
+    "mapTo": "bug_window_glass_int.skin.hrb_1980_rustytaxi",
+    "class": "material",
+    "persistentId": "c04db26e-6f3a-4653-ac72-5a05f5c1bd7e",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dirty_d.color.png",
+        "opacityMap": "/vehicles/bug/components/body/textures/window_glass_int_dirty_o.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.075
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "LerpAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "bug_window_glass_dmg.skin.hrb_1980_rustytaxi": {
+    "name": "bug_window_glass_dmg.skin.hrb_1980_rustytaxi",
+    "mapTo": "bug_window_glass_dmg.skin.hrb_1980_rustytaxi",
+    "class": "Material",
+    "persistentId": "9758d7d7-9bb1-44f5-a58f-2c0bba7dce4f",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dmg_dirty.color.png",
+        "normalMap": "/vehicles/bug/components/body/textures/window_glass_dirty_n.normal.dds",
+        "opacityMap": "/vehicles/bug/components/body/textures/window_glass_dmg_dirty_o.data.png",
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/bug/components/body/textures/window_glass_dmg_r.data.dds",
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 1,
+    "alphaTest": true,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "version": 1.5
+  }
+}

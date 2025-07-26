@@ -16,7 +16,7 @@ def printHelp():
     print("")
     print("Available Commands:")
     print("")
-    print("  makeaw          Tools to create the repo version.")
+    print("  aw              Tools to create the AW branded variant.")
     print("  help            This message.")
     print("  exit            Exit.")
     print("")
@@ -26,7 +26,7 @@ def processCommand(commands):
     cmd = popCommand(commands)
     ok = True
 
-    if match(cmd, "makeaw"):
+    if match(cmd, "aw"):
         makeaw.processCommand(commands)
     elif match(cmd, "test"):
         print("Test!")

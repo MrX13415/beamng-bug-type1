@@ -213,7 +213,6 @@
     "skin_runningboards":"runningboards_black",
     "skin_speedometer":"bug_speedo_mph_90",
     "skin_steer":"bug_steer_black",
-    "soundscape":"",
     "soundscape_horn":"soundscape_horn_116",
     "soundscape_siren":"soundscape_siren_12",
     "tire_F_14x6":"tire_F_695_14_ww",

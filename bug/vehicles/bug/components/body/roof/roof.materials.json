@@ -486,9 +486,9 @@
     "version": 1.5
   },
 
-  "bug_ragtop_fabric.skin_ragtop.herbie-fl": {
-    "name": "bug_ragtop_fabric.skin_ragtop.herbie-fl",
-    "mapTo": "bug_ragtop_fabric.skin_ragtop.herbie-fl",
+  "bug_ragtop_fabric.skin_ragtop.hrb_2005": {
+    "name": "bug_ragtop_fabric.skin_ragtop.hrb_2005",
+    "mapTo": "bug_ragtop_fabric.skin_ragtop.hrb_2005",
     "class": "Material",
     "persistentId": "4ec49c86-3b23-4782-9b41-b7d7dee7acb8",
     "Stages": [
@@ -522,9 +522,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "bug_ragtop_fabric.skin_ragtop.herbie-gb-rusty": {
-    "name": "bug_ragtop_fabric.skin_ragtop.herbie-gb-rusty",
-    "mapTo": "bug_ragtop_fabric.skin_ragtop.herbie-gb-rusty",
+  "bug_ragtop_fabric.skin_ragtop.hrb_1980_rusty": {
+    "name": "bug_ragtop_fabric.skin_ragtop.hrb_1980_rusty",
+    "mapTo": "bug_ragtop_fabric.skin_ragtop.hrb_1980_rusty",
     "class": "Material",
     "persistentId": "73210ad3-fa2b-4367-9589-916452253196",
     "Stages": [
@@ -558,9 +558,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "bug_ragtop_fabric.skin_ragtop.herbie-gb-rusty-taxi": {
-    "name": "bug_ragtop_fabric.skin_ragtop.herbie-gb-rusty-taxi",
-    "mapTo": "bug_ragtop_fabric.skin_ragtop.herbie-gb-rusty-taxi",
+  "bug_ragtop_fabric.skin_ragtop.hrb_1980_rustytaxi": {
+    "name": "bug_ragtop_fabric.skin_ragtop.hrb_1980_rustytaxi",
+    "mapTo": "bug_ragtop_fabric.skin_ragtop.hrb_1980_rustytaxi",
     "class": "Material",
     "persistentId": "3adab9b3-09db-4432-8844-9dcba1a37a20",
     "Stages": [
@@ -594,9 +594,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "bug_ragtop_fabric.skin_ragtop.herbie-ra-mc-gb": {
-    "name": "bug_ragtop_fabric.skin_ragtop.herbie-ra-mc-gb",
-    "mapTo": "bug_ragtop_fabric.skin_ragtop.herbie-ra-mc-gb",
+  "bug_ragtop_fabric.skin_ragtop.hrb_1977": {
+    "name": "bug_ragtop_fabric.skin_ragtop.hrb_1977",
+    "mapTo": "bug_ragtop_fabric.skin_ragtop.hrb_1977",
     "class": "Material",
     "persistentId": "1f29e7fc-c614-4aa0-a467-5ff2ebc15445",
     "Stages": [
@@ -630,9 +630,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "bug_ragtop_fabric.skin_ragtop.herbie-tlb": {
-    "name": "bug_ragtop_fabric.skin_ragtop.herbie-tlb",
-    "mapTo": "bug_ragtop_fabric.skin_ragtop.herbie-tlb",
+  "bug_ragtop_fabric.skin_ragtop.hrb_1969": {
+    "name": "bug_ragtop_fabric.skin_ragtop.hrb_1969",
+    "mapTo": "bug_ragtop_fabric.skin_ragtop.hrb_1969",
     "class": "Material",
     "persistentId": "2e08a8f9-d321-437e-b725-7a1504bcb81b",
     "Stages": [
@@ -666,9 +666,9 @@
     "materialTag1": "vehicle",
     "version": 1.5
   },
-  "bug_ragtop_fabric.skin_ragtop.herbie-tlb97": {
-    "name": "bug_ragtop_fabric.skin_ragtop.herbie-tlb97",
-    "mapTo": "bug_ragtop_fabric.skin_ragtop.herbie-tlb97",
+  "bug_ragtop_fabric.skin_ragtop.hrb_1997": {
+    "name": "bug_ragtop_fabric.skin_ragtop.hrb_1997",
+    "mapTo": "bug_ragtop_fabric.skin_ragtop.hrb_1997",
     "class": "Material",
     "persistentId": "a83c4fb0-287b-4bfa-b200-f5608bb636c9",
     "Stages": [

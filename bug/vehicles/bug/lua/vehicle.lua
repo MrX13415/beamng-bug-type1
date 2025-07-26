@@ -6,8 +6,8 @@
 -- by MrX13415
 
 local M = {}
-M.version = "24"
-M.versionDate = "2025-04-09"
+M.version = "25"
+M.versionDate = "2025-07-25"
 
 local updateTimer = 2   -- Make sure the first call is immediately
 local openingUpdateTimer = 2   -- Make sure the first call is immediately
@@ -161,7 +161,7 @@ local function updateInteriorlight(doors)
   electrics.values.interiorlight = lightstate and 1 or 0
 end
 
-local function animateElectrics(name, speed)
+local function animateElectrics(name, speed, sfxOn, sfxOff, sfxNode)
   -- Smooth ignition animation
   local lvl = electrics.values[name] or 0
   local anim = electrics.values[name .. "_anim"] or 0
@@ -177,6 +177,16 @@ local function animateElectrics(name, speed)
     if direction < 0 then new = clamp(new, lvl, anim) end
   end
 
+  if lvl ~= anim then
+    if sfxOn and direction > 0 and anim == 0 then
+      -- towards 1, play once, before animation starts
+      sounds.playSoundOnceAtNode(sfxOn, getNodeIDbyName(sfxNode), 1, 1, 0, 0)
+    elseif sfxOff and direction < 0 and new == 0 then
+      -- towards 0, play once, after animation ends
+      sounds.playSoundOnceAtNode(sfxOff, getNodeIDbyName(sfxNode), 1, 1, 0, 0)
+    end
+  end
+  
   --print(tostring(lvl) .. " a " .. tostring(anim) .. " d " .. tostring(diff) .. " n " .. tostring(new) .. " s " .. tostring(speedCoef))
   electrics.values[name .. "_anim"] = new
 end
@@ -186,8 +196,8 @@ local function updateAnimations()
   animateElectrics("ashtray", 0.03)
   animateElectrics("parkingbrake", 0.05)
 
-  animateElectrics("gascap", 0.03)
-  animateElectrics("fuelcap", 0.25)
+  animateElectrics("gascap", 0.03, "SFX_bug_gascap_open", "SFX_bug_gascap_close", "ft1l")
+  animateElectrics("fuelcap", 0.25, "SFX_bug_gascap_open", "SFX_bug_gascap_close", "ft1l")
 end
 
 local function updateOpenings()
@@ -354,6 +364,15 @@ local function onReset()
 end
 
 local function onPlayersChanged()
+end
+
+local function toggle(var)
+  if var == "" then return nil end
+  local state = electrics.values[var] or 0
+  state = state > 0 and 0 or 1
+  --print(tostring(var) .. " " .. tostring(state))
+  electrics.values[var] = state
+  return state
 end
 
 local function toggleInteriorLight() 

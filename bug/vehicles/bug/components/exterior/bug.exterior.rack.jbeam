@@ -1,5 +1,5 @@
 {
-"bug_roof_rack": {
+"bug_roofrack": {
     "information":{
         "authors":"53_herbie_53",
         "name":"Roof Rack",
@@ -8,7 +8,7 @@
     "slotType" : ["bug_roof_accessory", "bug_ragroof_accessory"],
 	"slots": [
         ["type", "default", "description"],
-        ["bug_roof_rack_luggage","bug_roof_rack_luggage", "Roof Rack Luggage"],	
+        ["bug_roofrack_luggage","bug_roofrack_luggage", "Roof Rack Luggage"],	
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -235,34 +235,34 @@
         ["rora3l", "rora6", "rora6l"],
 	],
 },
-"bug_roof_rack_luggage": {
+"bug_roofrack_luggage": {
     "information":{
         "authors":"53_herbie_53",
         "name":"Camping Luggage",
         "value":0,
     },
-    "slotType" : "bug_roof_rack_luggage",
+    "slotType" : "bug_roofrack_luggage",
     "slots": [
         ["type", "default", "description"],
-        ["bug_roof_rack_luggage_bag","bug_roof_rack_luggage_bag", "Suitcase"],
-        ["bug_roof_rack_luggage_coolingbox","bug_roof_rack_luggage_coolingbox", "Coolingbox"],
-        ["bug_roof_rack_luggage_tricycle","bug_roof_rack_luggage_tricycle", "Tricycle"],
-        ["bug_roof_rack_luggage_surfboard","bug_roof_rack_luggage_surfboard", "Surfboard"],
+        ["bug_roofrack_luggage_bag","cargo_load_roofrack_luggage_bag", "Suitcase"],
+        ["bug_roofrack_luggage_coolingbox","cargo_load_roofrack_luggage_coolingbox", "Coolingbox"],
+        ["bug_roofrack_luggage_tricycle","bug_roofrack_luggage_tricycle", "Tricycle"],
+        ["bug_roofrack_luggage_surfboard","bug_roofrack_luggage_surfboard", "Surfboard"],
     ]
 },
 
 
-"bug_roof_rack_luggage_bag": {
+"cargo_load_roofrack_luggage_bag": {
     "information":{
         "authors":"MrX13415",
         "name":"Leather Trunk",
-        "value":0,
+        "value":80,
     },
-    "slotType" : "bug_roof_rack_luggage_bag",
+    "slotType" : "bug_roofrack_luggage_bag",
     "slots": [
         ["type", "default", "description"],
 
-        ["bug_roof_rack_luggage_bag_color","bug_roof_rack_luggage_bag_brown", "Color", {"coreSlot":true}]
+        ["bug_roofrack_luggage_bag_color","bug_roofrack_luggage_bag_brown", "Color", {"coreSlot":true}]
     ],
     "cargoStorage":[
         ["groupId","name","cargoTypes", "capacity"],
@@ -387,26 +387,26 @@
        // {"pressureGroup":""},
     ],
 },
-"bug_roof_rack_luggage_bag_brown": {
+"bug_roofrack_luggage_bag_brown": {
     "information":{
         "authors":"MrX13415",
         "name":"Brown",
         "value":50,
     },
-    "slotType" : "bug_roof_rack_luggage_bag_color",
+    "slotType" : "bug_roofrack_luggage_bag_color",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
         ["bug_roofrack_bag", ["luggage_roofrack_bag"], [], {"materialOverride":[["bug_roofrack_bag","bug_rack_bag_brown"]]}]
     ]
 },
-"bug_roof_rack_luggage_bag_black": {
+"bug_roofrack_luggage_bag_black": {
     "information":{
         "authors":"MrX13415",
         "name":"Black",
         "value":50,
     },
-    "slotType" : "bug_roof_rack_luggage_bag_color",
+    "slotType" : "bug_roofrack_luggage_bag_color",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
@@ -415,13 +415,13 @@
 },
 
 
-"bug_roof_rack_luggage_coolingbox": {
+"cargo_load_roofrack_luggage_coolingbox": {
     "information":{
         "authors":"53_herbie_53",
         "name":"Coolingbox",
         "value":30,
     },
-    "slotType" : "bug_roof_rack_luggage_coolingbox",
+    "slotType" : "bug_roofrack_luggage_coolingbox",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
@@ -429,7 +429,7 @@
     ],
     "cargoStorage":[
         ["groupId","name","cargoTypes", "capacity"],
-        ["roofCoolingboxA","Roof Coolingbox",["parcel"], 1],
+        ["roofCoolingboxA","Roof Coolingbox",["parcel"], 2],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -556,13 +556,13 @@
        // {"pressureGroup":""},
     ],
 },
-"bug_roof_rack_luggage_tricycle": {
+"bug_roofrack_luggage_tricycle": {
     "information":{
         "authors":"53_herbie_53",
         "name":"Tricycle",
         "value":25,
     },
-    "slotType" : "bug_roof_rack_luggage_tricycle",
+    "slotType" : "bug_roofrack_luggage_tricycle",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
@@ -693,13 +693,13 @@
         ["lgg75", "lgg74", "lgg73"],
     ],
 },
-"bug_roof_rack_luggage_surfboard": {
+"bug_roofrack_luggage_surfboard": {
     "information":{
         "authors":"53_herbie_53",
         "name":"Surfboard",
         "value":80,
     },
-    "slotType" : "bug_roof_rack_luggage_surfboard",
+    "slotType" : "bug_roofrack_luggage_surfboard",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
@@ -870,27 +870,27 @@
 },
 
 
-"bug_roof_rack_offroad": {
+"bug_roofrack_offroad": {
     "information":{
         "authors":"MrX13415",
         "name":"Offroad Luggage",
         "value":0,
     },
-    "slotType" : "bug_roof_rack_luggage",
+    "slotType" : "bug_roofrack_luggage",
     "slots": [
         ["type", "default", "description"],
-        ["bug_roof_rack_offroad_tire","bug_roof_rack_offroad_tire", "Spare Wheel"],
-        ["bug_roof_rack_offroad_box","bug_roof_rack_offroad_box", "Box"],
+        ["bug_roofrack_offroad_tire","bug_roofrack_offroad_tire", "Spare Wheel"],
+        ["bug_roofrack_offroad_box","cargo_load_roofrack_offroad_box", "Box"],
     ]
 },
 
-"bug_roof_rack_offroad_tire": {
+"bug_roofrack_offroad_tire": {
     "information":{
         "authors":"MrX13415",
         "name":"Spare Wheel",
         "value":130,
     },
-    "slotType" : "bug_roof_rack_offroad_tire",
+    "slotType" : "bug_roofrack_offroad_tire",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
@@ -964,13 +964,13 @@
         {"hasTire":true},
     ],
 },
-"bug_roof_rack_offroad_box": {
+"cargo_load_roofrack_offroad_box": {
     "information":{
         "authors":"MrX13415",
         "name":"Crate",
         "value":50,
     },
-    "slotType" : "bug_roof_rack_offroad_box",
+    "slotType" : "bug_roofrack_offroad_box",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
@@ -978,7 +978,7 @@
     ],
     "cargoStorage":[
         ["groupId","name","cargoTypes", "capacity"],
-        ["roofCrateA","Roof Crate",["parcel"], 3],
+        ["roofCrateA","Roof Crate",["parcel"], 4],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -1108,7 +1108,7 @@
     "slotType" : "bug_rearrack",
 	"slots": [
         ["type", "default", "description"],
-        ["bug_rearrack_luggage","bug_rearrack_luggage_bag", "Rear Rack Luggage"],
+        ["bug_rearrack_luggage","cargo_load_rearrack_luggage_bag", "Rear Rack Luggage"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1290,7 +1290,7 @@
 		["rera2", "rera12", "rera11"],
 	],
 },
-"bug_rearrack_luggage_bag": {
+"cargo_load_rearrack_luggage_bag": {
     "information":{
         "authors":"53_herbie_53",
         "name":"Leather Trunk",
@@ -1448,7 +1448,7 @@
     "slotType" : "bug_jerrycan_cage",
     "slots": [
         ["type", "default", "description"],
-        ["bug_jerrycan","bug_jerrycan", "20L Jerrycan"],	
+        ["bug_jerrycan","cargo_load_jerrycan", "20L Jerrycan"],	
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1536,16 +1536,24 @@
 
     ],
 },
-"bug_jerrycan": {
+"cargo_load_jerrycan": {
     "information":{
         "authors":"MrX13415",
         "name":"Jerrycan",
-        "value":0,
+        "value":20,
     },
     "slotType" : "bug_jerrycan",
     "slots": [
         ["type", "default", "description"],
         ["bug_jerrycan_color","bug_jerrycan_green", "Color", {"coreSlot":true}],
+    ],
+    "cargoStorage":[
+        ["groupId","name","cargoTypes", "capacity"],
+        ["JerrycanFluidTankA","Jerrycan",["fluid"], 20],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$jerrycan_loadVolume", "range", "L", "Cargo", 0.0, 0.0, 20, "Jerrycan Load Volume", "Amount of aggregate in the Jerrycan",{"stepDis":1}],
     ],
 	"nodes":[
 		["id", "posX", "posY", "posZ"],
@@ -1554,23 +1562,26 @@
 		{"nodeMaterial":"|NM_METAL"},
 		{"selfCollision":true},
         {"collision":true},
-		{"nodeWeight":1.1},
+		{"nodeWeight":0.3},
 		{"group":"jerrycan"},
+        {"cargoGroup":"JerrycanFluidTankA"}
         {"chemEnergy":50,"burnRate":1.2,"flashPoint":220,"vaporPoint":97,"specHeat":0.03,"selfIgnitionCoef":0.4,"smokePoint":220,"containerBeam":"jerrycan", "ignoreContainerBeamBreakMessage":true},
         ["jry1l", 0.835, 0.38, 0.72],
         ["jry2l", 0.815, 0.67, 0.75],
-        ["jry3l", 0.825, 0.38, 0.35],
-        ["jry4l", 0.805, 0.67, 0.35],
+        ["jry3l", 0.825, 0.38, 0.35 {"nodeWeight":"$=0.125*$jerrycan_loadVolume*($jerrycan_loadVolume/20)+0.3", "nodeWeightFunction":"=1*$volume*$density*($volume*$density/20)+2"}],
+        ["jry4l", 0.805, 0.67, 0.35 {"nodeWeight":"$=0.125*$jerrycan_loadVolume*($jerrycan_loadVolume/20)+0.3", "nodeWeightFunction":"=1*$volume*$density*($volume*$density/20)+2"}],
         ["jry1r", 0.735, 0.38, 0.72],
         ["jry2r", 0.725, 0.66, 0.76],
-        ["jry3r", 0.725, 0.38, 0.36],
-        ["jry4r", 0.705, 0.66, 0.36],
+        ["jry3r", 0.725, 0.38, 0.36 {"nodeWeight":"$=0.125*$jerrycan_loadVolume*($jerrycan_loadVolume/20)+0.3", "nodeWeightFunction":"=1*$volume*$density*($volume*$density/20)+2"}],
+        ["jry4r", 0.705, 0.66, 0.36 {"nodeWeight":"$=0.125*$jerrycan_loadVolume*($jerrycan_loadVolume/20)+0.3", "nodeWeightFunction":"=1*$volume*$density*($volume*$density/20)+2"}],
+
         // Collision support nodes
-        ["jry5l", 0.825, 0.38, 0.57],
-        ["jry6l", 0.805, 0.67, 0.57],
-        ["jry5r", 0.735, 0.38, 0.57],
-        ["jry6r", 0.715, 0.66, 0.57],
+        ["jry5l", 0.825, 0.38, 0.57 {"nodeWeight":"$=0.125*$jerrycan_loadVolume*($jerrycan_loadVolume/20)+0.3", "nodeWeightFunction":"=1*$volume*$density*($volume*$density/20)+2"}],
+        ["jry6l", 0.805, 0.67, 0.57 {"nodeWeight":"$=0.125*$jerrycan_loadVolume*($jerrycan_loadVolume/20)+0.3", "nodeWeightFunction":"=1*$volume*$density*($volume*$density/20)+2"}],
+        ["jry5r", 0.735, 0.38, 0.57 {"nodeWeight":"$=0.125*$jerrycan_loadVolume*($jerrycan_loadVolume/20)+0.3", "nodeWeightFunction":"=1*$volume*$density*($volume*$density/20)+2"}],
+        ["jry6r", 0.715, 0.66, 0.57 {"nodeWeight":"$=0.125*$jerrycan_loadVolume*($jerrycan_loadVolume/20)+0.3", "nodeWeightFunction":"=1*$volume*$density*($volume*$density/20)+2"}],
 		{"group":""}
+        {"cargoGroup":""}
         {"chemEnergy":false,"burnRate":false,"flashPoint":false,"vaporPoint":false,"specHeat":false,"selfIgnitionCoef":false,"smokePoint":false,"containerBeam":false},
     ],
     "beams":[
@@ -1578,11 +1589,12 @@
   
         {"disableMeshBreaking":true},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":800000,"beamDamp":50},
+        {"beamSpring":200000,"beamDamp":50},
         {"beamDeform":5000,"beamStrength":"FLT_MAX"},
         
         {"deformLimitExpansion":0},
 		{"group":"jerrycan"},
+        {"cargoGroup":"JerrycanFluidTankA"}
         {"breakGroup":"jerrycan"},
         ["jry1l", "jry3l", {"beamStrength":20000, "containerBeam": "jerrycan"}],
         ["jry2l", "jry4l", {"beamStrength":20000, "containerBeam": "jerrycan"}],
@@ -1644,6 +1656,7 @@
         ["jry6r", "jry1r"],
         ["jry6r", "jry3l"],
         ["jry6r", "jry3r"],
+        {"cargoGroup":""}
 
         //attach
         {"beamPrecompression":0.9, "beamType":"|SUPPORT", "beamLongBound":1.0, "beamShortBound":1.0},

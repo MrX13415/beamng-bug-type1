@@ -1,0 +1,46 @@
+{
+  "0-100 km/h":9.1,
+  "0-100 mph":13.4,
+  "0-200 km/h":18.1,
+  "0-60 mph":8.3,
+  "100-0 km/h":42.8,
+  "100-200 km/h":8.9,
+  "60-0 mph":131.7,
+  "60-100 mph":5,
+  "BoundingBox":[
+    [
+      -1.42,
+      -2.60233,
+      -0.284479
+    ],
+    [
+      1.58,
+      2.99767,
+      1.25892
+    ]
+  ],
+  "Braking G":0.92,
+  "Country": "United States",
+  "Config Type":"Herbie",
+  "Configuration":"Herbie 2005",
+  "Description":"Herbie as seen in the movie \"Herbie: Fully Loaded\" from 2005",
+  "Drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Licenseplate":"California Plate Design ('63)",
+  "Off-Road Score":3,
+  "Performance Class":"2",
+  "Population":0,
+  "Power":807,
+  "PowerPeakRPM":7900,
+  "Propulsion":"ICE",
+  "Top Speed":76.76704406,
+  "Torque":720,
+  "TorquePeakRPM":7200,
+  "Transmission":"Automatic",
+  "Value":8500,
+  "Weight":1060,
+  "Weight/Power":1.313506815,
+  "defaultPaintName1":"Pearl White",
+  "defaultPaintName3":"Pearl White"
+}

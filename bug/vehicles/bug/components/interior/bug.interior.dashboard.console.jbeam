@@ -6,7 +6,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Radio",
-        "value":300
+        "value":150
     },
     "slotType": "bug_console_cage",
     "slots": [
@@ -62,11 +62,33 @@
     ],
     "actionsEnabled": [
         ["id"],
+
         ["radio_Toggle"],
+        ["radio_Off"],
+        ["radio_On"],
+        ["radio_Info"],
+
         ["radio_VolumeDown"],
         ["radio_VolumeUp"],
+        ["radio_On_VolumeDown"],
+        ["radio_On_VolumeUp"],
+
+        ["radio_TuneDown"],
+        ["radio_TuneUp"],
         ["radio_TuneRev"],
         ["radio_TuneNext"],
+        ["radio_TrackPrev"],
+        ["radio_TrackNext"],
+        ["radio_TunePreset1"],
+        ["radio_TunePreset2"],
+        ["radio_TunePreset3"],
+        ["radio_TunePreset4"],
+        ["radio_TunePreset5"],
+        ["radio_SetPreset1"],
+        ["radio_SetPreset2"],
+        ["radio_SetPreset3"],
+        ["radio_SetPreset4"],
+        ["radio_SetPreset5"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
@@ -376,8 +398,8 @@
         "attachSoundVolume":1,
         "detachSoundVolume":1,
         "soundNode:":["dgb4"],
-        "attachSoundEvent": "glovebox_close",
-        "detachSoundEvent": "glovebox_open",
+        "attachSoundEvent": "SFX_bug_glovebox_close",
+        "detachSoundEvent": "SFX_bug_glovebox_open",
         "breakSoundEvent":"",
         "openForceMagnitude": 10,
         "openForceDuration": 0.1,
@@ -391,6 +413,10 @@
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         ["gloveboxLatch", "dgb1l","dgb1r","dgb2l", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1654, "y":0.1137, "z":0.005},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["gloveboxLatch"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
@@ -558,6 +584,10 @@
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         
         ["hazard", "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.071, "y":-0.03, "z":-0.045},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["toggle_hazard_signal"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],

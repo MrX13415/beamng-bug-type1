@@ -3,7 +3,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Rear Spoiler",
-        "value":300,
+        "value":200,
     },
     "slotType" : "bug_spoilerR",
     "slots": [

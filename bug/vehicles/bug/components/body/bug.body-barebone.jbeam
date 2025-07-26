@@ -261,6 +261,10 @@
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         ["ignition", "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.036, "y":-0.067, "z":-0.005},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
+    "actionsEnabled": [
+        ["id"],
+        ["activateStarterMotor"],
+    ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
         

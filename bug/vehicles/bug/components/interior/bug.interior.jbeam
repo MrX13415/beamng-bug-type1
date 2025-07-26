@@ -373,6 +373,11 @@
         ["sunvisor_L", "brf1","brf1l","brf2", "box", {"x":0.05, "y":0.015, "z":0.015}, {"x":-20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.11, "y":0.05, "z":0.04},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         ["sunvisor_R", "brf1","brf1r","brf2", "box", {"x":0.05, "y":0.015, "z":0.015}, {"x": 20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.11, "y":0.05, "z":-0.055},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
+    "actionsEnabled": [
+        ["id"],
+        ["sunvisorLtoggle"],
+        ["sunvisorRtoggle"],
+    ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
         ["sunvisor_L", "action0", "sunvisorLtoggle"],   // default: left mouse btn

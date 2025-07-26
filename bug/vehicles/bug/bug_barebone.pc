@@ -103,7 +103,6 @@
     "skin_race_seat_FL":"skin_race_seat_FL_red",
     "skin_speedometer":"bug_speedo_mph_150",
     "skin_steer_beamng":"bug_steer_02b",
-    "soundscape":"",
     "soundscape_horn":"soundscape_horn_2",
     "tire_F_15x8_alt":"tire_F_26_8_15_alt_drag",
     "tire_R_15x10":"tire_R_28_10_15_drag",

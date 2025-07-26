@@ -1,0 +1,46 @@
+{
+  "0-100 km/h":7.7,
+  "0-100 mph":13.2,
+  "0-200 km/h":17.8,
+  "0-60 mph":7.5,
+  "100-0 km/h":43,
+  "100-200 km/h":10.1,
+  "60-0 mph":132.4,
+  "60-100 mph":5.6,
+  "BoundingBox":[
+    [
+      -0.778,
+      -1.77119,
+      -0.259479
+    ],
+    [
+      0.778,
+      2.29767,
+      1.28392
+    ]
+  ],
+  "Braking G":0.915,
+  "Country": "United States",
+  "Config Type":"Herbie",
+  "Configuration":"Herbie 1980 (Rusted)",
+  "Description":"Herbie as seen in the movie \"Herbie Goes Bananas\" from 1980",
+  "drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Licenseplate":"California Plate Design ('63)",
+  "Off-Road Score":28,
+  "Performance Class":"2",
+  "Population":0,
+  "Power":594,
+  "PowerPeakRPM":7900,
+  "Propulsion":"ICE",
+  "Top Speed":76.83917927,
+  "Torque":530,
+  "TorquePeakRPM":3800,
+  "Transmission":"Automatic",
+  "Value":8500,
+  "Weight":1045,
+  "Weight/Power":1.759259259,
+  "defaultPaintName1":"Pearl White",
+  "defaultPaintName3":"Gray"
+}

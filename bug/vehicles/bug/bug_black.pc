@@ -216,7 +216,6 @@
     "skin_spoilerR":"bug_spoilerR_paint1",
     "skin_steer":"bug_steer_black",
     "skin_tachometer":"bug_tacho_8000",
-    "soundscape":"",
     "soundscape_horn":"soundscape_horn_116",
     "tire_F_15x6":"tire_F_195_55_15_sport",
     "tire_R_15x6":"tire_R_195_55_15_sport",

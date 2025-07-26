@@ -1,0 +1,11 @@
+{
+    "license_plate_bug_us-ca_2_1": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"California Plate Design ('63)",
+        "value":50,
+    },
+    "slotType" : "licenseplate_design_2_1",
+    "licenseplate_path" : "vehicles/common/licenseplates/bug_us-ca/licenseplate-bug-us-ca.json",
+    },
+}

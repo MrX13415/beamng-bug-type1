@@ -14,7 +14,7 @@ local direction = 0
 local directionLast = 0
 
 local sfxNode = ""
-local sfxEvent = "vehicles/bug/components/sounds/common/ragtop-move.wav"
+local sfxEvent = "vehicles/bug/components/sounds/common/ragtop-move.ogg"
 local sfxVolume = 0.31
 local sfx = nil
 

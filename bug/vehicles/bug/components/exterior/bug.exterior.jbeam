@@ -155,6 +155,10 @@
         
         ["gascap", "f4mr","f4ml","refup", "sphere", 0.04, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.6, "y":0.543, "z":-0.572},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
+    "actionsEnabled": [
+        ["id"],
+        ["togglegascap"],
+    ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
         

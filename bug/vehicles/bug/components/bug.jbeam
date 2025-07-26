@@ -3,7 +3,7 @@
 "bug": {
     "information":{
         "authors":"BeamNG",
-        "name":"Volkswagen Käfer (1963)",
+        "name":"Volkswagen Type 1 \"Beetle\"",
     },
     "slotType" : "main",
     "slots": [
@@ -13,7 +13,6 @@
         ["paint_design", "", "Paint Design"],
 
         ["bug_behavior", "bug_behavior", "Behavior"],
-        ["soundscape", "soundscape_herbie_horn", "Soundscape"],
 
         ["bug_frame", "bug_frame", "Frame", {"coreSlot":true}],
         ["bug_mod", "", "Additional Modification"],

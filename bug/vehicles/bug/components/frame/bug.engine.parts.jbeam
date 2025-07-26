@@ -21,6 +21,10 @@
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         ["fuelcap", "ft1l","ft1r","ft3r", "sphere", 0.02, {"x":0, "y":0, "z":0}, {"x":-5, "y":8, "z":0}, {"x":0, "y":0, "z":0},{"x":0.317, "y":-0.32, "z":-0.037},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
+    "actionsEnabled": [
+        ["id"],
+        ["togglefuelcap"],
+    ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],        
         
@@ -321,6 +325,10 @@
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$charge", "range", "", "Engine", 0.6, 0, 1.0, "Battery Charge", "Initial Battery Charging Level", {"minDis":0, "maxDis":100}]
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["batteryinfo"],
     ],
     "controller": [
         ["fileName"],

@@ -3,7 +3,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Windshield",
-        "value":1300,
+        "value":800,
     },
     "slotType" : "bug_windshield",
     "flexbodies": [
@@ -96,7 +96,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Rearwindow",
-        "value":1300,
+        "value":800,
     },
     "slotType" : "bug_rearwindow",
     "flexbodies": [
@@ -192,7 +192,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Glass",
-        "value":1300,
+        "value":800,
     },
     "slotType" : "bug_glass",
     "flexbodies": [
@@ -279,7 +279,7 @@
     "slotType" : "bug_doorglass_FR",
     "controller": [
         ["fileName"],
-        ["bug/window", {"name": "windowFR", "state": "$windowFRInitState", "sfxNode": "d8r", "sfx": "vehicles/bug/components/sounds/common/window-roll.wav"}]
+        ["bug/window", {"name": "windowFR", "state": "$windowFRInitState", "sfxNode": "d8r", "sfx": "vehicles/bug/components/sounds/common/window-roll.ogg"}]
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -397,7 +397,7 @@
     "slotType" : "bug_doorglass_FL",
     "controller": [
         ["fileName"],
-        ["bug/window", {"name": "windowFL", "state": "$windowFLInitState", "sfxNode": "d8l", "sfx": "vehicles/bug/components/sounds/common/window-roll.wav"}]
+        ["bug/window", {"name": "windowFL", "state": "$windowFLInitState", "sfxNode": "d8l", "sfx": "vehicles/bug/components/sounds/common/window-roll.ogg"}]
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

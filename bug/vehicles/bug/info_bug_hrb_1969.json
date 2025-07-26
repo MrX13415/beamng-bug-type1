@@ -1,0 +1,46 @@
+{
+  "0-100 km/h":8.4,
+  "0-100 mph":14.3,
+  "0-200 km/h":18.6,
+  "0-60 mph":8.2,
+  "100-0 km/h":42.6,
+  "100-200 km/h":10.2,
+  "60-0 mph":131.2,
+  "60-100 mph":6,
+  "BoundingBox":[
+    [
+      -0.778,
+      -1.77119,
+      -0.259479
+    ],
+    [
+      0.778,
+      2.29767,
+      1.28392
+    ]
+  ],
+  "Braking G":0.922,
+  "Country": "United States",
+  "Config Type":"Herbie",
+  "Configuration":"Herbie 1969",
+  "Description":"Herbie as seen in the movie \"The Love Bug\" from 1969",
+  "drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Licenseplate":"California Plate Design ('63)",
+  "Off-Road Score":28,
+  "Performance Class":"2",
+  "Population":0,
+  "Power":696,
+  "PowerPeakRPM":7900,
+  "Propulsion":"ICE",
+  "Top Speed":77.0110695,
+  "Torque":625,
+  "TorquePeakRPM":6800,
+  "Transmission":"Automatic",
+  "Value":8500,
+  "Weight":1045,
+  "Weight/Power":1.501436782,
+  "defaultPaintName1":"Pearl White",
+  "defaultPaintName3":"Gray"
+}

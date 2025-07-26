@@ -4,14 +4,15 @@
   "Brand": "Volkswagen",
   "Country": "Germany",
   "Derby Class": "Compact Car",
-  "Name": "Beetle 1963",
+  "Name": "Type 1 \"Beetle\"",  
   "Type": "Car",
   "Years": {
-    "max": 1967,
-    "min": 1962
+    // This is mainly a 1963 model.
+    "min": 1962,
+    "max": 1967
   },
   "defaultPaintName1": "Sunset",
-  "default_pc": "bug.1200.us.ragtop",
+  "default_pc": "bug_1200_us_ragtop",
   "paints": {
     /* standard paints */
     "Alabaster": {

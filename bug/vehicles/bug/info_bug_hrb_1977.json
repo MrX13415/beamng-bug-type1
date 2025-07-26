@@ -1,0 +1,46 @@
+{
+  "0-100 km/h":7.4,
+  "0-100 mph":14.6,
+  "0-200 km/h":18.8,
+  "0-60 mph":7.3,
+  "100-0 km/h":44.5,
+  "100-200 km/h":11.3,
+  "60-0 mph":134.5,
+  "60-100 mph":7.3,
+  "BoundingBox":[
+    [
+      -0.783,
+      -1.77119,
+      -0.259479
+    ],
+    [
+      0.783,
+      2.29767,
+      1.28392
+    ]
+  ],
+  "Braking G":0.884,
+  "Country": "United States",
+  "Config Type":"Herbie",
+  "Configuration":"Herbie 1977",
+  "Description":"Herbie as seen in the movie \"Herbie Goes to Monte Carlo\" from 1977",
+  "drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"NA",
+  "Licenseplate":"California Plate Design ('63)",
+  "Off-Road Score":28,
+  "Performance Class":"2",
+  "Population":0,
+  "Power":648,
+  "PowerPeakRPM":7900,
+  "Propulsion":"ICE",
+  "Top Speed":70.38574616,
+  "Torque":580,
+  "TorquePeakRPM":6100,
+  "Transmission":"Automatic",
+  "Value":8500,
+  "Weight":1045,
+  "Weight/Power":1.612654321,
+  "defaultPaintName1":"Pearl White",
+  "defaultPaintName3":"Gray"
+}

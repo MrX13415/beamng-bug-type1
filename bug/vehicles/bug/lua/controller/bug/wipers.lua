@@ -13,7 +13,7 @@ local NodeSFX = "dsh"
 local NodeSFXWipers = "wi1"
 local SFXOn     = "event:>Vehicle>Interior>Light>FIPA_On"
 local SFXOff    = "event:>Vehicle>Interior>Light>FIPA_Off"
-local SFXWipers = "vehicles/bug/components/sounds/common/windshild-wipers.wav"
+local SFXWipers = "vehicles/bug/components/sounds/common/windshild-wipers.ogg"
 local SFXWipersVolume = 0.5
 local MaxSpeedLevel = 3
 

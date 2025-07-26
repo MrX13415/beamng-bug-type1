@@ -18,6 +18,10 @@
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         ["seat_FL", "isFL5l","isFL5r","isFL6r", "box", {"x":0.02, "y":0.04, "z":0.04}, {"x":20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.17, "y":0.20, "z":-0.025},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
+    "actionsEnabled": [
+        ["id"],
+        ["seatFLtoggle"],
+    ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
         ["seat_FL", "action0", "seatFLtoggle"],   // default: left mouse btn
@@ -176,6 +180,10 @@
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         ["seat_FR", "isFR5r","isFR5l","isFR6l", "box", {"x":0.02, "y":0.04, "z":0.04}, {"x":-20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.17, "y":0.20, "z":-0.025},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["seatFRtoggle"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
@@ -337,6 +345,10 @@
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         ["seat_FL", "isFL5l","isFL5r","isFL6r", "box", {"x":0.02, "y":0.04, "z":0.04}, {"x":20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.17, "y":0.20, "z":-0.025},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
+    "actionsEnabled": [
+        ["id"],
+        ["seatFLtoggle"],
+    ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
         ["seat_FL", "action0", "seatFLtoggle"],   // default: left mouse btn
@@ -495,6 +507,10 @@
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         ["seat_FR", "isFR5r","isFR5l","isFR6l", "box", {"x":0.02, "y":0.04, "z":0.04}, {"x":-20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.17, "y":0.20, "z":-0.025},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["seatFRtoggle"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],

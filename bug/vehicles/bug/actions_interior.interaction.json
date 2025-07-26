@@ -1,0 +1,13 @@
+{
+    "fileversion": 2,
+    "actions": {
+        // Interior:
+        "sunvisorLtoggle":     {"order":31.1, "onDown":"vehicle.toggle('sunvisorL')",                                       "title":"Interior: Left Sunvisor", "desc":"Lowers the left sunvisor."},
+        "sunvisorRtoggle":     {"order":31.2, "onDown":"vehicle.toggle('sunvisorR')",                                       "title":"Interior: Right Sunvisor", "desc":"Lowers the right sunvisor."},
+        "interiorlighttoggle": {"order":31.3, "onDown":"vehicle.toggleInteriorLight()",                                     "title":"Interior: Interior Light", "desc":"Toggles the interior light between always on and open door only."},   
+        "ashtraytoggle":       {"order":31.4, "onDown":"vehicle.toggle('ashtray')",                                         "title":"Interior: Ashtray Open/Close", "desc":"Opens the ashtray."},
+        "gloveboxLatch":       {"order":31.5, "onDown":"controller.getControllerSafe('gloveboxCoupler').toggleGroup()",     "title":"Interior: Glovebox Open/Close", "desc":"Opens the glovebox."},
+        "seatFLtoggle":        {"order":31.6, "onDown":"vehicle.toggle('seatFL')",                                          "title":"Interior: Toogle Front Left Seat", "desc":"Moves the front left seat forward and backwards."},
+        "seatFRtoggle":        {"order":31.7, "onDown":"vehicle.toggle('seatFR')",                                          "title":"Interior: Toogle Front Right Seat", "desc":"Moves the front right seat forward and backwards."},
+    }
+}

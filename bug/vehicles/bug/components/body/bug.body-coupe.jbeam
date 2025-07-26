@@ -1842,6 +1842,10 @@
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         ["interiorlight", "brf4lll","brf4ll","brf5lll", "box", {"x":0.018, "y":0.005, "z":0.01}, {"x":0, "y":5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.055, "y":0.071, "z":-0.04},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
+    "actionsEnabled": [
+        ["id"],
+        ["interiorlighttoggle"],
+    ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
         ["interiorlight", "action0", "interiorlighttoggle"],

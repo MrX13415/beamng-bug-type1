@@ -14,8 +14,8 @@
    ],
    "flexbodies": [
       ["mesh", "[group]:", "nonFlexMaterials"],
-      ["bug_cargo_load_box_m", ["rear_luggage"],[],{"pos":{"x":0.005, "y":1.18, "z":0.61}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
-      ["bug_woodplanks_straps_boxutility_small", ["rear_luggage"],[],{"pos":{"x":0, "y":1.18, "z":0.61}, "rot":{"x":0, "y":0, "z":90}, "scale":{"x":0.246, "y":0.45, "z":0.261}}],
+      ["cargo_load_box_m", ["rear_luggage"],[],{"pos":{"x":0.005, "y":1.18, "z":0.61}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1.0, "y":1.0, "z":1.0}}],
+      ["woodplanks_straps_boxutility_small", ["rear_luggage"],[],{"pos":{"x":0, "y":1.18, "z":0.61}, "rot":{"x":0, "y":0, "z":90}, "scale":{"x":0.246, "y":0.45, "z":0.261}}],
    ],
    "variables": [
       ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -89,11 +89,11 @@
 },
 
 // - Suitcase
-"bug_rear_suitcase": {
+"cargo_load_rear_suitcase": {
     "information":{
         "authors": "MrX13415",
         "name": "Suitcase",
-        "value": 100,
+        "value": 80,
     },
     "slotType" : "bug_decoration2",
     "slots": [
@@ -103,7 +103,7 @@
     ],
     "cargoStorage":[
         ["groupId","name","cargoTypes", "capacity"],
-        ["suitcaseA","Suitcase",["parcel"], 2],
+        ["suitcaseA","Suitcase",["parcel"], 4],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

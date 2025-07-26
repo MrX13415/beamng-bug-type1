@@ -40,7 +40,11 @@
     ],
     "actionsEnabled": [
         ["id"],
+        ["ashtraytoggle"],
+
         ["wiperstoggle"],
+        ["wipersdown"],
+        ["wipersup"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],        
@@ -276,6 +280,8 @@
     "actionsEnabled": [
         ["id"],
         ["wiperstoggle"],
+        ["wipersdown"],
+        ["wipersup"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],        
@@ -1230,6 +1236,10 @@
         ["switchboardBtnBeacon",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0085-$posY", "z":"$=-0.011-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         //["switchboardB1b",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0260-$posY", "z":"$=-0.019-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
+    "actionsEnabled": [
+        ["id"],
+        ["switchboardBtnToggle_Beacon"],
+    ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"], 
 
@@ -1252,6 +1262,10 @@
 
         ["switchboardBtnSiren",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0085-$posY", "z":"$=-0.011-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         //["switchboardB2b",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0260-$posY", "z":"$=-0.019-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["switchboardBtnToggle_Siren"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"], 
@@ -1276,6 +1290,10 @@
         ["switchboardBtnUnderglown",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0085-$posY", "z":"$=-0.011-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         //["switchboardB2b",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0260-$posY", "z":"$=-0.019-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
+    "actionsEnabled": [
+        ["id"],
+        ["switchboardBtnToggle_Underglown"],
+    ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
 
@@ -1298,6 +1316,10 @@
 
        // ["switchboardBtnExtlight",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0085-$posY", "z":"$=-0.011-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         //["switchboardB2b",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0260-$posY", "z":"$=-0.019-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["switchboardBtnToggle_Extlight"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"], 

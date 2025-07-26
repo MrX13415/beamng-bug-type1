@@ -1,15 +1,14 @@
+changes.txt
+desktop.ini
+
+Publish/*
+
+# Don't track DAE cache files
 *.cdae
 
-changes.txt
+# Ony track explicit AW modification files
+bug-aw/*
+!bug-aw/#mod
 
-beammp/*
-Publish/*
-unused/*
-
-bug-radiostation_K-DST/vehicles/bug/components/sounds/radio/*
-!bug-radiostation_K-DST/vehicles/bug/components/sounds/radio/README.md
-
-DetailedMirrors/*
-enhanced_chase_camera/*
+# Don't track python compiled files
 Tools/py/__pycache__/*
-unpacked.rar

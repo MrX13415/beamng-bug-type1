@@ -52,6 +52,10 @@
         ["door_R", "d9r","d8r","d6r", "box", {"x":0.13, "y":-0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.03, "y":0.07, "z":0.04},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         ["door_R_int", "dh1r","d8r","d4r", "box", {"x":0.05, "y":0.05, "z":0.10}, {"x":4, "y":1, "z":2}, {"x":0, "y":15, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.279, "y":0.07, "z":0.06},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
+    "actionsEnabled": [
+        ["id"],
+        ["door_FR"],
+    ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
         ["door_R", "action0", "door_FR"],
@@ -363,6 +367,10 @@
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         ["door_L", "d9l","d8l","d6l", "box", {"x":0.13, "y":0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.03, "y":0.07, "z":-0.04},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         ["door_L_int", "dh1l","d8l","d4l", "box", {"x":0.05, "y":-0.05, "z":0.10}, {"x":4, "y":1, "z":2}, {"x":-5, "y":15, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.279, "y":0.07, "z":-0.06},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["door_FL"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],

@@ -1,0 +1,25 @@
+{
+    "fileversion": 2,
+    "actions": {
+        // Windows
+        "windowFLopen":        {"order":42.1,                  "onChange":"controller.getControllerSafe('windowFL').open(VALUE)",        "title":"Window: Left Open",         "desc":"Opens the front left window."},
+        "windowFLclose":       {"order":42.2,                  "onChange":"controller.getControllerSafe('windowFL').close(VALUE)",       "title":"Window: Left Close",        "desc":"Closes the front left window."},
+        "windowFRopen":        {"order":42.3,                  "onChange":"controller.getControllerSafe('windowFR').open(VALUE)",        "title":"Window: Right Open",        "desc":"Opens the front right window."},
+        "windowFRclose":       {"order":42.4,                  "onChange":"controller.getControllerSafe('windowFR').close(VALUE)",       "title":"Window: Right Close",       "desc":"Closes the front right window."},
+        
+        "doorventFLopen":      {"order":42.5,                  "onChange":"controller.getControllerSafe('doorventFL').open(VALUE)",      "title":"Window: Vent Left Open",    "desc":"Opens the front left vent window."},
+        "doorventFLclose":     {"order":42.6,                  "onChange":"controller.getControllerSafe('doorventFL').close(VALUE)",     "title":"Window: Vent Left Close",   "desc":"Closes the front left vent window."},
+        "doorventFRopen":      {"order":42.7,                  "onChange":"controller.getControllerSafe('doorventFR').open(VALUE)",      "title":"Window: Vent Right Open",   "desc":"Opens the front right vent window."},
+        "doorventFRclose":     {"order":42.8,                  "onChange":"controller.getControllerSafe('doorventFR').close(VALUE)",     "title":"Window: Vent Right Close",  "desc":"Closes the front right vent window."},
+
+        // Ragtop
+        "ragtopopen":          {"order":43.1,                  "onChange":"controller.getControllerSafe('ragtop').open(VALUE)",          "title":"Racktop: Open",             "desc":"Opens the racktop."},
+        "ragtopclose":         {"order":43.2,                  "onChange":"controller.getControllerSafe('ragtop').close(VALUE)",         "title":"Racktop: Close",            "desc":"Closes the racktop."},
+
+        // Doors:
+       // "trunk":               {"order":46.1, "onDown":"controller.getControllerSafe('trunkCoupler').toggleGroup()", "title":"Toogle Trunk", "desc":"Open and closes the trunk."},
+       // "hoodtoggle":          {"order":46.2, "onDown":"controller.getControllerSafe('hoodCatchCoupler').toggleGroup(); controller.getControllerSafe('hoodLatchCoupler').toggleGroup()", "title":"Hood Open/Close", "desc":"Open and closes the hood."},
+       // "hoodRelease":         {"order":46.3, "onDown":"controller.getControllerSafe('hoodLatchCoupler').toggleGroup()", "title":"Hood Release", "desc":"Releases the hood latch."},
+       // "hoodCatch":           {"order":46.4, "onDown":"controller.getControllerSafe('hoodCatchCoupler').toggleGroupConditional({{'hoodLatchCoupler','attached','vehicle.advancedCouplerControl.releaseHoodFirstInterior'}})", "title":"Hood Catch", "desc":"Open the hood when the hood latach was released."},
+    }
+}

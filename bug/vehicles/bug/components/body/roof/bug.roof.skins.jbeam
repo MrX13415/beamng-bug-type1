@@ -148,62 +148,32 @@
     "skinName" : "old",
 },
 
-// No stripes:
-// "bug_skin_ragtop_herbie-fl": {
-//     "information":{
-//         "authors":"MrX13415",
-//         "name":"Herbie Cover - Fully Loaded",
-//         "value":200,
-//     },
-//     "slotType" : "skin_ragtop",
-//     "skinName" : "herbie-fl",
-// },
-"bug_skin_ragtop_herbie-gb-rusty": {
+"bug_skin_ragtop_hrb_1969": {
     "information":{
         "authors":"MrX13415",
-        "name":"Herbie Cover - Goes Bananas Rusty Look",
+        "name":"Herbie 1969 Cover",
         "value":200,
     },
     "slotType" : "skin_ragtop",
-    "skinName" : "herbie-gb-rusty",
+    "skinName" : "hrb_1969",
 },
-// Same as above:
-// "bug_skin_ragtop_herbie-gb-rusty-taxi": {
-//     "information":{
-//         "authors":"MrX13415",
-//         "name":"Herbie Cover - Goes Bananas Rusty Taxi Look",
-//         "value":200,
-//     },
-//     "slotType" : "skin_ragtop",
-//     "skinName" : "herbie-gb-rusty-taxi",
-// },
-"bug_skin_ragtop_herbie-ra-mc-gb": {
+"bug_skin_ragtop_hrb_1977": {
     "information":{
         "authors":"MrX13415",
-        "name":"Herbie Cover - Monte Carlo | Goes Bananas | Rides Again | The Love Bug TV Series",
+        "name":"Herbie 1977 Cover",
         "value":200,
     },
     "slotType" : "skin_ragtop",
-    "skinName" : "herbie-ra-mc-gb",
+    "skinName" : "hrb_1977",
 },
-"bug_skin_ragtop_herbie-tlb": {
+"bug_skin_ragtop_hrb_1980_rusty": {
     "information":{
         "authors":"MrX13415",
-        "name":"Herbie Cover - The Love Bug",
+        "name":"Herbie 1980 Cover (Rusted)",
         "value":200,
     },
     "slotType" : "skin_ragtop",
-    "skinName" : "herbie-tlb",
+    "skinName" : "hrb_1980_rusty",
 },
-// No stripes:
-// "bug_skin_ragtop_herbie-tlb97": {
-//     "information":{
-//         "authors":"MrX13415",
-//         "name":"Herbie Cover - The Love Bug 1997",
-//         "value":200,
-//     },
-//     "slotType" : "skin_ragtop",
-//     "skinName" : "herbie-tlb97",
-// },
 
 }

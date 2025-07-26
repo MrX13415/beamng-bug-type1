@@ -3,7 +3,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Trunk",
-        "value":220,
+        "value":150,
     },
     "slotType" : "bug_trunk",
     "slots": [
@@ -39,9 +39,13 @@
         //                                                default baseRotation {"x":-15, "y":-5, "z":20}
         ["trunk", "t3","t2ll","t2", "box", {"x":0.12, "y":0.05, "z":0.04}, {"x":-15, "y":-6, "z":20}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.032, "y":-0.304, "z":-0.1},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
+    "actionsEnabled": [
+        ["id"],
+        ["trunk"],
+    ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
-        ["trunk", "action0", "trunkLatch"],
+        ["trunk", "action0", "trunk"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

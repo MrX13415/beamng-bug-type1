@@ -3,7 +3,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Front Spoiler",
-        "value":300,
+        "value":200,
     },
     "slotType" : "bug_spoilerF",
     "slots": [

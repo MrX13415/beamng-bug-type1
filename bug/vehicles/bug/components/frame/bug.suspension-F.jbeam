@@ -603,12 +603,12 @@
     ],
     "torsionHydros": [
         ["id1:","id2:","id3:","id4:"],
-        {"spring":200000, "damp":20, "deform":"FLT_MAX", "strength":50000},
+        {"spring":280000, "damp":5, "deform":"FLT_MAX", "strength":50000},
         ["st2r","st2l","st3l","st1ll", {"factor":-0.57,"steeringWheelLock":570,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
         ["st2l","st2r","st3r","st1rr", {"factor":-0.57,"steeringWheelLock":570,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
     ],
     "input": {
-        "FFBcoef":"$=$ffbstrength*8*0.6",
+        "FFBcoef":"$=$ffbstrength*10",
     }
 },
 "bug_steeringbox_race": {
@@ -623,12 +623,12 @@
     ],
     "torsionHydros": [
         ["id1:","id2:","id3:","id4:"],
-        {"spring":200000, "damp":20, "deform":"FLT_MAX", "strength":50000},
+        {"spring":280000, "damp":5, "deform":"FLT_MAX", "strength":50000},
         ["st2r","st2l","st3l","st1ll", {"factor":-0.57,"steeringWheelLock":360,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
         ["st2l","st2r","st3r","st1rr", {"factor":-0.57,"steeringWheelLock":360,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
     ],
     "input": {
-        "FFBcoef":"$=$ffbstrength*6",
+        "FFBcoef":"$=$ffbstrength*8",
     },
 }
 }
