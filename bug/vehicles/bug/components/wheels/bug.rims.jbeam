@@ -11,7 +11,7 @@
     "slots": [
         ["type", "default", "description"],
 		["hubcap_F","hubcap_smoothie_F", "Hubcaps"],
-        ["tire_F_15x4","bug_tire_goodyear_15x4_F", "Tires"],
+        ["tire_F_15x4","bug_tire_gy_15x4_F", "Tires"],
         ["skin_rim1_F","bug_rim1_F_paint1", "Outer Color", {"coreSlot":true}],
         ["skin_rim2_F","bug_rim2_F_paint1", "inner Color", {"coreSlot":true}],
     ],
@@ -85,7 +85,7 @@
     "slots": [
         ["type", "default", "description"],
 		["hubcap_R","hubcap_smoothie_R", "Hubcaps"],
-        ["tire_R_15x4","bug_tire_goodyear_15x4_R", "Tires"],
+        ["tire_R_15x4","bug_tire_gy_15x4_R", "Tires"],
         ["skin_rim1_R","bug_rim1_R_paint1", "Outer Color", {"coreSlot":true}],
         ["skin_rim2_R","bug_rim2_R_paint1", "inner Color", {"coreSlot":true}],
     ],
@@ -763,7 +763,7 @@
     "slots": [
         ["type", "default", "description"],
 		["hubcap_F","hubcap_smoothie_F", "Hubcaps"],
-        ["tire_F_15x7_alt","bug_tire_goodyear_15x7_F", "Tires"],
+        ["tire_F_15x7_alt","bug_tire_gy_15x7_F", "Tires"],
         ["skin_rim1_F","bug_rim1_F_paint1", "Outer Color", {"coreSlot":true}],
         ["skin_rim2_F","bug_rim2_F_paint1", "inner Color", {"coreSlot":true}],
     ],
@@ -836,7 +836,7 @@
     "slots": [
         ["type", "default", "description"],
 		["hubcap_R","hubcap_smoothie_R", "Hubcaps"],
-        ["tire_R_15x7_alt","bug_tire_goodyear_15x7_R", "Tires"],
+        ["tire_R_15x7_alt","bug_tire_gy_15x7_R", "Tires"],
         ["skin_rim1_R","bug_rim1_R_paint1", "Outer Color", {"coreSlot":true}],
         ["skin_rim2_R","bug_rim2_R_paint1", "inner Color", {"coreSlot":true}],
     ],

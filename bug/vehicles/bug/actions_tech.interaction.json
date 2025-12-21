@@ -7,8 +7,8 @@
         "wipersup":            {"order":30.3, "onDown":"controller.getControllerSafe('wipers').up()",           "title":"Wipers: Increase Speed",       "desc":"Increase the speed of the windshield wipers or switches them on."},
 
         // Engine:
-        "togglegascap":        {"order":44.1, "onDown":"vehicle.toggle('gascap')", "title":"Engine: Toggle Rally Gas Cap", "desc":"Open and closed the rally gas cap."},
-        "togglefuelcap":       {"order":44.2, "onDown":"vehicle.toggle('fuelcap')", "title":"Engine: Toggle Fuel Cap", "desc":"Open and closed the fuel cap."},
+        "togglegascap":        {"order":44.1, "onDown":"vehicle.toggleGascap()", "title":"Engine: Toggle Rally Gas Cap", "desc":"Open and closed the rally gas cap."},
+        "togglefuelcap":       {"order":44.2, "onDown":"vehicle.toggleFuelcap()", "title":"Engine: Toggle Fuel Cap", "desc":"Open and closed the fuel cap."},
 
         // Power:
         "batteryinfo":         {"order":45.1, "onDown":"power.batteryStatus()", "title":"Battery: Show Satus", "desc":"Shows the current charge and remaining time of the battery."},

@@ -40,7 +40,7 @@
     "slotType" : "bug_trim_F",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["bug_trim_sides_F", ["bug_body"]],
+         ["bug_trim_sides_F", ["bug_body_front"]],
     ],
 },
 "trim_door": {
@@ -65,7 +65,7 @@
     "slotType" : "bug_trim_B",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["bug_trim_sides_R", ["bug_body"]],
+         ["bug_trim_sides_R", ["bug_body_sides"]],
     ],
 },
 
@@ -79,7 +79,7 @@
     "slotType" : "antenna",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["bug_antenna_side", ["bug_body"]],
+         ["bug_antenna_side", ["bug_body_front"]],
     ],
 },
 "antenna_cowl": {
@@ -91,7 +91,7 @@
     "slotType" : "antenna",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["bug_antenna_cowl_in", ["bug_body"]],
+         ["bug_antenna_cowl_in", ["bug_body_front"]],
     ],
 },
 "antenna_cowl_out": {
@@ -103,7 +103,7 @@
     "slotType" : "antenna",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["bug_antenna_cowl_out", ["bug_body"]],
+         ["bug_antenna_cowl_out", ["bug_body_cowl"]],
     ],
 },
 
@@ -116,23 +116,249 @@
     "slotType" : "bug_exterior_sunvisor",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["bug_exterior_sunvisor", ["bug_body"]],
+         ["bug_exterior_sunvisor", ["bug_body_roof_front"]],
     ],
 },
 
 "bug_foglight": {
     "information":{
-        "authors":"53_herbie_53",
-        "name":"Carello Foglight",
-        "value":300,
+        "authors":"MrX13415",
+        "name":"Foglight",
+        "value":250,
     },
     "slotType" : "bug_foglight",
+    "slots": [
+        ["type", "default", "description"],
+        ["bug_foglight_operation","bug_foglight_op_fog","Operation Mode", {"coreSlot":true}],
+        ["bug_foglight_cover","bug_foglight_cover","Cover"],
+    ],
+    "electricPower":[
+        ["power"],
+        [55, {"trigger": "electrics.values.bug_foglight"}]
+    ],
+    "components": {
+        "electrics": {
+            "customValues": [
+                ["electricsName", "electricsFunction","electricsDefault"],
+                
+                ["power__bug_foglight","(electrics.bug_foglight or 0) * electrics.powerOnRatio",0],
+                ["bug_foglight_light", "(electrics.bug_foglightcover_light or electrics.power__bug_foglight)", 0]
+            ],
+        },
+    },
     "flexbodies": [
-            ["mesh", "[group]:", "nonFlexMaterials"],
-    
-            ["bug_foglight", ["bug_hood"]],
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        
+        ["bug_foglight_frame", ["bug_foglight"]],
+        {"deformGroup":"foglightglass_break", "deformMaterialBase":"bug_foglight", "deformMaterialDamaged":"bug_foglight_dmg"},
+        {"deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound2", "deformVolume":0.2},
+        ["bug_foglight_reflector", ["bug_foglight"]],
+        {"deformMaterialBase":"bug_foglight", "deformMaterialDamaged":"invis"},
+        ["bug_foglight_logo", ["bug_foglight"]],
+        {"deformMaterialBase":"bug_foglight_glass", "deformMaterialDamaged":"bug_foglight_glass_dmg"},
+        ["bug_foglight_glass", ["bug_foglight"]],
+        {"deformGroup":""},
+    ],
+    "glowMap":{
+        "bug_foglight":       {"simpleFunction":{"power__bug_foglight":1}, "off":"bug_foglight", "on":"bug_foglight_light_on", "on_intense":"bug_foglight_light_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_foglight_glass": {"simpleFunction":{"power__bug_foglight":1}, "off":"bug_foglight_glass", "on":"bug_foglight_light_on", "on_intense":"bug_foglight_light_on", "materialEmissiveScaling":{"on_max":1.0}},
+    },
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+
+        {
+            "lightInnerAngle":0,
+            "lightOuterAngle":80,
+            "lightColor":{"r":255, "g":193, "b":141, "a":255},  // 3000K
+            "lightAttenuation":{"x":0, "y":1, "z":1},
+            "lightCastShadows":true,
+            "flareName":"vehicleHeadLightFlare",
+            "cookieName":"art/special/BNG_light_cookie_headlight.png",
+            "texSize":512,
+            "shadowSoftness":0.5,
+        },
+        ["bug_foglight_light" , "SPOTLIGHT", "fgl1r","fgl1l","fgl2r", {"x":16,"y":0,"z":0}, {"x":0,"y":0,"z":0}, {"x":0,"y":0,"z":0}, 0, 0, 0, 1,
+        {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"lightRange":80,"lightBrightness":0.7,"lightOuterAngle":80,"flareScale":0.09,"deformGroup":"foglightglass_break", "lightScaling":{}}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //--HEADLIGHT--
+        //left
+        {"selfCollision":false},
+        {"collision":true},
+        {"nodeMaterial":"|NM_GLASS"},
+        {"frictionCoef":0.5},
+        {"nodeWeight":0.4},
+        {"group":"bug_foglight"},
+        ["fgl1l",  0.050, -0.050,  0.050],
+        ["fgl1r", -0.050, -0.050,  0.050],
+        ["fgl2r", -0.050, -0.050, -0.050],
+        ["fgl2l",  0.050, -0.050, -0.050],
+        ["fgl3",  0.000, 0.000,   0.000],
+        {"group":""}
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"disableMeshBreaking":true,"disableTriangleBreaking":true},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //--HEADLIGHT--
+        {"beamSpring":201000,"beamDamp":20},
+        {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+        {"deformGroup":"foglightglass_break", "deformationTriggerRatio":0.01},
+        //headlight main shape
+        ["fgl1r","fgl1l"],
+        ["fgl1l","fgl2l"],
+        ["fgl2l","fgl2r"],
+        ["fgl2r","fgl1r"],
+        ["fgl1r","fgl3"],
+        ["fgl1l","fgl3"],
+        ["fgl2l","fgl3"],
+        ["fgl2r","fgl3"],
+        {"beamDeform":1000},
+        ["fgl1r","fgl2l", {"breakGroup": "foglight"}],
+        ["fgl1l","fgl2r"],
+        {"deformGroup":""},
+        {"beamDeform":8000, "beamStrength":25000},
+        {"breakGroup": "fgladlight_L"},
+        ["fgl1l","$node1"],
+        ["fgl1l","$node2"],
+        ["fgl1l","$node3"],
+
+        ["fgl1r","$node1"],
+        ["fgl1r","$node2"],
+        ["fgl1r","$node3"],
+        
+        ["fgl2l","$node1"],
+        ["fgl2l","$node2"],
+        ["fgl2l","$node3"],
+
+        ["fgl2r","$node1"],
+        ["fgl2r","$node2"],
+        ["fgl2r","$node3"],
+
+        ["fgl3" ,"$node1"],
+        ["fgl3" ,"$node2"],
+        ["fgl3" ,"$node3"],
+        {"breakGroup": ""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"disableMeshBreaking":false,"disableTriangleBreaking":false},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        {"groundModel":"metal"},
+        {"dragCoef":1},
+        {"triangleType":"NONCOLLIDABLE"},
+        ["fgl2r", "fgl1l", "fgl1r"],
+        ["fgl2r", "fgl2l", "fgl1l"],
+        {"triangleType":"NORMALTYPE"},
     ],
 },
+"bug_foglight_cover": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Foglight Cover",
+        "value":20,
+    },
+    "slotType" : "bug_foglight_cover",
+    "components": {
+        "electrics": {
+            "customValues": [
+                ["electricsName", "electricsFunction","electricsDefault"],
+                
+                ["bug_foglightcover_light", "electrics.power__bug_foglight * electrics.anim__foglightcoverstate", 0]
+            ],
+        },
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+       // ["bug_foglight_cover", ["bug_foglight"]],
+    ],
+    "glowMap":{
+        // If the value (field * multiplier) is greater than 0.0001, the "on" texture is use
+        "bug_foglight_cover": {"simpleFunction":{"anim__foglightcoverstate":0.00011}, "off":"bug_foglight_cover", "on":"invis", "on_intense":"invis", "materialEmissiveScaling":{"on_max":1.0}},
+    },
+    "props": [
+        ["func"      , "mesh"                        , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+
+        ["anim__foglightcoverstate", "bug_foglight_cover", "fgl1r","fgl1l","fgl2r", {"x":180, "y":0, "z":0}, {"x":-20, "y":0, "z":20}, {"x":1, "y":-0.7, "z":0.2}, 	0, 1, 0, 1, {"baseTranslation":{"x":0.05, "y":0.05, "z":-0.05}}],
+    ],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["foglightcover", "fgl1r","fgl1l","fgl2r", "box", {"x":0.08, "y":0.01, "z":0.08}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":-3}, {"x":0, "y":0, "z":0}, {"x":0.01, "y":0.01, "z":0.005},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["foglightcovertoggle"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["foglightcover", "action0", "foglightcovertoggle"],
+    ],
+},
+"bug_foglight_op_fog": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Foglight",
+        "value":0,
+    },
+    "slotType" : "bug_foglight_operation",
+    "components": {
+        "electrics": {
+            "customValues": [
+                ["electricsName", "electricsFunction","electricsDefault"],
+
+                ["bug_foglight", "electrics.fog", 0],
+            ],
+        },
+    },
+},
+"bug_foglight_op_highbeam": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Highbeam",
+        "value":0,
+    },
+    "slotType" : "bug_foglight_operation",
+    "components": {
+        "electrics": {
+            "customValues": [
+                ["electricsName", "electricsFunction","electricsDefault"],
+
+                ["bug_foglight", "electrics.highbeam", 0],
+            ],
+        },
+    },
+},
+"bug_foglight_op_extlight": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Exterior Lights",
+        "value":0,
+    },
+    "slotType" : "bug_foglight_operation",
+    "components": {
+        "electrics": {
+            "customValues": [
+                ["electricsName", "electricsFunction","electricsDefault"],
+
+                ["bug_foglight", "(electrics.extlight or 0)", 0]
+            ],
+        },
+    },
+},
+
+
+
+
+
+
+
+
+
+
 "bug_gascap": {
     "information":{
         "authors":"MrX13415",
@@ -143,12 +369,12 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
     
-        ["bug_gascap", ["bug_body", "fueltank"]],
+        ["bug_gascap", ["bug_body_front", "fueltank"]],
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["gascap_anim", "bug_gascap_lid",   "f4mr","f4ml","refup",   {"x":0.016721, "y":-1.63842, "z":10.6071},   {"x":0, "y":-150, "z":0},    {"x":0.0, "y":0.0, "z":0.0},        0,     1,        0,  1],
+        ["anim__gascap", "bug_gascap_lid",   "f4mr","f4ml","refup",   {"x":0.016721, "y":-1.63842, "z":10.6071},   {"x":0, "y":-150, "z":0},    {"x":0.0, "y":0.0, "z":0.0},        0,     1,        0,  1],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],

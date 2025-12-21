@@ -35,6 +35,10 @@
   "Value":8500,
   "Weight":1005,
   "Weight/Power":24.51219512,
-  "defaultPaintName1":"Sunset",
-  "defaultPaintName3":"Sunset"
+  "defaultMultiPaintSetup":{
+    "name": "Sunset",
+    "paint1": "bug_sunset",
+    "paint2": "bug_sunset",
+    "paint3": "bug_sunset"
+  }
 }

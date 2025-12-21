@@ -16,8 +16,8 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
 
          ["bug_bumper_F_US",        ["bug_bumper_F"]],
-         ["bug_bumper_F_mount",     ["bug_body"]],
-         ["bug_bumper_F_mount_top", ["bug_body"]],
+         ["bug_bumper_F_mount",     ["bug_body_front"]],
+         ["bug_bumper_F_mount_top", ["bug_body_front"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -306,8 +306,8 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
          
          ["bug_bumper_R_US",        ["bug_bumper_R"]],
-         ["bug_bumper_R_mount",     ["bug_body"]],
-         ["bug_bumper_R_mount_top", ["bug_body"]],
+         ["bug_bumper_R_mount",     ["bug_body_rear"]],
+         ["bug_bumper_R_mount_top", ["bug_body_rear"]],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -579,7 +579,7 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
     
         ["bug_bumper_F_EU",        ["bug_bumper_F"]],
-        ["bug_bumper_F_mount",     ["bug_body"]],
+        ["bug_bumper_F_mount",     ["bug_body_front"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -868,7 +868,7 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
         
         ["bug_bumper_R_EU",        ["bug_bumper_R"]],
-        ["bug_bumper_R_mount",     ["bug_body"]],
+        ["bug_bumper_R_mount",     ["bug_body_rear"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -1137,7 +1137,7 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
     
         ["bug_bumper_F_simple",    ["bug_bumper_F"]],
-        ["bug_bumper_F_mount",     ["bug_body"]],
+        ["bug_bumper_F_mount",     ["bug_body_front"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -1426,7 +1426,7 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
         
         ["bug_bumper_R_simple",    ["bug_bumper_R"]],
-        ["bug_bumper_R_mount",     ["bug_body"]],
+        ["bug_bumper_R_mount",     ["bug_body_rear"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

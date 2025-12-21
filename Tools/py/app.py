@@ -1,7 +1,8 @@
 import os
 import session
 from util import *
-import makeaw
+import buildaw
+import publish
 
 def init():
     return session.init()
@@ -27,14 +28,16 @@ def processCommand(commands):
     ok = True
 
     if match(cmd, "aw"):
-        makeaw.processCommand(commands)
+        buildaw.processCommand(commands)
+    elif match(cmd, "publish", "zip"):
+        publish.processCommand(commands)
     elif match(cmd, "test"):
         print("Test!")
     elif match(cmd, "help", "h", "?"):
         printHelp()
     else:
         ok = False
-        print(f"Unknown command '{cmd}'.")       
+        print(f"Unknown command '{cmd}'.")
         printHelp()
     #end 
 

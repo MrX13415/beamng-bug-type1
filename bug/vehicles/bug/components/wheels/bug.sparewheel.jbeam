@@ -27,8 +27,8 @@
         {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
         {"frictionCoef":0.5},
         {"group":"wheel_spare"},
-        ["spare1", 0.0, -1.508, 0.520, {"staticCollision":false}],
-        ["spare2", 0.0, -1.639, 0.593, {"staticCollision":false}],
+        ["spare1", 0.0, -1.618, 0.581, {"staticCollision":false}],
+        ["spare2", 0.0, -1.531, 0.533, {"staticCollision":false}],
         {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
         {"group":""},
     ],
@@ -64,7 +64,7 @@
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
 
         //general settings
-        {"hubRadius":0.28},
+        {"hubRadius":0.27},
         {"wheelOffset":0},
         {"hubWidth":0.125},
         {"numRays":6},

@@ -116,10 +116,10 @@ local function excitedNotSeatedBehavior(dt)
 		if excitedTimer <= 0 then
 			local open = electrics.values["opendoors"]
 			if not open then
-				vehicle.setDoorL(true)
+				vehicle.setDoor(true, "FL")
 				excitedTimer = math.random(0.5,5)
 			else
-				vehicle.setDoorL(false)
+				vehicle.setDoor(false, "FL")
 				excitedTimer = math.random(10,120)
 			end
 			lastOpen = open
@@ -253,7 +253,7 @@ local function angryNotSeatedBehavior(dt)
 		if open and open ~= lastOpen then
 			-- Refuse to open the door at first ...
 			if angryTimer <= 0 or angryTimer > 7 then 
-				vehicle.closeDoors() 
+				vehicle.setDoor(false)
 			end
 			if electrics.values.ignitionLevel < 1 then electrics.setIgnitionLevel(1) end
 			angryTimer = 10
@@ -262,7 +262,7 @@ local function angryNotSeatedBehavior(dt)
 
 		-- Stop engine and close doors when in pause ...
 		if angryPause and not curAngryPause then
-			if open then vehicle.closeDoors() end
+			if open then vehicle.setDoor(false) end
 			if electrics.values.ignitionLevel > 0 then electrics.setIgnitionLevel(0) end
 		end		
 	elseif angryPause then

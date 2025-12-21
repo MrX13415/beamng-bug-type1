@@ -149,7 +149,7 @@
     "props": [
         ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         //pedal
-        ["clutch",       "bug_inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["clutch",       "bug_inputs_pedals_clutch",    "f3mr","f3ml","f3tm",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -256,7 +256,7 @@
     "props": [
         ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         //pedal
-        ["clutch",       "bug_inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["clutch",       "bug_inputs_pedals_clutch",    "f3mr","f3ml","f3tm",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -363,7 +363,7 @@
     "props": [
         ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         //pedal
-        ["clutch",       "bug_inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["clutch",       "bug_inputs_pedals_clutch",    "f3mr","f3ml","f3tm",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -482,7 +482,7 @@
     "props": [
         ["func"        , "mesh"                , "idRef:", "idX:", "idY:", "baseRotation"      , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         //pedal
-        ["clutch",       "bug_inputs_pedals_clutch",    "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["clutch",       "bug_inputs_pedals_clutch",    "f3mr","f3ml","f3tm",       {"x":5, "y":0, "z":0},    {"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -771,7 +771,7 @@
     },
 	"variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$size_TC", "range", "", "Size(m)", 0.19, 0.14, 0.28, "Torque converter size", "Percentage of adjustment range"],
+        ["$size_TC", "range", "", "Differentials", 0.19, 0.14, 0.28, "Torque converter size", "Percentage of adjustment range"],
 		],
     "slotType" : "bug_converter",
     "torqueConverter": {

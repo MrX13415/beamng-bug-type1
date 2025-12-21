@@ -95,16 +95,18 @@
         //rear bumper support beams
         {"beamType":"|SUPPORT", "beamLongBound":4},
         {"beamPrecompression":1.0},
-        ["wb1l","f1tmr"],
-        ["wb1r","f1tml"],
+        ["wb1l","f1tmr", {"beamStrength":50000,"breakGroup":"frameFloorL"}],
+        ["wb1r","f1tml", {"beamStrength":50000,"breakGroup":"frameFloorR"}],
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 	],
     "hydros": [
         ["id1:","id2:"],
 
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":25000,"beamDamp":2000,"beamDeform":80000,"beamStrength":"FLT_MAX"},
+        {"beamSpring":25000,"beamDamp":2000,"beamDeform":80000,"beamStrength":50000},
+        {"breakGroup":"frameFloorL"},
         ["wb1l","f1tml",{"inputSource":"wheelie_state","inLimit":1,"outLimit":3.45,"inRate":10,"outRate":8,"inputFactor":100}],
+        {"breakGroup":"frameFloorR"},
         ["wb1r","f1tmr",{"inputSource":"wheelie_state","inLimit":1,"outLimit":3.45,"inRate":10,"outRate":8,"inputFactor":100}],
         {"breakGroup":""},
     ],

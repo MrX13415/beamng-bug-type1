@@ -3,7 +3,6 @@
     "name": "bug_suspension-R-st",
     "mapTo": "bug_suspension-R-st",
     "class": "Material",
-    "persistentId": "7bf49f69-925b-42ce-8e65-e3a0421d9276",
     "Stages": [
       {
         "baseColorFactor": [

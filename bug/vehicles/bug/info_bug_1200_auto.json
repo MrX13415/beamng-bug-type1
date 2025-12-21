@@ -34,6 +34,10 @@
   "Value":8500,
   "Weight":1005,
   "Weight/Power":24.51219512,
-  "defaultPaintName1":"Silver",
-  "defaultPaintName3":"Silver"
+  "defaultMultiPaintSetup":{
+    "name": "Silver",
+    "paint1": "bug_silver",
+    "paint2": "bug_silver",
+    "paint3": "bug_silver"
+  }
 }

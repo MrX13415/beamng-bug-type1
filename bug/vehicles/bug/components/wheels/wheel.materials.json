@@ -3,7 +3,6 @@
     "name": "bug_tire_rubber",
     "mapTo": "bug_tire_rubber",
     "class": "Material",
-    "persistentId": "71bafb9b-7b7d-434f-b569-8336d4f55178",
     "Stages": [
       {
         "baseColorFactor": [
@@ -24,7 +23,6 @@
     "name": "bug_tire_white",
     "mapTo": "bug_tire_white",
     "class": "Material",
-    "persistentId": "9bffaf8e-8d4d-4363-b79a-d7ec2382d92e",
     "Stages": [
       {},
       {},
@@ -32,18 +30,17 @@
       {}
     ]
   },
-  "bug_tire_goodyear" : {
-    "name" : "bug_tire_goodyear",
-    "mapTo" : "bug_tire_goodyear",
+  "bug_tire_gy" : {
+    "name" : "bug_tire_gy",
+    "mapTo" : "bug_tire_gy",
     "class" : "Material",
-    "persistentId" : "9ecb1685-3edf-45a2-a239-70a888e70519",
     "Stages": [
       {
-        "ambientOcclusionMap": "/vehicles/bug/components/wheels/textures/tire-goodyear.ao.color.png",
-        "baseColorMap": "/vehicles/bug/components/wheels/textures/tire-goodyear.b.color.png",
+        "ambientOcclusionMap": "/vehicles/bug/components/wheels/textures/tire-gy_ao.data.png",
+        "baseColorMap": "/vehicles/bug/components/wheels/textures/tire-gy_d.color.png",
         "metallicFactor": 0,
-        "normalMap": "/vehicles/bug/components/wheels/textures/tire-goodyear.n.normal.png",
-        "roughnessMap": "/vehicles/bug/components/wheels/textures/tire-goodyear.r.data.png"
+        "normalMap": "/vehicles/bug/components/wheels/textures/tire-gy_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/wheels/textures/tire-gy_r.data.png"
       },
       {},
       {},
@@ -61,7 +58,6 @@
     "name": "bug_rim_paint1",
     "mapTo": "bug_rim_paint1",
     "class": "material",
-    "persistentId": "6294d5ea-4ec9-4571-afbf-74ab90325e54",
     "Stages": [
       { },
       { },
@@ -75,7 +71,6 @@
     "name": "bug_rim_paint1_F",
     "mapTo": "bug_rim_paint1_F",
     "class": "material",
-    "persistentId": "f98d381e-c298-4a61-91a3-efa3f108d0d9",
     "Stages": [
       { },
       { },
@@ -89,7 +84,6 @@
     "name": "bug_rim_paint1_F.skin_rim1_F.black",
     "mapTo": "bug_rim_paint1_F.skin_rim1_F.black",
     "class": "Material",
-    "persistentId": "295895e0-7725-4cfd-ad4b-23443cdb0b2e",
     "Stages": [
       {
         "baseColorFactor": [
@@ -114,7 +108,6 @@
     "name": "bug_rim_paint1_F.skin_rim1_F.chrome",
     "mapTo": "bug_rim_paint1_F.skin_rim1_F.chrome",
     "class": "Material",
-    "persistentId": "f2e34473-3ae3-4efb-aad3-3e5d5ebd29bb",
     "Stages": [
       {
         "baseColorFactor": [
@@ -141,7 +134,6 @@
     "name": "bug_rim_paint1_F.skin_rim1_F.silver",
     "mapTo": "bug_rim_paint1_F.skin_rim1_F.silver",
     "class": "Material",
-    "persistentId": "3b9f81bf-6551-4b53-a260-207809b127a8",
     "Stages": [
       {
         "baseColorFactor": [
@@ -168,7 +160,6 @@
     "name": "bug_rim_paint1_F.skin_rim1_F.white",
     "mapTo": "bug_rim_paint1_F.skin_rim1_F.white",
     "class": "Material",
-    "persistentId": "75609946-32cb-482f-87fb-49709c0ba5d3",
     "Stages": [
       {
         "baseColorFactor": [
@@ -193,7 +184,6 @@
     "name": "bug_rim_paint1_F.skin_rim1_F.white2",
     "mapTo": "bug_rim_paint1_F.skin_rim1_F.white2",
     "class": "Material",
-    "persistentId": "2ea9b49c-bc9c-46c2-9cf1-be591261c3fc",
     "Stages": [
       {
         "baseColorFactor": [
@@ -218,7 +208,6 @@
     "name": "bug_rim_paint1_F.skin_rim1_F.paint1",
     "mapTo": "bug_rim_paint1_F.skin_rim1_F.paint1",
     "class": "Material",
-    "persistentId": "b120ea6c-6587-461d-848b-45dfc5cd6357",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -251,7 +240,6 @@
     "name": "bug_rim_paint1_F.skin_rim1_F.paint2",
     "mapTo": "bug_rim_paint1_F.skin_rim1_F.paint2",
     "class": "Material",
-    "persistentId": "d91b929c-f87e-4e91-9845-3bc9a20e0bb0",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -284,7 +272,6 @@
     "name": "bug_rim_paint1_F.skin_rim1_F.paint3",
     "mapTo": "bug_rim_paint1_F.skin_rim1_F.paint3",
     "class": "Material",
-    "persistentId": "2d5fe0dc-2f79-4bed-8a7c-cc09319663ab",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -317,7 +304,6 @@
     "name": "bug_rim_paint1_F.skin_rim1_F.rusty",
     "mapTo": "bug_rim_paint1_F.skin_rim1_F.rusty",
     "class": "Material",
-    "persistentId": "05d0ebb3-0da3-4b11-a687-b3fd6bc205fa",
     "Stages": [
       {
         "baseColorFactor": [
@@ -347,7 +333,6 @@
     "name": "bug_rim_paint2",
     "mapTo": "bug_rim_paint2",
     "class": "material",
-    "persistentId": "10e03d50-792c-4314-b081-d3ccdf405b39",
     "Stages": [
       { },
       { },
@@ -361,7 +346,6 @@
     "name": "bug_rim_paint2_F",
     "mapTo": "bug_rim_paint2_F",
     "class": "material",
-    "persistentId": "f98d381e-c298-4a61-91a3-efa3f108d0d9",
     "Stages": [
       { },
       { },
@@ -375,7 +359,6 @@
     "name": "bug_rim_paint2_F.skin_rim2_F.black",
     "mapTo": "bug_rim_paint2_F.skin_rim2_F.black",
     "class": "Material",
-    "persistentId": "295895e0-7725-4cfd-ad4b-23443cdb0b2e",
     "Stages": [
       {
         "baseColorFactor": [
@@ -400,7 +383,6 @@
     "name": "bug_rim_paint2_F.skin_rim2_F.chrome",
     "mapTo": "bug_rim_paint2_F.skin_rim2_F.chrome",
     "class": "Material",
-    "persistentId": "f2e34473-3ae3-4efb-aad3-3e5d5ebd29bb",
     "Stages": [
       {
         "baseColorFactor": [
@@ -427,7 +409,6 @@
     "name": "bug_rim_paint2_F.skin_rim2_F.silver",
     "mapTo": "bug_rim_paint2_F.skin_rim2_F.silver",
     "class": "Material",
-    "persistentId": "3b9f81bf-6551-4b53-a260-207809b127a8",
     "Stages": [
       {
         "baseColorFactor": [
@@ -454,7 +435,6 @@
     "name": "bug_rim_paint2_F.skin_rim2_F.white",
     "mapTo": "bug_rim_paint2_F.skin_rim2_F.white",
     "class": "Material",
-    "persistentId": "75609946-32cb-482f-87fb-49709c0ba5d3",
     "Stages": [
       {
         "baseColorFactor": [
@@ -479,7 +459,6 @@
     "name": "bug_rim_paint2_F.skin_rim2_F.white2",
     "mapTo": "bug_rim_paint2_F.skin_rim2_F.white2",
     "class": "Material",
-    "persistentId": "2ea9b49c-bc9c-46c2-9cf1-be591261c3fc",
     "Stages": [
       {
         "baseColorFactor": [
@@ -504,7 +483,6 @@
     "name": "bug_rim_paint2_F.skin_rim2_F.paint1",
     "mapTo": "bug_rim_paint2_F.skin_rim2_F.paint1",
     "class": "Material",
-    "persistentId": "b120ea6c-6587-461d-848b-45dfc5cd6357",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -537,7 +515,6 @@
     "name": "bug_rim_paint2_F.skin_rim2_F.paint2",
     "mapTo": "bug_rim_paint2_F.skin_rim2_F.paint2",
     "class": "Material",
-    "persistentId": "d91b929c-f87e-4e91-9845-3bc9a20e0bb0",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -570,7 +547,6 @@
     "name": "bug_rim_paint2_F.skin_rim2_F.paint3",
     "mapTo": "bug_rim_paint2_F.skin_rim2_F.paint3",
     "class": "Material",
-    "persistentId": "2d5fe0dc-2f79-4bed-8a7c-cc09319663ab",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -603,7 +579,6 @@
     "name": "bug_rim_paint2_F.skin_rim2_F.rusty",
     "mapTo": "bug_rim_paint2_F.skin_rim2_F.rusty",
     "class": "Material",
-    "persistentId": "05d0ebb3-0da3-4b11-a687-b3fd6bc205fa",
     "Stages": [
       {
         "baseColorFactor": [
@@ -633,7 +608,6 @@
     "name": "bug_rim_paint1_R",
     "mapTo": "bug_rim_paint1_R",
     "class": "material",
-    "persistentId": "ccd991e5-0417-49bf-9371-dbbeaf0e5b74",
     "Stages": [
       { },
       { },
@@ -647,7 +621,6 @@
     "name": "bug_rim_paint1_R.skin_rim1_R.black",
     "mapTo": "bug_rim_paint1_R.skin_rim1_R.black",
     "class": "Material",
-    "persistentId": "b5f81b17-66fb-441d-b1b2-3d8aaeb336cd",
     "Stages": [
       {
         "baseColorFactor": [
@@ -672,7 +645,6 @@
     "name": "bug_rim_paint1_R.skin_rim1_R.chrome",
     "mapTo": "bug_rim_paint1_R.skin_rim1_R.chrome",
     "class": "Material",
-    "persistentId": "a94b9295-2f60-4ac3-b79c-afee8970e5ac",
     "Stages": [
       {
         "baseColorFactor": [
@@ -699,7 +671,6 @@
     "name": "bug_rim_paint1_R.skin_rim1_R.silver",
     "mapTo": "bug_rim_paint1_R.skin_rim1_R.silver",
     "class": "Material",
-    "persistentId": "fa19677c-3edf-4a64-9193-86c0176c0ee0",
     "Stages": [
       {
         "baseColorFactor": [
@@ -726,7 +697,6 @@
     "name": "bug_rim_paint1_R.skin_rim1_R.white",
     "mapTo": "bug_rim_paint1_R.skin_rim1_R.white",
     "class": "Material",
-    "persistentId": "eaa22990-b3f4-4c5c-aff3-b2170d57f7fe",
     "Stages": [
       {
         "baseColorFactor": [
@@ -751,7 +721,6 @@
     "name": "bug_rim_paint1_R.skin_rim1_R.white2",
     "mapTo": "bug_rim_paint1_R.skin_rim1_R.white2",
     "class": "Material",
-    "persistentId": "0f2e1e1f-ec39-4196-8710-fa0646a4dad1",
     "Stages": [
       {
         "baseColorFactor": [
@@ -776,7 +745,6 @@
     "name": "bug_rim_paint1_R.skin_rim1_R.paint1",
     "mapTo": "bug_rim_paint1_R.skin_rim1_R.paint1",
     "class": "Material",
-    "persistentId": "05007a04-5480-4881-8ad6-05e1c082881d",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -809,7 +777,6 @@
     "name": "bug_rim_paint1_R.skin_rim1_R.paint2",
     "mapTo": "bug_rim_paint1_R.skin_rim1_R.paint2",
     "class": "Material",
-    "persistentId": "d95b5b65-ba28-4afd-a5a1-c251b411d334",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -842,7 +809,6 @@
     "name": "bug_rim_paint1_R.skin_rim1_R.paint3",
     "mapTo": "bug_rim_paint1_R.skin_rim1_R.paint3",
     "class": "Material",
-    "persistentId": "ef7539f8-c25e-4bcc-bfcc-4fbf98cd90e7",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -875,7 +841,6 @@
     "name": "bug_rim_paint1_R.skin_rim1_R.rusty",
     "mapTo": "bug_rim_paint1_R.skin_rim1_R.rusty",
     "class": "Material",
-    "persistentId": "cef8bd4e-392c-472d-aaa5-85feb30ee840",
     "Stages": [
       {
         "baseColorFactor": [
@@ -905,7 +870,6 @@
     "name": "bug_rim_paint2_R",
     "mapTo": "bug_rim_paint2_R",
     "class": "material",
-    "persistentId": "ccd991e5-0417-49bf-9371-dbbeaf0e5b74",
     "Stages": [
       { },
       { },
@@ -919,7 +883,6 @@
     "name": "bug_rim_paint2_R.skin_rim2_R.black",
     "mapTo": "bug_rim_paint2_R.skin_rim2_R.black",
     "class": "Material",
-    "persistentId": "b5f81b17-66fb-441d-b1b2-3d8aaeb336cd",
     "Stages": [
       {
         "baseColorFactor": [
@@ -944,7 +907,6 @@
     "name": "bug_rim_paint2_R.skin_rim2_R.chrome",
     "mapTo": "bug_rim_paint2_R.skin_rim2_R.chrome",
     "class": "Material",
-    "persistentId": "a94b9295-2f60-4ac3-b79c-afee8970e5ac",
     "Stages": [
       {
         "baseColorFactor": [
@@ -971,7 +933,6 @@
     "name": "bug_rim_paint2_R.skin_rim2_R.silver",
     "mapTo": "bug_rim_paint2_R.skin_rim2_R.silver",
     "class": "Material",
-    "persistentId": "fa19677c-3edf-4a64-9193-86c0176c0ee0",
     "Stages": [
       {
         "baseColorFactor": [
@@ -998,7 +959,6 @@
     "name": "bug_rim_paint2_R.skin_rim2_R.white",
     "mapTo": "bug_rim_paint2_R.skin_rim2_R.white",
     "class": "Material",
-    "persistentId": "eaa22990-b3f4-4c5c-aff3-b2170d57f7fe",
     "Stages": [
       {
         "baseColorFactor": [
@@ -1023,7 +983,6 @@
     "name": "bug_rim_paint2_R.skin_rim2_R.white2",
     "mapTo": "bug_rim_paint2_R.skin_rim2_R.white2",
     "class": "Material",
-    "persistentId": "0f2e1e1f-ec39-4196-8710-fa0646a4dad1",
     "Stages": [
       {
         "baseColorFactor": [
@@ -1048,7 +1007,6 @@
     "name": "bug_rim_paint2_R.skin_rim2_R.paint1",
     "mapTo": "bug_rim_paint2_R.skin_rim2_R.paint1",
     "class": "Material",
-    "persistentId": "05007a04-5480-4881-8ad6-05e1c082881d",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -1081,7 +1039,6 @@
     "name": "bug_rim_paint2_R.skin_rim2_R.paint2",
     "mapTo": "bug_rim_paint2_R.skin_rim2_R.paint2",
     "class": "Material",
-    "persistentId": "d95b5b65-ba28-4afd-a5a1-c251b411d334",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -1114,7 +1071,6 @@
     "name": "bug_rim_paint2_R.skin_rim2_R.paint3",
     "mapTo": "bug_rim_paint2_R.skin_rim2_R.paint3",
     "class": "Material",
-    "persistentId": "ef7539f8-c25e-4bcc-bfcc-4fbf98cd90e7",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -1147,7 +1103,6 @@
     "name": "bug_rim_paint2_R.skin_rim2_R.rusty",
     "mapTo": "bug_rim_paint2_R.skin_rim2_R.rusty",
     "class": "Material",
-    "persistentId": "cef8bd4e-392c-472d-aaa5-85feb30ee840",
     "Stages": [
       {
         "baseColorFactor": [

@@ -3,7 +3,7 @@
   "version": 2,
   "data": {
     "gen":{
-      "pattern" : ""
+      "pattern" : "%c%c%c %d%d%d"
     },
     "format": {
       "30-15": { //US

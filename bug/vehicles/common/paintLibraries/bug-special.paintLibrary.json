@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "paints": {
+    "bug_police_german_9001": {
+      "name": "Cream",
+      "baseColor": [ 0.9, 0.88, 0.83, 1.0 ],
+      "clearcoat": 0.7,
+      "clearcoatRoughness": 0.06,
+      "metallic": 0.45,
+      "roughness": 0.4
+    },
+    "bug_police_german_9010": {
+      "name": "Pure white",
+      "baseColor": [ 0.94, 0.93, 0.9, 1.0 ],
+      "clearcoat": 0.7,
+      "clearcoatRoughness": 0.06,
+      "metallic": 0.45,
+      "roughness": 0.4
+    },
+    "bug_police_german_9006": {
+      "name": "White Aluminum",
+      "baseColor": [ 0.6, 0.62, 0.62, 1.0 ],
+      "clearcoat": 0.7,
+      "clearcoatRoughness": 0.06,
+      "metallic": 0.45,
+      "roughness": 0.4
+    },
+    "bug_police_german_5008": {
+      "name": "Grey Blue",
+      "baseColor": [ 0.18, 0.23, 0.27, 1.00 ],
+      "clearcoat": 0.7,
+      "clearcoatRoughness": 0.06,
+      "metallic": 0.45,
+      "roughness": 0.4
+    },
+    "bug_police_german_6009": {
+      "name": "Fir Green",
+      "baseColor": [ 0.16, 0.22, 0.17, 1.00 ],
+      "clearcoat": 0.7,
+      "clearcoatRoughness": 0.06,
+      "metallic": 0.45,
+      "roughness": 0.4
+    },
+    "bug_police_german_6029": {
+      "name": "Mint Green",
+      "baseColor": [ 0.13, 0.42, 0.27, 1.00 ],
+      "clearcoat": 0.7,
+      "clearcoatRoughness": 0.06,
+      "metallic": 0.45,
+      "roughness": 0.4
+    },
+    "bug_police_german_5017": {
+      "name": "Traffic Blue",
+      "baseColor": [ 0.06, 0.32, 0.54, 1.00 ],
+      "clearcoat": 0.7,
+      "clearcoatRoughness": 0.06,
+      "metallic": 0.45,
+      "roughness": 0.4
+    }
+  },
+  "multiPaintSetups": {
+    "bug_police_german_1940_colors": {
+      "name": "Police German (1940)",
+      "paint1": "bug_police_german_5008",
+      "paint2": "bug_police_german_9001",
+      "paint3": "bug_police_german_5008"
+    },
+    "bug_police_german_1950_colors": {
+      "name": "Police German (1950)",
+      "paint1": "bug_police_german_6009",
+      "paint2": "bug_police_german_9001",
+      "paint3": "bug_police_german_6009"
+    },
+    "bug_police_german_1970_colors": {
+      "name": "Police German (1970)",
+      "paint1": "bug_police_german_6029",
+      "paint2": "bug_police_german_9010",
+      "paint3": "bug_police_german_6029"
+    },
+    "bug_police_german_2010_colors": {
+      "name": "Police German (2010)",
+      "paint1": "bug_police_german_5017",
+      "paint2": "bug_police_german_9006",
+      "paint3": "bug_police_german_5017"
+    },
+    "bug_police_us_colors": {
+      "name": "Police US",
+      "paint1": "bug_jet_black",
+      "paint2": "bug_alpine_white",
+      "paint3": "bug_jet_black"
+    }
+  }
+}

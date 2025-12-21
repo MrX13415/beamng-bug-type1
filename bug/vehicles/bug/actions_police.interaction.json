@@ -2,9 +2,10 @@
     "fileversion": 2,
     "actions": {
         // Police:
-        "switchboardBtnToggle_Beacon":     {"order":32.1, "isBasic":false, "onDown":"vehicle.toogleSwitchBoard('beacon')",       "title":"Police: Toogle Beacon Light",      "desc":"Toggles the beacon light on or off."},
-        "switchboardBtnToggle_Siren":      {"order":32.2, "isBasic":false, "onDown":"vehicle.toogleSwitchBoard('siren')",        "title":"Police: Toogle Siren",             "desc":"Toggle the siren on or off."},
-        "switchboardBtnToggle_Extlight":   {"order":32.3, "isBasic":false, "onDown":"vehicle.toogleSwitchBoard('extlight')",     "title":"Police: Toogle Exterior Light",    "desc":"Toggle exterior lights on or off."},
-        "switchboardBtnToggle_Underglown": {"order":32.4, "isBasic":false, "onDown":"vehicle.toogleSwitchBoard('underglown')",   "title":"Police: Toogle Underglown",        "desc":"Toggle the underglown on or off."},
+        "switchboardBtnToggle_Beacon":       {"order":32.1, "isBasic":false, "onDown":"vehicle.toogleSwitchBoard('beacon')",         "title":"Police: Toogle Beacon Light",      "desc":"Toggles the beacon light on or off."},
+        "switchboardBtnToggle_Siren":        {"order":32.2, "isBasic":false, "onDown":"vehicle.toogleSwitchBoard('siren')",          "title":"Police: Toogle Siren",             "desc":"Toggle the siren on or off."},
+        "switchboardBtnToggle_Extlight":     {"order":32.3, "isBasic":false, "onDown":"vehicle.toogleSwitchBoard('extlight')",       "title":"Police: Toogle Exterior Light",    "desc":"Toggle exterior lights on or off."},
+        "switchboardBtnToggle_Underglown":   {"order":32.4, "isBasic":false, "onDown":"vehicle.toogleSwitchBoard('underglown')",     "title":"Police: Toogle Underglown",        "desc":"Toggle the underglown on or off."},
+        "switchboardBtnToggle_NitrousOxide": {"order":32.5, "isBasic":false, "onDown":"vehicle.toogleSwitchBoard('nitrousoxide')",   "title":"Police: Toogle Nitrous Oxide",     "desc":"Toggle the Nitrous Oxide injection on or off."},
     }
 }

@@ -36,6 +36,10 @@
   "Value":8500,
   "Weight":995,
   "Weight/Power":17.45614035,
-  "defaultPaintName1":"Savannah Yellow",
-  "defaultPaintName3":"Fiesta Yellow"
+  "defaultMultiPaintSetup":{
+    "name": "Savannah Yellow",
+    "paint1": "bug_savannah_yellow",
+    "paint2": "bug_savannah_yellow",
+    "paint3": "bug_fiesta_yellow"
+  }
 }

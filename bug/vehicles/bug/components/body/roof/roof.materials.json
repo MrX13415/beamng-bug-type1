@@ -3,7 +3,6 @@
     "name": "bug_ragtop_fabric",
     "mapTo": "bug_ragtop_fabric",
     "class": "Material",
-    "persistentId": "adc17c15-6729-4491-b15b-3132f5394832",
     "Stages": [
       {
         "baseColorFactor": [
@@ -32,7 +31,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.black",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.black",
     "class": "material",
-    "persistentId": "2550ac71-80cc-4fc9-9c3a-0b7b31b7f149",
     "Stages": [
       {
         "baseColorFactor": [
@@ -60,7 +58,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.blue",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.blue",
     "class": "material",
-    "persistentId": "d045b49d-5a45-47d9-b51f-16297eb63a10",
     "Stages": [
       {
         "baseColorFactor": [
@@ -88,7 +85,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.brown",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.brown",
     "class": "material",
-    "persistentId": "69af237b-8f76-46ad-b1ea-f4e47bfaa4ff",
     "Stages": [
       {
         "baseColorFactor": [
@@ -116,7 +112,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.brown2",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.brown2",
     "class": "material",
-    "persistentId": "3b1ee512-0535-467f-a78a-f9c0a1829fb5",
     "Stages": [
       {
         "baseColorFactor": [
@@ -144,7 +139,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.gray",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.gray",
     "class": "material",
-    "persistentId": "087a387d-7d07-4075-ac4a-09390ed8cb32",
     "Stages": [
       {
         "baseColorFactor": [
@@ -172,7 +166,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.green",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.green",
     "class": "material",
-    "persistentId": "7a39d787-004a-422a-bf1a-cd171e5dd06c",
     "Stages": [
       {
         "baseColorFactor": [
@@ -200,7 +193,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.red",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.red",
     "class": "material",
-    "persistentId": "3fe27fe9-f2e2-4f33-b775-1d2ce33f6705",
     "Stages": [
       {
         "baseColorFactor": [
@@ -228,7 +220,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.white",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.white",
     "class": "material",
-    "persistentId": "3858d5c5-f67b-4275-9429-f0ad9db2a274",
     "Stages": [
       {
         "baseColorFactor": [
@@ -256,7 +247,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.white2",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.white2",
     "class": "material",
-    "persistentId": "a4f8b9b0-502a-4be4-8adf-455cb8edb9b6",
     "Stages": [
       {
         "baseColorFactor": [
@@ -284,7 +274,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.yellow",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.yellow",
     "class": "material",
-    "persistentId": "346a6b68-a57e-4cb1-88df-4911440784a9",
     "Stages": [
       {
         "baseColorFactor": [
@@ -312,7 +301,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.orange",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.orange",
     "class": "material",
-    "persistentId": "ea786402-14db-4a67-ab7a-de37e1b17193",
     "Stages": [
       {
         "baseColorFactor": [
@@ -340,7 +328,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.purple",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.purple",
     "class": "material",
-    "persistentId": "d33784ba-3786-4e5f-a2f2-f21d727b3a4e",
     "Stages": [
       {
         "baseColorFactor": [
@@ -370,7 +357,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.paint1",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.paint1",
     "class": "material",
-    "persistentId": "549c3358-0508-4634-988b-ca8fe912b5d8",
     "Stages": [
       {
         "baseColorFactor": [
@@ -400,7 +386,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.paint2",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.paint2",
     "class": "material",
-    "persistentId": "a0283e05-d286-456e-96f0-91dd26eadd70",
     "Stages": [
       {
         "baseColorFactor": [
@@ -430,7 +415,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.paint3",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.paint3",
     "class": "material",
-    "persistentId": "23c1a73c-298e-4c1c-991b-51d24b866631",
     "Stages": [
       {
         "baseColorFactor": [
@@ -461,7 +445,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.old",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.old",
     "class": "Material",
-    "persistentId": "fe7cd501-188b-4120-8905-dd439a481f25",
     "Stages": [
       {
         "baseColorFactor": [
@@ -490,7 +473,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.hrb_2005",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.hrb_2005",
     "class": "Material",
-    "persistentId": "4ec49c86-3b23-4782-9b41-b7d7dee7acb8",
     "Stages": [
       {
         "baseColorFactor": [
@@ -504,9 +486,9 @@
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_fl_d.color.dds",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_fl_d.color.png",
         "diffuseMapUseUV": 1,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_fl_o.data.dds",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_fl_o.data.png",
         "opacityMapUseUV": 1,
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
@@ -526,7 +508,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.hrb_1980_rusty",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.hrb_1980_rusty",
     "class": "Material",
-    "persistentId": "73210ad3-fa2b-4367-9589-916452253196",
     "Stages": [
       {
         "baseColorFactor": [
@@ -562,7 +543,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.hrb_1980_rustytaxi",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.hrb_1980_rustytaxi",
     "class": "Material",
-    "persistentId": "3adab9b3-09db-4432-8844-9dcba1a37a20",
     "Stages": [
       {
         "baseColorFactor": [
@@ -598,7 +578,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.hrb_1977",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.hrb_1977",
     "class": "Material",
-    "persistentId": "1f29e7fc-c614-4aa0-a467-5ff2ebc15445",
     "Stages": [
       {
         "baseColorFactor": [
@@ -612,9 +591,9 @@
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_ra-mc-gb_d.color.dds",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_ra-mc-gb_d.color.png",
         "diffuseMapUseUV": 1,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_ra-mc-gb_o.data.dds",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_ra-mc-gb_o.data.png",
         "opacityMapUseUV": 1,
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
@@ -634,7 +613,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.hrb_1969",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.hrb_1969",
     "class": "Material",
-    "persistentId": "2e08a8f9-d321-437e-b725-7a1504bcb81b",
     "Stages": [
       {
         "baseColorFactor": [
@@ -648,9 +626,9 @@
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb_d.color.dds",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb_d.color.png",
         "diffuseMapUseUV": 1,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb_o.data.dds",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb_o.data.png",
         "opacityMapUseUV": 1,
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
@@ -670,7 +648,6 @@
     "name": "bug_ragtop_fabric.skin_ragtop.hrb_1997",
     "mapTo": "bug_ragtop_fabric.skin_ragtop.hrb_1997",
     "class": "Material",
-    "persistentId": "a83c4fb0-287b-4bfa-b200-f5608bb636c9",
     "Stages": [
       {
         "baseColorFactor": [
@@ -684,9 +661,9 @@
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"
       },
       {
-        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb97_d.color.dds",
+        "baseColorMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb97_d.color.png",
         "diffuseMapUseUV": 1,
-        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb97_o.data.dds",
+        "opacityMap": "/vehicles/bug/components/skins/textures/bug_skin_h_tlb97_o.data.png",
         "opacityMapUseUV": 1,
         "normalMap": "/vehicles/bug/components/body/roof/textures/ragtop_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/body/roof/textures/ragtop_r.data.png"

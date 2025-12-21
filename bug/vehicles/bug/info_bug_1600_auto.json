@@ -35,6 +35,10 @@
   "Value":8500,
   "Weight":995,
   "Weight/Power":16.31147541,
-  "defaultPaintName1":"Cream White",
-  "defaultPaintName3":"Cream White"
+  "defaultMultiPaintSetup":{
+    "name": "Cream White",
+    "paint1": "bug_cream_white",
+    "paint2": "bug_cream_white",
+    "paint3": "bug_cream_white"
+  }
 }

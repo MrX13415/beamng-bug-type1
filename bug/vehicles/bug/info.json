@@ -13,653 +13,72 @@
   },
   "defaultPaintName1": "Sunset",
   "default_pc": "bug_1200_us_ragtop",
-  "paints": {
-    /* standard paints */
-    "Alabaster": {
-      "baseColor": [
-        0.55,
-        0.5,
-        0.47,
-        1.45
-      ],
-      "clearcoat": 0.27,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.18,
-      "roughness": 0.4
-    },
-    "Alpine White": {
-      "baseColor": [
-        0.85,
-        0.88,
-        0.87,
-        1.4
-      ],
-      "clearcoat": 0.27,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.18,
-      "roughness": 0.4
-    },
-    "Aquamarine": {
-      "baseColor": [
-        0.15,
-        0.35,
-        0.6,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.30,
-      "roughness": 0.4
-    },
-    "Brilliant Blue": {
-      "baseColor": [
-        0.08,
-        0.36,
-        0.75,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Cascade Cyan": {
-      "baseColor": [
-        0.49,
-        0.59,
-        0.58,
-        1.45
-      ],
-      "clearcoat": 0.5,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Cement Gray": {
-      "baseColor": [
-        0.7,
-        0.69,
-        0.64,
-        1.4
-      ],
-      "clearcoat": 0.5,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.45
-    },
-    "Charcoal": {
-      "baseColor": [
-        0.25,
-        0.25,
-        0.25,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Chestnut": {
-      "baseColor": [
-        0.3,
-        0.2,
-        0.12,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.60,
-      "roughness": 0.4
-    },
-    "Citrus Orange": {
-      "baseColor": [
-        0.9,
-        0.58,
-        0.1,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Clementine": {
-      "baseColor": [
-        1,
-        0.493,
-        0.196,
-        1.3
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Cream White": {
-      "baseColor": [
-        0.89,
-        0.88,
-        0.83,
-        1.4
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Dusted Mica": {
-      "baseColor": [
-        0.6,
-        0.45,
-        0.35,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 1.0,
-      "roughness": 0.3
-    },
-    "Fiesta Yellow": {
-      "baseColor": [
-        0.8,
-        0.7,
-        0.1,
-        1.5
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Fire Red": {
-      "baseColor": [
-        0.83,
-        0.058,
-        0.046,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Flame Orange": {
-      "baseColor": [
-        1,
-        0.3,
-        0,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Forest Green": {
-      "baseColor": [
-        0.11,
-        0.27,
-        0.15,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Garnet Red": {
-      "baseColor": [
-        0.47,
-        0.071,
-        0.085,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Gray": {
-      "baseColor": [
-        0.527,
-        0.545,
-        0.549,
-        1
-      ],
-      "clearcoat": 0.5,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Ivy Green": {
-      "baseColor": [
-        0,
-        0.31,
-        0.22,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Jet Black": {
-      "baseColor": [
-        0,
-        0,
-        0,
-        1.45
-      ],
-      "clearcoat": 0.8,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },   
-    "Lichen Green": {
-      "baseColor": [
-        0.52,
-        0.6,
-        0.43,
-        1.4
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Mist Blue": {
-      "baseColor": [
-        0.6,
-        0.76,
-        0.88,
-        1.4
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Opal Green": {
-      "baseColor": [
-        0.22,
-        0.37,
-        0.33,
-        1.3
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Pearl White": {
-      "baseColor": [
-        0.94,
-        0.92,
-        0.75,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.45
-    },
-    "Ruby Red": {
-      "baseColor": [
-        0.53,
-        0.1,
-        0.13,
-        1.7
-      ],
-      "clearcoat": 0.5,
-      "clearcoatRoughness": 0,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Savannah Yellow": {
-      "baseColor": [
-        0.5,
-        0.5,
-        0.3,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Seafoam Green": {
-      "baseColor": [
-        0.24,
-        0.48,
-        0.48,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Seaside Blue": {
-      "baseColor": [
-        0.2,
-        0.3,
-        0.5,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Shale Green": {
-      "baseColor": [
-        0.22,
-        0.27,
-        0.23,
-        1.5
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Sky Blue": {
-      "baseColor": [
-        0.14,
-        0.72,
-        0.92,
-        1.4
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
-    "Solar Yellow": {
-      "baseColor": [
-        0.95,
-        0.7,
-        0.1,
-        1.45
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.45,
-      "roughness": 0.4
-    },
+  "paints": {},
+  "multiPaintSetups": [
+    "bug_police_german_1940_colors",
+    "bug_police_german_1950_colors",
+    "bug_police_german_1970_colors",
+    "bug_police_german_2010_colors",
+    "bug_police_us_colors",
 
-
-
-
-
-
-    /* metallic paints */
-    "Bayview Blue": {
-      "baseColor": [
-        0.4,
-        0.75,
-        0.9,
-        1.45
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.85,
-      "roughness": 0.3
-    },
-    "Bermuda Blue": {
-      "baseColor": [
-        0.06,
-        0.145,
-        0.17,
-        1.45
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 1,
-      "roughness": 0.6
-    },
-    "Chrome": {
-      "baseColor": [
-        0.7,
-        0.7,
-        0.7,
-        0
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 1,
-      "roughness": 0.15
-    },
-    "Crystal White": {
-      "baseColor": [
-        0.81,
-        0.85,
-        0.89,
-        1.4
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.8,
-      "roughness": 0.4
-    },
-    "Flare Orange": {
-      "baseColor": [
-        0.83,
-        0.28,
-        0.03,
-        1.45
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.9,
-      "roughness": 0.5
-    },
-    "Ice Blue": {
-      "baseColor": [
-        0.05,
-        0.23,
-        0.5,
-        1.45
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.85,
-      "roughness": 0.4
-    },
-    "Maroon": {
-      "baseColor": [
-        0.33,
-        0.05,
-        0.06,
-        1.45
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.8,
-      "roughness": 0.45
-    },
-    "Medallion Gold": {
-      "baseColor": [
-        0.827,
-        0.584,
-        0.282,
-        1.4
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.9,
-      "roughness": 0.3
-    },
-    "Merangue Yellow": {
-      "baseColor": [
-        0.81,
-        0.76,
-        0.23,
-        1.4
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.9,
-      "roughness": 0.3
-    },
-    "Moonlight": {
-      "baseColor": [
-        0.16,
-        0.09,
-        0.19,
-        1.45
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.85,
-      "roughness": 0.4
-    },
-    "Pure Black": {
-      "baseColor": [
-        0.05,
-        0.05,
-        0.05,
-        1.45
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.9,
-      "roughness": 0.4
-    },
-    "Royal Blue": {
-      "baseColor": [
-        0,
-        0.1,
-        0.42,
-        1.3
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.8,
-      "roughness": 0.3
-    },
-    "Steel Blue": {
-      "baseColor": [
-        0.25,
-        0.3,
-        0.35,
-        1.45
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.9,
-      "roughness": 0.3
-    },
-    "Tropical Sea": {
-      "baseColor": [
-        0,
-        0.4,
-        0.6,
-        1.45
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.7,
-      "roughness": 0.4
-    },
-    "Silver": {
-      "baseColor": [
-        0.55,
-        0.55,
-        0.55,
-        1.45
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 1.0,
-      "roughness": 0.45
-    },
-    "Sunset": {
-      "baseColor": [
-        0.6,
-        0.2,
-        0.1,
-        1.45
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.85,
-      "roughness": 0.4
-    },
-    "Walnut": {
-      "baseColor": [
-        0.275,
-        0.106,
-        0.031,
-        1.45
-      ],
-      "clearcoat": 1.0,
-      "clearcoatRoughness": 0.06,
-      "metallic": 0.8,
-      "roughness": 0.7
-    },
-
-    /* special paints */
-    "Charcoal (matte)": {
-      "baseColor": [
-        0.13,
-        0.13,
-        0.13,
-        1.0
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.25,
-      "metallic": 0,
-      "roughness": 0.4
-    },
-    "Khaki (matte)": {
-      "baseColor": [
-        0.29,
-        0.26,
-        0.14,
-        1.2
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.25,
-      "metallic": 0,
-      "roughness": 0.4
-    },
-    "Sand Brown (matte)": {
-      "baseColor":[
-        0.47,
-        0.38,
-        0.27,
-        1.0
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.25,
-      "metallic": 0,
-      "roughness": 0.4
-    },
-    "Naval Blue (matte)": {
-      "baseColor":[
-        0.2,
-        0.27,
-        0.32,
-        1.0
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.25,
-      "metallic": 0,
-      "roughness": 0.4
-    },
-    "Oxide Red (matte)": {
-      "baseColor":[
-        0.44,
-        0.17,
-        0.1,
-        1.0
-      ],
-      "clearcoat": 0.7,
-      "clearcoatRoughness": 0.25,
-      "metallic": 0,
-      "roughness": 0.4
-    }
-
-  }
+    "bug_matte_sand_brown_colors",
+    "bug_matte_khaki_colors",
+    "bug_matte_naval_blue_colors",
+    "bug_matte_oxide_red_colors"
+  ],
+  "libraryPaints": [
+    "bug_alabaster",
+    "bug_alpine_white",
+    "bug_aquamarine",
+    "bug_brilliant_blue",
+    "bug_cascade_cyan",
+    "bug_cement_gray",
+    "bug_charcoal",
+    "bug_chestnut",
+    "bug_citrus_orange",
+    "bug_clementine",
+    "bug_cream_white",
+    "bug_dusted_mica",
+    "bug_fiesta_yellow",
+    "bug_fire_red",
+    "bug_flame_orange",
+    "bug_forest_green",
+    "bug_garnet_red",
+    "bug_gray",
+    "bug_ivy_green",
+    "bug_jet_black",
+    "bug_lichen_green",
+    "bug_mist_blue",
+    "bug_opal_green",
+    "bug_pearl_white",
+    "bug_ruby_red",
+    "bug_savannah_yellow",
+    "bug_seafoam_green",
+    "bug_seaside_blue",
+    "bug_shale_green",
+    "bug_sky_blue",
+    "bug_solar_yellow",
+    { "id": "bug_bayview_blue",              "class": "custom" },
+    { "id": "bug_bermuda_blue",              "class": "custom" },
+    { "id": "bug_chrome",                    "class": "custom" },
+    { "id": "bug_crystal_white",             "class": "custom" },
+    { "id": "bug_flare_orange",              "class": "custom" },
+    { "id": "bug_ice_blue",                  "class": "custom" },
+    { "id": "bug_maroon",                    "class": "custom" },
+    { "id": "bug_medallion_gold",            "class": "custom" },
+    { "id": "bug_merangue_yellow",           "class": "custom" },
+    { "id": "bug_moonlight",                 "class": "custom" },
+    { "id": "bug_pure_black",                "class": "custom" },
+    { "id": "bug_royal_blue",                "class": "custom" },
+    { "id": "bug_steel_blue",                "class": "custom" },
+    { "id": "bug_tropical_sea",              "class": "custom" },
+    { "id": "bug_silver",                    "class": "custom" },
+    { "id": "bug_sunset",                    "class": "custom" },
+    { "id": "bug_walnut",                    "class": "custom" },
+    { "id": "bug_matte_charcoal",            "class": "custom" },
+    { "id": "bug_matte_khaki",               "class": "custom" },
+    { "id": "bug_matte_sand_brown",          "class": "custom" },
+    { "id": "bug_matte_naval_blue",          "class": "custom" },
+    { "id": "bug_matte_oxide_red",           "class": "custom" }
+  ]
 }

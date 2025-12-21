@@ -35,6 +35,10 @@
   "Value":8500,
   "Weight":990,
   "Weight/Power":16.2295082,
-  "defaultPaintName1":"Sky Blue",
-  "defaultPaintName3":"Sky Blue"
+  "defaultMultiPaintSetup":{
+    "name": "Sky Blue",
+    "paint1": "bug_sky_blue",
+    "paint2": "bug_sky_blue",
+    "paint3": "bug_sky_blue"
+  }
 }

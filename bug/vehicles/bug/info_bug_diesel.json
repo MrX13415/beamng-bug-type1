@@ -34,6 +34,10 @@
   "Value":8500,
   "Weight":1005,
   "Weight/Power":27.91666667,
-  "defaultPaintName1":"Jet Black",
-  "defaultPaintName3":"Alpine White"
+  "defaultMultiPaintSetup":{
+    "name": "Jet Black",
+    "paint1": "bug_jet_black",
+    "paint2": "bug_jet_black",
+    "paint3": "bug_alpine_white"
+  }
 }

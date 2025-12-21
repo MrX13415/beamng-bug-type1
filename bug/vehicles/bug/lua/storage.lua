@@ -35,11 +35,11 @@ end
 
 local function updateGFX(dt)
 	saveTimer = saveTimer + dt
- 
-	-- TODO: Define more save trigger events.
 
-	-- save rate: every 4 seconds
-	if saveTimer >= 4 then
+	-- Speedo is no longer saved here and the metrics are used from the game directly.
+	-- Only "player trust" is saved currently. Therefore, no need to save frequently.
+	-- Save rate: Once per minute
+	if saveTimer >= 60 then
 		saveTimer = 0
 		if not saveSuspended then
 			 save()

@@ -51,7 +51,7 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         ["bug_trunk",        ["bug_trunk"]],
-        ["bug_trunk_hinges", ["bug_body"]],
+        ["bug_trunk_hinges", ["bug_body_rear"]],
     ],
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
@@ -336,9 +336,9 @@
         "value":60,
     },
     "slotType" : "bug_trunk_handle",
-    "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["bug_trunk_handle", ["bug_trunk"]],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+        ["anim__trunk",   "bug_trunk_handle",  "t3","t2ll","t2",   {"x":110, "y":90 , "z":20.0182 },   {"x":0, "y":0, "z":-180},    {"x":0, "y":0, "z":0},    0,     1,   0,  1],
     ],
 },
 "trunk_handle_paint": {

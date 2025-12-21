@@ -35,6 +35,10 @@
   "Value":8500,
   "Weight":960,
   "Weight/Power":24,
-  "defaultPaintName1":"Cascade Cyan",
-  "defaultPaintName3":"Cement Gray"
+  "defaultMultiPaintSetup":{
+    "name": "Cascade Cyan",
+    "paint1": "bug_cascade_cyan",
+    "paint2": "bug_cascade_cyan",
+    "paint3": "bug_cement_gray"
+  }
 }

@@ -35,6 +35,10 @@
   "Value":8500,
   "Weight":1005,
   "Weight/Power":16.47540984,
-  "defaultPaintName1":"Garnet Red",
-  "defaultPaintName3":"Garnet Red"
+  "defaultMultiPaintSetup":{
+    "name": "Garnet Red",
+    "paint1": "bug_garnet_red",
+    "paint2": "bug_garnet_red",
+    "paint3": "bug_garnet_red"
+  }
 }

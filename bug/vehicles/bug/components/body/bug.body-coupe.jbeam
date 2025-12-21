@@ -33,6 +33,7 @@
         ["bug_rearwindow","bug_rearwindow", "Rearwindow"],
         ["bug_glass","bug_glass", "Glass"],
         ["bug_exterior_sunvisor","", "Exterior Sunvisor"],
+        ["bug_exterior_lights","", "Exterior Lights"],
         
         ["bug_wipers", "bug_wipers", "Wipers"],
 
@@ -64,42 +65,42 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["brake",        "bug_inputs_pedals_brake",     "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["brake",        "bug_inputs_pedals_brake",     "f3mr","f3ml","f3tm",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
-   "flexbodies": [
+    "flexbodies": [
         // new mesh
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_body_interior_dashboard",        ["bug_body", "bug_body_interior", "bug_body_cowl"]],
-        ["bug_body_interior_hood",             ["bug_body", "bug_body_interior", "bug_body_cowl"]],
-        ["bug_body_interior_rear_window",      ["bug_body", "bug_body_interior", "bug_body_roof"]],
-        ["bug_body_interior_sides",            ["bug_body", "bug_body_interior", "bug_body_sides"]],
-        ["bug_body_sides",                     ["bug_body", "bug_body_sides"]],
+        ["bug_body_front",                     ["bug_body_front"]],
+        ["bug_body_front_frame",               ["bug_body_front"]],
+        ["bug_hood_parts",                     ["bug_body_front"]],
+        ["bug_body_firewall",                  ["bug_body_front"]],
+        ["bug_body_front_fenders",             ["bug_body_front", "bug_body_sides_front"]],
+        ["bug_body_interior_wheelarch_front",  ["bug_body_front", "bug_body_sides_front"]],
+        ["bug_body_interior_hood",             ["bug_body_front"]],
 
-        ["bug_body_door_hinges",               ["bug_body", "bug_body_sides"]],
-        ["bug_body_engine_panel_bottom",       ["bug_body", "bug_body_rear"]],
-        ["bug_body_engine_panel_top",          ["bug_body", "bug_body_rear"]],
-        ["bug_body_engine_vents_back",         ["bug_body", "bug_body_rear"]],
-        ["bug_body_firewall",                  ["bug_body", "bug_body_cowl"]],
+        ["bug_body_interior_dashboard",        ["bug_body_front", "bug_dashboard", "bug_body_cowl", "bug_body_roof_front"]],
+        ["bug_body_interior_steer_mount",      ["bug_body_front", "bug_dashboard", "bug_body_cowl", "bug_body_roof_front"]],
+    
+        ["bug_body_door_hinges",               ["bug_body_sides_front"]],
+        ["bug_body_door_parts",                ["bug_body_sides_front", "bug_body_sides"]],
+        ["bug_body_sides",                     ["bug_body_sides_front", "bug_body_sides", "bug_body_rear"]],
+        ["bug_body_interior_sides",            ["bug_body_sides"]],
+        ["bug_body_interior_sides_back",       ["bug_body_sides"]],
 
-        ["bug_body_front",                     ["bug_body", "bug_body_front"]],
-        ["bug_body_front_fenders",             ["bug_body", "bug_body_front"]],
-        ["bug_body_front_frame",               ["bug_body", "bug_body_front"]],
-        
-        ["bug_body_heatpipes",                 ["bug_body", "bug_body_interior"]],
-        ["bug_body_interior_rear",             ["bug_body", "bug_body_interior"]],
-        ["bug_body_interior_sides_back",       ["bug_body", "bug_body_interior"]],
-        ["bug_body_interior_wheelarch_front",  ["bug_body", "bug_body_interior"]],
-        ["bug_body_interior_steer_mount",      ["bug_body", "bug_body_interior"]],
-        ["bug_body_backseat_base",             ["bug_body", "bug_body_interior"]],
-        ["bug_body_heatpipe_R",                ["bug_body", "bug_body_interior"]],
+        ["bug_body_heatpipes",                 ["bug_body_sides_front", "bug_body_sides", "bug_body_front"]],
+        ["bug_body_backseat_base",             ["bug_body_interior_rear","bug_body_sides","bug_body_rear"]],
+        ["bug_body_interior_rear",             ["bug_body_interior_rear","bug_body_sides","bug_body_rear"]],
+        ["bug_body_heatpipe_R",                ["bug_body_interior_rear","bug_body_sides"]],
 
-        ["bug_body_rear",                      ["bug_body", "bug_body_rear"]],
-        ["bug_trunk_latch",                    ["bug_body", "bug_body_rear"]],
-        ["bug_trunk_mounts",                   ["bug_body", "bug_body_rear"]],
+        ["bug_body_interior_rear_window",      ["bug_body_rear", "bug_body_roof_rear"]],
+        ["bug_body_engine_panel_bottom",       ["bug_body_rear"]],
+        ["bug_body_engine_panel_top",          ["bug_body_rear"]],
+        ["bug_body_engine_vents_back",         ["bug_body_rear"]],
 
-        ["bug_hood_parts",                     ["bug_body"]],
-        ["bug_body_door_parts",                ["bug_body"]],
+        ["bug_body_rear",                      ["bug_body_rear"]],
+        ["bug_trunk_latch",                    ["bug_body_rear"]],
+        ["bug_trunk_mounts",                   ["bug_body_rear"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -108,9 +109,9 @@
         {"collision":true},
         {"selfCollision":true},
 
-        {"nodeWeight":2.0},
-        //{"group":"bug_body_cowl"},
         // cowl
+        {"nodeWeight":2.0},
+        {"group":["bug_body","bug_body_cowl"]},
         ["bc1r",  -0.53553, -0.59897,  1.00919],
         ["bc1l",   0.53553, -0.59897,  1.00919],
         ["bc2",    0.00000, -0.74510,  1.04332],
@@ -120,26 +121,29 @@
         ["bc2ll",  0.54120, -0.67455,  0.97415],
         ["bc3r",  -0.59793, -0.66055,  0.90376],
         ["bc3l",   0.59793, -0.66055,  0.90376],
-        ["bc4r",  -0.62931, -0.65713,  0.61868],
+        {"group":["bug_body","bug_body_cowl", "bug_body_sides_front"]},
         ["bc4l",   0.62931, -0.65713,  0.61868],
-        ["bc5r",  -0.58949, -0.60467,  0.98144],
         ["bc5l",   0.58949, -0.60467,  0.98144],
+        ["bc4r",  -0.62931, -0.65713,  0.61868],
+        ["bc5r",  -0.58949, -0.60467,  0.98144],
 
-        {"nodeWeight":1.3},
-        {"group":["bug_body","bug_dashboard","gps"]},
         // dashboard
-        ["bd1r", -0.26598, -0.57707,  1.05118],
-        ["bd1l",  0.26598, -0.57707,  1.05118],
-        ["bd2r", -0.54279, -0.56437,  0.87868],
+        {"nodeWeight":1.3},
+        {"group":["bug_body","bug_dashboard","gps","bug_windshield"]},
+        ["bd1r",  -0.26598, -0.57707,  1.05118],
+        ["bd1l",   0.26598, -0.57707,  1.05118],
         ["bd1rr", -0.53351, -0.56437,  1.00449],
-        ["bd2",  0.00000, -0.56437,  0.87648, {"nodeWeight":2.0}],
-        ["bd1",  0.00000, -0.56437,  1.06323, {"nodeWeight":2.0}],
         ["bd1ll",  0.53351, -0.56437,  1.00449],
-        ["bd2l",  0.54279, -0.56437,  0.87868],
+        ["bd1",    0.00000, -0.56437,  1.06323, {"nodeWeight":2.0}],
+        {"group":["bug_body","bug_dashboard","gps"]},
+        ["bd2r",  -0.54279, -0.56437,  0.87868],
+        ["bd2l",   0.54279, -0.56437,  0.87868],
+        ["bd2",    0.00000, -0.56437,  0.87648, {"nodeWeight":2.0}],
+        ["bd3",    0.00000, -0.73800,  0.96100, {"group":"", "nodeWeight":2.0, "collision": false, "selfCollision":false}],
 
-        {"nodeWeight":1.1},
-        {"group":"bug_body"},
         // front
+        {"nodeWeight":1.1},
+        {"group":["bug_body","bug_body_front"]},
         ["bf1",  0.00000, -1.77911,  0.24608],
         ["bf1r", -0.28705, -1.77977,  0.26686],
         ["bf1l",  0.28705, -1.77977,  0.26686],
@@ -165,12 +169,13 @@
         ["bf8r", -0.36479, -1.03030,  0.640711],
         ["bf8l",  0.36479, -1.03030,  0.640711],
 
-        {"nodeWeight":1.0},
-        //{"group":"bug_body_interior"},
         // interior
+        {"nodeWeight":1.0},
+        {"group":""},
         ["bi0",  0.00000,  -0.15775,  1.00000, {"nodeWeight":4.0, "selfCollision":false, "collision":false}],
         ["bi1",  0.00000,  0.55534,  1.00000, {"nodeWeight":4.0, "selfCollision":false, "collision":false}],
-        ["bi2",  0.00000,  0.94428,  0.60145, {"nodeWeight":2.0}],
+        {"group":["bug_body", "bug_body_rear", "bug_body_interior_rear"]},
+        ["bi2",  0.000,  0.944,  0.601, {"nodeWeight":2.0}],
         ["bi2r", -0.46992,  0.94428,  0.60145],
         ["bi2l",  0.46992,  0.94428,  0.60145],
         ["bi3",  0.00000,  1.32859,  0.61448, {"nodeWeight":2.5}],
@@ -180,44 +185,50 @@
         ["bi4r", -0.46992,  1.32859,  0.96075],
         ["bi4l",  0.46992,  1.32859,  0.96075],
 
+        // side L
         {"nodeWeight":1.0},
-        //{"group":"bug_body_sides"},
-        // sides
-        ["bq1r", -0.61537, -0.65071,  0.29000, {"tag":"bug_runningboards_R1"}],
+        {"group":["bug_body","bug_body_sides_front"]},
         ["bq1l",  0.61537, -0.65071,  0.29000, {"tag":"bug_runningboards_L1"}],
-        ["bq2r", -0.66286, -0.25584,  0.29000],
         ["bq2l",  0.66286, -0.25584,  0.29000],
-        ["bq3r", -0.69086,  0.34135,  0.29000],
+        {"group":["bug_body","bug_body_sides"]},
         ["bq3l",  0.69086,  0.34135,  0.29000],
-        ["bq4r", -0.66680,  0.68449,  0.29000, {"tag":"bug_runningboards_R2"}],
         ["bq4l",  0.66680,  0.68449,  0.29000, {"tag":"bug_runningboards_L2"}],
-        ["bq5r", -0.70880,  0.34135,  0.63912],
         ["bq5l",  0.70880,  0.34135,  0.63912],
-        ["bq6r", -0.70206,  0.71449,  0.63820],
         ["bq6l",  0.70206,  0.71449,  0.63820],
-        ["bq7r", -0.49837,  1.44175,  0.74508],
         ["bq7l",  0.49837,  1.44175,  0.74508],
-        ["bq8r", -0.51823,  1.43326,  0.84290, {"nodeWeight":1.5}],
         ["bq8l",  0.51823,  1.43326,  0.84290, {"nodeWeight":1.5}],
-        ["bq9r", -0.67678,  0.34135,  0.98980, {"nodeWeight":2.0}],
         ["bq9l",  0.67678,  0.34135,  0.98980, {"nodeWeight":2.0}],
-        ["bq10r", -0.65798,  0.71449,  0.98980],
         ["bq10l",  0.65798,  0.71449,  0.98980],
-        ["bq11r", -0.62505,  1.03154,  0.99308, {"nodeWeight":1.5}],
         ["bq11l",  0.62505,  1.03154,  0.99308, {"nodeWeight":1.5}],
-        ["bq12r", -0.54926,  1.25798,  0.99621],
         ["bq12l",  0.54926,  1.25798,  0.99621],
-        ["bq13r", -0.59043,  1.02991,  1.15396],
         ["bq13l",  0.59043,  1.02991,  1.15396],
 
-        {"nodeWeight":1.0},
-        //{"group":"bug_body_rear"},
+        // side R
+        {"group":["bug_body","bug_body_sides_front"]},
+        ["bq1r", -0.61537, -0.65071,  0.29000, {"tag":"bug_runningboards_R1"}],
+        ["bq2r", -0.66286, -0.25584,  0.29000],
+        {"group":["bug_body","bug_body_sides"]},
+        ["bq3r", -0.69086,  0.34135,  0.29000],
+        ["bq4r", -0.66680,  0.68449,  0.29000, {"tag":"bug_runningboards_R2"}],
+        ["bq5r", -0.70880,  0.34135,  0.63912],
+        ["bq6r", -0.70206,  0.71449,  0.63820],
+        ["bq7r", -0.49837,  1.44175,  0.74508],
+        ["bq8r", -0.51823,  1.43326,  0.84290, {"nodeWeight":1.5}],
+        ["bq9r", -0.67678,  0.34135,  0.98980, {"nodeWeight":2.0}],
+        ["bq10r", -0.65798,  0.71449,  0.98980],
+        ["bq11r", -0.62505,  1.03154,  0.99308, {"nodeWeight":1.5}],
+        ["bq12r", -0.54926,  1.25798,  0.99621],
+        ["bq13r", -0.59043,  1.02991,  1.15396],
+
         // rear
+        {"nodeWeight":1.0},
+        {"group":["bug_body","bug_body_rear", "bug_window_rear"]},
         ["br1",  0.00000,  1.47315,  1.07744],
         ["br1r", -0.22944,  1.45635,  1.06181],
         ["br1l",  0.22944,  1.45635,  1.06181],
         ["br1rr", -0.41364,  1.39420,  1.03884],
         ["br1ll",  0.41364,  1.39420,  1.03884],
+        {"group":["bug_body","bug_body_rear"]},
         ["br2r", -0.22780,  1.52363,  1.00192],
         ["br2l",  0.22780,  1.52363,  1.00192],
         ["br2rr", -0.39449,  1.48577,  0.93910],
@@ -242,49 +253,58 @@
         ["br7r", -0.36719,  1.92354,  0.26531],
         ["br7l",  0.36719,  1.92354,  0.26531],
 
-        {"nodeWeight":0.9},
-       // {"group":"bug_body_roof"},
         // roof
+        {"nodeWeight":0.9},
+        {"group":["bug_body","bug_body_roof","bug_body_roof_front", "bug_windshield"]},
         ["brf1",  0.00000, -0.39849,  1.37768],
         ["brf1r", -0.22681, -0.39849,  1.37739],
         ["brf1l",  0.22681, -0.39849,  1.37739],
         ["brf1rr", -0.48182, -0.40970,  1.33096],
         ["brf1ll",  0.48182, -0.40970,  1.33096],
-        ["brf1rrr", -0.54171, -0.40074,  1.28275],
-        ["brf1lll",  0.54171, -0.40074,  1.28275],
+        {"group":["bug_body","bug_body_roof","bug_body_roof_front"]},
         ["brf2",  0.00000, -0.25584,  1.45018],
         ["brf2r", -0.22681, -0.25584,  1.43989],
         ["brf2l",  0.22681, -0.25584,  1.43989],
         ["brf2rr", -0.42878, -0.25584,  1.40688],
         ["brf2ll",  0.42878, -0.25584,  1.40688],
+        {"group":["bug_body","bug_body_roof","bug_body_roof_front", "bug_body_sides"]},
+        ["brf1rrr", -0.54171, -0.40074,  1.28275],
+        ["brf1lll",  0.54171, -0.40074,  1.28275],
         ["brf2rrr", -0.54170, -0.25584,  1.34637],
         ["brf2lll",  0.54170, -0.25584,  1.34637],
+
+        {"group":["bug_body","bug_body_roof","bug_body_roof_middle"]},
         ["brf3",  0.00000,  0.03775,  1.48149],
         ["brf3r", -0.22850,  0.03775,  1.47198],
         ["brf3l",  0.22850,  0.03775,  1.47198],
         ["brf3rr", -0.43632,  0.03775,  1.44340],
         ["brf3ll",  0.43632,  0.03775,  1.44340],
-        ["brf3rrr", -0.55943,  0.03775,  1.36752],
-        ["brf3lll",  0.55943,  0.03775,  1.36752],
         ["brf4",  0.00000,  0.33135,  1.49006],
         ["brf4r", -0.23020,  0.33135,  1.47941],
         ["brf4l",  0.23020,  0.33135,  1.47941],
         ["brf4rr", -0.44387,  0.33135,  1.45273],
         ["brf4ll",  0.44387,  0.33135,  1.45273],
-        ["brf4rrr", -0.57717,  0.34135,  1.36940],
-        ["brf4lll",  0.57717,  0.34135,  1.36940],
         ["brf5",  0.00000,  0.71409,  1.47405],
         ["brf5r", -0.22944,  0.71449,  1.46385],
         ["brf5l",  0.22944,  0.71449,  1.46385],
         ["brf5rr", -0.44191,  0.71449,  1.42856],
         ["brf5ll",  0.44191,  0.71449,  1.42856],
+        {"group":["bug_body","bug_body_roof","bug_body_roof_middle", "bug_body_sides"]},
+        ["brf3rrr", -0.55943,  0.03775,  1.36752],
+        ["brf3lll",  0.55943,  0.03775,  1.36752],
+        ["brf4rrr", -0.57717,  0.34135,  1.36940],
+        ["brf4lll",  0.57717,  0.34135,  1.36940],
         ["brf5rrr", -0.57351,  0.71449,  1.34894],
         ["brf5lll",  0.57351,  0.71449,  1.34894],
+
+        {"group":["bug_body","bug_body_roof","bug_body_roof_rear"]},
         ["brf6",  0.00000,  0.94060,  1.41058],
         ["brf6r", -0.22944,  0.94099,  1.39806],
         ["brf6l",  0.22944,  0.94099,  1.39806],
         ["brf6rr", -0.44165,  0.94099,  1.34943],
         ["brf6ll",  0.44165,  0.94099,  1.34943],
+        
+        {"group":["bug_body","bug_body_roof","bug_window_rear"]},
         ["brf7",  0.00000,  1.13065,  1.33854],
         ["brf7r", -0.22944,  1.13105,  1.32370],
         ["brf7l",  0.22944,  1.13105,  1.32370],
@@ -372,7 +392,7 @@
         {"disableMeshBreaking":false},
         {"deformLimitExpansion":1.1},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
-        {"beamSpring":701000,"beamDamp":75, "beamStrength":"FLT_MAX"},
+        {"beamSpring":801000,"beamDamp":75, "beamStrength":"FLT_MAX"},
 
         // front
         {"beamDeform":4000},
@@ -490,10 +510,8 @@
         ["bf7l", "bq1l"],
 
 
-
-
-
         // cowl
+        {"beamSpring":1001000, "beamDeform":30000},
         ["bc2r", "bc2rr"],
         ["bc2r", "bc1r"],
         ["bc2l", "bc2ll"],
@@ -514,6 +532,7 @@
         ["bc2", "bc2r"],
 
         // cowl <> front
+        {"beamSpring":801000, "beamDeform":4000},
         ["bc2rr", "bf5r"],
         ["bc2ll", "bf5l"],
         ["bc3r", "bf5r"],
@@ -526,6 +545,14 @@
         ["bc4l", "bf8l"],
         ["bc4l", "bf7l"],
         ["bc4l", "bf5l"],
+        //-
+        ["bc2", "bf8"],
+        ["bc2", "bf8l"],
+        ["bc2", "bf8r"],
+        ["bc2l", "bf8"],
+        ["bc2l", "bf8l"],
+        ["bc2r", "bf8"],
+        ["bc2r", "bf8r"],
 
         // cowl <> dashboard
         ["bc2", "bd1l"],
@@ -607,7 +634,7 @@
 
 
         // dashboard
-        {"beamDeform":3000},
+        {"beamSpring":1001000, "beamDeform":30000},
         ["bd1r", "bd1"],
         ["bd1r", "bd1rr"],
         ["bd1l", "bd1"],
@@ -623,6 +650,16 @@
         ["bd1", "bd1ll"],
         ["bd1", "bd2l"],
         ["bd1ll", "bd2l"],
+        //-
+        ["bd1","bd3"],
+        ["bd2","bd3"],
+        ["bd1r","bd3"],
+        ["bd1l","bd3"],
+        ["bd1rr","bd3"],
+        ["bd1ll","bd3"],
+        ["bd2r","bd3"],
+        ["bd2l","bd3"],
+
         // dashboard: rigidify
         ["bd1", "bi0"],
         ["bd2", "bi0"],
@@ -643,6 +680,13 @@
         ["bd2l", "bf7ll"],
         ["bd2l", "bf5l"],
         ["bd2l", "bf8"],
+        ["bd3", "bf8"],
+        ["bd3", "bf8l"],
+        ["bd3", "bf8r"],
+        // dashboard <> cowl
+        ["bd3", "bc2"],
+        ["bd3", "bc2l"],
+        ["bd3", "bc2r"],
 
 
 
@@ -1716,13 +1760,13 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_wiper_mounts", ["bug_body", "bug_roof"]]
+        ["bug_wiper_mounts", ["bug_body_cowl"]]
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["wipers",    "bug_wiper_L",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
-        ["wipers",    "bug_wiper_R",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
+        ["anim__wipers",    "bug_wiper_L",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
+        ["anim__wipers",    "bug_wiper_R",   "dsh","dshl","bd1",         {"x":-30, "y":0, "z":0}, 	{"x":0, "y":1, "z":0},     {"x":0, "y":0, "z":0}, 			0, 		120, -360, 120],
     ]
 },
 "bug_wipers_speed2": {
@@ -1755,7 +1799,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_wiper_mounts", ["bug_body", "bug_roof"]]
+        ["bug_wiper_mounts", ["bug_body_cowl"]]
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -1796,7 +1840,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_wiper_mounts", ["bug_body", "bug_roof"]]
+        ["bug_wiper_mounts", ["bug_body_cowl"]]
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -1815,7 +1859,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_wiper_jet",         ["bug_body", "bug_roof"]],
+        ["bug_wiper_jet",         ["bug_body_cowl"]],
 		["bug_washer_reservoir",  ["fueltank"]],
     ],
 },
@@ -1829,14 +1873,14 @@
     },
     "electricPower":[
         ["power"],
-        [10, {"trigger": "electrics.values.interiorlight"}]
+        [10, {"trigger": "electrics.values.interiorlightstate"}]
     ],
     "slotType" : "bug_interiorlight",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_body_interiorlight",             ["bug_body", "bug_body_sides"]],
-        ["bug_body_interiorlight_glass",       ["bug_body", "bug_body_sides"]]
+        ["bug_body_interiorlight",             ["bug_body_sides", "bug_body_roof_middle"]],
+        ["bug_body_interiorlight_glass",       ["bug_body_sides", "bug_body_roof_middle"]]
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -1851,8 +1895,8 @@
         ["interiorlight", "action0", "interiorlighttoggle"],
     ],
     "glowMap":{
-        "bug_interiorlight":       {"simpleFunction":{"power__interiorlight":0.49}, "off":"bug_int_lights", "on":"bug_int_lights_on", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_interiorlight_glass": {"simpleFunction":{"power__interiorlight":0.49}, "off":"bug_int_lights_glass", "on":"bug_int_lights_glass_on", "materialEmissiveScaling":{"on_max":0.49}}
+        "bug_interiorlight":       {"simpleFunction":{"power__interiorlightstate":0.49}, "off":"bug_int_lights", "on":"bug_int_lights_on", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_interiorlight_glass": {"simpleFunction":{"power__interiorlightstate":0.49}, "off":"bug_int_lights_glass", "on":"bug_int_lights_glass_on", "materialEmissiveScaling":{"on_max":0.49}}
     },
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -1875,7 +1919,7 @@
             "shadowSoftness":0.5,
         },
         
-        ["power__interiorlight" ,  "SPOTLIGHT", "brf4lll","brf4ll","brf5lll", {"x":161.054, "y":-50.009, "z":24.784} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.1, "z":-0.03},"deformGroup":"", "lightScaling":{}}],
+        ["power__interiorlightstate" ,  "SPOTLIGHT", "brf4lll","brf4ll","brf5lll", {"x":161.054, "y":-50.009, "z":24.784} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.1, "z":-0.03},"deformGroup":"", "lightScaling":{}}],
     ],
 },
 
@@ -1889,8 +1933,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_heatvent_F_covers",                     ["bug_body", "bug_body_interior"]],
-        ["bug_heatvent_R_covers",                     ["bug_body", "bug_body_interior"]]
+        ["bug_heatvent_F_covers",                     ["bug_body_front", "bug_body_sides_front"]],
+        ["bug_heatvent_R_covers",                     ["bug_body_rear" , "bug_body_sides"]]
     ]
 },
 "bug_heatvents": {
@@ -1903,8 +1947,8 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_heatvent_F",                     ["bug_body", "bug_body_interior"]],
-        ["bug_heatvent_R",                     ["bug_body", "bug_body_interior"]]
+        ["bug_heatvent_F",                     ["bug_body_front", "bug_body_sides_front"]],
+        ["bug_heatvent_R",                     ["bug_body_rear" , "bug_body_sides"]]
     ]
 },
 
@@ -1918,7 +1962,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_body_roof_vent_cover", ["bug_body"]],
+        ["bug_body_roof_vent_cover", ["bug_body_rear"]],
     ]
 },
 }

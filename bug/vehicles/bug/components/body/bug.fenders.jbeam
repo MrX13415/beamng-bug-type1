@@ -370,7 +370,6 @@
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"beamSpring":450000,"beamDamp":130},
         {"beamDeform":3000,"beamStrength":100000},
-        {"deformationTriggerRatio":0.05},
 
         //fender main shape
         ["feFR1l", "feFR1r"],

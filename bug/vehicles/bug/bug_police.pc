@@ -2,44 +2,6 @@
   "format":2,
   "mainPartName":"bug",
   "model":"bug",
-  "paints":[
-    {
-      "baseColor":[
-        0,
-        0,
-        0,
-        1.45
-      ],
-      "clearcoat":0.8,
-      "clearcoatRoughness":0.06,
-      "metallic":0.45,
-      "roughness":0.4
-    },
-    {
-      "baseColor":[
-        0.85,
-        0.88,
-        0.87,
-        1.4
-      ],
-      "clearcoat":0.27,
-      "clearcoatRoughness":0.06,
-      "metallic":0.18,
-      "roughness":0.4
-    },
-    {
-      "baseColor":[
-        0,
-        0,
-        0,
-        1.45
-      ],
-      "clearcoat":0.8,
-      "clearcoatRoughness":0.06,
-      "metallic":0.45,
-      "roughness":0.4
-    }
-  ],
   "parts":{
     "antenna":"",
     "beacon_color":"beacon_color_red",

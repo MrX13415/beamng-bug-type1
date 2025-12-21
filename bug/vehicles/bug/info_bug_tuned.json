@@ -39,7 +39,10 @@
   "Value":8500,
   "Weight":960,
   "Weight/Power":3.168316832,
-  "defaultPaintName1":"Bermuda Blue",
-  "defaultPaintName2":"Sky Blue",
-  "defaultPaintName3":"Pure Black"
+  "defaultMultiPaintSetup":{
+    "name": "Bermuda Blue",
+    "paint1": "bug_bermuda_blue",
+    "paint2": "bug_sky_blue",
+    "paint3": "bug_pure_black"
+  }
 }

@@ -2,7 +2,6 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
--- v1.0
 -- by MrX13415
 
 local M = {}
@@ -12,6 +11,7 @@ local value = 0
 local speed = 0.01
 local direction = 0
 local directionLast = 0
+local targetValue = -1
 
 local sfxNode = ""
 local sfxEvent = "vehicles/bug/components/sounds/common/ragtop-move.ogg"
@@ -27,6 +27,10 @@ local bar1BeamName = "ragtopState1"
 local bar2BeamName = "ragtopState2"
 local matVisible = "bug_ragtop_fabric"
 local matHidden = "invis"
+
+local shortPressTime = 0.15 -- seconds
+local buttonTimer = 0
+local buttonState = 0
 
 -- common
 local function createSFX(event, node)
@@ -136,7 +140,7 @@ end
 
 local function updateRagtop(dt)
   directionLast = direction
-  direction = electrics.values["ragtop_input"] or 0
+  direction = electrics.values.ragtop_input or 0
 
   if direction ~= directionLast then
     sfx = sfx or createSFX(sfxEvent, sfxNode)
@@ -160,15 +164,59 @@ local function updateRagtop(dt)
     if sfx then obj:cutSFX(sfx) end
   end
 
-  electrics.values["ragtop_state"] = value
+  electrics.values.ragtop_state = value
   --print("ragtop: " .. value)
 
   updateMaterial()
+
+  -- Auto open
+  if targetValue >= 0 and (
+    (direction > 0 and value >= targetValue) or
+    (direction < 0 and value <= targetValue)
+  ) then
+    electrics.values.ragtop_input = 0
+    targetValue = -1
+  end
+end
+
+local function set(state)
+  if value == state then return end
+  targetValue = state
+  electrics.values.ragtop_input = (state > value) and 1 or -1
+end
+
+local function onButton(value, open)
+  buttonState = value
+
+  -- holding
+  if buttonState ~= 0 then return end
+
+  local shortPress = buttonTimer < shortPressTime
+  buttonTimer = 0
+  if not shortPress then return end
+
+  log("D", "", "[Bug:Ragtop] Short press")
+  set(open and 0.7 or 0) -- 70% open
+end
+
+local function open(value)
+  electrics.values.ragtop_input = value
+  onButton(value, true)
+end
+
+local function close(value)
+  electrics.values.ragtop_input = value * -1
+  onButton(value, false)
 end
 
 local function updateGFX(dt)
   updateTimer = updateTimer + dt
   materialTimer = materialTimer + dt
+
+  if buttonState == 1 then
+    buttonTimer = buttonTimer + dt
+  end
+
 	-- update rate: 40 fps (0.025 == 25ms)
 	if updateTimer < 0.025 then return end
 
@@ -178,23 +226,22 @@ local function updateGFX(dt)
 end
 
 local function onReset()
-  value = electrics.values["ragtop_state"]
+  value = electrics.values.ragtop_state
   log("D", "", "[Bug:Ragtop] " .. tostring(value*100) .. "% open")
 end
 
 local function onInit(jbeamData)
+  electrics.values.ragtop_state = 0
+  electrics.values.ragtop_input = 0
   sfxNode = jbeamData.node or ""
-  value = jbeamData.state or 0
-  electrics.values["ragtop_state"] = value
+
+  value = (jbeamData.state or 0)
+  electrics.values.ragtop_state = value
+  if value > 0 then
+    vehicle.ragtopSetHandle(true)
+  end
+
   log("D", "", "[Bug:Ragtop] Initialized " .. tostring(value*100) .. "% open")
-end
-
-local function open(value)
-  electrics.values["ragtop_input"] = (value or 1)
-end
-
-local function close(value)
-  electrics.values["ragtop_input"] = (value or 1) * -1
 end
 
 M.init      = onInit
@@ -203,6 +250,7 @@ M.updateGFX = updateGFX
 
 -- Public Interface
 -- Console: controller.getController('ragtop').open()
+M.set = set
 M.open = open
 M.close = close
 

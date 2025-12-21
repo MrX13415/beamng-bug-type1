@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "paints": {
+    "bug_matte_charcoal": {
+      "name": "Matte Charcoal",
+      "baseColor": [ 0.13,  0.13,  0.13,  1.0 ],
+      "clearcoat": 0.7,
+      "clearcoatRoughness": 0.25,
+      "metallic": 0,
+      "roughness": 0.4
+    },
+    "bug_matte_khaki": {
+      "name": "Matte Khaki",
+      "baseColor": [ 0.29,  0.26,  0.14,  1.2 ],
+      "clearcoat": 0.7,
+      "clearcoatRoughness": 0.25,
+      "metallic": 0,
+      "roughness": 0.4
+    },
+    "bug_matte_sand_brown": {
+      "name": "Matte Sand Brown",
+      "baseColor":[ 0.55,  0.447,  0.289,  2 ],
+      "clearcoat": 0.7,
+      "clearcoatRoughness": 0.25,
+      "metallic": 0,
+      "roughness": 0.4
+    },
+    "bug_matte_naval_blue": {
+      "name": "Naval Matte Blue",
+      "baseColor":[ 0.2,  0.27,  0.32,  1.0 ],
+      "clearcoat": 0.7,
+      "clearcoatRoughness": 0.25,
+      "metallic": 0,
+      "roughness": 0.4
+    },
+    "bug_matte_oxide_red": {
+      "name": "Matte Oxide Red",
+      "baseColor":[ 0.44,  0.17,  0.1,  1.0 ],
+      "clearcoat": 0.7,
+      "clearcoatRoughness": 0.25,
+      "metallic": 0,
+      "roughness": 0.4
+    }
+  },
+  "multiPaintSetups" : {
+    "bug_matte_sand_brown_colors" : {
+      "name": "Matte Sand Brown",
+      "paint1":"bug_matte_sand_brown",
+      "paint2":"bug_matte_charcoal",
+      "paint3":"bug_matte_sand_brown"
+    },
+    "bug_matte_khaki_colors" : {
+      "name": "Matte Khaki",
+      "paint1":"bug_matte_khaki",
+      "paint2":"bug_matte_charcoal",
+      "paint3":"bug_matte_khaki"
+    },
+    "bug_matte_naval_blue_colors" : {
+      "name": "Matte Naval Blue",
+      "paint1":"bug_matte_naval_blue",
+      "paint2":"bug_matte_charcoal",
+      "paint3":"bug_matte_naval_blue"
+    },
+    "bug_matte_oxide_red_colors": {
+      "name": "Matte Oxide Red",
+      "paint1":"bug_matte_oxide_red",
+      "paint2":"bug_matte_charcoal",
+      "paint3":"bug_matte_oxide_red"
+    }
+  }
+}

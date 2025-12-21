@@ -34,5 +34,6 @@
   "TorquePeakRPM":"2550 - 3750",
   "Transmission":"Automatic",
   "Weight":980,
-  "Weight/Power":12.40506329
+  "Weight/Power":12.40506329,
+  "defaultMultiPaintSetup":"bug_police_us_colors"
 }

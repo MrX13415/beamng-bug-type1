@@ -3,7 +3,6 @@
     "name": "bug_body_paint.skin.hrb_2005",
     "mapTo": "bug_body_paint.skin.hrb_2005",
     "class": "Material",
-    "persistentId": "5e1396e0-0dd4-4f6b-8d79-b75399103c11",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -43,7 +42,6 @@
     "name": "bug_body_paint.skin.hrb_1977",
     "mapTo": "bug_body_paint.skin.hrb_1977",
     "class": "Material",
-    "persistentId": "5e1396e0-0dd4-4f6b-8d79-b75399103c11",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -83,7 +81,6 @@
     "name": "bug_body_paint.skin.hrb_1969",
     "mapTo": "bug_body_paint.skin.hrb_1969",
     "class": "material",
-    "persistentId": "f30960d6-8944-401c-bc28-c83e608b13ba",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -123,7 +120,6 @@
     "name": "bug_body_paint.skin.hrb_1997",
     "mapTo": "bug_body_paint.skin.hrb_1997",
     "class": "Material",
-    "persistentId": "5e1396e0-0dd4-4f6b-8d79-b75399103c11",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",

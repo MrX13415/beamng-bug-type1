@@ -6,6 +6,14 @@ def dirname(path, index=0):
     return path
 #end
 
+def fileCount(folder):
+    count = 0
+    for root, dirs, files in os.walk(folder):
+        count += len(files)
+    #end
+    return count
+#end
+
 def match(var, *matches):
     for c in matches:
         if var == c: return True

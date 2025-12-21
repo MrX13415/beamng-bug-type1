@@ -14,7 +14,7 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["brake",        "bug_inputs_pedals_brake",     "f4mr","f4ml","refup",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
+        ["brake",        "bug_inputs_pedals_brake",     "f3mr","f3ml","f3tm",       {"x":5, "y":0, "z":0},   	{"x":20, "y":0, "z":0},    {"x":0, "y":0, "z":0}, 	0,       1,       0,       1],
     ],
 },
 
@@ -126,8 +126,8 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["turnsignal",   "bug_indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
-        ["parkingbrake_anim", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["anim__turnsignal",   "bug_indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["anim__parkingbrake", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -274,7 +274,7 @@
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
-        ["ignitionLevel_anim",  "bug_ignition_key",  "dsh","dshl","bd1",  {"x":0, "y":-90, "z":0.5},  {"x":0, "y":-45, "z":0},  {"x":0, "y":0, "z":0},  0,  3,  0,  1, {"baseTranslation":{"x":0.0285,"y":0.0680,"z":0.0088}}],
+        ["anim__ignitionLevel",  "bug_ignition_key",  "dsh","dshl","bd1",  {"x":0, "y":-90, "z":0.5},  {"x":0, "y":-45, "z":0},  {"x":0, "y":0, "z":0},  0,  3,  0,  1, {"baseTranslation":{"x":0.0285,"y":0.0680,"z":0.0088}}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

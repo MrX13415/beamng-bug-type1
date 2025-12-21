@@ -4,7 +4,6 @@
     "name": "bug_black",
     "mapTo": "bug_black",
     "class": "Material",
-    "persistentId": "3b2d0cf3-4701-4f62-81f7-eba9d993f77b",
     "Stages": [
       {
         "baseColorFactor": [
@@ -26,7 +25,6 @@
     "name": "licenseplate_default",
     "mapTo": "licenseplate-default",
     "class": "material",
-    "persistentId": "d4697d28-067e-428a-8166-0ab0bc32ff27",
     "Stages": [
       {
         "diffuseColor": [

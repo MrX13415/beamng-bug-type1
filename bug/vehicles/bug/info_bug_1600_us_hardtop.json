@@ -36,6 +36,10 @@
   "Value":8500,
   "Weight":990,
   "Weight/Power":16.2295082,
-  "defaultPaintName1":"Forest Green",
-  "defaultPaintName3":"Forest Green"
+  "defaultMultiPaintSetup":{
+    "name": "Forest Green",
+    "paint1": "bug_forest_green",
+    "paint2": "bug_forest_green",
+    "paint3": "bug_forest_green"
+  }
 }

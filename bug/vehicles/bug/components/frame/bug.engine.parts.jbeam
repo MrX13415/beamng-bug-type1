@@ -15,7 +15,7 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["fuelcap_anim", "bug_fueltank_cap",  "ft1l","ft1r","ft3r",   {"x":8.575, "y":177.328, "z":-9.340},   {"x":-5, "y":-8, "z":0},    {"x":-0.39, "y":0.48, "z":0.1},        0,     1,        0,  1],
+        ["anim__fuelcap", "bug_fueltank_cap",  "ft1l","ft1r","ft3r",   {"x":8.575, "y":177.328, "z":-9.340},   {"x":-5, "y":-8, "z":0},    {"x":-0.39, "y":0.48, "z":0.1},        0,     1,        0,  1],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -173,8 +173,6 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         ["bug_fueltank",        ["fueltank"]],
-        ["bug_fueltank_cap",    ["fueltank"]],
-        ["bug_fueltank_sensor", ["fueltank"]],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

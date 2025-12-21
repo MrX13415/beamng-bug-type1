@@ -36,6 +36,10 @@
   "Value":8500,
   "Weight":995,
   "Weight/Power":16.31147541,
-  "defaultPaintName1":"Tropical Sea",
-  "defaultPaintName3":"Tropical Sea"
+  "defaultMultiPaintSetup":{
+    "name": "Tropical Sea",
+    "paint1": "bug_tropical_sea",
+    "paint2": "bug_tropical_sea",
+    "paint3": "bug_tropical_sea"
+  }
 }

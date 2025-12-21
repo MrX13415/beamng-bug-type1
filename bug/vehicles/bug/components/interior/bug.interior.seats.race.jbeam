@@ -24,6 +24,7 @@
         {"beamDeform":9000,"beamStrength":"FLT_MAX"},
         {"deformLimitExpansion":""},
         {"optional":true},
+        {"breakGroup":"bug_seat_FL"},
 
         //damper
         {"beamSpring":0,"beamDamp":800},
@@ -32,7 +33,7 @@
 
         //attach
         {"beamSpring":282000,"beamDamp":37.6},
-        {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":6000,"beamStrength":4000},
         ["sf1ll", "f4l"],
         ["sf1ll", "f5l"],
         ["sf1ll", "f4ml"],
@@ -52,6 +53,7 @@
         ["sf2ll", "f5l"],
         ["sf2ll", "f4ml"],
         ["sf2ll", "f5ml"],
+        {"breakGroup":""},
 
         //limiter
         // {"beamType":"|SUPPORT", "beamLongBound":5},
@@ -119,6 +121,7 @@
         {"beamDeform":9000,"beamStrength":"FLT_MAX"},
         {"deformLimitExpansion":""},
         {"optional":true},
+        {"breakGroup":"bug_seat_FR"},
 
         //damper
         {"beamSpring":0,"beamDamp":800},
@@ -127,7 +130,7 @@
 
         //attach
         {"beamSpring":282000,"beamDamp":37.6},
-        {"beamDeform":6000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":6000,"beamStrength":4000},
         ["sf1rr", "f4r"],
         ["sf1rr", "f5r"],
         ["sf1rr", "f4mr"],
@@ -147,6 +150,7 @@
         ["sf2rr", "f5r"],
         ["sf2rr", "f4mr"],
         ["sf2rr", "f5mr"],
+        {"breakGroup":""},
 
         //limiter
         {"beamType":"|SUPPORT", "beamLongBound":5},

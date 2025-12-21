@@ -81,7 +81,7 @@
 "bug_brake_R_5lw_race": {
     "information":{
         "authors":"BeamNG",
-        "name":"Rear Disc Brakes",
+        "name":"Race Rear Disc Brakes",
         "value":200,
     },
     "slotType" : "bug_brake_R_5lw",
@@ -94,8 +94,8 @@
 
         ["bug_brakedisc_5lw",  ["wheel_RL","wheelhub_RL"],                [], {"pos":{"x": 0.460, "y":0, "z":0}, "rot":{"x":   0, "y":0, "z":  0},   "scale":{"x": 1, "y":1, "z":1 }}],
         ["bug_brakedisc_5lw",  ["wheel_RR","wheelhub_RR"],                [], {"pos":{"x":-0.460, "y":0, "z":0}, "rot":{"x":   0, "y":0, "z":180},   "scale":{"x": 1, "y":1, "z":1 }}],
-        ["brake_caliper_standard_plain", ["hub_R","lowermounts_R"],   [], {"pos":{"x": 0.475, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":  0},   "scale":{"x": 0.88, "y":0.88, "z":0.88 }}],
-        ["brake_caliper_standard_plain", ["hub_R","lowermounts_R"],   [], {"pos":{"x":-0.475, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":  0},   "scale":{"x": 0.88, "y":0.88, "z":0.88 }}],
+        ["brake_caliper_standard_red", ["hub_R","lowermounts_R"],   [], {"pos":{"x": 0.475, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":  0},   "scale":{"x": 0.88, "y":0.88, "z":0.88 }}],
+        ["brake_caliper_standard_red", ["hub_R","lowermounts_R"],   [], {"pos":{"x":-0.475, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":  0},   "scale":{"x": 0.88, "y":0.88, "z":0.88 }}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
@@ -173,66 +173,69 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["brake_disc_plain",             ["wheel_RL","wheelhub_RL"],      [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
-        ["brake_disc_plain",             ["wheel_RR","wheelhub_RR"],      [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
-        ["brake_caliper_standard_plain", ["hub_R","lowermounts_R"],       [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
-        ["brake_caliper_standard_plain", ["hub_R","lowermounts_R"],       [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
+        ["brake_disc_plain",             ["wheel_RL","wheelhub_RL"],      [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x":0.63,"y":0.93,"z":0.93 }, "materialOverride":[["disc_brake", "disc_brake_RL"]]}],
+        ["brake_disc_plain",             ["wheel_RR","wheelhub_RR"],      [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x":0.63,"y":0.93,"z":0.93 }, "materialOverride":[["disc_brake", "disc_brake_RR"]]}],
+        ["brake_caliper_standard_plain", ["hub_R","lowermounts_R"],       [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x":0.63,"y":0.85,"z":0.85 }}],
+        ["brake_caliper_standard_plain", ["hub_R","lowermounts_R"],       [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x":0.63,"y":0.85,"z":0.85 }}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
         {"enableABS":false},
-        {"brakeTorque":"$=$brakestrength*700"},
-        {"brakeInputSplit":1},
-        {"brakeSplitCoef":1},
-        {"parkingTorque":750},
-        {"brakeSpring":80},
+        {"brakeTorque":"$=$brakestrength*900"},
+        {"brakeInputSplit":0.6},
+        {"brakeSplitCoef":0.35},
+        {"parkingTorque":1300},
+        {"brakeSpring":125},
 
         //brake thermals
         {"enableBrakeThermals":true},
-        {"brakeDiameter":0.22},
-        {"brakeMass":2.9},
+        {"brakeDiameter":0.26},
+        {"brakeMass":4.4},
         {"brakeType":"disc"},
         {"rotorMaterial":"steel"},
-        {"brakeVentingCoef":0.7},
+        {"brakeVentingCoef":0.8},
         //brake sounds
         {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
     ],
 },
-"bug_brake_R_race": {
+"bug_brake_R_disc_race": {
     "information":{
         "authors":"BeamNG",
-        "name":"Race Rear Aluminum Drum Brakes",
-        "value":400,
+        "name":"Race Rear Disc Brakes",
+        "value":900,
     },
-    "slotType" : "bug_brake_R_alt",
+    "slotType" : "bug_brake_R",
     "slots": [
         ["type", "default", "description"]
         ["brakepad_R","brakepad_R_race", "Rear Brake Pads"{"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        //brake discs
-      // ["bug_brakedrum_RR", ["wheel_RR","wheelhub_RR"], ["bug"]],
-      // ["bug_brakedrum_RL", ["wheel_RL","wheelhub_RL"], ["bug"]],
+
+        ["brake_disc_drilled",             ["wheel_RL","wheelhub_RL"],      [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x":0.64,"y":0.80,"z":0.80}, "materialOverride":[["disc_brake", "disc_brake_RL"]]}],
+        ["brake_disc_drilled",             ["wheel_RR","wheelhub_RR"],      [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x":0.64,"y":0.80,"z":0.80}, "materialOverride":[["disc_brake", "disc_brake_RR"]]}],
+        ["brake_caliper_4pot_red_rotopad", ["hub_R","lowermounts_R"],       [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x":0.65,"y":0.81,"z":0.81}}],
+        ["brake_caliper_4pot_red_rotopad", ["hub_R","lowermounts_R"],       [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x":0.65,"y":0.81,"z":0.81}}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
-        //{"brakeTorque":"$=case($brakebias == nil, $brakestrength*700, $brakestrength*2100*(1-$brakebias))"},
-        {"brakeTorque":"$=$brakebias == nil and $brakestrength*700 or $brakestrength*2100*(1-$brakebias)"},
+        //if no race front brake, use default value
+        //{"brakeTorque":"$=case($brakebias == nil, $brakestrength*1000, $brakestrength*3800*(1-$brakebias))"},
+        {"brakeTorque":"$=$brakebias == nil and $brakestrength*1000 or $brakestrength*3800*(1-$brakebias)"},
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
-        {"parkingTorque":900},
-        {"brakeSpring":80},
+        {"parkingTorque":1700},
+        {"brakeSpring":100},
 
         //brake thermals
         {"enableBrakeThermals":true},
-        {"brakeDiameter":0.24},
-        {"brakeMass":3.1},
+        {"brakeDiameter":0.305},
+        {"brakeMass":7.5},
         {"brakeType":"vented-disc"},
         {"rotorMaterial":"steel"},
-        {"brakeVentingCoef":0.8},
+        {"brakeVentingCoef":1.2},
         //brake sounds
         {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
     ],

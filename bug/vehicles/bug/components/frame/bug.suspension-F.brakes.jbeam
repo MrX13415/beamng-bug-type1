@@ -91,12 +91,10 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        // TODO:
-       // //brake discs
-       // ["bug_brakedisc_FR", ["wheel_FR","hub_F"], ["bug"],{"pos":{"x": 0.610, "y":-1.20559, "z":0.33198}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
-       // ["bug_brakedisc_FL", ["wheel_FL","hub_F"], ["bug"],{"pos":{"x":-0.610, "y":-1.20559, "z":0.33198}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
-       // ["bug_caliper_FR", ["hub_F","tierod_F","upperarm_F","lowerarm_F"],{"pos":{"x":-0.04, "y":0, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
-       // ["bug_caliper_FL", ["hub_F","tierod_F","upperarm_F","lowerarm_F"],{"pos":{"x":-0.04, "y":0, "z":0}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_brakedisc_5lw",  ["wheel_FL","wheelhub_FL"],    [], {"pos":{"x": 0.460, "y":0, "z":0}, "rot":{"x": 0,   "y":0, "z":  0 },   "scale":{"x": 1, "y":1, "z":1 }}],
+        ["bug_brakedisc_5lw",  ["wheel_FR","wheelhub_FR"],    [], {"pos":{"x":-0.460, "y":0, "z":0}, "rot":{"x": 0,   "y":0, "z":180 },   "scale":{"x": 1, "y":1, "z":1 }}],
+        ["brake_caliper_standard_red", ["hub_F"],       [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":  0 },   "scale":{"x": 0.88, "y":0.88, "z":0.88 }}],
+        ["brake_caliper_standard_red", ["hub_F"],       [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":  0 },   "scale":{"x": 0.88, "y":0.88, "z":0.88 }}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -165,7 +163,7 @@
 },
 "bug_brake_F_disc": {
     "information":{
-        "authors":"BeamNG",
+    "authors":"BeamNG",
         "name":"Front Disc Brakes",
         "value":250,
     },
@@ -177,34 +175,33 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        //brake discs
-        ["brake_disc_plain",             ["wheel_FL","wheelhub_FL"],                        [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
-        ["brake_disc_plain",             ["wheel_FR","wheelhub_FR"],                        [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
-        ["brake_caliper_standard_plain", ["hub_F","tierod_F","upperarm_F","lowermounts_F"], [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
-        ["brake_caliper_standard_plain", ["hub_F","tierod_F","upperarm_F","lowermounts_F"], [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
+        ["brake_disc_plain",             ["wheel_FL","wheelhub_FL"],                        [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.63, "y":0.93, "z":0.93}, "materialOverride":[["disc_brake", "disc_brake_FL"]]}],
+        ["brake_disc_plain",             ["wheel_FR","wheelhub_FR"],                        [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.63, "y":0.93, "z":0.93}, "materialOverride":[["disc_brake", "disc_brake_FR"]]}],
+        ["brake_caliper_standard_plain", ["hub_F","tierod_F","upperarm_F","lowermounts_F"], [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.63, "y":0.85, "z":0.85}}],
+        ["brake_caliper_standard_plain", ["hub_F","tierod_F","upperarm_F","lowermounts_F"], [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.63, "y":0.85, "z":0.85}}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
         {"enableABS":false},
-        {"brakeTorque":"$=$brakestrength*1100"},
+        {"brakeTorque":"$=$brakestrength*2000"},
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
         {"parkingTorque":0},
-        {"brakeSpring":80},
+        {"brakeSpring":125},
 
         //brake thermals
         {"enableBrakeThermals":true},
-        {"brakeDiameter":0.22},
-        {"brakeMass":3.3},
-        {"brakeType":"disc"},
+        {"brakeDiameter":0.276},
+        {"brakeMass":7.0},
+        {"brakeType":"vented-disc"},
         {"rotorMaterial":"steel"},
-        {"brakeVentingCoef":0.8},
+        {"brakeVentingCoef":1.0},
         //brake sounds
         {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
     ],
 },
-"bug_brake_F_race": {
+"bug_brake_F_disc_race": {
     "information":{
         "authors":"BeamNG",
         "name":"Race Front Disc Brakes",
@@ -218,32 +215,31 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        //brake discs
-        ["brake_disc_drilled",             ["wheel_FL","wheelhub_FL"],                        [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
-        ["brake_disc_drilled",             ["wheel_FR","wheelhub_FR"],                        [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
-        ["brake_caliper_standard_red", ["hub_F","tierod_F","upperarm_F","lowermounts_F"], [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
-        ["brake_caliper_standard_red", ["hub_F","tierod_F","upperarm_F","lowermounts_F"], [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x": 0.8, "y":0.8, "z":0.8 }}],
+        ["brake_disc_drilled",             ["wheel_FL","wheelhub_FL"],                        [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x":0.64,"y":0.80,"z":0.80}, "materialOverride":[["disc_brake", "disc_brake_FL"]]}],
+        ["brake_disc_drilled",             ["wheel_FR","wheelhub_FR"],                        [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x":0.64,"y":0.80,"z":0.80}, "materialOverride":[["disc_brake", "disc_brake_FR"]]}],
+        ["brake_caliper_6pot_red_rotopad", ["hub_F","tierod_F","upperarm_F","lowermounts_F"], [], {"pos":{"x": 0.480, "y":0, "z":0}, "rot":{"x": 180, "y":180, "z":0 }, "scale":{"x":0.65,"y":0.81,"z":0.81}}],
+        ["brake_caliper_6pot_red_rotopad", ["hub_F","tierod_F","upperarm_F","lowermounts_F"], [], {"pos":{"x":-0.480, "y":0, "z":0}, "rot":{"x": 180, "y":0, "z":0 },   "scale":{"x":0.65,"y":0.81,"z":0.81}}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$brakebias", "range", "", "Brakes", 0.65, 0, 1, "Front/Rear Bias", "Percent of brake torque to the front wheels", {"minDis":0, "maxDis":100}],
+        ["$brakebias", "range", "", "Brakes", 0.7, 0, 1, "Front/Rear Bias", "Percent of brake torque to the front wheels", {"minDis":0, "maxDis":100}],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
-        {"brakeTorque":"$=$brakestrength*2100*$brakebias"},
+        {"brakeTorque":"$=$brakestrength*3800*$brakebias"},
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
         {"parkingTorque":0},
-        {"brakeSpring":80},
-        
+        {"brakeSpring":100},
+
         //brake thermals
         {"enableBrakeThermals":true},
-        {"brakeDiameter":0.255},
-        {"brakeMass":3.5},
+        {"brakeDiameter":0.335},
+        {"brakeMass":9.8},
         {"brakeType":"vented-disc"},
         {"rotorMaterial":"steel"},
-        {"brakeVentingCoef":1.0},
+        {"brakeVentingCoef":1.5},
         //brake sounds
         {"squealCoefNatural": 1.0, "squealCoefLowSpeed": 1.0}
     ],

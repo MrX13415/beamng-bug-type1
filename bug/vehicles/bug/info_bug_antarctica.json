@@ -37,6 +37,10 @@
   "Value":8500,
   "Weight":990,
   "Weight/Power":24.14634146,
-  "defaultPaintName1":"Ruby Red",
-  "defaultPaintName3":"Ruby Red"
+  "defaultMultiPaintSetup":{
+    "name": "Ruby Red",
+    "paint1": "bug_ruby_red",
+    "paint2": "bug_ruby_red",
+    "paint3": "bug_ruby_red"
+  }
 }

@@ -330,6 +330,7 @@ function Radio:initalize(jbeam)
 	NodeSFX = jbeam.nodeSFX or NodeSFX
 	NodeOutput = jbeam.nodeOutput or NodeOutput
 	
+	SFXRadioNoise = jbeam.sfxNoise or SFXRadioNoise
 	SFXPresetUse = jbeam.sfxPresetUse or SFXPresetUse
 	SFXPresetSet = jbeam.sfxPresetSet or SFXPresetSet
 	SFXRadioOn = jbeam.sfxRadioOn or SFXRadioOn

@@ -108,7 +108,7 @@
     "bug_headlight_R":"bug_headlight_R",
     "bug_headlight_addition_L":"bug_headlight_lid_L",
     "bug_headlight_addition_R":"bug_headlight_lid_R",
-    "bug_headliner_ragtop":"bug_headliner_partial__ragtop",
+    "bug_headliner_ragtop":"bug_headliner_partial_ragtop",
     "bug_heatvents":"bug_heatvents",
     "bug_hood":"bug_hood",
     "bug_hood_handle":"hood_handle",

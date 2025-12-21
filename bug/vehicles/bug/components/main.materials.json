@@ -3,7 +3,6 @@
     "name": "bug_chrome",
     "mapTo": "bug_chrome",
     "class": "material",
-    "persistentId": "d9cb434d-992f-4567-8192-51ecadddc3df",
     "Stages": [
       {
         "baseColorFactor": [
@@ -30,7 +29,6 @@
     "name": "bug_metal_black",
     "mapTo": "bug_metal_black",
     "class": "material",
-    "persistentId": "7a323df1-c1d8-497f-b677-ab7d3273ac17",
     "Stages": [
       {
         "baseColorFactor": [
@@ -56,7 +54,6 @@
     "name": "bug_interior_chrome",
     "mapTo": "bug_interior_chrome",
     "class": "material",
-    "persistentId": "ef9f5b4c-a32a-47a1-a190-c10719043a24",
     "Stages": [
       {
         "baseColorFactor": [
@@ -84,7 +81,6 @@
     "name": "bug_mirror",
     "mapTo": "bug_mirror",
     "class": "Material",
-    "persistentId": "bd46f148-b662-462c-93e0-c887e33bda52",
     "Stages": [
       {},
       {},
@@ -96,7 +92,6 @@
     "name": "bug_aluminum",
     "mapTo": "bug_aluminum",
     "class": "Material",
-    "persistentId": "a5335944-4c65-41ad-b876-67d3758c516b",
     "Stages": [
       {
         "baseColorFactor": [
@@ -134,7 +129,6 @@
     "name": "bug_interior_aluminum",
     "mapTo": "bug_interior_aluminum",
     "class": "Material",
-    "persistentId": "28ce1f27-ebdb-4d3b-8a35-aff7b6bfe5c4",
     "Stages": [
       {
         "baseColorFactor": [
@@ -173,7 +167,6 @@
     "name": "bug_plastic_black",
     "mapTo": "bug_plastic_black",
     "class": "Material",
-    "persistentId": "20ec2d7a-6b95-4169-8786-87deab81a317",
     "Stages": [
       {
         "baseColorFactor": [
@@ -195,7 +188,6 @@
     "name": "bug_rubber",
     "mapTo": "bug_rubber",
     "class": "Material",
-    "persistentId": "854a1331-e75a-47b3-994f-be19cd7a9389",
     "Stages": [
       {
         "baseColorFactor": [
@@ -219,7 +211,6 @@
     "name": "bug_rubber_white",
     "mapTo": "bug_rubber_white",
     "class": "Material",
-    "persistentId": "82d5b4df-5481-47d9-af7b-bf0318f70a11",
     "Stages": [
       {},
       {},

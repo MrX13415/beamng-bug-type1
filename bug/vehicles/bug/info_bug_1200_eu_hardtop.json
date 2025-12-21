@@ -35,6 +35,10 @@
   "Value":8500,
   "Weight":985,
   "Weight/Power":24.02439024,
-  "defaultPaintName1":"Solar Yellow",
-  "defaultPaintName3":"Solar Yellow"
+  "defaultMultiPaintSetup":{
+    "name": "Solar Yellow",
+    "paint1": "bug_solar_yellow",
+    "paint2": "bug_solar_yellow",
+    "paint3": "bug_solar_yellow"
+  }
 }

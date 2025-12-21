@@ -37,6 +37,10 @@
   "Value":8500,
   "Weight":1000,
   "Weight/Power":12.65822785,
-  "default_color":"Pearl White",
-  "default_color_3":"Cream White"
+  "defaultMultiPaintSetup":{
+    "name": "Cream White",
+    "paint1": "bug_pearl_white",
+    "paint2": "bug_pearl_white",
+    "paint3": "bug_cream_white"
+  }
 }

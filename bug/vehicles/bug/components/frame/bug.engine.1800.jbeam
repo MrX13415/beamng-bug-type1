@@ -231,7 +231,7 @@
         ["func"      , "mesh"                        , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
 
         // pedal
-        ["throttle", "bug_inputs_pedals_throttle",         "f4mr","f4ml","refup",       {"x":25, "y":0, "z":0}, {"x":20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 	0, 1, 0, 1],
+        ["throttle", "bug_inputs_pedals_throttle",         "f3mr","f3ml","f3tm",       {"x":25, "y":0, "z":0}, {"x":20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 	0, 1, 0, 1],
 
         // engine 
         ["rpmspin",  "bug_engine_alternator_belt_pulley",  "e2r","e2l","e4r",        {"x":0, "y":0, "z":0},  {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,     360, 0,  -1],
@@ -355,16 +355,16 @@
         ["e1l", "f7ml"],
         ["e1l", "f6tml"],
         ["e1l", "f6ml"],
-        ["e5l", "f2r"],
-        ["e5l", "f2l"],
+        ["e5l", "f2r", {"beamStrength":50000,"breakGroup":"frameFloorR"}],
+        ["e5l", "f2l", {"beamStrength":50000,"breakGroup":"frameFloorL"}],
         ["e5l", "f5r"],
         ["e5l", "f5l"],
         ["e1r", "f7tmr"],
         ["e1r", "f7mr"],
         ["e1r", "f6tmr"],
         ["e1r", "f6mr"],
-        ["e5r", "f2l"],
-        ["e5r", "f2r"],
+        ["e5r", "f2l", {"beamStrength":50000,"breakGroup":"frameFloorL"}],
+        ["e5r", "f2r", {"beamStrength":50000,"breakGroup":"frameFloorR"}],
         ["e5r", "f5l"],
         ["e5r", "f5r"],
         {"breakGroup":""},

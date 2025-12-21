@@ -2,7 +2,6 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
--- v1.1
 -- by MrX13415
 
 local M = {}
@@ -26,13 +25,12 @@ local powerParts = {}
 --local powerValues = {}
 --local ignoreIgnition = {}
 
-local function toUnit(value, unit, m)
+local function toUnit(value, unit, m, d)
   local u = ""
-  local d = 0
   m = m or 1
 
   if math.abs(value) ~= 0 then
-    d = 1
+    d = d or 1
     if math.abs(value) < m then
       u = "m"
       value = value * 1000
@@ -53,40 +51,44 @@ local function toUnit(value, unit, m)
     u = u .. unit
   end
 
+  d = d or 0
   return string.format("%."..tostring(d).."f"..u, value)
 end
 local function toTime(value)
-  local u = "min"
+  local u = "minutes"
   local d = 0
   local v = value
 
   if value == 0 then
     d = 0
   elseif value < 1.5 then
-    u = "s"
-    d = 2
+    u = "seconds"
+    d = 0
     value = value * 60
   else
     if value > (3 * 60) then
-      u = "h"
+      u = "hours"
       d = 1
       value = value / 60
 
       if value > 48 then
-        u = "T"
-        d = 2
+        u = "days"
+        d = 1
         value = value / 24
 
         if value > 14 then
-          u = "W"
+          u = "weeks"
+          d = 1
           value = value / 7
 
           if value > 8 then
-            u = "M"
+            u = "months"
+            d = 1
             value = value / 4
 
             if value > 24 then
-              u = "Y"
+              u = "years"
+              d = 1
               value = value / 12
             end
           end
@@ -95,10 +97,10 @@ local function toTime(value)
     end
   end
   
-  if value ~= v then
-    u = string.format(u.." (%.2fmin)", v)
-  end
-  return string.format("%."..tostring(d).."f"..u, value)
+  --if value ~= v then
+  --  u = string.format(u.." (%.2f minutes)", v)
+  --end
+  return string.format("%."..tostring(d).."f "..u, value)
 end
 local function executeLua(cmd)
   local cmd = "local r = "..cmd.."; return r"
@@ -310,7 +312,8 @@ local function onInit()
   electrics.values.checkengine = false
   electrics.values.radio_state = 0
   electrics.values.hazard = 0
-  electrics.values.interiorlight = 0
+  electrics.values.fog = 0
+  electrics.values.interiorlightstate = 0
   electrics.values.underglow = 0
 
   --writeFile("debug/powertrain.mainEngine.json", dump(engine, 0, 2))
@@ -396,6 +399,7 @@ end
 
 local function showBatteryStatus()
   local msg = ""
+  local uimsg = ""
 
   local b = battery
   if not b then
@@ -403,14 +407,18 @@ local function showBatteryStatus()
   elseif b.isBroken() then
     msg = msg .. "(Ruined)"
   else
-    msg = msg .. string.format("%.1f%% ", b.getChargeRatio()*100)
-    msg = msg .. toUnit(b.getCharge()/1000,"",1000).."/"..toUnit(b.getCapcity()/1000,"Ah",1000).." "
+    msg = msg .. string.format("%.0f%% ", b.getChargeRatio()*100)
+    msg = msg .. toUnit(b.getCharge()/1000,"",1000,0).."/"..toUnit(b.getCapcity()/1000,"Ah",1000,0).." "
     msg = msg .. toUnit(b.getVoltage(), "V").."\n"
-    if b.isCharging() then msg = msg .. "Charged: " else msg = msg .. "Remaining: " end
+    if b.isCharging() then msg = msg .. "Recharged in " else msg = msg .. "Discharged in " end
     msg = msg .. toTime(b.getEstimatedTime())
+
+    uimsg = msg
+
+    msg = msg .. "\nPower: "..tostring(toUnit(b.getPowerOutput(), "W"))
   end
 
-  guihooks.message({txt = "Battery: " .. msg, context = {}}, 5, "bug.power.batterystatus")
+  guihooks.message({txt = "Battery: " .. uimsg, context = {}}, 5, "bug.power.batterystatus")
   log("I", "", "[Bug:Battery] " .. msg)
 end
 

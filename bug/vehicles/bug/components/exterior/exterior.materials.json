@@ -3,23 +3,187 @@
     "name": "bug_foglight",
     "mapTo": "bug_foglight",
     "class": "Material",
-    "persistentId": "7463c4ee-f272-4c02-90d7-4e650aae5748",
     "Stages": [
       {
-        "colorMap": "vehicles/bug/components/exterior/textures/foglight.png",
-        "pixelSpecular": true
+        "baseColorMap": "/vehicles/bug/components/exterior/textures/foglight_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/exterior/textures/foglight_m.data.png",
+        "normalMap": "/vehicles/bug/components/exterior/textures/foglight_n.normal.png",
+        "roughnessFactor": 0.1
       },
       {},
       {},
       {}
     ],
-    "translucentBlendOp": "None"
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucentBlendOp": "None",
+    "version": 1.5
   },
+  "bug_foglight_dmg": {
+    "name": "bug_foglight_dmg",
+    "mapTo": "bug_foglight_dmg",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/exterior/textures/foglight_dmg_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/exterior/textures/foglight_m.data.png",
+        "normalMap": "/vehicles/bug/components/exterior/textures/foglight_n.normal.png",
+        "opacityMap": "/vehicles/bug/components/exterior/textures/foglight_dmg_o.data.png",
+        "roughnessFactor": 0.4
+      },
+      {},
+      {},
+      {}
+    ],
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "bug_foglight_glass": {
+    "name": "bug_foglight_glass",
+    "mapTo": "bug_foglight_glass",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/exterior/textures/foglight_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/exterior/textures/foglight_m.data.png",
+        "normalMap": "/vehicles/bug/components/exterior/textures/foglight_n.normal.png",
+        "roughnessFactor": 0.1,
+        "opacityFactor": 0.7
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "bug_foglight_glass_dmg": {
+    "name": "bug_foglight_glass_dmg",
+    "mapTo": "bug_foglight_glass_dmg",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/exterior/textures/foglight_dmg_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/exterior/textures/foglight_m.data.png",
+        "normalMap": "/vehicles/bug/components/exterior/textures/foglight_n.normal.png",
+        "opacityMap": "/vehicles/bug/components/exterior/textures/foglight_dmg_o.data.png",
+        "roughnessFactor": 0.4
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "bug_foglight_light_on": {
+    "name": "bug_foglight_light_on",
+    "mapTo": "bug_foglight_light_on",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/exterior/textures/foglight_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/exterior/textures/foglight_m.data.png",
+        "normalMap": "/vehicles/bug/components/exterior/textures/foglight_n.normal.png",
+        "opacityFactor": 0.7,
+        "roughnessFactor": 0.4,
+        "emissiveFactor": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "emissiveMap": "/vehicles/bug/components/exterior/textures/foglight_e.color.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  }, 
+  "bug_foglight_cover": {
+    "name": "bug_foglight_cover",
+    "mapTo": "bug_foglight_cover",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.135666996,
+          0.135666996,
+          0.146582007,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/common/textures/plastic_d.color.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.7
+      },
+      {
+        "baseColorFactor": [
+          0.667797029,
+          0.66397202,
+          0.66397202,
+          1
+        ],
+        "normalMapUseUV": 1,
+        "opacityMap": "/vehicles/bug/components/exterior/textures/foglight_logo_o.data.png",
+        "opacityMapUseUV": 1,
+        "roughnessFactor": 0.200,
+        "roughnessMapUseUV": 1
+      },
+      {
+        "baseColorFactor": [
+          0.137254998,
+          0.137254998,
+          0.145098001,
+          1
+        ],
+        "opacityFactor": 0.368999988,
+        "opacityMap": "/vehicles/bug/components/common/textures/dirty_o.data.png",
+      },
+      {}
+    ],
+    "activeLayers": 3,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+
+
   "bug_gascap": {
     "name": "bug_gascap",
     "mapTo": "bug_gascap",
     "class": "Material",
-    "persistentId": "168bdc7d-390a-4da7-965f-0bee0fc35aad",
     "Stages": [
       {
         "baseColorFactor": [
@@ -45,7 +209,6 @@
     "name": "bug_monte_carlo_decals",
     "mapTo": "bug_monte_carlo_decals",
     "class": "Material",
-    "persistentId": "58fa0ee2-e7e1-47a5-a979-1aaa6241e164",
     "Stages": [
       {
         "colorMap": "/vehicles/bug/components/exterior/textures/montecarlo_decals.color.png"
@@ -61,7 +224,6 @@
     "name": "bug_tape",
     "mapTo": "bug_tape",
     "class": "Material",
-    "persistentId": "d82a4c04-fef1-4008-89b8-0ddec15b8ce6",
     "Stages": [
       {
         "baseColorFactor": [
@@ -83,7 +245,6 @@
     "name": "bug_rack_wood",
     "mapTo": "bug_rack_wood",
     "class": "material",
-    "persistentId": "ecc757c2-7029-44e3-9943-8e479f4b4ec9",
     "Stages": [
       {
         "baseColorFactor": [
@@ -110,7 +271,6 @@
     "name": "bug_roofrack_crate",
     "mapTo": "bug_roofrack_crate",
     "class": "Material",
-    "persistentId": "a0270827-3938-4665-80c9-2e64900032eb",
     "Stages": [
       {
         "baseColorFactor": [
@@ -138,7 +298,6 @@
     "name": "bug_roofrack_bag",
     "mapTo": "bug_roofrack_bag",
     "class": "Material",
-    "persistentId": "9f37b1d6-138b-46bd-9887-c7189851d0ac",
     "Stages": [
       {},
       {},
@@ -151,7 +310,6 @@
     "name": "bug_rearrack_bag",
     "mapTo": "bug_rearrack_bag",
     "class": "Material",
-    "persistentId": "37cce853-7642-4eb9-a097-a5bf8d2c7232",
     "Stages": [
       {},
       {},
@@ -164,7 +322,6 @@
     "name": "bug_rack_bag_brown",
     "mapTo": "bug_rack_bag_brown",
     "class": "Material",
-    "persistentId": "4d45afbf-1d3f-4ca4-8005-5ae55357a127",
     "Stages": [
       {
         "baseColorFactor": [
@@ -191,7 +348,6 @@
     "name": "bug_rack_bag_black",
     "mapTo": "bug_rack_bag_black",
     "class": "Material",
-    "persistentId": "2c8f0af6-87ce-461f-8212-973fa2b71806",
     "Stages": [
       {
         "baseColorFactor": [
@@ -219,7 +375,6 @@
     "name": "bug_tricycle",
     "mapTo": "bug_tricycle",
     "class": "Material",
-    "persistentId": "a969ff17-17be-49f9-9517-06a1014d6208",
     "Stages": [
       {
         "baseColorFactor": [
@@ -246,7 +401,6 @@
     "name": "bug_surfboard",
     "mapTo": "bug_surfboard",
     "class": "Material",
-    "persistentId": "ed36a1be-a46a-4c04-ae75-d47998fb20a4",
     "Stages": [
       {
         "baseColorFactor": [
@@ -271,7 +425,6 @@
     "name": "bug_coolingbox",
     "mapTo": "bug_coolingbox",
     "class": "Material",
-    "persistentId": "0060fb48-e1b4-47b0-821d-206489b50565",
     "Stages": [
       {
         "baseColorFactor": [
@@ -298,7 +451,6 @@
     "name": "bug_jerrycan",
     "mapTo": "bug_jerrycan",
     "class": "Material",
-    "persistentId": "4781a707-accc-4dc3-a381-973530ca15fb",
     "Stages": [
       {
         "baseColorFactor": [
@@ -326,7 +478,6 @@
     "name": "bug_jerrycan_paint2",
     "mapTo": "bug_jerrycan_paint2",
     "class": "Material",
-    "persistentId": "9e7b298e-6b41-4e6e-bf0e-434c06501ebb",
     "Stages": [
       {
         "baseColorFactor": [
@@ -354,7 +505,6 @@
     "name": "bug_jerrycan_paint3",
     "mapTo": "bug_jerrycan_paint3",
     "class": "Material",
-    "persistentId": "ad1086d5-cbda-439d-a66a-64aefb651f16",
     "Stages": [
       {
         "baseColorFactor": [
@@ -382,7 +532,6 @@
     "name": "bug_jerrycan_red",
     "mapTo": "bug_jerrycan_red",
     "class": "Material",
-    "persistentId": "831090c6-231a-41d4-9c47-7754d2f6f0b6",
     "Stages": [
       {
         "baseColorFactor": [
@@ -415,7 +564,6 @@
     "name": "bug_jerrycan_green",
     "mapTo": "bug_jerrycan_green",
     "class": "Material",
-    "persistentId": "b7b6137f-42e1-4a79-88e2-b45be625f09c",
     "Stages": [
       {
         "baseColorFactor": [
@@ -448,7 +596,6 @@
     "name": "bug_jerrycan_blue",
     "mapTo": "bug_jerrycan_blue",
     "class": "Material",
-    "persistentId": "bda62fa5-ab91-447e-b661-5f1b235b44c4",
     "Stages": [
       {
         "baseColorFactor": [
@@ -482,7 +629,6 @@
     "name": "bug_spoilerR",
     "mapTo": "bug_spoilerR",
     "class": "material",
-    "persistentId": "a8969821-2ecc-42a2-8319-5ffbc3f327f4",
     "Stages": [
       {},
       {},
@@ -495,7 +641,6 @@
     "name": "bug_spoilerR.skin_spoilerR.black",
     "mapTo": "bug_spoilerR.skin_spoilerR.black",
     "class": "Material",
-    "persistentId": "b4fe4a0e-9063-4f4f-ae22-26425d6a5f6d",
     "Stages": [
       {
         "baseColorFactor": [
@@ -517,7 +662,6 @@
     "name": "bug_spoilerR.skin_spoilerR.white",
     "mapTo": "bug_spoilerR.skin_spoilerR.white",
     "class": "Material",
-    "persistentId": "5b810b72-45d4-4fbe-8c06-5ac802a64b25",
     "Stages": [
       {
         "baseColorFactor": [
@@ -539,7 +683,6 @@
     "name": "bug_spoilerR.skin_spoilerR.white2",
     "mapTo": "bug_spoilerR.skin_spoilerR.white2",
     "class": "Material",
-    "persistentId": "4ed53c0e-a41e-4c27-a2ec-a987deae627d",
     "Stages": [
       {
         "baseColorFactor": [
@@ -561,7 +704,6 @@
     "name": "bug_spoilerR.skin_spoilerR.paint1",
     "mapTo": "bug_spoilerR.skin_spoilerR.paint1",
     "class": "Material",
-    "persistentId": "e1c5120b-fdaa-4793-9706-a8d58e87042f",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -595,7 +737,6 @@
     "name": "bug_spoilerR.skin_spoilerR.paint2",
     "mapTo": "bug_spoilerR.skin_spoilerR.paint2",
     "class": "Material",
-    "persistentId": "e1c5120b-fdaa-4793-9706-a8d58e87042f",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -629,7 +770,6 @@
     "name": "bug_spoilerR.skin_spoilerR.paint3",
     "mapTo": "bug_spoilerR.skin_spoilerR.paint3",
     "class": "Material",
-    "persistentId": "8aeff271-1282-4181-9e51-3afa42e2195e",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -664,7 +804,6 @@
     "name": "bug_spoilerF",
     "mapTo": "bug_spoilerF",
     "class": "material",
-    "persistentId": "7fdd54d5-795a-4b16-a55f-2a9e4445ead3",
     "Stages": [
       {},
       {},
@@ -677,7 +816,6 @@
     "name": "bug_spoilerF.skin_spoilerF.black",
     "mapTo": "bug_spoilerF.skin_spoilerF.black",
     "class": "Material",
-    "persistentId": "69c6d48e-7f65-466a-9260-da781f6ca95a",
     "Stages": [
       {
         "baseColorFactor": [
@@ -699,7 +837,6 @@
     "name": "bug_spoilerF.skin_spoilerF.white",
     "mapTo": "bug_spoilerF.skin_spoilerF.white",
     "class": "Material",
-    "persistentId": "aeb322ca-9f46-4956-8559-18b891c19238",
     "Stages": [
       {
         "baseColorFactor": [
@@ -721,7 +858,6 @@
     "name": "bug_spoilerF.skin_spoilerF.white2",
     "mapTo": "bug_spoilerF.skin_spoilerF.white2",
     "class": "Material",
-    "persistentId": "badb510c-5885-4bb5-90ee-6135c9655698",
     "Stages": [
       {
         "baseColorFactor": [
@@ -743,7 +879,6 @@
     "name": "bug_spoilerF.skin_spoilerF.paint1",
     "mapTo": "bug_spoilerF.skin_spoilerF.paint1",
     "class": "Material",
-    "persistentId": "74a27254-7195-49a4-a353-d84d0554ed5d",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -777,7 +912,6 @@
     "name": "bug_spoilerF.skin_spoilerF.paint2",
     "mapTo": "bug_spoilerF.skin_spoilerF.paint2",
     "class": "Material",
-    "persistentId": "cd97ddc6-50d2-4df2-9965-cc53906cf574",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
@@ -811,7 +945,6 @@
     "name": "bug_spoilerF.skin_spoilerF.paint3",
     "mapTo": "bug_spoilerF.skin_spoilerF.paint3",
     "class": "Material",
-    "persistentId": "8aeff271-1282-4181-9e51-3afa42e2195e",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",

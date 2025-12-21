@@ -9,17 +9,13 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_body_window_F",      ["bug_body","bug_windshield"]],
+        ["bug_body_window_F",      ["bug_windshield"]],
 
         {"deformGroup":"windshield_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"bug_window_glass_dmg"},
-        ["bug_body_window_F_glass",   ["bug_body", "bug_roof"]],
+        ["bug_body_window_F_glass",   ["bug_windshield"]],
         {"deformGroup":"windshield_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound9", "deformVolume":0.8, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
-        ["bug_body_window_F_glass_dmg",  ["bug_body", "bug_roof"]],
+        ["bug_body_window_F_glass_dmg",  ["bug_windshield"]],
         {"deformGroup":""},
-
-        // exterior : details : fixtures
-    //    ["bug_wiper_L", ["bug_body","bug_windshield", "bug_roof"]],   // Converted to props
-    //    ["bug_wiper_R", ["bug_body","bug_windshield", "bug_roof"]],   // Converted to props
     ],
     "sounds": {
         "$+cabinFilterCoef": 0.1
@@ -102,12 +98,12 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_body_window_R", ["bug_body", "bug_roof"]],
+        ["bug_body_window_R", ["bug_window_rear"]],
         
         {"deformGroup":"rearwindow_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"bug_window_glass_dmg"},
-        ["bug_body_window_R_glass", ["bug_body", "bug_roof"]],
+        ["bug_body_window_R_glass", ["bug_window_rear"]],
         {"deformGroup":"rearwindow_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound8", "deformVolume":0.5, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
-        ["bug_body_window_R_glass_dmg", ["bug_body", "bug_roof"]],
+        ["bug_body_window_R_glass_dmg", ["bug_window_rear"]],
         {"deformGroup":""},
     ],
     "sounds": {
@@ -198,19 +194,19 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_body_window_RL", ["bug_body", "bug_roof"]],
-        ["bug_body_window_RR", ["bug_body", "bug_roof"]],
+        ["bug_body_window_RL", ["bug_body_sides"]],
+        ["bug_body_window_RR", ["bug_body_sides"]],
 
         {"deformGroup":"sidewindow_RL_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"bug_window_glass_dmg"},
-        ["bug_body_window_RL_glass", ["bug_body", "bug_roof"]],
+        ["bug_body_window_RL_glass", ["bug_body_sides"]],
         {"deformGroup":"sidewindow_RL_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound4", "deformVolume":0.6, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
-        ["bug_body_window_RL_glass_dmg", ["bug_body", "bug_roof"]],
+        ["bug_body_window_RL_glass_dmg", ["bug_body_sides"]],
         {"deformGroup":""},
 
         {"deformGroup":"sidewindow_RR_break", "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"bug_window_glass_dmg"},
-        ["bug_body_window_RR_glass", ["bug_body", "bug_roof"]],
+        ["bug_body_window_RR_glass", ["bug_body_sides"]],
         {"deformGroup":"sidewindow_RR_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound4", "deformVolume":0.6, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
-        ["bug_body_window_RR_glass_dmg", ["bug_body", "bug_roof"]],
+        ["bug_body_window_RR_glass_dmg", ["bug_body_sides"]],
         {"deformGroup":""}
     ],
     "sounds": {
@@ -283,7 +279,7 @@
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$windowFRInitState", "range", "", "Body", 0, 0, 1.0, "Window Open Right", "Inital open position of the right window.", {"minDis":0, "maxDis":100}],
+        ["$windowFRInitState", "range", "", "Interior", 0, 0, 1.0, "Window Open Right", "Inital open position of the right window.", {"subCategory":"Windows", "minDis":0, "maxDis":100}],
 	],
     "sounds": {
         "$+cabinFilterCoef": 0.04
@@ -401,7 +397,7 @@
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$windowFLInitState", "range", "", "Body", 0, 0, 1.0, "Window Open Left", "Inital open position of the left window.", {"minDis":0, "maxDis":100}],
+        ["$windowFLInitState", "range", "", "Interior", 0, 0, 1.0, "Window Open Left", "Inital open position of the left window.", {"subCategory":"Windows", "minDis":0, "maxDis":100}],
 	],
     "sounds": {
         "$+cabinFilterCoef": 0.04
@@ -519,7 +515,7 @@
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$doorventFRInitState", "range", "", "Body", 0, 0, 1.0, "Vent Window Open Right", "Inital open position of the right vent window.", {"minDis":0, "maxDis":100}],
+        ["$doorventFRInitState", "range", "", "Interior", 0, 0, 1.0, "Vent Window Open Right", "Inital open position of the right vent window.", {"subCategory":"Windows", "minDis":0, "maxDis":100}],
     ],
     "sounds": {
         "$+cabinFilterCoef": 0.02
@@ -534,6 +530,10 @@
         {"deformGroup":"ventglass_FR_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3","deformVolume":0.7, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
         ["bug_door_vent_R_glass_dmg",  ["doorventglass_FR"]],
         {"deformGroup":""},
+    ],
+    "props": [
+        ["func",                "mesh",                   "idRef:", "idX:", "idY:", "baseRotation",                 "rotation",              "translation",          "min", "max", "offset", "multiplier"],
+        ["anim__vent_R_handle", "bug_door_vent_R_handle", "dv2fr","dv3fr","dv1fr",       {"x":-90, "y":-100 , "z":0}, {"x":0, "y":0, "z":75}, {"x":0, "y":0, "z":0},   0,     1,     0,        1],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -648,7 +648,7 @@
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$doorventFLInitState", "range", "", "Body", 0, 0, 1.0, "Vent Window Open Left", "Inital open position of the left vent window.", {"minDis":0, "maxDis":100}],
+        ["$doorventFLInitState", "range", "", "Interior", 0, 0, 1.0, "Vent Window Open Left", "Inital open position of the left vent window.", {"subCategory":"Windows", "minDis":0, "maxDis":100}],
 	],
     "sounds": {
         "$+cabinFilterCoef": 0.02
@@ -663,6 +663,10 @@
         {"deformGroup":"ventglass_FL_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound3","deformVolume":0.7, "deformMaterialBase":"glass_invisible", "deformMaterialDamaged":"glass_cracks"},
         ["bug_door_vent_L_glass_dmg",  ["doorventglass_FL"]],
         {"deformGroup":""},
+    ],
+    "props": [
+        ["func",                "mesh",                   "idRef:", "idX:", "idY:", "baseRotation",                 "rotation",              "translation",          "min", "max", "offset", "multiplier"],
+        ["anim__vent_L_handle", "bug_door_vent_L_handle", "dv2fl","dv3fl","dv1fl",       {"x":90, "y":80 , "z":0}, {"x":0, "y":0, "z":-75}, {"x":0, "y":0, "z":0},   0,     1,     0,        1],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],

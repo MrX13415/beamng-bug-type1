@@ -1,7 +1,7 @@
 {
 
 // ---- 14 x 6
-"bug_tire_goodyear_14x6_F": {
+"bug_tire_gy_14x6_F": {
 
     "information":{
         "authors":"Vertex Style",
@@ -11,8 +11,8 @@
     "slotType" : "tire_F_14x6",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_14x6_goodyear", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_14x6_goodyear", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_14x6_gy", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_14x6_gy", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -76,7 +76,7 @@
         {"wheelPeripheryBeamDeform":45000,"wheelPeripheryBeamStrength":45000},
     ],
 },
-"bug_tire_goodyear_14x6_F_grip": {
+"bug_tire_gy_14x6_F_grip": {
 
     "information":{
         "authors":"Vertex Style",
@@ -86,8 +86,8 @@
     "slotType" : "tire_F_14x6",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_14x6_goodyear", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_14x6_goodyear", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_14x6_gy", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_14x6_gy", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -153,7 +153,7 @@
 },
 
 // ---- 15 x 4
-"bug_tire_goodyear_15x4_F": {
+"bug_tire_gy_15x4_F": {
 
     "information":{
         "authors":"Vertex Style",
@@ -163,8 +163,8 @@
     "slotType" : "tire_F_15x4",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x4_goodyear", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x4_goodyear", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x4_gy", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x4_gy", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -228,7 +228,7 @@
         {"wheelPeripheryBeamDeform":45000,"wheelPeripheryBeamStrength":45000},
     ],
 },
-"bug_tire_goodyear_15x4_F_grip": {
+"bug_tire_gy_15x4_F_grip": {
 
     "information":{
         "authors":"Vertex Style",
@@ -238,8 +238,8 @@
     "slotType" : "tire_F_15x4",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x4_goodyear", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x4_goodyear", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x4_gy", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x4_gy", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -305,7 +305,7 @@
 },
 
 // ---- 15 x 6
-"bug_tire_goodyear_15x6_F": {
+"bug_tire_gy_15x6_F": {
 
     "information":{
         "authors":"Vertex Style",
@@ -315,8 +315,8 @@
     "slotType" : "tire_F_15x6",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x6_goodyear", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x6_goodyear", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x6_gy", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x6_gy", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -380,7 +380,7 @@
         {"wheelPeripheryBeamDeform":45000,"wheelPeripheryBeamStrength":45000},
     ],
 },
-"bug_tire_goodyear_15x6_F_grip": {
+"bug_tire_gy_15x6_F_grip": {
 
     "information":{
         "authors":"Vertex Style",
@@ -390,8 +390,8 @@
     "slotType" : "tire_F_15x6",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x6_goodyear", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x6_goodyear", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x6_gy", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x6_gy", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -457,7 +457,7 @@
 },
 
 // ---- 15 x 7
-"bug_tire_goodyear_15x7_F": {
+"bug_tire_gy_15x7_F": {
 
     "information":{
         "authors":"Vertex Style",
@@ -467,8 +467,8 @@
     "slotType" : "tire_F_15x7",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x7_goodyear", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x7_goodyear", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x7_gy", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x7_gy", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -532,7 +532,7 @@
         {"wheelPeripheryBeamDeform":45000,"wheelPeripheryBeamStrength":45000},
     ],
 },
-"bug_tire_goodyear_15x7_F_grip": {
+"bug_tire_gy_15x7_F_grip": {
 
     "information":{
         "authors":"Vertex Style",
@@ -542,8 +542,8 @@
     "slotType" : "tire_F_15x7",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x7_goodyear", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x7_goodyear", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x7_gy", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x7_gy", ["wheel_FL","tire_FL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

@@ -2,119 +2,102 @@
   "SFX_bug_backfire1": {
     "name": "SFX_bug_backfire1",
     "class": "SFXProfile",
-    "persistentId": "ad1b043d-f958-4301-ab32-f7400e6c23bc",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/powertrain/hrb/backfire1.ogg"
   },
   "SFX_bug_backfire2": {
     "name": "SFX_bug_backfire2",
     "class": "SFXProfile",
-    "persistentId": "d9cfb9cc-d3b9-4517-b237-e368237f7238",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/powertrain/hrb/backfire2.ogg"
   },
   "SFX_bug_backfire3": {
     "name": "SFX_bug_backfire3",
     "class": "SFXProfile",
-    "persistentId": "6629c320-a15e-4841-a595-f3c50bb37014",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/powertrain/hrb/backfire3.ogg"
   },
   "SFX_bug_backfire4": {
     "name": "SFX_bug_backfire4",
     "class": "SFXProfile",
-    "persistentId": "ddc071f2-3199-4e11-9148-109a70b6a3f0",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/powertrain/hrb/backfire4.ogg"
   },
   "SFX_bug_backfire5": {
     "name": "SFX_bug_backfire5",
     "class": "SFXProfile",
-    "persistentId": "04e32439-f55b-4836-8105-c56edc27226b",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/powertrain/hrb/backfire5.ogg"
   },
   "SFX_bug_backfire6": {
     "name": "SFX_bug_backfire6",
     "class": "SFXProfile",
-    "persistentId": "ac851cfd-7ea0-475b-8a0a-20433dd8a403",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/powertrain/hrb/backfire6.ogg"
   },
   "SFX_bug_backfire7": {
     "name": "SFX_bug_backfire7",
     "class": "SFXProfile",
-    "persistentId": "c7936eaa-ee0a-4799-a100-1f267f81def9",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/powertrain/hrb/backfire7.ogg"
   },
   "SFX_bug_backfire_background": {
     "name": "SFX_bug_backfire_background",
     "class": "SFXProfile",
-    "persistentId": "90c54d42-2ffe-4357-83d5-cafbd77c6849",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/powertrain/hrb/backfire_background.ogg"
   },
   "SFX_bug_backfire_sub": {
     "name": "SFX_bug_backfire_sub",
     "class": "SFXProfile",
-    "persistentId": "69c7b2da-de1a-4c22-8a95-ebadfd7ee161",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/powertrain/hrb/backfire_sub.ogg"
   },
   "SFX_bug_requesting1": {
     "name": "SFX_bug_requesting1",
     "class": "SFXProfile",
-    "persistentId": "a440d32d-9d30-4279-bc39-60708b02683a",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/horn/hrb/requesting1.ogg"
   },
   "SFX_bug_requesting2": {
     "name": "SFX_bug_requesting2",
     "class": "SFXProfile",
-    "persistentId": "f646ca90-e26f-4253-8bc4-4d923765cfb2",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/horn/hrb/requesting2.ogg"
   },
   "SFX_bug_sadhorn1": {
     "name": "SFX_bug_sadhorn1",
     "class": "SFXProfile",
-    "persistentId": "3e0561c3-2d90-4058-b44b-51951f29d789",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/horn/hrb/sad1.ogg"
   },
   "SFX_bug_sadhorn2": {
     "name": "SFX_bug_sadhorn2",
     "class": "SFXProfile",
-    "persistentId": "c45f2dfe-51f5-432f-938d-ca9262c61dbb",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/horn/hrb/sad2.ogg"
   },
   "SFX_bug_glovebox_close": {
     "name": "SFX_bug_glovebox_close",
     "class": "SFXProfile",
-    "persistentId": "a23678c5-5475-4b1b-bc53-40327c827d24",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/common/glovebox-close.ogg"
   },
   "SFX_bug_glovebox_open": {
     "name": "SFX_bug_glovebox_open",
     "class": "SFXProfile",
-    "persistentId": "f1c34318-5b21-4f73-b912-61b1b8105504",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/common/glovebox-open.ogg"
   },
   "SFX_bug_gascap_close": {
     "name": "SFX_bug_gascap_close",
     "class": "SFXProfile",
-    "persistentId": "8bcbf441-5731-4791-8b78-02590624f571",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/common/gascap-close.ogg"
   },
   "SFX_bug_gascap_open": {
     "name": "SFX_bug_gascap_open",
     "class": "SFXProfile",
-    "persistentId": "fde87ac0-43bb-4a33-974c-ebe2beb4c463",
     "description": "AudioDefault3D",
     "fileName": "vehicles/bug/components/sounds/common/gascap-open.ogg"
   }

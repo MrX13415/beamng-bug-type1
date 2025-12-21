@@ -40,8 +40,6 @@
   "Value":8500,
   "Weight":1005,
   "Weight/Power":7.282608696,
-  "defaultPaintName1":"Khaki (matte)",
-  "defaultPaintName2":"Charcoal (matte)",
-  "defaultPaintName3":"Khaki (matte)",
-  "drivetrain":"RWD"
+  "drivetrain":"RWD",
+  "defaultMultiPaintSetup":"bug_matte_khaki_colors"
 }

@@ -30,7 +30,7 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["hood_int",     "dshl","dsh","dsh2", "sphere", 0.014, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.099, "y":0.158, "z":-0.12},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["hood_int",     "dshl","dsh","dsh2", "sphere", 0.014, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.094, "y":0.154, "z":-0.12},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         ["ashtray",      "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.0, "y":-0.029, "z":-0.044},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         
         ["headlights",   "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.069, "y":-0.1745, "z":-0.048},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
@@ -63,17 +63,16 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
-        ["bug_dashboard_cables", ["bug_dashboard"]],
+        ["bug_dashboard_cables", ["bug_body_front", "bug_dashboard"]],
 
-        // old: ["bug_dashboard_ashtray",     ["bug_body", "bug_dashboard"]],  // Converted to prop
-        ["bug_dashboard_ashtray_box",     ["bug_body", "bug_dashboard"]],        
+        ["bug_dashboard_ashtray_box",     ["bug_dashboard"]],        
 
-        ["bug_controls_dashboard_knobs",  ["bug_body", "bug_dashboard"]],
-        ["bug_controls_hood_release",     ["bug_body", "bug_dashboard"]],
+        ["bug_controls_dashboard_knobs",  ["bug_dashboard"]],
+        ["bug_controls_hood_release",     ["bug_body_front"]],
 
-        ["bug_controls_heating_valve",    ["bug_frame", "bug_body"]],
-        ["bug_controls_shifter_M_mount",  ["bug_frame", "bug_body"]],
-        ["bug_controls_handbreak_case",   ["bug_frame", "bug_body"]],
+        ["bug_controls_heating_valve",    ["bug_frame"]],
+        ["bug_controls_shifter_M_mount",  ["bug_frame"]],
+        ["bug_controls_handbreak_case",   ["bug_frame"]],
     ],
     "glowMap":{
         // dashboard gauges
@@ -96,13 +95,15 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["ashtray_anim", "bug_dashboard_ashtray_prop",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.075},        0,     1,        0,  1],
+        ["anim__hood_release", "bug_controls_hood_release_knob",  "dsh","dshl","bd1",   {"x":104, "y":10, "z":0},   {"x":0, "y":0, "z":0},    {"x":-0.00195, "y":0.0237, "z":0.0225},        0,     1,        0,  1],
+        
+        ["anim__ashtraystate", "bug_dashboard_ashtray_prop",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.075},        0,     1,        0,  1],
 
-        ["lights_state", "bug_controls_dashboard_light_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
-        ["wipersstate", "bug_controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
+        ["anim__lights_state", "bug_controls_dashboard_light_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
+        ["anim__wipersstate", "bug_controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
 
-        ["turnsignal",   "bug_indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
-        ["parkingbrake_anim", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["anim__turnsignal",   "bug_indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["anim__parkingbrake", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -270,7 +271,7 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["hood_int",     "dshl","dsh","dsh2", "sphere", 0.014, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.099, "y":0.158, "z":-0.12},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["hood_int",     "dshl","dsh","dsh2", "sphere", 0.014, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.094, "y":0.154, "z":-0.12},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         
         ["headlights",   "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.069, "y":-0.1745, "z":-0.048},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         ["wipers",       "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.069, "y":-0.1745, "z":-0.048},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
@@ -299,14 +300,13 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 	
         ["bug_body_interior_dashboard_covers", ["bug_dashboard"]],
-        ["bug_dashboard_cables",               ["bug_dashboard"]],
-        ["bug_fueltank_sensor",                ["fueltank"]],
+        ["bug_dashboard_cables",               ["bug_body_front", "bug_dashboard"]],
 
-        ["bug_controls_dashboard_knobs",  ["bug_body", "bug_dashboard"]],
-        ["bug_controls_hood_release",     ["bug_body", "bug_dashboard"]],
+        ["bug_controls_dashboard_knobs",  ["bug_dashboard"]],
+        ["bug_controls_hood_release",     ["bug_body_front"]],
 
-        ["bug_controls_shifter_M_mount",  ["bug_frame", "bug_body"]],
-        ["bug_controls_handbreak_case",   ["bug_frame", "bug_body"]],
+        ["bug_controls_shifter_M_mount",  ["bug_frame"]],
+        ["bug_controls_handbreak_case",   ["bug_frame"]],
     ],
     "glowMap":{
         // dashboard gauges
@@ -328,11 +328,13 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
 
-        ["lights_state", "bug_controls_dashboard_light_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
-        ["wipersstate", "bug_controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
+        ["anim__hood_release", "bug_controls_hood_release_knob",  "dsh","dshl","bd1",   {"x":104, "y":10, "z":0},   {"x":0, "y":0, "z":0},    {"x":-0.00195, "y":0.0237, "z":0.0225},        0,     1,        0,  1],
 
-        ["turnsignal",   "bug_indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
-        ["parkingbrake_anim", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["anim__lights_state", "bug_controls_dashboard_light_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,    2,        0,  1],
+        ["anim__wipersstate", "bug_controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
+
+        ["anim__turnsignal",   "bug_indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["anim__parkingbrake", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -1228,8 +1230,11 @@
     "slotType" : ["bug_console_switchboad_btn0","bug_console_switchboad_btn1","bug_console_switchboad_btn2","bug_console_switchboad_btn3"],
     "props": [
         ["func",   "mesh",   "idRef:", "idX:", "idY:",   "baseRotation",   "rotation",   "translation",   "min", "max", "offset", "multiplier"],
-        ["lightbar",   "bug_switchboard_beacon",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}}],
+        ["anim__lightbar",   "bug_switchboard_beacon",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}}],
     ],
+    "glowMap":{
+        "bug_switchboard_btn_beacon": {"simpleFunction":"power__lightbarLED", "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":0.3}},
+    },
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
 
@@ -1255,8 +1260,11 @@
     "slotType" : ["bug_console_switchboad_btn0","bug_console_switchboad_btn1","bug_console_switchboad_btn2","bug_console_switchboad_btn3"],
     "props": [
         ["func",   "mesh",   "idRef:", "idX:", "idY:",   "baseRotation",   "rotation",   "translation",   "min", "max", "offset", "multiplier"],
-        ["lightbar",   "bug_switchboard_siren",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   1, 2, -1, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
+        ["anim__lightbar",   "bug_switchboard_siren",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   1, 2, -1, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
     ],
+    "glowMap":{
+        "bug_switchboard_btn_siren": {"advancedFunction": {"triggers": ["power__lightbarLED"],"cmd": "power__lightbarLED == 2 and 1 or 0"}, "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":0.3}},
+    },
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
 
@@ -1282,8 +1290,11 @@
     "slotType" : ["bug_console_switchboad_btn0","bug_console_switchboad_btn1","bug_console_switchboad_btn2","bug_console_switchboad_btn3"],
     "props": [
         ["func",   "mesh",   "idRef:", "idX:", "idY:",   "baseRotation",   "rotation",   "translation",   "min", "max", "offset", "multiplier"],
-        ["underglow",   "bug_switchboard_underglow",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
+        ["anim__underglow",   "bug_switchboard_underglow",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
     ],
+    "glowMap":{
+        "bug_switchboard_btn_underglow": {"simpleFunction":"power__underglowLED", "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":0.3}},
+    },
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
 
@@ -1309,12 +1320,15 @@
     "slotType" : ["bug_console_switchboad_btn0","bug_console_switchboad_btn1","bug_console_switchboad_btn2","bug_console_switchboad_btn3"],
     "props": [
         ["func",   "mesh",   "idRef:", "idX:", "idY:",   "baseRotation",   "rotation",   "translation",   "min", "max", "offset", "multiplier"],
-        ["extlight",   "bug_switchboard_extlight",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
+        ["anim__extlight",   "bug_switchboard_extlight",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
     ],
+    "glowMap":{
+        "bug_switchboard_btn_extlight": {"simpleFunction":"extlight", "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":0.3}},
+    },
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
 
-       // ["switchboardBtnExtlight",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0085-$posY", "z":"$=-0.011-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["switchboardBtnExtlight",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0085-$posY", "z":"$=-0.011-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
         //["switchboardB2b",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0260-$posY", "z":"$=-0.019-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
     "actionsEnabled": [
@@ -1327,7 +1341,35 @@
         ["switchboardBtnExtlight", "action0", "switchboardBtnToggle_Extlight"],
     ],
 },
+"bug_console_switchboad_btn_nitrousoxide": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Nitrous Oxide Button",
+        "value":8,
+    },
+    "slotType" : ["bug_console_switchboad_btn0","bug_console_switchboad_btn1","bug_console_switchboad_btn2","bug_console_switchboad_btn3"],
+    "props": [
+        ["func",   "mesh",   "idRef:", "idX:", "idY:",   "baseRotation",   "rotation",   "translation",   "min", "max", "offset", "multiplier"],
+        ["nitrousOxideArm",   "bug_switchboard_nitrousoxide",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
+    ],
+    "glowMap":{
+        "bug_switchboard_btn_nitrousoxide": {"simpleFunction":"power__nitrousOxideArm", "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":0.3}},
+    },
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
 
+        ["switchboardBtnNitrousOxide",  "dsh","dshl","dsh2", "sphere", 0.006, {"x":24.4315, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":"$posX", "y":"$=0.0085-$posY", "z":"$=-0.011-$posZ"},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["switchboardBtnToggle_NitrousOxide"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"], 
+
+        ["switchboardBtnNitrousOxide", "action0", "switchboardBtnToggle_NitrousOxide"],
+    ],
+},
 
 // --. fuel
 "bug_fuelgauge": {
@@ -1399,9 +1441,9 @@
         //     offset = d / rotation-y
         //        max = a / rotation-y
         //
-        //    270 / (140 / 2.23694) = 6.71082
-        //    135 / 6.94286 = 20.11677
-        //    270 / 6.94286 = 40.23353
+        //    270 / (90 / 2.23694) = 6.71082
+        //    135 / 6.71082 = 20.11677
+        //    270 / 6.71082 = 40.23353
         //
         ["wheelspeed",   "bug_needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-6.71082, "z":0},   {"x":0, "y":0, "z":0},   0, 40.23353, -20.11677, 1],
     ],
@@ -1448,6 +1490,50 @@
         //    270 / 4.026492 = 67.05589
         //
         ["wheelspeed",   "bug_needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-4.026492, "z":0},   {"x":0, "y":0, "z":0},   0, 67.05589, -33.52794, 1],
+    ],
+},
+"bug_speedo_mph_200": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Imperial Speedometer (200 mph)",
+        "value":30,
+    },
+    "electricPower":[
+        ["power"],
+        [4, {"trigger": "electrics.values.lowhighbeam"}],
+    ],
+    "slotType" : "skin_speedometer",
+    "skinName" : "mph200",
+    "slots": [
+        ["type", "default", "description"],
+
+        ["bug_odometer", "bug_odometer_imperial", "Odometer", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["bug_dashboard_gauge_speedo", ["bug_dashboard"]],
+        {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
+        ["bug_dashboard_gauge_speedo_glass", ["bug_dashboard"]],
+        {"deformGroup":""},
+    ],
+    "props": [
+        ["func",   "mesh",   "idRef:", "idX:", "idY:",   "baseRotation",   "rotation",   "translation",   "min", "max", "offset", "multiplier"],
+
+        // a = angle range of the needle. (all angles in deg)
+        // m = speed in km/h or mph on the max angle of the needle.
+        // d = angle between target zero pos. and the "default" pos of the mesh.
+        // x = 3.6 for km/h and 2.23694 for mph
+        //
+        // rotation-y = a / (m / x)
+        //     offset = d / rotation-y
+        //        max = a / rotation-y
+        //
+        //    270 / (200 / 2.23694) = 3.019869
+        //    135 / 3.019869 = 44.70393
+        //    270 / 3.019869 = 89.40785
+        //
+        ["wheelspeed",   "bug_needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-3.019869, "z":0},   {"x":0, "y":0, "z":0},   0, 89.40785, -44.70393, 1],
     ],
 },
 "bug_speedo_km_140": {
@@ -1532,13 +1618,56 @@
         //        max = a / rotation-y
         //
         //    270 / (240 / 3.6) = 4.05
-        //    135 / 4.86 = 33.33333
-        //    270 / 4.86 = 66.66666
+        //    135 / 4.05 = 33.33333
+        //    270 / 4.05 = 66.66666
         //
         ["wheelspeed",   "bug_needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-4.05, "z":0},   {"x":0, "y":0, "z":0},   0, 66.66666, -33.33333, 1],
     ],
 },
+"bug_speedo_km_320": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Metric Speedometer (320 km/h)",
+        "value":30,
+    },
+    "electricPower":[
+        ["power"],
+        [4, {"trigger": "electrics.values.lowhighbeam"}],
+    ],
+    "slotType" : "skin_speedometer",
+    "skinName" : "km320",
+    "slots": [
+        ["type", "default", "description"],
 
+        ["bug_odometer", "bug_odometer_metric", "Odometer", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+	
+        ["bug_dashboard_gauge_speedo", ["bug_dashboard"]],
+        {"deformGroup":"dashboard_break", "deformSound":"event:>Destruction>Vehicle>Glass>glassbreaksound1", "deformVolume":0.8, "deformMaterialBase":"bug_interior_glass", "deformMaterialDamaged":"bug_interior_glass_dmg"},
+        ["bug_dashboard_gauge_speedo_glass", ["bug_dashboard"]],
+        {"deformGroup":""},
+    ],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+
+        // a = angle range of the needle. (all angles in deg)
+        // m = speed in km/h or mph on the max angle of the needle.
+        // d = angle between target zero pos. and the "default" pos of the mesh.
+        // x = 3.6 for km/h and 2.23694 for mph
+        //
+        // rotation-y = a / (m / x)
+        //     offset = d / rotation-y
+        //        max = a / rotation-y
+        //
+        //    270 / (320 / 3.6) = 3.0375
+        //    135 / 3.0375 = 44.44444
+        //    270 / 3.0375 = 88.88888
+        //
+        ["wheelspeed",   "bug_needle_speedo",   "dsh","dshl","bd1",   {"x":5, "y":-0, "z":-4},   {"x":0, "y":-3.0375, "z":0},   {"x":0, "y":0, "z":0},   0, 88.88888, -44.44444, 1],
+    ],
+},
 
 "bug_odometer_imperial": {
     "information":{
@@ -1737,7 +1866,7 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
     
-        ["ignitionLevel_anim",  "bug_ignition_key",  "dsh","dshl","bd1",  {"x":0, "y":-90, "z":0},  {"x":0, "y":-45, "z":0},  {"x":0, "y":0, "z":0},  0,  3,  0,  1],
+        ["anim__ignitionLevel",  "bug_ignition_key",  "dsh","dshl","bd1",  {"x":0, "y":-90, "z":0},  {"x":0, "y":-45, "z":0},  {"x":0, "y":0, "z":0},  0,  3,  0,  1],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1884,7 +2013,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_hood_dashboard_cover",   ["bug_body", "bug_dashboard"]],
+        ["bug_hood_dashboard_cover",   ["bug_body_front", "bug_dashboard"]],
     ],
 },
 

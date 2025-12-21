@@ -34,6 +34,10 @@
   "Value":8500,
   "Weight":1010,
   "Weight/Power":24.63414634,
-  "defaultPaintName1":"Shale Green",
-  "defaultPaintName3":"Shale Green"
+  "defaultMultiPaintSetup":{
+    "name": "Shale Green",
+    "paint1": "bug_shale_green",
+    "paint2": "bug_shale_green",
+    "paint3": "bug_shale_green"
+  }
 }

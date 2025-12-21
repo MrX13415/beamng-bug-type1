@@ -85,8 +85,7 @@
         {"beamSpring":450000,"beamDamp":30},
         {"beamDeform":10000,"beamStrength":"FLT_MAX"},
         //Main shape
-        {"deformGroup":"old_beaconlight_break"},
-        {"deformationTriggerRatio":0.01},
+        {"deformGroup":"old_beaconlight_break", "deformationTriggerRatio":0.01},
         ["bl1r","bl1l"],
         ["bl2r","bl2l"],
         ["bl1r","bl2r"],

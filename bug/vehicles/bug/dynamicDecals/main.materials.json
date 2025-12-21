@@ -1,0 +1,37 @@
+{
+  "bug_body_paint.skin.dynamicTextures": {
+    "name": "bug_body_paint.skin.dynamicTextures",
+    "mapTo": "bug_body_paint.skin.dynamicTextures",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/common/textures/default_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "roughnessMap": "/vehicles/bug/components/common/textures/default_rough.data.png"
+      },
+      {
+        "baseColorMap": "@DynamicTextureBaseColor",
+        "colorPaletteMap": "@DynamicTextureColorPalette",
+        "metallicMap": "@DynamicTextureMetallic",
+        "roughnessMap": "@DynamicTextureRoughness",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "colorPaletteMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
+        "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  }
+}

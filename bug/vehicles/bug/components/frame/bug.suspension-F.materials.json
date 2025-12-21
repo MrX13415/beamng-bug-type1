@@ -3,7 +3,6 @@
     "name": "bug_front_axle",
     "mapTo": "bug_front_axle",
     "class": "Material",
-    "persistentId": "8fe7a436-42b6-4a7d-9cf6-3eec480d1d54",
     "Stages": [
       {
         "baseColorFactor": [

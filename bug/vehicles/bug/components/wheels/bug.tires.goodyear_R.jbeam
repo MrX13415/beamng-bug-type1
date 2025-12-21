@@ -1,7 +1,7 @@
 {
 
 // ---- 14 x 6
-"bug_tire_goodyear_14x6_R": {
+"bug_tire_gy_14x6_R": {
     "information":{
         "authors":"Vertex Style",
         "name":"205/60R14 GoodYear GT Radial Tire",
@@ -10,8 +10,8 @@
     "slotType" : "tire_R_14x6",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_14x6_goodyear", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_14x6_goodyear", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_14x6_gy", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_14x6_gy", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -75,7 +75,7 @@
         {"wheelPeripheryBeamDeform":45000,"wheelPeripheryBeamStrength":45000},
     ],
 },
-"bug_tire_goodyear_14x6_R_grip": {
+"bug_tire_gy_14x6_R_grip": {
 
     "information":{
         "authors":"Vertex Style",
@@ -85,8 +85,8 @@
     "slotType" : "tire_R_14x6",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_14x6_goodyear", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_14x6_goodyear", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_14x6_gy", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_14x6_gy", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -152,7 +152,7 @@
 },
 
 // ---- 15 x 4
-"bug_tire_goodyear_15x4_R": {
+"bug_tire_gy_15x4_R": {
     "information":{
         "authors":"Vertex Style",
         "name":"27.0/4.0-R15 GoodYear GT Radial Tire",
@@ -161,8 +161,8 @@
     "slotType" : "tire_R_15x4",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x4_goodyear", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x4_goodyear", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x4_gy", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x4_gy", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -226,7 +226,7 @@
         {"wheelPeripheryBeamDeform":45000,"wheelPeripheryBeamStrength":45000},
     ],
 },
-"bug_tire_goodyear_15x4_R_grip": {
+"bug_tire_gy_15x4_R_grip": {
     "information":{
         "authors":"Vertex Style",
         "name":"27.0/4.0-R15 GoodYear GT Radial Tire (High Grip)",
@@ -235,8 +235,8 @@
     "slotType" : "tire_R_15x4",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x4_goodyear", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x4_goodyear", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x4_gy", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x4_gy", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -302,7 +302,7 @@
 },
 
 // ---- 15 x 6
-"bug_tire_goodyear_15x6_R": {
+"bug_tire_gy_15x6_R": {
     "information":{
         "authors":"Vertex Style",
         "name":"205/65R15 GoodYear GT Radial Tire",
@@ -311,8 +311,8 @@
     "slotType" : "tire_R_15x6",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x6_goodyear", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x6_goodyear", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x6_gy", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x6_gy", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -376,7 +376,7 @@
         {"wheelPeripheryBeamDeform":45000,"wheelPeripheryBeamStrength":45000},
     ],
 },
-"bug_tire_goodyear_15x6_R_grip": {
+"bug_tire_gy_15x6_R_grip": {
 
     "information":{
         "authors":"Vertex Style",
@@ -386,8 +386,8 @@
     "slotType" : "tire_R_15x6",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x6_goodyear", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x6_goodyear", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x6_gy", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x6_gy", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -453,7 +453,7 @@
 },
 
 // ---- 15 x 7
-"bug_tire_goodyear_15x7_R": {
+"bug_tire_gy_15x7_R": {
     "information":{
         "authors":"Vertex Style",
         "name":"225/60R15 GoodYear GT Radial Tire",
@@ -462,8 +462,8 @@
     "slotType" : "tire_R_15x7_alt",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x7_goodyear", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x7_goodyear", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x7_gy", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x7_gy", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -527,7 +527,7 @@
         {"wheelPeripheryBeamDeform":45000,"wheelPeripheryBeamStrength":45000},
     ],
 },
-"bug_tire_goodyear_15x7_R_grip": {
+"bug_tire_gy_15x7_R_grip": {
 
     "information":{
         "authors":"Vertex Style",
@@ -537,8 +537,8 @@
     "slotType" : "tire_R_15x7_alt",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x7_goodyear", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x7_goodyear", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x7_gy", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x7_gy", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

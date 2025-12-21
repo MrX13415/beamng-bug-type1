@@ -20,11 +20,11 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         //    exterior
-        ["bug_body_roof_hardtop",              ["bug_body", "bug_body_roof", "bug_body_cowl"]],
-        ["bug_body_roof_gutter",               ["bug_body", "bug_body_roof"]],
+        ["bug_body_roof_hardtop",              ["bug_body_roof", "bug_body_cowl"]],
+        ["bug_body_roof_gutter",               ["bug_body_sides", "bug_body_sides_front"]],
 
         //    interior
-        ["bug_body_interior_roof_hardtop",     ["bug_body", "bug_body_roof"]],
+        ["bug_body_interior_roof_hardtop",     ["bug_body_roof"]],
 	],
     "triangles": [
         ["id1:","id2:","id3:"],
@@ -79,12 +79,12 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         //    exterior
-        ["bug_body_roof_racktop_rails",        ["bug_body", "bug_body_roof"]],
-        ["bug_body_roof_ragtop",               ["bug_body", "bug_body_roof", "bug_body_cowl"]],
-        ["bug_body_roof_gutter",               ["bug_body", "bug_body_roof"]],
+        ["bug_body_roof_racktop_rails",        ["bug_body_roof"]],
+        ["bug_body_roof_ragtop",               ["bug_body_roof", "bug_body_cowl"]],
+        ["bug_body_roof_gutter",               ["bug_body_sides", "bug_body_sides_front"]],
 
         //    interior
-        ["bug_body_interior_roof_ragtop",      ["bug_body", "bug_body_roof"]],
+        ["bug_body_interior_roof_ragtop",      ["bug_body_roof"]],
 	],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -126,7 +126,7 @@
     },
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$ragtopInitState", "range", "", "Body", 0, 0, 1.0, "Ragtop Open", "Inital open position of the Ragtop roof.", {"minDis":0, "maxDis":100}],
+        ["$ragtopInitState", "range", "", "Interior", 0, 0, 1.0, "Ragtop Open", "Inital open position of the Ragtop roof.", {"subCategory":"Roof", "minDis":0, "maxDis":100}],
 	],
     "controller": [
         ["fileName"],
@@ -146,15 +146,19 @@
         ["bug_body_roof_ragtop_fabric.2",      ["bug_racktop_fabric2"]],
 
         // Details
-        ["bug_body_roof_ragtop_handle",        ["bug_racktop_bar1", "bug_racktop_fabric1"]],
+        //["bug_body_roof_ragtop_handle",        ["bug_racktop_bar1", "bug_racktop_fabric1"]],
         ["bug_body_roof_ragtop_hook",          ["bug_racktop_bar1", "bug_racktop_fabric1"]],
         // Bar mesh
         ["bug_body_roof_ragtop_bar1",          ["bug_racktop_bar1"]],
         ["bug_body_roof_ragtop_bar2",          ["bug_racktop_bar2"]],
 	],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+        ["anim__ragtop_handle",    "bug_body_roof_ragtop_handle",  "rta1r","rta1l","rta3r",   {"x":96, "y":-3, "z":0}, {"x":0, "y":0, "z":-30}, {"x":0, "y":0, "z":0},   0,   1,   0,  1],
+    ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["ragtop", "rta1r","rta1l","rtb1r", "box", {"x":0.1, "y":0.05, "z":0.04}, {"x":3, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.35, "y":0.07, "z":-0.03},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["ragtop", "rta1r","rta1l","rta3r", "box", {"x":0.1, "y":0.05, "z":0.04}, {"x":3, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.35, "y":0.07, "z":-0.03},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
     "actionsEnabled": [
         ["id"],
@@ -280,8 +284,8 @@
 
         {"breakGroupType":0},
         {"breakGroup":"ragtopF"},
-        ["brf2ll","rta2l", {"inputSource":"ragtop_state", "inLimit":1.0, "outLimit":14.2, "inRate":10, "outRate":10, "inputFactor":1.0}],
-        ["brf2rr","rta2r", {"inputSource":"ragtop_state", "inLimit":1.0, "outLimit":14.2, "inRate":10, "outRate":10, "inputFactor":1.0}],
+        ["brf2ll","rta2l", {"inputSource":"anim__ragtop_state", "inLimit":1.0, "outLimit":14.2, "inRate":10, "outRate":10, "inputFactor":1.0}],
+        ["brf2rr","rta2r", {"inputSource":"anim__ragtop_state", "inLimit":1.0, "outLimit":14.2, "inRate":10, "outRate":10, "inputFactor":1.0}],
         {"breakGroup":""},
 
       //  {"highlight":""},
@@ -606,7 +610,7 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         //    interior
-        ["bug_interior_covering_hardtop",      ["bug_body", "bug_roof"]],
+        ["bug_interior_covering_hardtop",      ["bug_body_roof", "bug_body_sides", "bug_body_rear"]],
 	]
 },
 "bug_headliner_ragtop": {
@@ -619,7 +623,7 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         //    interior
-        ["bug_interior_covering_ragtop",       ["bug_body", "bug_body_roof"]],
+        ["bug_interior_covering_ragtop",       ["bug_body_roof", "bug_body_sides", "bug_body_rear"]],
 
         //    cover interior
         ["bug_interior_covering_ragtop_cover.1", ["bug_racktop_fabric1"]],
@@ -637,10 +641,10 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         //    interior
-        ["bug_interior_covering_partial_hardtop",      ["bug_body", "bug_roof"]],
+        ["bug_interior_covering_partial_hardtop",      ["bug_body_roof"]],
 	]
 },
-"bug_headliner_partial__ragtop": {
+"bug_headliner_partial_ragtop": {
     "information":{
         "authors":"MrX13415",
         "name":"Partial Headliner",
@@ -650,7 +654,7 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         //    interior
-        ["bug_interior_covering_partial_ragtop",       ["bug_body", "bug_body_roof"]],
+        ["bug_interior_covering_partial_ragtop",       ["bug_body_roof"]],
 
         //    cover interior
         ["bug_interior_covering_ragtop_cover.1", ["bug_racktop_fabric1"]],

@@ -2,7 +2,6 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
--- v1.0
 -- by MrX13415
 
 local M = {}
@@ -45,29 +44,40 @@ local function addNotify(notifyFunc)
   table.insert(notifyCallbacks, notifyFunc)
 end
 
+local function ratioFrom(x)
+  return math.log10(x * 0.9 + 0.1) + 1
+end
+local function ratioTo(y)
+  return (math.pow(10, y - 1) - 0.1) / 0.9
+end
+
 local function getSystemVoltage() return systemVoltage end
 local function getVoltage() return voltage end
 
 local function getCapcity() return capacity end
 local function getCharge() return charge end
-local function getChargeRatio()
+local function getRatio()
   if capacity < 1 or broken then return 0 end
-  return charge / capacity 
+  return charge / capacity
+end
+
+local function getChargeRatio()
+  return ratioTo(getRatio())
 end
 local function setChargeRatio(ratio)
   ratio = clamp(ratio, 0, 1)
-  charge = capacity * ratio
+  charge = capacity * ratioFrom(ratio)
 end
 
 local function isBroken() return broken end
-local function isEmpty() return getChargeRatio() < 0.00001 end
+local function isEmpty() return getRatio() < 0.00001 end
 local function isFull() return charge >= capacity end
 local function isCharging() return not isFull() and current > 0 end
 
 local function getCurrent() return current end
 local function getChargingCurrent(inCurrent)
   if inCurrent < 0 then return 0 end
-  local chargeCurrent = inCurrent*1000 * 5 * (1 - math.pow(getChargeRatio(),2))
+  local chargeCurrent = inCurrent*1000 * 5 * (1 - math.pow(getRatio(),2))
   return math.min(chargeCurrent, inCurrent)
 end
 
@@ -129,7 +139,7 @@ local function onUpdateGFX(dt)
   local time = dt / 3600 -- hours
 
   -- Get current charge voltage
-  local ratio = getChargeRatio()
+  local ratio = getRatio()
   voltage = calcVoltage(ratio)
 
   -- Update total power load
@@ -186,7 +196,7 @@ local function onUpdateGFX(dt)
   local rate = current * 1000 * time  -- in mA
   
   -- Include self discharge rate
-  if rate < 0 then 
+  if rate <= 0 then 
     rate = math.min(rate, -selfDischarge * time)
   end
 
@@ -214,7 +224,7 @@ local function onInit(jbeamData)
   systemVoltage = jbeamData.voltage or systemVoltage
   
   capacity = (jbeamData.capacity or 0) * 1000  -- A to mA
-  charge = capacity * (jbeamData.charge or 100)
+  charge = capacity * ratioFrom(jbeamData.charge or 1)
   selfDischarge = (jbeamData.selfDischarge or 0) * 1000  -- Ah to mAh
 
   resistanceMin = jbeamData.resistanceMin or resistanceMin

@@ -39,18 +39,19 @@
     },
     "flexbodies": [
         ["mesh","[group]:","nonFlexMaterials"],
-        ["bug_door_R",          ["bug_door_FR"]],
-        ["bug_door_FR_handles", ["bug_door_FR"]],
+        ["bug_door_R",                     ["bug_door_FR"]],
+        ["bug_door_FR_handle_ring",        ["bug_door_FR"]],
+        ["bug_door_FR_window_handle_ring", ["bug_door_FR"]],
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
-        // base translation would be {"x":0, "y":0, "z":-6} but some adjustment due to the node positons is required.
-        ["windowFR_state",    "bug_door_FR_window_handle",  "d14r","d8r","d11r",   {"x":-3, "y":7, "z":168},   {"x":-2200, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
+        ["anim__windowFR_state",    "bug_door_FR_window_handle",  "d14r","d8r","d11r",   {"x":-3, "y":7, "z":168},                  {"x":-2200, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
+        ["anim__doorFR_handle",    "bug_door_FR_handle"      ,  "d14r","d8r","d11r",   {"x":14, "y":-90 , "z":-19.23},   {"x":0, "y":0, "z":-30},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         ["door_R", "d9r","d8r","d6r", "box", {"x":0.13, "y":-0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.03, "y":0.07, "z":0.04},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
-        ["door_R_int", "dh1r","d8r","d4r", "box", {"x":0.05, "y":0.05, "z":0.10}, {"x":4, "y":1, "z":2}, {"x":0, "y":15, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.279, "y":0.07, "z":0.06},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["door_R_int", "dh1r","d8r","d4r", "box", {"x":0.04, "y":0.04, "z":0.10}, {"x":5, "y":1, "z":3}, {"x":0, "y":17, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.287, "y":0.07, "z":0.06},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
     "actionsEnabled": [
         ["id"],
@@ -355,18 +356,20 @@
     },
     "flexbodies": [
         ["mesh","[group]:","nonFlexMaterials"],
-        ["bug_door_L",          ["bug_door_FL"]],
-        ["bug_door_FL_handles", ["bug_door_FL"]],
+        ["bug_door_L",                     ["bug_door_FL"]],
+        ["bug_door_FL_handle_ring",        ["bug_door_FL"]],
+        ["bug_door_FL_window_handle_ring", ["bug_door_FL"]],
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
         // base translation would be {"x":0, "y":0, "z":-6} but some adjustment due to the node positons is required.
-        ["windowFL_state",    "bug_door_FL_window_handle",  "d14l","d8l","d11l",   {"x":-3, "y":7, "z":9},     {"x":2200, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
+        ["anim__windowFL_state",    "bug_door_FL_window_handle",  "d14l","d8l","d11l",   {"x":-3, "y":7, "z":9},     {"x":2200, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
+        ["anim__doorFL_handle",   "bug_door_FL_handle"       ,  "d14l","d8l","d11l",   {"x":14, "y":-90 , "z":199.23},   {"x":0, "y":0, "z":30},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         ["door_L", "d9l","d8l","d6l", "box", {"x":0.13, "y":0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.03, "y":0.07, "z":-0.04},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
-        ["door_L_int", "dh1l","d8l","d4l", "box", {"x":0.05, "y":-0.05, "z":0.10}, {"x":4, "y":1, "z":2}, {"x":-5, "y":15, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.279, "y":0.07, "z":-0.06},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["door_L_int", "dh1l","d8l","d4l", "box", {"x":0.04, "y":-0.04, "z":0.10}, {"x":0, "y":1, "z":-3}, {"x":-5, "y":15, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.287, "y":0.07, "z":-0.06},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
     ],
     "actionsEnabled": [
         ["id"],
@@ -643,6 +646,10 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bug_door_R_handle",   ["bug_door_FR"]],
     ],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+        ["anim__doorFR_handle",   "bug_door_R_handle_btn"       ,  "d14r","d8r","d11r",   {"x":13, "y":-81.9164 , "z":1.04601 },   {"x":0, "y":0, "z":0},    {"x":-0.025, "y":0, "z":0},           0,       1,   0,  1],
+    ],
 },
 "bug_door_handle_paint_R": {
     "information":{
@@ -654,6 +661,10 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bug_door_R_handle_paint",   ["bug_door_FR"]],
+    ],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+        ["anim__doorFR_handle",   "bug_door_R_handle_btn_paint"       ,  "d14r","d8r","d11r",   {"x":13, "y":-81.9164 , "z":1.04601 },   {"x":0, "y":0, "z":0},    {"x":-0.025, "y":0, "z":0},           0,       1,   0,  1],
     ],
 },
 "bug_door_handle_L": {
@@ -667,6 +678,10 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bug_door_L_handle",   ["bug_door_FL"]],
     ],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+        ["anim__doorFL_handle",   "bug_door_L_handle_btn"       ,  "d14l","d8l","d11l",   {"x":-8, "y":-81.9164 , "z":-1.04601 },   {"x":0, "y":0, "z":0},    {"x":-0.025, "y":0, "z":0},           0,       1,   0,  1],
+    ],
 },
 "bug_door_handle_paint_L": {
     "information":{
@@ -678,6 +693,10 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bug_door_L_handle_paint",   ["bug_door_FL"]],
+    ],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+        ["anim__doorFL_handle",   "bug_door_L_handle_btn_paint"       ,  "d14l","d8l","d11l",   {"x":-8, "y":-81.9164 , "z":-1.04601 },   {"x":0, "y":0, "z":0},    {"x":-0.025, "y":0, "z":0},           0,       1,   0,  1],
     ],
 },
 

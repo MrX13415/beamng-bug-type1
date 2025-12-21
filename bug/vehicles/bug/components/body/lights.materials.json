@@ -3,7 +3,6 @@
     "name": "bug_lights",
     "mapTo": "bug_lights",
     "class": "Material",
-    "persistentId": "a7a230f0-7d5d-4b3a-8f1c-d288c68819ca",
     "Stages": [
       {
         "ambientOcclusionMap": "/vehicles/bug/components/body/textures/lights_ao.data.png",
@@ -29,7 +28,6 @@
     "name": "bug_lights_glass",
     "mapTo": "bug_lights_glass",
     "class": "Material",
-    "persistentId": "9a769ffd-b34f-458b-b873-26e0aa12e1ce",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_d.color.png",
@@ -57,7 +55,6 @@
     "name": "bug_lights_glass_on",
     "mapTo": "bug_lights_glass_on",
     "class": "Material",
-    "persistentId": "c8d13f6e-8818-4f0d-b357-d629856365e4",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_d.color.png",
@@ -91,7 +88,6 @@
     "name": "bug_lights_glass_on_intense",
     "mapTo": "bug_lights_glass_on_intense",
     "class": "Material",
-    "persistentId": "e6661794-6921-4a2b-8403-31438365d303",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_d.color.png",
@@ -125,7 +121,6 @@
     "name": "bug_lights_on",
     "mapTo": "bug_lights_on",
     "class": "Material",
-    "persistentId": "4a3122ad-5f3e-458f-a255-f8e98b8ea3c3",
     "Stages": [
       {
         "ambientOcclusionMap": "/vehicles/bug/components/body/textures/lights_ao.data.png",
@@ -157,7 +152,6 @@
     "name": "bug_lights_on_intense",
     "mapTo": "bug_lights_on_intense",
     "class": "Material",
-    "persistentId": "b2cd3ab9-beaf-42f2-a6df-dfaa849d2c78",
     "Stages": [
       {
         "ambientOcclusionMap": "/vehicles/bug/components/body/textures/lights_ao.data.png",
@@ -189,7 +183,6 @@
     "name": "bug_lights_glass_dmg",
     "mapTo": "bug_lights_glass_dmg",
     "class": "Material",
-    "persistentId": "acffcedc-7b0d-4d5a-a950-1e28ae70ba83",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_dmg_d.color.png",
@@ -222,7 +215,6 @@
     "name": "bug_lights_us",
     "mapTo": "bug_lights_us",
     "class": "Material",
-    "persistentId": "c79e2d45-5779-4b73-b5f8-7ce723ae792a",
     "Stages": [
       {
         "ambientOcclusionMap": "/vehicles/bug/components/body/textures/lights_ao.data.png",
@@ -248,7 +240,6 @@
     "name": "bug_lights_us_glass",
     "mapTo": "bug_lights_us_glass",
     "class": "Material",
-    "persistentId": "d6582cb8-5505-46fa-9234-2cfe572c2172",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_us_d.color.png",
@@ -276,7 +267,6 @@
     "name": "bug_lights_us_glass_on",
     "mapTo": "bug_lights_us_glass_on",
     "class": "Material",
-    "persistentId": "2c9fc707-16a9-4220-8dd2-371a543f5bc5",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_us_d.color.png",
@@ -310,7 +300,6 @@
     "name": "bug_lights_us_glass_on_intense",
     "mapTo": "bug_lights_us_glass_on_intense",
     "class": "Material",
-    "persistentId": "636ada1f-d48e-492c-b268-277c0c0f48e8",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_us_d.color.png",
@@ -344,7 +333,6 @@
     "name": "bug_lights_us_on",
     "mapTo": "bug_lights_us_on",
     "class": "Material",
-    "persistentId": "bc049c62-7d62-4664-8d08-96ca850db76b",
     "Stages": [
       {
         "ambientOcclusionMap": "/vehicles/bug/components/body/textures/lights_ao.data.png",
@@ -376,7 +364,6 @@
     "name": "bug_lights_us_on_intense",
     "mapTo": "bug_lights_us_on_intense",
     "class": "Material",
-    "persistentId": "6e6d7d09-695c-42f8-9d6d-b42b287e527f",
     "Stages": [
       {
         "ambientOcclusionMap": "/vehicles/bug/components/body/textures/lights_ao.data.png",
@@ -408,7 +395,6 @@
     "name": "bug_lights_us_glass_dmg",
     "mapTo": "bug_lights_us_glass_dmg",
     "class": "Material",
-    "persistentId": "1ff67cae-0ad0-49e5-8bf1-b115af515fec",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_us_dmg_d.color.png",
@@ -442,7 +428,6 @@
     "name": "bug_int_lights",
     "mapTo": "bug_int_lights",
     "class": "Material",
-    "persistentId": "46e0eefb-f698-4ee1-b263-41acc6a1e949",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/interiorlight_d.color.png",
@@ -466,7 +451,6 @@
     "name": "bug_int_lights_glass",
     "mapTo": "bug_int_lights_glass",
     "class": "Material",
-    "persistentId": "8deed051-c07b-44d0-addd-0ba5958f8d84",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/interiorlight_d.color.png",
@@ -492,7 +476,6 @@
     "name": "bug_int_lights_glass_on",
     "mapTo": "bug_int_lights_glass_on",
     "class": "Material",
-    "persistentId": "fc813426-8e1c-4ea3-9bba-10822c15c720",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/interiorlight_d.color.png",
@@ -524,7 +507,6 @@
     "name": "bug_int_lights_on",
     "mapTo": "bug_int_lights_on",
     "class": "Material",
-    "persistentId": "b77bb944-2d38-4e3c-a69e-041ec70b9dee",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/body/textures/interiorlight_d.color.png",
@@ -556,7 +538,6 @@
     "name": "bug_license_light",
     "mapTo": "bug_license_light",
     "class": "Material",
-    "persistentId": "893b07c7-8e4f-4252-9ec1-7dad161772fa",
     "Stages": [
       {
         "baseColorFactor": [
@@ -577,7 +558,6 @@
     "name": "bug_license_light_on",
     "mapTo": "bug_license_light_on",
     "class": "Material",
-    "persistentId": "821cbbb4-2697-4d26-9192-707ec7609179",
     "Stages": [
       {
         "baseColorFactor": [
@@ -607,7 +587,6 @@
     "name": "bug_headlight",
     "mapTo": "bug_headlight",
     "class": "material",
-    "persistentId": "ec72d416-7c0f-4c20-9839-4780e91cd9e5",
     "Stages": [
       {
         "diffuseColor": [
@@ -627,7 +606,6 @@
     "name": "bug_headlight_glass",
     "mapTo": "bug_headlight_glass",
     "class": "material",
-    "persistentId": "b6c9892e-72cf-4af7-9a44-7dc8f57cb95d",
     "Stages": [
       {
         "diffuseColor": [
@@ -653,7 +631,6 @@
     "name": "bug_interiorlight",
     "mapTo": "bug_interiorlight",
     "class": "material",
-    "persistentId": "7dac1f98-4fbf-4f93-bad4-65ca24b7ea55",
     "Stages": [
       {
         "diffuseColor": [
@@ -679,7 +656,6 @@
     "name": "bug_interiorlight_glass",
     "mapTo": "bug_interiorlight_glass",
     "class": "material",
-    "persistentId": "e00815c2-dab9-4ea6-8b73-6d2bbf094a8c",
     "Stages": [
       {
         "diffuseColor": [
@@ -705,7 +681,6 @@
     "name": "bug_signal_FL",
     "mapTo": "bug_signal_FL",
     "class": "material",
-    "persistentId": "c18d8220-2048-4bf8-8f4b-140719e0ddd9",
     "Stages": [
       {
         "diffuseColor": [
@@ -731,7 +706,6 @@
     "name": "bug_signal_FR",
     "mapTo": "bug_signal_FR",
     "class": "material",
-    "persistentId": "c8bc01f8-eb42-41f7-92ce-205641e1ea01",
     "Stages": [
       {
         "diffuseColor": [
@@ -757,7 +731,6 @@
     "name": "bug_signal_RL",
     "mapTo": "bug_signal_RL",
     "class": "material",
-    "persistentId": "aec62134-dbf9-4faa-92f1-24c148567d4c",
     "Stages": [
       {
         "diffuseColor": [
@@ -783,7 +756,6 @@
     "name": "bug_signal_RR",
     "mapTo": "bug_signal_RR",
     "class": "material",
-    "persistentId": "34986cfc-5a93-4f9a-8874-46f853c1cc25",
     "Stages": [
       {
         "diffuseColor": [
@@ -809,7 +781,6 @@
     "name": "bug_signal_glass_FL",
     "mapTo": "bug_signal_glass_FL",
     "class": "material",
-    "persistentId": "da4ebfe4-4571-45b7-9d76-dd6df75dba24",
     "Stages": [
       {
         "diffuseColor": [
@@ -835,7 +806,6 @@
     "name": "bug_signal_glass_FR",
     "mapTo": "bug_signal_glass_FR",
     "class": "material",
-    "persistentId": "77c290da-fefc-4623-89dc-5e980fa1c63a",
     "Stages": [
       {
         "diffuseColor": [
@@ -861,7 +831,6 @@
     "name": "bug_signal_glass_RL",
     "mapTo": "bug_signal_glass_RL",
     "class": "material",
-    "persistentId": "3f7c639b-a8a2-4c69-bc4e-6028f5f5dfa4",
     "Stages": [
       {
         "diffuseColor": [
@@ -887,7 +856,6 @@
     "name": "bug_signal_glass_RR",
     "mapTo": "bug_signal_glass_RR",
     "class": "material",
-    "persistentId": "27aa70da-bca3-4b76-b040-eed4165ec1fd",
     "Stages": [
       {
         "diffuseColor": [
@@ -913,7 +881,6 @@
     "name": "bug_signal_us_FL",
     "mapTo": "bug_signal_us_FL",
     "class": "material",
-    "persistentId": "c015088a-dfbd-4aaf-94be-8a373ab36d3a",
     "Stages": [
       {
         "diffuseColor": [
@@ -939,7 +906,6 @@
     "name": "bug_signal_us_FR",
     "mapTo": "bug_signal_us_FR",
     "class": "material",
-    "persistentId": "a516a5e3-9229-4e09-b14f-615fa501a76c",
     "Stages": [
       {
         "diffuseColor": [
@@ -965,7 +931,6 @@
     "name": "bug_signal_us_RL",
     "mapTo": "bug_signal_us_RL",
     "class": "material",
-    "persistentId": "35b3c00f-d8cc-4911-b85b-e1f8dbfcf69f",
     "Stages": [
       {
         "diffuseColor": [
@@ -991,7 +956,6 @@
     "name": "bug_signal_us_RR",
     "mapTo": "bug_signal_us_RR",
     "class": "material",
-    "persistentId": "8d25a763-67ff-4b6b-b6c7-af1032f525df",
     "Stages": [
       {
         "diffuseColor": [
@@ -1017,7 +981,6 @@
     "name": "bug_signal_us_glass_FL",
     "mapTo": "bug_signal_us_glass_FL",
     "class": "material",
-    "persistentId": "e51ed9f5-db80-4fb8-a503-79a4f0ec24f1",
     "Stages": [
       {
         "diffuseColor": [
@@ -1043,7 +1006,6 @@
     "name": "bug_signal_us_glass_FR",
     "mapTo": "bug_signal_us_glass_FR",
     "class": "material",
-    "persistentId": "1361027b-4ca9-430c-8768-e0aa099bb9e1",
     "Stages": [
       {
         "diffuseColor": [
@@ -1069,7 +1031,6 @@
     "name": "bug_signal_us_glass_RL",
     "mapTo": "bug_signal_us_glass_RL",
     "class": "material",
-    "persistentId": "92b7ace1-7048-4c11-b724-df4942944ae2",
     "Stages": [
       {
         "diffuseColor": [
@@ -1095,7 +1056,6 @@
     "name": "bug_signal_us_glass_RR",
     "mapTo": "bug_signal_us_glass_RR",
     "class": "material",
-    "persistentId": "de937e53-3d63-4038-9c4e-7855cad11a05",
     "Stages": [
       {
         "diffuseColor": [
@@ -1121,7 +1081,6 @@
     "name": "bug_taillight_RL",
     "mapTo": "bug_taillight_RL",
     "class": "material",
-    "persistentId": "ccf0446c-fcf9-4358-963c-ac25a665494b",
     "Stages": [
       {
         "diffuseColor": [
@@ -1147,7 +1106,6 @@
     "name": "bug_taillight_RR",
     "mapTo": "bug_taillight_RR",
     "class": "material",
-    "persistentId": "ba4ee9c4-c342-4065-ad13-5a34ce38541c",
     "Stages": [
       {
         "diffuseColor": [
@@ -1167,7 +1125,6 @@
     "name": "bug_taillight_us_RL",
     "mapTo": "bug_taillight_us_RL",
     "class": "material",
-    "persistentId": "9248efcb-17e0-4f88-b33c-434be1db3619",
     "Stages": [
       {
         "diffuseColor": [
@@ -1193,7 +1150,6 @@
     "name": "bug_taillight_us_RR",
     "mapTo": "bug_taillight_us_RR",
     "class": "material",
-    "persistentId": "33f61386-f478-471d-8aed-7152d00d8ac7",
     "Stages": [
       {
         "diffuseColor": [
@@ -1219,7 +1175,6 @@
     "name": "bug_talilight_glass_RL",
     "mapTo": "bug_talilight_glass_RL",
     "class": "material",
-    "persistentId": "07d1ffa6-9345-4268-968d-5d65b4a378fb",
     "Stages": [
       {
         "diffuseColor": [
@@ -1245,7 +1200,6 @@
     "name": "bug_talilight_glass_RR",
     "mapTo": "bug_talilight_glass_RR",
     "class": "material",
-    "persistentId": "902ef44f-895a-4eab-96e4-bf402b401b4b",
     "Stages": [
       {
         "diffuseColor": [
@@ -1271,7 +1225,6 @@
     "name": "bug_talilight_us_glass_RL",
     "mapTo": "bug_talilight_us_glass_RL",
     "class": "material",
-    "persistentId": "de94408a-81a6-429e-91c1-b9869bcd9555",
     "Stages": [
       {
         "diffuseColor": [
@@ -1297,7 +1250,6 @@
     "name": "bug_talilight_us_glass_RR",
     "mapTo": "bug_talilight_us_glass_RR",
     "class": "material",
-    "persistentId": "7c1b288f-2933-4e90-b9dc-694295b93f09",
     "Stages": [
       {
         "diffuseColor": [

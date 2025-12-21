@@ -37,6 +37,10 @@
   "Value":8500,
   "Weight":1065,
   "Weight/Power":13.48101266,
-  "defaultPaintName1":"Chestnut",
-  "defaultPaintName3":"Cream White"
+  "defaultMultiPaintSetup":{
+    "name": "Chestnut",
+    "paint1": "bug_chestnut",
+    "paint2": "bug_chestnut",
+    "paint3": "bug_cream_white"
+  }
 }

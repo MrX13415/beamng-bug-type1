@@ -3,7 +3,6 @@
     "name": "bug_battery",
     "mapTo": "bug_battery",
     "class": "Material",
-    "persistentId": "cb3d04b4-b322-4f8a-a724-284a213f7cdc",
     "Stages": [
       {
         "baseColorFactor": [
@@ -28,7 +27,6 @@
     "name": "bug_front_tanks",
     "mapTo": "bug_front_tanks",
     "class": "Material",
-    "persistentId": "f834d703-1a75-4f51-b51f-7c7a3787bcaa",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/frame/textures/front_tanks_d.color.png",
@@ -47,7 +45,6 @@
     "name": "bug_engine_block",
     "mapTo": "bug_engine_block",
     "class": "Material",
-    "persistentId": "827682a8-ef16-40ae-bab3-1997ba9fd3eb",
     "Stages": [
       {
         "baseColorFactor": [
@@ -81,7 +78,6 @@
     "name": "bug_engine_parts",
     "mapTo": "bug_engine_parts",
     "class": "Material",
-    "persistentId": "e6b34d67-3643-46bc-8f52-79a711f78181",
     "Stages": [
       {
         "baseColorFactor": [
@@ -118,7 +114,6 @@
     "name": "bug_engine_housing",
     "mapTo": "bug_engine_housing",
     "class": "Material",
-    "persistentId": "c9afc2cd-81db-4b89-a885-2d704f157aa6",
     "Stages": [
       {
         "baseColorFactor": [
@@ -156,7 +151,6 @@
     "name": "bug_engine_dualcarburetor",
     "mapTo": "bug_engine_dualcarburetor",
     "class": "Material",
-    "persistentId": "d4549e75-9c81-4977-9b16-e5fae02a068c",
     "Stages": [
       {
         "baseColorFactor": [
@@ -183,7 +177,6 @@
     "name": "bug_transaxle",
     "mapTo": "bug_transaxle",
     "class": "Material",
-    "persistentId": "c8b01bbe-33f5-4ae3-802d-417d3bf52e91",
     "Stages": [
       {
         "baseColorFactor": [
@@ -211,7 +204,6 @@
     "name": "bug_exhaust",
     "mapTo": "bug_exhaust",
     "class": "Material",
-    "persistentId": "bbba3cc0-f25d-4537-b4ed-173fffe38a98",
     "Stages": [
       {
         "baseColorFactor": [
@@ -240,7 +232,6 @@
     "name": "bug_fueltank",
     "mapTo": "bug_fueltank",
     "class": "Material",
-    "persistentId": "3abc1ea7-783f-4430-ac14-dc269a8eae9f",
     "Stages": [
       {
         "baseColorFactor": [
@@ -267,7 +258,6 @@
     "name": "bug_fuel",
     "mapTo": "bug_fuel",
     "class": "material",
-    "persistentId": "3272d03b-9430-4b04-b72e-360168e9de66",
     "Stages": [
       {
         "diffuseColor": [

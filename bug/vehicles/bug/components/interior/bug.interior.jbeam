@@ -46,7 +46,7 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         // roof
-        ["bug_sunvisor_mount",     ["bug_body"]],
+        ["bug_sunvisor_mount",     ["bug_body_roof_front"]],
     ],
 },
 
@@ -286,7 +286,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_interior_panels_R",  ["bug_body"]],
+        ["bug_interior_panels_R",  ["bug_body_sides"]],
     ],
 },
 "bug_side_panels_rear_wood": {
@@ -299,7 +299,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_interior_panels_board_R",  ["bug_body"]],
+        ["bug_interior_panels_board_R",  ["bug_body_sides"]],
     ],
 },
 
@@ -334,7 +334,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_interior_panels_simple_R",  ["bug_body"]],
+        ["bug_interior_panels_simple_R",  ["bug_body_sides"]],
     ],
 },
 "bug_side_panels_simple_rear_wood": {
@@ -347,7 +347,7 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        ["bug_interior_panels_R_board",  ["bug_body"]],
+        ["bug_interior_panels_R_board",  ["bug_body_sides"]],
     ],
 },
 
@@ -569,7 +569,7 @@
     "slotType" : "bug_window_decals",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         ["bug_window_decals_mc", ["bug_body"]],
+         ["bug_window_decals_mc", ["bug_windshield"]],
     ],
 },
 
@@ -589,7 +589,102 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 	
-         ["bug_rollbar_mc", ["bug_body"]],
+         ["bug_rollbar_mc", ["bug_rollcage"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"selfCollision":true},
+        {"collision" :true},
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"nodeWeight":0.5},
+        {"group":"bug_rollcage"},
+        ["roc1r", -0.420, 0.320, 1.342],
+        ["roc2r", -0.572, 0.320, 0.960],
+        ["roc3r", -0.572, 0.320, 0.369],
+        ["roc1l",  0.420, 0.320, 1.342],
+        ["roc2l",  0.572, 0.320, 0.960],
+        ["roc3l",  0.572, 0.320, 0.369],
+        {"group":""},
+        ["roc5",  0.000, 0.769, 0.760, {"selfCollision":false, "collision" :false}],
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        // main
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":200100,"beamDamp":50},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":0},
+        
+        ["roc1l","roc2l"],
+        ["roc2l","roc3l"],
+        ["roc1r","roc2r"],
+        ["roc2r","roc3r"],
+        ["roc1r","roc1l"],
+
+        {"beamSpring":150100,"beamDamp":50},
+        {"beamDeform":6000},
+        ["roc2r","roc2l"],
+        ["roc3r","roc3l"],
+
+        ["roc1l","roc2r"],
+        ["roc1r","roc2l"],
+        ["roc2l","roc3r"],
+        ["roc2r","roc3l"],
+
+        ["roc1l","roc5"],
+        ["roc2l","roc5"],
+        ["roc3l","roc5"],
+        ["roc1r","roc5"],
+        ["roc2r","roc5"],
+        ["roc3r","roc5"],
+
+        // attach
+        {"beamSpring":201000,"beamDamp":50},
+        {"beamDeform":8000,"beamStrength":10000},
+        {"breakGroup":"rollcage"},
+
+        ["roc2l","f4l"],
+        ["roc2l","f4ml"],
+        ["roc3l","f4l"],
+        ["roc3l","f4ml"],
+        ["roc3l","f6l"],
+        ["roc3l","f6ml"],
+
+        ["roc2r","f4r"],
+        ["roc2r","f4mr"],
+        ["roc3r","f4r"],
+        ["roc3r","f4mr"],
+        ["roc3r","f6r"],
+        ["roc3r","f6mr"],
+
+        ["roc1r","bq11r"],
+        ["roc2r","bq11l"],
+        ["roc2r","bq11r"],
+        ["roc1l","bq11l"],
+        ["roc2l","bq11l"],
+        ["roc2l","bq11r"],
+
+        // support beams
+        {"beamType":"|SUPPORT", "beamLongBound":2},
+        {"beamSpring":100100,"beamDamp":30},
+        {"beamDeform":14000,"beamStrength":10000},
+        {"breakGroupType":1},
+        {"breakGroup":"rollcage"},
+        ["roc1l","brf4"],
+        ["roc1l","brf4l"],
+        ["roc1l","brf4ll"],
+        ["roc1l","brf4lll"],
+        ["roc1r","brf4"],
+        ["roc1r","brf4r"],
+        ["roc1r","brf4rr"],
+        ["roc1r","brf4rrr"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"breakGroup":""},
+        {"breakGroupType":0}
     ],
 },
 "bug_rollbar_4point": {
@@ -606,7 +701,113 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 	
-         ["bug_rollbar_tlb", ["bug_body"]],
+         ["bug_rollbar_tlb", ["bug_rollcage"]],
+    ],
+        "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"selfCollision":true},
+        {"collision" :true},
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"nodeWeight":0.5},
+        {"group":"bug_rollcage"},
+        ["roc1r", -0.420, 0.320, 1.342],
+        ["roc2r", -0.572, 0.320, 0.960],
+        ["roc3r", -0.572, 0.320, 0.369],
+        ["roc1l",  0.420, 0.320, 1.342],
+        ["roc2l",  0.572, 0.320, 0.960],
+        ["roc3l",  0.572, 0.320, 0.369],
+        {"group":""},
+        ["roc5",  0.000, 0.769, 0.760, {"selfCollision":false, "collision" :false}],
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        // main
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":200100,"beamDamp":50},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":0},
+        
+        ["roc1l","roc2l"],
+        ["roc2l","roc3l"],
+        ["roc1r","roc2r"],
+        ["roc2r","roc3r"],
+        ["roc1r","roc1l"],
+
+        {"beamSpring":150100,"beamDamp":50},
+        {"beamDeform":6000},
+        ["roc2r","roc2l"],
+        ["roc3r","roc3l"],
+
+        ["roc1l","roc2r"],
+        ["roc1r","roc2l"],
+        ["roc2l","roc3r"],
+        ["roc2r","roc3l"],
+
+        ["roc1l","roc5"],
+        ["roc2l","roc5"],
+        ["roc3l","roc5"],
+        ["roc1r","roc5"],
+        ["roc2r","roc5"],
+        ["roc3r","roc5"],
+
+        // attach
+        {"beamSpring":201000,"beamDamp":50},
+        {"beamDeform":8000,"beamStrength":10000},
+        {"breakGroup":"rollcage"},
+
+        ["roc2l","f4l"],
+        ["roc2l","f4ml"],
+        ["roc3l","f4l"],
+        ["roc3l","f4ml"],
+        ["roc3l","f6l"],
+        ["roc3l","f6ml"],
+
+        ["roc2r","f4r"],
+        ["roc2r","f4mr"],
+        ["roc3r","f4r"],
+        ["roc3r","f4mr"],
+        ["roc3r","f6r"],
+        ["roc3r","f6mr"],
+
+        ["roc1r","bq11r"],
+        ["roc2r","bq11l"],
+        ["roc2r","bq11r"],
+        ["roc1l","bq11l"],
+        ["roc2l","bq11l"],
+        ["roc2l","bq11r"],
+
+        
+        {"beamDeform":12000,"beamStrength":10000},
+        ["roc1r","f6r"],
+        ["roc1r","f6mr"],
+        ["roc1l","f6l"],
+        ["roc1l","f6ml"],
+        ["roc2r","f6r"],
+        ["roc2r","f6mr"],
+        ["roc2l","f6l"],
+        ["roc2l","f6ml"],
+
+        // support beams
+        {"beamType":"|SUPPORT", "beamLongBound":2},
+        {"beamSpring":100100,"beamDamp":30},
+        {"beamDeform":14000,"beamStrength":10000},
+        {"breakGroupType":1},
+        {"breakGroup":"rollcage"},
+        ["roc1l","brf4"],
+        ["roc1l","brf4l"],
+        ["roc1l","brf4ll"],
+        ["roc1l","brf4lll"],
+        ["roc1r","brf4"],
+        ["roc1r","brf4r"],
+        ["roc1r","brf4rr"],
+        ["roc1r","brf4rrr"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"breakGroup":""},
+        {"breakGroupType":0}
     ],
 },
 "bug_rollcage": {
@@ -623,8 +824,210 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
 	
-         ["bug_rollcage", ["bug_body"]],
+         ["bug_rollcage", ["bug_rollcage"]],
     ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+
+        {"selfCollision":true},
+        {"collision" :true},
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"nodeWeight":0.5},
+        {"group":"bug_rollcage"},
+        ["roc1r", -0.420, 0.458, 1.342],
+        ["roc1l",  0.420, 0.458, 1.342],
+        ["roc2r", -0.587, 0.383, 0.960],
+        ["roc2l",  0.587, 0.383, 0.960],
+        ["roc3r", -0.619, 0.296, 0.369],
+        ["roc3l",  0.619, 0.296, 0.369],
+
+        ["roc4r", -0.485, -0.528, 1.025],
+        ["roc4l",  0.485, -0.528, 1.025],
+        ["roc5r", -0.440, -0.231, 1.331],
+        ["roc5l",  0.440, -0.231, 1.331],
+        ["roc6r", -0.406, 1.257, 1.022],
+        ["roc6l",  0.406, 1.257, 1.022],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        // main
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"deformLimitExpansion":0},
+        {"beamSpring":200100,"beamDamp":50},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+        
+        ["roc1l","roc2l"],
+        ["roc2l","roc3l"],
+        ["roc1r","roc2r"],
+        ["roc2r","roc3r"],
+        ["roc1r","roc1l"],
+        ["roc1l","roc3r"],
+        ["roc1r","roc3l"],
+
+        ["roc5r","roc5l"],
+        ["roc4l","roc5l"],
+        ["roc5l","roc1l"],
+        ["roc1l","roc6l"],
+        ["roc4r","roc5r"],
+        ["roc5r","roc1r"],
+        ["roc1r","roc6r"],
+
+        ["roc1r","roc6l"],
+        ["roc1l","roc6r"],
+
+        ["roc2r","roc4r"],
+        ["roc2r","roc5r"],
+        ["roc1r","roc4r"],
+        ["roc2l","roc4l"],
+        ["roc2l","roc5l"],
+        ["roc1l","roc4l"],
+
+        {"beamSpring":150100,"beamDamp":50},
+        {"beamDeform":6000},
+        ["roc2r","roc2l"],
+        ["roc3r","roc3l"],
+        ["roc6r","roc6l"],
+        ["roc4r","roc4l"],
+
+        ["roc1l","roc2r"],
+        ["roc1r","roc2l"],
+        ["roc2l","roc3r"],
+        ["roc2r","roc3l"],
+        ["roc3l","roc4r"],
+        ["roc3r","roc4l"],
+
+        ["roc3l","roc4l"],
+        ["roc3r","roc4r"],
+        ["roc4r","roc5l"],
+        ["roc4l","roc5r"],
+        ["roc1l","roc5r"],
+        ["roc1r","roc5l"],
+        ["roc6l","roc2l"],
+        ["roc6l","roc3l"],
+        ["roc6r","roc2r"],
+        ["roc6r","roc3r"],
+        ["roc3l","roc6r"],
+        ["roc3r","roc6l"],
+
+        // sunvisor <> roof
+        {"beamDeform":8000,"beamStrength":10000},
+        {"breakGroup":"rollcage"},
+
+        ["roc3l","f4l"],
+        ["roc3l","f4ml"],
+        ["roc4l","f4l"],
+        ["roc4l","f4ml"],
+        ["roc4l","f6l"],
+        ["roc4l","f6ml"],
+
+        ["roc3r","f4r"],
+        ["roc3r","f4mr"],
+        ["roc4r","f4r"],
+        ["roc4r","f4mr"],
+        ["roc4r","f6r"],
+        ["roc4r","f6mr"],
+
+        ["roc1r","bq11r"],
+        ["roc2r","bq11l"],
+        ["roc2r","bq11r"],
+        ["roc1l","bq11l"],
+        ["roc2l","bq11l"],
+        ["roc2l","bq11r"],
+
+        ["roc4r","bf7rr"],
+        ["roc4r","bf8r"],
+        ["roc4r","bf7ll"],
+        ["roc4l","bf8l"],
+
+        ["roc6l","bq7l"],
+        ["roc6l","bq7r"],
+        ["roc6r","bq7l"],
+        ["roc6r","bq7r"],
+
+        // support beams
+        {"beamType":"|SUPPORT", "beamLongBound":2},
+        {"beamSpring":100100,"beamDamp":30},
+        {"beamDeform":14000,"beamStrength":10000},
+        {"breakGroupType":1},
+        {"breakGroup":"rollcage"},
+        ["roc1l","brf4"],
+        ["roc1l","brf4l"],
+        ["roc1l","brf4ll"],
+        ["roc1l","brf4lll"],
+        ["roc1r","brf4"],
+        ["roc1r","brf4r"],
+        ["roc1r","brf4rr"],
+        ["roc1r","brf4rrr"],
+
+        ["roc1l","brf5"],
+        ["roc1l","brf5l"],
+        ["roc1l","brf5ll"],
+        ["roc1l","brf5lll"],
+        ["roc1r","brf5"],
+        ["roc1r","brf5r"],
+        ["roc1r","brf5rr"],
+        ["roc1r","brf5rrr"],
+
+        ["roc5l","brf2"],
+        ["roc5l","brf2l"],
+        ["roc5l","brf2ll"],
+        ["roc5l","brf2lll"],
+        ["roc5r","brf2"],
+        ["roc5r","brf2r"],
+        ["roc5r","brf2rr"],
+        ["roc5r","brf2rrr"],
+
+        ["roc1l","brf3ll"],
+        ["roc1l","brf3lll"],
+        ["roc5l","brf3ll"],
+        ["roc5l","brf3lll"],
+        ["roc1r","brf3rr"],
+        ["roc1r","brf3rrr"],
+        ["roc5r","brf3rr"],
+        ["roc5r","brf3rrr"],
+
+        ["roc4r","bc1r"],
+        ["roc4r","bc5r"],
+        ["roc4l","bc1l"],
+        ["roc4l","bc5l"],
+        
+        ["roc1l","brf6"],
+        ["roc1l","brf6l"],
+        ["roc1l","brf6ll"],
+        ["roc1r","brf6r"],
+        ["roc1r","brf6rr"],
+
+        ["roc6l","brf6"],
+        ["roc6l","brf6l"],
+        ["roc6l","brf6ll"],
+        ["roc6r","brf6"],
+        ["roc6r","brf6r"],
+        ["roc6r","brf6rr"],
+
+        ["roc6l","br2"],
+        ["roc6l","br2l"],
+        ["roc6l","br2ll"],
+        ["roc6r","br2"],
+        ["roc6r","br2r"],
+        ["roc6r","br2rr"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"breakGroup":""},
+        {"breakGroupType":0}
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"groundModel":"metal"},
+        {"group":"bug_rollcage"},
+        ["roc5l", "roc5r", "roc1l"],
+        ["roc5r", "roc1r", "roc1l"],
+        ["roc1l", "roc1r", "roc6l"],
+        ["roc1r", "roc6r", "roc6l"],
+        {"group":""}
+    ]
 },
 
 "skin_rollcage_black": {
