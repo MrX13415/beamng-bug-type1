@@ -7,26 +7,26 @@
         "value": 300,
     },
     "slotType" : "bug_dashboard",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_shifter", "bug_shifter_4M", "Shifter"],
-        ["skin_speedometer", "bug_speedo_km_140", "Speedometer", {"coreSlot":true}],
-        ["bug_tachometer", "bug_tacho_empty", "Tachometer", {"coreSlot":true}],
-        ["bug_fuelgauge", "bug_fuelgauge", "Fuel Gauge", {"coreSlot":true}],
-        ["skin_interior_theme", "bug_inputs_white", "Controls"],
+        ["bug_shifter",             ["bug_shifter"], [],             "bug_shifter_4M",          "Shifter"],
+        ["skin_speedometer",        ["skin_speedometer"], [],        "bug_speedo_km_140",       "Speedometer",         {"coreSlot":true}],
+        ["bug_tachometer",          ["bug_tachometer"], [],          "bug_tacho_empty",         "Tachometer",          {"coreSlot":true}],
+        ["bug_fuelgauge",           ["bug_fuelgauge"], [],           "bug_fuelgauge",           "Fuel Gauge",          {"coreSlot":true}],
+        ["skin_interior_theme",     ["skin_interior_theme"], [],     "bug_inputs_white",        "Controls"],
         
-        ["bug_console_accessory", "", "Console Accessory"],
-        ["bug_console_cage", "bug_console_cover", "Console"],
-        ["bug_console_clock", "", "Clock"],
-        ["bug_hazard_knob", "", "Hazard Light Switch"],
-        ["bug_glovebox", "bug_glovebox", "Glovebox", {"coreSlot":true}],
-        ["bug_shelf", "", "Shelf"],
-        ["bug_dashboard_handle", "", "Grab Handle"],
-        ["bug_dashboard_backcover", "bug_dashboard_backcover", "Back Cover"],
-        ["bug_ignition", "bug_ignition_stage3", "Ignition", {"coreSlot":true}],
+        ["bug_console_clock",       ["bug_console_clock"], [],       "",                        "Clock"],
+        ["bug_console_cage",        ["bug_console_cage"], [],        "bug_console_cover",       "Radio Slot"],
+        ["bug_ignition",            ["bug_ignition"], [],            "bug_ignition_stage3",     "Ignition Lock",       {"coreSlot":true}],
+        ["bug_hazard_knob",         ["bug_hazard_knob"], [],         "",                        "Hazard Light Switch"],
+        ["bug_console_accessory",   ["bug_console_accessory"], [],   "",                        "Center Console Accessory"],
+        ["bug_dashboard_handle",    ["bug_dashboard_handle"], [],    "",                        "Grab Handle"],
+        ["bug_glovebox",            ["bug_glovebox"], [],            "bug_glovebox",            "Glovebox",            {"coreSlot":true}],
+        ["bug_shelf",               ["bug_shelf"], [],               "",                        "Shelf"],
+        ["bug_dashboard_backcover", ["bug_dashboard_backcover"], [], "bug_dashboard_backcover", "Back Cover"],
 
-        ["bug_gps", "", "Navigation Unit", {"nodeMove": {"x":0.0,"y":-0.475,"z":1.09}}],
+        ["bug_gps",                 ["bug_gps"], [],                 "",                        "Navigation Unit",     {"nodeMove": {"x":0.0,"y":-0.475,"z":1.09}}],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -37,6 +37,8 @@
         ["wipers",       "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.069, "y":-0.1745, "z":-0.048},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
 
         ["parkingbreak", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.202, "z":-0.16},{"color":[1,0.3,0,0], "alphaOnUsed":0}]
+
+        ["heating_valve", "f4mr","f4ml","refup", "sphere", 0.018, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.022, "y":0.170, "z":-0.2937},{"color":[1,0.3,0,0], "alphaOnUsed":0}]
     ],
     "actionsEnabled": [
         ["id"],
@@ -45,6 +47,8 @@
         ["wiperstoggle"],
         ["wipersdown"],
         ["wipersup"],
+
+        ["heatingValvetoggle"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],        
@@ -59,6 +63,8 @@
         ["wipers", "action2", "wipersdown"],
 
         ["parkingbreak", "action0", "common:parkingbrake"],
+
+        ["heating_valve", "action0", "heatingValvetoggle"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -76,18 +82,19 @@
     ],
     "glowMap":{
         // dashboard gauges
-        "bug_gauges":               {"simpleFunction":"power__gauges",  "off":"bug_gauges",         "on":"bug_gauges_light",         "on_intense":"bug_gauges_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_speedometer":          {"simpleFunction":"power__gauges",  "off":"bug_speedometer",    "on":"bug_speedometer_light",    "on_intense":"bug_speedometer_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_tachometer":           {"simpleFunction":"power__gauges",  "off":"bug_tachometer",     "on":"bug_tachometer_light",     "on_intense":"bug_tachometer_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_oil_ammeter":          {"simpleFunction":"power__gauges",  "off":"bug_oil_ammeter",    "on":"bug_oil_ammeter_light",    "on_intense":"bug_oil_ammeter_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_speedo_needle":        {"simpleFunction":"power__gauges",  "off":"bug_speedo_needle",  "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_tacho_needle":         {"simpleFunction":"power__gauges",  "off":"bug_tacho_needle",   "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_clock_back":           {"simpleFunction":"power__gauges",  "off":"bug_clock_back",     "on":"bug_clock_light",          "on_intense":"bug_clock_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_clock_needle":         {"simpleFunction":"power__gauges",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_gauges":               {"simpleFunction":"power__gauges",  "off":"bug_gauges",         "on":"bug_gauges_light",         "on_intense":"bug_gauges_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_gauges_needle":        {"simpleFunction":"power__gauges",  "off":"bug_gauges_needle",  "on":"bug_gauges_needle_light",  "on_intense":"bug_gauges_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_speedometer":          {"simpleFunction":"power__gauges",  "off":"bug_speedometer",    "on":"bug_speedometer_light",    "on_intense":"bug_speedometer_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_tachometer":           {"simpleFunction":"power__gauges",  "off":"bug_tachometer",     "on":"bug_tachometer_light",     "on_intense":"bug_tachometer_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_oil_ammeter":          {"simpleFunction":"power__gauges",  "off":"bug_oil_ammeter",    "on":"bug_oil_ammeter_light",    "on_intense":"bug_oil_ammeter_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_speedo_needle":        {"simpleFunction":"power__gauges",  "off":"bug_speedo_needle",  "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_tacho_needle":         {"simpleFunction":"power__gauges",  "off":"bug_tacho_needle",   "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_clock_back":           {"simpleFunction":"power__gauges",  "off":"bug_clock_back",     "on":"bug_clock_light",          "on_intense":"bug_clock_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_clock_needle":         {"simpleFunction":"power__gauges",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
 
         // dashboard lights
-        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",               "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",               "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":1.0}},
         // use the "oil" LED to indicate regeneration beeing active (blinking).
         "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
         "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},             "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
@@ -104,6 +111,8 @@
 
         ["anim__turnsignal",   "bug_indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
         ["anim__parkingbrake", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+
+        ["anim__heating_valve", "bug_controls_heating_valve_knob",  "f4mr","f4ml","refup",   {"x":30.5, "y":7.5, "z":0},   {"x":0, "y":0, "z":1},    {"x":0, "y":0, "z":0}, 0, 120, 0, 120],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -251,23 +260,23 @@
         "value": 300,
     },
     "slotType" : "bug_dashboard",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_shifter", "bug_shifter_4M", "Shifter"],
-        ["skin_speedometer", "bug_speedo_km_140", "Speedometer", {"coreSlot":true}],
-        ["skin_interior_theme", "bug_inputs_white", "Controls"],
+        ["bug_shifter",             ["bug_shifter"], [],             "bug_shifter_4M",          "Shifter"],
+        ["skin_speedometer",        ["skin_speedometer"], [],        "bug_speedo_km_140",       "Speedometer",         {"coreSlot":true}],
+        ["skin_interior_theme",     ["skin_interior_theme"], [],     "bug_inputs_white",        "Controls"],
         
-        ["bug_console_accessory", "", "Dashboard Accessory"],
-        ["bug_console_clock", "", "Clock"],
-        ["bug_hazard_knob", "", "Hazard Light Switch"],
-        ["bug_glovebox", "bug_glovebox", "Glovebox", {"coreSlot":true}],
-        ["bug_shelf", "", "Shelf"],
-        ["bug_dashboard_handle", "", "Grab Handle"],
-        ["bug_dashboard_backcover", "bug_dashboard_backcover", "Back Cover"],
-        ["bug_ignition", "bug_ignition_stage3", "Ignition", {"coreSlot":true}],
+        ["bug_console_accessory",   ["bug_console_accessory"], [],   "",                        "Dashboard Accessory"],
+        ["bug_console_clock",       ["bug_console_clock"], [],       "",                        "Clock"],
+        ["bug_hazard_knob",         ["bug_hazard_knob"], [],         "",                        "Hazard Light Switch"],
+        ["bug_glovebox",            ["bug_glovebox"], [],            "bug_glovebox",            "Glovebox",            {"coreSlot":true}],
+        ["bug_shelf",               ["bug_shelf"], [],               "",                        "Shelf"],
+        ["bug_dashboard_handle",    ["bug_dashboard_handle"], [],    "",                        "Grab Handle"],
+        ["bug_dashboard_backcover", ["bug_dashboard_backcover"], [], "bug_dashboard_backcover", "Back Cover"],
+        ["bug_ignition",            ["bug_ignition"], [],            "bug_ignition_stage3",     "Ignition Lock",       {"coreSlot":true}],
 
-        ["bug_gps", "", "Navigation Unit", {"nodeMove": {"x":0.49,"y":-0.475,"z":1.04}}],
+        ["bug_gps",                 ["bug_gps"], [],                 "",                        "Navigation Unit",     {"nodeMove": {"x":0.49,"y":-0.475,"z":1.04}}],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -310,17 +319,18 @@
     ],
     "glowMap":{
         // dashboard gauges
-        "bug_gauges":               {"simpleFunction":"power__gauges",  "off":"bug_gauges",         "on":"bug_gauges_light",         "on_intense":"bug_gauges_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_speedometer":          {"simpleFunction":"power__gauges",  "off":"bug_speedometer",    "on":"bug_speedometer_light",    "on_intense":"bug_speedometer_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_tachometer":           {"simpleFunction":"power__gauges",  "off":"bug_tachometer",     "on":"bug_tachometer_light",     "on_intense":"bug_tachometer_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_speedo_needle":        {"simpleFunction":"power__gauges",  "off":"bug_speedo_needle",  "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_tacho_needle":         {"simpleFunction":"power__gauges",  "off":"bug_tacho_needle",   "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_clock_back":           {"simpleFunction":"power__gauges",  "off":"bug_clock_back",     "on":"bug_clock_light",          "on_intense":"bug_clock_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_clock_needle":         {"simpleFunction":"power__gauges",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_gauges":               {"simpleFunction":"power__gauges",  "off":"bug_gauges",         "on":"bug_gauges_light",         "on_intense":"bug_gauges_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_gauges_needle":        {"simpleFunction":"power__gauges",  "off":"bug_gauges_needle",  "on":"bug_gauges_needle_light",  "on_intense":"bug_gauges_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_speedometer":          {"simpleFunction":"power__gauges",  "off":"bug_speedometer",    "on":"bug_speedometer_light",    "on_intense":"bug_speedometer_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_tachometer":           {"simpleFunction":"power__gauges",  "off":"bug_tachometer",     "on":"bug_tachometer_light",     "on_intense":"bug_tachometer_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_speedo_needle":        {"simpleFunction":"power__gauges",  "off":"bug_speedo_needle",  "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_tacho_needle":         {"simpleFunction":"power__gauges",  "off":"bug_tacho_needle",   "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_clock_back":           {"simpleFunction":"power__gauges",  "off":"bug_clock_back",     "on":"bug_clock_light",          "on_intense":"bug_clock_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_clock_needle":         {"simpleFunction":"power__gauges",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
 
         // dashboard lights
-        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",               "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",               "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":1.0}},
         // use the "oil" LED to indicate regeneration beeing active (blinking)
         "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
         "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},             "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
@@ -966,10 +976,10 @@
         [4, {"trigger": "electrics.values.lowhighbeam"}],
     ],
     "slotType" : "bug_tachometer",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["skin_tachometer", "bug_tacho_6000", "Max RPM", {"coreSlot":true}],
+        ["skin_tachometer", ["skin_tachometer"], [], "bug_tacho_6000", "Max RPM",     {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1152,13 +1162,13 @@
         "value":30,
     },
     "slotType" : "bug_console_accessory",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_console_switchboad_btn0", "bug_console_switchboad_btn_beacon", "Button 1", {"variables": {"$posX":0.0255,"$posY":0,"$posZ":0}}],
-        ["bug_console_switchboad_btn1", "bug_console_switchboad_btn_siren", "Button 2", {"variables": {"$posX":0.0085,"$posY":0,"$posZ":0}}],
-        ["bug_console_switchboad_btn2", "", "Button 3", {"variables": {"$posX":-0.0085,"$posY":0,"$posZ":0}}],
-        ["bug_console_switchboad_btn3", "", "Button 4", {"variables": {"$posX":-0.0255,"$posY":0,"$posZ":0}}],
+        ["bug_console_switchboad_btn0", ["bug_console_switchboad_btn0"], [], "bug_console_switchboad_btn_beacon", "Button 1",    {"variables": {"$posX":0.0255,"$posY":0,"$posZ":0}}],
+        ["bug_console_switchboad_btn1", ["bug_console_switchboad_btn1"], [], "bug_console_switchboad_btn_siren",  "Button 2",    {"variables": {"$posX":0.0085,"$posY":0,"$posZ":0}}],
+        ["bug_console_switchboad_btn2", ["bug_console_switchboad_btn2"], [], "",                                  "Button 3",    {"variables": {"$posX":-0.0085,"$posY":0,"$posZ":0}}],
+        ["bug_console_switchboad_btn3", ["bug_console_switchboad_btn3"], [], "",                                  "Button 4",    {"variables": {"$posX":-0.0255,"$posY":0,"$posZ":0}}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1178,11 +1188,11 @@
         [4, {"trigger": "electrics.values.lowhighbeam"}],
     ],
     "slotType" : "bug_console_accessory",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_console_switchboad_btn0", "", "Button 1", {"variables": {"$posX":-0.041541,"$posY":-0.005918,"$posZ":0.002748}}],
-        ["bug_console_switchboad_btn1", "bug_console_switchboad_btn_extlight", "Button 2", {"variables": {"$posX":-0.058541,"$posY":-0.005918,"$posZ":0.002748}}],
+        ["bug_console_switchboad_btn0", ["bug_console_switchboad_btn0"], [], "",                                    "Button 1",    {"variables": {"$posX":-0.041541,"$posY":-0.005918,"$posZ":0.002748}}],
+        ["bug_console_switchboad_btn1", ["bug_console_switchboad_btn1"], [], "bug_console_switchboad_btn_extlight", "Button 2",    {"variables": {"$posX":-0.058541,"$posY":-0.005918,"$posZ":0.002748}}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1416,10 +1426,10 @@
     ],
     "slotType" : "skin_speedometer",
     "skinName" : "mph90",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_odometer", "bug_odometer_imperial", "Odometer", {"coreSlot":true}],
+        ["bug_odometer", ["bug_odometer"], [], "bug_odometer_imperial", "Odometer",    {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1460,10 +1470,10 @@
     ],
     "slotType" : "skin_speedometer",
     "skinName" : "mph150",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_odometer", "bug_odometer_imperial", "Odometer", {"coreSlot":true}],
+        ["bug_odometer", ["bug_odometer"], [], "bug_odometer_imperial", "Odometer",    {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1504,10 +1514,10 @@
     ],
     "slotType" : "skin_speedometer",
     "skinName" : "mph200",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_odometer", "bug_odometer_imperial", "Odometer", {"coreSlot":true}],
+        ["bug_odometer", ["bug_odometer"], [], "bug_odometer_imperial", "Odometer",    {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1548,10 +1558,10 @@
     ],
     "slotType" : "skin_speedometer",
     "skinName" : "km140",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_odometer", "bug_odometer_metric", "Odometer", {"coreSlot":true}],
+        ["bug_odometer", ["bug_odometer"], [], "bug_odometer_metric", "Odometer",    {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1592,10 +1602,10 @@
     ],
     "slotType" : "skin_speedometer",
     "skinName" : "km240",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_odometer", "bug_odometer_metric", "Odometer", {"coreSlot":true}],
+        ["bug_odometer", ["bug_odometer"], [], "bug_odometer_metric", "Odometer",    {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1636,10 +1646,10 @@
     ],
     "slotType" : "skin_speedometer",
     "skinName" : "km320",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_odometer", "bug_odometer_metric", "Odometer", {"coreSlot":true}],
+        ["bug_odometer", ["bug_odometer"], [], "bug_odometer_metric", "Odometer",    {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1808,10 +1818,10 @@
         "value": 30,
     },
     "slotType" : "bug_ignition",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_ignition_key", "bug_ignition_key", "Ignition Key", {"coreSlot":true}]
+        ["bug_ignition_key", ["bug_ignition_key"], [], "bug_ignition_key", "Ignition Key", {"coreSlot":true}],
     ],
     "controller": [
         ["fileName"],
@@ -1830,10 +1840,10 @@
         "value": 40,
     },
     "slotType" : "bug_ignition",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_ignition_key", "bug_ignition_key", "Ignition Key", {"coreSlot":true}]
+        ["bug_ignition_key", ["bug_ignition_key"], [], "bug_ignition_key", "Ignition Key", {"coreSlot":true}],
     ],
     "electrics": {
         "allowedIgnitionLevels":[0, 1, 2, 3]
@@ -1846,10 +1856,10 @@
         "value": 35,
     },
     "slotType" : "bug_ignition_key",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_ignition_keyfob", "bug_ignition_keyfob", "Key Fob"],
+        ["bug_ignition_keyfob", ["bug_ignition_keyfob"], [], "bug_ignition_keyfob", "Key Fob"],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],

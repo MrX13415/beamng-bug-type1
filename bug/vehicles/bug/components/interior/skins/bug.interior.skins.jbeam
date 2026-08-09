@@ -329,7 +329,7 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
    
          ["bug_floor_carpet_1", ["bug_body_front"]],
-         ["bug_floor_carpet_2", ["bug_body_front"]],
+         ["bug_floor_carpet_old_2", ["bug_body_front"]],
          ["bug_floor_carpet_4", ["bug_body_sides", "bug_body_sides_front"]],
          ["bug_floor_carpet_3", ["bug_frame"]],
          ["bug_floor_carpet_5", ["bug_frame"]],

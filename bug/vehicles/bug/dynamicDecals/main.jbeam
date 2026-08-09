@@ -1,12 +1,15 @@
 {
+
 "bug_skin_dynamicTextures": {
-    "information":{
-        "authors":"BeamNG",
-        "name":"Dynamic Textures",
-        "isAuxiliary": true,
-        "value":1350
-    },
-    "slotType" : "paint_design",
-    "globalSkin" : "dynamicTextures"
+  "information":{
+      "authors":"BeamNG",
+      "name":"Dynamic Textures",
+      "isAuxiliary": true,
+      "value":1350
   },
+  "slotType" : "paint_design",
+  "dynDecalMaterials": ["bug_body_paint"],
+  "globalSkin" : "dynamicTextures"
+}
+
 }

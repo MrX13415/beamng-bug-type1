@@ -2,9 +2,12 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
+-- Controller to animate windshield wipers, with 3 speed levels and realistic movement. 
 -- by MrX13415
 
 local M = {}
+
+local misc = require("vehicles/bug/lua/misc")
 
 local updateTimer = 2   -- Make sure the first call is immediately
 
@@ -28,24 +31,24 @@ local wipersBreak = 0
 local wipersDirection = 1
 local wipersStateDirection = 1
 
-local wipersMessageOn = "Wipers: On"
+local wipersMessageOn = "ui.bug.interior.wipers.on"
 local wipersMessageLookup = {
-  [0] = "Wipers: Off",
-  [1] = "Wipers: Level 1",
-  [2] = "Wipers: Level 2",
-  [3] = "Wipers: Level 3",
+  [0] = "ui.bug.interior.wipers.off",
+  [1] = "ui.bug.interior.wipers.1",
+  [2] = "ui.bug.interior.wipers.2",
+  [3] = "ui.bug.interior.wipers.3"
 }
 
 local function hasPower() return electrics.values.ignitionLevel > 0 and electrics.values.powerAvailable > 0 end
 
 local function createSFX(event, node, eventID)
-  local soundNode = getNodeIDbyName(node)
+  local soundNode = misc.getNodeIDbyName(node)
   local sound = obj:createSFXSource2(event, "AudioClosestLoop3D", eventID, soundNode, 0)
   return sound
 end
 
 local function playSound(soundname)
-  sounds.playSoundOnceAtNode(soundname, getNodeIDbyName(NodeSFX), 1, 1, 0, 0)
+  sounds.playSoundOnceAtNode(soundname, misc.getNodeIDbyName(NodeSFX), 1, 1, 0, 0)
 end
 
 local function getMessage(state)
@@ -148,7 +151,7 @@ local function toggle()
   playSound(state > 0 and SFXOn or SFXOff)
   state = state + wipersStateDirection
   electrics.values["wipersstate"] = state
-  guihooks.message({txt = getMessage(state), context = {}}, 4, "vehicle.wipers")
+  guihooks.message({txt = getMessage(state), context = {}}, 4, "vehicle.wipers", "droplet")
 end
 
 local function up()
@@ -158,7 +161,7 @@ local function up()
     playSound(SFXOn)
   end
   electrics.values["wipersstate"] = state
-  guihooks.message({txt = getMessage(state), context = {}}, 4, "vehicle.wipers")
+  guihooks.message({txt = getMessage(state), context = {}}, 4, "vehicle.wipers", "droplet")
 end
 
 local function down()
@@ -168,7 +171,7 @@ local function down()
     playSound(SFXOff)
   end
   electrics.values["wipersstate"] = state
-  guihooks.message({txt = getMessage(state), context = {}}, 4, "vehicle.wipers")
+  guihooks.message({txt = getMessage(state), context = {}}, 4, "vehicle.wipers", "droplet")
 end
 
 -- Public Interface

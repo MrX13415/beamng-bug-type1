@@ -8,9 +8,9 @@
         "value":10,
     },
     "slotType" : "bug_seat_FL",
-    "slots": [
-        ["type", "default", "description"],
-        ["race_seat_FL","race_seat_FL", "Front Left Race Seat", {"nodeMove":{"x":0.30, "y":-0.10, "z":0.27}}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["race_seat_FL", ["race_seat_FL"], [], "race_seat_FL", "Front Left Race Seat", {"nodeMove":{"x":0.30, "y":-0.10, "z":0.27}}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -87,9 +87,9 @@
         "value":10,
     },
     "slotType" : "bug_seat_FR",
-    "slots": [
-        ["type", "default", "description"],
-        ["race_seat_FR","race_seat_FR", "Front Right Race Seat", {"nodeMove":{"x":-0.30, "y":-0.10, "z":0.27}}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["race_seat_FR", ["race_seat_FR"], [], "race_seat_FR", "Front Right Race Seat", {"nodeMove":{"x":-0.30, "y":-0.10, "z":0.27}}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],

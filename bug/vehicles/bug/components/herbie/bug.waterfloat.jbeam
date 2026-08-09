@@ -6,10 +6,10 @@
         "value":150,
     },
     "slotType" : "bug_waterfloat",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-		["bug_thrusters","bug_water_thrusters", "Thrusters"]
+		["bug_thrusters", ["bug_thrusters"], [], "bug_water_thrusters", "Thrusters"],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

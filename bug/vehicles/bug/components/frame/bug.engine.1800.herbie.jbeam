@@ -9,22 +9,22 @@
         "value":80000,
     },
     "slotType" : "bug_engine",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_battery","bug_battery", "Battery", {"coreSlot": true}],
-        ["bug_intake","bug_intake", "Intake", {"coreSlot":true}],
-        ["bug_oilpan","bug_oilpan", "Oil Pan", {"coreSlot":true}],
-        ["bug_exhaust","bug_exhaust", "Exhaust"],
+        ["bug_battery",          ["bug_battery"], [],          "bug_battery",          "Battery",              {"coreSlot": true}],
+        ["bug_intake",           ["bug_intake"], [],           "bug_intake",           "Intake",               {"coreSlot":true}],
+        ["bug_oilpan",           ["bug_oilpan"], [],           "bug_oilpan",           "Oil Pan",              {"coreSlot":true}],
+        ["bug_exhaust",          ["bug_exhaust"], [],          "bug_exhaust",          "Exhaust"],
         
-        ["bug_oilcooler","", "Oil Cooler"],
+        ["bug_oilcooler",        ["bug_oilcooler"], [],        "",                     "Oil Cooler"],
         
         // These parts don't make sense with this engine and cause more problems then they solve.
-        //["bug_engine_internals","bug_engine_internals", "Engine Long Block", {"coreSlot":true}],
-        //["bug_engine_ecu","", "Engine Management"],
+        ["bug_engine_internals", ["bug_engine_internals"], [], "bug_engine_internals", "Engine Long Block",    {"coreSlot":true}],
+        ["bug_engine_ecu",       ["bug_engine_ecu"], [],       "",                     "Engine Management"],
 
-        ["bug_transaxle","bug_transaxle_4M", "Transaxle"],
-        ["n2o_system","", "Nitrous Oxide System"],
+        ["bug_transaxle",        ["bug_transaxle"], [],        "bug_transaxle_4M",     "Transaxle"],
+        ["n2o_system",           ["n2o_system"], [],           "",                     "Nitrous Oxide System"],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

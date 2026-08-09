@@ -6,12 +6,12 @@
         "value":250
     },
     "slotType" : "bug_door_FR",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_doorglass_FR","bug_doorglass_FR", "Window", {"coreSlot": true}],
-        ["bug_doorvent_FR","bug_doorvent_FR", "Vent Window", {"coreSlot": true}],
-        ["bug_mirror_R","bug_mirror_teardrop_R", "Mirror"],
-        ["bug_doorhandle_R","bug_door_handle_R", "Handle"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_doorvent_FR",  ["bug_doorvent_FR"], [],  "bug_doorvent_FR",       "Right Quarter Window", {"coreSlot": true}],
+        ["bug_doorglass_FR", ["bug_doorglass_FR"], [], "bug_doorglass_FR",      "Right Door Window",      {"coreSlot": true}],
+        ["bug_mirror_R",     ["bug_mirror_R"], [],     "bug_mirror_teardrop_R", "Right Door Mirror"],
+        ["bug_doorhandle_R", ["bug_doorhandle_R"], [], "bug_door_handle_R",     "Right Door Handle"],
     ],
     "sounds": {
         "$+cabinFilterCoef": 0.1
@@ -74,13 +74,13 @@
         ["d2r",  -0.665573, -0.250102, 0.328229],
         ["d3r",  -0.700539,  0.294437, 0.328229],
         ["d4r",  -0.648047, -0.605883, 0.603074],
-        ["d5r",  -0.678370, -0.25389,  0.60235, {"nodeWeight":1.5, "selfCollision":false}],
+        ["d5r",  -0.678370, -0.26389,  0.60235, {"nodeWeight":1.5, "selfCollision":false}],
         ["d6r",  -0.722429,  0.294437, 0.60157],
         ["d8r",  -0.652307, -0.24872,  0.94392, {"nodeWeight":0.8, "selfCollision":false}],
         ["d9r",  -0.691250,  0.294437, 0.95028, {"nodeWeight":0.8}],
         ["d10r", -0.568596, -0.405212, 1.24026],
         ["d11r", -0.566714, -0.243084, 1.32514],
-        ["d12r", -0.595103,  0.294437, 1.34054],
+        ["d12r", -0.595103,  0.304437, 1.34054],
         ["d13r", -0.650399,  0.294437, 1.1518],
         {"selfCollision":false},
         {"collision":false},
@@ -323,12 +323,12 @@
         "value":250
     },
     "slotType" : "bug_door_FL",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_doorglass_FL","bug_doorglass_FL", "Window", {"coreSlot": true}],
-        ["bug_doorvent_FL","bug_doorvent_FL", "Vent Window", {"coreSlot": true}],
-        ["bug_mirror_L","bug_mirror_teardrop_L", "Mirror"],
-        ["bug_doorhandle_L","bug_door_handle_L", "Handle"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_doorvent_FL",  ["bug_doorvent_FL"], [],  "bug_doorvent_FL",       "Left Quarter Window", {"coreSlot": true}],
+        ["bug_doorglass_FL", ["bug_doorglass_FL"], [], "bug_doorglass_FL",      "Left Door Window",      {"coreSlot": true}],
+        ["bug_mirror_L",     ["bug_mirror_L"], [],     "bug_mirror_teardrop_L", "Left Door Mirror"],
+        ["bug_doorhandle_L", ["bug_doorhandle_L"], [], "bug_door_handle_L",     "Left Door Handle"],
     ],
     "sounds": {
         "$+cabinFilterCoef": 0.1
@@ -393,13 +393,13 @@
         ["d2l",  0.665573, -0.250102, 0.328229],
         ["d3l",  0.700539,  0.294437, 0.328229],
         ["d4l",  0.648047, -0.605883, 0.603074],
-        ["d5l",  0.678370, -0.25389,  0.60235, {"nodeWeight":1.0, "selfCollision":false}],
+        ["d5l",  0.678370, -0.26389,  0.60235, {"nodeWeight":1.0, "selfCollision":false}],
         ["d6l",  0.722429,  0.294437, 0.60157],
         ["d8l",  0.652307, -0.24872,  0.94392, {"nodeWeight":0.8, "selfCollision":false}],
         ["d9l",  0.691250,  0.294437, 0.95028, {"nodeWeight":0.8}],
         ["d10l", 0.568596, -0.405212, 1.24026],
         ["d11l", 0.566714, -0.243084, 1.32514],
-        ["d12l", 0.595103,  0.294437, 1.34054],
+        ["d12l", 0.595103,  0.304437, 1.34054],
         ["d13l", 0.650399,  0.294437, 1.1518],
         {"selfCollision":false},
         {"collision":false},

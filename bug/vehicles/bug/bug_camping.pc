@@ -6,7 +6,7 @@
     "antenna":"antenna_default_R",
     "brakepad_F":"brakepad_F_premium",
     "brakepad_R":"brakepad_R_premium",
-    "bug_6pack":"bug_6pack_saft",
+    "bug_footwell_FR":"bug_6pack_saft",
     "bug_battery":"bug_battery",
     "bug_behavior":"",
     "bug_body":"bug_body",

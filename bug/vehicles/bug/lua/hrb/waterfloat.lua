@@ -11,7 +11,6 @@ local thrusters = {}
 local gearboxFriction = nil
 local inWater = 0
 local wasInWater = false
-local debug = true
 
 local avToRPM = 9.549296596425384
 local engine = nil
@@ -118,7 +117,7 @@ local function updateThrusters()
   if inWater > 0 then inWater = math.max(inWater - 0.02, 0) end 
 
   -- debug
-  if debug then guihooks.graph(unpack(graphdata)) end
+  --guihooks.graph(unpack(graphdata)) end
 end
 
 local function updateGFX(dt)
@@ -136,7 +135,7 @@ end
 M.onInit    = onInit
 M.onReset   = onReset
 M.updateGFX = updateGFX
-M.onPlayersChanged = onPlayersChanged
+--M.onPlayersChanged = onPlayersChanged
 
 -- public interface
 

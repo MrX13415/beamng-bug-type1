@@ -2,16 +2,23 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
+-- Controller for the ragtop roof.
 -- by MrX13415
 
 local M = {}
 
+local misc = require("vehicles/bug/lua/misc")
+local vehicle = require("vehicles/bug/lua/vehicle")
+
 local updateTimer = 2   -- Make sure the first call is immediately
 local value = 0
 local speed = 0.01
+local slowingThreshold = 0.08 -- %
+local slowingMinMul = 0.10 -- Don't slow down more than this (10% speed) to ensure it eventually reaches the target
 local direction = 0
 local directionLast = 0
 local targetValue = -1
+local autoCloseThreshold = 0.07 -- % Auto close when below
 
 local sfxNode = ""
 local sfxEvent = "vehicles/bug/components/sounds/common/ragtop-move.ogg"
@@ -29,12 +36,15 @@ local matVisible = "bug_ragtop_fabric"
 local matHidden = "invis"
 
 local shortPressTime = 0.15 -- seconds
+local shortPressTarget = 0.70 -- % Open on short press
+local shortPressCloseThreshold = 0.05 -- % Considered closed for short press
 local buttonTimer = 0
 local buttonState = 0
+local ignoreOpenOnce = false
 
 -- common
 local function createSFX(event, node)
-  local soundNode = getNodeIDbyName(node)
+  local soundNode = misc.getNodeIDbyName(node)
   local sound = obj:createSFXSource2(event, "AudioClosestLoop3D", "ragtopmove", soundNode, 0)
   if sound then obj:setVolume(sound, sfxVolume) end
   return sound
@@ -100,6 +110,12 @@ local function updateMaterial(dt)
   if bar1 <= 0.77 then state = 1 end   -- 1st bar moved
   if bar2 <= 0.87 then state = 2 end   -- 2nd bar also moved
 
+  -- Prevent flickering between states when the bars are moving back and forth
+  local dir = state - lastState
+  if dir > 0 and state == 1 and bar1 > 0.72 then state = 0 end
+  if dir > 0 and state == 2 and bar2 > 0.82 then state = 1 end
+  --log("I", "", "[Bug:Ragtop] State: " .. tostring(lastState) .. "->" .. tostring(state) .. " (dir="..tostring(dir).." bar1="..tostring(bar1).." bar2="..tostring(bar2)..")")
+
   if state == lastState then return end
 
   -- The material used here is the original assigned material
@@ -142,6 +158,13 @@ local function updateRagtop(dt)
   directionLast = direction
   direction = electrics.values.ragtop_input or 0
 
+  -- Auto close when almost closed
+  if value > 0 and value < autoCloseThreshold and direction < 1 then
+    --log("D", "", "[Bug:Ragtop] Auto closing from " .. tostring(value*100) .. "% open")
+    direction = -1
+    targetValue = 0
+  end
+
   if direction ~= directionLast then
     sfx = sfx or createSFX(sfxEvent, sfxNode)
     if sfx then 
@@ -152,11 +175,30 @@ local function updateRagtop(dt)
     end
   end
 
-  value = value + (speed * direction)
+  local directionFactor = direction
+  local speedFactor = 1  
+  local targetDelta = targetValue >= 0 and math.abs(targetValue - value)  -- Distance to target when target is set
+                    or direction > 0 and (1 - value)                      -- Distance to fully open when opening
+                    or direction < 0 and value                            -- Distance to fully closed when closing
+                    or 9999                                               -- No targetDelta  
+  
+  -- Slow down when close to target
+  if targetDelta < slowingThreshold then
+    speedFactor = math.max(slowingMinMul, targetDelta / slowingThreshold)
+    --log("D", "", "[Bug:Ragtop] Delta: " .. tostring(targetDelta) .. ", Speed multiplier: " .. tostring(speedFactor))
+  end
+  
+  -- When stopping, continue a small bit to smooth out the motion instead of an abrupt stop.
+  if direction == 0 and directionLast ~= 0 then
+    directionFactor = directionLast
+    speedFactor = 0.3  -- % 
+  end
+
+  value = value + (speed * speedFactor * directionFactor)
   -- ragtop is fully closed
   if value <= 0 then
-     value = 0
-     if sfx then obj:cutSFX(sfx) end
+    value = 0
+    if sfx then obj:cutSFX(sfx) end
   end
   -- ragtop is fully open
   if value >= 1 then
@@ -165,8 +207,8 @@ local function updateRagtop(dt)
   end
 
   electrics.values.ragtop_state = value
-  --print("ragtop: " .. value)
-
+  --print("ragtop: " .. value .. " direction: " .. direction)
+  
   updateMaterial()
 
   -- Auto open
@@ -182,12 +224,13 @@ end
 local function set(state)
   if value == state then return end
   targetValue = state
+  vehicle.ragtopPrimeHandle(state > 0)
   electrics.values.ragtop_input = (state > value) and 1 or -1
 end
 
-local function onButton(value, open)
+local function onButton(value)
   buttonState = value
-
+  
   -- holding
   if buttonState ~= 0 then return end
 
@@ -195,18 +238,33 @@ local function onButton(value, open)
   buttonTimer = 0
   if not shortPress then return end
 
-  log("D", "", "[Bug:Ragtop] Short press")
-  set(open and 0.7 or 0) -- 70% open
+  -- Open to 70% on short press, or close if already open
+  local state = electrics.values.ragtop_state 
+  local open = state < shortPressCloseThreshold
+  log("D", "", "[Bug:Ragtop] Short press: " .. tostring(state*100) .. "% open, " .. (open and "opening" or "closing"))
+
+  set(open and shortPressTarget or 0) -- 70% open
 end
 
 local function open(value)
-  electrics.values.ragtop_input = value
-  onButton(value, true)
-end
+  if ignoreOpenOnce then
+    ignoreOpenOnce = false
+    return
+  end
 
+  electrics.values.ragtop_input = (value or 1)
+  onButton(value)
+end
+  
 local function close(value)
-  electrics.values.ragtop_input = value * -1
-  onButton(value, false)
+  electrics.values.ragtop_input = (value or 1) * -1
+  onButton(value)
+
+  -- When opening by short press with the close button, the animation will fire the open command once.
+  -- This call must be ignored to prevent the roof from closing again immediately after opening.
+  if targetValue > 0 then
+    ignoreOpenOnce = true
+   end
 end
 
 local function updateGFX(dt)
@@ -233,7 +291,15 @@ end
 local function onInit(jbeamData)
   electrics.values.ragtop_state = 0
   electrics.values.ragtop_input = 0
-  sfxNode = jbeamData.node or ""
+
+  speed = jbeamData.speed or speed
+  sfxNode = jbeamData.sfxNode
+  sfxEvent = jbeamData.sfx or sfxEvent
+  value = jbeamData.state or 0
+
+  autoCloseThreshold = jbeamData.autoCloseThreshold or autoCloseThreshold
+  shortPressTarget = jbeamData.shortPressTarget or shortPressTarget
+  shortPressCloseThreshold = jbeamData.shortPressCloseThreshold or shortPressCloseThreshold
 
   value = (jbeamData.state or 0)
   electrics.values.ragtop_state = value

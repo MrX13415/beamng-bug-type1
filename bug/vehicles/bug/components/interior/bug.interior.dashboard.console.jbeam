@@ -9,19 +9,15 @@
         "value":150
     },
     "slotType": "bug_console_cage",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["skin_console", "skin_console_silver", "Color", {"coreSlot": true}],
-
-        // No longer used: ["bug_radio_mode", "bug_radio_mode_interior", "Mode", {"coreSlot": true}],
-        // No longer used: ["bug_radio_output", "bug_radio_output_2D", "Output", {"coreSlot": true}],
-        // No longer used: ["bug_radio_station", "radio_station_piano", "Radio Station"],
+        ["skin_console",      ["skin_console"], [],      "skin_console_silver",     "Color",         {"coreSlot": true}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$state", "range", "", "Interior", 0, 0, 1, "Inital On/Off State", "Inital On/Off state of the radio", {"subCategory":"Radio", "stepDis":1, "minDis":0, "maxDis":1}],
-        ["$volume", "range", "", "Interior", 0.3, 0.05, 1.0, "Inital Volume", "Inital volume of the radio", {"subCategory":"Radio", "minDis":5, "maxDis":100}],
+        ["$state", "range", "", "Interior", 0, 0, 1, "Initial On/Off State", "Initial On/Off state of the radio", {"subCategory":"Radio", "stepDis":1, "minDis":0, "maxDis":1}],
+        ["$volume", "range", "", "Interior", 0.3, 0.05, 1.0, "Initial Volume", "Initial volume of the radio", {"subCategory":"Radio", "minDis":5, "maxDis":100}],
         ["$audio3D", "range", "", "Interior", 0, 0, 1, "3D Audio Output", "Use 2D or 3D audio output for the radio", {"subCategory":"Radio", "stepDis":1, "minDis":0, "maxDis":1}],
 	],
     "electricPower":[
@@ -126,8 +122,8 @@
         ["tuneUp", "action2", "radio_TuneNext"],
     ],
     "glowMap":{
-        "bug_radio_scale":          {"simpleFunction":"power__radio_state",  "off":"bug_radio_scale",    "on":"bug_radio_scale_on",       "on_intense":"bug_radio_scale_on", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_radio_needle":         {"simpleFunction":"power__radio_state",  "off":"bug_radio_needle",   "on":"bug_radio_needle_light",   "on_intense":"bug_radio_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_radio_scale":          {"simpleFunction":"power__radio_state",  "off":"bug_radio_scale",    "on":"bug_radio_scale_on",       "on_intense":"bug_radio_scale_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_radio_needle":         {"simpleFunction":"power__radio_state",  "off":"bug_radio_needle",   "on":"bug_radio_needle_light",   "on_intense":"bug_radio_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
     },
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -178,10 +174,10 @@
         "value":300,
     },
     "slotType" : "bug_console_cage",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["skin_console", "skin_console_silver", "Color", {"coreSlot": true}],
+        ["skin_console", ["skin_console"], [], "skin_console_silver", "Color",       {"coreSlot": true}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -272,11 +268,11 @@
         "value":300,
     },
     "slotType" : "bug_glovebox",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_glovebox_lid", "bug_glovebox_lid", "Lid"],
-        ["bug_glovebox_things", "bug_glovebox_things", "Things"]
+        ["bug_glovebox_lid",    ["bug_glovebox_lid"], [],    "bug_glovebox_lid",    "Lid"],
+        ["bug_glovebox_things", ["bug_glovebox_things"], [], "bug_glovebox_things", "Things"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -409,6 +405,11 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bug_dashboard_glovebox_hatch", ["bug_glovebox_door"]],
+         ["bug_dashboard_glovebox_knob", ["bug_glovebox_door"]],
+    ],
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+        ["anim__glovebox_knob",    "bug_dashboard_glovebox_knob",  "dgb3","dgb2r","dgb1r", {"x":0, "y":-10, "z":-13}, {"x":0, "y":0, "z":0}, {"x":-0.012, "y":0.003, "z":-0.005}, 0, 1, 0, 1],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -602,7 +603,7 @@
         ["bug_controls_dashboard_hazard",  ["bug_dashboard"]],
     ],
     "glowMap":{
-        "bug_dash_hazard_knob_light":    {"simpleFunction":"power__hazard",     "off":"bug_dash_hazard_knob_light",   "on":"bug_dash_hazard_knob_light_on",  "on_intense":"bug_dash_hazard_knob_light_on", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_dash_hazard_knob_light":    {"simpleFunction":"power__hazard",     "off":"bug_dash_hazard_knob_light",   "on":"bug_dash_hazard_knob_light_on",  "on_intense":"bug_dash_hazard_knob_light_on", "materialEmissiveScaling":{"on_max":1.0}},
     },
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],

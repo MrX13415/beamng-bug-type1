@@ -2,11 +2,17 @@
     "fileversion": 2,
     "actions": {
         // herbie
-        "hrb_reset":         {"order":1.1, "onDown":"hrb.resetTrust()", "title":"Herbie: Trust Reset", "desc":"Resets Herbie's trust in the player to the default value."},
-        "hrb_happy":         {"order":1.2, "onDown":"hrb.setHappy()", "title":"Herbie: Trust Max.", "desc":"Sets Herbie's trust in the player to the max value."},
-        "hrb_wheelie":       {"order":1.3, "onChange":"hrb.wheelie(VALUE)", "title": "Herbie: Wheelie", "desc": "Herbie performs a wheelie. (Hold to continue the wheelie.)" },
-
-        //experimental:
-        "hrb_follow":        {"isBasic":false, "order": 1.4, "onDown":"follow.toggle()", "title":"Herbie: Follow", "desc":"Herbie followes you when not driving."}
+        "hrb_reset":            {"order":1.1, "onDown":"hrb.resetTrust()",                                          "title":"vehicle.interaction.hrb.trust.reset.title",            "desc":"vehicle.interaction.hrb.trust.reset.desc"},
+        "hrb_happy":            {"order":1.2, "onDown":"hrb.setHappy()",                                            "title":"vehicle.interaction.hrb.trust.max.title",              "desc":"vehicle.interaction.hrb.trust.max.desc"},
+        "hrb_wheelie":          {"order":1.3, "onChange":"hrb.wheelie(VALUE)",                                      "title":"vehicle.interaction.hrb.wheelie.title",                "desc":"vehicle.interaction.hrb.wheelie.desc"},
+		
+		"hrb_bumper_tilt_up":   {"order":2.1, "onChange":"electrics.values.bumper_tilt_state = VALUE",              "title":"vehicle.interaction.hrb.bumper_tilt.up.title",         "desc":"vehicle.interaction.hrb.bumper_tilt.up.desc"},
+		"hrb_bumper_tilt_down": {"order":2.2, "onChange":"electrics.values.bumper_tilt_state = -VALUE",             "title":"vehicle.interaction.hrb.bumper_tilt.down.title",       "desc":"vehicle.interaction.hrb.bumper_tilt.down.desc"},
+        
+        "hrb_lid_L_down":       {"order":2.3, "onChange":"controller.getController('lidAnimator').setLidL(VALUE)",  "title":"vehicle.interaction.hrb.left_lid_down.title",          "desc":"vehicle.interaction.hrb.left_lid_down.desc"},
+        "hrb_lid_R_down":       {"order":2.4, "onChange":"controller.getController('lidAnimator').setLidR(VALUE)",  "title":"vehicle.interaction.hrb.right_lid_down.title",         "desc":"vehicle.interaction.hrb.right_lid_down.desc"},
+        
+        //experimental
+        "hrb_follow":           {"isBasic":false, "order": 1.4, "onDown":"follow.toggle()",                         "title":"vehicle.interaction.hrb.follow.title",                 "desc":"vehicle.interaction.hrb.follow.desc"}
     }
 }

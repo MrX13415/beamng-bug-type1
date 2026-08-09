@@ -16,8 +16,8 @@
     ]
   ],
   "Config Type":"Prototype ",
-  "Configuration":"Diesel (M)",
-  "Description":"European base model with a prototype diesel engine from 1951",
+  "Configuration":"vehiclesData.bug.diesel.Configuration",
+  "Description":"vehiclesData.bug.diesel.Description",
   "Drivetrain":"RWD",
   "Fuel Type":"Diesel",
   "Induction Type":"NA",

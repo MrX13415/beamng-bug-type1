@@ -2,14 +2,15 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
+-- Vehicle kernal providing access to vehicle functions and parts.
 -- by MrX13415
 
 local M = {}
 
---M.dependencies = {'animation'}
+local misc = require("vehicles/bug/lua/misc")
+local animation = require("vehicles/bug/lua/lib/animation")
 
-local updateTimer = 2   -- Make sure the first call is immediately
-local openingUpdateTimer = 2   -- Make sure the first call is immediately
+local openingUpdateTimer = 0
 
 local cabinFilterTimer = 2
 local cabinFilterCoef = 1
@@ -29,38 +30,38 @@ local parts = {
 }
 
 local lightMessageLookup = {
-  [0] = "Interior Light: Off",
-  [1] = "Interior Light: On",
+  [0] = "ui.bug.interior.light.off",
+  [1] = "ui.bug.interior.light.on",
+}
+local heatingValveMessageLookup = {
+  [0] = "ui.bug.interior.heating.off",
+  [1] = "ui.bug.interior.heating.on",
 }
 
-local hazardEnabled = false
+local hazardEnabled = 0
 local foglightstate = 0
 
+
+local function playSFX(soundname)
+  if not nodeSFX then return end
+  misc.playSound(soundname, nodeSFX)
+end
+
 local function hasPower() return electrics.values.ignitionLevel > 0 end
-
-local function createSFX(event, node, eventID)
-  local soundNode = getNodeIDbyName(node)
-  local sound = obj:createSFXSource2(event, "AudioClosestLoop3D", eventID, soundNode, 0)
-  return sound
-end
-
-local function playSound(soundname)
-  sounds.playSoundOnceAtNode(soundname, getNodeIDbyName(nodeSFX), 1, 1, 0, 0)
-end
 
 local function updatePartBroken(part)
   if part.broken then return true end
   if #part.deformGroup == 0 then return part.broken end
 
   local group = beamstate.deformGroupDamage[part.deformGroup]
-  if group and group.eventCount > 0 then 
+  if group and group.eventCount > 0 then
     part.broken = true
   end
   return part.broken
 end
 local function updatePartBrokenBeam(part)
   if part.broken then return true end
-  if part.cid then    
+  if part.cid then
     part.broken = obj:beamIsBroken(part.cid)
   end
   return part.broken
@@ -98,14 +99,14 @@ local function updateCabinFilter()
     local newCoef = %f
     if core_sounds.cabinFilterStrength ~= newCoef then
       core_sounds.cabinFilterStrength = newCoef
-      log("D", "", "[Bug] CabinFilterCoef: " .. core_sounds.cabinFilterStrength)
+      --log("D", "", "[Bug] CabinFilterCoef: " .. core_sounds.cabinFilterStrength)
     end
-  ]], clamp(cabinFilterCoef, 0, 1)))  
+  ]], clamp(cabinFilterCoef, 0, 1)))
 end
 
 local function setCabinFilter(open)
   local minFactor = 1 - 1 / v.data.sounds.cabinFilterCoef * 0.15 -- Keep at least 15%
-  local openCurve = 1 - (open*1.3)/(open+0.3) * minFactor 
+  local openCurve = 1 - (open*1.3)/(open+0.3) * minFactor
 
   setCabinFilterCoef( math.abs(openCurve * v.data.sounds.cabinFilterCoef) )
 end
@@ -121,7 +122,7 @@ local function getControllerState(name)
   if state == 'attached' then result = 0 end
   if state == 'desyncedAttached' then result = 0 end
   if state == 'broken' then result = 1 end
-  
+
   return result
 end
 local function setControllerState(name, state)
@@ -158,10 +159,10 @@ local function updateOpenings()
   local ventFL = math.max(parts.ventL.broken and 1 or 0, electrics.values["doorventFL_state"] or 0)
   local ventFR = math.max(parts.ventR.broken and 1 or 0, electrics.values["doorventFR_state"] or 0)
   local windowFL = math.max(brokenWindowL, electrics.values["windowFL_state"] or 0)
-  local windowFR = math.max(brokenWindowR, electrics.values["windowFR_state"] or 0) 
+  local windowFR = math.max(brokenWindowR, electrics.values["windowFR_state"] or 0)
   --local windows = clamp((windowFL + windowFR) / 2, 0, 1)
-  
-  local ragtop = math.max(parts.ragtop.broken and 1 or 0, electrics.values.ragtop_state or 0) 
+
+  local ragtop = math.max(parts.ragtop.broken and 1 or 0, electrics.values.ragtop_state or 0)
 
   local openL = clamp(doorL + (windowFL * 0.75) + (ventFL * 0.1) + (ragtop * 0.5), 0, 1)
   local openR = clamp(doorR + (windowFR * 0.75) + (ventFR * 0.1) + (ragtop * 0.5), 0, 1)
@@ -296,22 +297,14 @@ ragtop.Locked = true
 local function isRagtopOpen()
   return electrics.values.ragtop_state > 0
 end
-local function ragtopOpen(VALUE)
-  ragtop.VALUE = VALUE or ragtop.VALUE
-  if ragtop.Locked then
+local function ragtopPrimeHandle(state)
+  if state then
     animation.start("ragtop_handle", 1)
-    return
   else
-    controller.getControllerSafe('ragtop').open(ragtop.VALUE)
-  end
-end
-local function ragtopClose(VALUE)
-  if VALUE == 0 and not ragtop.Locked then
     animation.startWait("ragtop_handle", -1, function()
       return electrics.values.ragtop_state == 0
     end)
   end
-  controller.getControllerSafe('ragtop').close(VALUE)
 end
 local function ragtopSetHandle(state)
   if state then
@@ -322,11 +315,27 @@ local function ragtopSetHandle(state)
     ragtop.Locked = true
   end
 end
+local function ragtopOpen(VALUE)
+  ragtop.VALUE = VALUE or ragtop.VALUE
+  if ragtop.Locked then
+    ragtopPrimeHandle(true)
+    return
+  else
+    controller.getControllerSafe('ragtop').open(ragtop.VALUE)
+  end
+end
+local function ragtopClose(VALUE)
+  if VALUE == 0 and not ragtop.Locked then
+    ragtopPrimeHandle(false)
+  end
+  controller.getControllerSafe('ragtop').close(VALUE)
+end
+
 
 local function handleHazard()
   local state = electrics.values.hazard_enabled
   if hazardEnabled ~= state then
-    playSound(state and "event:>Vehicle>Interior>Light>FIPA_On" or "event:>Vehicle>Interior>Light>FIPA_Off")
+    playSFX(state and "event:>Vehicle>Interior>Light>FIPA_On" or "event:>Vehicle>Interior>Light>FIPA_Off")
   end
   hazardEnabled = state
 end
@@ -341,14 +350,13 @@ local moveSeatData = {
 local function applyMoveSeat()
   local var = moveSeatData.seatId.."_position"
   local pos = electrics.values[var] or 0
-  
+
   pos = math.min(moveSeatData.max or 1, math.max(moveSeatData.min or 0, pos + moveSeatData.value))
   electrics.values[var] = pos
 
   local uival = tostring(pos)
-  if pos == moveSeatData.max then uival = uival .. " (Max)" end
-  if pos == moveSeatData.min then uival = uival .. " (Min)" end
-	guihooks.message({txt = "Seat Position " .. uival, context = {}}, 4, "bug.seat")
+  local txt = "ui.bug.interior.seatpos."..pos
+	guihooks.message({txt = txt, context = {value=uival}}, 4, "bug.seat", "seatArrowInLeft")
 
   print("[Bug:Seat] Position " .. tostring(pos))
 
@@ -381,17 +389,36 @@ local function toggleFuelcap()
   animation.start("fuelcap", state == 0 and -1 or 1)
 end
 
-local function toggleInteriorLight() 
+local function toggleInteriorLight()
   local lightstate = electrics.values.interiorlightbutton > 0 and 0 or 1
   electrics.values.interiorlightbutton = lightstate
-  guihooks.message({txt = lightMessageLookup[lightstate], context = {}}, 4, "vehicle.interiorlights")
+  guihooks.message({txt = lightMessageLookup[lightstate], context = {}}, 4, "vehicle.interiorlights", "lightGarageG21")
 end
 
 local function toggleAshTray()
   toggle('ashtraystate')
 end
 
-local function toogleSwitchBoard(name)
+local function setHeatingVent(vent, state)
+  electrics.values['heating_vent' .. vent] = state
+end
+
+local function toggleHeatingVent(vent)
+  toggle('heating_vent' .. vent)
+end
+
+local function toggleHeatingValve()
+  toggle('heating_valve')
+  local state = electrics.values.heating_valve or 0
+  setHeatingVent("FL", state)
+  setHeatingVent("FR", state)
+  setHeatingVent("RL", state)
+  setHeatingVent("RR", state)
+
+  guihooks.message({txt = heatingValveMessageLookup[state], context = {}}, 4, "vehicle.heatingvalve", "temperatureL")
+end
+
+local function toggleSwitchBoard(name)
   if electrics.values.ignitionLevel == 0 then return end
   local state = nil
 
@@ -422,10 +449,18 @@ local function toogleSwitchBoard(name)
 
   if state ~= nil then
     local snd = state and "event:>Vehicle>Interior>Light>PETE_On" or "event:>Vehicle>Interior>Light>PETE_Off"
-    playSound(snd)
+    playSFX(snd)
   end
 end
 
+local function toggleGlovebox(noAnimation)
+  local isOpen = getControllerState('gloveboxCoupler') > 0
+  if not noAnimation and not isOpen then
+    animation.start("glovebox_knob")
+  else
+    controller.getControllerSafe('gloveboxCoupler').toggleGroup()
+  end
+end
 
 local function toggle(var)
   if var == "" then return end
@@ -439,9 +474,20 @@ local function device(name)
   return controller.getController(name)
 end
 
+-- No longer needed: Since 0.39, the available keys
+-- for each trigger are shown when hovering over them.
+-- local triggerKeyInfoShown = false
+-- local function triggerKeyInfo()
+--   if triggerKeyInfoShown then return end
+--   triggerKeyInfoShown = true
 
+--   local msgText = "Interaction triggers may use multiple inputs: [action=triggerAction0] or [action=triggerAction1] or [action=triggerAction2]"
+--   guihooks.message({txt = msgText, context = {}}, 8, "bug.keysinfo", "keyboard")
+-- end
 
 local function updateGFX(dt)
+  --triggerKeyInfo() -- Obsolete since 0.39
+
   -- debugUpdate(dt)
 
   handleHazard()
@@ -452,8 +498,8 @@ local function updateGFX(dt)
       electrics.values.foglightcoverstate = 1
   end
   foglightstate = electrics.values.power__bug_foglight or 0
-  
-  
+
+
   openingUpdateTimer = openingUpdateTimer + dt
 	-- update rate: 10 fps (0.100 == 100ms)
 	if openingUpdateTimer > 0.100 then
@@ -463,10 +509,10 @@ local function updateGFX(dt)
 
   cabinFilterTimer = cabinFilterTimer + dt
 	-- update rate: 10 fps (0.1 == 100ms)
-	if cabinFilterTimer > 0.1 then 
+	if cabinFilterTimer > 0.1 then
     cabinFilterTimer = 0
     updateCabinFilter()
-  end  
+  end
 end
 
 local function onInit(jbeamData)
@@ -475,13 +521,14 @@ local function onInit(jbeamData)
   electrics.values.ashtraystate = 0
   electrics.values.wipersstate = 0
   electrics.values.foglightcoverstate = 0
+  electrics.values.heating_valve = 0
 
   electrics.values.usdm_signal_L = 0
   electrics.values.usdm_signal_R = 0
 
-  hazardEnabled = electrics.values.hazard_enabled
+  hazardEnabled = electrics.values.hazard_enabled or 0
 
-	nodeSFX = getNodeIDbyName(NodeNameSoundSFX)
+	nodeSFX = misc.getNodeIDbyName(NodeNameSoundSFX)
 
   for _, b in pairs(v.data.beams) do
     if b.breakGroup == parts.ragtop.name then
@@ -489,6 +536,16 @@ local function onInit(jbeamData)
       break
     end
   end
+
+  animation.setup('glovebox_knob', {
+    {  0,   0},
+    { 10, 0.8},
+    { 20, 1.0},
+    { 30, 0.4},
+    { 40,   0}
+  },{
+    { 15, function() toggleGlovebox(true) end }
+  })
 
   animation.setup('doorFL_handle', {
     {  0,   0},
@@ -539,22 +596,22 @@ local function onInit(jbeamData)
     { -20, function() ragtop.Locked = true end },
   })
 
-  
+
   animation.setup('fuelcap', {
     {  0,   0},
     {  5, 0.7},
     { 20, 1.0}
   },{
-    {   5, function() sounds.playSoundOnceAtNode("SFX_bug_gascap_open", getNodeIDbyName("ft1l"), 1, 1, 0, 0) end },
-    { -15, function() sounds.playSoundOnceAtNode("SFX_bug_gascap_close", getNodeIDbyName("ft1l"), 1, 1, 0, 0) end },
+    {   5, function() sounds.playSoundOnceAtNode("SFX_bug_gascap_open", misc.getNodeIDbyName("ft1l"), 1, 1, 0, 0) end },
+    { -15, function() sounds.playSoundOnceAtNode("SFX_bug_gascap_close", misc.getNodeIDbyName("ft1l"), 1, 1, 0, 0) end },
   },{invert = true})
   animation.setup('gascap', {
     {  0,   0},
     { 10, 0.2},
     { 80, 1.0}
   },{
-    {  10, function() sounds.playSoundOnceAtNode("SFX_bug_gascap_open", getNodeIDbyName("h7br"), 1, 1, 0, 0) end },
-    { -70, function() sounds.playSoundOnceAtNode("SFX_bug_gascap_close", getNodeIDbyName("h7br"), 1, 1, 0, 0) end },
+    {  10, function() sounds.playSoundOnceAtNode("SFX_bug_gascap_open", misc.getNodeIDbyName("h7br"), 1, 1, 0, 0) end },
+    { -70, function() sounds.playSoundOnceAtNode("SFX_bug_gascap_close", misc.getNodeIDbyName("h7br"), 1, 1, 0, 0) end },
   },{invert = true})
 
 
@@ -586,7 +643,7 @@ local function onInit(jbeamData)
 end
 
 local function onReset()
-  hazardEnabled = electrics.values.hazard_enabled
+  hazardEnabled = electrics.values.hazard_enabled or 0
   resetParts()
 
   --dTShow = {}
@@ -612,7 +669,11 @@ M.toggleGascap            = toggleGascap
 M.toggleFuelcap           = toggleFuelcap
 M.toggleInteriorLight     = toggleInteriorLight
 M.toggleAshTray           = toggleAshTray
-M.toogleSwitchBoard       = toogleSwitchBoard
+M.toggleSwitchBoard       = toggleSwitchBoard
+M.toggleGlovebox          = toggleGlovebox
+M.toggleHeatingValve      = toggleHeatingValve
+M.toggleHeatingVent       = toggleHeatingVent
+M.setHeatingVent          = setHeatingVent
 
 M.moveSeat                = moveSeat
 
@@ -632,6 +693,7 @@ M.toggleTrunkHandle       = toggleTrunkHandle
 M.isRagtopOpen            = isRagtopOpen
 M.ragtopOpen              = ragtopOpen
 M.ragtopClose             = ragtopClose
+M.ragtopPrimeHandle       = ragtopPrimeHandle
 M.ragtopSetHandle         = ragtopSetHandle
 
 return M

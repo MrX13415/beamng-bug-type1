@@ -2,7 +2,11 @@
   "bindings":[
     {"control": "shift p", "action": "hrb_happy"},
     {"control": "g", "action": "hrb_wheelie"},
-    //{"control": "u", "action": "hrb_follow"},
+    {"control": "shift alt w", "action": "hrb_bumper_tilt_up"},
+    {"control": "shift alt s", "action": "hrb_bumper_tilt_down"},
+    {"control": "shift alt q", "action": "hrb_lid_L_down"},
+    {"control": "shift alt e", "action": "hrb_lid_R_down"},
+    //{"control": "", "action": "hrb_follow"},
   ], 
   "name": "Keyboard", 
   "version": 1, 

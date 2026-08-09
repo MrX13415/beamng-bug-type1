@@ -80,11 +80,11 @@
         "value": 0,
     },
     "slotType" : "bug_interior_luggage",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_decoration2","", "Suitcase"],
-        ["bug_6pack","", "6-Ppack", {"nodeMove":{"x":-0.291, "y":-0.459, "z":0.294}}],
+        ["bug_decoration2", ["bug_decoration2"], [], "",        "Rear Cargo"],
+        ["bug_footwell_FR", ["bug_footwell_FR"], [], "",        "Right Footwell",     {"nodeMove":{"x":-0.291, "y":-0.459, "z":0.294}}],
     ],
 },
 
@@ -96,10 +96,10 @@
         "value": 80,
     },
     "slotType" : "bug_decoration2",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_rear_suitcase_color","bug_rear_suitcase_white", "Color", {"coreSlot": true}],
+        ["bug_rear_suitcase_color", ["bug_rear_suitcase_color"], [], "bug_rear_suitcase_white", "Color",       {"coreSlot": true}],
     ],
     "cargoStorage":[
         ["groupId","name","cargoTypes", "capacity"],
@@ -335,7 +335,7 @@
         "name": "6-Pack \"Saft\"",
         "value": 100,
     },
-    "slotType" : "bug_6pack",
+    "slotType" : "bug_footwell_FR",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 

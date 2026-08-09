@@ -6,17 +6,17 @@
         "value":400,
     },
     "slotType":"bug_suspension_F",
-    "slots":[
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_hub_F", "bug_hub_F_5", "Front Wheel Hubs"],
-        //["bug_brake_F","bug_brake_F", "Front Brakes"],
-        //["wheel_F_4","steelwheel_11b_13x5_F", "Front Wheels", {"nodeOffset":{"x":"$=$trackoffset_F+0.125", "y":-1.20452, "z":0.334592}}],
-        //["bug_wheeldata_F","bug_wheeldata_F", "Front Spindles", {"coreSlot":true}],
+        ["bug_hub_F",       ["bug_hub_F"], [],       "bug_hub_F_5",           "Front Wheel Hubs"],
+        //["bug_brake_F",     ["bug_brake_F"], [],     "bug_brake_F",           "Front Brakes"],
+        //["wheel_F_4",       ["wheel_F_4"], [],       "steelwheel_11b_13x5_F", "Front Wheels",     {"nodeOffset":{"x":"$=$trackoffset_F+0.125", "y":-1.20452, "z":0.334592}}],
+        //["bug_wheeldata_F", ["bug_wheeldata_F"], [], "bug_wheeldata_F",       "Front Spindles",   {"coreSlot":true}],
 
-        ["bug_spring_F","bug_spring_F", "Front Springs"],
-        ["bug_steering","bug_steering", "Steering"],
-        ["bug_swaybar_F","bug_swaybar_F", "Front Sway Bar"],
+        ["bug_spring_F",    ["bug_spring_F"], [],    "bug_spring_F",          "Front Springs"],
+        ["bug_steering",    ["bug_steering"], [],    "bug_steering",          "Steering"],
+        ["bug_swaybar_F",   ["bug_swaybar_F"], [],   "bug_swaybar_F",         "Front Sway Bar"],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -399,9 +399,9 @@
         "value":200,
     },
     "slotType" : "bug_steering",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_steeringbox","bug_steeringbox", "Steering Box"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_steeringbox", ["bug_steeringbox"], [], "bug_steeringbox", "Steering Box"],
     ],
     "flexbodies":[
         ["mesh", "[group]:", "nonFlexMaterials"],

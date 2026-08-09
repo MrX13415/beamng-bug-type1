@@ -8,9 +8,9 @@
         "value":20,
     },
     "slotType" : "hood_trim",
-    "slots": [
-		["type", "default", "description"],
-		["hood_trim_badge","", "Badge"],
+    "slots2": [
+		["name", "allowTypes", "denyTypes", "default", "description"],
+		["hood_trim_badge", ["hood_trim_badge"], [], "",        "Badge"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -110,7 +110,7 @@
 "bug_exterior_sunvisor": {
 	"information":{
         "authors":"53_herbie_53",
-        "name":"Exterior sunvisor",
+        "name":"Sun Visor",
         "value":1,
     },
     "slotType" : "bug_exterior_sunvisor",
@@ -126,15 +126,32 @@
         "name":"Foglight",
         "value":250,
     },
-    "slotType" : "bug_foglight",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_foglight_operation","bug_foglight_op_fog","Operation Mode", {"coreSlot":true}],
-        ["bug_foglight_cover","bug_foglight_cover","Cover"],
-    ],
     "electricPower":[
         ["power"],
         [55, {"trigger": "electrics.values.bug_foglight"}]
+    ],
+    "slotType" : "bug_foglight",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+
+        ["bug_foglight_operation", ["bug_foglight_operation"], [], "bug_foglight_operation", "Foglight Wiring", {"coreSlot":true}],
+        ["bug_foglight_cover", ["bug_foglight_cover"], [], "bug_foglight_cover", "Foglight Cover"],
+
+        ["bug_foglight_bulb", ["incandescent_white_55W"], [], "incandescent_white_55W", "Foglight",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"bug_foglight_light",
+          "$nodeRef":"fgl1r", "$nodeX":"fgl1l", "$nodeY":"fgl2r",
+          "$deformGroup":"foglightglass_break",
+          "$posX":0, "$posY":-0.033, "$posZ":0.0,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":150,
+          //"$lightBrightness":0.35,
+          //"$shadowSoftness":0.5
+        }
+        }],
     ],
     "components": {
         "electrics": {
@@ -163,23 +180,6 @@
         "bug_foglight":       {"simpleFunction":{"power__bug_foglight":1}, "off":"bug_foglight", "on":"bug_foglight_light_on", "on_intense":"bug_foglight_light_on", "materialEmissiveScaling":{"on_max":1.0}},
         "bug_foglight_glass": {"simpleFunction":{"power__bug_foglight":1}, "off":"bug_foglight_glass", "on":"bug_foglight_light_on", "on_intense":"bug_foglight_light_on", "materialEmissiveScaling":{"on_max":1.0}},
     },
-    "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
-
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":80,
-            "lightColor":{"r":255, "g":193, "b":141, "a":255},  // 3000K
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":true,
-            "flareName":"vehicleHeadLightFlare",
-            "cookieName":"art/special/BNG_light_cookie_headlight.png",
-            "texSize":512,
-            "shadowSoftness":0.5,
-        },
-        ["bug_foglight_light" , "SPOTLIGHT", "fgl1r","fgl1l","fgl2r", {"x":16,"y":0,"z":0}, {"x":0,"y":0,"z":0}, {"x":0,"y":0,"z":0}, 0, 0, 0, 1,
-        {"baseTranslation":{"x":0.5, "y":0.5, "z":0},"lightRange":80,"lightBrightness":0.7,"lightOuterAngle":80,"flareScale":0.09,"deformGroup":"foglightglass_break", "lightScaling":{}}],
-    ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
         //--HEADLIGHT--
@@ -362,7 +362,7 @@
 "bug_gascap": {
     "information":{
         "authors":"MrX13415",
-        "name":"Rally Gascap",
+        "name":"Rally Fuel Cap",
         "value":300,
     },
     "slotType" : "bug_gascap",
@@ -403,9 +403,9 @@
         
         ["towhitch_altc", ["bug_frame","bug_towhitch"],[],{"pos":{"x":0.0, "y":0.0, "z":0.0}}],
     ],
-    "slots": [
-        ["type", "default", "description"],
-        ["trailer_small","","Small Trailer", {"nodeOffset":{"x":0.0, "y":-0.31, "z":-0.13}}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["trailer_small", ["trailer_small"], [], "",        "Small Trailer", {"nodeOffset":{"x":0.0, "y":-0.31, "z":-0.13}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

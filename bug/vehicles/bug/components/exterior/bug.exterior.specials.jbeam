@@ -6,16 +6,27 @@
         "name":"Beacon Light",
         "value":250,
     },
-    "slotType" : "bug_roof_accessory",
-    "slots": [
-        ["type", "default", "description"],
-        ["beacon_color","beacon_color_red", "Beacon Color", {"coreSlot":true}],
-        ["soundscape_siren","soundscape_siren_25", "Siren Audio"],
-    ],
     "electricPower":[
         ["power"],
-        [40, {"trigger": "electrics.values.lightbar > 0"}],
-        [100, {"trigger": "electrics.values.lightbar > 1"}],
+        [10, {"trigger": "electrics.values.lightbar > 0"}],
+        [55, {"trigger": "electrics.values.lightbar > 1"}],
+    ],
+    "slotType" : "bug_roof_accessory",
+    "slots2": [
+        ["name",             "allowTypes",         "denyTypes", "default",             "description"],
+        ["beacon_color",     ["beacon_color"],     [],          "beacon_color_blue",   "Beacon Color", {"coreSlot":true}],
+        ["soundscape_siren", ["soundscape_siren"], [],          "soundscape_siren_25", "Siren Audio"],
+        ["beacon_bulb",["beaconLightBulb_sealedbeam_55W_1"],[],"beaconLightBulb_sealedbeam_55W_1","Beacon Light Bulb",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"beaconSpin",
+          "$nodeRef":"bl1r","$nodeX":"bl1l","$nodeY":"bl2r",
+          "$deformGroup":"old_beaconlight_break",
+          "$posX":0,"$posY":0.1,"$posZ":1.60,
+          "$rotX":-1,"$rotY":0,"$rotZ":180
+        }
+        }],
     ],
     "soundscape": [
         ["name", "src"],
@@ -30,8 +41,8 @@
         ["toggle_lightbar_siren"],
     ],
     "glowMap":{
-        "old_beacon_reflector":         {"simpleFunction":"power__lightbar", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on", "materialEmissiveScaling":{"on_max":0.49}},
-        "old_beacon_glass":             {"simpleFunction":"power__lightbar", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue", "materialEmissiveScaling":{"on_max":0.49}},
+        "old_beacon_reflector":         {"simpleFunction":"power__lightbar", "off":"policeparts_lights_blue", "on":"policeparts_lights_blue_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "old_beacon_glass":             {"simpleFunction":"power__lightbar", "off":"policeparts_glass_blue", "on":"policeparts_glass_blue", "materialEmissiveScaling":{"on_max":1.0}},
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -48,21 +59,6 @@
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
         ["beaconSpin","old_beacon_reflector", "bl1r","bl1l","bl2r",  {"x":90, "y":0, "z":0} , {"x":0, "y":0, "z":1}    , {"x":0.0, "y":0, "z":0}, -360, 360, 0, 1,{"baseTranslation":{"x":0.0865, "y":0.08, "z":-0.042},"deformGroup":"old_beaconlight_break"}],
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":70,
-            "lightBrightness":0.6,
-            "lightRange":15,
-            "lightColor":"$=$components.lightbarMaterials.beacon_lightColor",
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            "texSize":512,
-            "shadowSoftness":1,
-            "flareName":"vehicleHeadLightFlare",
-            "flareScale":0.1,
-        },
-        ["beaconSpin" ,      "POINTLIGHT"       , "bl1r","bl1l","bl2r", {"x":85, "y":0, "z":0} , {"x":0, "y":0, "z":1}    , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":-0.068},"lightRange":0, "flareScale":0.05,"deformGroup":"old_beaconlight_break", "lightScaling":{}}],
-        ["beaconSpin" ,      "SPOTLIGHT"        , "bl1r","bl1l","bl2r", {"x":265, "y":0, "z":0} , {"x":0, "y":0, "z":-1}    , {"x":0, "y":0, "z":0}, -360, 360, 0, 1, {"baseTranslation":{"x":0.5, "y":0.5, "z":-0.068},"deformGroup":"old_beaconlight_break", "lightScaling":{}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],

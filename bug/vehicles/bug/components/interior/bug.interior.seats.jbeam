@@ -8,15 +8,15 @@
         "value":20,
     },
     "slotType" : "bug_seats",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["skin_interior4", "bug_skin_interior4_white", "Seat Color 1", {"coreSlot":true}],
-        ["skin_interior4b", "bug_skin_interior4b_white", "Seat Color 2", {"coreSlot":true}],
+        ["skin_interior4",  ["skin_interior4"], [],  "bug_skin_interior4_white",  "Seat Color 1",     {"coreSlot":true}],
+        ["skin_interior4b", ["skin_interior4b"], [], "bug_skin_interior4b_white", "Seat Color 2",     {"coreSlot":true}],
 
-        ["bug_seat_FL", "bug_seat_lowback_FL", "Front Seat Left"],
-        ["bug_seat_FR", "bug_seat_lowback_FR", "Front Seat Right"],
-        ["bug_seat_R", "bug_seat_A_R", "Rear Seats"],
+        ["bug_seat_FL",     ["bug_seat_FL"], [],     "bug_seat_lowback_FL",       "Front Left Seat"],
+        ["bug_seat_FR",     ["bug_seat_FR"], [],     "bug_seat_lowback_FR",       "Front Right Seat"],
+        ["bug_seat_R",      ["bug_seat_R"], [],      "bug_seat_A_R",              "Rear Seats"],
     ],
 },
 // - Variant Board
@@ -27,9 +27,9 @@
         "value":40,
     },
     "slotType" : "bug_seat_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_seat_cargo_load_box","", "Cargo Box"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_seat_cargo_load_box", ["bug_seat_cargo_load_box"], [], "",        "Cargo Box"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -112,11 +112,11 @@
         "value":0,
     },
     "slotType" : "bug_seat_cargo_load_box",
-    "slots": [
-        ["type", "default", "description"],
-        ["cargo_load_box_L_seats_RA","cargo_load_box_L_seats_RA", "Cargo Box L A", {"nodeMove":{"x":0.00, "y":0.670, "z":0.71}, "variables":{"$group":"bug_seat_R"}, "coreSlot":true}],
-        ["cargo_load_box_M_seats_RB","cargo_load_box_M_seats_RB", "Cargo Box M B", {"nodeMove":{"x":0.00, "y":0.530, "z":0.96}, "variables":{"$group":"bug_seat_R", "$strapScale":0.85}}],
-        ["cargo_load_box_M_seats_RC","cargo_load_box_M_seats_RC", "Cargo Box M C", {"nodeMove":{"x":0.00, "y":0.810, "z":0.96}, "variables":{"$group":"bug_seat_R", "$strapScale":0.85}}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["cargo_load_box_L_seats_RA", ["cargo_load_box_L_seats_RA"], [], "cargo_load_box_L_seats_RA", "Cargo Box L A", {"nodeMove":{"x":0.00, "y":0.670, "z":0.71}, "variables":{"$group":"bug_seat_R"}, "coreSlot":true}],
+        ["cargo_load_box_M_seats_RB", ["cargo_load_box_M_seats_RB"], [], "cargo_load_box_M_seats_RB", "Cargo Box M B", {"nodeMove":{"x":0.00, "y":0.530, "z":0.96}, "variables":{"$group":"bug_seat_R", "$strapScale":0.85}}],
+        ["cargo_load_box_M_seats_RC", ["cargo_load_box_M_seats_RC"], [], "cargo_load_box_M_seats_RC", "Cargo Box M C", {"nodeMove":{"x":0.00, "y":0.810, "z":0.96}, "variables":{"$group":"bug_seat_R", "$strapScale":0.85}}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],

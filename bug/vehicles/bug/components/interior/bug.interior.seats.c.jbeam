@@ -489,9 +489,9 @@
         "value":300,
     },
     "slotType" : "bug_seat_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["load_seat_R","", "Rear Seat Load", {
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["load_seat_R", ["load_seat_R"], [], "",        "Rear Seat Load", {
             "nodeMove":{"x": 0.00, "y":0.62, "z":0.77},
             "variables":{
                 "$rotx":-10, "$roty":0, "$rotz":0,
@@ -507,8 +507,10 @@
         {"selfCollision":true},
         {"collision":true},		
         // back seat cameras
-        ["backseat.Left",    0.3, 0.80, 1.24, 60, "f4l","f5l","f6l","f4tm","f5tm","f6tml", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
-        ["backseat.Right",  -0.3, 0.80, 1.24, 60, "f4r","f5r","f6r","f4tm","f5tm","f6tmr", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+        {"rightHandDoor":false},
+        ["rider.back.left",    0.3, 0.80, 1.24, 60, "f4l","f5l","f6l","f4tm","f5tm","f6tml", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+        {"rightHandDoor":true},
+        ["rider.back.right",  -0.3, 0.80, 1.24, 60, "f4r","f5r","f6r","f4tm","f5tm","f6tmr", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
     ], 
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

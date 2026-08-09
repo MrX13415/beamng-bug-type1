@@ -2,15 +2,19 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
+-- Mod management and variant checking library.
+-- v1.0
+-- by MrX13415 (2025-12-12)
+
 local M = {}
 
 local _name = "Volkswagen Type 1 \"Beetle\""
-local _version = 26
-local _versionDate = "2025-12-12"
+local _version = 27
+local _versionDate = "2026-08-09"
 local _variantID = "VW"
 
  -- Minimum required BeamNG.drive version
-local _gameVersion = 37
+local _gameVersion = 39
 
 local function name() return _name end
 local function version() return _version end
@@ -19,21 +23,33 @@ local function variantID() return _variantID end
 
 
 local function gameVersionError(beamng_version)
+    local required_version = "0.".._gameVersion
     local msgTitle = "Outdated BeamNG.drive Version for Mod: " .. _name
-    local msgText = "This mod requires a newer version of BeamNG.drive to function properly. Please update to at least BeamNG.drive 0." .. _gameVersion .. "."
-    local suffix = " Current Version: 0." .. tostring(beamng_version)
+    local msgText = "This mod requires a newer version of BeamNG.drive to function properly. Please update to at least BeamNG.drive " .. required_version .. "."
+    local suffix = " Current Version: " .. tostring(beamng_version)
     log("E", "", "[Bug] " .. msgTitle ..": ".. msgText..suffix)
 
-    guihooks.trigger("toastrMsg", {type="error", title=msgTitle, msg=msgText, config={closeButton=true, timeOut=0, extendedTimeOut=0}})
+    guihooks.trigger("toastrMsg", {
+        type="error", 
+        title="ui.bug.outdatedVersion.title", 
+        msg="ui.bug.outdatedVersion.message", 
+        context = {name=_name, requiredversion=required_version, currentversion=beamng_version},
+        config={closeButton=true, timeOut=0, extendedTimeOut=0}})
 end
 
 local function variantWarn(ids)
+    local _ids = table.concat(ids, ", ")
     local msgTitle = "Mod Conflict: " .. _name
     local msgText = "Both brand variants of this mod are active! Please enable only one variant at a time to avoid issues."
-    local suffix = ids and (" Active IDs: " .. table.concat(ids, ", ")) or ""
+    local suffix = ids and (" Active IDs: " .. _ids) or ""
     log("W", "", "[Bug] " .. msgTitle ..": ".. msgText..suffix)
 
-    guihooks.trigger("toastrMsg", {type="warning", title=msgTitle, msg=msgText, config={closeButton=true, timeOut=0, extendedTimeOut=0}})
+    guihooks.trigger("toastrMsg", {
+        type="warning", 
+        title="ui.bug.modConflict.title", 
+        msg="ui.bug.modConflict.message", 
+        context = {name=_name, activeIDs=_ids},
+        config={closeButton=true, timeOut=0, extendedTimeOut=0}})
 end
 
 local function getActiveVariantIDs()
@@ -61,7 +77,7 @@ local function checkVaraintIDs()
 end
 
 local function printVersionLine()
-    print("[Bug] " .. name() .. " by MrX13415 (Original by VertexsStyle)")
+    print("[Bug] " .. name() .. " by MrX13415 & VertexsStyle")
     print("[Bug] Variant '" .. variantID().. "' Version " ..tostring(version()).. " - " .. versionDate())
 end
 

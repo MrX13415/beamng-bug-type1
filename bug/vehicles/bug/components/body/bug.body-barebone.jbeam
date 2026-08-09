@@ -6,10 +6,10 @@
         "value":20,
     },
     "slotType" : "bug_body",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_interior_barebone", "bug_interior_barebone", "Interior"],
+        ["bug_interior_barebone", ["bug_interior_barebone"], [], "bug_interior_barebone", "Interior"],
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -25,17 +25,17 @@
         "value":20,
     },
     "slotType" : "bug_interior_barebone",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["skin_floor_carpet", "", "Carpet"],
+        ["skin_floor_carpet",        ["skin_floor_carpet",], []         "",                         "Carpet"],
 
-        ["bug_steer", "bug_steer_oem", "Steering Wheel", {"coreSlot":true}],
-        ["bug_dashboard_barebone", "bug_dashboard_barebone", "Dashboard"],
+        ["bug_steer",                ["bug_steer",], []                 "bug_steer_oem",            "Steering Wheel", {"coreSlot":true}],
+        ["bug_dashboard_barebone",   ["bug_dashboard_barebone",], []    "bug_dashboard_barebone",   "Dashboard"],
 
-        ["bug_seats_barebone", "", "Seats"],
+        ["bug_seats_barebone",       ["bug_seats_barebone",], []        "",                         "Seats"],
 
-     // TODO:   ["bug_rollbar","", "Rollbar"],
+        // TODO: ["bug_rollbar",              ["bug_rollbar",], []               "",                         "Rollbar"],
     ],
     "camerasInternal":[
         ["name", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
@@ -48,7 +48,8 @@
         // driver camera (make first value negative for right steering wheel)
         ["driver",     0.2555, 0.18, 1.24, 55, "f6l","f4l","f5l","f6tml","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
         // passenger seat
-        ["passenger", -0.2555, 0.18, 1.24, 55, "f6r","f4r","f5r","f6tmr","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+        {"rightHandDoor":true},
+        ["rider", -0.2555, 0.18, 1.24, 55, "f6r","f4r","f5r","f6tmr","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
     ], 
 },
 
@@ -59,14 +60,14 @@
         "value":20,
     },
     "slotType" : "bug_seats_barebone",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["skin_interior4", "bug_skin_interior4_white", "Seat Color 1", {"coreSlot":true}],
-        ["skin_interior4b", "bug_skin_interior4b_white", "Seat Color 2", {"coreSlot":true}],
+        ["skin_interior4",  ["skin_interior4"], [],  "bug_skin_interior4_white",  "Seat Color 1",     {"coreSlot":true}],
+        ["skin_interior4b", ["skin_interior4b"], [], "bug_skin_interior4b_white", "Seat Color 2",     {"coreSlot":true}],
 
-        ["bug_seat_FL", "bug_seat_lowback_FL", "Front Seat Left"],
-        ["bug_seat_FR", "bug_seat_lowback_FR", "Front Seat Right"],
+        ["bug_seat_FL",     ["bug_seat_FL"], [],     "bug_seat_lowback_FL",       "Front Left Seat"],
+        ["bug_seat_FR",     ["bug_seat_FR"], [],     "bug_seat_lowback_FR",       "Front Right Seat"],
     ],
 },
 
@@ -77,14 +78,14 @@
         "value": 300,
     },
     "slotType" : "bug_dashboard_barebone",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_shifter", "bug_shifter_4M", "Shifter"],
-        ["skin_speedometer", "bug_speedo_km_140", "Speedometer", {"coreSlot":true}],
-        ["skin_interior_theme", "bug_inputs_white", "Controls"],
+        ["bug_shifter",           ["bug_shifter"], [],           "bug_shifter_4M",        "Shifter"],
+        ["skin_speedometer",      ["skin_speedometer"], [],      "bug_speedo_km_140",     "Speedometer",   {"coreSlot":true}],
+        ["skin_interior_theme",   ["skin_interior_theme"], [],   "bug_inputs_white",      "Controls"],
                 
-        ["bug_ignition_barebone", "bug_ignition_barebone", "Ignition", {"coreSlot":true, "nodeMove": {"x":0.102671,"y":0.006238,"z":0.034791}}],
+        ["bug_ignition_barebone", ["bug_ignition_barebone"], [], "bug_ignition_barebone", "Ignition Lock", {"coreSlot":true, "nodeMove": {"x":0.102671,"y":0.006238,"z":0.034791}}],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -107,18 +108,19 @@
     ],
     "glowMap":{
         // dashboard gauges
-        "bug_gauges":               {"simpleFunction":"power__gauges",  "off":"bug_gauges",         "on":"bug_gauges_light",         "on_intense":"bug_gauges_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_speedometer":          {"simpleFunction":"power__gauges",  "off":"bug_speedometer",    "on":"bug_speedometer_light",    "on_intense":"bug_speedometer_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_tachometer":           {"simpleFunction":"power__gauges",  "off":"bug_tachometer",     "on":"bug_tachometer_light",     "on_intense":"bug_tachometer_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_oil_ammeter":          {"simpleFunction":"power__gauges",  "off":"bug_oil_ammeter",    "on":"bug_oil_ammeter_light",    "on_intense":"bug_oil_ammeter_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_speedo_needle":        {"simpleFunction":"power__gauges",  "off":"bug_speedo_needle",  "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_tacho_needle":         {"simpleFunction":"power__gauges",  "off":"bug_tacho_needle",   "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_clock_back":           {"simpleFunction":"power__gauges",  "off":"bug_clock_back",     "on":"bug_clock_light",          "on_intense":"bug_clock_light", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_clock_needle":         {"simpleFunction":"power__gauges",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_gauges":               {"simpleFunction":"power__gauges",  "off":"bug_gauges",         "on":"bug_gauges_light",         "on_intense":"bug_gauges_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_gauges_needle":        {"simpleFunction":"power__gauges",  "off":"bug_gauges_needle",  "on":"bug_gauges_needle_light",  "on_intense":"bug_gauges_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_speedometer":          {"simpleFunction":"power__gauges",  "off":"bug_speedometer",    "on":"bug_speedometer_light",    "on_intense":"bug_speedometer_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_tachometer":           {"simpleFunction":"power__gauges",  "off":"bug_tachometer",     "on":"bug_tachometer_light",     "on_intense":"bug_tachometer_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_oil_ammeter":          {"simpleFunction":"power__gauges",  "off":"bug_oil_ammeter",    "on":"bug_oil_ammeter_light",    "on_intense":"bug_oil_ammeter_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_speedo_needle":        {"simpleFunction":"power__gauges",  "off":"bug_speedo_needle",  "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_tacho_needle":         {"simpleFunction":"power__gauges",  "off":"bug_tacho_needle",   "on":"bug_speedo_needle_light",  "on_intense":"bug_speedo_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_clock_back":           {"simpleFunction":"power__gauges",  "off":"bug_clock_back",     "on":"bug_clock_light",          "on_intense":"bug_clock_light", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_clock_needle":         {"simpleFunction":"power__gauges",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
 
         // dashboard lights
-        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",               "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.49}},
+        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",               "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":1.0}},
         // use the "oil" LED to indicate regeneration beeing active (blinking).
         "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
         "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},             "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
@@ -235,14 +237,14 @@
 "bug_ignition_barebone": {
     "information":{
         "authors": "BeamNG",
-        "name": "Ignition",
+        "name": "Ignition Lock",
         "value": 35,
     },
     "slotType" : "bug_ignition_barebone",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_ignition_key_barebone", "bug_ignition_key_barebone", "Ignition Key"],
+        ["bug_ignition_key_barebone", ["bug_ignition_key_barebone"], [], "bug_ignition_key_barebone", "Ignition Key"],
     ],
 },
 "bug_ignition_key_barebone": {
@@ -252,10 +254,10 @@
         "value": 35,
     },
     "slotType" : "bug_ignition_key_barebone",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_ignition_keyfob", "bug_ignition_keyfob", "Key Fob"],
+        ["bug_ignition_keyfob", ["bug_ignition_keyfob"], [], "bug_ignition_keyfob", "Key Fob"],
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],

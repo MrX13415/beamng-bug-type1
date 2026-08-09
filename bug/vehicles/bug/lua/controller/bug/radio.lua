@@ -3,16 +3,16 @@
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
 -- Lua Radio for the VW Beetle mod.
--- v2.7
--- by MrX13415 (2025-04-09)
+-- v2.8
+-- by MrX13415 (2026-05-30)
 
 -- Please give credit when using this :)
 
-
 local M = {}
 
-local media = require("media")
-local storage = require("storage")
+local misc = require("vehicles/bug/lua/misc")
+local media = require("vehicles/bug/lua/lib/media")
+local storage = require("vehicles/bug/lua/lib/storage")
 
 -- The local stations folder expects subfolders with the following name schema, containing one or more MP3 or WAV files.
 -- Schema: 'nnn.n <name>' or 'nnn.n-<name>' or 'nnn.n_<name>'
@@ -23,7 +23,10 @@ local TracksCacheFile = "settings"..v.vehicleDirectory.."radio/cache.json"
 -- with an additional field "song" containing the relative audio file path in the "information" section.
 local ModStationsFolder = v.vehicleDirectory
 
-local NodeDriver = "driver"
+local NodeCamDriver = "driver"
+local NodeCamRider = "rider"
+local NodeCamRiderBackL = "rider.back.left"
+local NodeCamRiderBackR = "rider.back.right"
 local NodeSFX = "dsh"
 local NodeOutput = "speaker"
 
@@ -46,7 +49,7 @@ local frequencyGrid = 0.2	-- Mhz  Frequency tolerance
 -- Local ---------------------------------------------
 
 local function playSound(soundname, node, volume, pitch)
-	sounds.playSoundOnceAtNode(soundname, getNodeIDbyName(node), volume or 1, pitch or 1, 0, 0)
+	sounds.playSoundOnceAtNode(soundname, misc.getNodeIDbyName(node), volume or 1, pitch or 1, 0, 0)
 end
 
 -- Class: SoundObj -----------------------------------
@@ -70,7 +73,7 @@ function SoundObj:load(filepath, loop)
 		sfxDescription = loop and "AudioMusicLoop3D" or "AudioMusic3D"
 	end
 
-	local nodeId = getNodeIDbyName(self.nodeName)
+	local nodeId = misc.getNodeIDbyName(self.nodeName)
 	if nodeId then
 		if self.sound then self:unload() end
 		if not filepath then return end
@@ -240,22 +243,23 @@ function Station:showInfo(force)
 		print("[Bug:Radio]  > #" ..tostring(self.trackIndex).. " " ..media.toTimeStr(self.elapsed).. "/" ..media.toTimeStr(track.duration).. " '" ..track.name.. "' (" ..track.type.. ")")
 	end
 
-	local msg = "Radio: " ..tostring(self.frequency).. "MHz - " ..self.name
+	local _frequency = string.format("%.1f", self.frequency)
+	local _name = self.name
+	local _track = ""
 	if track and #track.name > 0 then
-		msg = msg .. "\n"
 		if #self.tracks > 1 then
-			 msg = msg .. "#" ..tostring(self.trackIndex).. " "
+			 _track = _track .. "#" ..tostring(self.trackIndex).. " "
 		end
 		if track.duration > 0 then
 			if self.elapsed > 3 then
-				msg = msg ..media.toTimeStr(self.elapsed).. "/"
+				_track = _track .. media.toTimeStr(self.elapsed).. "/"
 			end
-			msg = msg ..media.toTimeStr(track.duration) .. " - "
+			_track = _track .. media.toTimeStr(track.duration) .. " - "
 		end
-		msg = msg ..tostring(track.name)
+		_track = _track .. tostring(track.name)
 	end
 
-	guihooks.message({txt = msg, context = {}}, 8, "bug.radio.trackinfo")
+	guihooks.message({txt = "ui.bug.interior.radio.trackinfo", context = {frequency=_frequency, station=_name, track=_track}}, 8, "bug.radio.trackinfo", "music")
 end
 
 -- Class: Radio --------------------------------------
@@ -310,6 +314,13 @@ function Radio:new()
 	
 	---------
 	
+	self.nodeCamDriver = nil
+	self.nodeCamRider = nil
+	self.nodeCamRiderBackL = nil
+	self.nodeCamRiderBackR = nil
+
+	---------
+	
 	self.speaker = nil
 
 	self.updateTimer = 0
@@ -326,7 +337,10 @@ end
 function Radio:initalize(jbeam)
 	self.installed = false
 
-	NodeDriver = jbeam.nodeDriver or NodeDriver
+	NodeCamDriver = jbeam.nodeCamDriver or NodeCamDriver
+	NodeCamRider = jbeam.nodeCamRider or NodeCamRider
+	NodeCamRiderBackL = jbeam.nodeCamRiderBackL or NodeCamRiderBackL
+	NodeCamRiderBackR = jbeam.nodeCamRiderBackR or NodeCamRiderBackR
 	NodeSFX = jbeam.nodeSFX or NodeSFX
 	NodeOutput = jbeam.nodeOutput or NodeOutput
 	
@@ -344,19 +358,30 @@ function Radio:initalize(jbeam)
 	self.userVolume = jbeam.volume or self.userVolume
 	audio3D = (jbeam.audio3D or 0) > 0
 	
-	-- Initalize speaker for default static noise
+	-- Determine camera nodes
+	self.nodeCamDriver 		= misc.getNodeIDbyName(NodeCamDriver)
+	self.nodeCamRider 		= misc.getNodeIDbyName(NodeCamRider)
+	self.nodeCamRiderBackL 	= misc.getNodeIDbyName(NodeCamRiderBackL)
+	self.nodeCamRiderBackR 	= misc.getNodeIDbyName(NodeCamRiderBackR)
+
+	-- Initialize speaker for default static noise
 	self.speaker = SoundObj:new(NodeOutput)
-
 	self.installed = true
-	log("D", "", "[Bug:Radio] Initialized")
-	log("D", "", "[Bug:Radio]    power:    " .. (self.power and "Yes" or "No"))
-	log("D", "", "[Bug:Radio]    state:    " .. (state and "On" or "Off"))
-	log("D", "", "[Bug:Radio]    volume:   " .. (tostring(self.userVolume * 100).."%"))
-	log("D", "", "[Bug:Radio]    3D:       " .. (audio3D and "Yes" or "No"))
-
 	self:load()
 	self:loadStations()
 
+	log("D", "", "[Bug:Radio] Initialized")
+	log("D", "", "[Bug:Radio]    power:     " .. (self.power and "Yes" or "No"))
+	log("D", "", "[Bug:Radio]    state:     " .. (state and "On" or "Off"))
+	log("D", "", "[Bug:Radio]    3D:        " .. (audio3D and "Yes" or "No"))
+	log("D", "", "[Bug:Radio]    volume:    " .. (tostring(self.userVolume * 100).."%"))
+	log("D", "", "[Bug:Radio]    frequency: " .. (tostring(self.frequency).." Mhz"))
+	local _presets = {}
+	for index, p in ipairs(self.presets) do
+		_presets[#_presets+1] = tostring(index) .. ": " .. (p.user and tostring(p.frequency).." MHz" or "Empty")
+	end
+	log("D", "", "[Bug:Radio]    Presets:   " .. table.concat(_presets, " | "))
+	
 	-- Finally set state
 	self.button = state -- Prevent SFX from playing
 	self:setState(state)
@@ -430,7 +455,7 @@ function Radio:setState(enabled)
 
 		local v = string.format("%.0f%%", self.userVolume * 100)
 		print("[Bug:Radio] State: On (Volume "..v..")")
-		guihooks.message({txt = "Radio: On (Volume "..v..")", context = {}}, 4, "bug.radio")
+		guihooks.message({txt = "ui.bug.interior.radio.on.volume", context = {volume=v}}, 4, "bug.radio", "music")
 
 		-- Volume update happens in the radio update loop
 		local s = self:station()
@@ -441,7 +466,7 @@ function Radio:setState(enabled)
 		electrics.values.radio_volume = math.max(self.userVolume, 0.05) -- Ensure min. volume when on
 
 		print("[Bug:Radio] State: On (No power)")
-		guihooks.message({txt = "Radio: On (No power)", context = {}}, 4, "bug.radio")
+		guihooks.message({txt = "ui.bug.interior.radio.on.noPower", context = {}}, 4, "bug.radio", "music")
 
 		self:updateVolume(0)
 	else
@@ -449,14 +474,14 @@ function Radio:setState(enabled)
 		electrics.values.radio_volume = 0
 
 		print("[Bug:Radio] State: Off")
-		guihooks.message({txt = "Radio: Off", context = {}}, 4, "bug.radio")
+		guihooks.message({txt = "ui.bug.interior.radio.off", context = {}}, 4, "bug.radio", "music")
 
 		self:updateVolume(0)
 	end
 
 	if self.workerCoroutine ~= nil then
 		print("[Bug:Radio] Loading stations. Please wait...")
-		guihooks.message({txt = "Radio: Loading stations. Please wait...", context = {}}, 4, "bug.radio")
+		guihooks.message({txt = "ui.bug.interior.radio.loading", context = {}}, 4, "bug.radio", "sync")
 	end
 end
 
@@ -531,11 +556,15 @@ function Radio:updateWorker(dt)
 
 	if ok and info then 
 		if info.index then
-			local msg = "Radio: Loading tracks ... "..string.format("%.0f%%", 100/info.count*info.index).."\nTrack "..info.index.."/"..info.count.. " "..tostring(#self.stations).." Stations"
-			guihooks.message({txt = msg, context = {}}, 1, "bug.radio.loadstations")
+			local _progress = string.format("%.0f%%", 100/info.count*info.index)
+			local _index = info.index
+			local _count = info.count
+			local _stations = tostring(#self.stations)
+			guihooks.message({txt = "ui.bug.interior.radio.loading.progress", context = {progress=_progress, index=_index, count=_count, stations=_stations}}, 1, "bug.radio.loadstations", "sync")
 		else
-			local msg = "Radio: Loading completed\n" ..tostring(#self.stations).. " Stations, " ..(info.tracks).." Tracks "
-			guihooks.message({txt = msg, context = {}}, 4, "bug.radio.loadstations")
+			local _stations = tostring(#self.stations)
+			local _tracks = tostring(info.tracks)
+			guihooks.message({txt = "ui.bug.interior.radio.loading.completed", context = {stations=_stations, tracks=_tracks}}, 4, "bug.radio.loadstations", "sync")
 		end
 	end
 end
@@ -547,7 +576,7 @@ function Radio:loadStationsTask()
 	media.cacheLoad(TracksCacheFile)
 
 	-- Find local sound files ...
-	local localFiles = FS:findFiles(LocalStationsFolder, '*.mp3\t*.wav', -1, true, false)
+	local localFiles = FS:findFiles(LocalStationsFolder, media:getFormatFilter(), -1, true, false)
 	-- Find mod stations jbeam files ...
 	local modStations = self:findModStations()
 
@@ -626,9 +655,11 @@ function Radio:loadStationsTask()
 		end
 	end
 
-	if self:findStation(self.frequency) then
-		-- Set default station ...
+	-- Pick a random station when no station for the current frequency ...
+	if self:findStation(self.frequency) == 0 then
+		local f = self.frequency
 		self:setStationRandom()
+		log("D", "", "[Bug:Radio] No station on frequency " ..tostring(f).. "MHz. Tuned to random station " ..tostring(self:station().frequency).. "MHz '" ..self:station().name.. "'")
 	end
 
 	storage.suspend(false)
@@ -843,7 +874,8 @@ function Radio:setVolume(value)
 		local v = string.format("%.0f%%", self.userVolume * 100)
 		print("[Bug:Radio] Volume " ..v.. " (" ..tostring(self.userVolume).. ")")
 
-		guihooks.message({txt = "Radio: Volume "..v, context = {}}, 4, "bug.radio")
+		local icon = (self.userVolume == 0 and "soundOff") or (self.userVolume < 0.3 and "soundQuiet") or "soundLoud"
+		guihooks.message({txt = "ui.bug.interior.radio.volume", context = {volume=v}}, 4, "bug.radio", icon)
 	end
 end
 
@@ -1004,6 +1036,16 @@ function Radio:updateStations(dt)
 	end
 end
 
+function Radio:isInterioCam(vehPos, camPos, camFactor)
+	-- When the distance from the "driver" camera to the player camera
+	-- is 0.6 or less, the interior sound filter is active.
+	local interior = (self.nodeCamDriver     and (camPos:distance( vehPos + vec3(obj:getNodePosition(self.nodeCamDriver))     ) - camFactor) < 0.6)
+		          or (self.nodeCamRider    	 and (camPos:distance( vehPos + vec3(obj:getNodePosition(self.nodeCamRider))      ) - camFactor) < 0.6)
+		          or (self.nodeCamRiderBackL and (camPos:distance( vehPos + vec3(obj:getNodePosition(self.nodeCamRiderBackL)) ) - camFactor) < 0.6)
+		          or (self.nodeCamRiderBackR and (camPos:distance( vehPos + vec3(obj:getNodePosition(self.nodeCamRiderBackR)) ) - camFactor) < 0.6)
+	return interior
+end
+
 function Radio:updateRadio(dt)
 	if self.installed == false then return end
 
@@ -1027,19 +1069,18 @@ function Radio:updateRadio(dt)
 	local camFactor = obj:getGroundSpeed() / 100
 	local camPos = vec3(obj:getCameraPosition())
 	
-	-- Determine speaker node, driver node and camera position ...
+	-- Determine camera position ...
 	local vehPos = vec3(obj:getPosition())
-	local driverPos = vehPos + vec3(obj:getNodePosition(getNodeIDbyName(NodeDriver)))
-	local speakerPos = vehPos + vec3(obj:getNodePosition(getNodeIDbyName(NodeOutput)))
 
 	-- Determine the relative position of the camera and if it's on the left or right side of the vehicle
 	local camDelta = (camPos - vehPos):normalized()
 	local camRefX = camDelta:cross(obj:getDirectionVector()):normalized().z
 
 	local distance = (camPos:distance(vehPos) - camFactor)
+
 	-- When the distance from the "driver" camera to the player camera
 	-- is 0.6 or less, the interior sound filter is active.
-	local interior = (camPos:distance(driverPos) - camFactor) < 0.6
+	local interior = self:isInterioCam(vehPos, camPos, camFactor)
 
 	-- Determine cam side in %
 	local camL = clamp((1.0/-1.6) * camRefX + 0.5, 0, 1)

@@ -7,10 +7,10 @@
         "value": 50,
     },
     "slotType" : "skin_runningboards",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["runningboards_trim", "runningboards_trim", "License Plate Design"],
+        ["runningboards_trim", ["runningboards_trim"], [], "runningboards_trim", "Trim"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -125,10 +125,10 @@
         "value": 50,
     },
     "slotType" : "skin_runningboards",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["runningboards_trim", "runningboards_trim", "License Plate Design"],
+        ["runningboards_trim", ["runningboards_trim"], [], "runningboards_trim", "Trim"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -243,10 +243,10 @@
         "value": 50,
     },
     "slotType" : "skin_runningboards",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["runningboards_trim", "runningboards_trim", "License Plate Design"],
+        ["runningboards_trim", ["runningboards_trim"], [], "runningboards_trim", "Trim"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -361,10 +361,10 @@
         "value": 50,
     },
     "slotType" : "skin_runningboards",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["runningboards_trim", "runningboards_trim", "License Plate Design"],
+        ["runningboards_trim", ["runningboards_trim"], [], "runningboards_trim", "Trim"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -472,7 +472,6 @@
         {"group":""},
     ],
 },
-
 
 "runningboards_trim": {
     "information":{

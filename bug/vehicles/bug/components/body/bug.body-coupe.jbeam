@@ -6,54 +6,54 @@
         "value":3000,
     },
     "slotType" : "bug_body",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
          //bodywork
-		["bug_roof","bug_roof_hardtop", "Roof", {"coreSlot":true}],
-		["bug_fenders","bug_fenders", "Fenders"],
+		["bug_roof",              ["bug_roof"], [],              "bug_roof_hardtop",    "Roof",               {"coreSlot":true}],
+		["bug_fenders",           ["bug_fenders"], [],           "bug_fenders",         "Fenders"],
 
-        ["bug_bumper_F","bug_bumper_F_US", "Front Bumper"],
-        ["bug_bumper_R","bug_bumper_R_US", "Rear Bumper"],
+        ["bug_bumper_F",          ["bug_bumper_F"], [],          "bug_bumper_F_US",     "Front Bumper"],
+        ["bug_bumper_R",          ["bug_bumper_R"], [],          "bug_bumper_R_US",     "Rear Bumper"],
 
-        ["bug_hood","bug_hood", "Hood"],
-        ["bug_trunk","bug_trunk", "Trunk"],
+        ["bug_hood",              ["bug_hood"], [],              "bug_hood",            "Hood"],
+        ["bug_trunk",             ["bug_trunk"], [],             "bug_trunk",           "Trunk"],
 
-        ["bug_trim_F","trim_F", "Front Trim"],
-        ["bug_trim_door","trim_door", "Door Trim"],
-        ["bug_trim_B","trim_B", "Rear Trim"],
+        ["bug_trim_F",            ["bug_trim_F"], [],            "trim_F",              "Front Trim"],
+        ["bug_trim_door",         ["bug_trim_door"], [],         "trim_door",           "Door Trim"],
+        ["bug_trim_B",            ["bug_trim_B"], [],            "trim_B",              "Rear Trim"],
 
-		["bug_door_FR","bug_door_FR", "Front Right Door"],
-        ["bug_door_FL","bug_door_FL", "Front Left Door"],
-        ["bug_door_RR","bug_door_RR", "Rear Right Door"],
-        ["bug_door_RL","bug_door_RL", "Rear Left Door"],
+		["bug_door_FR",           ["bug_door_FR"], [],           "bug_door_FR",         "Front Right Door"],
+        ["bug_door_FL",           ["bug_door_FL"], [],           "bug_door_FL",         "Front Left Door"],
+        ["bug_door_RR",           ["bug_door_RR"], [],           "bug_door_RR",         "Rear Right Door"],
+        ["bug_door_RL",           ["bug_door_RL"], [],           "bug_door_RL",         "Rear Left Door"],
 
-        ["skin_runningboards","runningboards_black", "Runningboards"],
-        ["bug_windshield","bug_windshield", "Windshield"],
-        ["bug_rearwindow","bug_rearwindow", "Rearwindow"],
-        ["bug_glass","bug_glass", "Glass"],
-        ["bug_exterior_sunvisor","", "Exterior Sunvisor"],
-        ["bug_exterior_lights","", "Exterior Lights"],
+        ["skin_runningboards",    ["skin_runningboards"], [],    "runningboards_black", "Runningboards"],
+        ["bug_windshield",        ["bug_windshield"], [],        "bug_windshield",      "Windshield"],
+        ["bug_rearwindow",        ["bug_rearwindow"], [],        "bug_rearwindow",      "Rear Window"],
+        ["bug_glass",             ["bug_glass"], [],             "bug_glass",           "Side Windows"],
+        ["bug_exterior_sunvisor", ["bug_exterior_sunvisor"], [], "",                    "Sun Visor"],
+        ["bug_exterior_lights",   ["bug_exterior_lights"], [],   "",                    "Roof Lights"],
         
-        ["bug_wipers", "bug_wipers", "Wipers"],
+        ["bug_wipers",            ["bug_wipers"], [],            "bug_wipers",          "Wipers"],
 
-		["bug_gascap","", "Gascap"],
-		["antenna","antenna_default_R", "Antenna"],
+		["bug_gascap",            ["bug_gascap"], [],            "",                    "Rally Fuel Cap"],
+		["antenna",               ["antenna"], [],               "antenna_default_R",   "Antenna"],
 
-        ["bug_lettering","", "Lettering"],
+        ["bug_lettering",         ["bug_lettering"], [],         "",                    "Lettering"],
 
-        ["bug_licenseplate_R","bug_licenseplate_R", "Rear License Plate"],
-        ["bug_spoilerF","", "Front Spoiler"],
+        ["bug_licenseplate_R",    ["bug_licenseplate_R"], [],    "bug_licenseplate_R",  "Rear License Plate"],
+        ["bug_spoilerF",          ["bug_spoilerF"], [],          "",                    "Front Spoiler"],
 
-        ["bug_wheel_spare","bug_wheel_spare", "Spare Wheel"],
-        ["bug_jerrycan_cage","", "Jerrycan Cage"],
+        ["bug_wheel_spare",       ["bug_wheel_spare"], [],       "bug_wheel_spare",     "Spare Wheel"],
+        ["bug_jerrycan_cage",     ["bug_jerrycan_cage"], [],     "",                    "Jerrycan Cage"],
 
-        ["bug_rearvents_cover","", "Rear Vents Cover"],
-        ["bug_heatvents","bug_heatvents", "Heat Vents", {"coreSlot":true}],
+        ["bug_rearvents_cover",   ["bug_rearvents_cover"], [],   "",                    "Rear Vents Cover"],
+        ["bug_heatvents",         ["bug_heatvents"], [],         "bug_heatvents",       "Heat Vents",         {"coreSlot":true}],
 
-        ["bug_interior", "bug_interior", "Interior"],
+        ["bug_interior",          ["bug_interior"], [],          "bug_interior",        "Interior"],
 
-        ["bug_underglow","", "Under Glow Lights"],
+        ["bug_underglow",         ["bug_underglow"], [],         "",                    "Underglow Lights"],
     ],
     "refNodes":[
         ["ref:", "back:", "left:", "up:", "leftCorner:", "rightCorner:"],
@@ -222,18 +222,19 @@
 
         // rear
         {"nodeWeight":1.0},
-        {"group":["bug_body","bug_body_rear", "bug_window_rear"]},
+        {"group":["bug_body","bug_body_rear", "bug_window_rear", "bug_body_roof_rear"]},
         ["br1",  0.00000,  1.47315,  1.07744],
         ["br1r", -0.22944,  1.45635,  1.06181],
         ["br1l",  0.22944,  1.45635,  1.06181],
         ["br1rr", -0.41364,  1.39420,  1.03884],
         ["br1ll",  0.41364,  1.39420,  1.03884],
-        {"group":["bug_body","bug_body_rear"]},
+        {"group":["bug_body","bug_body_rear", "bug_body_roof_rear"]},
         ["br2r", -0.22780,  1.52363,  1.00192],
         ["br2l",  0.22780,  1.52363,  1.00192],
         ["br2rr", -0.39449,  1.48577,  0.93910],
         ["br2ll",  0.39449,  1.48577,  0.93910],
         ["br2",  0.00000,  1.54497,  1.01773],
+        {"group":["bug_body","bug_body_rear"]},
         ["br3r", -0.48621,  1.46850,  0.37364],
         ["br3l",  0.48621,  1.46850,  0.37364],
         ["br4r", -0.41500,  1.66285,  0.59820],
@@ -1109,12 +1110,22 @@
         ["br7l", "br7"],
         ["br6", "br7"],
         // rear: rigidify
+        ["br2l", "br2rr"],
+        ["br2r", "br2ll"],
         ["br7", "br6l"],
         ["br7", "br6r"],
         ["br7r", "br6l"],
         ["br7l", "br6r"],
         ["br5ll", "br3r"],
         ["br5rr", "br3l"],
+
+        ["br2l", "bq7r"],
+        ["br2r", "bq7l"],
+        ["br2ll", "bi3l"],
+        ["br2ll", "bq7l"],
+        ["br2ll", "bq7r"],
+        ["br2rr", "bq7l"],
+        ["br2rr", "bq7r"],
 
         // rear <> sides
         ["bq12r", "br1rr"],
@@ -1194,7 +1205,7 @@
         ["bq12l", "bq13l"],
         ["bq8r", "bq7r"],
         ["bq8l", "bq7l"],
-        // sides: rigidify
+        // sides: rigidify        
         ["bq1l", "bq1r"],
         ["bq1l", "bq2r", {"beamStrength":30000,"breakGroup":"bodyFloorR","breakGroupType":1}],
         ["bq2l", "bq1r", {"beamStrength":30000,"breakGroup":"bodyFloorL","breakGroupType":1}],
@@ -1206,6 +1217,13 @@
         ["bq5l", "bq11r"],
         ["bq5r", "bc4l", {"beamStrength":30000,"breakGroup":"bodyFloorR","breakGroupType":1}],
         ["bq5l", "bc4r", {"beamStrength":30000,"breakGroup":"bodyFloorL","breakGroupType":1}],
+        
+        ["bq8l", "bq8r"],
+        ["bq8l", "br3r"],
+        ["bq8r", "br3l"],
+        ["bq8l", "bq4r"],
+        ["bq8r", "bq4l"],
+        
         ["bq9r", "bi2l"],
         ["bq9l", "bi2r"],
         ["bq10r", "bq3l"],
@@ -1739,10 +1757,10 @@
         "value":60,
     },
     "slotType" : "bug_wipers",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-		["bug_wipers_washer","bug_wipers_washer", "Washer System"],
+		["bug_wipers_washer", ["bug_wipers_washer"], [], "bug_wipers_washer", "Wiper Fluid Reservoir"],
     ],
     "electricPower":[
         ["power"],
@@ -1776,10 +1794,10 @@
         "value":90,
     },
     "slotType" : "bug_wipers",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-		["bug_wipers_washer","bug_wipers_washer", "Washer System"],
+		["bug_wipers_washer", ["bug_wipers_washer"], [], "bug_wipers_washer", "Wiper Fluid Reservoir"],
     ],
     "electricPower":[
         ["power"],
@@ -1815,10 +1833,10 @@
         "value":120,
     },
     "slotType" : "bug_wipers",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-		["bug_wipers_washer","bug_wipers_washer", "Washer System"],
+		["bug_wipers_washer", ["bug_wipers_washer"], [], "bug_wipers_washer", "Wiper Fluid Reservoir"],
     ],
     "electricPower":[
         ["power"],
@@ -1852,7 +1870,7 @@
 "bug_wipers_washer": {
     "information":{
         "authors":"BeamNG",
-        "name":"Washer System",
+        "name":"Wiper Fluid Reservoir",
         "value":10,
     },
     "slotType" : "bug_wipers_washer",
@@ -1876,6 +1894,25 @@
         [10, {"trigger": "electrics.values.interiorlightstate"}]
     ],
     "slotType" : "bug_interiorlight",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+
+        ["bug_interior_light_bulb", ["incandescent_white_5W"], [], "incandescent_white_5W", "Interior Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"power__interiorlightstate",
+          "$nodeRef":"brf4lll", "$nodeX":"brf4ll", "$nodeY":"brf5lll",
+          "$deformGroup":"",
+          "$posX":0.5, "$posY":0.380, "$posZ":1.36,
+          "$rotX":120, "$rotY":0, "$rotZ":-70,
+          "$shadowEnable":0,
+          "$lightRange":1.5,
+          "$lightInnerAngle":0,
+          "$lightOuterAngle":160,
+        }
+        }],
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
@@ -1895,32 +1932,9 @@
         ["interiorlight", "action0", "interiorlighttoggle"],
     ],
     "glowMap":{
-        "bug_interiorlight":       {"simpleFunction":{"power__interiorlightstate":0.49}, "off":"bug_int_lights", "on":"bug_int_lights_on", "materialEmissiveScaling":{"on_max":0.49}},
-        "bug_interiorlight_glass": {"simpleFunction":{"power__interiorlightstate":0.49}, "off":"bug_int_lights_glass", "on":"bug_int_lights_glass_on", "materialEmissiveScaling":{"on_max":0.49}}
+        "bug_interiorlight":       {"simpleFunction":{"power__interiorlightstate":0.49}, "off":"bug_int_lights", "on":"bug_int_lights_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_interiorlight_glass": {"simpleFunction":{"power__interiorlightstate":0.49}, "off":"bug_int_lights_glass", "on":"bug_int_lights_glass_on", "materialEmissiveScaling":{"on_max":1.0}}
     },
-    "props": [
-        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
-
-        // Interior light:
-        {
-            "lightInnerAngle":120,
-            "lightOuterAngle":160,
-            "lightBrightness":4,
-            "lightRange":1.3,
-            "flareScale":0,
-            "lightColor":{"r":255, "g":193, "b":141, "a":255},  // 3000K
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":false,
-            // No Falre!
-            //"flareName":"",
-            // No Cookie!
-            //"cookieName":"art/special/BNG_light_cookie_headlight.png",
-            "texSize":512,
-            "shadowSoftness":0.5,
-        },
-        
-        ["power__interiorlightstate" ,  "SPOTLIGHT", "brf4lll","brf4ll","brf5lll", {"x":161.054, "y":-50.009, "z":24.784} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0.5, "y":0.1, "z":-0.03},"deformGroup":"", "lightScaling":{}}],
-    ],
 },
 
 "bug_heatvents_none": {
@@ -1944,12 +1958,47 @@
         "value":30,
     },
     "slotType" : "bug_heatvents",
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+
+        ["heating_vent_FL", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.07, "z":0.035}, {"x":4, "y":-10, "z":-29}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.510, "y":0.0525, "z":-0.574},{"color":[1,0.3,0,0], "alphaOnUsed":0}]
+        ["heating_vent_FR", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.07, "z":0.035}, {"x":4, "y":10, "z":29}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.366, "y":0.0493, "z":-0.583},{"color":[1,0.3,0,0], "alphaOnUsed":0}]
+
+        ["heating_vent_RL", "f4mr","f4ml","refup", "sphere", 0.027, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.584, "y":0.07, "z":0.588},{"color":[1,0.3,0,0], "alphaOnUsed":0}]
+        ["heating_vent_RR", "f4mr","f4ml","refup", "sphere", 0.027, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.424, "y":0.07, "z":0.588},{"color":[1,0.3,0,0], "alphaOnUsed":0}]
+    ],
+    "actionsEnabled": [
+        ["id"],
+
+        ["heatingventFL"],
+        ["heatingventFR"],
+        ["heatingventRL"],
+        ["heatingventRR"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],        
+
+        ["heating_vent_FL", "action0", "heatingventFL"],
+        ["heating_vent_FR", "action0", "heatingventFR"],
+        ["heating_vent_RL", "action0", "heatingventRL"],
+        ["heating_vent_RR", "action0", "heatingventRR"],
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         ["bug_heatvent_F",                     ["bug_body_front", "bug_body_sides_front"]],
         ["bug_heatvent_R",                     ["bug_body_rear" , "bug_body_sides"]]
     ]
+    "props": [
+        ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
+
+        ["anim__heating_ventFL", "bug_heatvent_F_slider_L", "dsh","dshl","bd1",   {"x":0, "y":0, "z":-29.7345},   {"x":0, "y":0, "z":0},    {"x":-1.13, "y":0, "z":-1}, 0, 1, 0, 0.053],
+        ["anim__heating_ventFR", "bug_heatvent_F_slider_R", "dsh","dshl","bd1",   {"x":0, "y":0, "z":29.7345},   {"x":0, "y":0, "z":0},    {"x":1.13, "y":0, "z":-1}, 0, 1, 0, 0.053],
+
+        ["anim__heating_ventRL", "bug_heatvent_R_knob_L", "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":1},    {"x":0, "y":0, "z":0}, -90, 0, 90, -90],
+        ["anim__heating_ventRR", "bug_heatvent_R_knob_R", "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":1},    {"x":0, "y":0, "z":0},  0, 90, -90, 90],
+    ],
+    
 },
 
 "bug_rearvents_cover": {

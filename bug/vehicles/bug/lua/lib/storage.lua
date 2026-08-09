@@ -2,12 +2,13 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
--- v1.1
--- by MrX13415
+-- Library to manage persistent storage of mod data across sessions.
+-- v1.2
+-- by MrX13415 (2026-05-30)
 
 local M = {}
-
-local filepath = ""
+	
+local _filepath = nil
 
 local saveTimer = 0
 local saveSuspended = false
@@ -16,11 +17,18 @@ local _data = {}
 
 -- common
 
-local function load(file)
-	filepath = file or filepath
-	_data = jsonReadFile(filepath)
+local function filepath()
+	if not _filepath then
+		_filepath = "settings"..v.vehicleDirectory.."data.json"
+	end
+	return _filepath
+end
+
+local function load()
+	local f = filepath()
+	_data = jsonReadFile(f)
 	loaded = true
-	log("D", "", "[Bug:Storage] Loaded")
+	log("D", "", "[Bug:Storage] Loaded (file: " .. f .. ")")
 
 	if _data ~= nil then return true end
 	_data = {}
@@ -29,8 +37,10 @@ end
 
 local function save()
 	if not playerInfo.firstPlayerSeated then return end
-	log("D", "", "[Bug:Storage] Saved")
-	return jsonWriteFile(filepath, _data, true)
+
+	local f = filepath()
+	log("D", "", "[Bug:Storage] Saved (file: " .. f .. ")")
+	return jsonWriteFile(filepath(), _data, true)
 end
 
 local function updateGFX(dt)
@@ -39,7 +49,7 @@ local function updateGFX(dt)
 	-- Speedo is no longer saved here and the metrics are used from the game directly.
 	-- Only "player trust" is saved currently. Therefore, no need to save frequently.
 	-- Save rate: Once per minute
-	if saveTimer >= 60 then
+	if saveTimer >= 10 then
 		saveTimer = 0
 		if not saveSuspended then
 			 save()
@@ -48,11 +58,11 @@ local function updateGFX(dt)
 end
 
 local function onReset()
-	load("settings"..v.vehicleDirectory.."data.json")
+	load()
 end
 
 local function data()
-	if not loaded then 
+	if not loaded then
 		load()
 	end
 	return _data
@@ -62,8 +72,8 @@ local function suspend(value)
 	saveSuspended = value
 end
 
-M.onReset   = onReset
-M.updateGFX = updateGFX
+M.onReset   		= onReset
+M.updateGFX 		= updateGFX
 
 M.data      = data
 

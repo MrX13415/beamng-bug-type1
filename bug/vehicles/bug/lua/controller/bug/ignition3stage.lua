@@ -2,6 +2,8 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
+-- Simple 3-stage ignition controller, allowing to switch between off, on and start states.
+-- This is needed as the built-in ignition system does not support this configuration fully
 -- by MrX13415
 
 local M = {}

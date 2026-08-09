@@ -7,9 +7,9 @@
         "value":250,
     },
     "slotType" : "bug_brake_F_5lw",
-    "slots": [
-        ["type", "default", "description"]
-        ["brakepad_F","brakepad_F", "Front Brake Pads"{"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["brakepad_F", ["brakepad_F"], [], "brakepad_F", "Front Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -44,9 +44,9 @@
         "value":250,
     },
     "slotType" : "bug_brake_F_5lw",
-    "slots": [
-        ["type", "default", "description"]
-        ["brakepad_F","brakepad_F", "Front Brake Pads"{"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["brakepad_F", ["brakepad_F"], [], "brakepad_F", "Front Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -84,9 +84,9 @@
         "value":250,
     },
     "slotType" : "bug_brake_F_5lw",
-    "slots": [
-        ["type", "default", "description"],
-        ["brakepad_F","brakepad_F_race", "Front Brake Pads", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["brakepad_F", ["brakepad_F"], [], "brakepad_F_race", "Front Brake Pads", {"coreSlot":true}],
     ],    
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -128,9 +128,9 @@
         "value":250,
     },
     "slotType" : "bug_brake_F",
-    "slots": [
-        ["type", "default", "description"]
-        ["brakepad_F","brakepad_F", "Front Brake Pads"{"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["brakepad_F", ["brakepad_F"], [], "brakepad_F", "Front Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -168,9 +168,9 @@
         "value":250,
     },
     "slotType" : "bug_brake_F",
-    "slots": [
-        ["type", "default", "description"]
-        ["brakepad_F","brakepad_F", "Front Brake Pads"{"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["brakepad_F", ["brakepad_F"], [], "brakepad_F", "Front Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -208,9 +208,9 @@
         "value":250,
     },
     "slotType" : "bug_brake_F",
-    "slots": [
-        ["type", "default", "description"]
-        ["brakepad_F","brakepad_F_race", "Front Brake Pads"{"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["brakepad_F", ["brakepad_F"], [], "brakepad_F_race", "Front Brake Pads", {"coreSlot":true}],
     ],    
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

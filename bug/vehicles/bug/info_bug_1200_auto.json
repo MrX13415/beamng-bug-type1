@@ -16,8 +16,8 @@
     ]
   ],
   "Config Type":"Factory",
-  "Configuration":"1200 US (A)",
-  "Description":"US base model with 1200cc engine and automatic transmission",
+  "Configuration":"vehiclesData.bug.1200_auto.Configuration",
+  "Description":"vehiclesData.bug.1200_auto.Description",
   "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",

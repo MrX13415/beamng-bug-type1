@@ -63,11 +63,8 @@
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
         "roughnessFactor": 0.4,
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveIntensityNits": 10000,
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
         "emissiveMap": "/vehicles/bug/components/body/textures/lights_g.color.png"
       },
       {},
@@ -96,11 +93,8 @@
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
         "roughnessFactor": 0.4,
-        "emissiveFactor": [
-          1.5,
-          1.5,
-          1.5
-        ],
+        "emissiveIntensityNits": 10000,
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
         "emissiveMap": "/vehicles/bug/components/body/textures/lights_g.color.png"
       },
       {},
@@ -129,11 +123,8 @@
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "roughnessFactor": 0.2,
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveIntensityNits": 10000,
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
         "emissiveMap": "/vehicles/bug/components/body/textures/lights_g.color.png"
       },
       {},
@@ -160,11 +151,8 @@
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "roughnessFactor": 0.2,
-        "emissiveFactor": [
-          1.5,
-          1.5,
-          1.5
-        ],
+        "emissiveIntensityNits": 10000,
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
         "emissiveMap": "/vehicles/bug/components/body/textures/lights_g.color.png"
       },
       {},
@@ -188,7 +176,7 @@
         "baseColorMap": "/vehicles/bug/components/body/textures/lights_dmg_d.color.png",
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
-        "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
+        "normalMap": "/vehicles/bug/components/body/textures/lights_dmg_n.normal.png",
         "opacityMap": "/vehicles/bug/components/body/textures/lights_dmg_o.data.png",
         "roughnessFactor": 0.4
       },
@@ -209,8 +197,6 @@
     "translucentRecvShadows": true,
     "version": 1.5
   },
-
-
   "bug_lights_us": {
     "name": "bug_lights_us",
     "mapTo": "bug_lights_us",
@@ -275,11 +261,8 @@
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
         "roughnessFactor": 0.4,
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveIntensityNits": 10000,
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
         "emissiveMap": "/vehicles/bug/components/body/textures/lights_us_g.color.png"
       },
       {},
@@ -308,11 +291,8 @@
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "opacityMap": "/vehicles/bug/components/body/textures/lights_o.data.png",
         "roughnessFactor": 0.4,
-        "emissiveFactor": [
-          1.5,
-          1.5,
-          1.5
-        ],
+        "emissiveIntensityNits": 10000,
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
         "emissiveMap": "/vehicles/bug/components/body/textures/lights_us_g.color.png"
       },
       {},
@@ -341,11 +321,8 @@
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "roughnessFactor": 0.2,
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveIntensityNits": 10000,
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
         "emissiveMap": "/vehicles/bug/components/body/textures/lights_us_g.color.png"
       },
       {},
@@ -372,11 +349,8 @@
         "metallicMap": "/vehicles/bug/components/body/textures/lights_m.data.png",
         "normalMap": "/vehicles/bug/components/body/textures/lights_n.normal.png",
         "roughnessFactor": 0.2,
-        "emissiveFactor": [
-          1.5,
-          1.5,
-          1.5
-        ],
+        "emissiveIntensityNits": 10000,
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
         "emissiveMap": "/vehicles/bug/components/body/textures/lights_us_g.color.png"
       },
       {},
@@ -421,9 +395,6 @@
     "translucentRecvShadows": true,
     "version": 1.5
   },
-
-
-
   "bug_int_lights": {
     "name": "bug_int_lights",
     "mapTo": "bug_int_lights",
@@ -482,11 +453,8 @@
         "metallicFactor": 0,
         "normalMap": "/vehicles/bug/components/body/textures/interiorlight_n.normal.png",
         "roughnessFactor": 0.4,
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveIntensityNits": 7000,
+        "emissiveFactor": [ 1.0, 0.826, 0.709 ],  // 5000K color temperature
         "emissiveMap": "/vehicles/bug/components/body/textures/interiorlight_g.color.png"
       },
       {},
@@ -513,11 +481,8 @@
         "metallicFactor": 1,
         "normalMap": "/vehicles/bug/components/body/textures/interiorlight_n.normal.png",
         "roughnessFactor": 0.2,
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveIntensityNits": 7000,
+        "emissiveFactor": [ 1.0, 0.826, 0.709 ],  // 5000K color temperature
         "emissiveMap": "/vehicles/bug/components/body/textures/interiorlight_g.color.png"
       },
       {},
@@ -532,8 +497,6 @@
     "translucentBlendOp": "None",
     "version": 1.5
   },
-
-
   "bug_license_light": {
     "name": "bug_license_light",
     "mapTo": "bug_license_light",
@@ -567,11 +530,8 @@
           1
         ],
         "roughnessFactor": 0.7,
-        "emissiveFactor": [
-          3.706,
-          1.972,
-          0.698
-        ]
+        "emissiveIntensityNits": 7000,
+        "emissiveFactor": [ 3.706, 1.972, 0.698 ]
       },
       {},
       {},
@@ -579,10 +539,6 @@
     ],
     "version": 1.5
   },
-
-
-
-
   "bug_headlight": {
     "name": "bug_headlight",
     "mapTo": "bug_headlight",

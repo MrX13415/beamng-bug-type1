@@ -6,10 +6,10 @@
         "value":200,
     },
     "slotType" : "bug_spoilerF",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["skin_spoilerF","bug_spoilerF_black", "Spoiler Color", {"coreSlot": true}],
+        ["skin_spoilerF", ["skin_spoilerF"], [], "bug_spoilerF_black", "Spoiler Color", {"coreSlot": true}],
     ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],

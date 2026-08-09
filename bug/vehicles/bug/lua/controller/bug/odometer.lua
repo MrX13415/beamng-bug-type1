@@ -2,10 +2,14 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
+-- Controller for an analog odometer to display the total distance traveled by the vehicle
+-- using the built-in gameplay statistic. The odometer supports both metric and imperial units.
+-- v1.0
 -- by MrX13415
 
-
 local M = {}
+
+local misc = require("vehicles/bug/lua/misc")
 
 local digits = 11               -- 11 digits. Support for up to 99.999.999 km
 local unit = "meter"            -- Default mode
@@ -13,6 +17,9 @@ local unitMiles = 0.000621371   -- DO NOT CHANGE!
 local updateTimer = 2           -- Make sure the first call is immediately
 local lastMileage = 0           -- in meters
 local mileage = 0               -- in meters
+
+local round = misc.round
+
 
 function OnStatisticCallback(odometerValue)
   lastMileage = odometerValue or 0
@@ -27,12 +34,6 @@ local function loadStatistic()
     local value = (gameplay_statistic.metricGet("vehicle/odometer/bug.length", true) or {value=0}).value
     be:getPlayerVehicle(0):queueLuaCommand('OnStatisticCallback('..value..')')
   ]])
-end
-
--- common
-local function round(num, numDecimalPlaces)
-  local mult = 10^(numDecimalPlaces or 0)
-  return math.floor(num * mult + 0.5) / mult
 end
 
 -- local function load()

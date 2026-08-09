@@ -6,17 +6,17 @@
         "value":350,
     },
     "slotType" : "n2o_system",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["n2o_bottle","n2o_bottle_10lb", "Nitrous Oxide Bottle"],
-        ["n2o_shot","n2o_shot_50", "Nitrous Oxide Shot Size"],
+        ["n2o_bottle", ["n2o_bottle"], [], "n2o_bottle_10lb", "Nitrous Oxide Bottle"],
+        ["n2o_shot",   ["n2o_shot"], [],   "n2o_shot_50",     "Nitrous Oxide Shot Size"],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
 
-        ["$n2o_rpm", "range", "RPM", "Engine", 3500, 2000, 6000, "Minimum RPM", "Minimum RPM where nitrous oxide can spray"{"subCategory":"Nitrous Oxide", "stepDis":100}],
-        ["$n2o_gear", "range", "Gear", "Engine", 2, 1, 6, "Minimum Gear", "Minimum gear where nitrous oxide can spray"{"subCategory":"Nitrous Oxide", "minDis":1, "maxDis":6, "stepDis":1}]
+        ["$n2o_rpm", "range", "RPM", "Engine", 3500, 2000, 6000, "Minimum RPM", "Minimum RPM where nitrous oxide can spray", {"subCategory":"Nitrous Oxide", "stepDis":100}],
+        ["$n2o_gear", "range", "Gear", "Engine", 2, 1, 6, "Minimum Gear", "Minimum gear where nitrous oxide can spray", {"subCategory":"Nitrous Oxide", "minDis":1, "maxDis":6, "stepDis":1}]
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -148,7 +148,7 @@
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
 
-        ["$n2o_power", "range", "kW", "Engine", 75, 25, 500, "Added Power", "Power increase the N2O injection grants"{"subCategory":"Nitrous Oxide", "stepDis":5}]
+        ["$n2o_power", "range", "kW", "Engine", 75, 25, 500, "Added Power", "Power increase the N2O injection grants", {"subCategory":"Nitrous Oxide", "stepDis":5}]
     ],
     "n2o": {
         "addedPower": "$n2o_power",

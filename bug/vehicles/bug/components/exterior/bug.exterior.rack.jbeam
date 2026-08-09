@@ -6,9 +6,9 @@
         "value":300,
     },
     "slotType" : ["bug_roof_accessory", "bug_ragroof_accessory"],
-	"slots": [
-        ["type", "default", "description"],
-        ["bug_roofrack_luggage","bug_roofrack_luggage", "Roof Rack Luggage"],	
+	"slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_roofrack_luggage", ["bug_roofrack_luggage"], [], "bug_roofrack_luggage", "Roof Rack Luggage"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -242,12 +242,12 @@
         "value":0,
     },
     "slotType" : "bug_roofrack_luggage",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_roofrack_luggage_bag","cargo_load_roofrack_luggage_bag", "Suitcase"],
-        ["bug_roofrack_luggage_coolingbox","cargo_load_roofrack_luggage_coolingbox", "Coolingbox"],
-        ["bug_roofrack_luggage_tricycle","bug_roofrack_luggage_tricycle", "Tricycle"],
-        ["bug_roofrack_luggage_surfboard","bug_roofrack_luggage_surfboard", "Surfboard"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_roofrack_luggage_bag",        ["bug_roofrack_luggage_bag"], [],        "cargo_load_roofrack_luggage_bag",        "Suitcase"],
+        ["bug_roofrack_luggage_coolingbox", ["bug_roofrack_luggage_coolingbox"], [], "cargo_load_roofrack_luggage_coolingbox", "Coolingbox"],
+        ["bug_roofrack_luggage_tricycle",   ["bug_roofrack_luggage_tricycle"], [],   "bug_roofrack_luggage_tricycle",          "Tricycle"],
+        ["bug_roofrack_luggage_surfboard",  ["bug_roofrack_luggage_surfboard"], [],  "bug_roofrack_luggage_surfboard",         "Surfboard"],
     ]
 },
 
@@ -259,10 +259,10 @@
         "value":80,
     },
     "slotType" : "bug_roofrack_luggage_bag",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_roofrack_luggage_bag_color","bug_roofrack_luggage_bag_brown", "Color", {"coreSlot":true}]
+        ["bug_roofrack_luggage_bag_color", ["bug_roofrack_luggage_bag_color"], [], "bug_roofrack_luggage_bag_brown", "Color",       {"coreSlot":true}],
     ],
     "cargoStorage":[
         ["groupId","name","cargoTypes", "capacity"],
@@ -877,10 +877,10 @@
         "value":0,
     },
     "slotType" : "bug_roofrack_luggage",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_roofrack_offroad_tire","bug_roofrack_offroad_tire", "Spare Wheel"],
-        ["bug_roofrack_offroad_box","cargo_load_roofrack_offroad_box", "Box"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_roofrack_offroad_tire", ["bug_roofrack_offroad_tire"], [], "bug_roofrack_offroad_tire",       "Spare Wheel"],
+        ["bug_roofrack_offroad_box",  ["bug_roofrack_offroad_box"], [],  "cargo_load_roofrack_offroad_box", "Box"],
     ]
 },
 
@@ -1102,13 +1102,13 @@
 "bug_rearrack": {
     "information":{
         "authors":"53_herbie_53",
-        "name":"Rear Rack",
+        "name":"Rear Luggage Rack",
         "value":300,
     },
     "slotType" : "bug_rearrack",
-	"slots": [
-        ["type", "default", "description"],
-        ["bug_rearrack_luggage","cargo_load_rearrack_luggage_bag", "Rear Rack Luggage"],
+	"slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_rearrack_luggage", ["bug_rearrack_luggage"], [], "cargo_load_rearrack_luggage_bag", "Luggage"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1297,10 +1297,10 @@
         "value":60,
     },
     "slotType": "bug_rearrack_luggage",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_rearrack_luggage_bag_color","bug_rearrack_luggage_bag_color_black", "Color", {"coreSlot":true}]
+        ["bug_rearrack_luggage_bag_color", ["bug_rearrack_luggage_bag_color"], [], "bug_rearrack_luggage_bag_color_black", "Color",       {"coreSlot":true}],
     ],
     "cargoStorage":[
         ["groupId","name","cargoTypes", "capacity"],
@@ -1446,9 +1446,9 @@
         "value":80,
     },
     "slotType" : "bug_jerrycan_cage",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_jerrycan","cargo_load_jerrycan", "20L Jerrycan"],	
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_jerrycan", ["bug_jerrycan"], [], "cargo_load_jerrycan", "Jerrycan"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1539,13 +1539,13 @@
 "cargo_load_jerrycan": {
     "information":{
         "authors":"MrX13415",
-        "name":"Jerrycan",
+        "name":"20L Jerrycan",
         "value":20,
     },
     "slotType" : "bug_jerrycan",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_jerrycan_color","bug_jerrycan_green", "Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_jerrycan_color", ["bug_jerrycan_color"], [], "bug_jerrycan_green", "Color",       {"coreSlot":true}],
     ],
     "cargoStorage":[
         ["groupId","name","cargoTypes", "capacity"],

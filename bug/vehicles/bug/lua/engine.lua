@@ -6,9 +6,7 @@
 
 local M = {}
 
-local power = require "power"
-
-local updateTimer = 2     -- Make sure the first call is immediately
+local misc = require("vehicles/bug/lua/misc")
 
 local oilCurve = nil
 local oilSmoother = newExponentialSmoothing(50)
@@ -22,6 +20,10 @@ local engine = nil
 local starterTimeFactor = 1
 local starterTime = 0
 local starterEnabled = true
+
+local round = misc.round
+local toUnit = misc.toUnit
+
 
 local engine_activateStarter = nil
 local function onActivateStarter(device)
@@ -61,8 +63,14 @@ local function processOilPressure(dt)
     if v then psi = oilSmoother:get(v) or 0 end
   end
 
-  local oilVolume = engine.oilVolume
-  local oilMass = engine.thermals.debugData.engineThermalData.oilMass
+  if not engine then return end
+
+  local oilVolume = 4
+  local oilMass = 0.25
+  if engine then
+    oilVolume = engine.oilVolume
+    oilMass = engine.thermals.debugData.engineThermalData.oilMass
+  end
   if oilVolume < 1 then oilMass = 4 end
   if oilMass < 1 then oilMass = 4 end
 
@@ -92,8 +100,6 @@ end
 
 local totalStarterEngery = 0  --kWh
 local function processEngineStarter(dt)
-  local toUnit = power.toUnit
-
   if not battery or not engine then return end
 
   if engine.starterEngagedCoef > 0 and math.abs(engine.outputAV1) > 0.1 then

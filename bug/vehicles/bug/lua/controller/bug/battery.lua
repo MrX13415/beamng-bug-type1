@@ -2,11 +2,13 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
+-- Battery controller to simulate a simple power system with voltage drop and self discharge.
+-- v1.0
 -- by MrX13415
 
 local M = {}
 
-local power = require("power")
+local power = require("vehicles/bug/lua/power")
 
 local toUnit = power.toUnit
 

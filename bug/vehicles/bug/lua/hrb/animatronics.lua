@@ -24,6 +24,10 @@
 
 local M = {}
 
+local misc = require("vehicles/bug/lua/misc")
+local vehicle = require("vehicles/bug/lua/vehicle")
+local hrb = require("vehicles/bug/lua/hrb/hrb")
+
 local hoppTimer = 0
 local hoppSleep = 0.4	-- Sleep for 400ms on init/reset
 local hoppCount = math.random(3,10)		--
@@ -31,7 +35,7 @@ local hoppL = 0
 local hoppR = 0
 local hoppSoundTimer = 0
 local hoppSoundTrashhold = 1
-local horn_node = 0
+local horn_node = nil
 
 local backfireHoppTimer = 0
 local backfireHoppSleep = 0
@@ -51,7 +55,7 @@ local lastOpen = false
 
 -- MAIN
 
-function playHornSound(soundname,volume,pitch)
+local function playHornSound(soundname,volume,pitch)
 	sounds.playSoundOnceAtNode(soundname, horn_node, volume, pitch, 0, 0)
 end
 
@@ -294,13 +298,13 @@ local function onInit()
 	math.randomseed(os.time())
 
 	-- Init hopp sounds node
-	horn_node = getNodeIDbyName("fb1")
+	horn_node = misc.getNodeIDbyName("fb1")
 
 	-- Init backfire nodes
-	backfire_nodeL[0] = getNodeIDbyName("ex0l")
-	backfire_nodeL[1] = getNodeIDbyName("ex1l")
-	backfire_nodeR[0] = getNodeIDbyName("ex0r")
-	backfire_nodeR[1] = getNodeIDbyName("ex1r")
+	backfire_nodeL[0] = misc.getNodeIDbyName("ex0l")
+	backfire_nodeL[1] = misc.getNodeIDbyName("ex1l")
+	backfire_nodeR[0] = misc.getNodeIDbyName("ex0r")
+	backfire_nodeR[1] = misc.getNodeIDbyName("ex1r")
 end
 
 -- public interface

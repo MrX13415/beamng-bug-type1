@@ -7,17 +7,17 @@
         "value": 1,
     },
     "slotType" : "bug_fenders",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_fender_FR", "bug_fender_FR", "Front Right Fender"],
-        ["bug_fender_FL", "bug_fender_FL", "Front Left Fender"],
-        ["bug_fender_RR", "bug_fender_RR", "Rear Right Fender"],
-        ["bug_fender_RL", "bug_fender_RL", "Rear Left Fender"],
+        ["bug_fender_FR",            ["bug_fender_FR"], [],            "bug_fender_FR",            "Front Right Fender"],
+        ["bug_fender_FL",            ["bug_fender_FL"], [],            "bug_fender_FL",            "Front Left Fender"],
+        ["bug_fender_RR",            ["bug_fender_RR"], [],            "bug_fender_RR",            "Rear Right Fender"],
+        ["bug_fender_RL",            ["bug_fender_RL"], [],            "bug_fender_RL",            "Rear Left Fender"],
 
-        ["bug_fender_grille", "bug_fender_grille", "Front Grille", {"coreSlot":true}],
-        ["bug_fender_gravel_guards", "bug_fender_gravel_guards", "Gravel Guards"],
-        ["bug_fender_mud_flaps", "bug_fender_mud_flaps", "Mud Flaps"],
+        ["bug_fender_grille",        ["bug_fender_grille"], [],        "bug_fender_grille",        "Front Grille",       {"coreSlot":true}],
+        ["bug_fender_gravel_guards", ["bug_fender_gravel_guards"], [], "bug_fender_gravel_guards", "Gravel Guards"],
+        ["bug_fender_mud_flaps",     ["bug_fender_mud_flaps"], [],     "bug_fender_mud_flaps",     "Mud Flaps"],
     ],
 },
 
@@ -314,10 +314,10 @@
         "value":75,
     },
     "slotType" : "bug_fender_FR",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_headlight_R", "bug_headlight_R", "Front Right Headlight"],
-        ["bug_indicator_FR", "bug_indicator_FR", "Front Right Indicator"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_headlight_R",  ["bug_headlight_R"], [],  "bug_headlight_R",  "Right Headlight"],
+        ["bug_indicator_FR", ["bug_indicator_FR"], [], "bug_indicator_FR", "Front Right Signal"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -537,11 +537,11 @@
         "value":75,
     },
     "slotType" : "bug_fender_FL",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-		["bug_headlight_L", "bug_headlight_L", "Front Left Headlight"],
-		["bug_indicator_FL", "bug_indicator_FL", "Front Left Indicator"],
+		["bug_headlight_L",  ["bug_headlight_L"], [],  "bug_headlight_L",  "Left Headlight"],
+		["bug_indicator_FL", ["bug_indicator_FL"], [], "bug_indicator_FL", "Front Left Signal"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -767,9 +767,9 @@
         "value":75,
     },
     "slotType" : "bug_fender_RL",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_taillight_L", "bug_taillight_L", "Rear Left Taillight"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_taillight_L", ["bug_taillight_L"], [], "bug_taillight_L", "Left Taillight"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1002,10 +1002,10 @@
         "value":75,
     },
     "slotType" : "bug_fender_RR",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_taillight_R", "bug_taillight_R", "Rear Right Taillight"],
+        ["bug_taillight_R", ["bug_taillight_R"], [], "bug_taillight_R", "Right Taillight"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

@@ -3,14 +3,14 @@
 "bug_lightbar": {
 	"information":{
         "authors":"MrX13415",
-        "name":"Quad Round Lights",
-        "value":400,
+        "name":"Round Lights",
+        "value":200,
     },
     "slotType" : "bug_exterior_lights",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_lightbar_operation","bug_lightbar_op_highbeam","Operation Mode", {"coreSlot":true}],
-        ["bug_lightbar_quadround_accessory","bug_lightbar_quadround_halogen","Light Accessory", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_lightbar_operation", ["bug_lightbar_operation"], [], "bug_lightbar_operation","Roof Lights Wiring", {"coreSlot":true}],
+        ["bug_lightbar_round_accessory", ["bug_lightbar_round_accessory"], [], "bug_lightbar_round_halogen","Light Accessory", {"coreSlot":true}],
     ],
     "components": {
         "electrics": {
@@ -22,41 +22,37 @@
         },
     },
     "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
+        ["mesh", "[group]:", "nonFlexMaterials"],
 
-         ["bug_lightbar_frame",        ["bug_rollbar"]],
-         ["bug_lightbar_frame_round4", ["bug_rollbar"]],
+        ["bug_lightbar_frame",        ["bug_rollbar"]],
+        ["bug_lightbar_frame_round4", ["bug_rollbar"]],
 
-         ["roundlight", ["rollbar_light_R"],        [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight", ["rollbar_light_L"],        [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight", ["rollbar_light_RR"],       [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
-         ["roundlight", ["rollbar_light_LL"],       [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
+        ["roundlight", ["rollbar_light_R"],        [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight", ["rollbar_light_L"],        [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight", ["rollbar_light_RR"],       [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
+        ["roundlight", ["rollbar_light_LL"],       [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
 
-         {"deformGroup":"rollbar_light_R_break", "deformMaterialBase":"generic_halogen", "deformMaterialDamaged":"generic_halogen"},
-         ["roundlight_inner", ["rollbar_light_R"],  [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
-         {"deformGroup":"rollbar_light_L_break", "deformMaterialBase":"generic_halogen", "deformMaterialDamaged":"generic_halogen"},
-         ["roundlight_inner", ["rollbar_light_L"],  [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
+        {"deformGroup":"rollbar_light_R_break", "deformMaterialBase":"generic_halogen", "deformMaterialDamaged":"generic_halogen"},
+        ["roundlight_inner", ["rollbar_light_R"],  [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
+        {"deformGroup":"rollbar_light_L_break", "deformMaterialBase":"generic_halogen", "deformMaterialDamaged":"generic_halogen"},
+        ["roundlight_inner", ["rollbar_light_L"],  [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
 
-         {"deformGroup":"rollbar_light_R_break", "deformMaterialBase":"generic_halogen_glass", "deformMaterialDamaged":"generic_halogen_glass_dmg"},
-         ["roundlight_glass", ["rollbar_light_R"],  [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}, "deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound4", "deformVolume":0.5, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
-         {"deformGroup":"rollbar_light_L_break", "deformMaterialBase":"generic_halogen_glass", "deformMaterialDamaged":"generic_halogen_glass_dmg"},
-         ["roundlight_glass", ["rollbar_light_L"],  [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}, "deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound3", "deformVolume":0.5, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
+        {"deformGroup":"rollbar_light_R_break", "deformMaterialBase":"generic_halogen_glass", "deformMaterialDamaged":"generic_halogen_glass_dmg"},
+        ["roundlight_glass", ["rollbar_light_R"],  [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}, "deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound4", "deformVolume":0.5, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
+        {"deformGroup":"rollbar_light_L_break", "deformMaterialBase":"generic_halogen_glass", "deformMaterialDamaged":"generic_halogen_glass_dmg"},
+        ["roundlight_glass", ["rollbar_light_L"],  [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}, "deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound3", "deformVolume":0.5, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
 
-         {"deformGroup":"rollbar_light_RR_break", "deformMaterialBase":"generic_halogen", "deformMaterialDamaged":"generic_halogen"},
-         ["roundlight_inner", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
-         {"deformGroup":"rollbar_light_LL_break", "deformMaterialBase":"generic_halogen", "deformMaterialDamaged":"generic_halogen"},
-         ["roundlight_inner", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
+        {"deformGroup":"rollbar_light_RR_break", "deformMaterialBase":"generic_halogen", "deformMaterialDamaged":"generic_halogen"},
+        ["roundlight_inner", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
+        {"deformGroup":"rollbar_light_LL_break", "deformMaterialBase":"generic_halogen", "deformMaterialDamaged":"generic_halogen"},
+        ["roundlight_inner", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
 
-         {"deformGroup":"rollbar_light_RR_break", "deformMaterialBase":"generic_halogen_glass", "deformMaterialDamaged":"generic_halogen_glass_dmg"},
-         ["roundlight_glass", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}, "deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound4", "deformVolume":0.5, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
-         {"deformGroup":"rollbar_light_LL_break", "deformMaterialBase":"generic_halogen_glass", "deformMaterialDamaged":"generic_halogen_glass_dmg"},
-         ["roundlight_glass", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}, "deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound3", "deformVolume":0.5, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
-         {"deformGroup":""},
+        {"deformGroup":"rollbar_light_RR_break", "deformMaterialBase":"generic_halogen_glass", "deformMaterialDamaged":"generic_halogen_glass_dmg"},
+        ["roundlight_glass", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}, "deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound4", "deformVolume":0.5, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
+        {"deformGroup":"rollbar_light_LL_break", "deformMaterialBase":"generic_halogen_glass", "deformMaterialDamaged":"generic_halogen_glass_dmg"},
+        ["roundlight_glass", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}, "deformSound":"event:>Destruction>Vehicle>Glass>extglassbreaksound3", "deformVolume":0.5, "materialOverride":[["generic_halogen_highbeam","rollbarlights"]]}],
+        {"deformGroup":""},
     ],
-    "glowMap":{
-        "generic_halogen_highbeam":       {"simpleFunction":{"power__lightbarlights":1}, "off":"generic_halogen", "on":"generic_halogen_on", "materialEmissiveScaling":{"on_max":1.00}},
-        "generic_halogen_glass_highbeam": {"simpleFunction":{"power__lightbarlights":1}, "off":"generic_halogen_glass", "on":"generic_halogen_glass_on", "materialEmissiveScaling":{"on_max":1.00}},
-    },
     "nodes": [
          ["id", "posX", "posY", "posZ"],
          {"collision":true},
@@ -405,16 +401,177 @@
     },
 },
 
-"bug_lightbar_quadround_halogen": {
+"bug_lightbar_round_LED": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"LED Lights",
+        "value":30,
+    },
+    "electricPower":[
+        ["power"],
+        [120, {"trigger": "electrics.values.lightbarlights"}]
+    ],
+    "slotType" : "bug_lightbar_round_accessory",
+    "slots2": [
+        ["name",                                      "allowTypes",                "denyTypes", "default",               "description"],
+
+        ["bug_lightbar_round_LED_LL_bulb", ["generic_offroad_led_white_30W"], [],          "generic_offroad_led_white_30W", "Left LED Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"power__lightbarlights",
+          "$nodeRef":"rbl_l1ll", "$nodeX":"rbl_l2ll", "$nodeY":"rbl_l4ll",
+          "$deformGroup":"rollbar_light_LL_break",
+          "$posX":0.323, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
+
+        ["bug_lightbar_round_LED_L_bulb", ["generic_offroad_led_white_30W"], [],          "generic_offroad_led_white_30W", "Left Inner LED Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"power__lightbarlights",
+          "$nodeRef":"rbl_l1l", "$nodeX":"rbl_l2l", "$nodeY":"rbl_l4l",
+          "$deformGroup":"rollbar_light_L_break",
+          "$posX":0.108, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
+
+        ["bug_lightbar_round_LED_R_bulb", ["generic_offroad_led_white_30W"], [],          "generic_offroad_led_white_30W", "Right Inner LED Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"power__lightbarlights",
+          "$nodeRef":"rbl_l1r", "$nodeX":"rbl_l2r", "$nodeY":"rbl_l4r",
+          "$deformGroup":"rollbar_light_R_break",
+          "$posX":-0.108, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
+
+        ["bug_lightbar_round_LED_RR_bulb", ["generic_offroad_led_white_30W"], [],          "generic_offroad_led_white_30W", "Right LED Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"power__lightbarlights",
+          "$nodeRef":"rbl_l1rr", "$nodeX":"rbl_l2rr", "$nodeY":"rbl_l4rr",
+          "$deformGroup":"rollbar_light_RR_break",
+          "$posX":-0.323, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
+    ],
+    "glowMap":{
+        "generic_halogen_highbeam":       {"simpleFunction":"power__lightbarlights", "off":"generic_halogen",        "on":"generic_halogen_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "generic_halogen_glass_highbeam": {"simpleFunction":"power__lightbarlights", "off":"generic_halogen_glass",  "on":"generic_halogen_glass_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "rollbarlights":                  {"simpleFunction":"power__lightbarlights", "off":"generic_halogen",        "on":"generic_halogen_on_intense",       "materialEmissiveScaling":{"on_max":1}},
+        "rollbarlights_glass":            {"simpleFunction":"power__lightbarlights", "off":"generic_halogen_glass",  "on":"generic_halogen_glass_on_intense", "materialEmissiveScaling":{"on_max":1}},
+    },
+},
+
+"bug_lightbar_round_halogen": {
     "information":{
         "authors":"BeamNG",
         "name":"Halogen Bulbs",
-        "value":60,
+        "value":30,
     },
-    "slotType" : "bug_lightbar_quadround_accessory",
     "electricPower":[
         ["power"],
-        [180, {"trigger": "electrics.values.lightbarlights"}]
+        [220, {"trigger": "electrics.values.lightbarlights"}]
+    ],
+    "slotType" : "bug_lightbar_round_accessory",
+    "slots2": [
+        ["name",                                      "allowTypes",                "denyTypes", "default",               "description"],
+
+        ["bug_lightbar_round_halogen_LL_bulb", ["incandescent_white_55W"], [],          "incandescent_white_55W", "Left Halogen Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lightbarlights_filament",
+          "$nodeRef":"rbl_l1ll", "$nodeX":"rbl_l2ll", "$nodeY":"rbl_l4ll",
+          "$deformGroup":"rollbar_light_LL_break",
+          "$posX":0.323, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
+
+        ["bug_lightbar_round_halogen_L_bulb", ["incandescent_white_55W"], [],          "incandescent_white_55W", "Left Inner Halogen Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lightbarlights_filament",
+          "$nodeRef":"rbl_l1l", "$nodeX":"rbl_l2l", "$nodeY":"rbl_l4l",
+          "$deformGroup":"rollbar_light_L_break",
+          "$posX":0.108, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
+
+        ["bug_lightbar_round_halogen_R_bulb", ["incandescent_white_55W"], [],          "incandescent_white_55W", "Right Inner Halogen Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lightbarlights_filament",
+          "$nodeRef":"rbl_l1r", "$nodeX":"rbl_l2r", "$nodeY":"rbl_l4r",
+          "$deformGroup":"rollbar_light_R_break",
+          "$posX":-0.108, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
+
+        ["bug_lightbar_round_halogen_RR_bulb", ["incandescent_white_55W"], [],          "incandescent_white_55W", "Right Halogen Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lightbarlights_filament",
+          "$nodeRef":"rbl_l1rr", "$nodeX":"rbl_l2rr", "$nodeY":"rbl_l4rr",
+          "$deformGroup":"rollbar_light_RR_break",
+          "$posX":-0.323, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
     ],
     "components": {
         "electrics": {
@@ -429,85 +586,100 @@
         },
     },
     "glowMap":{
-            "rollbarlights":      {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen",       "on":"generic_halogen_on_intense",       "materialEmissiveScaling":{"on_max":1}},
-            "rollbarlights_glass":{"simpleFunction":"lightbarlights_filament", "off":"generic_halogen_glass", "on":"generic_halogen_glass_on_intense", "materialEmissiveScaling":{"on_max":1}},
+        "generic_halogen_highbeam":       {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen",        "on":"generic_halogen_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "generic_halogen_glass_highbeam": {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen_glass",  "on":"generic_halogen_glass_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "rollbarlights":                  {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen",        "on":"generic_halogen_on_intense",       "materialEmissiveScaling":{"on_max":1}},
+        "rollbarlights_glass":            {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen_glass",  "on":"generic_halogen_glass_on_intense", "materialEmissiveScaling":{"on_max":1}},
     },
-    "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightBrightness":0.55,
-            "lightRange":80,
-            "lightColor":{"r":255, "g":255, "b":200, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":true,
-            "flareName":"vehicleHeadLightFlare",
-            "flareScale":0.09,
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
-            "texSize":512,
-            "shadowSoftness":0.5,
-        },
-        ["lightbarlights_filament"    , "SPOTLIGHT"        , "rbl_l1l", "rbl_l2l", "rbl_l4l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":-0.033},"deformGroup":"rollbar_light_L_break", "lightScaling":{}}],
-        ["lightbarlights_filament"    , "SPOTLIGHT"        , "rbl_l1r", "rbl_l2r", "rbl_l4r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":0.033},"deformGroup":"rollbar_light_R_break", "lightScaling":{}}],
-        ["lightbarlights_filament"    , "SPOTLIGHT"        , "rbl_l1ll", "rbl_l2ll", "rbl_l4ll", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":-0.033},"deformGroup":"rollbar_light_LL_break", "lightScaling":{}}],
-        ["lightbarlights_filament"    , "SPOTLIGHT"        , "rbl_l1rr", "rbl_l2rr", "rbl_l4rr", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":0.033},"deformGroup":"rollbar_light_RR_break", "lightScaling":{}}],
-     ],
 },
-"bug_lightbar_quadround_LED": {
+"bug_lightbar_round_grille": {
     "information":{
         "authors":"BeamNG",
-        "name":"LED Bulbs",
-        "value":160,
+        "name":"Cage Light Guards",
+        "value":40,
     },
-    "slotType" : "bug_lightbar_quadround_accessory",
     "electricPower":[
         ["power"],
-        [25, {"trigger": "electrics.values.lightbarlights"}]
+        [220, {"trigger": "electrics.values.lightbarlights"}]
     ],
-    "glowMap":{
-            "rollbarlights":      {"simpleFunction":"power__lightbarlights", "off":"generic_halogen",       "on":"generic_halogen_on_intense",       "materialEmissiveScaling":{"on_max":1}},
-            "rollbarlights_glass":{"simpleFunction":"power__lightbarlights", "off":"generic_halogen_glass", "on":"generic_halogen_glass_on_intense", "materialEmissiveScaling":{"on_max":1}},
-    },
-    "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+    "slotType" : "bug_lightbar_round_accessory",
+    "slots2": [
+        ["name",                                      "allowTypes",                "denyTypes", "default",               "description"],
+
+        ["bug_lightbar_round_halogen_LL_bulb", ["incandescent_white_55W"], [],          "incandescent_white_55W", "Left Halogen Light",
         {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightBrightness":0.85,
-            "lightRange":80,
-            "lightColor":{"r":255, "g":255, "b":230, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":true,
-            "flareName":"vehicleHeadLightFlare",
-            "flareScale":0.09,
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
-            "texSize":512,
-            "shadowSoftness":0.5,
-        },
-        ["power__lightbarlights"    , "SPOTLIGHT"        , "rbl_l1l", "rbl_l2l", "rbl_l4l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":-0.033},"deformGroup":"rollbar_light_L_break", "lightScaling":{}}],
-        ["power__lightbarlights"    , "SPOTLIGHT"        , "rbl_l1r", "rbl_l2r", "rbl_l4r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":0.033},"deformGroup":"rollbar_light_R_break", "lightScaling":{}}],
-        ["power__lightbarlights"    , "SPOTLIGHT"        , "rbl_l1ll", "rbl_l2ll", "rbl_l4ll", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":-0.033},"deformGroup":"rollbar_light_LL_break", "lightScaling":{}}],
-        ["power__lightbarlights"    , "SPOTLIGHT"        , "rbl_l1rr", "rbl_l2rr", "rbl_l4rr", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":0.033},"deformGroup":"rollbar_light_RR_break", "lightScaling":{}}],
-     ],
-},
-"bug_lightbar_quadround_grille": {
-    "information":{
-        "authors":"BeamNG",
-        "name":"Halogen Bulbs with Cage Light Guards",
-        "value":80,
-    },
-    "slotType" : "bug_lightbar_quadround_accessory",
-    "electricPower":[
-        ["power"],
-        [180, {"trigger": "electrics.values.lightbarlights"}]
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lightbarlights_filament",
+          "$nodeRef":"rbl_l1ll", "$nodeX":"rbl_l2ll", "$nodeY":"rbl_l4ll",
+          "$deformGroup":"rollbar_light_LL_break",
+          "$posX":0.323, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
+
+        ["bug_lightbar_round_halogen_L_bulb", ["incandescent_white_55W"], [],          "incandescent_white_55W", "Left Inner Halogen Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lightbarlights_filament",
+          "$nodeRef":"rbl_l1l", "$nodeX":"rbl_l2l", "$nodeY":"rbl_l4l",
+          "$deformGroup":"rollbar_light_L_break",
+          "$posX":0.108, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
+
+        ["bug_lightbar_round_halogen_R_bulb", ["incandescent_white_55W"], [],          "incandescent_white_55W", "Right Inner Halogen Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lightbarlights_filament",
+          "$nodeRef":"rbl_l1r", "$nodeX":"rbl_l2r", "$nodeY":"rbl_l4r",
+          "$deformGroup":"rollbar_light_R_break",
+          "$posX":-0.108, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
+
+        ["bug_lightbar_round_halogen_RR_bulb", ["incandescent_white_55W"], [],          "incandescent_white_55W", "Right Halogen Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lightbarlights_filament",
+          "$nodeRef":"rbl_l1rr", "$nodeX":"rbl_l2rr", "$nodeY":"rbl_l4rr",
+          "$deformGroup":"rollbar_light_RR_break",
+          "$posX":-0.323, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
     ],
     "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["roundlight_grille", ["rollbar_light_R"], [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight_grille", ["rollbar_light_L"], [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight_grille", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
-         ["roundlight_grille", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["roundlight_grille", ["rollbar_light_R"], [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight_grille", ["rollbar_light_L"], [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight_grille", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
+        ["roundlight_grille", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
     ],
     "components": {
         "electrics": {
@@ -522,41 +694,93 @@
         },
     },
     "glowMap":{
-            "rollbarlights":      {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen",       "on":"generic_halogen_on_intense",       "materialEmissiveScaling":{"on_max":1}},
-            "rollbarlights_glass":{"simpleFunction":"lightbarlights_filament", "off":"generic_halogen_glass", "on":"generic_halogen_glass_on_intense", "materialEmissiveScaling":{"on_max":1}},
+        "generic_halogen_highbeam":       {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen",       "on":"generic_halogen_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "generic_halogen_glass_highbeam": {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen_glass", "on":"generic_halogen_glass_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "rollbarlights":                  {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen",       "on":"generic_halogen_on_intense",       "materialEmissiveScaling":{"on_max":1}},
+        "rollbarlights_glass":            {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen_glass", "on":"generic_halogen_glass_on_intense", "materialEmissiveScaling":{"on_max":1}},
     },
-    "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightBrightness":0.55,
-            "lightRange":80,
-            "lightColor":{"r":255, "g":255, "b":200, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":true,
-            "flareName":"vehicleHeadLightFlare",
-            "flareScale":0.09,
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
-            "texSize":512,
-            "shadowSoftness":0.5,
-        },
-        ["lightbarlights_filament"    , "SPOTLIGHT"        , "rbl_l1l", "rbl_l2l", "rbl_l4l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":-0.033},"deformGroup":"rollbar_light_L_break", "lightScaling":{}}],
-        ["lightbarlights_filament"    , "SPOTLIGHT"        , "rbl_l1r", "rbl_l2r", "rbl_l4r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":0.033},"deformGroup":"rollbar_light_R_break", "lightScaling":{}}],
-        ["lightbarlights_filament"    , "SPOTLIGHT"        , "rbl_l1ll", "rbl_l2ll", "rbl_l4ll", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":-0.033},"deformGroup":"rollbar_light_LL_break", "lightScaling":{}}],
-        ["lightbarlights_filament"    , "SPOTLIGHT"        , "rbl_l1rr", "rbl_l2rr", "rbl_l4rr", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":0.033},"deformGroup":"rollbar_light_RR_break", "lightScaling":{}}],
-     ],
 },
-"bug_lightbar_quadround_mesh": {
+"bug_lightbar_round_mesh": {
     "information":{
         "authors":"BeamNG",
-        "name":"Halogen Bulbs with Mesh Light Guards",
-        "value":30,
+        "name":"Mesh Light Guards",
+        "value":15,
     },
-    "slotType" : "bug_lightbar_quadround_accessory",
     "electricPower":[
         ["power"],
-        [180, {"trigger": "electrics.values.lightbarlights"}]
+        [220, {"trigger": "electrics.values.lightbarlights"}]
+    ],
+    "slotType" : "bug_lightbar_round_accessory",
+    "slots2": [
+        ["name",                                      "allowTypes",                "denyTypes", "default",               "description"],
+
+        ["bug_lightbar_round_halogen_LL_bulb", ["incandescent_white_55W"], [],          "incandescent_white_55W", "Left Halogen Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lightbarlights_filament",
+          "$nodeRef":"rbl_l1ll", "$nodeX":"rbl_l2ll", "$nodeY":"rbl_l4ll",
+          "$deformGroup":"rollbar_light_LL_break",
+          "$posX":0.323, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
+
+        ["bug_lightbar_round_halogen_L_bulb", ["incandescent_white_55W"], [],          "incandescent_white_55W", "Left Inner Halogen Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lightbarlights_filament",
+          "$nodeRef":"rbl_l1l", "$nodeX":"rbl_l2l", "$nodeY":"rbl_l4l",
+          "$deformGroup":"rollbar_light_L_break",
+          "$posX":0.108, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
+
+        ["bug_lightbar_round_halogen_R_bulb", ["incandescent_white_55W"], [],          "incandescent_white_55W", "Right Inner Halogen Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lightbarlights_filament",
+          "$nodeRef":"rbl_l1r", "$nodeX":"rbl_l2r", "$nodeY":"rbl_l4r",
+          "$deformGroup":"rollbar_light_R_break",
+          "$posX":-0.108, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
+
+        ["bug_lightbar_round_halogen_RR_bulb", ["incandescent_white_55W"], [],          "incandescent_white_55W", "Right Halogen Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"lightbarlights_filament",
+          "$nodeRef":"rbl_l1rr", "$nodeX":"rbl_l2rr", "$nodeY":"rbl_l4rr",
+          "$deformGroup":"rollbar_light_RR_break",
+          "$posX":-0.323, "$posY":-0.305, "$posZ":1.556,
+          "$rotX":0, "$rotY":0, "$rotZ":180,
+          "$shadowEnable":1,
+          //"$lightRange":120,
+          //"$lightBrightness":0.75,
+          //"$flareScale":0.09,
+          //"$shadowSoftness":0.5
+        }
+        }],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -578,187 +802,87 @@
         },
     },
     "glowMap":{
-            "rollbarlights":      {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen",       "on":"generic_halogen_on_intense",       "materialEmissiveScaling":{"on_max":1}},
-            "rollbarlights_glass":{"simpleFunction":"lightbarlights_filament", "off":"generic_halogen_glass", "on":"generic_halogen_glass_on_intense", "materialEmissiveScaling":{"on_max":1}},
+        "generic_halogen_highbeam":       {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen",       "on":"generic_halogen_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "generic_halogen_glass_highbeam": {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen_glass", "on":"generic_halogen_glass_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "rollbarlights":                  {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen",       "on":"generic_halogen_on_intense",       "materialEmissiveScaling":{"on_max":1}},
+        "rollbarlights_glass":            {"simpleFunction":"lightbarlights_filament", "off":"generic_halogen_glass", "on":"generic_halogen_glass_on_intense", "materialEmissiveScaling":{"on_max":1}},
     },
-    "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
-        {
-            "lightInnerAngle":0,
-            "lightOuterAngle":120,
-            "lightBrightness":0.55,
-            "lightRange":80,
-            "lightColor":{"r":255, "g":255, "b":200, "a":255},
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":true,
-            "flareName":"vehicleHeadLightFlare",
-            "flareScale":0.09,
-            "cookieName":"art/special/BNG_light_cookie_headlight.dds"
-            "texSize":512,
-            "shadowSoftness":0.5,
-        },
-        ["lightbarlights_filament"    , "SPOTLIGHT"        , "rbl_l1l", "rbl_l2l", "rbl_l4l", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":-0.033},"deformGroup":"rollbar_light_L_break", "lightScaling":{}}],
-        ["lightbarlights_filament"    , "SPOTLIGHT"        , "rbl_l1r", "rbl_l2r", "rbl_l4r", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":0.033},"deformGroup":"rollbar_light_R_break", "lightScaling":{}}],
-        ["lightbarlights_filament"    , "SPOTLIGHT"        , "rbl_l1ll", "rbl_l2ll", "rbl_l4ll", {"x":180, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":-0.033},"deformGroup":"rollbar_light_LL_break", "lightScaling":{}}],
-        ["lightbarlights_filament"    , "SPOTLIGHT"        , "rbl_l1rr", "rbl_l2rr", "rbl_l4rr", {"x":0, "y":0, "z":0} , {"x":0, "y":0, "z":0}    , {"x":0, "y":0, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":-0.05, "y":0.5, "z":0.033},"deformGroup":"rollbar_light_RR_break", "lightScaling":{}}],
-     ],
 },
-"bug_lightbar_quadround_cover": {
+
+"bug_lightbar_round_cover": {
     "information":{
         "authors":"BeamNG",
         "name":"White Covers",
-        "value":30,
+        "value":15,
     },
-    "slotType" : "bug_lightbar_quadround_accessory",
-    "components": {
-        "electrics": {
-            "customValues": [
-                ["electricsName", "electricsFunction","electricsDefault"],
-                ["lightbarlights_filament","electrics.power__lightbarlights * electrics.electricalLoadCoef",0],
-            ],
-            "smoothers": [
-                ["electricsName", "smootherType", "params"],
-                ["lightbarlights_filament","temporalNonLinear", [10,10]],
-            ],
-        },
-    },
-    "glowMap":{
-            "rollbarlights":      {"simpleFunction":"power__lightbarlights", "off":"generic_halogen",       "on":"generic_halogen_on_intense",       "materialEmissiveScaling":{"on_max":1}},
-            "rollbarlights_glass":{"simpleFunction":"power__lightbarlights", "off":"generic_halogen_glass", "on":"generic_halogen_glass_on_intense", "materialEmissiveScaling":{"on_max":1}},
-    },
+    "slotType" : "bug_lightbar_round_accessory",
     "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["roundlight_cover", ["rollbar_light_R"], [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover", ["rollbar_light_L"], [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["roundlight_cover", ["rollbar_light_R"], [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover", ["rollbar_light_L"], [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
     ],
 },
-"bug_lightbar_quadround_cover_yellow": {
+"bug_lightbar_round_cover_yellow": {
     "information":{
         "authors":"BeamNG",
         "name":"Yellow 'NG' Covers",
-        "value":30,
+        "value":15,
     },
-    "slotType" : "bug_lightbar_quadround_accessory",
-    "components": {
-        "electrics": {
-            "customValues": [
-                ["electricsName", "electricsFunction","electricsDefault"],
-                ["lightbarlights_filament","electrics.power__lightbarlights * electrics.electricalLoadCoef",0],
-            ],
-            "smoothers": [
-                ["electricsName", "smootherType", "params"],
-                ["lightbarlights_filament","temporalNonLinear", [10,10]],
-            ],
-        },
-    },
-    "glowMap":{
-            "rollbarlights":      {"simpleFunction":"power__lightbarlights", "off":"generic_halogen",       "on":"generic_halogen_on_intense",       "materialEmissiveScaling":{"on_max":1}},
-            "rollbarlights_glass":{"simpleFunction":"power__lightbarlights", "off":"generic_halogen_glass", "on":"generic_halogen_glass_on_intense", "materialEmissiveScaling":{"on_max":1}},
-    },
+    "slotType" : "bug_lightbar_round_accessory",
     "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["roundlight_cover_yellow", ["rollbar_light_R"], [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover_yellow", ["rollbar_light_L"], [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover_yellow", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover_yellow", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["roundlight_cover_yellow", ["rollbar_light_R"], [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover_yellow", ["rollbar_light_L"], [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover_yellow", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover_yellow", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
     ],
 },
-"bug_lightbar_quadround_cover_beamng": {
+"bug_lightbar_round_cover_beamng": {
     "information":{
         "authors":"BeamNG",
         "name":"Orange 'BeamNG' Covers",
-        "value":30,
+        "value":15,
     },
-    "slotType" : "bug_lightbar_quadround_accessory",
-    "components": {
-        "electrics": {
-            "customValues": [
-                ["electricsName", "electricsFunction","electricsDefault"],
-                ["lightbarlights_filament","electrics.power__lightbarlights * electrics.electricalLoadCoef",0],
-            ],
-            "smoothers": [
-                ["electricsName", "smootherType", "params"],
-                ["lightbarlights_filament","temporalNonLinear", [10,10]],
-            ],
-        },
-    },
-    "glowMap":{
-            "rollbarlights":      {"simpleFunction":"power__lightbarlights", "off":"generic_halogen",       "on":"generic_halogen_on_intense",       "materialEmissiveScaling":{"on_max":1}},
-            "rollbarlights_glass":{"simpleFunction":"power__lightbarlights", "off":"generic_halogen_glass", "on":"generic_halogen_glass_on_intense", "materialEmissiveScaling":{"on_max":1}},
-    },
+    "slotType" : "bug_lightbar_round_accessory",
     "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["roundlight_cover_beamng", ["rollbar_light_R"], [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover_beamng", ["rollbar_light_L"], [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover_beamng", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover_beamng", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["roundlight_cover_beamng", ["rollbar_light_R"], [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover_beamng", ["rollbar_light_L"], [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover_beamng", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover_beamng", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
     ],
 },
-"bug_lightbar_quadround_cover_beamngmono": {
+"bug_lightbar_round_cover_beamngmono": {
     "information":{
         "authors":"BeamNG",
         "name":"Black 'BeamNG' Covers",
-        "value":30,
+        "value":15,
     },
-    "slotType" : "bug_lightbar_quadround_accessory",
-    "components": {
-        "electrics": {
-            "customValues": [
-                ["electricsName", "electricsFunction","electricsDefault"],
-                ["lightbarlights_filament","electrics.power__lightbarlights * electrics.electricalLoadCoef",0],
-            ],
-            "smoothers": [
-                ["electricsName", "smootherType", "params"],
-                ["lightbarlights_filament","temporalNonLinear", [10,10]],
-            ],
-        },
-    },
-    "glowMap":{
-            "rollbarlights":      {"simpleFunction":"power__lightbarlights", "off":"generic_halogen",       "on":"generic_halogen_on_intense",       "materialEmissiveScaling":{"on_max":1}},
-            "rollbarlights_glass":{"simpleFunction":"power__lightbarlights", "off":"generic_halogen_glass", "on":"generic_halogen_glass_on_intense", "materialEmissiveScaling":{"on_max":1}},
-    },
+    "slotType" : "bug_lightbar_round_accessory",
     "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["roundlight_cover_beamngmono", ["rollbar_light_R"], [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover_beamngmono", ["rollbar_light_L"], [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover_beamngmono", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover_beamngmono", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["roundlight_cover_beamngmono", ["rollbar_light_R"], [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover_beamngmono", ["rollbar_light_L"], [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover_beamngmono", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover_beamngmono", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
     ],
 },
-"bug_lightbar_quadround_cover_tims": {
+"bug_lightbar_round_cover_tims": {
     "information":{
         "authors":"BeamNG",
         "name":"Black 'TIMS' Covers",
-        "value":30,
+        "value":15,
     },
-    "slotType" : "bug_lightbar_quadround_accessory",
-    "components": {
-        "electrics": {
-            "customValues": [
-                ["electricsName", "electricsFunction","electricsDefault"],
-                ["lightbarlights_filament","electrics.power__lightbarlights * electrics.electricalLoadCoef",0],
-            ],
-            "smoothers": [
-                ["electricsName", "smootherType", "params"],
-                ["lightbarlights_filament","temporalNonLinear", [10,10]],
-            ],
-        },
-    },
-    "glowMap":{
-            "rollbarlights":      {"simpleFunction":"power__lightbarlights", "off":"generic_halogen",       "on":"generic_halogen_on_intense",       "materialEmissiveScaling":{"on_max":1}},
-            "rollbarlights_glass":{"simpleFunction":"power__lightbarlights", "off":"generic_halogen_glass", "on":"generic_halogen_glass_on_intense", "materialEmissiveScaling":{"on_max":1}},
-    },
+    "slotType" : "bug_lightbar_round_accessory",
     "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["roundlight_cover_tims", ["rollbar_light_R"], [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover_tims", ["rollbar_light_L"], [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover_tims", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
-         ["roundlight_cover_tims", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["roundlight_cover_tims", ["rollbar_light_R"], [],{"pos":{"x":-0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover_tims", ["rollbar_light_L"], [],{"pos":{"x": 0.1075,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover_tims", ["rollbar_light_RR"], [],{"pos":{"x":-0.3225,"y":-0.305,"z":1.556}}],
+        ["roundlight_cover_tims", ["rollbar_light_LL"], [],{"pos":{"x": 0.3225,"y":-0.305,"z":1.556}}],
     ],
 },
 
 },
-
-}

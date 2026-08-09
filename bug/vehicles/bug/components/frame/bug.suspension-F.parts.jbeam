@@ -41,9 +41,9 @@
         "value":100,
     },
     "slotType":"bug_spring_F",
-    "slots":[
-        ["type", "default", "description"],
-        ["bug_shock_F","bug_shock_F", "Front Shocks"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_shock_F", ["bug_shock_F"], [], "bug_shock_F", "Front Shocks"],
     ],
     "flexbodies":[
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -66,9 +66,9 @@
         "value":650,
     },
     "slotType":"bug_spring_F",
-    "slots":[
-        ["type", "default", "description"],
-        ["bug_shock_F","bug_shock_F_race", "Front Shocks"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_shock_F", ["bug_shock_F"], [], "bug_shock_F_race", "Front Shocks"],
     ],
     "flexbodies":[
         ["mesh", "[group]:", "nonFlexMaterials"],

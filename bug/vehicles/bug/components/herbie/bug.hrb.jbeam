@@ -6,12 +6,12 @@
         "value":20000,
     },
     "slotType" : "bug_behavior",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_hrb_personality", "bug_hrb_personality", "Personality"],
-        ["bug_hrb_regeneration", "bug_hrb_regeneration", "Regeneration"],
-        ["bug_hrb_wheelie_branch","bug_hrb_wheelie_branch", "Wheelie Branch"],
+        ["bug_hrb_personality",    ["bug_hrb_personality"], [],    "bug_hrb_personality",    "Personality"],
+        ["bug_hrb_regeneration",   ["bug_hrb_regeneration"], [],   "bug_hrb_regeneration",   "Regeneration"],
+        ["bug_hrb_wheelie_branch", ["bug_hrb_wheelie_branch"], [], "bug_hrb_wheelie_branch", "Wheelie Helper"],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
@@ -60,7 +60,7 @@
 "bug_hrb_wheelie_branch": {
     "information":{
         "authors":"53_herbie_53",
-        "name":"Wheelie Branch",
+        "name":"Wheelie Helper",
     },
     "slotType" : "bug_hrb_wheelie_branch",
     "actionsEnabled": [

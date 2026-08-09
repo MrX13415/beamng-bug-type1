@@ -2,15 +2,15 @@
     "fileversion": 2,
     "actions": {
         // Wipers
-        "wiperstoggle":        {"order":30.1, "onDown":"controller.getControllerSafe('wipers').toggle()",       "title":"Wipers: Toggle Speed",         "desc":"Toggles between the speed of the windshield wipers or switches them off."},
-        "wipersdown":          {"order":30.2, "onDown":"controller.getControllerSafe('wipers').down()",         "title":"Wipers: Decrease Speed",       "desc":"Decreases the speed of the windshield wipers or turns them off."},
-        "wipersup":            {"order":30.3, "onDown":"controller.getControllerSafe('wipers').up()",           "title":"Wipers: Increase Speed",       "desc":"Increase the speed of the windshield wipers or switches them on."},
+        "wiperstoggle":        {"order":30.1, "onDown":"controller.getControllerSafe('wipers').toggle()",       "title":"vehicle.interaction.tech.wipers.toggle_speed.title",           "desc":"vehicle.interaction.tech.wipers.toggle_speed.desc"},
+        "wipersdown":          {"order":30.2, "onDown":"controller.getControllerSafe('wipers').down()",         "title":"vehicle.interaction.tech.wipers.decrease_speed.title",         "desc":"vehicle.interaction.tech.wipers.decrease_speed.desc"},
+        "wipersup":            {"order":30.3, "onDown":"controller.getControllerSafe('wipers').up()",           "title":"vehicle.interaction.tech.wipers.increase_speed.title",         "desc":"vehicle.interaction.tech.wipers.increase_speed.desc"},
 
         // Engine:
-        "togglegascap":        {"order":44.1, "onDown":"vehicle.toggleGascap()", "title":"Engine: Toggle Rally Gas Cap", "desc":"Open and closed the rally gas cap."},
-        "togglefuelcap":       {"order":44.2, "onDown":"vehicle.toggleFuelcap()", "title":"Engine: Toggle Fuel Cap", "desc":"Open and closed the fuel cap."},
+        "togglegascap":        {"order":44.1, "onDown":"vehicle.toggleGascap()",                                "title":"vehicle.interaction.tech.engine.toggle_rally_gas_cap.title",   "desc":"vehicle.interaction.tech.engine.toggle_rally_gas_cap.desc"},
+        "togglefuelcap":       {"order":44.2, "onDown":"vehicle.toggleFuelcap()",                               "title":"vehicle.interaction.tech.engine.toggle_fuel_cap.title",        "desc":"vehicle.interaction.tech.engine.toggle_fuel_cap.desc"},
 
         // Power:
-        "batteryinfo":         {"order":45.1, "onDown":"power.batteryStatus()", "title":"Battery: Show Satus", "desc":"Shows the current charge and remaining time of the battery."},
+        "batteryinfo":         {"order":45.1, "onDown":"power.batteryStatus()",                                 "title":"vehicle.interaction.tech.battery.show_status.title",           "desc":"vehicle.interaction.tech.battery.show_status.desc"}
     }
 }

@@ -3,7 +3,11 @@
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
 local M = {}
---M.type = "auxiliary"
+
+local misc = require("vehicles/bug/lua/misc")
+local storage = require("vehicles/bug/lua/lib/storage")
+
+local horn_node = nil
 
 local playerTrustDefault = 0
 local playerTrustMax = 500
@@ -56,16 +60,23 @@ local jumpingAwardSum = 0
 local jumpingAwardCounter = 0
 local jumpingCheckpoint = 10
 
+local eventLocals = {
+	["No crash"]         = "ui.bug.hrb.event.crash.no",
+    ["Small crash"]      = "ui.bug.hrb.event.crash.small",
+    ["Medium crash"]     = "ui.bug.hrb.event.crash.medium",
+    ["Hard crash"]       = "ui.bug.hrb.event.crash.hard",
+    ["Wheelie"]          = "ui.bug.hrb.event.wheelie",
+    ["Drift"]            = "ui.bug.hrb.event.drift",
+    ["Jump"]             = "ui.bug.hrb.event.jump",
+    ["Incomplete Jump"]  = "ui.bug.hrb.event.jump.incomplete",
+}
+
 
 -- common
+local round = misc.round
 
-function message(message)
+local function message(message)
 	print("[Bug:Herbie] " .. message)
-end
-
-function round(num, numDecimalPlaces)
-	local mult = 10^(numDecimalPlaces or 0)
-	return math.floor(num * mult + 0.5) / mult
 end
 
 local function loadcvs(f)
@@ -81,17 +92,12 @@ local function loadcvs(f)
 	return assert(load(r))()
 end
 
-function getNodeIDbyName(nodename)
-	for i, node in pairs (v.data.nodes) do
-		if node.name == nodename then
-			nodeID = node.cid
-		end
-	end
-	return nodeID
-end
-
 
 -- main
+
+local function playHornSound(soundname,volume,pitch)
+	sounds.playSoundOnceAtNode(soundname, horn_node, volume, pitch, 0, 0)
+end
 
 local function getTrustEmoji(s)
 	s = s or 0
@@ -128,19 +134,19 @@ local function IsExcited() return getPlayerTrust() >= 330 end
 local function isAngry() return getPlayerTrust() <= -20 end
 local function state() return vState end
 
-local function beamCount()
-	local i,beam
-	for i, beam in pairs(v.data.beams) do
-		obj:setBeamSpringDamp(beam.cid, beam.beamSpring or -1, beam.beamDamp or -1, beam.springExpansion or -1, beam.dampExpansion or -1)
-	end
-	
-	--clear old cache
-	beamCount = 0
-	
-	for k,beam in pairs(v.data.beams) do
-		beamCount = beamCount + 1
-	end
-end
+--local function beamCount()
+--	local i,beam
+--	for i, beam in pairs(v.data.beams) do
+--		obj:setBeamSpringDamp(beam.cid, beam.beamSpring or -1, beam.beamDamp or -1, beam.springExpansion or -1, beam.dampExpansion or -1)
+--	end
+--	
+--	--clear old cache
+--	beamCount = 0
+--	
+--	for k,beam in pairs(v.data.beams) do
+--		beamCount = beamCount + 1
+--	end
+--end
 
 local function getBrakeEvents()
 	local i,beam
@@ -362,15 +368,20 @@ local function eventMessage(name, trustDiff, severity, minor)
 		emojiTimer = 10
 	end
 
-	local msg = "Trust" ..arrow..	"(" ..tostring(name).. ")"
+	local _event = name
+	if eventLocals[name] then
+		_event = misc.translate(eventLocals[name])
+	end
+
+	local _emoji = ""
 	if emojiTimer > 0 then
-		msg = getTrustEmoji(severity) .. " " .. msg
+		_emoji = getTrustEmoji(severity) .. " "
 		minor = false
 	end
 	herbieMood = emoji
-
+	 
 	if minor then return end
-	guihooks.message({txt = "Herbie: " .. msg, context = {}}, 2, "herbie")
+	guihooks.message({txt = "ui.bug.hrb.trust.msg", context = {emoji=_emoji, direction=arrow, event=_event}}, 2, "herbie", "car")
 	message(m)
 end
 
@@ -579,7 +590,7 @@ local function updateGFX(dt)
 	local _power = hasPower()
 	if power ~= _power and _power == true then
 		herbieMood = getTrustEmoji()
-		guihooks.message({txt = "Herbie: " .. herbieMood, context = {}}, 2, "herbie")	
+		guihooks.message({txt = "ui.bug.hrb.follow.mood", context = {mood=herbieMood}}, 2, "herbie", "car")	
 	end
 	power = _power
 end
@@ -608,12 +619,16 @@ local function onInit(jbeamData)
 	end
 	if not enabled then return end
 
+	horn_node = misc.getNodeIDbyName("fb1")
+
 	message("Herbie Personality Initialized")
 	message("    herbie engine: " .. (herbieEngine and "Yes" or "No"))
 end
 
 
 local function init()
+	-- Init hopp sounds node
+
 	--valid state?
 
 	--getMaxMinDefaultTorqueCurves()
@@ -628,14 +643,16 @@ local function setTrust(value)
 end
 
 local function resetTrust()
-	set()
+	setTrust(playerTrustDefault)
 	message("Player trust reseted!")
-	guihooks.message({txt = "Herbie: Trust reseted. " .. getTrustEmoji(), context = {}}, 2, "herbie")
+	local _emoji = getTrustEmoji()
+	guihooks.message({txt = "ui.bug.hrb.trust.reset", context = {emoji=_emoji}}, 2, "herbie", "car")
 end
 
 local function setHappy()
 	setTrust(playerTrustMax)
-	guihooks.message({txt = "Herbie: " .. getTrustEmoji(), context = {}}, 2, "herbie")
+	local _emoji = getTrustEmoji()
+	guihooks.message({txt = "ui.bug.hrb.follow.mood", context = {emoji=_emoji}}, 2, "herbie", "car")
 end
 
 local function wheelie(value)

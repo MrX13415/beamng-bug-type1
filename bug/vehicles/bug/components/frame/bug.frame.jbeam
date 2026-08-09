@@ -6,31 +6,32 @@
         "value":3000,
     },
     "slotType" : "bug_frame",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-		["soundscape_horn", "soundscape_horn_116", "Horn"],
+		["soundscape_horn",      ["soundscape_horn"], [],      "soundscape_horn_116",        "Horn"],
 
-		["cruisecontrol","personality_cruisecontrol","Personality Cruise Control"],
-		["linelock", "", "Brake Line Lock"],
+		// TODO: REMOVE
+		["cruisecontrol",        ["cruisecontrol"], [],        "personality_cruisecontrol",  "Personality Cruise Control"],
+		["linelock",             ["linelock"], [],             "",                           "Brake Line Lock"],
 
 		// bodywork
-		["bug_body", "bug_body", "Body"],
+		["bug_body",             ["bug_body"], [],             "bug_body",                   "Body"],
 
-		["bug_waterfloat","", "Water Float"],
+		["bug_waterfloat",       ["bug_waterfloat"], [],       "",                           "Water Float"],
 
         //engine
-        ["bug_radsupport","bug_radsupport", "Radiator Support"],
-        ["bug_fueltank","bug_fueltank", "Fuel Tank"],
-        ["bug_engine","bug_engine_1.6", "Engine"],
+        ["bug_radsupport",       ["bug_radsupport"], [],       "bug_radsupport",             "Radiator Support"],
+        ["bug_fueltank",         ["bug_fueltank"], [],         "bug_fueltank",               "Fuel Tank"],
+        ["bug_engine",           ["bug_engine"], [],           "bug_engine_1.6",             "Engine"],
 
         //running gear
-        ["bug_suspension_R","bug_suspension_R_semitrail", "Rear Suspension"],
-        ["bug_suspension_F","bug_suspension_F", "Front Suspension"],
+        ["bug_suspension_R",     ["bug_suspension_R"], [],     "bug_suspension_R_semitrail", "Rear Suspension"],
+        ["bug_suspension_F",     ["bug_suspension_F"], [],     "bug_suspension_F",           "Front Suspension"],
 
 		// misc
-		["bug_towhitch","", "Tow Hitch",{"nodeOffset":{"x":0.0, "y":-0.56, "z":-0.22}}],
-        ["bug_indicators_style", "bug_indicators_style_us", "Indicators", {"coreSlot":true}],
+		["bug_towhitch",         ["bug_towhitch"], [],         "",                           "Tow Hitch",           {"nodeOffset":{"x":0.0, "y":-0.56, "z":-0.22}}],
+        ["bug_indicators_style", ["bug_indicators_style"], [], "bug_indicators_style_us",    "Turn Signal Wiring",	{"coreSlot":true}],
     ],
     "refNodes":[
         ["ref:", "back:", "left:", "up:", "leftCorner:", "rightCorner:"],

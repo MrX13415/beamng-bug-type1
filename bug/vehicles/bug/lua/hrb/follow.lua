@@ -4,6 +4,8 @@
 
 local M = {}
 
+local hrb = require("vehicles/bug/lua/hrb/hrb")
+
 local updateTimer = 0
 local enabled = false
 
@@ -14,9 +16,9 @@ local inVeh = true
 local inAI = false
 
 local messageLookup = {
-  [0] = "Herbie Follow: Off",
-  [1] = "Herbie Follow: On",
-  [2] = "Herbie is following you..."
+  [0] = "ui.bug.hrb.follow.off",
+  [1] = "ui.bug.hrb.follow.on",
+  [2] = "ui.bug.hrb.follow.active",
 }
 
   -- TODO: Ensure doors are closed before driving off
@@ -27,7 +29,7 @@ local function setAIfollow(follow)
   inAI = follow
 
   if inAI then
-    ai.setState({mode="follow", extAggression=0.1, targetObjectID=pVehID})
+    ai.setState({mode="follow", extAggression=0.1}) --, targetObjectID=pVehID
   else 
     ai.setState({mode="disabled"}) 
   end

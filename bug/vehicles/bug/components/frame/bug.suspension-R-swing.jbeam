@@ -6,13 +6,13 @@
         "value":600,
     },
     "slotType" : "bug_suspension_R__",  // WIP!
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_hub_R", "bug_hub_R_5", "Rear Wheel Hubs"],
+        ["bug_hub_R",        ["bug_hub_R"], [],        "bug_hub_R_5",      "Rear Wheel Hubs"],
 
-        ["bug_spring_R","bug_spring_R", "Rear Springs"],
-        ["bug_halfshafts_R","bug_halfshafts_R","Rear Halfshafts"],
+        ["bug_spring_R",     ["bug_spring_R"], [],     "bug_spring_R",     "Rear Springs"],
+        ["bug_halfshafts_R", ["bug_halfshafts_R"], [], "bug_halfshafts_R", "Rear Halfshafts"],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

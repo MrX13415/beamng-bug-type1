@@ -2,8 +2,9 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
+-- Tool to list and spawn vehicle configs, as well as list input actions for testing purposes.
 -- v1.0
--- by MrX13415
+-- by MrX13415 (2025-07-25)
 
 local M = {}
 
@@ -67,9 +68,52 @@ local function listInputActions()
     end
 end
 
+-------- DEBUG --------
+function Dump(o, level, max)
+  level = level or 0
+  max = max or -1
+  if max >= 0 and level > max then return "/*...*/" end
+
+  local indent = string.rep("  ",level) or ""
+  if type(o) == 'table' then
+    local s = '{\n'
+    for k,v in pairs(o) do
+      if type(k) ~= 'string' then k = '['..tostring(k)..']' end
+      s = s .. indent .. '  "'..k..'": ' .. Dump(v, level + 1, max) .. ',\n'
+    end
+    return s .. indent .. '}'
+  elseif type(o) == 'number' and o ~= math.huge then
+    return tostring(o)
+  else
+    return '"'..tostring(o)..'"'
+  end
+end
+function DumpFile(name,data)
+  writeFile("debug/"..name..".json", Dump(data))
+end
+function DumpFiles(name,data,n)
+  n = n or ""
+  local s = ""
+  for k,v in pairs(data) do
+    if type(v) == 'table' then
+      writeFile("debug/"..name.."."..n..k..".json", Dump(v))
+    else
+      s = s..Dump(v)
+    end 
+  end
+  writeFile("debug/"..name..".json", s)
+end
+-----------------------
+
 -- public interface
 M.listConfigs = listConfigs
 M.spawnConfig = spawnConfig
 M.listInputActions = listInputActions
+
+---DEBUG---
+M.Dump = Dump
+M.DumpFile = DumpFile
+M.DumpFiles = DumpFiles
+-----------
 
 return M

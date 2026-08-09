@@ -7,11 +7,11 @@
         "name":"Hardtop Roof",
     },
     "slotType" : "bug_roof",
-	"slots": [
-        ["type", "default", "description"],
+	"slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-		["bug_headliner_hardtop", "bug_headliner_hardtop", "Headliner"],
-		["bug_roof_accessory", "", "Roof Accessory"],
+		["bug_headliner_hardtop", ["bug_headliner_hardtop"], [], "bug_headliner_hardtop", "Headliner"],
+		["bug_roof_accessory",    ["bug_roof_accessory"], [],    "",                      "Roof Accessory"],
 	],
     "sounds": {
         "$+cabinFilterCoef": 0.2
@@ -20,11 +20,11 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         //    exterior
-        ["bug_body_roof_hardtop",              ["bug_body_roof", "bug_body_cowl"]],
+        ["bug_body_roof_hardtop",              ["bug_body_roof", "bug_body_roof_rear", "bug_body_cowl"]],
         ["bug_body_roof_gutter",               ["bug_body_sides", "bug_body_sides_front"]],
 
         //    interior
-        ["bug_body_interior_roof_hardtop",     ["bug_body_roof"]],
+        ["bug_body_interior_roof_hardtop",     ["bug_body_roof", "bug_body_roof_rear"]],
 	],
     "triangles": [
         ["id1:","id2:","id3:"],
@@ -65,12 +65,12 @@
         "name":"Ragtop Roof",
     },
     "slotType" : "bug_roof",
-	"slots": [
-        ["type", "default", "description"],
+	"slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-		["bug_headliner_ragtop", "bug_headliner_ragtop", "Headliner"],
-		["bug_ragtop_cover", "bug_ragtop_cover", "Ragtop Cover"],
-		["bug_ragroof_accessory", "", "Roof Accessory"],
+		["bug_headliner_ragtop",  ["bug_headliner_ragtop"], [],  "bug_headliner_ragtop", "Headliner"],
+		["bug_ragtop_cover",      ["bug_ragtop_cover"], [],      "bug_ragtop_cover",     "Ragtop Cover"],
+		["bug_ragroof_accessory", ["bug_ragroof_accessory"], [], "",                     "Roof Accessory"],
 	],
     "sounds": {
         "$+cabinFilterCoef": 0.05
@@ -80,11 +80,11 @@
 
         //    exterior
         ["bug_body_roof_racktop_rails",        ["bug_body_roof"]],
-        ["bug_body_roof_ragtop",               ["bug_body_roof", "bug_body_cowl"]],
+        ["bug_body_roof_ragtop",               ["bug_body_roof", "bug_body_roof_rear",  "bug_body_cowl"]],
         ["bug_body_roof_gutter",               ["bug_body_sides", "bug_body_sides_front"]],
 
         //    interior
-        ["bug_body_interior_roof_ragtop",      ["bug_body_roof"]],
+        ["bug_body_interior_roof_ragtop",      ["bug_body_roof", "bug_body_roof_rear"]],
 	],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -116,21 +116,21 @@
         "name":"Ragtop Cover",
     },
     "slotType" : "bug_ragtop_cover",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-		["skin_ragtop", "bug_skin_ragtop_white", "Color", {"coreSlot":true}]
+		["skin_ragtop", ["skin_ragtop"], [], "bug_skin_ragtop_white", "Color",       {"coreSlot":true}],
 	],
     "sounds": {
         "$+cabinFilterCoef": 0.1
     },
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$ragtopInitState", "range", "", "Interior", 0, 0, 1.0, "Ragtop Open", "Inital open position of the Ragtop roof.", {"subCategory":"Roof", "minDis":0, "maxDis":100}],
+        ["$ragtopInitState", "range", "", "Interior", 0, 0, 1.0, "Ragtop Open", "Initial open position of the Ragtop roof.", {"subCategory":"Roof", "minDis":0, "maxDis":100}],
 	],
     "controller": [
         ["fileName"],
-        ["bug/ragtop", {"name": "ragtop", "node": "brf4", "state": "$=$ragtopInitState"}]
+        ["bug/ragtop", {"name": "ragtop", "sfxNode": "brf4", "state": "$=$ragtopInitState"}]
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -278,7 +278,7 @@
         ["id1:","id2:"],
 
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
-        {"beamSpring":4000,"beamDamp":50,"beamDeform":"FLT_MAX","beamStrength":3000},
+        {"beamSpring":40000,"beamDamp":50,"beamDeform":"FLT_MAX","beamStrength":3000},
 
       //  {"highlight":{"radius":0.002, "col":"#ff7700ff" }},
 

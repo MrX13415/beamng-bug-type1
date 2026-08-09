@@ -1,0 +1,69 @@
+{
+  "name" : "Antarctia",
+  "version": 3,
+  "preview":{
+    "file":"vehicles/common/licenseplates/driver_training/licenseplate-52-11.dae",
+    "mesh":"licenseplate-52-11",
+    "set":"52-11",
+    "texture":"licenseplate-52-11"
+  },
+  "type": "licenseplate",
+  "vars":{
+    "plate":{
+      "charsets":{
+        "D":"123456789"
+      },
+      "default":"{D}",
+      "maxLength":8,
+      "minLength":0,
+      "type":"string"
+    }
+  },
+  "format":{
+    "30-15":{
+      "background":"vehicles/common/licenseplates/bug_antarctica/licenseplate-bug-antarctica_d.color.png",
+      "emboss":3,
+      "normal":"vehicles/common/licenseplates/bug_antarctica/licenseplate-bug-antarctica_n.normal.png",
+      "finish": {
+        "roughness": 0.18,
+        "metallic": 0.3,
+        "fgRoughness": 0.18,
+        "fgMetallic": 0.3
+      },
+      "root":{
+        "children":[
+          {
+            "color":"#000000",
+            "fit":"shrink",
+            "font": "vehicles/common/licenseplates/bug_antarctica/platefont_AQ.json",
+            "fontAtlas": "vehicles/common/licenseplates/bug_antarctica/platefont_AQ_d.color.png",
+            "fontNormalAtlas": "vehicles/common/licenseplates/bug_antarctica/platefont_AQ_n.normal.png",
+            "fontSize":128,
+            "fontWeight":"normal",
+            "letterSpacing":0,
+            "name":"plate",
+            "style":{
+              "top": 15,
+              "height":150,
+              "width":"100%"
+            },
+            "text":"{plate}"
+          }
+        ],
+        "name":"root",
+        "style":{
+          "alignItems":"center",
+          "justifyContent":"center",
+          "paddingBottom":8,
+          "paddingLeft":24,
+          "paddingRight":24,
+          "paddingTop":30
+        }
+      },
+      "size":[
+        512,
+        256
+      ]
+    }
+  }
+}

@@ -106,7 +106,7 @@
     "bug_skin_police_german": {
         "information": {
             "authors": "MrX13415",
-            "name": "Polizei",
+            "name": "German Police",
             "value": 120,
         },
         "slotType": "paint_design",
@@ -115,7 +115,7 @@
     "bug_skin_police_usa": {
         "information": {
             "authors": "MrX13415",
-            "name": "Police",
+            "name": "US Police",
             "value": 120,
         },
         "slotType": "paint_design",

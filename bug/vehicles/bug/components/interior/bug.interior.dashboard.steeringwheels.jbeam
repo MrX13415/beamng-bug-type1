@@ -8,10 +8,10 @@
         "value":310,
     },
     "slotType" : "bug_steer",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["skin_steer", "bug_steer_white", "Steering Wheel", {"coreSlot":true}],
+        ["skin_steer", ["skin_steer"], [], "bug_steer_white", "Steering Wheel", {"coreSlot":true}],
     ],
 },
 //---
@@ -136,10 +136,10 @@
         "value":310,
     },
     "slotType" : "bug_steer",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["skin_steer_beamng", "bug_steer_01a", "Steering Wheel", {"coreSlot":true}],
+        ["skin_steer_beamng", ["skin_steer_beamng"], [], "bug_steer_01a", "Steering Wheel", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -151,7 +151,12 @@
 "bug_steer_01a": {
     "information":{
         "authors":"BeamNG",
-        "name":"Nomi Mod.301 Racing Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Mod.301 Racing Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Nomi"
+            }
+        },
         "value":310,
     },
     "slotType" : "skin_steer_beamng",
@@ -164,7 +169,12 @@
 "bug_steer_02a": {
     "information":{
         "authors":"BeamNG",
-        "name":"Nomi Mod.307 Racing Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Mod.307 Racing Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Nomi"
+            }
+        },
         "value":330,
     },
     "slotType" : "skin_steer_beamng",
@@ -177,7 +187,12 @@
 "bug_steer_02b": {
     "information":{
         "authors":"BeamNG",
-        "name":"Nomi Mod.307R Racing Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Mod.307R Racing Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Nomi"
+            }
+        },
         "value":330,
     },
     "slotType" : "skin_steer_beamng",
@@ -190,7 +205,12 @@
 "bug_steer_02c": {
     "information":{
         "authors":"BeamNG",
-        "name":"Nomi Mod.207R Drift Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Mod.207R Drift Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Nomi"
+            }
+        },
         "value":250,
     },
     "slotType" : "skin_steer_beamng",
@@ -203,7 +223,12 @@
 "bug_steer_03a": {
     "information":{
         "authors":"BeamNG",
-        "name":"Arnida Sportivo Racing Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Sportivo Racing Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Arnida"
+            }
+        },
         "value":370,
     },
     "slotType" : "skin_steer_beamng",
@@ -216,7 +241,12 @@
 "bug_steer_04a": {
     "information":{
         "authors":"BeamNG",
-        "name":"Arnida Corsa Racing Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Corsa Racing Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Arnida"
+            }
+        },
         "value":400,
     },
     "slotType" : "skin_steer_beamng",
@@ -229,7 +259,12 @@
 "bug_steer_05a": {
     "information":{
         "authors":"BeamNG",
-        "name":"Legno Classico Steering Wheel",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND Classico Steering Wheel",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Legno"
+            }
+        },
         "value":440,
     },
     "slotType" : "skin_steer_beamng",

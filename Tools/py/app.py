@@ -18,6 +18,7 @@ def printHelp():
     print("Available Commands:")
     print("")
     print("  aw              Tools to create the AW branded variant.")
+    print("  publish         Compress the mod for publishing.")
     print("  help            This message.")
     print("  exit            Exit.")
     print("")

@@ -2,18 +2,19 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
+-- Library to simulate a power system, allowing parts to draw power.
+-- v1.0
 -- by MrX13415
 
 local M = {}
 
---local engine = require "engine"
+local misc = require("vehicles/bug/lua/misc")
 
 local updateTimer = 2     -- Make sure the first call is immediately
 local ammeterSmoother = newExponentialSmoothing(50)
 local voltmeterSmoother = newExponentialSmoothing(50)
 
 local battery = nil
-local voltage = 0
 local canPower = false
 
 local enginePower = 0           -- W  | Power required for the ignition system, spark plugs etc.
@@ -25,104 +26,25 @@ local powerParts = {}
 --local powerValues = {}
 --local ignoreIgnition = {}
 
-local function toUnit(value, unit, m, d)
-  local u = ""
-  m = m or 1
-
-  if math.abs(value) ~= 0 then
-    d = d or 1
-    if math.abs(value) < m then
-      u = "m"
-      value = value * 1000
-    end
-    if math.abs(value) < m then
-      u = "u"
-      value = value * 1000
-    end
-    if math.abs(value) < m then
-      u = "n"
-      value = value * 1000
-    end
-  end
-
-  if not unit or #unit == 0 then
-    u = ""
-  else
-    u = u .. unit
-  end
-
-  d = d or 0
-  return string.format("%."..tostring(d).."f"..u, value)
-end
-local function toTime(value)
-  local u = "minutes"
-  local d = 0
-  local v = value
-
-  if value == 0 then
-    d = 0
-  elseif value < 1.5 then
-    u = "seconds"
-    d = 0
-    value = value * 60
-  else
-    if value > (3 * 60) then
-      u = "hours"
-      d = 1
-      value = value / 60
-
-      if value > 48 then
-        u = "days"
-        d = 1
-        value = value / 24
-
-        if value > 14 then
-          u = "weeks"
-          d = 1
-          value = value / 7
-
-          if value > 8 then
-            u = "months"
-            d = 1
-            value = value / 4
-
-            if value > 24 then
-              u = "years"
-              d = 1
-              value = value / 12
-            end
-          end
-        end
-      end
-    end
-  end
-  
-  --if value ~= v then
-  --  u = string.format(u.." (%.2f minutes)", v)
-  --end
-  return string.format("%."..tostring(d).."f "..u, value)
-end
-local function executeLua(cmd)
-  local cmd = "local r = "..cmd.."; return r"
-  local f = assert(load(cmd))
-  return f()
-end
+local toUnit = misc.toUnit
+local toTime = misc.toTime
+local executeLua = misc.executeLua
 
 local function isEngineRunning() return electrics.values.rpm > engineIdleRPM end
 local function isPowerOn() return electrics.values.ignitionLevel > 0 end
 local function isIgnitionOn() return electrics.values.ignitionLevel > 1 end
 
-local function calculateBatteryEstimate(chargeCurrent, batteryRate)
-  local capacity = batteryCapacity
-  if chargeCurrent > 0 then
-    capacity = batteryMaxCapacity - capacity
-    return capacity / math.abs(batteryRate) * 60
-  end
+-- local function calculateBatteryEstimate(chargeCurrent, batteryRate)
+--   local capacity = batteryCapacity
+--   if chargeCurrent > 0 then
+--     capacity = batteryMaxCapacity - capacity
+--     return capacity / math.abs(batteryRate) * 60
+--   end
 
-  local estimated = batteryC * math.pow((capacity)/(math.abs(chargeCurrent) * batteryC), batteryK) * 60
-  local trueEst = capacity / math.abs(batteryRate) * 60
-  return math.min(estimated, trueEst)
-end
+--   local estimated = batteryC * math.pow((capacity)/(math.abs(chargeCurrent) * batteryC), batteryK) * 60
+--   local trueEst = capacity / math.abs(batteryRate) * 60
+--   return math.min(estimated, trueEst)
+-- end
 
 local function calculatePower(p)
   -- Determine if this device is active
@@ -172,38 +94,38 @@ end
 
 -- See updateElectricsWithIgnitionLevelEuropean() in Game lua.
 -- These system is no longer needed, as of 0.34
-local function updateElectrics()
-  local values = electrics.values
-  local noPower = not canPower
-  
-  for pwr, value in pairs(powerValues) do
-    local v = values[value]
-
-    local wired = isPowerOn()
-    for _, ignore in pairs(ignoreIgnition) do
-      if value == ignore then
-        wired = true
-        break
-      end
-    end
-
-    if noPower or not wired then
-      if type(v) == "number" then v = 0
-      elseif type(v) == "boolean" then v = false
-      end
-    end
-    values[pwr] = v
-    --print(tostring(canPower) .. " | "..pwr.."="..value.." ("..tostring(values[pwr]).."="..tostring(values[value])..")")
-  end
-
-  if noPower then
-    electrics.set_warn_signal(false)
-  end
-
-  if noPower or isPowerOn() == false then
-    electrics.set_lightbar_signal(0)
-  end
-end
+--local function updateElectrics()
+--  local values = electrics.values
+--  local noPower = not canPower
+--  
+--  for pwr, value in pairs(powerValues) do
+--    local v = values[value]
+--
+--    local wired = isPowerOn()
+--    for _, ignore in pairs(ignoreIgnition) do
+--      if value == ignore then
+--        wired = true
+--        break
+--      end
+--    end
+--
+--    if noPower or not wired then
+--      if type(v) == "number" then v = 0
+--      elseif type(v) == "boolean" then v = false
+--      end
+--    end
+--    values[pwr] = v
+--    --print(tostring(canPower) .. " | "..pwr.."="..value.." ("..tostring(values[pwr]).."="..tostring(values[value])..")")
+--  end
+--
+--  if noPower then
+--    electrics.set_warn_signal(false)
+--  end
+--
+--  if noPower or isPowerOn() == false then
+--    electrics.set_lightbar_signal(0)
+--  end
+--end
 
 
 local function onBattery(battery)
@@ -244,43 +166,6 @@ local function updateGFX(dt)
     updateTimer = 0
   end
   smoothValues()
-end
-
-
--- DEBUG
-function Dump(o, level, max)
-  level = level or 0
-  max = max or -1
-  if max >= 0 and level > max then return "/*...*/" end
-
-  local indent = string.rep("  ",level) or ""
-  if type(o) == 'table' then
-    local s = '{\n'
-    for k,v in pairs(o) do
-      if type(k) ~= 'string' then k = '['..tostring(k)..']' end
-      s = s .. indent .. '  "'..k..'": ' .. Dump(v, level + 1, max) .. ',\n'
-    end
-    return s .. indent .. '}'
-  elseif type(o) == 'number' and value ~= math.huge then
-    return tostring(o)
-  else
-    return '"'..tostring(o)..'"'
-  end
-end
-function DumpFile(name,data)
-  writeFile("debug/"..name..".json", Dump(data))
-end
-function DumpFiles(name,data,n)
-  n = n or ""
-  local s = ""
-  for k,v in pairs(data) do
-    if type(v) == 'table' then
-      writeFile("debug/"..name.."."..n..k..".json", Dump(v))
-    else
-      s = s..Dump(v)
-    end 
-  end
-  writeFile("debug/"..name..".json", s)
 end
 
 local function _replaceCmd(cmd, power)
@@ -398,28 +283,37 @@ local function onReset()
 end
 
 local function showBatteryStatus()
-  local msg = ""
-  local uimsg = ""
-
   local b = battery
   if not b then
-    msg = msg .. "(No Battery)"
+    log("I", "", "[Bug:Battery] (No Battery)")
+    guihooks.message({txt = "ui.bug.batteryinfo.nobattery", context = {}}, 5, "bug.power.batterystatus", "charge")
+
   elseif b.isBroken() then
-    msg = msg .. "(Ruined)"
+    log("I", "", "[Bug:Battery] (Ruined)")
+    guihooks.message({txt = "ui.bug.batteryinfo.ruined", context = {}}, 5, "bug.power.batterystatus", "charge")
+
   else
-    msg = msg .. string.format("%.0f%% ", b.getChargeRatio()*100)
-    msg = msg .. toUnit(b.getCharge()/1000,"",1000,0).."/"..toUnit(b.getCapcity()/1000,"Ah",1000,0).." "
-    msg = msg .. toUnit(b.getVoltage(), "V").."\n"
+    local ratio     = string.format("%.0f", b.getChargeRatio()*100)
+    local charge    = toUnit(b.getCharge()/1000,"",1000,0)
+    local capacity  = toUnit(b.getCapcity()/1000,"Ah",1000,0)
+    local voltage   = toUnit(b.getVoltage(),"V",1,1)
+    local time      = b.getEstimatedTime()
+    local timestr   = toTime(time, false) -- no translation
+
+    local msg = ""
+    msg = msg .. ratio .. "% " .. charge.."/"..capacity.." " .. voltage .."\n"
     if b.isCharging() then msg = msg .. "Recharged in " else msg = msg .. "Discharged in " end
-    msg = msg .. toTime(b.getEstimatedTime())
-
-    uimsg = msg
-
+    msg = msg .. time
     msg = msg .. "\nPower: "..tostring(toUnit(b.getPowerOutput(), "W"))
-  end
+    log("I", "", "[Bug:Battery] " .. msg)
 
-  guihooks.message({txt = "Battery: " .. uimsg, context = {}}, 5, "bug.power.batterystatus")
-  log("I", "", "[Bug:Battery] " .. msg)
+
+    timestr    = toTime(time, true) -- with translation
+    local uimsg = b.isCharging() 
+        and "ui.bug.batteryinfo.message.recharge" 
+        or "ui.bug.batteryinfo.message.discharge"
+    guihooks.message({txt = uimsg, context = {ratio=ratio, charge=charge, capacity=capacity, voltage=voltage, time=timestr}}, 5, "bug.power.batterystatus", "charge")
+  end
 end
 
 

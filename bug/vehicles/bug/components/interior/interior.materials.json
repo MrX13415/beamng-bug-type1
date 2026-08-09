@@ -116,17 +116,22 @@
     "invertBackFaceNormals": true,
     "version": 1.5
   },
-  "bug_bottle_glass": {
-    "name": "bug_bottle_glass",
-    "mapTo": "bug_bottle_glass",
+  "bug_bottle_contents": {
+    "name": "bug_bottle_contents",
+    "mapTo": "bug_bottle_contents",
     "class": "Material",
     "Stages": [
       {
+        "baseColorFactor": [
+          0.866666973,
+          0.866666973,
+          0.866666973,
+          1
+        ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/misc_d.color.png",
-        "clearCoatFactor": 1,
-        "clearCoatRoughnessFactor": 0.100000001,
-        "opacityFactor": 0.239999995,
-        "roughnessFactor": 0.400000006
+        "metallicFactor": 0.404000014,
+        "opacityFactor": 0.75,
+        "roughnessFactor": 0
       },
       {},
       {},
@@ -136,29 +141,36 @@
     "dynamicCubemap": true,
     "translucent": true,
     "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
     "version": 1.5
   },
-  "bug_bottle_contents": {
-    "name": "bug_bottle_contents",
-    "mapTo": "bug_bottle_contents",
-    "class": "material",
+  "bug_bottle_glass": {
+    "name": "bug_bottle_glass",
+    "mapTo": "bug_bottle_glass",
+    "class": "Material",
     "Stages": [
       {
         "baseColorFactor": [
-          1.0,
-          1.0,
-          1.0,
+          0.50176698,
+          0.50176698,
+          0.50176698,
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/misc_d.color.png",
-        "metallicFactor": 0.4,
-        "roughnessFactor": 0.09
+        "clearCoatFactor": 0.200000003,
+        "clearCoatRoughnessFactor": 0.100000001,
+        "opacityFactor": 0.492000014,
+        "roughnessFactor": 0.5
       },
       {},
       {},
       {}
     ],
+    "alphaRef": 0,
     "dynamicCubemap": true,
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
     "version": 1.5
   },
   "bug_bottle_handle": {
@@ -214,15 +226,49 @@
     "class": "Material",
     "Stages": [
       {
+        "baseColorFactor": [
+          0.50980401,
+          0.576470971,
+          1,
+          1
+        ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/misc_d.color.png",
         "metallicFactor": 1,
-        "roughnessFactor": 0.1
+        "roughnessFactor": 0.200000003
       },
       {},
       {},
       {}
     ],
     "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_sunglasses_glass": {
+    "name": "bug_sunglasses_glass",
+    "mapTo": "bug_sunglasses_glass",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.365992993,
+          0.654147983,
+          0.809186995,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/misc_d.color.png",
+        "metallicFactor": 0.75,
+        "opacityFactor": 0.980000019,
+        "roughnessFactor": 0
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "subSurfaceIntensity": 1,
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
     "version": 1.5
   },
   "bug_sunglasses_misc": {
@@ -239,26 +285,6 @@
       {}
     ],
     "dynamicCubemap": true,
-    "version": 1.5
-  },
-  "bug_sunglasses_glass": {
-    "name": "bug_sunglasses_glass",
-    "mapTo": "bug_sunglasses_glass",
-    "class": "Material",
-    "Stages": [
-      {
-        "baseColorMap": "/vehicles/bug/components/interior/textures/misc_d.color.png",
-        "opacityFactor": 0.95,
-        "roughnessFactor": 0
-      },
-      {},
-      {},
-      {}
-    ],
-    "alphaRef": 0,
-    "dynamicCubemap": true,
-    "translucent": true,
-    "translucentBlendOp": "PreMulAlpha",
     "version": 1.5
   },
 
@@ -748,11 +774,8 @@
       {
         "baseColorMap": "/vehicles/bug/components/interior/textures/clock_d.color.png",
         "emissiveMap": "/vehicles/bug/components/interior/textures/clock_e.color.png",
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 200,
         "roughnessFactor": 0.35
       },
       {},
@@ -795,11 +818,8 @@
           0.881534994,
           1
         ],
-        "emissiveFactor": [
-          1,
-          0.906011999,
-          0.531077027
-        ],
+        "emissiveFactor": [ 1.000, 0.900, 0.600 ],
+        "emissiveIntensityNits": 50,
         "roughnessFactor": 0.6
       },
       {},
@@ -856,11 +876,8 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
         "metallicFactor": 0.5,
         "roughnessFactor": 0,
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 500,
         "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png"
       },
       {},
@@ -908,11 +925,8 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
         "metallicFactor": 0.5,
         "roughnessFactor": 0,
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 500,
         "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png"
       },
       {},
@@ -960,11 +974,8 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
         "metallicFactor": 0.5,
         "roughnessFactor": 0,
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 500,
         "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png"
       },
       {},
@@ -1016,11 +1027,8 @@
         "normalMap": "/vehicles/bug/components/interior/textures/gauges_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/gauges_r.data.png",
         "roughnessFactor": 0.6,
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 500,
         "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png"
       },
       {},
@@ -1177,17 +1185,68 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png",
-        "emissiveFactor": [
-          0.784313977,
-          0.770383,
-          0.615148008
-        ],
         "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png",
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/interior/textures/gauges_m.data.png",
         "roughnessFactor": 1,
         "roughnessMap": "/vehicles/bug/components/interior/textures/gauges_r.data.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/gauges_n.normal.png",
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 200
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5
+  },
+  "bug_gauges_needle": {
+    "name": "bug_gauges_needle",
+    "mapTo": "bug_gauges_needle",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/interior/textures/gauges_m.data.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/gauges_r.data.png",
         "normalMap": "/vehicles/bug/components/interior/textures/gauges_n.normal.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_gauges_needle_light": {
+    "name": "bug_gauges_needle_light",
+    "mapTo": "bug_gauges_needle_light",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png",
+        "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/interior/textures/gauges_m.data.png",
+        "roughnessFactor": 1,
+        "roughnessMap": "/vehicles/bug/components/interior/textures/gauges_r.data.png",
+        "normalMap": "/vehicles/bug/components/interior/textures/gauges_n.normal.png",
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 50
       },
       {},
       {},
@@ -2322,6 +2381,20 @@
     ],
     "version": 1.5
   },
+  "bug_radio_panel": {
+    "name": "bug_radio_panel",
+    "mapTo": "bug_radio_panel",
+    "class": "material",
+    "Stages": [
+      {
+        "colorMap": "radio"
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5
+  },
   "bug_radio_needle": {
     "name": "bug_radio_needle",
     "mapTo": "bug_radio_needle",
@@ -2333,11 +2406,6 @@
           0.988020003,
           0.881534994,
           1
-        ],
-        "emissiveFactor": [
-          9.99999997e-7,
-          9.99999997e-7,
-          9.99999997e-7
         ],
         "roughnessFactor": 0.681116343
       },
@@ -2355,12 +2423,9 @@
     "class": "Material",
     "Stages": [
       {
-        "emissiveFactor": [
-          1,
-          0.906011999,
-          0.531077027
-        ],
-        "roughnessFactor": 0.681116343
+        "emissiveFactor": [ 1.000, 0.900,  0.600 ],
+        "emissiveIntensityNits": 50,
+        "roughnessFactor": 0.7
       },
       {
         "roughnessFactor": 0.494497359
@@ -2404,11 +2469,8 @@
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png",
-        "emissiveFactor": [
-          0.784313977,
-          0.770383,
-          0.615148008
-        ],
+        "emissiveFactor": [ 0.784,  0.770,  0.615 ],
+        "emissiveIntensityNits": 200,
         "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png",
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/interior/textures/gauges_m.data.png",
@@ -2699,11 +2761,8 @@
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/oil_ammeter_d.color.png",
         "emissiveMap": "/vehicles/bug/components/interior/textures/oil_ammeter_e.color.png",
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 200,
         "opacityMap": "/vehicles/bug/components/interior/textures/oil_ammeter_d.color.png",
         "roughnessFactor": 0.35,
         "normalMap": "/vehicles/bug/components/interior/textures/oil_ammeter_n.normal.png"
@@ -2744,11 +2803,8 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/tacho_6000_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/tacho_6000_n.normal.png",
         "emissiveMap": "/vehicles/bug/components/interior/textures/tacho_6000_e.color.png",
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 200,
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/interior/textures/speedo_back_m.data.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/tacho_back_r.data.png",
@@ -2776,11 +2832,8 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/tacho_8000_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/tacho_8000_n.normal.png",
         "emissiveMap": "/vehicles/bug/components/interior/textures/tacho_8000_e.color.png",
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 200,
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/interior/textures/speedo_back_m.data.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/tacho_back_r.data.png",
@@ -2824,11 +2877,8 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/speedo_km_140_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/speedo_km_140_n.normal.png",
         "emissiveMap": "/vehicles/bug/components/interior/textures/speedo_km_140_e.color.png",
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0  ],
+        "emissiveIntensityNits": 200,
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/interior/textures/speedo_back_m.data.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/speedo_back_r.data.png",
@@ -2856,11 +2906,8 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/speedo_km_240_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/speedo_km_240_n.normal.png",
         "emissiveMap": "/vehicles/bug/components/interior/textures/speedo_km_240_e.color.png",
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 200,
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/interior/textures/speedo_back_m.data.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/speedo_back_r.data.png",
@@ -2888,11 +2935,8 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/speedo_km_320_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/speedo_km_320_n.normal.png",
         "emissiveMap": "/vehicles/bug/components/interior/textures/speedo_km_320_e.color.png",
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 200,
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/interior/textures/speedo_back_m.data.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/speedo_back_r.data.png",
@@ -2920,11 +2964,8 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/speedo_mph_90_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/speedo_mph_90_n.normal.png",
         "emissiveMap": "/vehicles/bug/components/interior/textures/speedo_mph_90_e.color.png",
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 200,
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/interior/textures/speedo_back_m.data.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/speedo_back_r.data.png",
@@ -2952,11 +2993,8 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/speedo_mph_150_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/speedo_mph_150_n.normal.png",
         "emissiveMap": "/vehicles/bug/components/interior/textures/speedo_mph_150_e.color.png",
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 200,
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/interior/textures/speedo_back_m.data.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/speedo_back_r.data.png",
@@ -2984,11 +3022,8 @@
         "baseColorMap": "/vehicles/bug/components/interior/textures/speedo_mph_200_d.color.png",
         "normalMap": "/vehicles/bug/components/interior/textures/speedo_mph_200_n.normal.png",
         "emissiveMap": "/vehicles/bug/components/interior/textures/speedo_mph_200_e.color.png",
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 200,
         "metallicFactor": 1,
         "metallicMap": "/vehicles/bug/components/interior/textures/speedo_back_m.data.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/speedo_back_r.data.png",
@@ -2999,56 +3034,6 @@
       {}
     ],
     "dynamicCubemap": true,
-    "version": 1.5
-  },
-
-  "bug_speedo_needle": {
-    "name": "bug_speedo_needle",
-    "mapTo": "bug_speedo_needle",
-    "class": "Material",
-    "Stages": [
-      {
-        "baseColorFactor": [
-          1,
-          0.988020003,
-          0.881534994,
-          1
-        ],
-        "emissiveFactor": [
-          9.99999997e-7,
-          9.99999997e-7,
-          9.99999997e-7
-        ],
-        "metallicFactor": 0.300000012,
-        "roughnessFactor": 0.100000001
-      },
-      {
-        "roughnessFactor": 0.494497359
-      },
-      {},
-      {}
-    ],
-    "version": 1.5
-  },
-  "bug_speedo_needle_light": {
-    "name": "bug_speedo_needle_light",
-    "mapTo": "bug_speedo_needle_light",
-    "class": "Material",
-    "Stages": [
-      {
-        "emissiveFactor": [
-          0.784313977,
-          0.768628001,
-          0.615685999
-        ],
-        "roughnessFactor": 0.681116343
-      },
-      {
-        "roughnessFactor": 0.494497359
-      },
-      {},
-      {}
-    ],
     "version": 1.5
   },
 
@@ -3186,11 +3171,8 @@
         "metallicMap": "/vehicles/bug/components/interior/textures/switchboard_m.data.png",
         "normalMap": "/vehicles/bug/components/interior/textures/switchboard_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/switchboard_r.data.png",
-        "emissiveFactor": [
-          1.000,
-          0.094,
-          0.000
-        ],
+        "emissiveFactor": [ 1.000, 0.094, 0.000 ],
+        "emissiveIntensityNits": 500,
         "emissiveMap": "/vehicles/bug/components/interior/textures/switchboard_e.color.png"
       },
       {},

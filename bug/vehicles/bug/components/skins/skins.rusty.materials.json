@@ -283,6 +283,7 @@
         "diffuseMapUseUV": 1,
         "metallicFactor": 0.800000012,
         "metallicMap": "/vehicles/bug/components/common/textures/rustyiron_m.data.png",
+        "metallicMapUseUV": 1,
         "normalMap": "/vehicles/bug/components/common/textures/rustyiron_n.normal.png",
         "normalMapUseUV": 1,
         "opacityMap": "/vehicles/bug/components/common/textures/rustyiron_o2.data.png",
@@ -446,22 +447,43 @@
     "name": "bug_window_glass_dmg.skin.rusty",
     "mapTo": "bug_window_glass_dmg.skin.rusty",
     "class": "Material",
-    "Stages": [
+   "Stages": [
       {
-        "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dmg_dirty.color.png",
+        "baseColorFactor": [
+          0.71,
+          0.71,
+          0.71,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dmg_b.color.png",
+        "metallicFactor": 0.7,
+        "normalMap": "/vehicles/bug/components/body/textures/window_glass_dmg_n.normal.png",
+        "opacityMap": "/vehicles/bug/components/body/textures/window_glass_dmg_o.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.1
+      },
+      {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dirty_d.color.png",
         "normalMap": "/vehicles/bug/components/body/textures/window_glass_dirty_n.normal.png",
         "opacityMap": "/vehicles/bug/components/body/textures/window_glass_dmg_dirty_o.data.png",
         "pixelSpecular": true,
-        "roughnessMap": "/vehicles/bug/components/body/textures/window_glass_dmg_r.data.png",
-        "useAnisotropic": true
+        "roughnessFactor": 1.0,
+        "roughnessMap": "/vehicles/bug/components/body/textures/window_glass_dirty_r.data.png"
       },
-      {},
       {},
       {}
     ],
+    "activeLayers": 2,
     "alphaRef": 1,
     "alphaTest": true,
-    "castShadows": false,
+    "castShadows": true,
+    "translucentRecvShadows": true,
     "dynamicCubemap": true,
     "materialTag0": "beamng",
     "materialTag1": "vehicle",

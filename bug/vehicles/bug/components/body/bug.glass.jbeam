@@ -275,11 +275,29 @@
     "slotType" : "bug_doorglass_FR",
     "controller": [
         ["fileName"],
-        ["bug/window", {"name": "windowFR", "state": "$windowFRInitState", "sfxNode": "d8r", "sfx": "vehicles/bug/components/sounds/common/window-roll.ogg"}]
+        ["bug/window", 
+        {
+            "name": "windowFR", 
+            "state": "$windowFRInitState", 
+            "sfxNode": "d8r", 
+            "sfxMove":       { "volume": 0.7, "event": "vehicles/bug/components/sounds/common/window-roll.ogg" },
+            "sfxMoveUp":     { "volume": 1.0, "event": "vehicles/bug/components/sounds/common/window-roll-up.ogg" },
+            "sfxMoveDown":   { "volume": 1.0, "event": "vehicles/bug/components/sounds/common/window-roll-down.ogg" },
+            "sfxStuckStart": { "volume": 1.0, "event": "" },
+            "sfxStuckEnd":   { "volume": 2.0, "event": "vehicles/bug/components/sounds/common/window-stuck-release.ogg" },
+            "stuckEnabled": [ 
+                "/paint_design/bug_skin_rusty",
+                "/paint_design/bug_skin_hrb_1980_rustytaxi",
+                "/paint_design/bug_skin_hrb_1980_rusty"
+            ],
+            "stuckChance": 0.15,
+            "stuckDurationMin": 0.3,
+            "stuckDurationMax": 1.2
+        }]
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$windowFRInitState", "range", "", "Interior", 0, 0, 1.0, "Window Open Right", "Inital open position of the right window.", {"subCategory":"Windows", "minDis":0, "maxDis":100}],
+        ["$windowFRInitState", "range", "", "Interior", 0, 0, 1.0, "Window Open Right", "Initial open position of the right window.", {"subCategory":"Windows", "minDis":0, "maxDis":100}],
 	],
     "sounds": {
         "$+cabinFilterCoef": 0.04
@@ -393,11 +411,29 @@
     "slotType" : "bug_doorglass_FL",
     "controller": [
         ["fileName"],
-        ["bug/window", {"name": "windowFL", "state": "$windowFLInitState", "sfxNode": "d8l", "sfx": "vehicles/bug/components/sounds/common/window-roll.ogg"}]
+        ["bug/window", 
+        {
+            "name": "windowFL", 
+            "state": "$windowFLInitState", 
+            "sfxNode": "d8l",
+            "sfxMove":       { "volume": 0.7, "event": "vehicles/bug/components/sounds/common/window-roll.ogg" },
+            "sfxMoveUp":     { "volume": 1.0, "event": "vehicles/bug/components/sounds/common/window-roll-up.ogg" },
+            "sfxMoveDown":   { "volume": 1.0, "event": "vehicles/bug/components/sounds/common/window-roll-down.ogg" },
+            "sfxStuckStart": { "volume": 1.0, "event": "" },
+            "sfxStuckEnd":   { "volume": 2.0, "event": "vehicles/bug/components/sounds/common/window-stuck-release.ogg" },
+            "stuckEnabled": [ 
+                "/paint_design/bug_skin_rusty",
+                "/paint_design/bug_skin_hrb_1980_rustytaxi",
+                "/paint_design/bug_skin_hrb_1980_rusty"
+            ],
+            "stuckChance": 0.15,
+            "stuckDurationMin": 0.3,
+            "stuckDurationMax": 1.2
+        }]
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$windowFLInitState", "range", "", "Interior", 0, 0, 1.0, "Window Open Left", "Inital open position of the left window.", {"subCategory":"Windows", "minDis":0, "maxDis":100}],
+        ["$windowFLInitState", "range", "", "Interior", 0, 0, 1.0, "Window Open Left", "Initial open position of the left window.", {"subCategory":"Windows", "minDis":0, "maxDis":100}],
 	],
     "sounds": {
         "$+cabinFilterCoef": 0.04
@@ -501,21 +537,25 @@
    ]
 },
 
-
 "bug_doorvent_FR": {
     "information":{
         "authors":"BeamNG",
-        "name":"Vent Window",
+        "name":"Quarter Window",
         "value":100,
     },
     "slotType" : "bug_doorvent_FR",
     "controller": [
         ["fileName"],
-        ["bug/window", {"name": "doorventFR", "state": "$doorventFRInitState", "speed": 0.03, "sfxNode": "d8r", "sfx": ""}]
+        ["bug/window", {
+            "name": "doorventFR", 
+            "state": "$doorventFRInitState", 
+            "speed": 0.03, 
+            "shortPressCloseThreshold": 0.20, 
+        }]
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$doorventFRInitState", "range", "", "Interior", 0, 0, 1.0, "Vent Window Open Right", "Inital open position of the right vent window.", {"subCategory":"Windows", "minDis":0, "maxDis":100}],
+        ["$doorventFRInitState", "range", "", "Interior", 0, 0, 1.0, "Quarter Window Open Right", "Initial open position of the right quarter window.", {"subCategory":"Windows", "minDis":0, "maxDis":100}],
     ],
     "sounds": {
         "$+cabinFilterCoef": 0.02
@@ -638,17 +678,22 @@
 "bug_doorvent_FL": {
     "information":{
         "authors":"BeamNG",
-        "name":"Vent Window",
+        "name":"Left Quarter Window",
         "value":100,
     },
     "slotType" : "bug_doorvent_FL",
     "controller": [
         ["fileName"],
-        ["bug/window", {"name": "doorventFL", "state": "$doorventFLInitState", "speed": 0.03, "sfxNode": "d8l", "sfx": ""}]
+        ["bug/window", {
+            "name": "doorventFL",
+            "state": "$doorventFLInitState",
+            "speed": 0.03, 
+            "shortPressCloseThreshold": 0.20, 
+        }]
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$doorventFLInitState", "range", "", "Interior", 0, 0, 1.0, "Vent Window Open Left", "Inital open position of the left vent window.", {"subCategory":"Windows", "minDis":0, "maxDis":100}],
+        ["$doorventFLInitState", "range", "", "Interior", 0, 0, 1.0, "Quarter Window Open Left", "Initial open position of the left quarter window.", {"subCategory":"Windows", "minDis":0, "maxDis":100}],
 	],
     "sounds": {
         "$+cabinFilterCoef": 0.02

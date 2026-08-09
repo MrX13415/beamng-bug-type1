@@ -3,29 +3,36 @@
 "bug": {
     "information":{
         "authors":"BeamNG",
-        "name":"Volkswagen Type 1 \"Beetle\"",
+        "name": {
+            "txt":"ui.vehicleconfig.information.name.BRAND BRAND",
+            "ctx":{
+                "brand1":"ui.vehicleconfig.brand.Volkswagen",
+                "brand2":"ui.vehicleconfig.brand.Type-1"
+            }
+        },
     },
     "slotType" : "main",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["licenseplate_design_2_1", "CA Old Black Plate (no tags)", "License Plate Design"],
-        ["paint_design", "", "Paint Design"],
+        ["licenseplate_design_2_1", ["licenseplate_design_2_1"], [],    "",             "License Plate Design"],
+        ["paint_design",            ["paint_design"], [],               "",             "Paint Design"],
 
-        ["bug_behavior", "bug_behavior", "Behavior"],
+        ["bug_behavior",            ["bug_behavior"], [],               "bug_behavior", "Behavior"],
 
-        ["bug_frame", "bug_frame", "Frame", {"coreSlot":true}],
-        ["bug_mod", "", "Additional Modification"],
+        ["bug_frame",               ["bug_frame"], [],                  "bug_frame",    "Frame", {"coreSlot":true}],
+        ["bug_mod",                 ["bug_mod"], [],                    "",             "Additional Modification"],
     ],
     "scaledragCoef":1.1,
     "controller": [
         ["fileName"],
-        ["vehicleController", {}],
+        ["vehicleController/vehicleController", {}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$brakestrength", "range", "", "Chassis", 1, 0.6, 1.0, "Brake Force Multiplier", "Scales the overall brake torque for this setup", {"minDis":60, "maxDis":100}],
         ["$ffbstrength", "range", "", "Chassis", 1, 0.5, 1.5, "Setup-Specific Force Feedback Multiplier", "Scales the force feedback strength for THIS SETUP ONLY", {"minDis":50, "maxDis":150}]
+        ["$headlightPitchComp", "range", "degree", "Headlights", 0, -3, 3, "Setup Specific Headlight Pitch Compensation", "Adjusts the headlight pitch  for this setup", {"minDis":-3, "maxDis":3}]
     ],
     "sounds": {
         "cabinFilterCoef": 0
@@ -60,82 +67,94 @@
     "components": {
         "electrics": {
             "customValues": [
-                ["electricsName", "electricsFunction"],
+                ["electricsName", "electricsFunction","electricsDefault"],
 
                 // --- Power ---
 
                 // Ext. Lights
-                ["power__lowbeam"               , "(electrics.lowbeam or 0)                   * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                ["power__highbeam"              , "(electrics.highbeam or 0)                  * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                ["power__lowhighbeam"           , "(electrics.lowhighbeam or 0)               * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                ["power__brake"                 , "(electrics.brake or 0)                     * electrics.powerOn"],
+                ["power__lowbeam"               , "(electrics.lowbeam or 0)                   * electrics.electricalLoadCoef * electrics.powerOnRatio", 0],
+                ["power__highbeam"              , "(electrics.highbeam or 0)                  * electrics.electricalLoadCoef * electrics.powerOnRatio", 0],
+                ["power__lowhighbeam"           , "(electrics.lowhighbeam or 0)               * electrics.electricalLoadCoef * electrics.powerOnRatio", 0],
+                ["power__lowhighbrake"          , "(electrics.lowhighbeam * 0.25  + electrics.brakelights * 0.75 ) * electrics.electricalLoadCoef * electrics.powerOnRatio",0],
+                ["power__brake"                 , "(electrics.brake > 0 and 1 or 0)           * electrics.powerOn", 0],
 
-                ["power__signal_L"              , "(electrics.signal_L or 0)                  * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                ["power__signal_R"              , "(electrics.signal_R or 0)                  * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                // unused ["power__lowhighbeam_signal_L"  , "(electrics.lowhighbeam_signal_L or 0)      * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                // unused ["power__lowhighbeam_signal_R"  , "(electrics.lowhighbeam_signal_R or 0)      * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                ["power__usdm_signal_L"         , "min(electrics.power__signal_L+electrics.power__lowhighbeam*0.49,1)"],
-                ["power__usdm_signal_R"         , "min(electrics.power__signal_R+electrics.power__lowhighbeam*0.49,1)"],
+                // No soomthers for these: Used for USDM/EU signals
+                ["power__signal_L"              , "(electrics.signal_L or 0)                  * electrics.electricalLoadCoef * electrics.powerOnRatio", 0],
+                ["power__signal_R"              , "(electrics.signal_R or 0)                  * electrics.electricalLoadCoef * electrics.powerOnRatio", 0],
+                ["power__usdm_signal_L"         , "((electrics.signal_L or 0) * 0.75 + (electrics.lowhighbeam or 0) * 0.25) * electrics.electricalLoadCoef * electrics.powerOnRatio", 0],
+                ["power__usdm_signal_R"         , "((electrics.signal_R or 0) * 0.75 + (electrics.lowhighbeam or 0) * 0.25) * electrics.electricalLoadCoef * electrics.powerOnRatio", 0],
 
-                ["power__underglow"             , "(electrics.underglow or 0)          * electrics.electricalLoadCoef * electrics.powerOnRatio"],
-                ["power__lightbar"              , "(electrics.lightbar or 0)           * electrics.electricalLoadCoef * electrics.powerOn"],
+                // power__signal_FL and power__signal_FR are defined in bug.fenders.lights.jbeam.
+                ["power__signal_RL"             , "(electrics.signal_L or 0)                  * electrics.electricalLoadCoef * electrics.powerOnRatio", 0],
+                ["power__signal_RR"             , "(electrics.signal_R or 0)                  * electrics.electricalLoadCoef * electrics.powerOnRatio", 0],
+                // unused ["power__lowhighbeam_signal_L"  , "(electrics.lowhighbeam_signal_L or 0)      * electrics.electricalLoadCoef * electrics.powerOnRatio", 0],
+                // unused ["power__lowhighbeam_signal_R"  , "(electrics.lowhighbeam_signal_R or 0)      * electrics.electricalLoadCoef * electrics.powerOnRatio", 0],
 
-                ["power__lightbarLED"           , "(electrics.lightbar or 0)           * electrics.powerOn"],
-                ["power__underglowLED"          , "(electrics.underglow or 0)          * electrics.powerOnRatio"],
-                ["power__nitrousOxideArm"       , "(electrics.nitrousOxideArm or 0)    * electrics.powerRatio"],
+                ["power__underglow"             , "(electrics.underglow or 0)          * electrics.electricalLoadCoef * electrics.powerOnRatio", 0],
+                ["power__lightbar"              , "(electrics.lightbar or 0)           * electrics.electricalLoadCoef * electrics.powerOn", 0],
+
+                ["power__lightbarLED"           , "(electrics.lightbar or 0)           * electrics.powerOn", 0],
+                ["power__underglowLED"          , "(electrics.underglow or 0)          * electrics.powerOnRatio", 0],
+                ["power__nitrousOxideArm"       , "(electrics.nitrousOxideArm or 0)    * electrics.powerRatio", 0],
 
                 // Interior
-                ["power__gauges"                , "(electrics.lowhighbeam or 0)        * electrics.electricalLoadCoef * electrics.powerOn"],
-                ["power__oilpressure_low"       , "(electrics.oilpressure_low or 0)    * electrics.powerOn"],
-                ["power__oil"                   , "(electrics.oil or 0)                * electrics.powerOn"],
-                ["power__regeneration"          , "(electrics.regeneration or 0)       * electrics.powerOn"],
-                ["power__generatorPower_low"    , "(electrics.generatorPower_low or 0) * electrics.powerOn"],
-                ["power__checkengine"           , "(electrics.checkengine and 1 or 0)  * electrics.powerOn"],
-                ["power__radio_state"           , "(electrics.radio_state or 0)        * electrics.powerOn"],
-                ["power__hazard"                , "(electrics.hazard or 0)             * electrics.powerOn"],
-                ["power__signal_dash"           , "((electrics.signal_L or 0)*0.49 + (electrics.signal_R or 0)*0.49) * electrics.powerOn"],
+                ["power__gauges"                , "(electrics.lowhighbeam or 0)        * electrics.powerOn", 0],
+                ["power__oilpressure_low"       , "(electrics.oilpressure_low or 0)    * electrics.powerOn", 0],
+                ["power__oil"                   , "(electrics.oil or 0)                * electrics.powerOn", 0],
+                ["power__regeneration"          , "(electrics.regeneration or 0)       * electrics.powerOn", 0],
+                ["power__generatorPower_low"    , "(electrics.generatorPower_low or 0) * electrics.powerOn", 0],
+                ["power__checkengine"           , "(electrics.checkengine and 1 or 0)  * electrics.powerOn", 0],
+                ["power__radio_state"           , "(electrics.radio_state or 0)        * electrics.powerOn", 0],
+                ["power__hazard"                , "(electrics.hazard or 0)             * electrics.powerOn", 0],
+                ["power__signal_dash"           , "((electrics.signal_L or 0)*0.49 + (electrics.signal_R or 0)*0.49) * electrics.powerOn", 0],
                 
-                ["power__interiorlightstate"    , "(electrics.interiorlightstate or 0) * electrics.powerRatio"],
+                ["power__interiorlightstate"    , "(electrics.interiorlightstate or 0) * electrics.powerRatio", 0],
 
                 
                 // --- Animations ---
 
                 // Technical
-                ["anim__wipers"                   , "(electrics.wipers or 0)"],
-                ["anim__ragtop_state"             , "(electrics.ragtop_state or 0)"],
-                ["anim__foglightcoverstate"       , "(electrics.foglightcoverstate or 1)"],   // Assume open if value missing
+                ["anim__wipers"                   , "(electrics.wipers or 0)", 0],
+                ["anim__ragtop_state"             , "(electrics.ragtop_state or 0)", 0],
+                ["anim__foglightcoverstate"       , "(electrics.foglightcoverstate or 1)", 0],   // Assume open if value missing
                 
                 // Doors
-                ["anim__windowFL_state"           , "(electrics.windowFL_state or 0)"],
-                ["anim__windowFR_state"           , "(electrics.windowFR_state or 0)"],
+                ["anim__windowFL_state"           , "(electrics.windowFL_state or 0)", 0],
+                ["anim__windowFR_state"           , "(electrics.windowFR_state or 0)", 0],
 
-                ["anim__vent_L_handle"            , "(electrics.doorventFL_state or 0) > 0.01 and 1 or 0"],
-                ["anim__vent_R_handle"            , "(electrics.doorventFR_state or 0) > 0.01 and 1 or 0"],
+                ["anim__vent_L_handle"            , "(electrics.doorventFL_state or 0) > 0.01 and 1 or 0", 0],
+                ["anim__vent_R_handle"            , "(electrics.doorventFR_state or 0) > 0.01 and 1 or 0", 0],
                 
                 // Dashboard
-                ["anim__parkingbrake"           , "(electrics.parkingbrake or 0)"],
-                ["anim__turnsignal"             , "(electrics.turnsignal or 0)"],
-                ["anim__ignitionLevel"          , "(electrics.ignitionLevel or 0)"],
+                ["anim__parkingbrake"           , "(electrics.parkingbrake or 0)", 0],
+                ["anim__turnsignal"             , "(electrics.turnsignal or 0)", 0],
+                ["anim__ignitionLevel"          , "(electrics.ignitionLevel or 0)", 0],
 
-                ["anim__hazard_enabled"         , "(electrics.hazard_enabled or 0)"],
-                ["anim__lights_state"           , "(electrics.lights_state or 0)"],
-                ["anim__wipersstate"            , "(electrics.wipersstate or 0)"],
-                ["anim__ashtraystate"           , "(electrics.ashtraystate or 0)"],
+                ["anim__hazard_enabled"         , "(electrics.hazard_enabled or 0)", 0],
+                ["anim__lights_state"           , "(electrics.lights_state or 0)", 0],
+                ["anim__wipersstate"            , "(electrics.wipersstate or 0)", 0],
+                ["anim__ashtraystate"           , "(electrics.ashtraystate or 0)", 0],
+
+                ["anim__heating_valve"          , "(electrics.heating_valve or 0)", 0],
+                ["anim__heating_ventFL"         , "(electrics.heating_ventFL or 0)", 0],
+                ["anim__heating_ventFR"         , "(electrics.heating_ventFR or 0)", 0],
+                ["anim__heating_ventRL"         , "(electrics.heating_ventRL or 0)", 0],
+                ["anim__heating_ventRR"         , "(electrics.heating_ventRR or 0)", 0],
 
                 // Radio
-                ["anim__radio_needle"          , "(electrics.radio_needle or 0)"],
-                ["anim__radio_buttons1"        , "(electrics.radio_buttons1 or 0)"],
-                ["anim__radio_buttons2"        , "(electrics.radio_buttons2 or 0)"],
-                ["anim__radio_buttons3"        , "(electrics.radio_buttons3 or 0)"],
-                ["anim__radio_buttons4"        , "(electrics.radio_buttons4 or 0)"],
-                ["anim__radio_buttons5"        , "(electrics.radio_buttons5 or 0)"],
-                ["anim__radio_tune"            , "(electrics.radio_needle or 0)"],
-                ["anim__radio_volume"          , "(electrics.radio_volume or 0)"],
+                ["anim__radio_needle"          , "(electrics.radio_needle or 0)", 0],
+                ["anim__radio_buttons1"        , "(electrics.radio_buttons1 or 0)", 0],
+                ["anim__radio_buttons2"        , "(electrics.radio_buttons2 or 0)", 0],
+                ["anim__radio_buttons3"        , "(electrics.radio_buttons3 or 0)", 0],
+                ["anim__radio_buttons4"        , "(electrics.radio_buttons4 or 0)", 0],
+                ["anim__radio_buttons5"        , "(electrics.radio_buttons5 or 0)", 0],
+                ["anim__radio_tune"            , "(electrics.radio_needle or 0)", 0],
+                ["anim__radio_volume"          , "(electrics.radio_volume or 0)", 0],
 
                 // Switchboard
-                ["anim__lightbar"              , "(electrics.lightbar or 0)"],
-                ["anim__underglow"             , "(electrics.underglow or 0)"],
-                ["anim__extlight"              , "(electrics.extlight or 0)"],
+                ["anim__lightbar"              , "(electrics.lightbar or 0)", 0],
+                ["anim__underglow"             , "(electrics.underglow or 0)", 0],
+                ["anim__extlight"              , "(electrics.extlight or 0)", 0],
             ],
             "smoothers": [
                 ["electricsName", "smootherType", "params"],
@@ -149,12 +168,13 @@
                 ["power__lowbeam","temporalNonLinear", [10,10]],
                 ["power__highbeam","temporalNonLinear", [10,10]],
                 ["power__lowhighbeam","temporalNonLinear", [10,10]],
+                ["power__lowhighbrake","temporalNonLinear", [5,5]],
                 ["power__brake","temporalNonLinear", [10,10]],
 
-                ["power__signal_L","temporalNonLinear", [10,10]],
-                ["power__signal_R","temporalNonLinear", [10,10]],
-                ["power__lowhighbeam_signal_L","temporalNonLinear", [10,10]],
-                ["power__lowhighbeam_signal_R","temporalNonLinear", [10,10]],
+                ["power__signal_RL","temporalNonLinear", [10,10]],
+                ["power__signal_RR","temporalNonLinear", [10,10]],
+                // unsued ["power__lowhighbeam_signal_L","temporalNonLinear", [10,10]],
+                // unsued ["power__lowhighbeam_signal_R","temporalNonLinear", [10,10]],
 
                 ["power__underglow","temporalNonLinear", [15,15]],
                 // Not working with props ["power__lightbar","temporalNonLinear", [5,5]],
@@ -195,6 +215,12 @@
                 ["anim__lights_state","exponential", [10]],
                 ["anim__wipersstate","exponential", [10]],
                 ["anim__ashtraystate","exponential", [30]],
+
+                ["anim__heating_valve","temporal", [3,3]],
+                ["anim__heating_ventFL","temporal", [3,3]],
+                ["anim__heating_ventFR","temporal", [3,3]],
+                ["anim__heating_ventRL","temporal", [3,3]],
+                ["anim__heating_ventRR","temporal", [3,3]],
                 
                 // Radio
                 ["anim__radio_needle","exponential", [30]],

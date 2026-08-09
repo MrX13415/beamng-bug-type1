@@ -7,7 +7,7 @@
     "beacon_color":"beacon_color_blue",
     "brakepad_F":"brakepad_F",
     "brakepad_R":"brakepad_R",
-    "bug_6pack":"",
+    "bug_footwell_FR":"",
     "bug_battery":"bug_battery",
     "bug_behavior":"",
     "bug_body":"bug_body",

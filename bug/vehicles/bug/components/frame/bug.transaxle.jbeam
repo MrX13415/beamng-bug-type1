@@ -7,11 +7,11 @@
         "value":500,
     },
     "slotType" : "bug_transaxle",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_converter","bug_torque_converter","Torque Converter", {"coreSlot":true}],
-        ["bug_differential_R","bug_differential_R", "Rear Differential", {"coreSlot":true}],
+        ["bug_converter",      ["bug_converter"], [],      "bug_torque_converter", "Torque Converter",  {"coreSlot":true}],
+        ["bug_differential_R", ["bug_differential_R"], [], "bug_differential_R",   "Rear Differential", {"coreSlot":true}],
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -113,11 +113,11 @@
         "value":350,
     },
     "slotType" : "bug_transaxle",
-    "slots": [
-        ["type", "default","description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_flywheel","bug_flywheel","Flywheel", {"coreSlot":true}],
-        ["bug_differential_R","bug_differential_R", "Rear Differential", {"coreSlot":true}],
+        ["bug_flywheel",       ["bug_flywheel"], [],       "bug_flywheel",       "Flywheel",          {"coreSlot":true}],
+        ["bug_differential_R", ["bug_differential_R"], [], "bug_differential_R", "Rear Differential", {"coreSlot":true}],
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -220,11 +220,11 @@
         "value":350,
     },
     "slotType" : "bug_transaxle",
-    "slots": [
-        ["type", "default","description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_flywheel","bug_flywheel","Flywheel", {"coreSlot":true}],
-        ["bug_differential_R","bug_differential_R", "Rear Differential", {"coreSlot":true}],
+        ["bug_flywheel",       ["bug_flywheel"], [],       "bug_flywheel",       "Flywheel",          {"coreSlot":true}],
+        ["bug_differential_R", ["bug_differential_R"], [], "bug_differential_R", "Rear Differential", {"coreSlot":true}],
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -327,11 +327,11 @@
         "value":350,
     },
     "slotType" : "bug_transaxle",
-    "slots": [
-        ["type", "default","description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_flywheel","bug_flywheel","Flywheel", {"coreSlot":true}],
-        ["bug_differential_R","bug_differential_R", "Rear Differential", {"coreSlot":true}],
+        ["bug_flywheel",       ["bug_flywheel"], [],       "bug_flywheel",       "Flywheel",          {"coreSlot":true}],
+        ["bug_differential_R", ["bug_differential_R"], [], "bug_differential_R", "Rear Differential", {"coreSlot":true}],
     ],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
@@ -433,10 +433,10 @@
         "value":1600,
     },
     "slotType" : "bug_transaxle",
-    "slots": [
-        ["type", "default","description"],
-        ["bug_flywheel","bug_flywheel_race","Flywheel", {"coreSlot":true}],
-        ["bug_differential_R","bug_differential_R", "Rear Differential", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_flywheel",       ["bug_flywheel"], [],       "bug_flywheel_race",  "Flywheel",          {"coreSlot":true}],
+        ["bug_differential_R", ["bug_differential_R"], [], "bug_differential_R", "Rear Differential", {"coreSlot":true}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -597,9 +597,9 @@
         "value":300,
     },
     "slotType" : "bug_differential_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_finaldrive_R","bug_finaldrive_R_437", "Rear Final Drive", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_finaldrive_R", ["bug_finaldrive_R"], [], "bug_finaldrive_R_437", "Rear Final Drive", {"coreSlot":true}],
     ],
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"],
@@ -614,9 +614,9 @@
         "value":400,
     },
     "slotType" : "bug_differential_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_finaldrive_R","bug_finaldrive_R_437", "Rear Final Drive", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_finaldrive_R", ["bug_finaldrive_R"], [], "bug_finaldrive_R_437", "Rear Final Drive", {"coreSlot":true}],
     ],
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"],
@@ -630,9 +630,9 @@
         "value":400,
     },
     "slotType" : "bug_differential_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_finaldrive_R","bug_finaldrive_R_437", "Rear Final Drive", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_finaldrive_R", ["bug_finaldrive_R"], [], "bug_finaldrive_R_437", "Rear Final Drive", {"coreSlot":true}],
     ],
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"],
@@ -646,9 +646,9 @@
         "value":500,
     },
     "slotType" : "bug_differential_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_finaldrive_R","bug_finaldrive_R_437", "Rear Final Drive", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_finaldrive_R", ["bug_finaldrive_R"], [], "bug_finaldrive_R_437", "Rear Final Drive", {"coreSlot":true}],
     ],
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"],
@@ -663,9 +663,9 @@
         "value":1300,
     },
     "slotType" : "bug_differential_R",
-    "slots": [
-        ["type", "default", "description"],
-        ["bug_finaldrive_R","bug_finaldrive_R_race", "Rear Final Drive", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_finaldrive_R", ["bug_finaldrive_R"], [], "bug_finaldrive_R_race", "Rear Final Drive", {"coreSlot":true}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

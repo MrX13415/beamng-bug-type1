@@ -6,6 +6,6 @@
         "value":50,
     },
     "slotType" : "licenseplate_design_2_1",
-    "licenseplate_path" : "vehicles/common/licenseplates/bug_antarctica/licenseplate-bug-antarctica1.json",
+    "licenseplate_path" : "vehicles/common/licenseplates/bug_antarctica/licenseplate-bug-antarctica.sktemplate.json",
     },
 }

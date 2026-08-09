@@ -7,13 +7,13 @@
         "value":650,
     },
     "slotType" : "bug_hub_F",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["wheel_F_5_wide", "bug_rim_15x4_F", "Front Wheels", {"nodeOffset":{"x":"$=$trackoffset_F+0.140", "y":-1.20559, "z":0.33198}}],
+        ["wheel_F_5_wide",  ["wheel_F_5_wide"], [],  "bug_rim_15x4_F",       "Front Wheels",   {"nodeOffset":{"x":"$=$trackoffset_F+0.140", "y":-1.20559, "z":0.33198}}],
 
-        ["bug_brake_F_5lw","bug_brake_F_5lw_drum", "Front Brakes", {"nodeOffset":{"x":"$=$trackoffset_F+0.140", "y":-1.20559, "z":0.33198}}],
-        ["bug_wheeldata_F","bug_wheeldata_F", "Front Spindles", {"coreSlot":true}],
+        ["bug_brake_F_5lw", ["bug_brake_F_5lw"], [], "bug_brake_F_5lw_drum", "Front Brakes",   {"nodeOffset":{"x":"$=$trackoffset_F+0.140", "y":-1.20559, "z":0.33198}}],
+        ["bug_wheeldata_F", ["bug_wheeldata_F"], [], "bug_wheeldata_F",      "Front Spindles", {"coreSlot":true}],
     ],
 },
 
@@ -24,13 +24,13 @@
         "value":650,
     },
     "slotType" : "bug_hub_F",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["wheel_F_4", "steelwheel_01a_14x5.5_F", "Front Wheels", {"nodeOffset":{"x":"$=$trackoffset_F+0.160", "y":-1.20559, "z":0.33198}}],
+        ["wheel_F_4",       ["wheel_F_4"], [],       "steelwheel_01a_14x5.5_F", "Front Wheels",   {"nodeOffset":{"x":"$=$trackoffset_F+0.160", "y":-1.20559, "z":0.33198}}],
 
-        ["bug_brake_F","bug_brake_F", "Front Brakes", {"nodeOffset":{"x":"$=$trackoffset_F+0.160", "y":-1.20559, "z":0.33198}}],
-        ["bug_wheeldata_F","bug_wheeldata_F", "Front Spindles", {"coreSlot":true}],
+        ["bug_brake_F",     ["bug_brake_F"], [],     "bug_brake_F",             "Front Brakes",   {"nodeOffset":{"x":"$=$trackoffset_F+0.160", "y":-1.20559, "z":0.33198}}],
+        ["bug_wheeldata_F", ["bug_wheeldata_F"], [], "bug_wheeldata_F",         "Front Spindles", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -46,13 +46,13 @@
         "value":650,
     },
     "slotType" : "bug_hub_F",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["wheel_F_5", "steelwheel_03b_14x6_F", "Front Wheels", {"nodeOffset":{"x":"$=$trackoffset_F+0.140", "y":-1.20559, "z":0.33198}}],
+        ["wheel_F_5",       ["wheel_F_5"], [],       "steelwheel_03b_14x6_F", "Front Wheels",   {"nodeOffset":{"x":"$=$trackoffset_F+0.140", "y":-1.20559, "z":0.33198}}],
 
-        ["bug_brake_F","bug_brake_F", "Front Brakes", {"nodeOffset":{"x":"$=$trackoffset_F+0.140", "y":-1.20559, "z":0.33198}}],
-        ["bug_wheeldata_F","bug_wheeldata_F", "Front Spindles", {"coreSlot":true}],
+        ["bug_brake_F",     ["bug_brake_F"], [],     "bug_brake_F",           "Front Brakes",   {"nodeOffset":{"x":"$=$trackoffset_F+0.140", "y":-1.20559, "z":0.33198}}],
+        ["bug_wheeldata_F", ["bug_wheeldata_F"], [], "bug_wheeldata_F",       "Front Spindles", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -68,13 +68,13 @@
         "value":650,
     },
     "slotType" : "bug_hub_F",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["wheel_F_6", "steelwheel_02a_16x7_F", "Front Wheels", {"nodeOffset":{"x":"$=$trackoffset_F+0.125", "y":-1.20559, "z":0.33198}}],
+        ["wheel_F_6",       ["wheel_F_6"], [],       "steelwheel_02a_16x7_F", "Front Wheels",   {"nodeOffset":{"x":"$=$trackoffset_F+0.125", "y":-1.20559, "z":0.33198}}],
 
-        ["bug_brake_F","bug_brake_F", "Front Brakes", {"nodeOffset":{"x":"$=$trackoffset_F+0.125", "y":-1.20559, "z":0.33198}}],
-        ["bug_wheeldata_F","bug_wheeldata_F", "Front Spindles", {"coreSlot":true}],
+        ["bug_brake_F",     ["bug_brake_F"], [],     "bug_brake_F",           "Front Brakes",   {"nodeOffset":{"x":"$=$trackoffset_F+0.125", "y":-1.20559, "z":0.33198}}],
+        ["bug_wheeldata_F", ["bug_wheeldata_F"], [], "bug_wheeldata_F",       "Front Spindles", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

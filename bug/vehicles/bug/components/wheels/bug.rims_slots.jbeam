@@ -4,16 +4,27 @@
 "bug_rim_15x4_slots_F": {
     "information":{
         "authors":"Vertex Style",
-        "name":"15x4 10-Slot Wheels",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelNameNoColor",
+            "ctx":{
+                "size":"15x4",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND 10-Slot Wheels",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.VW",
+                    }
+                },
+            }
+        },
         "value":130,
     },
     "slotType" : "wheel_F_5_wide",
-    "slots": [
-        ["type", "default", "description"],
-		["hubcap_F","hubcap_smoothie_F", "Hubcaps"],
-        ["tire_F_15x4","bug_tire_gy_15x4_F", "Tires"],
-        ["skin_rim1_F","bug_rim1_F_paint1", "Outer Color", {"coreSlot":true}],
-        ["skin_rim2_F","bug_rim2_F_paint1", "inner Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+		["hubcap_F",    ["hubcap_F"], [],    "hubcap_smoothie_F",  "Front Hubcaps"],
+        ["tire_F_15x4", ["tire_F_15x4"], [], "bug_tire_gy_15x4_F", "Front Tires"],
+        ["skin_rim1_F", ["skin_rim1_F"], [], "bug_rim1_F_paint1",  "Front Outer Color", {"coreSlot":true}],
+        ["skin_rim2_F", ["skin_rim2_F"], [], "bug_rim2_F_paint1",  "Front Inner Color", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -78,16 +89,27 @@
 "bug_rim_15x4_slots_R": {
     "information":{
         "authors":"Vertex Style",
-        "name":"15x4 10-Slot Wheels",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelNameNoColor",
+            "ctx":{
+                "size":"15x4",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND 10-Slot Wheels",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.VW",
+                    }
+                },
+            }
+        },
         "value":60,
     },
     "slotType" : "wheel_R_5_wide",
-    "slots": [
-        ["type", "default", "description"],
-		["hubcap_R","hubcap_smoothie_R", "Hubcaps"],
-        ["tire_R_15x4","bug_tire_gy_15x4_R", "Tires"],
-        ["skin_rim1_R","bug_rim1_R_paint1", "Outer Color", {"coreSlot":true}],
-        ["skin_rim2_R","bug_rim2_R_paint1", "inner Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+		["hubcap_R",    ["hubcap_R"], [],    "hubcap_smoothie_R",  "Rear Hubcaps"],
+        ["tire_R_15x4", ["tire_R_15x4"], [], "bug_tire_gy_15x4_R", "Rear Tires"],
+        ["skin_rim1_R", ["skin_rim1_R"], [], "bug_rim1_R_paint1",  "Rear Outer Color", {"coreSlot":true}],
+        ["skin_rim2_R", ["skin_rim2_R"], [], "bug_rim2_R_paint1",  "Rear Inner Color", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -154,16 +176,27 @@
 "bug_rim_14x5.5_slots_F": {
     "information":{
         "authors":"Vertex Style",
-        "name":"14x5.5 10-Slot WWheels",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelNameNoColor",
+            "ctx":{
+                "size":"14x5.5",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND 10-Slot Wheels",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.VW",
+                    }
+                },
+            }
+        },
         "value":130,
     },
     "slotType" : "wheel_F_5_wide",
-    "slots": [
-        ["type", "default", "description"],
-		["hubcap_F","hubcap_smoothie_F", "Hubcaps"],
-        ["tire_F_14x5.5","tire_F_175_65_14_standard", "Tires", {"nodeOffset":{"x":0.176,"y":-1.20559,"z":0.33198}}],
-        ["skin_rim1_F","bug_rim1_F_paint1", "Outer Color", {"coreSlot":true}],
-        ["skin_rim2_F","bug_rim2_F_paint1", "inner Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+		["hubcap_F",      ["hubcap_F"], [],      "hubcap_smoothie_F",         "Front Hubcaps"],
+        ["tire_F_14x5.5", ["tire_F_14x5.5"], [], "tire_F_175_65_14_standard", "Front Tires",       {"nodeOffset":{"x":0.176,"y":-1.20559,"z":0.33198}}],
+        ["skin_rim1_F",   ["skin_rim1_F"], [],   "bug_rim1_F_paint1",         "Front Outer Color", {"coreSlot":true}],
+        ["skin_rim2_F",   ["skin_rim2_F"], [],   "bug_rim2_F_paint1",         "Front Inner Color", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -171,8 +204,8 @@
 		//["inner_brakedrum",   ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.48, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 		//["brakedrum_white_F",   ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.48, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
 		//["brakedrum_white_F",   ["wheel_FL","wheelhub_FL"], [], {"pos":{"x": 0.48, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
-        ["rim_14x5.5_slots",   ["wheel_FR","wheelhub_FR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"], ["bug_rim_paint2","bug_rim_paint2_F"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
-        ["rim_14x5.5_slots",   ["wheel_FL","wheelhub_FL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"], ["bug_rim_paint2","bug_rim_paint2_F"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_rim_14x5.5_slots",   ["wheel_FR","wheelhub_FR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"], ["bug_rim_paint2","bug_rim_paint2_F"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_rim_14x5.5_slots",   ["wheel_FL","wheelhub_FL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_F"], ["bug_rim_paint2","bug_rim_paint2_F"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 	],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -228,16 +261,27 @@
 "bug_rim_14x5.5_slots_R": {
     "information":{
         "authors":"Vertex Style",
-        "name":"14x5.5 10-Slot Wheels",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelNameNoColor",
+            "ctx":{
+                "size":"14x5.5",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND 10-Slot Wheels",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.VW",
+                    }
+                },
+            }
+        },
         "value":130,
     },
     "slotType" : "wheel_R_5_wide",
-    "slots": [
-        ["type", "default", "description"],
-		["hubcap_R","hubcap_smoothie_R", "Hubcaps"],
-        ["tire_R_14x5.5","tire_R_175_65_14_standard", "Tires", {"nodeOffset":{"x":0.176,"y":1.17,"z":0.297021}}],
-        ["skin_rim1_R","bug_rim1_R_paint1", "Outer Color", {"coreSlot":true}],
-        ["skin_rim2_R","bug_rim2_R_paint1", "inner Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+		["hubcap_R",      ["hubcap_R"], [],      "hubcap_smoothie_R",         "Rear Hubcaps"],
+        ["tire_R_14x5.5", ["tire_R_14x5.5"], [], "tire_R_175_65_14_standard", "Rear Tires",       {"nodeOffset":{"x":0.176,"y":1.17,"z":0.297021}}],
+        ["skin_rim1_R",   ["skin_rim1_R"], [],   "bug_rim1_R_paint1",         "Rear Outer Color", {"coreSlot":true}],
+        ["skin_rim2_R",   ["skin_rim2_R"], [],   "bug_rim2_R_paint1",         "Rear Inner Color", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -245,8 +289,8 @@
 		//["inner_brakedrum",   ["wheel_RL","wheelhub_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
 		//["brakedrum_white_B",   ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
 		//["brakedrum_white_B",   ["wheel_RL","wheelhub_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
-        ["rim_14x5.5_slots",   ["wheel_RR","wheelhub_RR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"], ["bug_rim_paint2","bug_rim_paint2_R"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
-        ["rim_14x5.5_slots",   ["wheel_RL","wheelhub_RL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"], ["bug_rim_paint2","bug_rim_paint2_R"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_rim_14x5.5_slots",   ["wheel_RR","wheelhub_RR"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"], ["bug_rim_paint2","bug_rim_paint2_R"]], "pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_rim_14x5.5_slots",   ["wheel_RL","wheelhub_RL"], [], {"materialOverride":[["bug_rim_paint1","bug_rim_paint1_R"], ["bug_rim_paint2","bug_rim_paint2_R"]], "pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -302,16 +346,27 @@
 "bug_rim_14x6_slots_F": {
     "information":{
         "authors":"Vertex Style",
-        "name":"14x6 10-Slot Wheels",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelNameNoColor",
+            "ctx":{
+                "size":"14x6",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND 10-Slot Wheels",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.VW",
+                    }
+                },
+            }
+        },
         "value":130,
     },
     "slotType" : "wheel_F_5_wide",
-    "slots": [
-        ["type", "default", "description"],
-		["hubcap_F","hubcap_smoothie_F", "Hubcaps"],
-        ["tire_F_14x6","tire_F_735_14_ww", "Tires"],
-        ["skin_rim1_F","bug_rim1_F_paint1", "Outer Color", {"coreSlot":true}],
-        ["skin_rim2_F","bug_rim2_F_paint1", "inner Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+		["hubcap_F",    ["hubcap_F"], [],    "hubcap_smoothie_F", "Front Hubcaps"],
+        ["tire_F_14x6", ["tire_F_14x6"], [], "tire_F_735_14_ww",  "Front Tires"],
+        ["skin_rim1_F", ["skin_rim1_F"], [], "bug_rim1_F_paint1", "Front Outer Color", {"coreSlot":true}],
+        ["skin_rim2_F", ["skin_rim2_F"], [], "bug_rim2_F_paint1", "Front Inner Color", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -376,16 +431,27 @@
 "bug_rim_14x6_slots_R": {
     "information":{
         "authors":"Vertex Style",
-        "name":"14x6 10-Slot Wheels",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelNameNoColor",
+            "ctx":{
+                "size":"14x6",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND 10-Slot Wheels",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.VW",
+                    }
+                },
+            }
+        },
         "value":130,
     },
     "slotType" : "wheel_R_5_wide",
-    "slots": [
-        ["type", "default", "description"],
-		["hubcap_R","hubcap_smoothie_R", "Hubcaps"],
-        ["tire_R_14x6","tire_R_735_14_ww", "Tires"],
-        ["skin_rim1_R","bug_rim1_R_paint1", "Outer Color", {"coreSlot":true}],
-        ["skin_rim2_R","bug_rim2_R_paint1", "inner Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+		["hubcap_R",    ["hubcap_R"], [],    "hubcap_smoothie_R", "Rear Hubcaps"],
+        ["tire_R_14x6", ["tire_R_14x6"], [], "tire_R_735_14_ww",  "Rear Tires"],
+        ["skin_rim1_R", ["skin_rim1_R"], [], "bug_rim1_R_paint1", "Rear Outer Color", {"coreSlot":true}],
+        ["skin_rim2_R", ["skin_rim2_R"], [], "bug_rim2_R_paint1", "Rear Inner Color", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -451,16 +517,27 @@
 "bug_rim_14x7_slots_F": {
     "information":{
         "authors":"Vertex Style",
-        "name":"14x7 10-Slot Wheels",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelNameNoColor",
+            "ctx":{
+                "size":"14x7",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND 10-Slot Wheels",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.VW",
+                    }
+                },
+            }
+        },
         "value":130,
     },
     "slotType" : "wheel_F_5_wide",
-    "slots": [
-        ["type", "default", "description"],
-		["hubcap_F","hubcap_smoothie_F", "Hubcaps"],
-        ["tire_F_14x7_alt","tire_F_185_60_14_alt_standard", "Tires", {"nodeOffset":{"x":0.135,"y":-1.20559,"z":0.33198}}],
-        ["skin_rim1_F","bug_rim1_F_paint1", "Outer Color", {"coreSlot":true}],
-        ["skin_rim2_F","bug_rim2_F_paint1", "inner Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+		["hubcap_F",        ["hubcap_F"], [],        "hubcap_smoothie_F",             "Front Hubcaps"],
+        ["tire_F_14x7_alt", ["tire_F_14x7_alt"], [], "tire_F_185_60_14_alt_standard", "Front Tires",       {"nodeOffset":{"x":0.135,"y":-1.20559,"z":0.33198}}],
+        ["skin_rim1_F",     ["skin_rim1_F"], [],     "bug_rim1_F_paint1",             "Front Outer Color", {"coreSlot":true}],
+        ["skin_rim2_F",     ["skin_rim2_F"], [],     "bug_rim2_F_paint1",             "Front Inner Color", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -525,16 +602,27 @@
 "bug_rim_14x7_slots_R": {
     "information":{
         "authors":"Vertex Style",
-        "name":"14x7 10-Slot Wheels",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelNameNoColor",
+            "ctx":{
+                "size":"14x7",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND 10-Slot Wheels",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.VW",
+                    }
+                },
+            }
+        },
         "value":130,
     },
     "slotType" : "wheel_R_5_wide",
-    "slots": [
-        ["type", "default", "description"],
-		["hubcap_R","hubcap_smoothie_R", "Hubcaps"],
-        ["tire_R_14x7_alt","tire_R_185_60_14_alt_standard", "Tires", {"nodeOffset":{"x":0.135,"y":1.17,"z":0.297021}}],
-        ["skin_rim1_R","bug_rim1_R_paint1", "Outer Color", {"coreSlot":true}],
-        ["skin_rim2_R","bug_rim2_R_paint1", "inner Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+		["hubcap_R",        ["hubcap_R"], [],        "hubcap_smoothie_R",             "Rear Hubcaps"],
+        ["tire_R_14x7_alt", ["tire_R_14x7_alt"], [], "tire_R_185_60_14_alt_standard", "Rear Tires",       {"nodeOffset":{"x":0.135,"y":1.17,"z":0.297021}}],
+        ["skin_rim1_R",     ["skin_rim1_R"], [],     "bug_rim1_R_paint1",             "Rear Outer Color", {"coreSlot":true}],
+        ["skin_rim2_R",     ["skin_rim2_R"], [],     "bug_rim2_R_paint1",             "Rear Inner Color", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -603,16 +691,27 @@
 "bug_rim_15x6_slots_F": {
     "information":{
         "authors":"Vertex Style",
-        "name":"15x6 10-Slot Wheels",
+        "name":{
+            "txt":"ui.vehicleconfig.generic.wheelNameNoColor",
+            "ctx":{
+                "size":"15x6",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND 10-Slot Wheels",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.VW",
+                    }
+                },
+            }
+        },
         "value":130,
     },
     "slotType" : "wheel_F_5_wide",
-    "slots": [
-        ["type", "default", "description"],
-		["hubcap_F","hubcap_smoothie_F", "Hubcaps"],
-        ["tire_F_15x6","tire_F_800_15_ww", "Tires"],
-        ["skin_rim1_F","bug_rim1_F_paint1", "Outer Color", {"coreSlot":true}],
-        ["skin_rim2_F","bug_rim2_F_paint1", "inner Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+		["hubcap_F",    ["hubcap_F"], [],    "hubcap_smoothie_F", "Front Hubcaps"],
+        ["tire_F_15x6", ["tire_F_15x6"], [], "tire_F_800_15_ww",  "Front Tires"],
+        ["skin_rim1_F", ["skin_rim1_F"], [], "bug_rim1_F_paint1", "Front Outer Color", {"coreSlot":true}],
+        ["skin_rim2_F", ["skin_rim2_F"], [], "bug_rim2_F_paint1", "Front Inner Color", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -677,17 +776,28 @@
 "bug_rim_15x6_slots_R": {
     "information":{
         "authors":"Vertex Style",
-        "name":"15x6 10-Slot Wheels",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelNameNoColor",
+            "ctx":{
+                "size":"15x6",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND 10-Slot Wheels",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.VW",
+                    }
+                },
+            }
+        },
         "value":130,
     },
 
     "slotType" : "wheel_R_5_wide",
-    "slots": [
-        ["type", "default", "description"],
-		["hubcap_R","hubcap_smoothie_R", "Hubcaps"],
-        ["tire_R_15x6","tire_R_800_15_ww", "Tires"],
-        ["skin_rim1_R","bug_rim1_R_paint1", "Outer Color", {"coreSlot":true}],
-        ["skin_rim2_R","bug_rim2_R_paint1", "inner Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+		["hubcap_R",    ["hubcap_R"], [],    "hubcap_smoothie_R", "Rear Hubcaps"],
+        ["tire_R_15x6", ["tire_R_15x6"], [], "tire_R_800_15_ww",  "Rear Tires"],
+        ["skin_rim1_R", ["skin_rim1_R"], [], "bug_rim1_R_paint1", "Rear Outer Color", {"coreSlot":true}],
+        ["skin_rim2_R", ["skin_rim2_R"], [], "bug_rim2_R_paint1", "Rear Inner Color", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -756,16 +866,27 @@
 "bug_rim_15x7_slots_F": {
     "information":{
         "authors":"53_herbie_53",
-        "name":"15x7 10-Slot Wheels",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelNameNoColor",
+            "ctx":{
+                "size":"15x7",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND 10-Slot Wheels",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.VW",
+                    }
+                },
+            }
+        },
         "value":160,
     },
     "slotType" : "wheel_F_5_wide",
-    "slots": [
-        ["type", "default", "description"],
-		["hubcap_F","hubcap_smoothie_F", "Hubcaps"],
-        ["tire_F_15x7_alt","bug_tire_gy_15x7_F", "Tires"],
-        ["skin_rim1_F","bug_rim1_F_paint1", "Outer Color", {"coreSlot":true}],
-        ["skin_rim2_F","bug_rim2_F_paint1", "inner Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+		["hubcap_F",        ["hubcap_F"], [],        "hubcap_smoothie_F",  "Front Hubcaps"],
+        ["tire_F_15x7_alt", ["tire_F_15x7_alt"], [], "bug_tire_gy_15x7_F", "Front Tires"],
+        ["skin_rim1_F",     ["skin_rim1_F"], [],     "bug_rim1_F_paint1",  "Front Outer Color", {"coreSlot":true}],
+        ["skin_rim2_F",     ["skin_rim2_F"], [],     "bug_rim2_F_paint1",  "Front Inner Color", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -829,16 +950,27 @@
 "bug_rim_15x7_slots_R": {
     "information":{
         "authors":"53_herbie_53",
-        "name":"15x7 10-Slot Wheels",
+        "name": {
+            "txt":"ui.vehicleconfig.generic.wheelNameNoColor",
+            "ctx":{
+                "size":"15x7",
+                "type":{
+                    "txt":"ui.vehicleconfig.information.type.BRAND 10-Slot Wheels",
+                    "ctx":{
+                        "brand1":"ui.vehicleconfig.brand.VW",
+                    }
+                },
+            }
+        },
         "value":160,
     },
     "slotType" : "wheel_R_5_wide",
-    "slots": [
-        ["type", "default", "description"],
-		["hubcap_R","hubcap_smoothie_R", "Hubcaps"],
-        ["tire_R_15x7_alt","bug_tire_gy_15x7_R", "Tires"],
-        ["skin_rim1_R","bug_rim1_R_paint1", "Outer Color", {"coreSlot":true}],
-        ["skin_rim2_R","bug_rim2_R_paint1", "inner Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+		["hubcap_R",        ["hubcap_R"], [],        "hubcap_smoothie_R",  "Rear Hubcaps"],
+        ["tire_R_15x7_alt", ["tire_R_15x7_alt"], [], "bug_tire_gy_15x7_R", "Rear Tires"],
+        ["skin_rim1_R",     ["skin_rim1_R"], [],     "bug_rim1_R_paint1",  "Rear Outer Color", {"coreSlot":true}],
+        ["skin_rim2_R",     ["skin_rim2_R"], [],     "bug_rim2_R_paint1",  "Rear Inner Color", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

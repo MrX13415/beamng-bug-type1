@@ -13,16 +13,22 @@
       },
       {
         "baseColorMap": "@DynamicTextureBaseColor",
+        "diffuseMapUseUV": 1,
         "colorPaletteMap": "@DynamicTextureColorPalette",
+        "colorPaletteMapUseUV": 1,
         "metallicMap": "@DynamicTextureMetallic",
+        "metallicMapUseUV": 1,
         "roughnessMap": "@DynamicTextureRoughness",
+        "roughnessMapUseUV": 1,
         "clearCoatFactor": 1,
         "clearCoatMap": "/vehicles/bug/components/common/textures/default_c.data.png",
-        "colorPaletteMapUseUV": 1,
+        "clearCoatMapUseUV": 1,
         "instanceDiffuse": true,
         "metallicFactor": 1,
         "normalMap": "/vehicles/bug/components/common/textures/default_n.dds",
-        "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png"
+        "normalMapUseUV": 1,
+        "opacityMap": "/vehicles/bug/components/common/textures/default_c.data.png",
+        "opacityMapUseUV": 1
       },
       {},
       {}

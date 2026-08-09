@@ -3,13 +3,13 @@
 "bug_brake_R_5lw_drum": {
     "information":{
         "authors":"BeamNG",
-        "name":"Rear Drum Brakes",
+        "name":"Rear Wide 5-Lug Drum Brakes",
         "value":200,
     },
     "slotType" : "bug_brake_R_5lw",
-    "slots": [
-        ["type", "default", "description"]
-        ["brakepad_R","brakepad_R", "Rear Brake Pads"{"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["brakepad_R", ["brakepad_R"], [], "brakepad_R", "Rear Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -41,13 +41,13 @@
 "bug_brake_R_5lw_disc": {
     "information":{
         "authors":"BeamNG",
-        "name":"Rear Disc Brakes",
+        "name":"Rear Wide 5-Lug Disc Brakes",
         "value":200,
     },
     "slotType" : "bug_brake_R_5lw",
-    "slots": [
-        ["type", "default", "description"]
-        ["brakepad_R","brakepad_R", "Rear Brake Pads"{"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["brakepad_R", ["brakepad_R"], [], "brakepad_R", "Rear Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -81,13 +81,13 @@
 "bug_brake_R_5lw_race": {
     "information":{
         "authors":"BeamNG",
-        "name":"Race Rear Disc Brakes",
+        "name":"Race Rear Wide 5-Lug Disc Brakes",
         "value":200,
     },
     "slotType" : "bug_brake_R_5lw",
-    "slots": [
-        ["type", "default", "description"]
-        ["brakepad_R","brakepad_R", "Rear Brake Pads"{"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["brakepad_R", ["brakepad_R"], [], "brakepad_R", "Rear Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -126,9 +126,9 @@
         "value":200,
     },
     "slotType" : "bug_brake_R",
-    "slots": [
-        ["type", "default", "description"]
-        ["brakepad_R","brakepad_R", "Rear Brake Pads"{"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["brakepad_R", ["brakepad_R"], [], "brakepad_R", "Rear Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -166,9 +166,9 @@
         "value":200,
     },
     "slotType" : "bug_brake_R",
-    "slots": [
-        ["type", "default", "description"]
-        ["brakepad_R","brakepad_R", "Rear Brake Pads", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["brakepad_R", ["brakepad_R"], [], "brakepad_R", "Rear Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -206,9 +206,9 @@
         "value":900,
     },
     "slotType" : "bug_brake_R",
-    "slots": [
-        ["type", "default", "description"]
-        ["brakepad_R","brakepad_R_race", "Rear Brake Pads"{"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["brakepad_R", ["brakepad_R"], [], "brakepad_R_race", "Rear Brake Pads", {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

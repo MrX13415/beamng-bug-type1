@@ -1,7 +1,9 @@
 BeamNG Mod: 1963 Volkswagen Type 1 "Beetle"
 
-Copyright (c) 2025 VertexStyle & MrX13415
-Version 26
+Copyright (c) 2026 VertexStyle & MrX13415
+Version 27
+
+This mod requires at least BeamNG.drive version 0.39.
 
 Distribution and uploading to other websites is strictly prohibited!
 _____________________________________________________________________

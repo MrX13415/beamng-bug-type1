@@ -1,6 +1,7 @@
 import os
 import sys
 import glob
+import stat
 import shutil
 import session
 from util import *
@@ -336,20 +337,41 @@ def clean():
     print("- Clean folder ...")
 
     # Determine files to be removed
-    files = getRemovableFiles(target)
+    items = getRemovableFiles(target)
 
+    files = [f for f in items if os.path.isfile(f)]
+    dirs = [d for d in items if os.path.isdir(d)]
+    dirs.sort(key=lambda d: len(d), reverse=True)  # Sort directories by length in descending order
+
+    errors = []
     for f in files:
-        if not os.path.isfile(f): continue
-        print(f"   Remove '{os.path.relpath(f, root)}'")
-        os.remove(f)
+        try:
+            print(f"   Remove '{os.path.relpath(f, root)}'")
+            os.chmod(f, stat.S_IWRITE)
+            os.remove(f)
+        except Exception as e:
+            errors.append(f"Error while removing file '{f}': {e}")
     #end
 
-    for d in files:
-        if not os.path.isdir(d): continue
-        shutil.rmtree(d)
+    for d in dirs:
+        try:
+            #print(f"   Remove '{os.path.relpath(d, root)}'")
+            os.chmod(d, stat.S_IWRITE)
+            shutil.rmtree(d)
+        except Exception as e:
+            errors.append(f"Error while removing directory '{d}': {e}")
     #end
 
-    print("  OK")
+    if len(errors) == 0:
+        print("  OK")
+        return
+    #end
+
+    print("  Errors occurred during cleaning:")
+    for error in errors:
+        print(f"   {error}")
+
+    print("  Failed")
 #end
 
 def copy():

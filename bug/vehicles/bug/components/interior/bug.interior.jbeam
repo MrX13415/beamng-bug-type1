@@ -7,27 +7,27 @@
         "value":20,
     },
     "slotType" : "bug_interior",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_interiorlight","bug_interiorlight", "Interior Light"]
+        ["bug_interiorlight",    ["bug_interiorlight"], [],    "bug_interiorlight",        "Interior Light"],
 
-        ["skin_interior1", "bug_skin_interior1_white", "Headliner Color", {"coreSlot":true}],
-        ["bug_side_panels", "bug_side_panels", "Side Panels"],
-        ["skin_floor_carpet", "bug_floor_carpet_black", "Carpet"],
+        ["skin_interior1",       ["skin_interior1"], [],       "bug_skin_interior1_white", "Headliner Color",    {"coreSlot":true}],
+        ["bug_side_panels",      ["bug_side_panels"], [],      "bug_side_panels",          "Side Panels"],
+        ["skin_floor_carpet",    ["skin_floor_carpet"], [],    "bug_floor_carpet_black",   "Carpet"],
 
-        ["bug_steer", "bug_steer_oem", "Steering Wheel", {"coreSlot":true}],
-        ["bug_dashboard", "bug_dashboard", "Dashboard"],
+        ["bug_steer",            ["bug_steer"], [],            "bug_steer_oem",            "Steering Wheel",     {"coreSlot":true}],
+        ["bug_dashboard",        ["bug_dashboard"], [],        "bug_dashboard",            "Dashboard"],
 
-        ["bug_sunvisor", "bug_sunvisors", "Sunvisors"],
-        ["bug_interior_mirror", "bug_interior_mirror", "Mirror"],
-        ["bug_interior_handles", "bug_interior_handles", "Pillar Grab Straps"],
-        ["bug_seats", "bug_seats", "Seats"],
+        ["bug_sunvisor",         ["bug_sunvisor"], [],         "bug_sunvisors",            "Sunvisors"],
+        ["bug_interior_mirror",  ["bug_interior_mirror"], [],  "bug_interior_mirror",      "Interior Mirror"],
+        ["bug_interior_handles", ["bug_interior_handles"], [], "bug_interior_handles",     "Boarding Handles"],
+        ["bug_seats",            ["bug_seats"], [],            "bug_seats",                "Seats"],
 
-        ["bug_rollbar","", "Rollbar"],
-        ["bug_window_decals", "", "Window Decals"],
+        ["bug_rollbar",          ["bug_rollbar"], [],          "",                         "Rollbar"],
+        ["bug_window_decals",    ["bug_window_decals"], [],    "",                         "Window Decals"],
 
-        ["bug_interior_luggage","bug_interior_luggage", "Interior Luggage"],
+        ["bug_interior_luggage", ["bug_interior_luggage"], [], "bug_interior_luggage",     "Interior Luggage"],
     ],
     "camerasInternal":[
         ["name", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
@@ -40,7 +40,8 @@
         // driver camera (make first value negative for right steering wheel)
         ["driver",     0.2555, 0.18, 1.24, 55, "f6l","f4l","f5l","f6tml","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
         // passenger seat
-        ["passenger", -0.2555, 0.18, 1.24, 55, "f6r","f4r","f5r","f6tmr","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+        {"rightHandDoor":true},
+        ["rider", -0.2555, 0.18, 1.24, 55, "f6r","f4r","f5r","f6tmr","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
     ], 
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -53,14 +54,14 @@
 "bug_interior_mirror": {
     "information":{
         "authors":"MrX13415",
-        "name":"Mirror",
+        "name":"Interior Mirror",
         "value":150,
     },
     "slotType" : "bug_interior_mirror",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_decoration1","", "Decoration"],
+        ["bug_decoration1", ["bug_decoration1"], [], "",        "Decoration"],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -167,7 +168,7 @@
 "bug_interior_handles": {
 	"information":{
         "authors": "BeamNG",
-        "name": "Pillar Grab Straps",
+        "name": "Boarding Handles",
         "value": 50,
     },
     "slotType" : "bug_interior_handles",
@@ -255,15 +256,15 @@
         "value": 200,
     },
     "slotType" : "bug_side_panels",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_side_panels_rear", "bug_side_panels_rear", "Rear Side Panels"],
-        ["skin_interior2", "bug_skin_interior2_gray", "Color 1", {"coreSlot":true}],
-        ["skin_interior3", "bug_skin_interior3_white", "Color 2", {"coreSlot":true}],
+        ["bug_side_panels_rear", ["bug_side_panels_rear"], [], "bug_side_panels_rear",     "Rear Side Panels"],
+        ["skin_interior2",       ["skin_interior2"], [],       "bug_skin_interior2_gray",  "Color 1",          {"coreSlot":true}],
+        ["skin_interior3",       ["skin_interior3"], [],       "bug_skin_interior3_white", "Color 2",          {"coreSlot":true}],
 
-        ["bug_doorpocket_FL", "bug_doorpocket_FL_empty", "Left Pocket", {"coreSlot":true}],
-        ["bug_doorpocket_FR", "bug_doorpocket_FR_empty", "Right Pocket", {"coreSlot":true}],
+        ["bug_doorpocket_FL",    ["bug_doorpocket_FL"], [],    "bug_doorpocket_FL_empty",  "Left Pocket",      {"coreSlot":true}],
+        ["bug_doorpocket_FR",    ["bug_doorpocket_FR"], [],    "bug_doorpocket_FR_empty",  "Right Pocket",     {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -276,6 +277,37 @@
         ["bug_interior_panels_FR_handle", ["bug_door_FR"]],
     ],
 },
+
+"bug_side_panels_old": {
+	"information":{
+        "authors": "BeamNG",
+        "name": "Side Panels (Old Warped)",
+        "value": 200,
+    },
+    "slotType" : "bug_side_panels",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+
+        ["bug_side_panels_rear", ["bug_side_panels_rear"], [], "bug_side_panels_rear",     "Rear Side Panels"],
+        ["skin_interior2",       ["skin_interior2"], [],       "bug_skin_interior2_gray",  "Color 1",          {"coreSlot":true}],
+        ["skin_interior3",       ["skin_interior3"], [],       "bug_skin_interior3_white", "Color 2",          {"coreSlot":true}],
+
+        ["bug_doorpocket_FL",    ["bug_doorpocket_FL"], [],    "bug_doorpocket_FL_empty",  "Left Pocket",      {"coreSlot":true}],
+        ["bug_doorpocket_FR",    ["bug_doorpocket_FR"], [],    "bug_doorpocket_FR_empty",  "Right Pocket",     {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        // doors
+        ["bug_interior_panels_old_FL",        ["bug_door_FL"]],
+        ["bug_interior_panels_FL_handle", ["bug_door_FL"]],
+
+        ["bug_interior_panels_old_FR",        ["bug_door_FR"]],
+        ["bug_interior_panels_FR_handle", ["bug_door_FR"]],
+    ],
+},
+
+
 "bug_side_panels_rear": {
 	"information":{
         "authors": "BeamNG",
@@ -310,11 +342,11 @@
         "value": 200,
     },
     "slotType" : "bug_side_panels",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_side_panels_simple_rear", "bug_side_panels_simple_rear", "Rear Side Panels"],
-        ["skin_interior3", "bug_skin_interior3_white", "Color", {"coreSlot":true}],
+        ["bug_side_panels_simple_rear", ["bug_side_panels_simple_rear"], [], "bug_side_panels_simple_rear", "Rear Side Panels"],
+        ["skin_interior3",              ["skin_interior3"], [],              "bug_skin_interior3_white",    "Color",            {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -360,10 +392,10 @@
         "value": 50,
     },
     "slotType" : "bug_sunvisor",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_sunvisor_kind", "bug_sunvisor_fabric", "Sunvisor", {"coreSlot": true}],
+        ["bug_sunvisor_kind", ["bug_sunvisor_kind"], [], "bug_sunvisor_fabric", "Sunvisors",    {"coreSlot": true}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -535,7 +567,7 @@
 "bug_sunvisor_fabric": {
 	"information":{
         "authors": "BeamNG",
-        "name": "Fabric Sunvisor",
+        "name": "Fabric Sunvisors",
         "value": 50,
     },
     "slotType" : "bug_sunvisor_kind",
@@ -548,7 +580,7 @@
 "bug_sunvisor_acrylic": {
 	"information":{
         "authors": "BeamNG",
-        "name": "Acrylic Sunvisor",
+        "name": "Acrylic Sunvisors",
         "value": 50,
     },
     "slotType" : "bug_sunvisor_kind",
@@ -582,9 +614,9 @@
         "value":80,
     },
     "slotType" : "bug_rollbar",
-    "slots": [
-        ["type", "default", "description"],
-        ["skin_rollcage","skin_rollcage_silver", "Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["skin_rollcage", ["skin_rollcage"], [], "skin_rollcage_silver", "Color",       {"coreSlot":true}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -694,9 +726,9 @@
         "value":100,
     },
     "slotType" : "bug_rollbar",
-    "slots": [
-        ["type", "default", "description"],
-        ["skin_rollcage","skin_rollcage_silver", "Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["skin_rollcage", ["skin_rollcage"], [], "skin_rollcage_silver", "Color",       {"coreSlot":true}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
@@ -817,9 +849,9 @@
         "value":200,
     },
     "slotType" : "bug_rollbar",
-    "slots": [
-        ["type", "default", "description"],
-        ["skin_rollcage","skin_rollcage_silver", "Color", {"coreSlot":true}],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["skin_rollcage", ["skin_rollcage"], [], "skin_rollcage_silver", "Color",       {"coreSlot":true}],
     ],
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],

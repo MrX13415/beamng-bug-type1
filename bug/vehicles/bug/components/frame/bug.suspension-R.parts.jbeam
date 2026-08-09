@@ -63,9 +63,9 @@
         "value":100,
     },
     "slotType":"bug_spring_R",
-    "slots":[
-        ["type", "default", "description"],
-        ["bug_shock_R","bug_shock_R","Rear Shocks"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_shock_R", ["bug_shock_R"], [], "bug_shock_R", "Rear Shocks"],
     ],
     "flexbodies":[
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -91,9 +91,9 @@
         "value":650,
     },
     "slotType":"bug_spring_R",
-    "slots":[
-        ["type", "default", "description"],
-        ["bug_shock_R","bug_shock_R_race","Rear Shocks"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["bug_shock_R", ["bug_shock_R"], [], "bug_shock_R_race", "Rear Shocks"],
     ],
     "flexbodies":[
         ["mesh", "[group]:", "nonFlexMaterials"],

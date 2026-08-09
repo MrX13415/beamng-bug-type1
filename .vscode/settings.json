@@ -1,7 +1,37 @@
 {
     "lua.targetVersion": "5.1",
     "Lua.workspace.library": [
-        "D:\\SteamLibrary\\steamapps\\common\\BeamNG.drive"
+        "D:\\SteamLibrary\\steamapps\\common\\BeamNG.drive\\lua",
+        "..\\bug\\vehicles\\bug\\lua"
     ],
-    "Lua.runtime.version": "Lua 5.1"
+    "Lua.runtime.version": "Lua 5.1",
+    "Lua.diagnostics.globals": [
+        // BeamNG.drive API:
+        "ai",
+        "beamstate",
+        "bit",
+        "bullettime",
+        "clamp",
+        "controller",
+        "createCurve",
+        "electrics",
+        "engine",
+        "FS",
+        "guihooks",
+        "jsonReadFile",
+        "jsonWriteFile",
+        "log",
+        "material",
+        "newExponentialSmoothing",
+        "newTemporalSmoothing",
+        "obj",
+        "path",
+        "playerInfo",
+        "powertrain",
+        "sounds",
+        "v",
+        "vec3",
+        "wheels",
+        "writeFile"
+    ],
 }

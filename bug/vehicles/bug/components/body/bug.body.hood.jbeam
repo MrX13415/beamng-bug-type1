@@ -6,14 +6,14 @@
         "value":130,
     },
     "slotType" : "bug_hood",
-	"slots": [
-		["type", "default", "description"],
-		["bug_foglight","", "Foglight", {"nodeMove1":{"x":0.17,"y":-1.735,"z":0.62}, "nodeRotate2":{"x":-12, "y":0, "z":6}, "variables": {"$node1":"h4","$node2":"h4l","$node3":"h5"}}],
-		["bug_logo","bug_logo", "Logo"],
-		["hood_trim","hood_trim", "Hood Trim"],
-        ["bug_hood_handle","hood_handle","Handle"],
+	"slots2": [
+		["name", "allowTypes", "denyTypes", "default", "description"],
+		["bug_foglight",           ["bug_foglight"], [],           "",            "Foglight",        {"nodeMove1":{"x":0.17,"y":-1.735,"z":0.62}, "nodeRotate2":{"x":-12, "y":0, "z":6}, "variables": {"$node1":"h4","$node2":"h4l","$node3":"h5"}}],
+		["bug_logo",               ["bug_logo"], [],               "bug_logo",    "Logo"],
+		["hood_trim",              ["hood_trim"], [],              "hood_trim",   "Hood Trim"],
+        ["bug_hood_handle",        ["bug_hood_handle"], [],        "hood_handle", "Handle"],
 
-        ["cargo_load_box_S_frunk","", "Hood Cargo Load", {
+        ["cargo_load_box_S_frunk", ["cargo_load_box_S_frunk"], [], "",            "Front Cargo", {
             "nodeMove":{"x":-0.15, "y":-1.1, "z":0.75},
         }],
     ],

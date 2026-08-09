@@ -25,6 +25,12 @@
     "greenChnl": "0",
     "blueChnl": "0"
   },
+  "pages": [
+    {
+      "id": "0",
+      "file": "output_0.png"
+    }
+  ],
   "chars": {
     "count": "11",
     "char": [
@@ -153,7 +159,7 @@
         "x": "621",
         "y": "0",
         "width": "69",
-        "height": "110",,
+        "height": "110",
         "xoffset": "0",
         "yoffset": "0",
         "xadvance": "69",

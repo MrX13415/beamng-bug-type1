@@ -16,8 +16,8 @@
     ]
   ],
   "Config Type":"Factory",
-  "Configuration":"1200 EU Ragtop (M)",
-  "Description":"European base model with 1200cc engine and ragtop roof",
+  "Configuration":"vehiclesData.bug.1200_eu_ragtop.Configuration",
+  "Description":"vehiclesData.bug.1200_eu_ragtop.Description",
   "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",

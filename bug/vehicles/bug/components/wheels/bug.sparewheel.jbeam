@@ -7,10 +7,10 @@
         "value":130,
     },
     "slotType" : "bug_wheel_spare",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["tire_spare","tire_spare_ww", "Tires"],
+        ["tire_spare", ["tire_spare"], [], "tire_spare_ww", "Tires"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -95,10 +95,10 @@
         "value":130,
     },
     "slotType" : "bug_wheel_spare",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["tire_spare","tire_spare_ww", "Tires"],
+        ["tire_spare", ["tire_spare"], [], "tire_spare_ww", "Tires"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

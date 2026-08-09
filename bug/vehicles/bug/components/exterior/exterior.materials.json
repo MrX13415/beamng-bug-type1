@@ -112,11 +112,8 @@
         "normalMap": "/vehicles/bug/components/exterior/textures/foglight_n.normal.png",
         "opacityFactor": 0.7,
         "roughnessFactor": 0.4,
-        "emissiveFactor": [
-          1.0,
-          1.0,
-          1.0
-        ],
+        "emissiveIntensityNits": 5000,
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
         "emissiveMap": "/vehicles/bug/components/exterior/textures/foglight_e.color.png"
       },
       {},
@@ -975,20 +972,16 @@
     "version": 1.5
   },
 
-  // -- Additional underglow
+  // -- Additional underglow colors --
   "neon_tube_glow_orange": {
     "name": "neon_tube_glow_orange",
     "mapTo": "neon_tube_glow_orange",
     "class": "material",
     "Stages": [
       {
-        "baseColorMap": "vehicles/midsize/neon_tube_b.color.png",
-        "emissiveFactor": [
-          1.0,
-          0.2,
-          0
-        ],
-        "emissiveMap": "/vehicles/common/neons/neon_tube_b.color.png"
+        "emissiveFactor": [ 1.000, 0.200,  0.000 ],
+        "emissiveIntensityNits": 500,
+        "roughnessFactor": 0.100000001
       },
       {},
       {},

@@ -2,18 +2,23 @@
     "fileversion": 2,
     "actions": {
         // Interior:
-        "sunvisorLtoggle":     {"order":31.1, "onDown":"vehicle.toggle('sunvisorL')",                                       "title":"Interior: Left Sunvisor", "desc":"Lowers the left sunvisor."},
-        "sunvisorRtoggle":     {"order":31.2, "onDown":"vehicle.toggle('sunvisorR')",                                       "title":"Interior: Right Sunvisor", "desc":"Lowers the right sunvisor."},
-        "interiorlighttoggle": {"order":31.3, "onDown":"vehicle.toggleInteriorLight()",                                     "title":"Interior: Interior Light", "desc":"Toggles the interior light between always on and open door only."},   
-        "ashtraytoggle":       {"order":31.4, "onDown":"vehicle.toggleAshTray()",                                           "title":"Interior: Ashtray Open/Close", "desc":"Opens the ashtray."},
-        "gloveboxLatch":       {"order":31.5, "onDown":"controller.getControllerSafe('gloveboxCoupler').toggleGroup()",     "title":"Interior: Glovebox Open/Close", "desc":"Opens the glovebox."},
-        
-        "seatFLtoggle":        {"order":32.1, "onDown":"vehicle.toggle('seatFL')",                                          "title":"Interior: Toogle Front Left Seat", "desc":"Moves the backrest of the front left seat forward and backwards."},
-        "seatFLmoveF":         {"order":32.2, "onDown":"vehicle.moveSeat('seatFL',  1, -3, 3)",                             "title":"Interior: Move Front Left Seat Forward", "desc":"Moves the front left seat forward."},
-        "seatFLmoveB":         {"order":32.3, "onDown":"vehicle.moveSeat('seatFL', -1, -3, 3)",                             "title":"Interior: Move Front Left Seat Backward", "desc":"Moves the front left seat backwards."},
-        
-        "seatFRtoggle":        {"order":33.1, "onDown":"vehicle.toggle('seatFR')",                                          "title":"Interior: Toogle Front Right Seat", "desc":"Moves the backrest of the front right seat forward and backwards."},
-        "seatFRmoveF":         {"order":33.2, "onDown":"vehicle.moveSeat('seatFR',  1, -3, 3)",                             "title":"Interior: Move Front Right Seat Forward", "desc":"Moves the front right seat forward."},
-        "seatFRmoveB":         {"order":33.3, "onDown":"vehicle.moveSeat('seatFR', -1, -3, 3)",                             "title":"Interior: Move Front Right Seat Backward", "desc":"Moves the front right seat backwards."},
+        "sunvisorLtoggle":     {"order":31.1, "onDown":"vehicle.toggle('sunvisorL')",            "title":"vehicle.interaction.interior.left_sunvisor.title",                "desc":"vehicle.interaction.interior.left_sunvisor.desc"},
+        "sunvisorRtoggle":     {"order":31.2, "onDown":"vehicle.toggle('sunvisorR')",            "title":"vehicle.interaction.interior.right_sunvisor.title",               "desc":"vehicle.interaction.interior.right_sunvisor.desc"},
+        "interiorlighttoggle": {"order":31.3, "onDown":"vehicle.toggleInteriorLight()",          "title":"vehicle.interaction.interior.interior_light.title",               "desc":"vehicle.interaction.interior.interior_light.desc"},
+        "ashtraytoggle":       {"order":31.4, "onDown":"vehicle.toggleAshTray()",                "title":"vehicle.interaction.interior.ashtray.title",                      "desc":"vehicle.interaction.interior.ashtray.desc"},
+        "gloveboxLatch":       {"order":31.5, "onDown":"vehicle.toggleGlovebox()",               "title":"vehicle.interaction.interior.glovebox.title",                     "desc":"vehicle.interaction.interior.glovebox.desc"},
+    
+        "seatFLtoggle":        {"order":32.1, "onDown":"vehicle.toggle('seatFL')",               "title":"vehicle.interaction.interior.front_left_seat.title",              "desc":"vehicle.interaction.interior.front_left_seat.desc"},
+        "seatFLmoveF":         {"order":32.2, "onDown":"vehicle.moveSeat('seatFL',  1, -3, 3)",  "title":"vehicle.interaction.interior.front_left_seat_forward.title",      "desc":"vehicle.interaction.interior.front_left_seat_forward.desc"},
+        "seatFLmoveB":         {"order":32.3, "onDown":"vehicle.moveSeat('seatFL', -1, -3, 3)",  "title":"vehicle.interaction.interior.front_left_seat_backward.title",     "desc":"vehicle.interaction.interior.front_left_seat_backward.desc"},
+    
+        "seatFRtoggle":        {"order":33.1, "onDown":"vehicle.toggle('seatFR')",               "title":"vehicle.interaction.interior.front_right_seat.title",             "desc":"vehicle.interaction.interior.front_right_seat.desc"},
+        "seatFRmoveF":         {"order":33.2, "onDown":"vehicle.moveSeat('seatFR',  1, -3, 3)",  "title":"vehicle.interaction.interior.front_right_seat_forward.title",     "desc":"vehicle.interaction.interior.front_right_seat_forward.desc"},
+        "seatFRmoveB":         {"order":33.3, "onDown":"vehicle.moveSeat('seatFR', -1, -3, 3)",  "title":"vehicle.interaction.interior.front_right_seat_backward.title",    "desc":"vehicle.interaction.interior.front_right_seat_backward.desc"},
+        "heatingValvetoggle":  {"order":34.1, "onDown":"vehicle.toggleHeatingValve()",           "title":"vehicle.interaction.interior.heating.title",                      "desc":"vehicle.interaction.interior.heating.desc"},
+        "heatingventFL":       {"order":34.2, "onDown":"vehicle.toggleHeatingVent('FL')",        "title":"vehicle.interaction.interior.heating_front_left_vent.title",      "desc":"vehicle.interaction.interior.heating_front_left_vent.desc"},
+        "heatingventFR":       {"order":34.3, "onDown":"vehicle.toggleHeatingVent('FR')",        "title":"vehicle.interaction.interior.heating_front_right_vent.title",     "desc":"vehicle.interaction.interior.heating_front_right_vent.desc"},
+        "heatingventRL":       {"order":34.4, "onDown":"vehicle.toggleHeatingVent('RL')",        "title":"vehicle.interaction.interior.heating_rear_left_vent.title",       "desc":"vehicle.interaction.interior.heating_rear_left_vent.desc"},
+        "heatingventRR":       {"order":34.5, "onDown":"vehicle.toggleHeatingVent('RR')",        "title":"vehicle.interaction.interior.heating_rear_right_vent.title",      "desc":"vehicle.interaction.interior.heating_rear_right_vent.desc"}
     }
 }

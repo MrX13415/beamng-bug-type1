@@ -8,7 +8,7 @@
     "antenna":"",
     "brakepad_F":"brakepad_F_race",
     "brakepad_R":"brakepad_R_race",
-    "bug_6pack":"",
+    "bug_footwell_FR":"",
     "bug_battery":"bug_battery",
     "bug_behavior":"bug_behavior",
     "bug_body":"bug_body",

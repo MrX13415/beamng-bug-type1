@@ -166,28 +166,17 @@
     "class": "material",
     "Stages": [
       {
-        "baseColorFactor": [
-          0.0818149969,
-          0.155980006,
-          0.156863004,
-          1
-        ],
+        "baseColorFactor": [ 0.1, 0.1, 0.1, 1 ],
         "normalMap": "/vehicles/common/null_n.dds",
         "opacityMap": "/vehicles/bug/components/body/textures/window_glass_o.data.png",
         "pixelSpecular": true,
         "roughnessFactor": 0
       },
       {
-        "baseColorFactor": [
-          0.238739997,
-          0.236947,
-          0.233510002,
-          1
-        ],
-        "baseColorMap": "/vehicles/bug/components/body/textures/window_r.data.png",
+        "baseColorFactor": [ 0.0, 0.0, 0.0, 1 ],
         "opacityFactor": 0.35,
         "opacityMap": "/vehicles/bug/components/body/textures/window_r.data.png",
-        "roughnessFactor": 1,
+        "roughnessFactor": 0.3,
         "roughnessMap": "/vehicles/bug/components/body/textures/window_r.data.png"
       },
       {},
@@ -209,17 +198,13 @@
     "class": "Material",
     "Stages": [
       {
-        "baseColorFactor": [
-          0.774537981,
-          0.913185,
-          0.978093028,
-          1
-        ],
+        "baseColorFactor": [ 0.71, 0.71, 0.71, 1 ],
         "baseColorMap": "/vehicles/bug/components/body/textures/window_glass_dmg_b.color.png",
+        "metallicFactor": 0.7,
         "normalMap": "/vehicles/bug/components/body/textures/window_glass_dmg_n.normal.png",
         "opacityMap": "/vehicles/bug/components/body/textures/window_glass_dmg_o.data.png",
         "pixelSpecular": true,
-        "roughnessMap": "/vehicles/bug/components/body/textures/window_glass_dmg_r.data.png"
+        "roughnessFactor": 0.1
       },
       {},
       {},
@@ -241,27 +226,16 @@
     "class": "material",
     "Stages": [
       {
-        "baseColorFactor": [
-          0.0922719985,
-          0.194857001,
-          0.196078002,
-          1
-        ],
+        "baseColorFactor": [ 0.1, 0.1, 0.1, 1 ],
         "opacityMap": "/vehicles/bug/components/body/textures/window_glass_int_o.color.png",
         "pixelSpecular": true,
         "roughnessFactor": 0.075
       },
       {
-        "baseColorFactor": [
-          0.512574017,
-          0.512574017,
-          0.512574017,
-          1
-        ],
-        "baseColorMap": "/vehicles/bug/components/body/textures/window_r.data.png",
-        "opacityFactor": 0.5,
+        "baseColorFactor": [ 0.0, 0.0, 0.0, 1 ],
+        "opacityFactor": 0.3,
         "opacityMap": "/vehicles/bug/components/body/textures/window_r.data.png",
-        "roughnessFactor": 1,
+        "roughnessFactor": 0.3,
         "roughnessMap": "/vehicles/bug/components/body/textures/window_r.data.png"
       },
       {},

@@ -6,12 +6,12 @@
         "value":150,
     },
     "slotType" : "bug_trunk",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_spoilerR","","Rear Spoiler"],
-        ["bug_trunk_handle","trunk_handle","Handle"],
-        ["bug_trunk_light","bug_trunk_light","License Light"],
+        ["bug_spoilerR", ["bug_spoilerR"], [], "bug_spoilerR", "Rear Spoiler"],
+        ["bug_trunk_handle", ["bug_trunk_handle"], [], "bug_trunk_handle", "Trunk Handle"],
+        ["bug_trunk_light", ["bug_trunk_light"], [], "bug_trunk_light", "License Plate Light"],
     ],
     "controller": [
         ["fileName"],
@@ -53,27 +53,6 @@
         ["bug_trunk",        ["bug_trunk"]],
         ["bug_trunk_hinges", ["bug_body_rear"]],
     ],
-    "props": [
-        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
-
-        // licenseplate light
-        {
-            "lightInnerAngle":0,
-            "lightColor":{"r":255, "g":193, "b":141, "a":255},  // 3000K
-            "lightAttenuation":{"x":0, "y":1, "z":1},
-            "lightCastShadows":true,
-            "flareName":"",
-            "cookieName":"",
-            "texSize":512,
-            "shadowSoftness":0.5,
-        },
-        ["power__lowhighbeam" ,  "SPOTLIGHT", "t3","t2ll","t2", {"x":-110, "y":-6, "z":20}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, 0, 0, 0, 1, 
-        {"baseTranslation":{"x":-0.007, "y":0.01, "z":0.02}, "lightRange":0.3,"lightBrightness":1,"lightOuterAngle":170,"flareScale":0.00, "deformGroup":"licenseplate_light_break", "lightScaling":{}}],
-    ],
-    "glowMap":{
-        // exterior lights
-        "bug_license_light":   {"simpleFunction":{"power__lowbeam":0.49, "power__highbeam":1},   "off":"bug_license_light",  "on":"bug_license_light_on",  "on_intense":"bug_license_light_on", "materialEmissiveScaling":{"on_max":0.49}},
-    },
     "nodes": [
         ["id", "posX", "posY", "posZ"],
         //--TRUNK--
@@ -357,24 +336,47 @@
 "bug_trunk_light": {
     "information":{
         "authors":"MrX13415",
-        "name":"License Light",
+        "name":"License Plate Light",
         "value":25,
     },
     "electricPower":[
         ["power"],
-        [8, {"trigger": "electrics.values.lowhighbeam"}]
+        [5, {"trigger": "electrics.values.lowhighbeam"}]
     ],
     "slotType" : "bug_trunk_light",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+
+        ["bug_licenseplate_light_bulb", ["incandescent_white_5W"], [], "incandescent_white_5W", "License Plate Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"power__lowhighbeam",
+          "$nodeRef":"t3", "$nodeX":"t2ll", "$nodeY":"t2",
+          "$deformGroup":"licenseplate_light_break",
+          "$posX":0.0, "$posY":1.828, "$posZ":0.68,
+          "$rotX":70, "$rotY":0, "$rotZ":0,
+          "$shadowEnable":1,
+          "$lightOuterAngle":130,
+          "$lightRange":0.21
+          //"$lightBrightness":0.06,
+        }
+        }],
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         ["bug_trunk_light",  ["bug_trunk"]],
     ],
+    "glowMap":{
+        // exterior lights
+        "bug_license_light":   {"simpleFunction":"power__lowhighbeam",   "off":"bug_license_light",  "on":"bug_license_light_on",  "on_intense":"bug_license_light_on", "materialEmissiveScaling":{"on_max":1.0}},
+    },
 },
 "bug_trunk_light_wide": {
     "information":{
         "authors":"MrX13415",
-        "name":"Wide License Light",
+        "name":"Wide License Plate Light",
         "value":25,
     },
     "electricPower":[
@@ -382,11 +384,33 @@
         [8, {"trigger": "electrics.values.lowhighbeam"}]
     ],
     "slotType" : "bug_trunk_light",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+
+        ["bug_licenseplate_light_bulb", ["incandescent_white_5W"], [], "incandescent_white_5W", "License Plate Light",
+        {
+        "coreSlot":true,
+        "variables":{
+          "$electric":"power__lowhighbeam",
+          "$nodeRef":"t3", "$nodeX":"t2ll", "$nodeY":"t2",
+          "$deformGroup":"licenseplate_light_break",
+          "$posX":0.0, "$posY":1.828, "$posZ":0.68,
+          "$rotX":70, "$rotY":0, "$rotZ":0,
+          "$shadowEnable":1,
+          "$lightOuterAngle":130,
+          "$lightRange":0.21
+        }
+        }],
+    ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
         ["bug_trunk_light_wide",  ["bug_trunk"]],
     ],
+    "glowMap":{
+        // exterior lights
+        "bug_license_light":   {"simpleFunction":"power__lowhighbeam",   "off":"bug_license_light",  "on":"bug_license_light_on",  "on_intense":"bug_license_light_on", "materialEmissiveScaling":{"on_max":1.0}},
+    },
 },
 
 }

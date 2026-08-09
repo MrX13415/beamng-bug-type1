@@ -73,10 +73,10 @@
         "value": 7,
     },
     "slotType" : "bug_decoration1",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["skin_deco1_dice","bug_decoration1_dice_white", "Color", {"coreSlot": true}],
+        ["skin_deco1_dice", ["skin_deco1_dice"], [], "bug_decoration1_dice_white", "Color",       {"coreSlot": true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -144,10 +144,10 @@
         "value": 10,
     },
     "slotType" : "bug_decoration1",
-    "slots": [
-        ["type", "default", "description"],
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["skin_deco1_dice","bug_decoration1_dice_white", "Color", {"coreSlot": true}],
+        ["skin_deco1_dice", ["skin_deco1_dice"], [], "bug_decoration1_dice_white", "Color",       {"coreSlot": true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
