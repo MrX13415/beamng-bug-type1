@@ -5,7 +5,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Front Left Race Seat Base",
-        "value":10,
+        "value":60,
     },
     "slotType" : "bug_seat_FL",
     "slots2": [
@@ -84,7 +84,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Front Right Race Seat Base",
-        "value":10,
+        "value":60,
     },
     "slotType" : "bug_seat_FR",
     "slots2": [

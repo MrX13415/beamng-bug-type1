@@ -3,7 +3,7 @@
 	"information":{
         "authors":"MrX13415",
         "name":"Herbie Behavior",
-        "value":20000,
+        "value":0,
     },
     "slotType" : "bug_behavior",
     "slots2": [
@@ -23,7 +23,7 @@
 	"information":{
         "authors":"MrX13415",
         "name":"Herbie Regeneration",
-        "value":20000,
+        "value":25000,
     },
     "slotType" : "bug_hrb_regeneration",
 },
@@ -32,7 +32,7 @@
 	"information":{
         "authors":"MrX13415",
         "name":"Herbie Personality",
-        "value":20000,
+        "value":14000,
     },
     "slotType" : "bug_hrb_personality",
     "actionsEnabled": [
@@ -61,6 +61,7 @@
     "information":{
         "authors":"53_herbie_53",
         "name":"Wheelie Helper",
+        "value": 5000
     },
     "slotType" : "bug_hrb_wheelie_branch",
     "actionsEnabled": [

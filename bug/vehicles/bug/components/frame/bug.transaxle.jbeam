@@ -634,9 +634,48 @@
         ["name", "allowTypes", "denyTypes", "default", "description"],
         ["bug_finaldrive_R", ["bug_finaldrive_R"], [], "bug_finaldrive_R_437", "Rear Final Drive", {"coreSlot":true}],
     ],
+    "components":{
+        "locker_R":true,
+    },
+    "controller": [
+        ["fileName"],
+        ["driveModes", {"name":"rearLockControl"}]
+    ],
+    "rearLockControl":{
+        "uiName": "Rear Differential"
+        "quickAccessTitle":"Rear Differential"
+        "quickAccessIcon":"differentialRearDefault"
+        "quickAccessLevel":"/vehicleFeatures/"
+        "enabledModes":["unlocked", "locked"]
+        "defaultMode": "unlocked"
+        "modes": {
+            "unlocked": {
+                "name": "Unlocked",
+                "order": 10,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"differential_R", "mode":"open"}]
+                    ["electricsValue", {"electricsName":"rear_lock", "value":0}]
+                    ["quickAccess", {"icon":"differentialRearDefault"}]
+                    ["simpleControlButton", {"buttonId":"rearDiff", "icon":"powertrain_differential_open", "uiName":"Rear Differential"}]
+                ],
+            },
+            "locked": {
+                "name": "Locked",
+                "order": 20,
+                "settings": [
+                    ["type"]
+                    ["powertrainDeviceMode", {"deviceName":"differential_R", "mode":"locked"}]
+                    ["electricsValue", {"electricsName":"rear_lock", "value":1}]
+                    ["quickAccess", {"icon":"differentialRearLocked"}]
+                    ["simpleControlButton", {"buttonId":"rearDiff", "icon":"powertrain_differential_closed", "uiName":"Rear Differential"}]
+                ],
+            },
+        }
+    }
     "powertrain" : [
         ["type", "name", "inputName", "inputIndex"],
-        ["differential", "differential_R", "torsionReactorR", 1, {"diffType":["open","locked"], "gearRatio": 1, "lockTorque":20000, "friction":5, "uiName":"Rear Differential","defaultVirtualInertia":0.25}],
+        ["differential", "differential_R", "torsionReactorR", 1, {"uiSimpleModeControl":false, "diffType":["open","locked"], "gearRatio": 1, "lockTorque":20000, "friction":5, "uiName":"Rear Differential","defaultVirtualInertia":0.25}],
     ]
 },
 "bug_differential_R_lsd": {

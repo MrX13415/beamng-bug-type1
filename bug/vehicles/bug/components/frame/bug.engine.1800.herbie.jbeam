@@ -6,7 +6,7 @@
     "information":{
         "authors":"53_herbie_53 & Fufsgfen",
         "name":"Herbie F4 Engine", // depending on the player behaviour
-        "value":80000,
+        "value":20000,
     },
     "slotType" : "bug_engine",
     "slots2": [
@@ -20,7 +20,7 @@
         ["bug_oilcooler",        ["bug_oilcooler"], [],        "",                     "Oil Cooler"],
         
         // These parts don't make sense with this engine and cause more problems then they solve.
-        ["bug_engine_internals", ["bug_engine_internals"], [], "bug_engine_internals", "Engine Long Block",    {"coreSlot":true}],
+        ["bug_engine_internals_hrb", ["bug_engine_internals_hrb"], [], "bug_engine_internals_hrb", "Engine Long Block",    {"coreSlot":true}],
         ["bug_engine_ecu",       ["bug_engine_ecu"], [],       "",                     "Engine Management"],
 
         ["bug_transaxle",        ["bug_transaxle"], [],        "bug_transaxle_4M",     "Transaxle"],
@@ -66,9 +66,9 @@
         "hasRevLimiter":false,
         "inertia":0.124, 
         // Causes issues with the lua part
-//        "friction":14.5,
-//        "dynamicFriction":0.032,
-//        "engineBrakeTorque":30,
+        // "friction":14.5,
+        // "dynamicFriction":0.032,
+        // "engineBrakeTorque":30,
         "friction":1,
         "dynamicFriction":0.025,
 
@@ -104,8 +104,8 @@
         "pistonRingDamageThreshold":15000000,
         "connectingRodDamageThreshold":20000000,
         "maxTorqueRating": 6500,
-        "maxOverTorqueDamage": 6500,
-        "maxOverRevDamage": 45000,
+        "maxOverTorqueDamage": 90000,
+        "maxOverRevDamage": 900000,
 
         //exhaust
         // Using defaults for now, as they seems to sound weird?

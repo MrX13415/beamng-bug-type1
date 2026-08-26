@@ -4,7 +4,7 @@
         "information": {
             "authors": "VertexStyle",
             "name": "Two Tone: Sides",
-            "value": 80,
+            "value": 800,
         },
         "slotType": "paint_design",
         "globalSkin": "tuned",
@@ -13,7 +13,7 @@
         "information": {
             "authors": "MrX13415",
             "name": "Two Tone: Fenders",
-            "value": 50,
+            "value": 500,
         },
         "slotType": "paint_design",
         "globalSkin": "fenders",
@@ -22,7 +22,7 @@
         "information": {
             "authors": "MrX13415",
             "name": "Two Tone: Halved",
-            "value": 130,
+            "value": 1300,
         },
         "slotType": "paint_design",
         "globalSkin": "lowerhalf",
@@ -31,7 +31,7 @@
         "information": {
             "authors": "MrX13415",
             "name": "Two Tone: Wave",
-            "value": 150,
+            "value": 1500,
         },
         "slotType": "paint_design",
         "globalSkin": "wave",
@@ -40,7 +40,7 @@
         "information": {
             "authors": "MrX13415",
             "name": "Two Tone: Side Strip",
-            "value": 50,
+            "value": 500,
         },
         "slotType": "paint_design",
         "globalSkin": "strip",
@@ -49,7 +49,7 @@
         "information": {
             "authors": "MrX13415",
             "name": "Two Tone: Contours",
-            "value": 120,
+            "value": 1200,
         },
         "slotType": "paint_design",
         "globalSkin": "lines",
@@ -60,7 +60,7 @@
         "information": {
             "authors": "MrX13415",
             "name": "Colored Chrome Parts (Exterior)",
-            "value": 200,
+            "value": 600,
         },
         "slotType": "paint_design",
         "globalSkin": "chrome_paint1",
@@ -69,7 +69,7 @@
         "information": {
             "authors": "MrX13415",
             "name": "Colored Chrome Parts (Exterior, Secondary)",
-            "value": 200,
+            "value": 600,
         },
         "slotType": "paint_design",
         "globalSkin": "chrome_paint2",
@@ -78,7 +78,7 @@
         "information": {
             "authors": "MrX13415",
             "name": "Colored Chrome Parts (Interior)",
-            "value": 200,
+            "value": 600,
         },
         "slotType": "paint_design",
         "globalSkin": "chrome_paint3",
@@ -89,7 +89,7 @@
         "information": {
             "authors": "MrX13415",
             "name": "Rusty",
-            "value": 200,
+            "value": 20,
         },
         "slotType": "paint_design",
         "globalSkin": "rusty",
@@ -98,7 +98,7 @@
         "information": {
             "authors": "MrX13415",
             "name": "Antarctica Expeditions",
-            "value": 200,
+            "value": 400,
         },
         "slotType": "paint_design",
         "globalSkin": "antarctica",
@@ -107,7 +107,7 @@
         "information": {
             "authors": "MrX13415",
             "name": "German Police",
-            "value": 120,
+            "value": 1200,
         },
         "slotType": "paint_design",
         "globalSkin": "police_german",
@@ -116,7 +116,7 @@
         "information": {
             "authors": "MrX13415",
             "name": "US Police",
-            "value": 120,
+            "value": 1200,
         },
         "slotType": "paint_design",
         "globalSkin": "police_usa",

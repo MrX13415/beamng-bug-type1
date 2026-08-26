@@ -117,7 +117,8 @@
                 ["anim__wipers"                   , "(electrics.wipers or 0)", 0],
                 ["anim__ragtop_state"             , "(electrics.ragtop_state or 0)", 0],
                 ["anim__foglightcoverstate"       , "(electrics.foglightcoverstate or 1)", 0],   // Assume open if value missing
-                
+                ["anim__rear_lock"                , "(electrics.rear_lock or 0)", 0],
+
                 // Doors
                 ["anim__windowFL_state"           , "(electrics.windowFL_state or 0)", 0],
                 ["anim__windowFR_state"           , "(electrics.windowFR_state or 0)", 0],
@@ -198,6 +199,7 @@
                 ["anim__wipers","exponential", [10]],
                 ["anim__ragtop_state","exponential", [30]],
                 ["anim__foglightcoverstate","exponential", [20]],
+                ["anim__rear_lock","exponential", [10]],
 
                 // Doors
                 ["anim__windowFL_state","exponential", [10]],

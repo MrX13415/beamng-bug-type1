@@ -464,7 +464,7 @@
         "name":"225/60R15 GoodYear GT Radial Tire",
         "value":130,
     },
-    "slotType" : "tire_F_15x7",
+    "slotType" : "tire_F_15x7_alt",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         ["bug_tire_15x7_gy", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
@@ -539,7 +539,7 @@
         "name":"225/60R15 GoodYear GT Radial Tire (High Grip)",
         "value":130,
     },
-    "slotType" : "tire_F_15x7",
+    "slotType" : "tire_F_15x7_alt",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         ["bug_tire_15x7_gy", ["wheel_FR","tire_FR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],

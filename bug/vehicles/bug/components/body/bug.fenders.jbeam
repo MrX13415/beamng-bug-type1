@@ -4,7 +4,7 @@
     "information": {
         "authors": "53_herbie_53",
         "name": "Fenders",
-        "value": 1,
+        "value": 0,
     },
     "slotType" : "bug_fenders",
     "slots2": [
@@ -25,7 +25,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Empty",
-        "value":75,
+        "value":0,
     },
     "slotType" : "bug_fender_grille",
     "flexbodies": [
@@ -39,7 +39,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Front Grille",
-        "value":75,
+        "value":25,
     },
     "slotType" : "bug_fender_grille",
     "flexbodies": [
@@ -53,7 +53,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Gravel Guards",
-        "value":75,
+        "value":40,
     },
     "slotType" : "bug_fender_gravel_guards",
     "flexbodies": [
@@ -69,7 +69,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Black Mud Flaps",
-        "value":75,
+        "value":25,
     },
     "slotType" : "bug_fender_mud_flaps",
     "flexbodies": [
@@ -195,7 +195,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"White Mud Flaps",
-        "value":75,
+        "value":25,
     },
     "slotType" : "bug_fender_mud_flaps",
     "flexbodies": [
@@ -311,7 +311,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Front Right Fender",
-        "value":75,
+        "value":100,
     },
     "slotType" : "bug_fender_FR",
     "slots2": [
@@ -534,7 +534,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Front Left Fender",
-        "value":75,
+        "value":100,
     },
     "slotType" : "bug_fender_FL",
     "slots2": [
@@ -762,14 +762,16 @@
 // --- rear
 "bug_fender_RL": {
     "information":{
-        "authors":"BeamNG",
+        "authors":"MrX13415",
         "name":"Rear Left Fender",
-        "value":75,
+        "value":100,
     },
     "slotType" : "bug_fender_RL",
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
-        ["bug_taillight_L", ["bug_taillight_L"], [], "bug_taillight_L", "Left Taillight"],
+
+        ["bug_fender_RL_skirt", ["bug_fender_RL_skirt"], [], "", "Left Fender Skirt"],
+        ["bug_taillight_L",     ["bug_taillight_L"],     [], "bug_taillight_L",     "Left Taillight"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -997,15 +999,16 @@
 },
 "bug_fender_RR": {
     "information":{
-        "authors":"BeamNG",
+        "authors":"MrX13415",
         "name":"Rear Right Fender",
-        "value":75,
+        "value":100,
     },
     "slotType" : "bug_fender_RR",
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_taillight_R", ["bug_taillight_R"], [], "bug_taillight_R", "Right Taillight"],
+        ["bug_fender_RR_skirt", ["bug_fender_RR_skirt"], [], "", "Right Fender Skirt"],
+        ["bug_taillight_R",     ["bug_taillight_R"],     [], "bug_taillight_R",     "Right Taillight"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1230,4 +1233,30 @@
         {"dragCoef":0}
     ],
 },
+
+"bug_fender_RL_skirt": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Rear Left Fender Skirt",
+        "value":60,
+    },
+    "slotType" : "bug_fender_RL_skirt",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bug_fender_RL_skirt", ["bug_fender_RL"]],
+    ],
+}
+"bug_fender_RR_skirt": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Rear Right Fender Skirt",
+        "value":60,
+    },
+    "slotType" : "bug_fender_RR_skirt",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bug_fender_RR_skirt", ["bug_fender_RR"]],
+    ],
+}
+
 }

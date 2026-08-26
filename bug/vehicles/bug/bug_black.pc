@@ -77,9 +77,9 @@
     "bug_doorpocket_FR":"bug_doorpocket_FR_empty",
     "bug_doorvent_FL":"bug_doorvent_FL",
     "bug_doorvent_FR":"bug_doorvent_FR",
-    "bug_engine":"bug_engine_1.8",
+    "bug_engine":"bug_engine_2.0_587_3",
     "bug_engine_ecu":"",
-    "bug_engine_internals":"bug_engine_internals_stage2",
+    "bug_engine_internals_587_3":"bug_engine_internals_587_3",
     "bug_exhaust":"bug_exhaust_race",
     "bug_exterior_sunvisor":"",
     "bug_fender_FL":"bug_fender_FL",
@@ -245,7 +245,6 @@
     "$tirepressure_R":24,
     "$toe_F":0.9995,
     "$toe_R":1.0005,
-    "$torque":1,
     "$trackoffset_F":0,
     "$trackoffset_R":0
   }

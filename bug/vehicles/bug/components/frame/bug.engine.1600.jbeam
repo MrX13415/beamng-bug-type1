@@ -5,8 +5,8 @@
 "bug_engine_1.6": {
     "information":{
         "authors":"Fufsgfen",
-        "name":"1.6L Air Cooled F4 Engine",
-        "value":800,
+        "name":"1.6L Air-Cooled F4 Engine",
+        "value":10000,
     },
     "slotType" : "bug_engine",
     "slots2": [
@@ -24,6 +24,11 @@
         ["bug_transaxle",        ["bug_transaxle"], [],        "bug_transaxle_4M",     "Transaxle"],
         ["n2o_system",           ["n2o_system"], [],           "",                     "Nitrous Oxide System"],
     ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        // Default torque is 110% to compensate for the increased weight of the car in BeamNG compared to the real world.
+        ["$torque", "range", "", "Engine", 1.1, 0.8, 1.5, "Torque", "Engine Torque multiplier", {"minDis":80, "maxDis":150}],
+	],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
         ["combustionEngine", "mainEngine", "dummy", 0],
@@ -31,27 +36,24 @@
     "mainEngine": {
         "torque":[
             ["rpm", "torque"],
-            [    0,   0 ],
-            [  500,  70 ],
-            [ 1000, 105 ],
-            [ 1500, 129 ],
-            [ 2000, 140 ],
-            [ 2500, 146 ],
-            [ 3000, 148 ],
-            [ 3500, 146 ],
-            [ 4000, 139 ],
-            [ 4500, 126 ],
-            [ 5000, 108 ],
-            [ 5500,  90 ],
-            [ 6000,  76 ],
-            [ 6500,  65 ],
-            [ 7000,  57 ],
-            [ 7500,  52 ],
-            [ 8000,  48 ] 
+            [    0,   0             ],
+            [  500,  "$=$torque*76" ],
+            [ 1000,  "$=$torque*106" ],
+            [ 1500,  "$=$torque*120" ],
+            [ 2000,  "$=$torque*132" ],
+            [ 2500,  "$=$torque*138" ],
+            [ 3000,  "$=$torque*141" ],
+            [ 3500,  "$=$torque*135" ],
+            [ 4000,  "$=$torque*124" ],
+            [ 4500,  "$=$torque*113" ],
+            [ 4800,  "$=$torque*105" ],
+            [ 5000,  "$=$torque*96" ],
+            [ 5500,  "$=$torque*86" ],
         ],
         "idleRPM":850,
         "idleRPMRoughness":150,
-        "maxRPM":5400,
+        "maxRPM":4800,
+        "maxPhysicalRPM":5400,
         "hasRevLimiter":false,
         "inertia":0.095, //for 200mm 13.5lbs flywheel + other rotational mass of engine
         "friction":9.5,
@@ -88,9 +90,9 @@
         "headGasketDamageThreshold":1500000,
         "pistonRingDamageThreshold":1500000,
         "connectingRodDamageThreshold":2000000,
-        "maxTorqueRating": 245,
+        "maxTorqueRating": 300,
         "maxOverTorqueDamage": 350,
-        "maxOverRevDamage": 4500,
+        "maxOverRevDamage": 1400,
 
         //exhaust
         // Using defaults for now, as they seems to sound weird?

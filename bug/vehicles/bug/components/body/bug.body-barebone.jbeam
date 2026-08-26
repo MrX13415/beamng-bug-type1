@@ -57,7 +57,7 @@
 	"information":{
         "authors":"MrX13415",
         "name":"Seats",
-        "value":20,
+        "value":0,
     },
     "slotType" : "bug_seats_barebone",
     "slots2": [
@@ -75,13 +75,14 @@
     "information":{
         "authors": "MrX13415",
         "name": "Dashboard",
-        "value": 300,
+        "value": 50,
     },
     "slotType" : "bug_dashboard_barebone",
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
 
         ["bug_shifter",           ["bug_shifter"], [],           "bug_shifter_4M",        "Shifter"],
+        ["bug_difflock_button",   ["bug_difflock_button"], [],   "",                      "Differential Lock Button"],
         ["skin_speedometer",      ["skin_speedometer"], [],      "bug_speedo_km_140",     "Speedometer",   {"coreSlot":true}],
         ["skin_interior_theme",   ["skin_interior_theme"], [],   "bug_inputs_white",      "Controls"],
                 
@@ -119,11 +120,11 @@
         "bug_clock_needle":         {"simpleFunction":"power__gauges",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
 
         // dashboard lights
-        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",               "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":1.0}},
-        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",                                                             "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",   "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                                                "off":"bug_dash_light_highbeam", "on":"bug_dash_light_highbeam_on", "on_intense":"bug_dash_light_highbeam_on", "materialEmissiveScaling":{"on_max":1.0}},
         // use the "oil" LED to indicate regeneration beeing active (blinking).
-        "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
-        "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},             "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
+        "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},     "off":"bug_dash_light_oil",      "on":"bug_dash_light_oil_on",      "on_intense":"bug_dash_light_oil_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},                     "off":"bug_dash_light_engine",   "on":"bug_dash_light_engine_on",   "on_intense":"bug_dash_light_engine_on", "materialEmissiveScaling":{"on_max":1.0}},
     },
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -238,7 +239,7 @@
     "information":{
         "authors": "BeamNG",
         "name": "Ignition Lock",
-        "value": 35,
+        "value": 10,
     },
     "slotType" : "bug_ignition_barebone",
     "slots2": [
@@ -251,7 +252,7 @@
     "information":{
         "authors": "BeamNG",
         "name": "Ignition Key",
-        "value": 35,
+        "value": 10,
     },
     "slotType" : "bug_ignition_key_barebone",
     "slots2": [

@@ -3,7 +3,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Windshield",
-        "value":800,
+        "value":150,
     },
     "slotType" : "bug_windshield",
     "flexbodies": [
@@ -92,7 +92,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Rearwindow",
-        "value":800,
+        "value":150,
     },
     "slotType" : "bug_rearwindow",
     "flexbodies": [
@@ -188,7 +188,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Glass",
-        "value":800,
+        "value":70,
     },
     "slotType" : "bug_glass",
     "flexbodies": [
@@ -270,7 +270,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Window",
-        "value":230,
+        "value":45,
     },
     "slotType" : "bug_doorglass_FR",
     "controller": [
@@ -406,7 +406,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Window",
-        "value":230,
+        "value":45,
     },
     "slotType" : "bug_doorglass_FL",
     "controller": [
@@ -541,7 +541,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Quarter Window",
-        "value":100,
+        "value":50,
     },
     "slotType" : "bug_doorvent_FR",
     "controller": [
@@ -679,7 +679,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Left Quarter Window",
-        "value":100,
+        "value":50,
     },
     "slotType" : "bug_doorvent_FL",
     "controller": [

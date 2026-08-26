@@ -837,8 +837,7 @@
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
-        "metallicFactor": 0.5,
-        "roughnessFactor": 0
+        "roughnessFactor": 0.3
       },
       {},
       {},
@@ -847,8 +846,24 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-
-
+  "bug_dash_light_engine_on": {
+    "name": "bug_dash_light_engine_on",
+    "mapTo": "bug_dash_light_engine_on",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
+        "roughnessFactor": 0.3,
+        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
+        "emissiveIntensityNits": 6000,
+        "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png"
+      },
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
   "bug_dash_light_oil": {
     "name": "bug_dash_light_oil",
     "mapTo": "bug_dash_light_oil",
@@ -856,8 +871,7 @@
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
-        "metallicFactor": 0.5,
-        "roughnessFactor": 0
+        "roughnessFactor": 0.3
       },
       {},
       {},
@@ -866,70 +880,18 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
-  
-  "bug_dash_light_on": {
-    "name": "bug_dash_light_on",
-    "mapTo": "bug_dash_light_on",
+  "bug_dash_light_oil_on": {
+    "name": "bug_dash_light_oil_on",
+    "mapTo": "bug_dash_light_oil_on",
     "class": "Material",
     "Stages": [
       {
         "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
-        "metallicFactor": 0.5,
-        "roughnessFactor": 0,
+        "roughnessFactor": 0.3,
         "emissiveFactor": [ 1.0, 1.0, 1.0 ],
-        "emissiveIntensityNits": 500,
+        "emissiveIntensityNits": 6000,
         "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png"
       },
-      {},
-      {}
-    ],
-    "dynamicCubemap": true,
-    "version": 1.5
-  },
-
-  "bug_dash_light_signal": {
-    "name": "bug_dash_light_signal",
-    "mapTo": "bug_dash_light_signal",
-    "class": "Material",
-    "Stages": [
-      {
-        "baseColorFactor": [
-          1.0,
-          1.0,
-          1.0,
-          1
-        ],
-        "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
-        "metallicFactor": 0.5,
-        "roughnessFactor": 0
-      },
-      {},
-      {},
-      {}
-    ],
-    "dynamicCubemap": true,
-    "version": 1.5
-  },
-  "bug_dash_light_signal_on": {
-    "name": "bug_dash_light_signal_on",
-    "mapTo": "bug_dash_light_signal_on",
-    "class": "Material",
-    "Stages": [
-      {
-        "baseColorFactor": [
-          1,
-          1.0,
-          1.0,
-          1
-        ],
-        "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
-        "metallicFactor": 0.5,
-        "roughnessFactor": 0,
-        "emissiveFactor": [ 1.0, 1.0, 1.0 ],
-        "emissiveIntensityNits": 500,
-        "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png"
-      },
-      {},
       {},
       {}
     ],
@@ -949,8 +911,7 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
-        "metallicFactor": 0.5,
-        "roughnessFactor": 0
+        "roughnessFactor": 0.3
       },
       {},
       {},
@@ -972,11 +933,57 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
-        "metallicFactor": 0.5,
-        "roughnessFactor": 0,
+        "roughnessFactor": 0.3,
         "emissiveFactor": [ 1.0, 1.0, 1.0 ],
-        "emissiveIntensityNits": 500,
-        "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png"
+        "emissiveIntensityNits": 6000,
+        "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_dash_light_signal": {
+    "name": "bug_dash_light_signal",
+    "mapTo": "bug_dash_light_signal",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
+        "roughnessFactor": 0.3
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_dash_light_signal_on": {
+    "name": "bug_dash_light_signal_on",
+    "mapTo": "bug_dash_light_signal_on",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          1.0,
+          1.0,
+          1
+        ],
+        "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
+        "roughnessFactor": 0.3,
+        "emissiveFactor": [ 1.0, 1.0,1.0 ],
+        "emissiveIntensityNits": 3500,
+        "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png"
       },
       {},
       {},
@@ -998,10 +1005,9 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
-        "metallicFactor": 0.5,
         "normalMap": "/vehicles/bug/components/interior/textures/gauges_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/gauges_r.data.png",
-        "roughnessFactor": 0.6
+        "roughnessFactor": 1.0
       },
       {},
       {},
@@ -1023,12 +1029,11 @@
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/gauges_d.color.png",
-        "metallicFactor": 0.5,
         "normalMap": "/vehicles/bug/components/interior/textures/gauges_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/gauges_r.data.png",
-        "roughnessFactor": 0.6,
+        "roughnessFactor": 1.0,
         "emissiveFactor": [ 1.0, 1.0, 1.0 ],
-        "emissiveIntensityNits": 500,
+        "emissiveIntensityNits": 1500,
         "emissiveMap": "/vehicles/bug/components/interior/textures/gauges_e.color.png"
       },
       {},
@@ -2312,6 +2317,30 @@
     "dynamicCubemap": true,
     "version": 1.5
   },
+  "bug_interior_metal_rough": {
+    "name": "bug_interior_metal_rough",
+    "mapTo": "bug_interior_metal_rough",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.653286994,
+          0.693637013,
+          0.694118023,
+          1
+        ],
+        "baseColorMap": "vehicles/common/null.dds",
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/bug/components/interior/textures/roughmetal_n.normal.png",
+        "roughnessFactor": 0.200000003
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
   "bug_interior_black": {
     "name": "bug_interior_black",
     "mapTo": "bug_interior_black",
@@ -3143,9 +3172,9 @@
       },
       {
         "baseColorFactor": [
-          0.338,
-          0.230,
-          0.187,
+          0.23,
+          0.20,
+          0.18,
           1
         ],
         "baseColorMap": "/vehicles/bug/components/interior/textures/switchboard_e.color.png",
@@ -3171,8 +3200,8 @@
         "metallicMap": "/vehicles/bug/components/interior/textures/switchboard_m.data.png",
         "normalMap": "/vehicles/bug/components/interior/textures/switchboard_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/interior/textures/switchboard_r.data.png",
-        "emissiveFactor": [ 1.000, 0.094, 0.000 ],
-        "emissiveIntensityNits": 500,
+        "emissiveFactor": [ 1.000, 0.2, 0.000 ],
+        "emissiveIntensityNits": 2000,
         "emissiveMap": "/vehicles/bug/components/interior/textures/switchboard_e.color.png"
       },
       {},

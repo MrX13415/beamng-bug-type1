@@ -158,7 +158,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Cover",
-        "value":300,
+        "value":22,
     },
     "slotType" : "bug_console_cage",
     "flexbodies": [
@@ -171,7 +171,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Tray",
-        "value":300,
+        "value":28,
     },
     "slotType" : "bug_console_cage",
     "slots2": [
@@ -253,7 +253,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Wood",
-        "value":30,
+        "value":60,
     },
     "slotType" : "skin_console",
     "skinName": "wood"
@@ -265,7 +265,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Glovebox",
-        "value":300,
+        "value":200,
     },
     "slotType" : "bug_glovebox",
     "slots2": [
@@ -378,7 +378,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Glovebox Lid",
-        "value":20,
+        "value":50,
     },
     "slotType" : "bug_glovebox_lid",
     "controller": [
@@ -542,7 +542,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Clock",
-        "value":300,
+        "value":40,
     },
     "electricPower":[
         ["power"],

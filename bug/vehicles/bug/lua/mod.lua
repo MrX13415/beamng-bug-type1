@@ -9,8 +9,8 @@
 local M = {}
 
 local _name = "Volkswagen Type 1 \"Beetle\""
-local _version = 27
-local _versionDate = "2026-08-09"
+local _version = {27, 1}
+local _versionDate = "2026-08-21"
 local _variantID = "VW"
 
  -- Minimum required BeamNG.drive version
@@ -19,8 +19,8 @@ local _gameVersion = 39
 local function name() return _name end
 local function version() return _version end
 local function versionDate() return _versionDate end
+local function versionStr() return table.concat(_version, ".") end
 local function variantID() return _variantID end
-
 
 local function gameVersionError(beamng_version)
     local required_version = "0.".._gameVersion
@@ -78,7 +78,7 @@ end
 
 local function printVersionLine()
     print("[Bug] " .. name() .. " by MrX13415 & VertexsStyle")
-    print("[Bug] Variant '" .. variantID().. "' Version " ..tostring(version()).. " - " .. versionDate())
+    print("[Bug] Variant '" .. variantID().. "' Version " ..versionStr().. " - " .. versionDate())
 end
 
 
@@ -107,6 +107,7 @@ M.onInit            = onInit
 
 M.name        = name
 M.version     = version
+M.versionStr  = versionStr
 M.versionDate = versionDate
 M.variantID   = variantID
 

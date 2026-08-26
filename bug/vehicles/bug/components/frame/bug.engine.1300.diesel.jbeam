@@ -5,8 +5,8 @@
 "bug_engine_diesel": {
     "information":{
         "authors":"Fufsgfen",
-        "name":"1.3L Air Cooled Diesel F4 Engine",
-        "value":800,
+        "name":"1.3L Air-Cooled Diesel F4 Engine",
+        "value":6000,
     },
     "slotType" : "bug_engine",
     "slots2": [
@@ -24,6 +24,11 @@
         ["bug_transaxle",        ["bug_transaxle"], [],        "bug_transaxle_1956",   "Transaxle"],
         ["n2o_system",           ["n2o_system"], [],           "",                     "Nitrous Oxide System"],
     ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        // Default torque is 110% to compensate for the increased weight of the car in BeamNG compared to the real world.
+        ["$torque", "range", "", "Engine", 1.1, 0.8, 1.5, "Torque", "Engine Torque multiplier", {"minDis":80, "maxDis":150}],
+	],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
         ["combustionEngine", "mainEngine", "dummy", 0],
@@ -31,31 +36,24 @@
     "mainEngine": {
         "torque":[
             ["rpm", "torque"],
-            [    0,   0 ], 
-            [  500,  67 ], 
-            [ 1000,  88 ], 
-            [ 1500, 103 ], 
-            [ 2000, 107 ], 
-            [ 2500, 107 ], 
-            [ 3000, 103 ], 
-            [ 3500,  95 ], 
-            [ 4000,  81 ], 
-            [ 4500,  67 ], 
-            [ 5000,  55 ], 
-            [ 5500,  45 ], 
-            [ 6000,  38 ], 
-            [ 6500,  34 ], 
-            [ 7000,  31 ], 
-            [ 7500,  28 ], 
-            [ 8000,  26 ]  
+            [    0,  0              ],
+            [  500, "$=$torque*69"  ],
+            [ 1000, "$=$torque*92"  ],
+            [ 1500, "$=$torque*102" ],
+            [ 2000, "$=$torque*109" ],
+            [ 2500, "$=$torque*114" ],
+            [ 3000, "$=$torque*115" ],
+            [ 3500, "$=$torque*109" ],
+            [ 3800, "$=$torque*91"  ]
         ],
         "idleRPM":695,
         "idleRPMRoughness":180,
-        "maxRPM":3900,
-        "inertia":0.08, //for 200mm 14lbs flywheel + other rotational mass of engine
-        "friction":8,
+        "maxRPM":3800,
+        "maxPhysicalRPM":4400,
+        "inertia":0.11, //for 200mm 14lbs flywheel + other rotational mass of engine
+        "friction":9,
         "dynamicFriction":0.020,
-        "engineBrakeTorque":23,
+        "engineBrakeTorque":32,
 
         "burnEfficiency":[
             [0, 0.12],
@@ -85,9 +83,9 @@
         "headGasketDamageThreshold":1500000,
         "pistonRingDamageThreshold":1500000,
         "connectingRodDamageThreshold":2000000,
-        "maxTorqueRating": 165,
-        "maxOverTorqueDamage": 350,
-        "maxOverRevDamage": 4500,
+        "maxTorqueRating": 200,
+        "maxOverTorqueDamage": 400,
+        "maxOverRevDamage": 800,
 
         //exhaust
         // Using defaults for now, as they seems to sound weird?
@@ -397,7 +395,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Single Carburetor",
-        "value":725,
+        "value":300,
     },
     "slotType" : "bug_intake_D",
     "mainEngine":{
