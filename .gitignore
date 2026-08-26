@@ -11,5 +11,5 @@ bug-aw/*
 !bug-aw/#mod
 
 # Don't track python compiled files
-Tools/py/__pycache__/*
+build/py/__pycache__/*
 BeamNG.drive.lnk
