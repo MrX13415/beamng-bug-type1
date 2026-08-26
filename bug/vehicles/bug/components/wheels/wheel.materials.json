@@ -30,6 +30,7 @@
       {}
     ]
   },
+
   "bug_tire_gy" : {
     "name" : "bug_tire_gy",
     "mapTo" : "bug_tire_gy",
@@ -40,6 +41,29 @@
         "baseColorMap": "/vehicles/bug/components/wheels/textures/tire-gy_d.color.png",
         "metallicFactor": 0,
         "normalMap": "/vehicles/bug/components/wheels/textures/tire-gy_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/wheels/textures/tire-gy_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "doubleSided": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "order_simset": 0,
+    "version": 1.5
+  },
+  "bug_tire_gy_notext" : {
+    "name" : "bug_tire_gy_notext",
+    "mapTo" : "bug_tire_gy_notext",
+    "class" : "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/bug/components/wheels/textures/tire-gy_ao.data.png",
+        "baseColorMap": "/vehicles/bug/components/wheels/textures/tire-gy-notext_d.color.png",
+        "metallicFactor": 0,
+        "normalMap": "/vehicles/bug/components/wheels/textures/tire-gy-notext_n.normal.png",
         "roughnessMap": "/vehicles/bug/components/wheels/textures/tire-gy_r.data.png"
       },
       {},

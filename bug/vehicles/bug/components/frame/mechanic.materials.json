@@ -277,4 +277,26 @@
     "translucent": true,
     "version": 1.5
   },
+
+  "bug_engine587": {
+    "name": "bug_engine587",
+    "mapTo": "bug_engine587",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/bug/components/frame/textures/bug_engine587_d.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/bug/components/frame/textures/bug_engine587_m.data.png",
+        "normalMap": "/vehicles/bug/components/frame/textures/bug_engine587_n.normal.png",
+        "roughnessMap": "/vehicles/bug/components/frame/textures/bug_engine587_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "invertBackFaceNormals": true,
+    "version": 1.5
+  },
 }

@@ -14,6 +14,9 @@ meshFiles = [ "dae", "cdae" ]
 textFiles = [ "txt", "json", "jbeam", "lua"]
 codeFiles = [ "lua" ]
 
+# Files int in the 'ModFolder' not requiring a target file.
+addFiles = [ "Lore.txt", "vehicles/bug/VariantID-*.json" ]
+# Files to be deleted from the target folder.
 deleteFiles = [ "vehicles/bug/VariantID-*.json" ]
 
 WordMap = {
@@ -46,6 +49,7 @@ WordMap = {
     'carello'   : 'carelu',
     'Carello'   : 'Carelu',
     'CARELLO'   : 'CARELU',
+    'GoodYear GT'   : 'GT',
 }
 IgnoreWords = [ '53_herbie_53' ]
 
@@ -77,14 +81,27 @@ def copyFiles(source, target):
     shutil.copytree(source, target, dirs_exist_ok = True)
 #end
 
+def allFilesExist(source, target):
+    sourceFiles = getFiles(source)
 
-def isDeleteFile(path, f):
+    missingFiles = []
+    for f in sourceFiles:
+        relPath = os.path.relpath(f, source)
+        targetPath = os.path.join(target, relPath)
+        if not os.path.exists(targetPath):
+            missingFiles.append(f)
+    #end
+
+    return missingFiles
+#end
+
+def isFileInList(path, f, fileList):
     if not os.path.isfile(f): return False
 
     f = os.path.relpath(f, path)
     f = f.replace("\\", "/") 
 
-    for pattern in deleteFiles:
+    for pattern in fileList:
         parts = pattern.split("*")
 
         if len(parts) == 1:
@@ -106,6 +123,12 @@ def isDeleteFile(path, f):
     #end
 
     return False
+#end
+def isAddFile(path, f):
+    return isFileInList(path, f, addFiles)
+#end
+def isDeleteFile(path, f):
+    return isFileInList(path, f, deleteFiles)
 #end
 def getDeleteFiles(path):
     # Determine files to be removed
@@ -296,9 +319,10 @@ def init():
     target = ""
     mod = ""
 
-    root = session.root #   dirname(os.path.realpath(__file__), 2)       # Get the second parent folder
-    
-    #debug: root = os.path.join(root, "x")
+    if not session.init():
+        return False
+
+    root = session.root 
 
     # Root path correct?
     if not os.path.exists(os.path.join(root, SourceFolder)):
@@ -314,7 +338,7 @@ def init():
     return True
 #end
 
-def printUsage():
+def printUsage(error=True):
     print("Usage: aw <command>")
     print("")
     print("  build           Builds the AW branded variant in 'bug-aw'.")
@@ -323,6 +347,7 @@ def printUsage():
     print("  copy            Only runs the copy step.")
     print("  apply           Only runs the apply step.")
     print("")
+    return 2 if error else 0
 #end
 
 def printPaths():
@@ -332,7 +357,7 @@ def printPaths():
 #end
 
 def clean():
-    if not init(): return
+    if not init(): return False
 
     print("- Clean folder ...")
 
@@ -364,7 +389,7 @@ def clean():
 
     if len(errors) == 0:
         print("  OK")
-        return
+        return True
     #end
 
     print("  Errors occurred during cleaning:")
@@ -372,10 +397,11 @@ def clean():
         print(f"   {error}")
 
     print("  Failed")
+    return False
 #end
 
 def copy():
-    if not init(): return
+    if not init(): return False
 
     print("- Copy files ...")
     
@@ -400,12 +426,24 @@ def copy():
     renameMeshFiles(target, "AW-")
 
     print("  OK")
+    return True
 #end
 
 def apply():
-    if not init(): return
+    if not init(): return False
 
     print("- Apply mod files ...")
+
+    # Sanity check: Make sure all mod files have an existing target file.
+    missingFiles = allFilesExist(mod, target)
+    missingFiles = [f for f in missingFiles if not isAddFile(mod, f)]
+
+    if len(missingFiles) > 0:
+        print("  Error: Missing target files for the following mod files:")
+        for f in missingFiles:
+            print(f"   {os.path.relpath(f, mod)}")
+        return False
+    #end
 
     # overwrite vw with aw files
     copyFiles(mod, target)
@@ -413,42 +451,42 @@ def apply():
     updateTextFiles(target, WordMap)
 
     print("  OK")
+    return True
 #end
 
 def build():
-    if not init(): return
+    if not init(): return False
 
     printPaths()
     
-    clean()
-    copy()
-    apply()
+    if not clean(): return False
+    if not copy(): return False
+    if not apply(): return False
+
+    return True
 #end
 
 def processCommand(commands):
     cmd = popCommand(commands)
 
-    if cmd == "clean": clean()
-    elif cmd == "copy": copy()
-    elif cmd == "apply": apply()
-    elif cmd == "build": build()
-    else: 
-        printUsage()
-        return
-    #end
+    if isCommand(cmd, "clean"):         return 0 if clean() else 1
+    elif isCommand(cmd, "copy"):        return 0 if copy() else 1
+    elif isCommand(cmd, "apply"):       return 0 if apply() else 1
+    elif isCommand(cmd, "b", "build"):  return 0 if build() else 1
+
+    return printUsage()
 #end
 
-def main():
-    if not init(): return
-    
-    if len(sys.argv) != 2:
-        printUsage()
-        return
-    #end
+def main(args=None, header=True):
+    if not init(): return 1
 
-    print("   Root: " + root)
-    processCommand([asCommand(sys.argv[1])])
+    if args is None: args = sys.argv
+    if hasCommandHelp(args): return printUsage(False)
+    if len(args) != 2: return printUsage()
+
+    if header: print("Root: " + root)
+    return processCommand(args[1:])
 #end
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

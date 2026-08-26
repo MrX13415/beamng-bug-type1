@@ -74,7 +74,7 @@
 	"information":{
         "authors":"53_herbie_53",
         "name":"Default Antenna",
-        "value":1,
+        "value":30,
     },
     "slotType" : "antenna",
     "flexbodies": [
@@ -86,7 +86,7 @@
 	"information":{
         "authors":"53_herbie_53",
         "name":"Cowl-Mounted Antenna (Retracted)",
-        "value":1,
+        "value":30,
     },
     "slotType" : "antenna",
     "flexbodies": [
@@ -98,7 +98,7 @@
 	"information":{
         "authors":"53_herbie_53",
         "name":"Cowl-Mounted Antenna (Extended)",
-        "value":1,
+        "value":30,
     },
     "slotType" : "antenna",
     "flexbodies": [
@@ -111,7 +111,7 @@
 	"information":{
         "authors":"53_herbie_53",
         "name":"Sun Visor",
-        "value":1,
+        "value":180,
     },
     "slotType" : "bug_exterior_sunvisor",
     "flexbodies": [
@@ -124,7 +124,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Foglight",
-        "value":250,
+        "value":150,
     },
     "electricPower":[
         ["power"],
@@ -351,19 +351,11 @@
 },
 
 
-
-
-
-
-
-
-
-
 "bug_gascap": {
     "information":{
         "authors":"MrX13415",
         "name":"Rally Fuel Cap",
-        "value":300,
+        "value":120,
     },
     "slotType" : "bug_gascap",
     "flexbodies": [

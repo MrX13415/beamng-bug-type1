@@ -4,7 +4,7 @@
     "information": {
         "authors": "53_herbie_53",
         "name": "Fenders",
-        "value": 1,
+        "value": 0,
     },
     "slotType" : "bug_fenders",
     "slots2": [
@@ -25,7 +25,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Empty",
-        "value":75,
+        "value":0,
     },
     "slotType" : "bug_fender_grille",
     "flexbodies": [
@@ -39,7 +39,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Front Grille",
-        "value":75,
+        "value":25,
     },
     "slotType" : "bug_fender_grille",
     "flexbodies": [
@@ -53,7 +53,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Gravel Guards",
-        "value":75,
+        "value":40,
     },
     "slotType" : "bug_fender_gravel_guards",
     "flexbodies": [
@@ -69,7 +69,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Black Mud Flaps",
-        "value":75,
+        "value":25,
     },
     "slotType" : "bug_fender_mud_flaps",
     "flexbodies": [
@@ -195,7 +195,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"White Mud Flaps",
-        "value":75,
+        "value":25,
     },
     "slotType" : "bug_fender_mud_flaps",
     "flexbodies": [
@@ -311,7 +311,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Front Right Fender",
-        "value":75,
+        "value":100,
     },
     "slotType" : "bug_fender_FR",
     "slots2": [
@@ -534,7 +534,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Front Left Fender",
-        "value":75,
+        "value":100,
     },
     "slotType" : "bug_fender_FL",
     "slots2": [
@@ -762,19 +762,21 @@
 // --- rear
 "bug_fender_RL": {
     "information":{
-        "authors":"BeamNG",
+        "authors":"MrX13415",
         "name":"Rear Left Fender",
-        "value":75,
+        "value":100,
     },
     "slotType" : "bug_fender_RL",
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
-        ["bug_taillight_L", ["bug_taillight_L"], [], "bug_taillight_L", "Left Taillight"],
+
+        ["bug_fender_RL_skirt", ["bug_fender_RL_skirt"], [], "", "Left Fender Skirt"],
+        ["bug_taillight_L",     ["bug_taillight_L"],     [], "bug_taillight_L",     "Left Taillight"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-		    ["bug_fender_RL", ["bug_fender_RL"]],
+		["bug_fender_RL", ["bug_fender_RL"]],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -784,13 +786,14 @@
         {"collision":true},
         {"selfCollision":true},
         {"nodeWeight":0.60},
-        {"group":"bug_fender_RL"},
+        {"group": ["bug_fender_RL", "bug_fender_RL_skirt"]},
         ["feRL1l",  0.74655,  0.79880,  0.26610],
         ["feRL2l",  0.76245,  0.89884,  0.55114],
         ["feRL3l",  0.76897,  1.06690,  0.67977],
         ["feRL4l",  0.76245,  1.33492,  0.65518],
         ["feRL5l",  0.75505,  1.50042,  0.47603],
         ["feRL6l",  0.70523,  1.65331,  0.31155],
+        {"group": "bug_fender_RL"},
         ["feRL1m",  0.74655,  0.71331,  0.26610],
         ["feRL2m",  0.74548,  0.82935,  0.58016],
         ["feRL3m",  0.73082,  1.00948,  0.74951],
@@ -997,15 +1000,16 @@
 },
 "bug_fender_RR": {
     "information":{
-        "authors":"BeamNG",
+        "authors":"MrX13415",
         "name":"Rear Right Fender",
-        "value":75,
+        "value":100,
     },
     "slotType" : "bug_fender_RR",
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_taillight_R", ["bug_taillight_R"], [], "bug_taillight_R", "Right Taillight"],
+        ["bug_fender_RR_skirt", ["bug_fender_RR_skirt"], [], "", "Right Fender Skirt"],
+        ["bug_taillight_R",     ["bug_taillight_R"],     [], "bug_taillight_R",     "Right Taillight"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -1019,13 +1023,14 @@
         {"collision":true},
         {"selfCollision":true},
         {"nodeWeight":0.80},
-        {"group":"bug_fender_RR"},
+        {"group": ["bug_fender_RR", "bug_fender_RR_skirt"]},
         ["feRR1r", -0.74655,  0.79880,  0.26610],
         ["feRR2r", -0.76245,  0.89884,  0.55114],
         ["feRR3r", -0.76897,  1.06690,  0.67977],
         ["feRR4r", -0.76245,  1.33492,  0.65518],
         ["feRR5r", -0.75505,  1.50042,  0.47603],
         ["feRR6r", -0.70523,  1.65331,  0.31155],
+        {"group": "bug_fender_RR"},
         ["feRR1m", -0.74655,  0.71331,  0.26610],
         ["feRR2m", -0.74548,  0.82935,  0.58016],
         ["feRR3m", -0.73082,  1.00948,  0.74951],
@@ -1230,4 +1235,164 @@
         {"dragCoef":0}
     ],
 },
+
+"bug_fender_RL_skirt": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Rear Left Fender Skirt",
+        "value":60,
+    },
+    "slotType" : "bug_fender_RL_skirt",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bug_fender_RL_skirt", ["bug_fender_RL_skirt"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeWeight":0.80},
+        {"group":"bug_fender_RL_skirt"},
+        ["feRL11l", 0.771,  0.928,  0.380],
+        ["feRL12l", 0.772,  1.326,  0.380],
+        ["feRL13l", 0.761,  1.500,  0.337],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"disableMeshBreaking":false},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":450000,"beamDamp":130},
+        {"beamDeform":3000,"beamStrength":100000},
+
+        ["feRL1l", "feRL11l"],
+        ["feRL11l", "feRL12l"],
+        ["feRL12l", "feRL13l"],
+        ["feRL13l", "feRL6l"],
+        //-
+        ["feRL1l", "feRL3l"],
+        ["feRL11l", "feRL2l"],
+        ["feRL11l", "feRL3l"],
+        ["feRL11l", "feRL4l"],
+        ["feRL12l", "feRL3l"],
+        ["feRL12l", "feRL4l"],
+        ["feRL12l", "feRL5l"],
+        ["feRL13l", "feRL4l"],
+        ["feRL13l", "feRL5l"],
+
+        ["feRL11l", "feRL1r"],
+        ["feRL11l", "feRL2r"],
+        ["feRL11l", "feRL3r"],
+        ["feRL12l", "feRL3r"],
+        ["feRL12l", "feRL4r"],
+        ["feRL12l", "feRL5r"],
+        ["feRL13l", "feRL4r"],
+        ["feRL13l", "feRL5r"],
+        ["feRL13l", "feRL7r"],
+
+        // rigdifiy
+        ["feRL11l", "feRL8"],
+        ["feRL12l", "feRL8"],
+        ["feRL13l", "feRL8"],
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        {"group":"bug_fender_RL_skirt"},
+        {"groundModel":"metal"},
+        {"dragCoef":10},
+        ["feRL1l", "feRL11l", "feRL2l"],
+        ["feRL11l", "feRL3l", "feRL2l"],
+        ["feRL3l", "feRL11l", "feRL12l"],
+        ["feRL3l", "feRL12l", "feRL4l"],
+        ["feRL4l", "feRL12l", "feRL13l"],
+        ["feRL4l", "feRL13l", "feRL5l"],
+        ["feRL5l", "feRL13l", "feRL6l"],
+        {"group":""},
+        {"dragCoef":0}
+    ],
+}
+"bug_fender_RR_skirt": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Rear Right Fender Skirt",
+        "value":60,
+    },
+    "slotType" : "bug_fender_RR_skirt",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bug_fender_RR_skirt", ["bug_fender_RR_skirt"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"collision":true},
+        {"selfCollision":true},
+        {"nodeWeight":0.80},
+        {"group":"bug_fender_RR_skirt"},
+        ["feRR11r", -0.771,  0.928,  0.380],
+        ["feRR12r", -0.772,  1.326,  0.380],
+        ["feRR13r", -0.761,  1.500,  0.337],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"disableMeshBreaking":false},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":450000,"beamDamp":130},
+        {"beamDeform":3000,"beamStrength":100000},
+
+        ["feRR1r", "feRR11r"],
+        ["feRR11r", "feRR12r"],
+        ["feRR12r", "feRR13r"],
+        ["feRR13r", "feRR6r"],
+        //-
+        ["feRR1r", "feRR3r"],
+        ["feRR11r", "feRR2r"],
+        ["feRR11r", "feRR3r"],
+        ["feRR11r", "feRR4r"],
+        ["feRR12r", "feRR3r"],
+        ["feRR12r", "feRR4r"],
+        ["feRR12r", "feRR5r"],
+        ["feRR13r", "feRR4r"],
+        ["feRR13r", "feRR5r"],
+
+        ["feRR11r", "feRR1l"],
+        ["feRR11r", "feRR2l"],
+        ["feRR11r", "feRR3l"],
+        ["feRR12r", "feRR3l"],
+        ["feRR12r", "feRR4l"],
+        ["feRR12r", "feRR5l"],
+        ["feRR13r", "feRR4l"],
+        ["feRR13r", "feRR5l"],
+        ["feRR13r", "feRR7l"],
+
+        // rigdifiy
+        ["feRR11r", "feRR8"],
+        ["feRR12r", "feRR8"],
+        ["feRR13r", "feRR8"],
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+
+        {"group":"bug_fender_RR_skirt"},
+        {"groundModel":"metal"},
+        {"dragCoef":10},
+        ["feRR1r", "feRR2r", "feRR11r"],
+        ["feRR11r", "feRR2r", "feRR3r"],
+        ["feRR3r", "feRR12r", "feRR11r"],
+        ["feRR3r", "feRR4r", "feRR12r"],
+        ["feRR4r", "feRR13r", "feRR12r"],
+        ["feRR4r", "feRR5r", "feRR13r"],
+        ["feRR5r", "feRR6r", "feRR13r"],
+        {"group":""},
+        {"dragCoef":0}
+    ],
+}
+
 }

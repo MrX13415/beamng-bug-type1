@@ -1,8 +1,8 @@
 {
-  "0-100 km/h":28.7,
-  "0-60 mph":26.3,
-  "100-0 km/h":44.3,
-  "60-0 mph":132.7,
+  "0-100 km/h":19.6,
+  "0-60 mph":18,
+  "100-0 km/h":42,
+  "60-0 mph":128.5,
   "BoundingBox":[
     [
       -0.703,
@@ -15,29 +15,30 @@
       1.25006
     ]
   ],
+  "Braking G":0.936,
   "Config Type":"Prototype ",
   "Configuration":"vehiclesData.bug.diesel.Configuration",
   "Description":"vehiclesData.bug.diesel.Description",
-  "Drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Diesel",
   "Induction Type":"NA",
   "Off-Road Score":34,
   "Performance Class":"2",
   "Population":0,
-  "Power":36,
-  "PowerPeakRPM":3000,
+  "Power":47,
+  "PowerPeakRPM":3200,
   "Propulsion":"ICE",
-  "Top Speed":34.09623718,
-  "Torque":95,
-  "TorquePeakRPM":"1550 - 2450",
+  "Top Speed":38.300307711631,
+  "Torque":110,
+  "TorquePeakRPM":"2150 - 3050",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1005,
-  "Weight/Power":27.91666667,
+  "Weight":1020,
+  "Weight/Power":21.702127659574,
   "defaultMultiPaintSetup":{
-    "name": "Jet Black",
-    "paint1": "bug_jet_black",
-    "paint2": "bug_jet_black",
-    "paint3": "bug_alpine_white"
+    "name":"Jet Black",
+    "paint1":"bug_jet_black",
+    "paint2":"bug_jet_black",
+    "paint3":"bug_alpine_white"
   }
 }

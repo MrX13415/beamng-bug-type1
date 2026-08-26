@@ -5,7 +5,7 @@
 	"information":{
         "authors":"MrX13415",
         "name":"Seats",
-        "value":20,
+        "value":0,
     },
     "slotType" : "bug_seats",
     "slots2": [
@@ -24,7 +24,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Cargo Box Floor",
-        "value":40,
+        "value":120,
     },
     "slotType" : "bug_seat_R",
     "slots2": [

@@ -1,8 +1,8 @@
 {
-  "0-100 km/h":13.5,
-  "0-60 mph":12.2,
-  "100-0 km/h":39,
-  "60-0 mph":119.3,
+  "0-100 km/h":13.7,
+  "0-60 mph":12.8,
+  "100-0 km/h":40.9,
+  "60-0 mph":125.6,
   "BoundingBox":[
     [
       -0.703,
@@ -15,30 +15,30 @@
       1.25006
     ]
   ],
-  "Braking G":1.009,
+  "Braking G":0.961,
   "Config Type":"Factory",
   "Configuration":"vehiclesData.bug.1600_eu_hardtop.Configuration",
   "Description":"vehiclesData.bug.1600_eu_hardtop.Description",
-  "Drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Off-Road Score":28,
   "Performance Class":"2",
   "Population":0,
-  "Power":61,
-  "PowerPeakRPM":"3700 - 4350",
+  "Power":60,
+  "PowerPeakRPM":"3350 - 4150",
   "Propulsion":"ICE",
-  "Top Speed":42.66809845,
-  "Torque":130,
-  "TorquePeakRPM":"2100 - 3150",
+  "Top Speed":41.801013770074,
+  "Torque":135,
+  "TorquePeakRPM":"2200 - 3150",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":990,
-  "Weight/Power":16.2295082,
+  "Weight":1000,
+  "Weight/Power":16.666666666667,
   "defaultMultiPaintSetup":{
-    "name": "Sky Blue",
-    "paint1": "bug_sky_blue",
-    "paint2": "bug_sky_blue",
-    "paint3": "bug_sky_blue"
+    "name":"Sky Blue",
+    "paint1":"bug_sky_blue",
+    "paint2":"bug_sky_blue",
+    "paint3":"bug_sky_blue"
   }
 }

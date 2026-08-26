@@ -1,8 +1,8 @@
 {
-  "0-100 km/h":21,
-  "0-60 mph":19.3,
-  "100-0 km/h":44.3,
-  "60-0 mph":132.7,
+  "0-100 km/h":19.7,
+  "0-60 mph":18.1,
+  "100-0 km/h":40.8,
+  "60-0 mph":122.4,
   "BoundingBox":[
     [
       -0.703,
@@ -15,30 +15,31 @@
       1.25006
     ]
   ],
+  "Braking G":0.964,
   "Config Type":"Factory",
-  "Country": "Brazil",
   "Configuration":"vehiclesData.bug.pedeboi.Configuration",
+  "Country":"Brazil",
   "Description":"vehiclesData.bug.pedeboi.Description",
   "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
-  "Off-Road Score":34,
+  "Off-Road Score":28,
   "Performance Class":"2",
   "Population":100,
-  "Power":40,
-  "PowerPeakRPM":"3250 - 4000",
+  "Power":43,
+  "PowerPeakRPM":"3750 - 4350",
   "Propulsion":"ICE",
-  "Top Speed":37.94913483,
+  "Top Speed":40.297950696529,
   "Torque":100,
-  "TorquePeakRPM":"1750 - 2800",
+  "TorquePeakRPM":"2000 - 2750",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":960,
-  "Weight/Power":24,
+  "Weight":970,
+  "Weight/Power":22.558139534884,
   "defaultMultiPaintSetup":{
-    "name": "Cascade Cyan",
-    "paint1": "bug_cascade_cyan",
-    "paint2": "bug_cascade_cyan",
-    "paint3": "bug_cement_gray"
+    "name":"Cascade Cyan",
+    "paint1":"bug_cascade_cyan",
+    "paint2":"bug_cascade_cyan",
+    "paint3":"bug_cement_gray"
   }
 }

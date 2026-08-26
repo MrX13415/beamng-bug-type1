@@ -20,7 +20,7 @@
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
-        {"enableABS":false},
+       // {"enableABS":false}, (Now controlled by the part "bug_ABS" in the frame)
         {"brakeTorque":"$=$brakestrength*650"},
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
@@ -60,7 +60,7 @@
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
-        {"enableABS":false},
+       // {"enableABS":false}, (Now controlled by the part "bug_ABS" in the frame)
         {"brakeTorque":"$=$brakestrength*700"},
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
@@ -141,7 +141,7 @@
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
-        {"enableABS":false},
+       // {"enableABS":false}, (Now controlled by the part "bug_ABS" in the frame)
         {"brakeTorque":"$=$brakestrength*650"},
         {"brakeInputSplit":1},
         {"brakeSplitCoef":1},
@@ -181,7 +181,7 @@
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brakes
-        {"enableABS":false},
+       // {"enableABS":false}, (Now controlled by the part "bug_ABS" in the frame)
         {"brakeTorque":"$=$brakestrength*900"},
         {"brakeInputSplit":0.6},
         {"brakeSplitCoef":0.35},

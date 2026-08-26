@@ -4,7 +4,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Dual Exhaust",
-        "value":80,
+        "value":315,
     },
     "slotType" : "bug_exhaust",
     "flexbodies": [
@@ -197,7 +197,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Single Exhaust",
-        "value":60,
+        "value":225,
     },
     "slotType" : "bug_exhaust",
     "flexbodies": [
@@ -384,7 +384,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Race Dual Exhaust",
-        "value":900,
+        "value":475,
     },
     "slotType" : "bug_exhaust",
     "flexbodies": [

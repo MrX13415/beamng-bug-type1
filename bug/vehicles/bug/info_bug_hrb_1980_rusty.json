@@ -1,50 +1,51 @@
 {
-  "0-100 km/h":7.7,
-  "0-100 mph":13.2,
-  "0-200 km/h":17.8,
-  "0-60 mph":7.5,
-  "100-0 km/h":43,
-  "100-200 km/h":10.1,
-  "60-0 mph":132.4,
-  "60-100 mph":5.6,
+  "0-100 km/h":6.6,
+  "0-100 mph":13.6,
+  "0-200 km/h":16.4,
+  "0-60 mph":6.4,
+  "100-0 km/h":41.6,
+  "100-200 km/h":9.8,
+  "60-0 mph":128,
+  "60-100 mph":7.1,
   "BoundingBox":[
     [
-      -0.778,
-      -1.77119,
-      -0.259479
+      -1.42,
+      -2.60233,
+      -0.284479
     ],
     [
-      0.778,
-      2.29767,
-      1.28392
+      1.58,
+      2.99767,
+      1.25892
     ]
   ],
-  "Braking G":0.915,
-  "Country": "United States",
+  "Braking G":0.944,
   "Config Type":"Herbie",
   "Configuration":"vehiclesData.bug.hrb_1980_rusty.Configuration",
+  "Country":"United States",
   "Description":"vehiclesData.bug.hrb_1980_rusty.Description",
-  "drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Licenseplate":"California Plate Design ('63)",
-  "Off-Road Score":28,
+  "Off-Road Score":34,
   "Performance Class":"2",
   "Population":0,
-  "Power":594,
+  "Power":807,
   "PowerPeakRPM":7900,
   "Propulsion":"ICE",
-  "Top Speed":76.83917927,
-  "Torque":530,
-  "TorquePeakRPM":3800,
+  "Top Speed":67.825065048534,
+  "Torque":720,
+  "TorquePeakRPM":7200,
   "Transmission":"Automatic",
   "Value":8500,
-  "Weight":1045,
-  "Weight/Power":1.759259259,
+  "Weight":1070,
+  "Weight/Power":1.3258983890954,
   "defaultMultiPaintSetup":{
-    "name": "Pearl White",
-    "paint1": "bug_pearl_white",
-    "paint2": "bug_pearl_white",
-    "paint3": "bug_gray"
-  }
+    "name":"Pearl White",
+    "paint1":"bug_pearl_white",
+    "paint2":"bug_pearl_white",
+    "paint3":"bug_gray"
+  },
+  "drivetrain":"RWD"
 }

@@ -1,12 +1,8 @@
 {
-  "0-100 km/h":6.8,
-  "0-100 mph":16.6,
-  "0-200 km/h":31.5,
-  "0-60 mph":6.5,
-  "100-0 km/h":41.3,
-  "100-200 km/h":24.6,
-  "60-0 mph":126.6,
-  "60-100 mph":10.1,
+  "0-100 km/h":10.5,
+  "0-60 mph":10,
+  "100-0 km/h":43.9,
+  "60-0 mph":132.7,
   "BoundingBox":[
     [
       -0.703,
@@ -15,31 +11,31 @@
     ],
     [
       0.94,
-      2.29767,
-      1.25892
+      2.39767,
+      1.53889
     ]
   ],
-  "Braking G":0.952,
-  "Country": "United States",
+  "Braking G":0.896,
   "Config Type":"Offroad",
   "Configuration":"vehiclesData.bug.offroad.Configuration",
+  "Country":"United States",
   "Description":"vehiclesData.bug.offroad.Description",
-  "Drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Off-Road Score":39,
   "Performance Class":"2",
   "Population":20,
-  "Power":138,
-  "PowerPeakRPM":"4950 - 5700",
+  "Power":112,
+  "PowerPeakRPM":4450,
   "Propulsion":"ICE",
-  "Top Speed":59.83240891,
-  "Torque":200,
-  "TorquePeakRPM":"4300 - 5050",
+  "Top Speed":44.241458871765,
+  "Torque":180,
+  "TorquePeakRPM":"4100 - 4600",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1005,
-  "Weight/Power":7.282608696,
-  "drivetrain":"RWD",
-  "defaultMultiPaintSetup":"bug_matte_khaki_colors"
+  "Weight":1090,
+  "Weight/Power":9.7321428571429,
+  "defaultMultiPaintSetup":"bug_matte_khaki_colors",
+  "drivetrain":"RWD"
 }

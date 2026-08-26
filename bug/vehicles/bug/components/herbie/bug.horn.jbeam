@@ -3,7 +3,8 @@
 "soundscape_hrb_horn": {
     "information":{
         "authors":"BeamNG",
-        "name":"Herbie Horn"
+        "name":"Herbie Horn",
+        "value":75,
     },
     "slotType" : "soundscape_horn",
     "soundscape": [

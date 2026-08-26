@@ -5,7 +5,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Original Steering Wheel",
-        "value":310,
+        "value":250,
     },
     "slotType" : "bug_steer",
     "slots2": [
@@ -19,7 +19,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Pearl White Steering Wheel",
-        "value":300,
+        "value":90,
     },
     "slotType": "skin_steer",
     "skinName" : "white",
@@ -33,7 +33,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Cream White Steering Wheel",
-        "value":300,
+        "value":90,
     },
     "slotType": "skin_steer",
     "skinName" : "white2",
@@ -47,7 +47,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Black Steering Wheel",
-        "value":300,
+        "value":70,
     },
     "slotType" : "skin_steer",
     "skinName" : "black",
@@ -61,7 +61,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Colored Steering Wheel (Exterior)",
-        "value":300,
+        "value":100,
     },
     "slotType" : "skin_steer",
     "skinName" : "paint1",
@@ -75,7 +75,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Colored Steering Wheel (Exterior, Secondary)",
-        "value":300,
+        "value":100,
     },
     "slotType" : "skin_steer",
     "skinName" : "paint2",
@@ -89,7 +89,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Colored Steering Wheel (Interior)",
-        "value":300,
+        "value":100,
     },
     "slotType" : "skin_steer",
     "skinName" : "paint3",
@@ -103,7 +103,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Wooden Steering Wheel",
-        "value":300,
+        "value":150,
     },
     "slotType" : "skin_steer",
     "skinName" : "wood",
@@ -117,7 +117,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Old Beaten Steering Wheel",
-        "value":30,
+        "value":-200,
     },
     "slotType" : "skin_steer",
     "skinName" : "old",

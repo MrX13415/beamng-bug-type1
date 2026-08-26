@@ -3,7 +3,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Rear Spoiler",
-        "value":200,
+        "value":50,
     },
     "slotType" : "bug_spoilerR",
     "slots2": [
@@ -125,7 +125,7 @@
     "information":{
         "authors": "MrX13415",
         "name": "Black Spoiler",
-        "value": 50,
+        "value": 200,
     },
     "slotType" : "skin_spoilerR",
     "skinName" : "black",
@@ -139,7 +139,7 @@
     "information":{
         "authors": "MrX13415",
         "name": "Pearl White Spoiler",
-        "value": 50,
+        "value": 200,
     },
     "slotType" : "skin_spoilerR",
     "skinName" : "white",
@@ -153,7 +153,7 @@
     "information":{
         "authors": "MrX13415",
         "name": "Cream White Spoiler",
-        "value": 50,
+        "value": 200,
     },
     "slotType" : "skin_spoilerR",
     "skinName" : "white2",
@@ -167,7 +167,7 @@
     "information":{
         "authors": "MrX13415",
         "name": "Colored (Exterior)",
-        "value": 50,
+        "value": 230,
     },
     "slotType" : "skin_spoilerR",
     "skinName" : "paint1",
@@ -181,7 +181,7 @@
     "information":{
         "authors": "MrX13415",
         "name": "Colored (Exterior, Secondary)",
-        "value": 50,
+        "value": 230,
     },
     "slotType" : "skin_spoilerR",
     "skinName" : "paint2",
@@ -195,7 +195,7 @@
     "information":{
         "authors": "MrX13415",
         "name": "Colored (Interior)",
-        "value": 50,
+        "value": 230,
     },
     "slotType" : "skin_spoilerR",
     "skinName" : "paint3",

@@ -1,6 +1,6 @@
 {
-  "0-100 km/h":22.1,
-  "0-60 mph":20.3,
+  "0-100 km/h":20.4,
+  "0-60 mph":18.6,
   "100-0 km/h":44.3,
   "60-0 mph":132.7,
   "BoundingBox":[
@@ -16,29 +16,29 @@
     ]
   ],
   "Config Type":"Factory",
-  "Country": "United States",
   "Configuration":"vehiclesData.bug.1200_us_ragtop.Configuration",
+  "Country":"United States",
   "Description":"vehiclesData.bug.1200_us_ragtop.Description",
-  "Drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Off-Road Score":28,
   "Performance Class":"2",
   "Population":300,
-  "Power":41,
-  "PowerPeakRPM":"3350 - 4050",
+  "Power":44,
+  "PowerPeakRPM":"3800 - 4400",
   "Propulsion":"ICE",
-  "Top Speed":37.88595963,
+  "Top Speed":40.264239842797,
   "Torque":100,
-  "TorquePeakRPM":"1800 - 2850",
+  "TorquePeakRPM":"2000 - 2800",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1005,
-  "Weight/Power":24.51219512,
+  "Weight":1015,
+  "Weight/Power":23.068181818182,
   "defaultMultiPaintSetup":{
-    "name": "Sunset",
-    "paint1": "bug_sunset",
-    "paint2": "bug_sunset",
-    "paint3": "bug_sunset"
+    "name":"Sunset",
+    "paint1":"bug_sunset",
+    "paint2":"bug_sunset",
+    "paint3":"bug_sunset"
   }
 }

@@ -1,25 +1,25 @@
 {
-  "0-100 km/h":4.5,
-  "0-100 mph":9.6,
-  "0-200 km/h":15.3,
-  "0-60 mph":4.3,
-  "100-0 km/h":29.9,
-  "100-200 km/h":10.7,
-  "60-0 mph":91,
-  "60-100 mph":5.2,
+  "0-100 km/h":5.1,
+  "0-100 mph":11.1,
+  "0-200 km/h":17.9,
+  "0-60 mph":4.8,
+  "100-0 km/h":37.5,
+  "100-200 km/h":12.7,
+  "60-0 mph":114.4,
+  "60-100 mph":6.2,
   "BoundingBox":[
     [
-      -0.69029,
-      -1.77119,
-      -0.248979
+      -0.7,
+      -1.61733,
+      -0.232979
     ],
     [
-      0.85029,
+      0.86,
       2.29767,
       1.25006
     ]
   ],
-  "Braking G":1.317,
+  "Braking G":1.049,
   "Config Type":"Custom",
   "Configuration":"vehiclesData.bug.tuned.Configuration",
   "Description":"vehiclesData.bug.tuned.Description",
@@ -29,20 +29,20 @@
   "Off-Road Score":21,
   "Performance Class":"2",
   "Population":50,
-  "Power":303,
-  "PowerPeakRPM":"5450 - 6000",
+  "Power":275,
+  "PowerPeakRPM":6550,
   "Propulsion":"ICE",
-  "Top Speed":70.76819611,
-  "Torque":405,
-  "TorquePeakRPM":"4050 - 5250",
+  "Top Speed":59.616056418256,
+  "Torque":340,
+  "TorquePeakRPM":"3950 - 5350",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":960,
-  "Weight/Power":3.168316832,
+  "Weight":925,
+  "Weight/Power":3.3636363636364,
   "defaultMultiPaintSetup":{
-    "name": "Bermuda Blue",
-    "paint1": "bug_bermuda_blue",
-    "paint2": "bug_sky_blue",
-    "paint3": "bug_pure_black"
+    "name":"Bermuda Blue",
+    "paint1":"bug_bermuda_blue",
+    "paint2":"bug_sky_blue",
+    "paint3":"bug_pure_black"
   }
 }

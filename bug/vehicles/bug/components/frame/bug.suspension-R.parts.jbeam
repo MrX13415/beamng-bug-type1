@@ -20,7 +20,7 @@
         {"hubcapBreakGroup":"hubcap_RL"},
         {"hubcapGroup":"hubcap_RL"},
         {"axleBeams":["axle_RL"]},
-        ["RL", "wheel_RL", "tire_RL", "rw1ll", "rw1l", 9999,  "rh5l",  -1, {"torqueCoupling:":"e1l", "torqueArm:":"e3l", "torqueArm2:":"e1r"}],
+        ["RL", "wheel_RL", "tire_RL", "rw1ll", "rw1l", 9999,  "rh5l",  -1, {"torqueCoupling:":"e1l", "torqueArm:":"e3l", "torqueArm2:":"e3r"}],
         {"selfCollision":true}, 
         {"hubcapBreakGroup":""},
         {"hubcapGroup":""},

@@ -195,7 +195,7 @@
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
 		["hubcap_F",      ["hubcap_F"], [],      "hubcap_smoothie_F",         "Front Hubcaps"],
-        ["tire_F_14x5.5", ["tire_F_14x5.5"], [], "tire_F_175_65_14_standard", "Front Tires",       {"nodeOffset":{"x":0.176,"y":-1.20559,"z":0.33198}}],
+        ["tire_F_14x5.5", ["tire_F_14x5.5"], [], "tire_F_175_65_14_standard", "Front Tires",       {"nodeOffset1":{"x":0.035,"y":0,"z":0}}],
         ["skin_rim1_F",   ["skin_rim1_F"], [],   "bug_rim1_F_paint1",         "Front Outer Color", {"coreSlot":true}],
         ["skin_rim2_F",   ["skin_rim2_F"], [],   "bug_rim2_F_paint1",         "Front Inner Color", {"coreSlot":true}],
     ],
@@ -280,7 +280,7 @@
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
 		["hubcap_R",      ["hubcap_R"], [],      "hubcap_smoothie_R",         "Rear Hubcaps"],
-        ["tire_R_14x5.5", ["tire_R_14x5.5"], [], "tire_R_175_65_14_standard", "Rear Tires",       {"nodeOffset":{"x":0.176,"y":1.17,"z":0.297021}}],
+        ["tire_R_14x5.5", ["tire_R_14x5.5"], [], "tire_R_175_65_14_standard", "Rear Tires",       {"nodeOffset1":{"x":0.035,"y":0,"z":0}}],
         ["skin_rim1_R",   ["skin_rim1_R"], [],   "bug_rim1_R_paint1",         "Rear Outer Color", {"coreSlot":true}],
         ["skin_rim2_R",   ["skin_rim2_R"], [],   "bug_rim2_R_paint1",         "Rear Inner Color", {"coreSlot":true}],
     ],
@@ -536,7 +536,7 @@
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
 		["hubcap_F",        ["hubcap_F"], [],        "hubcap_smoothie_F",             "Front Hubcaps"],
-        ["tire_F_14x7_alt", ["tire_F_14x7_alt"], [], "tire_F_185_60_14_alt_standard", "Front Tires",       {"nodeOffset":{"x":0.135,"y":-1.20559,"z":0.33198}}],
+        ["tire_F_14x7",     ["tire_F_14x7"], [],     "tire_F_185_60_14_alt_standard", "Front Tires",       {"nodeOffset1":{"x":0.035,"y":0,"z":0}}],
         ["skin_rim1_F",     ["skin_rim1_F"], [],     "bug_rim1_F_paint1",             "Front Outer Color", {"coreSlot":true}],
         ["skin_rim2_F",     ["skin_rim2_F"], [],     "bug_rim2_F_paint1",             "Front Inner Color", {"coreSlot":true}],
     ],
@@ -621,7 +621,7 @@
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
 		["hubcap_R",        ["hubcap_R"], [],        "hubcap_smoothie_R",             "Rear Hubcaps"],
-        ["tire_R_14x7_alt", ["tire_R_14x7_alt"], [], "tire_R_185_60_14_alt_standard", "Rear Tires",       {"nodeOffset":{"x":0.135,"y":1.17,"z":0.297021}}],
+        ["tire_R_14x7",     ["tire_R_14x7"], [],     "tire_R_185_60_14_alt_standard", "Rear Tires",       {"nodeOffset1":{"x":0.035,"y":0,"z":0}}],
         ["skin_rim1_R",     ["skin_rim1_R"], [],     "bug_rim1_R_paint1",             "Rear Outer Color", {"coreSlot":true}],
         ["skin_rim2_R",     ["skin_rim2_R"], [],     "bug_rim2_R_paint1",             "Rear Inner Color", {"coreSlot":true}],
     ],
@@ -709,7 +709,7 @@
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
 		["hubcap_F",    ["hubcap_F"], [],    "hubcap_smoothie_F", "Front Hubcaps"],
-        ["tire_F_15x6", ["tire_F_15x6"], [], "tire_F_800_15_ww",  "Front Tires"],
+        ["tire_F_15x6_alt", ["tire_F_15x6_alt"], [], "tire_F_800_15_ww",  "Front Tires", {"nodeOffset1":{"x":-0.03, "y":0, "z":0}}],
         ["skin_rim1_F", ["skin_rim1_F"], [], "bug_rim1_F_paint1", "Front Outer Color", {"coreSlot":true}],
         ["skin_rim2_F", ["skin_rim2_F"], [], "bug_rim2_F_paint1", "Front Inner Color", {"coreSlot":true}],
     ],
@@ -795,9 +795,9 @@
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
 		["hubcap_R",    ["hubcap_R"], [],    "hubcap_smoothie_R", "Rear Hubcaps"],
-        ["tire_R_15x6", ["tire_R_15x6"], [], "tire_R_800_15_ww",  "Rear Tires"],
-        ["skin_rim1_R", ["skin_rim1_R"], [], "bug_rim1_R_paint1", "Rear Outer Color", {"coreSlot":true}],
-        ["skin_rim2_R", ["skin_rim2_R"], [], "bug_rim2_R_paint1", "Rear Inner Color", {"coreSlot":true}],
+        ["tire_R_15x6_alt", ["tire_R_15x6_alt"], [], "tire_R_800_15_ww",  "Rear Tires", {"nodeOffset1":{"x":-0.03,"y":0,"z":0}}],
+        ["skin_rim1_R", ["skin_rim1_R"], [], "bug_rim1_R_paint1", "Rear Outer Color",   {"coreSlot":true}],
+        ["skin_rim2_R", ["skin_rim2_R"], [], "bug_rim2_R_paint1", "Rear Inner Color",   {"coreSlot":true}],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

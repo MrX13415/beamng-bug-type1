@@ -11,6 +11,13 @@
         "togglefuelcap":       {"order":44.2, "onDown":"vehicle.toggleFuelcap()",                               "title":"vehicle.interaction.tech.engine.toggle_fuel_cap.title",        "desc":"vehicle.interaction.tech.engine.toggle_fuel_cap.desc"},
 
         // Power:
-        "batteryinfo":         {"order":45.1, "onDown":"power.batteryStatus()",                                 "title":"vehicle.interaction.tech.battery.show_status.title",           "desc":"vehicle.interaction.tech.battery.show_status.desc"}
+        "batteryinfo":         {"order":45.1, "onDown":"power.batteryStatus()",                                 "title":"vehicle.interaction.tech.battery.show_status.title",           "desc":"vehicle.interaction.tech.battery.show_status.desc"},
+
+        // Diff Lock:
+        "toggleRearDiff":      {"order": 50.1, "onDown":  "controller.getControllerSafe('rearLockControl').nextDriveMode()",                                            "title": "vehicle.interaction.powertrain.rearDiff.toggle.title",       "desc": "vehicle.interaction.powertrain.rearDiff.toggle.desc" },
+        "lockRearDiff":        {"order": 50.2, "onDown":  "controller.getControllerSafe('rearLockControl').setDriveMode('locked')",                                     "title": "vehicle.interaction.powertrain.rearDiff.setLocked.title",    "desc": "vehicle.interaction.powertrain.rearDiff.setLocked.desc" },
+        "unlockRearDiff":      {"order": 50.3, "onDown":  "controller.getControllerSafe('rearLockControl').setDriveMode('unlocked')",                                   "title": "vehicle.interaction.powertrain.rearDiff.setUnlocked.title",  "desc": "vehicle.interaction.powertrain.rearDiff.setUnlocked.desc" },
+        "setRearDiffModeAxis": {"order": 50.4, "onChange":"controller.getControllerSafe('rearLockControl').setDriveMode(VALUE > 0.5 and 'locked' or 'unlocked')",       "title": "vehicle.interaction.powertrain.rearDiff.set.title",          "desc": "vehicle.interaction.powertrain.rearDiff.set.desc" },
+        
     }
 }
