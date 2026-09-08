@@ -3,7 +3,8 @@
 cls
 :: Go to parent folder for the folder of this file
 pushd %~dp0..
+echo %cd%
 
-python Tools\py\app.py
+python build\py\bugtool.py
 
 popd

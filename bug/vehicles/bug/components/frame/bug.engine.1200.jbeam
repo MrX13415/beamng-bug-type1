@@ -34,7 +34,8 @@
         ["combustionEngine", "mainEngine", "dummy", 0],
     ],
     "mainEngine": {
-        "torque":[
+        // 40PS / 88Nm
+        "torque":[            
             ["rpm", "torque"],
             [    0,   0             ],
             [  500,  "$=$torque*53" ],

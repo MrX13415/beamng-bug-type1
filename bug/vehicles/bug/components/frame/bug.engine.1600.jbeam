@@ -6,7 +6,7 @@
     "information":{
         "authors":"Fufsgfen",
         "name":"1.6L Air-Cooled F4 Engine",
-        "value":10000,
+        "value":8000,
     },
     "slotType" : "bug_engine",
     "slots2": [
@@ -34,6 +34,7 @@
         ["combustionEngine", "mainEngine", "dummy", 0],
     ],
     "mainEngine": {
+        // 54PS / 120Nm
         "torque":[
             ["rpm", "torque"],
             [    0,   0             ],

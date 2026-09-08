@@ -34,6 +34,7 @@
         ["combustionEngine", "mainEngine", "dummy", 0],
     ],
     "mainEngine": {
+        // 42PS / 98Nm
         "torque":[
             ["rpm", "torque"],
             [    0,  0              ],

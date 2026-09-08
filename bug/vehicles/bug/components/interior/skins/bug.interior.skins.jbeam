@@ -451,7 +451,7 @@
    "bug_skin_interior1_paint1": {
       "information":{
          "authors":"MrX13415",
-         "name":"Colored Headliner (Exterior) ",
+         "name":"Colored Headliner (Exterior)",
          "value":200,
       },
       "slotType" : "skin_interior1",
