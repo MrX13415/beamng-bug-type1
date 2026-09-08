@@ -2,6 +2,7 @@ import os
 import sys
 import glob
 import shutil
+from unittest import result
 import zipfile
 import session
 from util import *
@@ -27,6 +28,9 @@ def makeZIP(srcPath, targetPath):
     print(f"Compressing '{targetPath}'")
     count = fileCount(source)
     index = 0
+
+    targetFolder = os.path.dirname(target)
+    os.makedirs(targetFolder, exist_ok=True)
 
     with zipfile.ZipFile(target, "w", zipfile.ZIP_DEFLATED, allowZip64=True) as zf:
         for root, dirs, files in os.walk(source):
@@ -158,7 +162,7 @@ def getResultInfo(variantID):
     branch = gitBranch()
     branchStr = f"-{sanitizeFilename(branch)}" if branch is not None else ""
 
-    filename = f"Publish/release-{variantID}{verStr}{hashStr}{branchStr}.zip"
+    filename = f"release-{variantID}{verStr}{hashStr}{branchStr}.zip"
 
     result = ResultInfo(filename, info, hash, branch)
     return result
@@ -172,12 +176,11 @@ def publish(variantID, githubOutputs=False):
     #end
 
     resultInfo = getResultInfo(variantID)
-    resultFile = resultInfo.filename
+    targetFile = os.path.join("artifacts", resultInfo.filename)
 
     print("Publish Variant: " + variantID.upper())
-    print(f"File: {resultFile}")
 
-    ok = makeZIP(VariantIDMap[variantID], resultFile)
+    ok = makeZIP(VariantIDMap[variantID], targetFile)
 
     if ok and githubOutputs:
         data={
@@ -190,7 +193,7 @@ def publish(variantID, githubOutputs=False):
         if writeGithubOutputs(data):
             print("GitHub Outputs written")
         else:
-            print("Error: Unable to write GitHub Outputs!")
+            print("Warning: Unable to write GitHub Outputs! (GitHub enviroment not detected)")
     #end
 
     print()

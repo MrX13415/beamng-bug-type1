@@ -1,7 +1,8 @@
 changes.txt
 desktop.ini
 
-Publish/*
+# Don't track local atrifacts
+artifacts/*
 
 # Don't track DAE cache files
 *.cdae
@@ -12,4 +13,3 @@ bug-aw/*
 
 # Don't track python compiled files
 build/py/__pycache__/*
-BeamNG.drive.lnk
