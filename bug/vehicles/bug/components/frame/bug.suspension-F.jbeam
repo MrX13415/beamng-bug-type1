@@ -20,7 +20,7 @@
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$camber_F", "range", "", "Wheel Alignment", 1, 0.99, 1.01, "Camber Adjust", "Adjusts the wheel camber angle", {"subCategory":"Front"}],
+        ["$camber_F", "range", "", "Wheel Alignment", 0.997, 0.97, 1.03, "Camber Adjust", "Adjusts the wheel camber angle", {"subCategory":"Front"}],
         ["$caster_F", "range", "", "Wheel Alignment", 0, -0.003, 0.003, "Caster Adjust", "Adjust forward rake of the steering axis", {"subCategory":"Front"}],
         ["$trackoffset_F", "range", "+m", "Wheels", 0, -0.02, 0.05, "Track Offset", "Spacing of the wheel from the hub", {"stepDis":0.001, "subCategory":"Front"}],
     ],
@@ -417,7 +417,7 @@
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
-        ["$toe_F", "range", "", "Wheel Alignment", 0.9995, 0.99, 1.01, "Toe Adjust", "Adjusts the wheel toe-in angle", {"subCategory":"Front"}],
+        ["$toe_F", "range", "", "Wheel Alignment", 0.991, 0.92, 1.072, "Toe Adjust", "Adjusts the wheel toe-in angle", {"subCategory":"Front"}],
         ["$steer_center_F", "range", "", "Wheel Alignment", 0, -0.002, 0.002, "Toe Left/Right Trim", "Fine tunes the centerpoint of the steering", {"subCategory":"Front"}],
     ],
     "nodes":[
