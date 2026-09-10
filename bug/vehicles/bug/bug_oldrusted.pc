@@ -183,9 +183,6 @@
   },
   "vars":{
     "$brakestrength":0.6,
-    "$camber_F":1,
-    "$camber_R":1,
-    "$caster_F":0,
     "$charge":0.3,
     "$doorventFLInitState":0,
     "$doorventFRInitState":0.04,
@@ -196,8 +193,6 @@
     "$steer_center_F":0,
     "$tirepressure_F":8,
     "$tirepressure_R":12,
-    "$toe_F":0.9995,
-    "$toe_R":1.0005,
     "$trackoffset_F":0,
     "$trackoffset_R":0,
     "$windowFLInitState":0.06,
