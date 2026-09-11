@@ -42,6 +42,8 @@
     "bug_fender_FR":"bug_fender_FR",
     "bug_fender_RL":"bug_fender_RL",
     "bug_fender_RR":"bug_fender_RR",
+    "bug_fender_RL_skirt":"bug_fender_RL_skirt",
+    "bug_fender_RR_skirt":"bug_fender_RR_skirt",
     "bug_fender_gravel_guards":"bug_fender_gravel_guards",
     "bug_fender_grille":"bug_fender_grille",
     "bug_fender_mud_flaps":"bug_fender_mud_flaps",
