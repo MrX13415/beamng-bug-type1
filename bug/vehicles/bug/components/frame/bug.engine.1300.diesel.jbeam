@@ -45,12 +45,22 @@
             [ 2500, "$=$torque*114" ],
             [ 3000, "$=$torque*115" ],
             [ 3500, "$=$torque*109" ],
-            [ 3800, "$=$torque*91"  ]
+            [ 3800, "$=$torque*91"  ],
+            [ 4200, "$=$torque*78"  ],
+            [ 4600, "$=$torque*63"  ],
+            [ 5000, "$=$torque*47"  ],
+            [ 5500, "$=$torque*33"  ],
+            [ 6000, "$=$torque*22"  ],
+            [ 6500, "$=$torque*13"  ],
+            [ 7000, "$=$torque*7"   ],
+            [ 7500, "$=$torque*3"   ],
+            [ 8000, "$=$torque*0"   ]
         ],
         "idleRPM":695,
         "idleRPMRoughness":180,
         "maxRPM":3800,
         "maxPhysicalRPM":4400,
+        "hasRevLimiter":false,
         "inertia":0.11, //for 200mm 14lbs flywheel + other rotational mass of engine
         "friction":9,
         "dynamicFriction":0.020,

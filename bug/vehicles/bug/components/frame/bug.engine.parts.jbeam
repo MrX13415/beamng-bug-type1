@@ -963,6 +963,7 @@
     "mainEngine":{
         //max rpm physically capable of
         "$+maxRPM":200,
+        "$+maxPhysicalRPM":200,
         "$*inertia":1.1,
         "$*engineBrakeTorque":1.2,
         "$+engineBlockAirCoolingEfficiency":6,
@@ -989,6 +990,7 @@
     "mainEngine":{
         //max rpm physically capable of
         "$+maxRPM":300,
+        "$+maxPhysicalRPM":300,
         "$*inertia":1.25,
         "$*engineBrakeTorque":1.24,
         "$+engineBlockAirCoolingEfficiency":10,
@@ -1028,6 +1030,7 @@
 
         //max rpm physically capable of
         "$+maxRPM":800,
+        "$+maxPhysicalRPM":800,
         "$+idleRPM":100,
         "$+idleRPMRoughness":100,
         "$*friction":0.95,
@@ -1071,6 +1074,7 @@
 
         //max rpm physically capable of
         "$+maxRPM":1000,
+        "$+maxPhysicalRPM":1000,
         "$+idleRPM":150,
         "$+idleRPMRoughness":150,
         "$*friction":0.95,
@@ -1114,6 +1118,7 @@
 
         //max rpm physically capable of
         "$+maxRPM":1200,
+        "$+maxPhysicalRPM":1200,
         "$+idleRPM":150,
         "$+idleRPMRoughness":160,
         "$*friction":0.98,

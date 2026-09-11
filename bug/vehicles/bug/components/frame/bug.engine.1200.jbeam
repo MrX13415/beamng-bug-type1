@@ -5,7 +5,7 @@
 "bug_engine_1.2": {
     "information":{
         "authors":"Fufsgfen",
-        "name":"1.2L Air-Cooled F4 Engine",
+        "name":"1.2L Air-Cooled F4 Engine XX",
         "value":5000,
     },
     "slotType" : "bug_engine",
@@ -49,7 +49,13 @@
             [ 4300,  "$=$torque*93" ],
             [ 4600,  "$=$torque*88" ],
             [ 4800,  "$=$torque*81" ],
-            [ 5000,  "$=$torque*72" ]
+            [ 5000,  "$=$torque*72" ],
+            [ 5500,  "$=$torque*58" ],
+            [ 6000,  "$=$torque*44" ],
+            [ 6500,  "$=$torque*30" ],
+            [ 7000,  "$=$torque*18" ],
+            [ 7500,  "$=$torque*8"  ],
+            [ 8000,  "$=$torque*0"  ]
         ],
         "idleRPM":850,
         "idleRPMRoughness":150,
