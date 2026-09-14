@@ -90,7 +90,7 @@
         "radiatorFanType":"mechanical",
 
         //engine durability
-        "cylinderWallTemperatureDamageThreshold":120,
+        "cylinderWallTemperatureDamageThreshold":150,
         "headGasketDamageThreshold":1500000,
         "pistonRingDamageThreshold":1500000,
         "connectingRodDamageThreshold":2000000,
