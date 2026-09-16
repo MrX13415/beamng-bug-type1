@@ -185,8 +185,8 @@
     "skin_steer":"bug_steer_paint2",
     "skin_tachometer":"bug_tacho_6000",
     "soundscape_horn":"soundscape_horn_116",
-    "tire_F_15x6":"tire_F_27_7_15_offroad",
-    "tire_R_15x6":"tire_R_27_7_15_offroad",
+    "tire_F_15x6_alt":"tire_F_27_7_15_alt_offroad",
+    "tire_R_15x6_alt":"tire_R_27_7_15_alt_offroad",
     "wheel_F_5_wide":"bug_rim_15x6_slots_F",
     "wheel_R_5_wide":"bug_rim_15x6_slots_R"
   },

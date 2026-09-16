@@ -959,7 +959,7 @@
         {"parkingTorque":0},
         {"selfCollision":true},
         {"collision":true},
-        ["rack_spare", "rack_wheel_spare", "rack_tire_spare", "rospare2", "rospare1", 9999,  "", -1, {"speedo":false}],
+        ["spare_roof", "rack_wheel_spare", "rack_tire_spare", "rospare2", "rospare1", 9999,  "", -1, {"speedo":false}],
         {"propulsed":0},
         {"hasTire":true},
     ],
