@@ -797,7 +797,7 @@
         ["torsionReactor", "torsionReactorR", "gearbox", 1, {"gearRatio":"$finaldrive_R"}],
     ],
     "torsionReactorR": {
-        "torqueReactionNodes:":["e3r","e3l","e1r"],
+        "torqueReactionNodes:":["e1l","e2l","e4r"],
     },
 },
 
