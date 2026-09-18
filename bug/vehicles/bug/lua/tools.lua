@@ -8,6 +8,9 @@
 
 local M = {}
 
+local spawnConfigsTimer = 0
+local spawnConfigs = {}
+
 local function getConfigName(fn)
     return string.match(fn, "([^./]*).pc")
 end
@@ -16,24 +19,92 @@ local function getConfigPaths()
     return FS:findFiles(v.vehicleDirectory, '*.pc', 0, true, false)
 end
 
-local function findConfig(str)
-    for _,fn in ipairs(getConfigPaths()) do
-        local name = getConfigName(fn)
-        if name and name:lower():find(str:lower()) then return name end
+local function isInternal(name)
+    return name:lower():find("bug_") == 1
+end
+
+
+local function getConfigs(includeCustom)
+    includeCustom = includeCustom or false
+    local configlist = {}
+    for index,config in ipairs(getConfigPaths()) do
+        local name = getConfigName(config)
+        if name and includeCustom or isInternal(name) then
+            table.insert(configlist, name)
+        end
+    end
+    return configlist
+end
+
+local function findConfig(str, includeCustom)
+    includeCustom = includeCustom or false
+    for _,config in ipairs(getConfigs(includeCustom)) do
+        if config:lower():find(str:lower()) then 
+          return config
+        end
     end
     return nil
 end
 
-local function listConfigs()
-    for index,config in ipairs(getConfigPaths()) do
-        print(tostring(index-1)..": "..getConfigName(config))
+
+local function listConfigs(includeCustom)
+    includeCustom = includeCustom or false
+    for index,config in ipairs(getConfigs(includeCustom)) do
+        print(tostring(index-1)..": "..config)
     end
+end
+
+
+local function doSpawnConfig(config)
+    local model = "bug"
+    if not config then return end
+
+    print("Spawning config: " .. config)
+    obj:queueGameEngineLua(string.format([[
+        local model, config = "%s","%s.pc"
+        core_vehicles.spawnNewVehicle(model, {config = config})
+    ]], model, config))
+end
+
+local function doSpawnConfigNext(dt)
+    if #spawnConfigs == 0 then return end
+
+    spawnConfigsTimer = spawnConfigsTimer + dt
+    -- update rate: 1 fps (1.000 == 1000ms)
+    if spawnConfigsTimer > 1.000 then
+        spawnConfigsTimer = 0
+        
+        local config = spawnConfigs[1]
+        table.remove(spawnConfigs, 1)
+    
+        doSpawnConfig(config)
+    end
+end
+
+local function addSpawnConfig(config)
+    if not config then return end
+    table.insert(spawnConfigs, config)
 end
 
 local function spawnConfig(name)
     local model = "bug"
     local config = nil
 
+    if not name then
+        print("No config name or index provided!")
+        return
+    end
+
+    -- "All" will only spawn internal configs.
+    if name:lower() == "all" then
+        spawnConfigs = {}
+        print("Spawning " .. tostring(#getConfigs(false)) .. " configs...")
+        for _,config in ipairs(getConfigs(false)) do
+            addSpawnConfig(config)
+        end
+        return
+    end 
+    
     if type(name) == "number" then
         config = getConfigName(getConfigPaths()[name+1])
     elseif type(name) == "string" then
@@ -44,12 +115,7 @@ local function spawnConfig(name)
         return
     end
 
-    print("Spawning config: " .. config)
-
-    obj:queueGameEngineLua(string.format([[
-        local model, config = "%s","%s.pc"
-        core_vehicles.spawnNewVehicle(model, {config = config})
-    ]], model, config))
+    addSpawnConfig(config)
 end
 
 
@@ -66,6 +132,18 @@ local function listInputActions()
     for _,name in pairs(actions) do
         print("  "..name)
     end
+end
+
+local function help()
+    print("Available commands:")
+    print("  listConfigs() - List all available vehicle configs")
+    print("  spawnConfig(<name>|<index>) - Spawn a vehicle with the specified config name or index")
+    print("  listInputActions() - List all input actions for testing purposes")
+    print("  help() - Show this help message")
+end
+
+local function updateGFX(dt)
+    doSpawnConfigNext(dt)
 end
 
 -------- DEBUG --------
@@ -105,7 +183,10 @@ function DumpFiles(name,data,n)
 end
 -----------------------
 
+M.updateGFX = updateGFX
+
 -- public interface
+M.help = help
 M.listConfigs = listConfigs
 M.spawnConfig = spawnConfig
 M.listInputActions = listInputActions
