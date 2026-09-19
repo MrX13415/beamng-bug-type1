@@ -115,10 +115,10 @@
         //further resist suspension arms from twisting
         ["fx2r", "fh2r", "fh1r", "fx1r"],
         ["fx2l", "fh2l", "fh1l", "fx1l"],
-        {"spring":100000, "damp":0, "deform":25000, "strength":100000},
+        {"spring":100000, "damp":1, "deform":25000, "strength":100000},
         //rigidify steering arm
-        ["fw1rr", "fw1r", "fh1r", "fh3r"],
-        ["fw1ll", "fw1l", "fh1l", "fh3l"],
+        //["fw1rr", "fw1r", "fh1r", "fh3r"],
+        //["fw1ll", "fw1l", "fh1l", "fh3l"],
     ],
     "beams":[
         ["id1:", "id2:"],
@@ -282,21 +282,21 @@
         {"breakGroup":"wheel_FR"},
         ["fh1r","fw1r", {"name":"axle_FR"}],
         ["fh2r","fw1r"],
-        ["fh3r","fw1r", {"beamSpring":10501000,"beamDamp":15}],
-        ["fh5r","fw1r", {"beamSpring":5501000,"beamDamp":15}],
+        ["fh3r","fw1r", {"beamSpring":10501000,"beamDamp":25}],
+        ["fh5r","fw1r", {"beamSpring":5501000,"beamDamp":70}],
         ["fh1r","fw1rr"],
         ["fh2r","fw1rr"],
-        ["fh3r","fw1rr", {"beamSpring":10501000,"beamDamp":15}],
-        ["fh5r","fw1rr", {"beamSpring":5501000,"beamDamp":15}],
+        ["fh3r","fw1rr", {"beamSpring":10501000,"beamDamp":25}],
+        ["fh5r","fw1rr", {"beamSpring":5501000,"beamDamp":70}],
         {"breakGroup":"wheel_FL"},
         ["fh1l","fw1l", {"name":"axle_FL"}],
         ["fh2l","fw1l"],
-        ["fh3l","fw1l", {"beamSpring":10501000,"beamDamp":15}],
-        ["fh5l","fw1l", {"beamSpring":5501000,"beamDamp":15}],
+        ["fh3l","fw1l", {"beamSpring":10501000,"beamDamp":25}],
+        ["fh5l","fw1l", {"beamSpring":5501000,"beamDamp":70}],
         ["fh1l","fw1ll"],
         ["fh2l","fw1ll"],
-        ["fh3l","fw1ll", {"beamSpring":10501000,"beamDamp":15}],
-        ["fh5l","fw1ll", {"beamSpring":5501000,"beamDamp":15}],
+        ["fh3l","fw1ll", {"beamSpring":10501000,"beamDamp":25}],
+        ["fh5l","fw1ll", {"beamSpring":5501000,"beamDamp":70}],
         {"breakGroup":""},
         {"optional":false},
 
@@ -337,7 +337,7 @@
         {"beamPrecompression":1, "beamType":"|SUPPORT","beamLongBound":2.0},
         {"beamDeform":100000,"beamStrength":250000},
         {"beamSpring":4501000,"beamDamp":100},
-        {"beamPrecompression":0.85},
+        {"beamPrecompression":0.72},
         //steering anti invert
         ["fx1r", "fh3r"],
         ["fx1l", "fh3l"],
@@ -348,7 +348,7 @@
         ["fx0", "fh5l"],
 
         //wishbone anti invert
-        {"beamPrecompression":0.8},
+        {"beamPrecompression":0.77},
         ["fh1r", "fx2r"],
         ["fh2r", "fx1r"],
         ["fh1l", "fx2l"],
@@ -475,7 +475,7 @@
 
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
         {"beamSpring":11001000,"beamDamp":100},
-        {"beamDeform":65000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":465000,"beamStrength":"FLT_MAX"},
         //inner steering arms
         ["st1rr","st1r"],
         ["st1ll","st1l"],
@@ -483,14 +483,27 @@
         //middle tie rod
         ["st1r","st1l"],
         //outer tie rods
-        {"beamSpring":12001000,"beamDamp":100},
-        {"beamDeform":71000,"beamStrength":125000},
-        ["st1r","fh3r", {"beamPrecompression":"$=$toe_F-$steer_center_F","beamPrecompressionTime":0.5}],
+        {"beamSpring":14001000,"beamDamp":100},
+        {"beamDeform":471000,"beamStrength":1125000},
+        
+        // Note: This solution also needs a diffrent approach for the steering hydros.
+        // Outer ties rods are asymmetric and therefore connect to the left side only.
+        // Left: Short rod (0.467m).
+        // "$=$toe_F+$steer_center_F"
+         //["st1l","fh3l", {"beamPrecompression":"$=$toe_F+$steer_center_F","beamPrecompressionTime":0.5}],
+        // Right: Long rod (0.670m). 
+        // Factor is reduced by the length ratio (0.68676) and adjusted for the baseline asymmetry
+         //["st1l","fh3r", {"beamPrecompression":"$=(($toe_F-1.0)-$steer_center_F) * 0.68676 + 1.00063","beamPrecompressionTime":0.5}],
+
+        // The more realistic, asymmetric approach above causes a loot of issues down the line.
+        // Using a symmetric version is not as realistic, but works better in practice.
         ["st1l","fh3l", {"beamPrecompression":"$=$toe_F+$steer_center_F","beamPrecompressionTime":0.5}],
+        ["st1r","fh3r", {"beamPrecompression":"$=$toe_F-$steer_center_F","beamPrecompressionTime":0.5}],
+
 
         //steering idler
         {"beamSpring":8001000,"beamDamp":100},
-        {"beamDeform":55000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":155000,"beamStrength":"FLT_MAX"},
         ["st3r", "st2r"],
         ["st3r", "st1rr"],
         ["st2r", "st1rr"],
@@ -502,7 +515,7 @@
 
         //to subframe
         {"beamSpring":6001000,"beamDamp":100},
-        {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+        {"beamDeform":225000,"beamStrength":"FLT_MAX"},
         //widthwise
         ["st3r", "fx2r"],
         ["st2r", "fx1r"],
@@ -564,10 +577,17 @@
         {"beamLimitSpring":0,"beamLimitDamp":0},
         //steering damper
         {"beamDamp":250},
+        //["fh3l","fx1r", {"beamDampVelocitySplit":0.1,"beamDampFast":500,"dampCutoffHz":500}],
         ["fh3l","fx2r", {"beamDampVelocitySplit":0.1,"beamDampFast":500,"dampCutoffHz":500}],
+        //["fh3r","fx1l", {"beamDampVelocitySplit":0.1,"beamDampFast":500,"dampCutoffHz":500}],
         ["fh3r","fx2l", {"beamDampVelocitySplit":0.1,"beamDampFast":500,"dampCutoffHz":500}],
+
+        //["fh3r","c2r", {"beamDampVelocitySplit":0.2,"beamDampFast":150}],
+        //["fh3l","c2l", {"beamDampVelocitySplit":0.2,"beamDampFast":150}],
         ["fh5l","f2l", {"beamDampVelocitySplit":0.1,"beamDampFast":250,"dampCutoffHz":500}],
-        ["fh5r","f2r", {"beamDampVelocitySplit":0.1,"beamDampFast":250,"dampCutoffHz":500}],
+       // ["fh5l","f2r", {"beamDampVelocitySplit":0.1,"beamDampFast":250,"dampCutoffHz":500}],
+        ["fh5r","f2l", {"beamDampVelocitySplit":0.1,"beamDampFast":250,"dampCutoffHz":500}],
+       // ["fh5r","f2r", {"beamDampVelocitySplit":0.1,"beamDampFast":250,"dampCutoffHz":500}],
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
         {"breakGroup": ""},
 
@@ -597,8 +617,8 @@
     "torsionHydros": [
         ["id1:","id2:","id3:","id4:"],
         {"spring":280000, "damp":5, "deform":"FLT_MAX", "strength":50000},
-        ["st2r","st2l","st3l","st1ll", {"factor":-0.57,"steeringWheelLock":570,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
-        ["st2l","st2r","st3r","st1rr", {"factor":-0.57,"steeringWheelLock":570,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
+        ["st2r","st2l","st3l","st1ll", {"factor":-0.50,"steeringWheelLock":485,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
+        ["st2l","st2r","st3r","st1rr", {"factor":-0.50,"steeringWheelLock":485,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
     ],
     "input": {
         "FFBcoef":"$=$ffbstrength*10",
@@ -617,8 +637,8 @@
     "torsionHydros": [
         ["id1:","id2:","id3:","id4:"],
         {"spring":280000, "damp":5, "deform":"FLT_MAX", "strength":50000},
-        ["st2r","st2l","st3l","st1ll", {"factor":-0.57,"steeringWheelLock":360,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
-        ["st2l","st2r","st3r","st1rr", {"factor":-0.57,"steeringWheelLock":360,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
+        ["st2r","st2l","st3l","st1ll", {"factor":-0.50,"steeringWheelLock":360,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
+        ["st2l","st2r","st3r","st1rr", {"factor":-0.50,"steeringWheelLock":360,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
     ],
     "input": {
         "FFBcoef":"$=$ffbstrength*8",
