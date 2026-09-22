@@ -9,8 +9,8 @@
 local M = {}
 
 local _name = "Volkswagen Type 1 \"Beetle\""
-local _version = {27, 1}
-local _versionDate = "2026-08-21"
+local _version = {28, 0}
+local _versionDate = "2026-09-22"
 local _variantID = "VW"
 
  -- Minimum required BeamNG.drive version
