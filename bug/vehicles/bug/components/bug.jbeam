@@ -26,12 +26,12 @@
     "scaledragCoef":1.1,
     "controller": [
         ["fileName"],
-        ["vehicleController/vehicleController", {}],
+        ["vehicleController", {}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$brakestrength", "range", "", "Chassis", 1, 0.6, 1.0, "Brake Force Multiplier", "Scales the overall brake torque for this setup", {"minDis":60, "maxDis":100}],
-        ["$ffbstrength", "range", "", "Chassis", 1, 0.5, 1.5, "Setup-Specific Force Feedback Multiplier", "Scales the force feedback strength for THIS SETUP ONLY", {"minDis":50, "maxDis":150}]
+        ["$ffbstrength", "range", "", "Chassis", 1, 0.5, 1.5, "Setup-Specific Force Feedback Multiplier", "Scales the force feedback strength for THIS SETUP ONLY", {"minDis":50, "maxDis":150}],
         ["$headlightPitchComp", "range", "degree", "Headlights", 0, -3, 3, "Setup Specific Headlight Pitch Compensation", "Adjusts the headlight pitch  for this setup", {"minDis":-3, "maxDis":3}]
     ],
     "sounds": {
