@@ -201,10 +201,10 @@
     "vehicleController": {
         "clutchLaunchStartRPM":1600,
         "clutchLaunchTargetRPM":2200,
-        //**highShiftDown can be overwritten by automatic transmissions**
-        "highShiftDownRPM":[0,0,0,2500,2900,3200,3300],
-        //**highShiftUp can be overwritten by intake modifications**
-        "highShiftUpRPM":4100
+        //highShiftDown can be overwritten by automatic transmissions
+        "highShiftDownRPM":[0,0,0,1500,1850,2000,2000],
+        //highShiftUp can be overwritten by intake modifications
+        "highShiftUpRPM":3900
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

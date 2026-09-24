@@ -5,7 +5,7 @@
 "bug_engine_2.0_587_3": {
     "information":{
         "authors":"MrX13415",
-        "name":"2.0L DOHC Racing F4 Engine (587/3)", // Porsche 587
+        "name":"2.0L DOHC Racing F4 Engine", // Porsche 587
         "value":12000,
     },
     "slotType" : "bug_engine",
@@ -21,7 +21,7 @@
         ["bug_engine_ecu",             ["bug_engine_ecu"], [],       "",                     "Engine Management"],
         ["bug_engine_internals_587_3", ["bug_engine_internals_587_3"], [], "bug_engine_internals_587_3", "Engine Long Block",    {"coreSlot":true}],
 
-        ["bug_transaxle",              ["bug_transaxle"], [],        "bug_transaxle_4M",     "Transaxle"],
+        ["bug_transaxle",              ["bug_transaxle"], [],        "bug_transaxle_5M_race",     "Transaxle"],
         ["n2o_system",                 ["n2o_system"], [],           "",                     "Nitrous Oxide System"],
     ],
     "variables": [
@@ -144,28 +144,28 @@
     },
     "soundConfig": {
         "sampleName": "B4_2_engine_rear",
-        "intakeMuffling": 0.3,
+        "intakeMuffling": 0.28,
 
-        "mainGain": -11,
-        "onLoadGain":1.0,
-        "offLoadGain":0.67,
+        "mainGain": -10,
+        "onLoadGain": 1.05,
+        "offLoadGain": 0.7,
+        
+        "maxLoadMix": 0.92,
+        "minLoadMix": 0.0,
 
-        "maxLoadMix": 0.9,
-        "minLoadMix": 0,
+        "lowShelfGain": 0.2,
+        "lowShelfFreq": 110,
 
-        "lowShelfGain":0,
-        "lowShelfFreq":100,
+        "highShelfGain": 8.4,
+        "highShelfFreq": 5200,
 
-        "highShelfGain":8,
-        "highShelfFreq":5500,
-
-        "eqLowGain": 0,
+        "eqLowGain": 1.1,
         "eqLowFreq": 450,
-        "eqLowWidth": 0.2,
+        "eqLowWidth": 0.20,
 
-        "eqHighGain": 0,
-        "eqHighFreq": 2200,
-        "eqHighWidth": 0.3,
+        "eqHighGain": 1.9,
+        "eqHighFreq": 2400,
+        "eqHighWidth": 0.27,
 
         "fundamentalFrequencyCylinderCount": 4,
         "eqFundamentalGain": -1,
@@ -173,26 +173,26 @@
     "soundConfigExhaust": {
         "sampleName": "B4_2_exhaust",
 
-        "mainGain":2,
-        "onLoadGain":1.0,
-        "offLoadGain":0.67,
+        "mainGain": 2.5,
+        "onLoadGain": 1.05,
+        "offLoadGain": 0.7,
 
-        "maxLoadMix": 0.7,
+        "maxLoadMix": 0.75,
         "minLoadMix": 0.0,
 
-        "lowShelfGain":-1,
-        "lowShelfFreq":140,
+        "lowShelfGain": -0.2,
+        "lowShelfFreq": 150,
 
-        "highShelfGain":-5,
-        "highShelfFreq":8500,
+        "highShelfGain": -1.0,
+        "highShelfFreq": 7900,
 
-        "eqLowGain": 2,
-        "eqLowFreq": 350,
-        "eqLowWidth": 0.1,
+        "eqLowGain": 2.6,
+        "eqLowFreq": 360,
+        "eqLowWidth": 0.12,
 
-        "eqHighGain": 5,
-        "eqHighFreq": 8000,
-        "eqHighWidth": 0.05,
+        "eqHighGain": 5.2,
+        "eqHighFreq": 7400,
+        "eqHighWidth": 0.08,
 
         "fundamentalFrequencyCylinderCount":4,
         "eqFundamentalGain": 0,
@@ -200,10 +200,10 @@
     "vehicleController": {
         "clutchLaunchStartRPM":1900,
         "clutchLaunchTargetRPM":2600,
-        //**highShiftDown can be overwritten by automatic transmissions**
-        "highShiftDownRPM":[0,0,0,2500,2900,3200,3300],
-        //**highShiftUp can be overwritten by intake modifications**
-        "highShiftUpRPM":6500
+        //highShiftDown can be overwritten by automatic transmissions
+        "highShiftDownRPM":[0,0,0,3200,3500,3800,4100],
+        //highShiftUp can be overwritten by intake modifications
+        "highShiftUpRPM":7600
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

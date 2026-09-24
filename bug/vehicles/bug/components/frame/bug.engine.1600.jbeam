@@ -203,9 +203,9 @@
         "clutchLaunchStartRPM":1900,
         "clutchLaunchTargetRPM":2600,
         //**highShiftDown can be overwritten by automatic transmissions**
-        "highShiftDownRPM":[0,0,0,2500,2900,3200,3300],
+        "highShiftDownRPM":[0,0,0,1700,2100,2300,2300],
         //**highShiftUp can be overwritten by intake modifications**
-        "highShiftUpRPM":5500
+        "highShiftUpRPM":4300
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
