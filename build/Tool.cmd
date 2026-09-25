@@ -5,6 +5,6 @@ cls
 pushd %~dp0..
 echo %cd%
 
-python build\py\bugtool.py
+python build/py/bugtool.py shell
 
 popd
