@@ -1,8 +1,8 @@
 {
   "0-100 km/h":16.8,
-  "0-60 mph":15.8,
-  "100-0 km/h":39.9,
-  "60-0 mph":122.4,
+  "0-60 mph":15.3,
+  "100-0 km/h":41.1,
+  "60-0 mph":123.3,
   "BoundingBox":[
     [
       -0.703,
@@ -15,31 +15,31 @@
       1.25892
     ]
   ],
-  "Braking G":0.985,
-  "Country": "United States",
+  "Braking G":0.958,
   "Config Type":"Factory",
   "Configuration":"vehiclesData.bug.oldrusted_restored.Configuration",
+  "Country":"United States",
   "Description":"vehiclesData.bug.oldrusted_restored.Description",
-  "Drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Off-Road Score":28,
   "Performance Class":"2",
   "Population":100,
-  "Power":57,
-  "PowerPeakRPM":4850,
+  "Power":60,
+  "PowerPeakRPM":4400,
   "Propulsion":"ICE",
-  "Top Speed":44.02409744,
-  "Torque":95,
-  "TorquePeakRPM":"2300 - 3250",
+  "Top Speed":41.278879703603,
+  "Torque":100,
+  "TorquePeakRPM":"2600 - 4400",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":995,
-  "Weight/Power":17.45614035,
+  "Weight":1005,
+  "Weight/Power":16.75,
   "defaultMultiPaintSetup":{
-    "name": "Savannah Yellow",
-    "paint1": "bug_savannah_yellow",
-    "paint2": "bug_savannah_yellow",
-    "paint3": "bug_fiesta_yellow"
+    "name":"Savannah Yellow",
+    "paint1":"bug_savannah_yellow",
+    "paint2":"bug_savannah_yellow",
+    "paint3":"bug_fiesta_yellow"
   }
 }

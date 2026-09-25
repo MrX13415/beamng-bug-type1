@@ -1,10 +1,8 @@
 {
-  "0-100 km/h":11.4,
-  "0-100 mph":35,
-  "0-60 mph":10.8,
-  "100-0 km/h":39.1,
-  "60-0 mph":119.6,
-  "60-100 mph":24.2,
+  "0-100 km/h":12.5,
+  "0-60 mph":11.6,
+  "100-0 km/h":40.6,
+  "60-0 mph":124.7,
   "BoundingBox":[
     [
       -0.703,
@@ -17,22 +15,22 @@
       1.39
     ]
   ],
-  "Braking G":1.006,
+  "Braking G":0.968,
   "Config Type":"Police",
   "Configuration":"vehiclesData.bug.polizei.Configuration",
   "Description":"vehiclesData.bug.polizei.Description",
-  "Drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Off-Road Score":28,
-  "Power":79,
-  "PowerPeakRPM":"4750 - 5350",
+  "Power":74,
+  "PowerPeakRPM":4350,
   "Propulsion":"ICE",
-  "Top Speed":47.23935318,
-  "Torque":130,
-  "TorquePeakRPM":"2550 - 3750",
+  "Top Speed":42.230330673242,
+  "Torque":140,
+  "TorquePeakRPM":"2750 - 3400",
   "Transmission":"Manual",
-  "Weight":980,
-  "Weight/Power":12.40506329,
+  "Weight":990,
+  "Weight/Power":13.378378378378,
   "defaultMultiPaintSetup":"bug_police_german_1950_colors"
 }

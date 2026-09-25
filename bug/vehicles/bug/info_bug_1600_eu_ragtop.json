@@ -1,8 +1,8 @@
 {
-  "0-100 km/h":13.7,
-  "0-60 mph":12.4,
-  "100-0 km/h":39.5,
-  "60-0 mph":120.7,
+  "0-100 km/h":14.6,
+  "0-60 mph":13.5,
+  "100-0 km/h":41.6,
+  "60-0 mph":125.1,
   "BoundingBox":[
     [
       -0.703,
@@ -15,30 +15,30 @@
       1.25892
     ]
   ],
-  "Braking G":0.996,
+  "Braking G":0.945,
   "Config Type":"Factory",
   "Configuration":"vehiclesData.bug.1600_eu_ragtop.Configuration",
   "Description":"vehiclesData.bug.1600_eu_ragtop.Description",
-  "Drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Off-Road Score":28,
   "Performance Class":"2",
   "Population":0,
-  "Power":61,
-  "PowerPeakRPM":"3700 - 4350",
+  "Power":60,
+  "PowerPeakRPM":"3350 - 4150",
   "Propulsion":"ICE",
-  "Top Speed":42.56720352,
-  "Torque":130,
-  "TorquePeakRPM":"2100 - 3150",
+  "Top Speed":42.736038264644,
+  "Torque":135,
+  "TorquePeakRPM":"2200 - 3150",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1005,
-  "Weight/Power":16.47540984,
+  "Weight":1015,
+  "Weight/Power":16.916666666667,
   "defaultMultiPaintSetup":{
-    "name": "Garnet Red",
-    "paint1": "bug_garnet_red",
-    "paint2": "bug_garnet_red",
-    "paint3": "bug_garnet_red"
+    "name":"Garnet Red",
+    "paint1":"bug_garnet_red",
+    "paint2":"bug_garnet_red",
+    "paint3":"bug_garnet_red"
   }
 }

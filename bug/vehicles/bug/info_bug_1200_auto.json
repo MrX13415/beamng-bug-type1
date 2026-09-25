@@ -1,8 +1,8 @@
 {
-  "0-100 km/h":26.8,
-  "0-60 mph":24.3,
-  "100-0 km/h":44.3,
-  "60-0 mph":132.7,
+  "0-100 km/h":23,
+  "0-60 mph":20.4,
+  "100-0 km/h":40.5,
+  "60-0 mph":123.7,
   "BoundingBox":[
     [
       -0.703,
@@ -15,29 +15,30 @@
       1.25006
     ]
   ],
+  "Braking G":0.971,
   "Config Type":"Factory",
   "Configuration":"vehiclesData.bug.1200_auto.Configuration",
   "Description":"vehiclesData.bug.1200_auto.Description",
-  "Drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
-  "Off-Road Score":34,
+  "Off-Road Score":28,
   "Performance Class":"2",
   "Population":300,
-  "Power":41,
-  "PowerPeakRPM":"3350 - 4050",
+  "Power":44,
+  "PowerPeakRPM":"3800 - 4400",
   "Propulsion":"ICE",
-  "Top Speed":34.60165787,
+  "Top Speed":36.342640792798,
   "Torque":100,
-  "TorquePeakRPM":"1800 - 2850",
+  "TorquePeakRPM":"2000 - 2800",
   "Transmission":"Automatic",
   "Value":8500,
-  "Weight":1005,
-  "Weight/Power":24.51219512,
+  "Weight":1015,
+  "Weight/Power":23.068181818182,
   "defaultMultiPaintSetup":{
-    "name": "Silver",
-    "paint1": "bug_silver",
-    "paint2": "bug_silver",
-    "paint3": "bug_silver"
+    "name":"Silver",
+    "paint1":"bug_silver",
+    "paint2":"bug_silver",
+    "paint3":"bug_silver"
   }
 }

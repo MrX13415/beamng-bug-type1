@@ -1,10 +1,8 @@
 {
-  "0-100 km/h":11.7,
-  "0-100 mph":35.9,
-  "0-60 mph":11.1,
-  "100-0 km/h":38.2,
-  "60-0 mph":116.5,
-  "60-100 mph":24.8,
+  "0-100 km/h":12.7,
+  "0-60 mph":11.5,
+  "100-0 km/h":40.8,
+  "60-0 mph":122.4,
   "BoundingBox":[
     [
       -0.703,
@@ -17,30 +15,30 @@
       1.25892
     ]
   ],
-  "Braking G":1.03,
+  "Braking G":0.964,
   "Config Type":"Factory",
   "Configuration":"vehiclesData.bug.luxury.Configuration",
   "Description":"vehiclesData.bug.luxury.Description",
-  "Drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
-  "Off-Road Score":34,
+  "Off-Road Score":28,
   "Performance Class":"2",
   "Population":50,
-  "Power":79,
-  "PowerPeakRPM":"4750 - 5350",
+  "Power":74,
+  "PowerPeakRPM":4350,
   "Propulsion":"ICE",
-  "Top Speed":48.27902603,
-  "Torque":130,
-  "TorquePeakRPM":"2550 - 3750",
+  "Top Speed":43.214985151908,
+  "Torque":140,
+  "TorquePeakRPM":"2750 - 3400",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1000,
-  "Weight/Power":12.65822785,
+  "Weight":1015,
+  "Weight/Power":13.716216216216,
   "defaultMultiPaintSetup":{
-    "name": "Cream White",
-    "paint1": "bug_pearl_white",
-    "paint2": "bug_pearl_white",
-    "paint3": "bug_cream_white"
+    "name":"Cream White",
+    "paint1":"bug_pearl_white",
+    "paint2":"bug_pearl_white",
+    "paint3":"bug_cream_white"
   }
 }

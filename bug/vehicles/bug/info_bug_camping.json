@@ -1,10 +1,8 @@
 {
-  "0-100 km/h":12.3,
-  "0-100 mph":51.4,
-  "0-60 mph":11.5,
-  "100-0 km/h":38.3,
-  "60-0 mph":116.7,
-  "60-100 mph":39.9,
+  "0-100 km/h":13.2,
+  "0-60 mph":12.4,
+  "100-0 km/h":39.8,
+  "60-0 mph":121.3,
   "BoundingBox":[
     [
       -0.703,
@@ -17,30 +15,30 @@
       1.67731
     ]
   ],
-  "Braking G":1.027,
+  "Braking G":0.988,
   "Config Type":"Factory",
   "Configuration":"vehiclesData.bug.camping.Configuration",
   "Description":"vehiclesData.bug.camping.Description",
-  "Drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Off-Road Score":28,
   "Performance Class":"2",
   "Population":300,
-  "Power":79,
-  "PowerPeakRPM":"4750 - 5350",
+  "Power":74,
+  "PowerPeakRPM":4350,
   "Propulsion":"ICE",
-  "Top Speed":46.48097229,
-  "Torque":130,
-  "TorquePeakRPM":"2550 - 3750",
+  "Top Speed":42.77077811098,
+  "Torque":140,
+  "TorquePeakRPM":"2750 - 3400",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1065,
-  "Weight/Power":13.48101266,
+  "Weight":1075,
+  "Weight/Power":14.527027027027,
   "defaultMultiPaintSetup":{
-    "name": "Chestnut",
-    "paint1": "bug_chestnut",
-    "paint2": "bug_chestnut",
-    "paint3": "bug_cream_white"
+    "name":"Chestnut",
+    "paint1":"bug_chestnut",
+    "paint2":"bug_chestnut",
+    "paint3":"bug_cream_white"
   }
 }

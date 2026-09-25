@@ -1,8 +1,8 @@
 {
-  "0-100 km/h":20.5,
-  "0-60 mph":18.9,
-  "100-0 km/h":39.3,
-  "60-0 mph":119.6,
+  "0-100 km/h":19.2,
+  "0-60 mph":17.2,
+  "100-0 km/h":40.3,
+  "60-0 mph":120.8,
   "BoundingBox":[
     [
       -0.703,
@@ -15,10 +15,10 @@
       1.41086
     ]
   ],
-  "Braking G":0.999,
-  "Country": "Australia",
+  "Braking G":0.976,
   "Config Type":"Factory",
   "Configuration":"vehiclesData.bug.antarctica.Configuration",
+  "Country":"Australia",
   "Description":"vehiclesData.bug.antarctica.Description",
   "Drivetrain":"RWD",
   "Fuel Type":"Gasoline",
@@ -27,20 +27,20 @@
   "Off-Road Score":28,
   "Performance Class":"2",
   "Population":1,
-  "Power":41,
-  "PowerPeakRPM":"3350 - 4050",
+  "Power":44,
+  "PowerPeakRPM":"3800 - 4400",
   "Propulsion":"ICE",
-  "Top Speed":38.33440781,
+  "Top Speed":40.4464327393,
   "Torque":100,
-  "TorquePeakRPM":"1800 - 2850",
+  "TorquePeakRPM":"2000 - 2800",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":990,
-  "Weight/Power":24.14634146,
+  "Weight":1000,
+  "Weight/Power":22.727272727273,
   "defaultMultiPaintSetup":{
-    "name": "Ruby Red",
-    "paint1": "bug_ruby_red",
-    "paint2": "bug_ruby_red",
-    "paint3": "bug_ruby_red"
+    "name":"Ruby Red",
+    "paint1":"bug_ruby_red",
+    "paint2":"bug_ruby_red",
+    "paint3":"bug_ruby_red"
   }
 }
