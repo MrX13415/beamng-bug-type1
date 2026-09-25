@@ -1,4 +1,4 @@
-name: Manual Build VW
+name: Manual Build AW
 
 on:
   workflow_dispatch:
@@ -15,10 +15,15 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Compile files
+        id: bugtool
+        run: |
+          python build/py/bugtool.py aw build
+
       - name: Build artifacts
         id: bugtool
         run: |
-          python build/py/bugtool.py publish --github vw
+          python build/py/bugtool.py publish --github aw
 
       - name: Show outputs
         run: |
