@@ -193,6 +193,7 @@
     "$steer_center_F":0,
     "$tirepressure_F":8,
     "$tirepressure_R":12,
+    "$torque":0.8,
     "$trackoffset_F":0,
     "$trackoffset_R":0,
     "$windowFLInitState":0.06,
