@@ -4,9 +4,9 @@
 
 "bug_engine_1.2": {
     "information":{
-        "authors":"Fufsgfen",
-        "name":"1.2L Air Cooled F4 Engine",
-        "value":800,
+        "authors":"MrX13415",
+        "name":"1.2L Air-Cooled F4 Engine",
+        "value":5000,
     },
     "slotType" : "bug_engine",
     "slots2": [
@@ -24,37 +24,46 @@
         ["bug_transaxle",        ["bug_transaxle"], [],        "bug_transaxle_4M",     "Transaxle"],
         ["n2o_system",           ["n2o_system"], [],           "",                     "Nitrous Oxide System"],
     ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        // Default torque is 110% to compensate for the increased weight of the car in BeamNG compared to the real world.
+        ["$torque", "range", "", "Engine", 1.1, 0.8, 1.5, "Torque", "Engine Torque multiplier", {"minDis":80, "maxDis":150}],
+	],
     "powertrain": [
         ["type", "name", "inputName", "inputIndex"],
         ["combustionEngine", "mainEngine", "dummy", 0],
     ],
     "mainEngine": {
-        "torque":[
+        // 40PS / 88Nm
+        "torque":[            
             ["rpm", "torque"],
-            [    0,   0 ],
-			[  500,  66 ],
-			[ 1000,  90 ],
-			[ 1500, 104 ],
-			[ 2000, 110 ],
-			[ 2500, 113 ],
-            [ 3000, 113 ],
-            [ 3500, 108 ],
-            [ 4000, 101 ],
-            [ 4500,  88 ],
-            [ 5000,  75 ],
-            [ 5500,  62 ],
-            [ 6000,  52 ],
-            [ 6500,  45 ],
-            [ 7000,  40 ],
-            [ 7500,  36 ],
-            [ 8000,  33 ] 
+            [    0,   0             ],
+            [  500,  "$=$torque*53" ],
+            [ 1000,  "$=$torque*79" ],
+            [ 1500,  "$=$torque*94" ],
+            [ 2000,  "$=$torque*100" ],
+            [ 2500,  "$=$torque*104" ],
+            [ 3000,  "$=$torque*103" ],
+            [ 3500,  "$=$torque*100" ],
+            [ 4000,  "$=$torque*97" ],
+            [ 4300,  "$=$torque*93" ],
+            [ 4600,  "$=$torque*88" ],
+            [ 4800,  "$=$torque*81" ],
+            [ 5000,  "$=$torque*72" ],
+            [ 5500,  "$=$torque*58" ],
+            [ 6000,  "$=$torque*44" ],
+            [ 6500,  "$=$torque*30" ],
+            [ 7000,  "$=$torque*18" ],
+            [ 7500,  "$=$torque*8"  ],
+            [ 8000,  "$=$torque*0"  ]
         ],
         "idleRPM":850,
         "idleRPMRoughness":150,
-        "maxRPM":5000,
+        "maxRPM":4600,
+        "maxPhysicalRPM":5100,
         "hasRevLimiter":false,
         "inertia":0.08, //for 200mm 14lbs flywheel + other rotational mass of engine
-        "friction":9,
+        "friction":8,
         "dynamicFriction":0.023,
         "engineBrakeTorque":24,
 
@@ -82,13 +91,13 @@
         "radiatorFanType":"mechanical",
 
         //engine durability
-        "cylinderWallTemperatureDamageThreshold":120,
+        "cylinderWallTemperatureDamageThreshold":140,
         "headGasketDamageThreshold":1500000,
         "pistonRingDamageThreshold":1500000,
         "connectingRodDamageThreshold":2000000,
-        "maxTorqueRating": 165,
-        "maxOverTorqueDamage": 350,
-        "maxOverRevDamage": 4500,
+        "maxTorqueRating": 200,
+        "maxOverTorqueDamage": 280,
+        "maxOverRevDamage": 1200,
 
         //exhaust
         // Using defaults for now, as they seems to sound weird?
@@ -192,10 +201,10 @@
     "vehicleController": {
         "clutchLaunchStartRPM":1600,
         "clutchLaunchTargetRPM":2200,
-        //**highShiftDown can be overwritten by automatic transmissions**
-        "highShiftDownRPM":[0,0,0,2500,2900,3200,3300],
-        //**highShiftUp can be overwritten by intake modifications**
-        "highShiftUpRPM":4100
+        //highShiftDown can be overwritten by automatic transmissions
+        "highShiftDownRPM":[0,0,0,1500,1850,2000,2000],
+        //highShiftUp can be overwritten by intake modifications
+        "highShiftUpRPM":3900
     },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

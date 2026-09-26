@@ -198,8 +198,8 @@
     "skin_speedometer":"bug_speedo_mph_90",
     "skin_steer":"bug_steer_white2",
     "soundscape_horn":"soundscape_horn_116",
-    "tire_F_15x6":"tire_F_195_65_15_rally",
-    "tire_R_15x6":"tire_R_195_65_15_rally",
+    "tire_F_15x6_alt":"tire_F_195_65_15_alt_rally",
+    "tire_R_15x6_alt":"tire_R_195_65_15_alt_rally",
     "tire_spare":"tire_spare_ww",
     "trailer_small":"",
     "wheel_F_5_wide":"bug_rim_15x6_F",
@@ -207,16 +207,11 @@
   },
   "vars":{
     "$brakestrength":1,
-    "$camber_F":1,
-    "$camber_R":1,
-    "$caster_F":0,
     "$ffbstrength":1,
     "$fuel":40,
     "$steer_center_F":0,
     "$tirepressure_F":20,
     "$tirepressure_R":24,
-    "$toe_F":0.9995,
-    "$toe_R":1.0005,
     "$trackoffset_F":0,
     "$trackoffset_R":0
   }

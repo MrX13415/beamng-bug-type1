@@ -596,7 +596,7 @@
 	"information":{
         "authors": "53_herbie_53",
         "name": "Monte Carlo Window Decals",
-        "value": 1,
+        "value": 10,
     },
     "slotType" : "bug_window_decals",
     "flexbodies": [

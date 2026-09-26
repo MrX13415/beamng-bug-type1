@@ -1,6 +1,6 @@
 {
-  "0-100 km/h":21.3,
-  "0-60 mph":19.6,
+  "0-100 km/h":19.9,
+  "0-60 mph":18.2,
   "100-0 km/h":43.7,
   "60-0 mph":134.9,
   "BoundingBox":[
@@ -19,26 +19,34 @@
   "Config Type":"Factory",
   "Configuration":"vehiclesData.bug.1200_eu_hardtop.Configuration",
   "Description":"vehiclesData.bug.1200_eu_hardtop.Description",
-  "Drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Off-Road Score":28,
   "Performance Class":"2",
   "Population":0,
-  "Power":41,
-  "PowerPeakRPM":"3350 - 4050",
+  "Power":44,
+  "PowerPeakRPM":"3800 - 4400",
   "Propulsion":"ICE",
-  "Top Speed":37.19885635,
+  "Top Speed":39.380256596047,
   "Torque":100,
-  "TorquePeakRPM":"1800 - 2850",
+  "TorquePeakRPM":"2000 - 2800",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":985,
-  "Weight/Power":24.02439024,
+  "Weight":995,
+  "Weight/Power":22.613636363636,
   "defaultMultiPaintSetup":{
-    "name": "Solar Yellow",
-    "paint1": "bug_solar_yellow",
-    "paint2": "bug_solar_yellow",
-    "paint3": "bug_solar_yellow"
+    "name":"Solar Yellow",
+    "paint1":"bug_solar_yellow",
+    "paint2":"bug_solar_yellow",
+    "paint3":"bug_solar_yellow"
+  },
+  "gc_autoTested":{
+    "date":"2026-09-25 17:07",
+    "gameVersion":"0.39.4.0.20972",
+    "pcModtime":1789825483,
+    "skipped":[
+      "braking: vehicle cannot reach the test speed"
+    ]
   }
 }

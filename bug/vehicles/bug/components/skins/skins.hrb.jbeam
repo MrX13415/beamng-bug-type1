@@ -3,7 +3,7 @@
       "information": {
          "authors": "VertexStyle",
          "name": "Herbie 1969",
-         "value": 200,
+         "value": 2000,
       },
       "slotType": "paint_design",
       "globalSkin": "hrb_1969",
@@ -12,7 +12,7 @@
       "information": {
          "authors": "VertexStyle",
          "name": "Herbie 1977",
-         "value": 200,
+         "value": 2000,
       },
       "slotType": "paint_design",
       "globalSkin": "hrb_1977",
@@ -21,7 +21,7 @@
       "information": {
          "authors": "VertexStyle",
          "name": "Herbie 1980 (Rusted)",
-         "value": 200,
+         "value": 2000,
       },
       "slotType": "paint_design",
       "globalSkin": "hrb_1980_rusty",
@@ -30,7 +30,7 @@
       "information": {
          "authors": "VertexStyle",
          "name": "Herbie 1980 (Rusted Taxi)",
-         "value": 200,
+         "value": 2000,
       },
       "slotType": "paint_design",
       "globalSkin": "hrb_1980_rustytaxi",
@@ -39,7 +39,7 @@
       "information": {
          "authors": "VertexStyle",
          "name": "Herbie 1997",
-         "value": 200,
+         "value": 2000,
       },
       "slotType": "paint_design",
       "globalSkin": "hrb_1997",
@@ -48,7 +48,7 @@
       "information": {
          "authors": "VertexStyle",
          "name": "Herbie 2005",
-         "value": 200,
+         "value": 2000,
       },
       "slotType": "paint_design",
       "globalSkin": "hrb_2005",

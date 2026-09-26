@@ -4,7 +4,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"Wide 5-Lug Rear Wheel Hubs",
-        "value":650,
+        "value":190,
     },
     "slotType" : "bug_hub_R",
     "slots2": [
@@ -21,7 +21,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"4-Lug Rear Wheel Hubs",
-        "value":650,
+        "value":250,
     },
     "slotType" : "bug_hub_R",
     "slots2": [
@@ -43,7 +43,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"5-Lug Rear Wheel Hubs",
-        "value":650,
+        "value":290,
     },
     "slotType" : "bug_hub_R",
     "slots2": [
@@ -65,7 +65,7 @@
     "information":{
         "authors":"BeamNG",
         "name":"6-Lug Rear Wheel Hubs",
-        "value":650,
+        "value":330,
     },
     "slotType" : "bug_hub_R",
     "slots2": [

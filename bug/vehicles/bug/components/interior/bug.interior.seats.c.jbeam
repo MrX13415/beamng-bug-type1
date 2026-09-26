@@ -486,7 +486,7 @@
     "information":{
         "authors":"VertexStyle",
         "name":"Vinyl Rear Seats",
-        "value":300,
+        "value":200,
     },
     "slotType" : "bug_seat_R",
     "slots2": [

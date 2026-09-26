@@ -177,18 +177,38 @@
         ["rsc5", "rsc4l"],
         ["rsc5", "rsc4r"],
 
-        // support beams
-        {"beamType":"|SUPPORT", "beamLongBound":2},
-        {"beamSpring":80,"beamDamp":10},
+        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":10,"beamDamp":10, "beamDeform":"FLT_MAX","beamStrength":6000},
+        {"beamLimitSpring": 250000, "beamLimitDamp":140},
         {"breakGroup":"rear_suitcase"},
-        {"beamLongBound":10},
+        {"beamLongBound":1.0, "beamShortBound":0.8},
         ["rsc2l","bi4l"],
-        ["rsc2l","bi4r"],
+        {"beamLongBound":2.0, "beamShortBound":0.45},
         ["rsc2r","bi4l"],
+        {"beamLongBound":3.5, "beamShortBound":1.0},
+        ["rsc2l","bi4r"],
+        {"beamLongBound":6.0, "beamShortBound":1.0},
         ["rsc2r","bi4r"],
         {"breakGroup":""},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"deformLimitExpansion":1.1}
+    ],
+    "slidenodes": [
+        ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
+
+        
+        ["rsc2r", "rear_suitcase_1", true, true, 0.1, 250000, 6000, "FLT_MAX"],
+        ["rsc2l", "rear_suitcase_1", true, true, 0.1, 250000, 6000, "FLT_MAX"],
+
+        ["rsc4l", "rear_suitcase_2", true, true, 0.1, 250000, 6000, "FLT_MAX"],
+        ["rsc4r", "rear_suitcase_2", true, true, 0.1, 250000, 6000, "FLT_MAX"],
+        {"breakGroup":""},
+    ],
+    "rails2":[
+        ["id", "links:", "broken:","looped","capped"],
+
+        ["rear_suitcase_1", ["bi4l", "bi4r"], [], false, true ],
+        ["rear_suitcase_2", ["bi3l", "bi3r"], [], false, true ],
     ],
     "triangles": [
         ["id1:","id2:","id3:"],

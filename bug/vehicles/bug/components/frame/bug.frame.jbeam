@@ -14,6 +14,7 @@
 		// TODO: REMOVE
 		["cruisecontrol",        ["cruisecontrol"], [],        "personality_cruisecontrol",  "Personality Cruise Control"],
 		["linelock",             ["linelock"], [],             "",                           "Brake Line Lock"],
+		["bug_ABS",              ["bug_ABS"], [],              "",  		                 "Anti-Lock Braking System"],
 
 		// bodywork
 		["bug_body",             ["bug_body"], [],             "bug_body",                   "Body"],
@@ -516,4 +517,19 @@
 		{"group":""},
 	],
 }
+
+"bug_ABS": {
+	"information":{
+		"authors":"BeamNG",
+		"name":"Anti-Lock Braking System",
+		"value":1100,
+	},
+	"slotType" : "bug_ABS",
+	"pressureWheels": [
+		["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+		//brakes
+		{"enableABS":true},
+	],
+},
+
 }

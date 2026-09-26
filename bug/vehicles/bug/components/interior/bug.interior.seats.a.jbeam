@@ -5,7 +5,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Vinyl/Fabric Front Seat",
-        "value":250
+        "value":200
     },
     "slotType" : "bug_seat_FL",
     "flexbodies": [
@@ -245,7 +245,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Vinyl/Fabric Front Seat",
-        "value":250,
+        "value":200,
     },
     "slotType" : "bug_seat_FR",
     "flexbodies": [
@@ -486,7 +486,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Vinyl/Fabric Rollover Front Seat",
-        "value":250,
+        "value":230,
     },
     "slotType" : "bug_seat_FL",
     "flexbodies": [
@@ -726,7 +726,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Vinyl/Fabric Rollover Front Seat",
-        "value":250,
+        "value":230,
     },
     "slotType" : "bug_seat_FR",
     "flexbodies": [
@@ -967,7 +967,7 @@
     "information":{
         "authors":"VertexStyle",
         "name":"Vinyl/Fabric Rear Seats",
-        "value":300,
+        "value":250,
     },
     "slotType" : "bug_seat_R",
     "slots2": [

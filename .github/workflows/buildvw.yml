@@ -1,0 +1,36 @@
+name: Manual Build VW
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+
+      - name: Build artifacts
+        id: build
+        run: |
+          python build/py/bugtool.py publish --github vw
+
+      - name: Show outputs
+        run: |
+          echo "Commit:      ${{ steps.build.outputs.commit }}"
+          echo "Branch:      ${{ steps.build.outputs.branch }}"
+          echo "Variant ID:  ${{ steps.build.outputs.variantid }}"
+          echo "Version:     ${{ steps.build.outputs.version }}"
+          echo "Result File: ${{ steps.build.outputs.resultfile }}"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: build-package
+          path: artifacts/${{ steps.build.outputs.resultfile }}
+          archive: false

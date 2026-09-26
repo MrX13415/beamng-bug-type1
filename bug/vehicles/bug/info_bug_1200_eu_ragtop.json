@@ -1,6 +1,6 @@
 {
-  "0-100 km/h":22.1,
-  "0-60 mph":20.2,
+  "0-100 km/h":20.3,
+  "0-60 mph":18.6,
   "100-0 km/h":44.3,
   "60-0 mph":132.7,
   "BoundingBox":[
@@ -18,26 +18,34 @@
   "Config Type":"Factory",
   "Configuration":"vehiclesData.bug.1200_eu_ragtop.Configuration",
   "Description":"vehiclesData.bug.1200_eu_ragtop.Description",
-  "Drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
   "Off-Road Score":28,
   "Performance Class":"2",
   "Population":0,
-  "Power":41,
-  "PowerPeakRPM":"3350 - 4050",
+  "Power":44,
+  "PowerPeakRPM":"3800 - 4400",
   "Propulsion":"ICE",
-  "Top Speed":37.83439636,
+  "Top Speed":40.323382586031,
   "Torque":100,
-  "TorquePeakRPM":"1800 - 2850",
+  "TorquePeakRPM":"2000 - 2800",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":1010,
-  "Weight/Power":24.63414634,
+  "Weight":1020,
+  "Weight/Power":23.181818181818,
   "defaultMultiPaintSetup":{
-    "name": "Shale Green",
-    "paint1": "bug_shale_green",
-    "paint2": "bug_shale_green",
-    "paint3": "bug_shale_green"
+    "name":"Shale Green",
+    "paint1":"bug_shale_green",
+    "paint2":"bug_shale_green",
+    "paint3":"bug_shale_green"
+  },
+  "gc_autoTested":{
+    "date":"2026-09-25 17:11",
+    "gameVersion":"0.39.4.0.20972",
+    "pcModtime":1789825483,
+    "skipped":[
+      "braking: vehicle cannot reach the test speed"
+    ]
   }
 }

@@ -1,8 +1,8 @@
 {
-  "0-100 km/h":21.3,
-  "0-60 mph":19.6,
-  "100-0 km/h":44.3,
-  "60-0 mph":132.7,
+  "0-100 km/h":19.6,
+  "0-60 mph":18,
+  "100-0 km/h":40.8,
+  "60-0 mph":122.4,
   "BoundingBox":[
     [
       -0.703,
@@ -15,30 +15,31 @@
       1.25006
     ]
   ],
+  "Braking G":0.964,
   "Config Type":"Factory",
-  "Country": "United States",
   "Configuration":"vehiclesData.bug.1200_us_hardtop.Configuration",
+  "Country":"United States",
   "Description":"vehiclesData.bug.1200_us_hardtop.Description",
-  "Drivetrain":"RWD",
+  "Drivetrain":"5x2",
   "Fuel Type":"Gasoline",
   "Induction Type":"NA",
-  "Off-Road Score":28,
+  "Off-Road Score":33,
   "Performance Class":"2",
   "Population":300,
-  "Power":41,
-  "PowerPeakRPM":"3350 - 4050",
+  "Power":44,
+  "PowerPeakRPM":"3800 - 4400",
   "Propulsion":"ICE",
-  "Top Speed":38.08955002,
+  "Top Speed":40.396341084923,
   "Torque":100,
-  "TorquePeakRPM":"1800 - 2850",
+  "TorquePeakRPM":"2000 - 2800",
   "Transmission":"Manual",
   "Value":8500,
-  "Weight":980,
-  "Weight/Power":23.90243902,
+  "Weight":990,
+  "Weight/Power":22.5,
   "defaultMultiPaintSetup":{
-    "name": "Steel Blue",
-    "paint1": "bug_steel_blue",
-    "paint2": "bug_steel_blue",
-    "paint3": "bug_steel_blue"
+    "name":"Steel Blue",
+    "paint1":"bug_steel_blue",
+    "paint2":"bug_steel_blue",
+    "paint3":"bug_steel_blue"
   }
 }

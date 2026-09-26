@@ -296,9 +296,10 @@ def init():
     target = ""
     mod = ""
 
-    root = session.root #   dirname(os.path.realpath(__file__), 2)       # Get the second parent folder
-    
-    #debug: root = os.path.join(root, "x")
+    if not session.init():
+        return False
+
+    root = session.root 
 
     # Root path correct?
     if not os.path.exists(os.path.join(root, SourceFolder)):
@@ -314,7 +315,7 @@ def init():
     return True
 #end
 
-def printUsage():
+def printUsage(error=True):
     print("Usage: aw <command>")
     print("")
     print("  build           Builds the AW branded variant in 'bug-aw'.")
@@ -323,6 +324,7 @@ def printUsage():
     print("  copy            Only runs the copy step.")
     print("  apply           Only runs the apply step.")
     print("")
+    return 2 if error else 0
 #end
 
 def printPaths():
@@ -332,7 +334,7 @@ def printPaths():
 #end
 
 def clean():
-    if not init(): return
+    if not init(): return False
 
     print("- Clean folder ...")
 
@@ -364,7 +366,7 @@ def clean():
 
     if len(errors) == 0:
         print("  OK")
-        return
+        return True
     #end
 
     print("  Errors occurred during cleaning:")
@@ -372,10 +374,11 @@ def clean():
         print(f"   {error}")
 
     print("  Failed")
+    return False
 #end
 
 def copy():
-    if not init(): return
+    if not init(): return False
 
     print("- Copy files ...")
     
@@ -400,10 +403,11 @@ def copy():
     renameMeshFiles(target, "AW-")
 
     print("  OK")
+    return True
 #end
 
 def apply():
-    if not init(): return
+    if not init(): return False
 
     print("- Apply mod files ...")
 
@@ -413,42 +417,42 @@ def apply():
     updateTextFiles(target, WordMap)
 
     print("  OK")
+    return True
 #end
 
 def build():
-    if not init(): return
+    if not init(): return False
 
     printPaths()
     
-    clean()
-    copy()
-    apply()
+    if not clean(): return False
+    if not copy(): return False
+    if not apply(): return False
+
+    return True
 #end
 
 def processCommand(commands):
     cmd = popCommand(commands)
 
-    if cmd == "clean": clean()
-    elif cmd == "copy": copy()
-    elif cmd == "apply": apply()
-    elif cmd == "build": build()
-    else: 
-        printUsage()
-        return
-    #end
+    if isCommand(cmd, "clean"):         return 0 if clean() else 1
+    elif isCommand(cmd, "copy"):        return 0 if copy() else 1
+    elif isCommand(cmd, "apply"):       return 0 if apply() else 1
+    elif isCommand(cmd, "b", "build"):  return 0 if build() else 1
+
+    return printUsage()
 #end
 
-def main():
-    if not init(): return
-    
-    if len(sys.argv) != 2:
-        printUsage()
-        return
-    #end
+def main(args=None, header=True):
+    if not init(): return 1
 
-    print("   Root: " + root)
-    processCommand([asCommand(sys.argv[1])])
+    if args is None: args = sys.argv
+    if hasCommandHelp(args): return printUsage(False)
+    if len(args) != 2: return printUsage()
+
+    if header: print("Root: " + root)
+    return processCommand(args[1:])
 #end
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

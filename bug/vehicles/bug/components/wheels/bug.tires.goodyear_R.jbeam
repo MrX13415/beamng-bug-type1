@@ -308,11 +308,11 @@
         "name":"205/65R15 GoodYear GT Radial Tire",
         "value":130,
     },
-    "slotType" : "tire_R_15x6",
+    "slotType" : "tire_R_15x6_alt",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x6_gy", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x6_gy", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x6_gy", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.55, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x6_gy", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.55, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
@@ -383,11 +383,11 @@
         "name":"205/65R15 GoodYear GT Radial Tire (High Grip)",
         "value":130,
     },
-    "slotType" : "tire_R_15x6",
+    "slotType" : "tire_R_15x6_alt",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["bug_tire_15x6_gy", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
-        ["bug_tire_15x6_gy", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.515, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x6_gy", ["wheel_RR","tire_RR"], [], {"pos":{"x":-0.55, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":180},   "scale":{"x":1, "y":1, "z":1}}],
+        ["bug_tire_15x6_gy", ["wheel_RL","tire_RL"], [], {"pos":{"x": 0.55, "y":0.0, "z":0.0}, "rot":{"x":0, "y":0, "z":0},   "scale":{"x":1, "y":1, "z":1}}],
     ],
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],

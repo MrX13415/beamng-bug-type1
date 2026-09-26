@@ -170,9 +170,6 @@
   },
   "vars":{
     "$brakestrength":1,
-    "$camber_F":1,
-    "$camber_R":1,
-    "$caster_F":0,
     "$ffbstrength":1,
     "$fuel":40,
     "$ragtopInitState":0.6,
@@ -180,8 +177,6 @@
     "$steer_center_F":0,
     "$tirepressure_F":20,
     "$tirepressure_R":24,
-    "$toe_F":0.9995,
-    "$toe_R":1.0005,
     "$trackoffset_F":0,
     "$trackoffset_R":0
   }

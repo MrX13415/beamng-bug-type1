@@ -4,13 +4,14 @@
     "information":{
         "authors": "MrX13415",
         "name": "Dashboard",
-        "value": 300,
+        "value": 100,
     },
     "slotType" : "bug_dashboard",
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
 
         ["bug_shifter",             ["bug_shifter"], [],             "bug_shifter_4M",          "Shifter"],
+        ["bug_difflock_button",     ["bug_difflock_button"], [],     "",                        "Differential Lock Button"],
         ["skin_speedometer",        ["skin_speedometer"], [],        "bug_speedo_km_140",       "Speedometer",         {"coreSlot":true}],
         ["bug_tachometer",          ["bug_tachometer"], [],          "bug_tacho_empty",         "Tachometer",          {"coreSlot":true}],
         ["bug_fuelgauge",           ["bug_fuelgauge"], [],           "bug_fuelgauge",           "Fuel Gauge",          {"coreSlot":true}],
@@ -93,11 +94,11 @@
         "bug_clock_needle":         {"simpleFunction":"power__gauges",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
 
         // dashboard lights
-        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",               "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":1.0}},
-        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",                                                                 "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",   "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                                                    "off":"bug_dash_light_highbeam", "on":"bug_dash_light_highbeam_on", "on_intense":"bug_dash_light_highbeam_on", "materialEmissiveScaling":{"on_max":1.0}},
         // use the "oil" LED to indicate regeneration beeing active (blinking).
-        "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
-        "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},             "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
+        "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},         "off":"bug_dash_light_oil",      "on":"bug_dash_light_oil_on",      "on_intense":"bug_dash_light_oil_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},                         "off":"bug_dash_light_engine",   "on":"bug_dash_light_engine_on",   "on_intense":"bug_dash_light_engine_on", "materialEmissiveScaling":{"on_max":1.0}},
     },
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -257,13 +258,14 @@
     "information":{
         "authors": "MrX13415",
         "name": "Simple Dashboard",
-        "value": 300,
+        "value": 50,
     },
     "slotType" : "bug_dashboard",
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
 
         ["bug_shifter",             ["bug_shifter"], [],             "bug_shifter_4M",          "Shifter"],
+        ["bug_difflock_button",     ["bug_difflock_button"], [],     "",                        "Differential Lock Button"],
         ["skin_speedometer",        ["skin_speedometer"], [],        "bug_speedo_km_140",       "Speedometer",         {"coreSlot":true}],
         ["skin_interior_theme",     ["skin_interior_theme"], [],     "bug_inputs_white",        "Controls"],
         
@@ -329,11 +331,11 @@
         "bug_clock_needle":         {"simpleFunction":"power__gauges",  "off":"bug_clock_needle",   "on":"bug_clock_needle_light",   "on_intense":"bug_clock_needle_light", "materialEmissiveScaling":{"on_max":1.0}},
 
         // dashboard lights
-        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",               "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",  "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":1.0}},
-        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                 "off":"bug_dash_light_highbeam", "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_dash_light_signal":    {"simpleFunction":"power__signal_dash",                                                             "off":"bug_dash_light_signal",   "on":"bug_dash_light_signal_on",   "on_intense":"bug_dash_light_signal_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_dash_light_highbeam":  {"simpleFunction":"power__highbeam",                                                                "off":"bug_dash_light_highbeam", "on":"bug_dash_light_highbeam_on", "on_intense":"bug_dash_light_highbeam_on", "materialEmissiveScaling":{"on_max":1.0}},
         // use the "oil" LED to indicate regeneration beeing active (blinking)
-        "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},            "off":"bug_dash_light_oil",      "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
-        "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},             "off":"bug_dash_light_engine",   "on":"bug_dash_light_on",         "on_intense":"bug_dash_light_on", "materialEmissiveScaling":{"on_max":0.3}},
+        "bug_dash_light_oil":       {"simpleFunction":{"power__oilpressure_low": 0.3, "power__oil":0.3, "power__regeneration":0.3},     "off":"bug_dash_light_oil",      "on":"bug_dash_light_oil_on",      "on_intense":"bug_dash_light_oil_on", "materialEmissiveScaling":{"on_max":1.0}},
+        "bug_dash_light_engine":    {"simpleFunction":{"power__generatorPower_low": 0.3, "power__checkengine":0.3},                     "off":"bug_dash_light_engine",   "on":"bug_dash_light_engine_on",   "on_intense":"bug_dash_light_engine_on", "materialEmissiveScaling":{"on_max":1.0}},
     },
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -515,7 +517,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"4-Speed Manual Shifter",
-        "value":280,
+        "value":250,
     },
     "slotType" : "bug_shifter",
     "controller": [
@@ -717,7 +719,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"5-Speed Manual Shifter",
-        "value":300,
+        "value":280,
     },
     "slotType" : "bug_shifter",
     "controller": [
@@ -920,7 +922,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Automatic Shifter",
-        "value":280,
+        "value":250,
     },
     "slotType" : "bug_shifter",
     "controller": [
@@ -949,6 +951,40 @@
 },
 
 
+// --- Diff Lock
+"bug_difflock_button": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Differential Lock Button",
+        "value":40,
+    },
+    "slotType" : "bug_difflock_button",
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["rear_lock",  "f4mr","f4ml","refup", "sphere", 0.014, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.08, "y":0.185, "z":-0.22}, {"color":[1,0.3,0,0], "alphaOnUsed":0, "disable":"$=$components.locker_R ~= true"}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["toggleRearDiff",      {"disable":"$=$components.locker_R ~= true"}],
+        ["lockRearDiff",        {"disable":"$=$components.locker_R ~= true"}],
+        ["unlockRearDiff",      {"disable":"$=$components.locker_R ~= true"}],
+        ["setRearDiffModeAxis", {"disable":"$=$components.locker_R ~= true"}],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["rear_lock", "action0", "toggleRearDiff", {"disable":"$=$components.locker_R ~= true"}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+
+        ["bug_difflock_base",      ["bug_frame"]],
+    ],
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        ["anim__rear_lock",   "bug_difflock_button",    "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},     {"x":0, "y":0, "z":0},    {"x":0, "y":0.07, "z":0},           0,       1,   0,  1],
+    ],
+},
+
 
 // --- Tacho / Oil & Ammeter
 
@@ -969,7 +1005,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Tachometer",
-        "value":200,
+        "value":0,
     },
     "electricPower":[
         ["power"],
@@ -991,7 +1027,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"6000 RPM",
-        "value":200,
+        "value":60,
     },    
     "slotType" : "skin_tachometer",
     "skinName" : "6000",
@@ -1025,7 +1061,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"8000 RPM",
-        "value":200,
+        "value":65,
     },    
     "slotType" : "skin_tachometer",
     "skinName" : "8000",
@@ -1110,7 +1146,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Oil Pressure & Ammeter",
-        "value":60,
+        "value":120,
     },
     "electricPower":[
         ["power"],
@@ -1180,7 +1216,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Switch Board with Oil Pressure & Ammeter",
-        "value":30,
+        "value":150,
     },
     "electricPower":[
         ["power"],
@@ -1243,7 +1279,7 @@
         ["anim__lightbar",   "bug_switchboard_beacon",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}}],
     ],
     "glowMap":{
-        "bug_switchboard_btn_beacon": {"simpleFunction":"power__lightbarLED", "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":0.3}},
+        "bug_switchboard_btn_beacon": {"simpleFunction":"power__lightbarLED", "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":1.0}},
     },
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -1273,7 +1309,7 @@
         ["anim__lightbar",   "bug_switchboard_siren",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   1, 2, -1, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
     ],
     "glowMap":{
-        "bug_switchboard_btn_siren": {"advancedFunction": {"triggers": ["power__lightbarLED"],"cmd": "power__lightbarLED == 2 and 1 or 0"}, "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":0.3}},
+        "bug_switchboard_btn_siren": {"advancedFunction": {"triggers": ["power__lightbarLED"],"cmd": "power__lightbarLED == 2 and 1 or 0"}, "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":1.0}},
     },
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -1303,7 +1339,7 @@
         ["anim__underglow",   "bug_switchboard_underglow",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
     ],
     "glowMap":{
-        "bug_switchboard_btn_underglow": {"simpleFunction":"power__underglowLED", "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":0.3}},
+        "bug_switchboard_btn_underglow": {"simpleFunction":"power__underglowLED", "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":1.0}},
     },
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -1333,7 +1369,7 @@
         ["anim__extlight",   "bug_switchboard_extlight",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
     ],
     "glowMap":{
-        "bug_switchboard_btn_extlight": {"simpleFunction":"extlight", "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":0.3}},
+        "bug_switchboard_btn_extlight": {"simpleFunction":"extlight", "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":1.0}},
     },
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -1363,7 +1399,7 @@
         ["nitrousOxideArm",   "bug_switchboard_nitrousoxide",       "dsh","dshl","bd1",   {"x":24.4315, "y":0, "z":0},   {"x":16, "y":0, "z":0},  {"x":0, "y":0, "z":0},   0, 1, 0, 1, {"baseTranslation":{"x":"$posX","y":"$=-0.019172+$posY","z":"$=0.012007+$posZ"}} ],
     ],
     "glowMap":{
-        "bug_switchboard_btn_nitrousoxide": {"simpleFunction":"power__nitrousOxideArm", "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":0.3}},
+        "bug_switchboard_btn_nitrousoxide": {"simpleFunction":"power__nitrousOxideArm", "off":"bug_switchboard", "on":"bug_switchboard_on", "on_intense":"bug_switchboard_on", "materialEmissiveScaling":{"on_max":1.0}},
     },
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -1386,7 +1422,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Fuel Gauge",
-        "value":25,
+        "value":40,
     },
     "electricPower":[
         ["power"],
@@ -1418,7 +1454,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Imperial Speedometer (90 mph)",
-        "value":30,
+        "value":60,
     },
     "electricPower":[
         ["power"],
@@ -1462,7 +1498,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Imperial Speedometer (150 mph)",
-        "value":30,
+        "value":65,
     },
     "electricPower":[
         ["power"],
@@ -1506,7 +1542,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Imperial Speedometer (200 mph)",
-        "value":30,
+        "value":70,
     },
     "electricPower":[
         ["power"],
@@ -1550,7 +1586,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Metric Speedometer (140 km/h)",
-        "value":30,
+        "value":60,
     },
     "electricPower":[
         ["power"],
@@ -1594,7 +1630,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Metric Speedometer (240 km/h)",
-        "value":30,
+        "value":65,
     },
     "electricPower":[
         ["power"],
@@ -1638,7 +1674,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Metric Speedometer (320 km/h)",
-        "value":30,
+        "value":70,
     },
     "electricPower":[
         ["power"],
@@ -1683,7 +1719,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Imperial Odometer",
-        "value":300,
+        "value":10,
     },
     "slotType" : "bug_odometer",
     "controller": [
@@ -1708,7 +1744,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Metric Odometer",
-        "value":300,
+        "value":10,
     },
     "slotType" : "bug_odometer",
     "controller": [
@@ -1738,7 +1774,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Pearl White Controls",
-        "value":300,
+        "value":180,
     },
     "slotType" : "skin_interior_theme",
     "skinName" : "white",
@@ -1747,7 +1783,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Cream White Controls",
-        "value":300,
+        "value":180,
     },
     "slotType" : "skin_interior_theme",
     "skinName" : "white2",
@@ -1756,7 +1792,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Black Controls",
-        "value":300,
+        "value":180,
     },
     "slotType" : "skin_interior_theme",
     "skinName" : "black",
@@ -1765,7 +1801,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Wooden Controls",
-        "value":300,
+        "value":230,
     },
     "slotType" : "skin_interior_theme",
     "skinName" : "wood",
@@ -1774,7 +1810,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Colored Controls (Exterior)",
-        "value":300,
+        "value":200,
     },
     "slotType" : "skin_interior_theme",
     "skinName" : "paint1",
@@ -1783,7 +1819,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Colored Controls (Exterior, Secondary)",
-        "value":300,
+        "value":200,
     },
     "slotType" : "skin_interior_theme",
     "skinName" : "paint2",
@@ -1792,7 +1828,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Colored Controls (Interior)",
-        "value":300,
+        "value":200,
     },
     "slotType" : "skin_interior_theme",
     "skinName" : "paint3",
@@ -1801,7 +1837,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Old Beaten Controls",
-        "value":30,
+        "value":10,
     },
     "slotType" : "skin_interior_theme",
     "skinName" : "old",
@@ -1853,7 +1889,7 @@
     "information":{
         "authors": "BeamNG",
         "name": "Ignition Key",
-        "value": 35,
+        "value": 28,
     },
     "slotType" : "bug_ignition_key",
     "slots2": [
@@ -1921,7 +1957,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Shelf",
-        "value":300,
+        "value":40,
     },
     "slotType" : "bug_shelf",
     "flexbodies": [
@@ -2004,7 +2040,7 @@
     "information":{
         "authors":"MrX13415",
         "name":"Grab Handle",
-        "value":300,
+        "value":30,
     },
     "slotType" : "bug_dashboard_handle",
     "flexbodies": [
