@@ -14,7 +14,8 @@ This car has soul. It is different than all the other cars in beamNG.
 Treat him like a good friend and he will like you.
 
 
-Special thanks to the following members from the BeamNG Forum who contributed and made this possible.
+Special thanks to the following members from the BeamNG Forum who 
+contributed and made this possible:
 
   Anonymbo               Translation: Bulgarien 
   DOFGAMERX              Translation: Brazilian Portuguese 
