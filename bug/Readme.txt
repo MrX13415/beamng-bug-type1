@@ -16,6 +16,8 @@ Treat him like a good friend and he will like you.
 
 Special thanks to the following members from the BeamNG Forum who contributed and made this possible.
 
+  Anonymbo               Translation: Bulgarien 
+  DOFGAMERX              Translation: Brazilian Portuguese 
   UnspheredLeek74        Suspension tests and insights, as well as
                          handling improvements for the “Tuned,”
                          “Black Edition,” and “Offroad” variants.
