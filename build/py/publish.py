@@ -83,7 +83,7 @@ class ModInfo:
         out += f"        Name: {self.name}\n"
         out += f"     Version: {self.versionStr()}\n"
         out += f"        Date: {self.date}\n"
-        out += f"  Variant-ID: {self.variantID}\n"
+        out += f"  Variant-ID: {self.variantID.upper()}\n"
         return out
     #end
 #end
@@ -156,13 +156,13 @@ class ResultInfo:
 
 def getResultInfo(variantID):
     info = getModInfo(variantID)
-    verStr = f"-{info.versionStr()}" if info.version != 0 else ""
+    verStr = f"v{info.versionStr()}" if info.version != 0 else ""
     hash = gitCommitHash()
     hashStr = f"+{hash}" if hash is not None else ""
     branch = gitBranch()
     branchStr = f"-{sanitizeFilename(branch)}" if branch is not None else ""
 
-    filename = f"release-{variantID}{verStr}{hashStr}{branchStr}.zip"
+    filename = f"bug-{variantID.upper()}-type1.{verStr}{hashStr}{branchStr}.zip"
 
     result = ResultInfo(filename, info, hash, branch)
     return result
