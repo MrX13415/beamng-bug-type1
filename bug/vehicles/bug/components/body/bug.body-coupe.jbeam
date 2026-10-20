@@ -1921,7 +1921,7 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["interiorlight", "brf4lll","brf4ll","brf5lll", "box", {"x":0.018, "y":0.005, "z":0.01}, {"x":0, "y":5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.055, "y":0.071, "z":-0.04},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["interiorlight", "brf4lll","brf4ll","brf5lll", "box", {"x":0.018, "y":0.01, "z":0.07}, {"x":0, "y":5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.055, "y":0.01, "z":-0.04},{"mesh":["bug_body_interiorlight", "bug_body_interiorlight_glass"]}],
     ],
     "actionsEnabled": [
         ["id"],
@@ -1961,11 +1961,11 @@
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
 
-        ["heating_vent_FL", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.07, "z":0.035}, {"x":4, "y":-10, "z":-29}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.510, "y":0.0525, "z":-0.574},{"color":[1,0.3,0,0], "alphaOnUsed":0}]
-        ["heating_vent_FR", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.07, "z":0.035}, {"x":4, "y":10, "z":29}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.366, "y":0.0493, "z":-0.583},{"color":[1,0.3,0,0], "alphaOnUsed":0}]
+        ["heating_vent_FL", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.07, "z":0.035}, {"x":4, "y":-10, "z":-29}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.510, "y":0.0525, "z":-0.574},{"mesh":"bug_heatvent_F_slider_L"}]
+        ["heating_vent_FR", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.07, "z":0.035}, {"x":4, "y":10, "z":29}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.366, "y":0.0493, "z":-0.583},{"mesh":"bug_heatvent_F_slider_R"}]
 
-        ["heating_vent_RL", "f4mr","f4ml","refup", "sphere", 0.027, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.584, "y":0.07, "z":0.588},{"color":[1,0.3,0,0], "alphaOnUsed":0}]
-        ["heating_vent_RR", "f4mr","f4ml","refup", "sphere", 0.027, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.424, "y":0.07, "z":0.588},{"color":[1,0.3,0,0], "alphaOnUsed":0}]
+        ["heating_vent_RL", "f4mr","f4ml","refup", "sphere", 0.027, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.584, "y":0.07, "z":0.588},{"mesh":"bug_heatvent_R_knob_L"}]
+        ["heating_vent_RR", "f4mr","f4ml","refup", "sphere", 0.027, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.424, "y":0.07, "z":0.588},{"mesh":"bug_heatvent_R_knob_R"}]
     ],
     "actionsEnabled": [
         ["id"],

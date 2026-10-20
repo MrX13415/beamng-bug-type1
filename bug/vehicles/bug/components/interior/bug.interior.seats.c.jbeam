@@ -22,9 +22,8 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["seat_FL_toggle", "isFL5r","isFL5l","isFL6l", "box", {"x":0.02, "y":0.04, "z":0.04}, {"x":20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.17, "y":0.20, "z":-0.025},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
-        
-        ["seat_FL_move",   "isFL1r","isFL1l","isFL3l", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.187, "y":0.28 , "z":-0.04}, {"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["seat_FL_toggle", "isFL5r","isFL5l","isFL6l", "box", {"x":0.2, "y":0.1, "z":0.2}, {"x":17, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.01, "y":-0.02, "z":0.01},{"mesh":"bug_seat_C_back_FL"}],
+        ["seat_FL_move",   "isFL1r","isFL1l","isFL3l", "sphere", 0.06, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.245, "y":0.35 , "z":-0.02}, {"mesh":"bug_seat_FL_handle"}],
     ],
     "actionsEnabled": [
         ["id"],
@@ -262,9 +261,8 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["seat_FR_toggle", "isFR5r","isFR5l","isFR6l", "box", {"x":0.02, "y":0.04, "z":0.04}, {"x":-20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.17, "y":0.20, "z":-0.025},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
-        
-        ["seat_FR_move",   "isFR1r","isFR1l","isFR3l", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.187, "y":0.28 , "z":0.04}, {"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["seat_FR_toggle", "isFR5r","isFR5l","isFR6l", "box", {"x":0.2, "y":0.1, "z":0.2}, {"x":-17, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.035, "y":0.02, "z":-0.1},{"mesh":"bug_seat_C_back_FR"}],
+        ["seat_FR_move",   "isFR1r","isFR1l","isFR3l", "sphere", 0.06, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.245, "y":0.35 , "z":0.02}, {"mesh":"bug_seat_FR_handle"}],
     ],
     "actionsEnabled": [
         ["id"],

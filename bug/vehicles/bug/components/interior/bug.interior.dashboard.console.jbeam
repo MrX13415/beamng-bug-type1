@@ -44,17 +44,17 @@
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
 
-        ["volDown",      "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.01, "z":0.014}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.0686, "y":-0.1240, "z":-0.0635},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
-        ["volUp",        "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.01, "z":0.014}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.0580, "y":-0.1240, "z":-0.0635},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["volDown",      "dsh","dshl","dsh2", "box", {"x":0.015, "y":0.015, "z":0.022}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.0686, "y":-0.1280, "z":-0.0635},{"mesh":"bug_radio_knobs_volume"}],
+        ["volUp",        "dsh","dshl","dsh2", "box", {"x":0.015, "y":0.015, "z":0.022}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.0530, "y":-0.1280, "z":-0.0635},{"mesh":"bug_radio_knobs_volume"}],
         
-        ["tunePreset1",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x": 0.02779, "y":-0.1095, "z":-0.05},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
-        ["tunePreset2",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x": 0.01079, "y":-0.1095, "z":-0.05},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
-        ["tunePreset3",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.00621, "y":-0.1095, "z":-0.05},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
-        ["tunePreset4",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.02321, "y":-0.1095, "z":-0.05},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
-        ["tunePreset5",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.006}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.04021, "y":-0.1095, "z":-0.05},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["tunePreset1",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.016}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x": 0.02779, "y":-0.1145, "z":-0.05},{"mesh":"bug_radio_buttons.1"}],
+        ["tunePreset2",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.016}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x": 0.01079, "y":-0.1145, "z":-0.05},{"mesh":"bug_radio_buttons.2"}],
+        ["tunePreset3",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.016}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.00621, "y":-0.1145, "z":-0.05},{"mesh":"bug_radio_buttons.3"}],
+        ["tunePreset4",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.016}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.02321, "y":-0.1145, "z":-0.05},{"mesh":"bug_radio_buttons.4"}],
+        ["tunePreset5",  "dsh","dshl","dsh2", "box", {"x":0.012, "y":0.02, "z":0.016}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.04021, "y":-0.1145, "z":-0.05},{"mesh":"bug_radio_buttons.5"}],
 
-        ["tuneDown",     "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.01, "z":0.014}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.0680, "y":-0.1240, "z":-0.0635},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
-        ["tuneUp",       "dsh","dshl","dsh2", "box", {"x":0.01, "y":0.01, "z":0.014}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.0786, "y":-0.1240, "z":-0.0635},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["tuneDown",     "dsh","dshl","dsh2", "box", {"x":0.015, "y":0.015, "z":0.022}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.0680, "y":-0.1280, "z":-0.0635},{"mesh":"bug_radio_knobs_tune"}],
+        ["tuneUp",       "dsh","dshl","dsh2", "box", {"x":0.015, "y":0.015, "z":0.022}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.0836, "y":-0.1280, "z":-0.0635},{"mesh":"bug_radio_knobs_tune"}],
     ],
     "actionsEnabled": [
         ["id"],
@@ -405,6 +405,7 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bug_dashboard_glovebox_hatch", ["bug_glovebox_door"]],
+         ["bug_dashboard_glovebox_hatch_lock", ["bug_glovebox_door"]],
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -412,7 +413,7 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["gloveboxLatch", "dgb1l","dgb1r","dgb2l", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1654, "y":0.1137, "z":0.005},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["gloveboxLatch", "dgb1l","dgb1r","dgb2l", "sphere", 0.02, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1654, "y":0.1137, "z":0.005},{"mesh":["bug_dashboard_glovebox_knob", "bug_dashboard_glovebox_hatch_lock"]}],
     ],
     "actionsEnabled": [
         ["id"],
@@ -583,7 +584,7 @@
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         
-        ["hazard", "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.071, "y":-0.03, "z":-0.045},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["hazard", "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.071, "y":-0.03, "z":-0.045},{"mesh":"bug_controls_dashboard_hazard_knob"}],
     ],
     "actionsEnabled": [
         ["id"],

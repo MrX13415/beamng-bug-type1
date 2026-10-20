@@ -19,7 +19,7 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["fuelcap", "ft1l","ft1r","ft3r", "sphere", 0.02, {"x":0, "y":0, "z":0}, {"x":-5, "y":8, "z":0}, {"x":0, "y":0, "z":0},{"x":0.317, "y":-0.32, "z":-0.037},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["fuelcap", "ft1l","ft1r","ft3r", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":-5, "y":8, "z":0}, {"x":0, "y":0, "z":0},{"x":0.317, "y":-0.32, "z":-0.037},{"mesh":"bug_fueltank_cap"}],
     ],
     "actionsEnabled": [
         ["id"],
@@ -1214,7 +1214,7 @@
         "$+eqHighGain": 8,
     },
     "soundConfigExhaust": {
-        "$+mainGain": 0.2,
+        //"$+mainGain": 0.2,
         "$+maxLoadMix": 0.1,
         "$+minLoadMix": 0.0,
         "$+offLoadGain": 0.00,

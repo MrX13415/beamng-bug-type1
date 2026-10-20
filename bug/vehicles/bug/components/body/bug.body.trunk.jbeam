@@ -37,7 +37,7 @@
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         //                                                default baseRotation {"x":-15, "y":-5, "z":20}
-        ["trunk", "t3","t2ll","t2", "box", {"x":0.12, "y":0.05, "z":0.04}, {"x":-15, "y":-6, "z":20}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.032, "y":-0.304, "z":-0.1},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["trunk", "t3","t2ll","t2", "box", {"x":0.12, "y":0.05, "z":0.04}, {"x":-15, "y":-6, "z":20}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.032, "y":-0.304, "z":-0.1},{"mesh":"bug_trunk_handle"}],
     ],
     "actionsEnabled": [
         ["id"],

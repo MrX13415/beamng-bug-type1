@@ -23,7 +23,7 @@
         ["bug_frame",               ["bug_frame"], [],                  "bug_frame",    "Frame", {"coreSlot":true}],
         ["bug_mod",                 ["bug_mod"], [],                    "",             "Additional Modification"],
     ],
-    "scaledragCoef":1.1,
+    "scaledragCoef":1.0,
     "controller": [
         ["fileName"],
         ["vehicleController", {}],

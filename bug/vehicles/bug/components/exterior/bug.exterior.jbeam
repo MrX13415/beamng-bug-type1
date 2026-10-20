@@ -134,7 +134,7 @@
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
 
-        ["bug_foglight_operation", ["bug_foglight_operation"], [], "bug_foglight_operation", "Foglight Wiring", {"coreSlot":true}],
+        ["bug_foglight_operation", ["bug_foglight_operation"], [], "bug_foglight_op_fog", "Foglight Wiring", {"coreSlot":true}],
         ["bug_foglight_cover", ["bug_foglight_cover"], [], "bug_foglight_cover", "Foglight Cover"],
 
         ["bug_foglight_bulb", ["incandescent_white_55W"], [], "incandescent_white_55W", "Foglight",
@@ -287,7 +287,7 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["foglightcover", "fgl1r","fgl1l","fgl2r", "box", {"x":0.08, "y":0.01, "z":0.08}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":-3}, {"x":0, "y":0, "z":0}, {"x":0.01, "y":0.01, "z":0.005},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["foglightcover", "fgl1r","fgl1l","fgl2r", "sphere", 0.06, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":-3}, {"x":0, "y":0, "z":0}, {"x":0.054, "y":0.047, "z":0.005},{"mesh":"bug_foglight_cover"}],
     ],
     "actionsEnabled": [
         ["id"],
@@ -371,7 +371,7 @@
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
         
-        ["gascap", "f4mr","f4ml","refup", "sphere", 0.04, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.6, "y":0.543, "z":-0.572},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["gascap", "f4mr","f4ml","refup", "sphere", 0.04, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.6, "y":0.543, "z":-0.572},{"mesh":"bug_gascap_lid"}],
     ],
     "actionsEnabled": [
         ["id"],

@@ -146,7 +146,8 @@
         "sampleName": "B4_2_engine_rear",
         "intakeMuffling": 0.28,
 
-        "mainGain": -10,
+        //"mainGain": -10,
+        "mainGain": 0,
         "onLoadGain": 1.05,
         "offLoadGain": 0.7,
         
@@ -173,7 +174,8 @@
     "soundConfigExhaust": {
         "sampleName": "B4_2_exhaust",
 
-        "mainGain": 2.5,
+        //"mainGain": 2.5,
+        "mainGain": 0,
         "onLoadGain": 1.05,
         "offLoadGain": 0.7,
 

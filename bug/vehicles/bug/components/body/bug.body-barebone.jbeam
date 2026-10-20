@@ -46,10 +46,10 @@
         {"collision":true},		
         {"rightHandCamera":false},   // set to true for right steering wheel otherwise false
         // driver camera (make first value negative for right steering wheel)
-        ["driver",     0.2555, 0.18, 1.24, 55, "f6l","f4l","f5l","f6tml","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+        ["driver",     0.2555, 0.18, 1.24, 55, "f6l","f4l","f5l","f6tml","f4tm","f5tm", {"isInside":true, "beamDeform":5001000,"beamStrength":"FLT_MAX"}],
         // passenger seat
         {"rightHandDoor":true},
-        ["rider", -0.2555, 0.18, 1.24, 55, "f6r","f4r","f5r","f6tmr","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+        ["rider", -0.2555, 0.18, 1.24, 55, "f6r","f4r","f5r","f6tmr","f4tm","f5tm", {"isInside":true, "beamDeform":5001000,"beamStrength":"FLT_MAX"}],
     ], 
 },
 
@@ -91,7 +91,7 @@
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
 
-        ["parkingbreak", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.202, "z":-0.16},{"color":[1,0.3,0,0], "alphaOnUsed":0}]
+        ["parkingbreak", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.202, "z":-0.16},{"mesh":"bug_controls_handbreak"}]
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],        
@@ -262,7 +262,7 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["ignition", "dsh","dshl","dsh2", "sphere", 0.01, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.036, "y":-0.067, "z":-0.005},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
+        ["ignition", "dsh","dshl","dsh2", "sphere", 0.02, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.036, "y":-0.067, "z":-0.005},{"mesh":"bug_ignition_key"}],
     ],
     "actionsEnabled": [
         ["id"],
