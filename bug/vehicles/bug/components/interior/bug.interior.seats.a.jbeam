@@ -273,7 +273,6 @@
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
         ["seat_FR_toggle", "action0", "seatFRtoggle"],   // default: left mouse btn
-        ["seat_FR_togglexs", "action0", "seatFRtoggle"],   // default: left mouse btn
 
         ["seat_FR_move", "action0", "seatFRmoveF"],      // default: left mouse btn
         ["seat_FR_move", "action1", "seatFRmoveB"],      // default: SHIFT + left mouse btn
