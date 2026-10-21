@@ -6,6 +6,10 @@
         "wipersdown":          {"order":30.2, "onDown":"controller.getControllerSafe('wipers').down()",         "title":"vehicle.interaction.tech.wipers.decrease_speed.title",         "desc":"vehicle.interaction.tech.wipers.decrease_speed.desc"},
         "wipersup":            {"order":30.3, "onDown":"controller.getControllerSafe('wipers').up()",           "title":"vehicle.interaction.tech.wipers.increase_speed.title",         "desc":"vehicle.interaction.tech.wipers.increase_speed.desc"},
 
+        // Turn Signals
+        "indicatorLtoggle":           {"order":31.1, "onDown":"electrics.toggle_left_signal()",   "title":"vehicle.interaction.tech.indicator.left.title",   "desc":"vehicle.interaction.tech.indicator.left.desc"},
+        "indicatorRtoggle":           {"order":31.2, "onDown":"electrics.toggle_right_signal()",  "title":"vehicle.interaction.tech.indicator.right.title",  "desc":"vehicle.interaction.tech.indicator.right.desc"},
+
         // Engine:
         "togglegascap":        {"order":44.1, "onDown":"vehicle.toggleGascap()",                                "title":"vehicle.interaction.tech.engine.toggle_rally_gas_cap.title",   "desc":"vehicle.interaction.tech.engine.toggle_rally_gas_cap.desc"},
         "togglefuelcap":       {"order":44.2, "onDown":"vehicle.toggleFuelcap()",                               "title":"vehicle.interaction.tech.engine.toggle_fuel_cap.title",        "desc":"vehicle.interaction.tech.engine.toggle_fuel_cap.desc"},

@@ -31,13 +31,15 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["hood_int",     "dshl","dsh","dsh2", "sphere", 0.02, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.094, "y":0.154, "z":-0.12},{"mesh":"bug_controls_hood_release_knob"}],
+        ["hood_int",     "dshl","dsh","dsh2", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.094, "y":0.154, "z":-0.12},{"mesh":"bug_controls_hood_release_knob"}],
         ["ashtray",      "dsh","dshl","dsh2", "box", {"x":0.07, "y":0.03, "z":0.02}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.035, "y":-0.04, "z":-0.025},{"mesh":"bug_dashboard_ashtray_knob_prop"}],
         
         ["headlights",   "dsh","dshl","dsh2", "sphere", 0.015, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.069, "y":-0.1745, "z":-0.048},{"mesh":"bug_controls_dashboard_light_knob"}],
         ["wipers",       "dsh","dshl","dsh2", "sphere", 0.015, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.069, "y":-0.1745, "z":-0.048},{"mesh":"bug_controls_dashboard_wiper_knob"}],
 
-        ["parkingbreak", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.202, "z":-0.16},{"mesh":"bug_controls_handbreak"}],
+        ["parkingbreak", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.19, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.18, "z":-0.16},{"mesh":"bug_controls_handbreak"}],
+        ["indicatorL", "steer2","steer3","steer1", "box", {"x":0.07, "y":0.03, "z":0.02}, {"x":-0, "y":-5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.17, "y":0.95, "z":-0.05},{"mesh":"bug_indicatorlever_handle"}],
+        ["indicatorR", "steer2","steer3","steer1", "box", {"x":0.07, "y":0.03, "z":0.02}, {"x":-0, "y":-5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.17, "y":0.95, "z":0.015},{"mesh":"bug_indicatorlever_handle"}],
 
         ["heating_valve", "f4mr","f4ml","refup", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.022, "y":0.170, "z":-0.2937},{"mesh":"bug_controls_heating_valve_knob"}]
     ],
@@ -48,6 +50,9 @@
         ["wiperstoggle"],
         ["wipersdown"],
         ["wipersup"],
+
+        ["indicatorLtoggle"],
+        ["indicatorRtoggle"],
 
         ["heatingValvetoggle"],
     ],
@@ -64,6 +69,9 @@
         ["wipers", "action2", "wipersdown"],
 
         ["parkingbreak", "action0", "common:parkingbrake"],
+        ["horn", "action0", "common:horn"],
+        ["indicatorL", "action0", "indicatorLtoggle"],
+        ["indicatorR", "action0", "indicatorRtoggle"],
 
         ["heating_valve", "action0", "heatingValvetoggle"],
     ],
@@ -112,6 +120,7 @@
         ["anim__wipersstate", "bug_controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
 
         ["anim__turnsignal",   "bug_indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["anim__turnsignal",   "bug_indicatorlever_handle",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
         ["anim__parkingbrake", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
 
         ["anim__heating_valve", "bug_controls_heating_valve_knob",  "f4mr","f4ml","refup",   {"x":30.5, "y":7.5, "z":0},   {"x":0, "y":0, "z":1},    {"x":0, "y":0, "z":0}, 0, 120, 0, 120],
@@ -288,7 +297,9 @@
         ["headlights",   "dsh","dshl","dsh2", "sphere", 0.015, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.069, "y":-0.1745, "z":-0.048},{"mesh":"bug_controls_dashboard_light_knob"}],
         ["wipers",       "dsh","dshl","dsh2", "sphere", 0.015, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.069, "y":-0.1745, "z":-0.048},{"mesh":"bug_controls_dashboard_wiper_knob"}],
 
-        ["parkingbreak", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.09, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.202, "z":-0.16},{"mesh":"bug_controls_handbreak"}]
+        ["parkingbreak", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.19, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.18, "z":-0.16},{"mesh":"bug_controls_handbreak"}],
+        ["indicatorL", "steer2","steer3","steer1", "box", {"x":0.07, "y":0.03, "z":0.02}, {"x":-0, "y":-5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.17, "y":0.95, "z":-0.05},{"mesh":"bug_indicatorlever_handle"}],
+        ["indicatorR", "steer2","steer3","steer1", "box", {"x":0.07, "y":0.03, "z":0.02}, {"x":-0, "y":-5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.17, "y":0.95, "z":0.015},{"mesh":"bug_indicatorlever_handle"}],
     ],
     "actionsEnabled": [
         ["id"],
@@ -347,6 +358,7 @@
         ["anim__wipersstate", "bug_controls_dashboard_wiper_knob",  "dsh","dshl","bd1",   {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0.005},        0,     3,        0,  1],
 
         ["anim__turnsignal",   "bug_indicatorlever",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
+        ["anim__turnsignal",   "bug_indicatorlever_handle",    "steer2","steer3","steer1",   {"x":0, "y":0, "z":180},   {"x":0, "y":0, "z":7},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
         ["anim__parkingbrake", "bug_controls_handbreak",  "f4mr","f4ml","refup",   {"x":0, "y":0, "z":0},   {"x":10, "y":0, "z":0},    {"x":0, "y":0, "z":0},          -1,       1,      0, -1],
     ],
     "nodes": [
