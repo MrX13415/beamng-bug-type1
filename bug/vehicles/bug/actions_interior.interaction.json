@@ -2,8 +2,6 @@
     "fileversion": 2,
     "actions": {
         // Interior:
-        "sunvisorLtoggle":     {"order":31.1, "onDown":"vehicle.toggle('sunvisorL')",            "title":"vehicle.interaction.interior.left_sunvisor.title",                "desc":"vehicle.interaction.interior.left_sunvisor.desc"},
-        "sunvisorRtoggle":     {"order":31.2, "onDown":"vehicle.toggle('sunvisorR')",            "title":"vehicle.interaction.interior.right_sunvisor.title",               "desc":"vehicle.interaction.interior.right_sunvisor.desc"},
         "interiorlighttoggle": {"order":31.3, "onDown":"vehicle.toggleInteriorLight()",          "title":"vehicle.interaction.interior.interior_light.title",               "desc":"vehicle.interaction.interior.interior_light.desc"},
         "ashtraytoggle":       {"order":31.4, "onDown":"vehicle.toggleAshTray()",                "title":"vehicle.interaction.interior.ashtray.title",                      "desc":"vehicle.interaction.interior.ashtray.desc"},
         "gloveboxLatch":       {"order":31.5, "onDown":"vehicle.toggleGlovebox()",               "title":"vehicle.interaction.interior.glovebox.title",                     "desc":"vehicle.interaction.interior.glovebox.desc"},

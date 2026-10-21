@@ -15,8 +15,6 @@
     //{"control": "", "action": "doorventFRclose"},
     //{"control": "", "action": "doorventFRopen"},
 
-    //{"control": "", "action": "sunvisorLtoggle"},
-    //{"control": "", "action": "sunvisorRtoggle"},
     //{"control": "", "action": "interiorlighttoggle"},
 
     //{"control": "ctrl alt numpad4", "action": "door_FL"},

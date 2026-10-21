@@ -397,23 +397,30 @@
 
         ["bug_sunvisor_kind", ["bug_sunvisor_kind"], [], "bug_sunvisor_fabric", "Sunvisors",    {"coreSlot": true}],
     ],
-    "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-    ],
-    "triggers2":[
-        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["sunvisor_L", "brf1","brf1l","brf2", "box", {"x":0.05, "y":0.015, "z":0.015}, {"x":-20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.11, "y":0.05, "z":0.04},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
-        ["sunvisor_R", "brf1","brf1r","brf2", "box", {"x":0.05, "y":0.015, "z":0.015}, {"x": 20, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.11, "y":0.05, "z":-0.055},{"color":[1,0.3,0,0], "alphaOnUsed":0}],
-    ],
+    "components": {
+        "electrics": {
+            "customValues": [
+                ["electricsName", "electricsFunction","electricsDefault"],
+                ["sunvisor_L","",0],
+                ["sunvisor_R","",0],
+                ["sunvisor_L_movement","min(1, max(0, electrics.sunvisor_L_movement + electrics.sunvisor_L * dt))",0],
+                ["sunvisor_R_movement","min(1, max(0, electrics.sunvisor_R_movement + electrics.sunvisor_R * dt))",0],
+            ]
+        }
+    },
     "actionsEnabled": [
         ["id"],
-        ["sunvisorLtoggle"],
-        ["sunvisorRtoggle"],
+        ["sunvisor_L_open"],
+        ["sunvisor_R_open"],
+        ["sunvisor_L_close"],
+        ["sunvisor_R_close"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
-        ["sunvisor_L", "action0", "sunvisorLtoggle"],   // default: left mouse btn
-        ["sunvisor_R", "action0", "sunvisorRtoggle"],   // default: left mouse btn
+        ["sunvisor_L", "action0", "sunvisor_L_open"],
+        ["sunvisor_R", "action0", "sunvisor_R_open"],
+        ["sunvisor_L", "action2", "sunvisor_L_close"],
+        ["sunvisor_R", "action2", "sunvisor_R_close"],
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -545,11 +552,11 @@
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
         {"beamSpring":8000,"beamDamp":50,"beamDeform":"FLT_MAX","beamStrength":4000},
         {"breakGroup":"sunvisor_L"},
-        ["sv3l","bd1l", {"inputSource":"sunvisorL", "inLimit":1.0, "outLimit":0.58, "inRate":0.8, "outRate":0.8, "inputFactor":1.0}],
-        ["sv4l","bd1l", {"inputSource":"sunvisorL", "inLimit":1.0, "outLimit":0.62, "inRate":0.8, "outRate":0.8, "inputFactor":1.0}],
+        ["sv3l","bd1l", {"inputSource":"sunvisor_L_movement", "inLimit":1.0, "outLimit":0.58, "inRate":0.8, "outRate":0.8, "inputFactor":1.0}],
+        ["sv4l","bd1l", {"inputSource":"sunvisor_L_movement", "inLimit":1.0, "outLimit":0.62, "inRate":0.8, "outRate":0.8, "inputFactor":1.0}],
         {"breakGroup":"sunvisor_R"},
-        ["sv3r","bd1r", {"inputSource":"sunvisorR", "inLimit":1.0, "outLimit":0.58, "inRate":0.8, "outRate":0.8, "inputFactor":1.0}],
-        ["sv4r","bd1r", {"inputSource":"sunvisorR", "inLimit":1.0, "outLimit":0.62, "inRate":0.8, "outRate":0.8, "inputFactor":1.0}],
+        ["sv3r","bd1r", {"inputSource":"sunvisor_R_movement", "inLimit":1.0, "outLimit":0.58, "inRate":0.8, "outRate":0.8, "inputFactor":1.0}],
+        ["sv4r","bd1r", {"inputSource":"sunvisor_R_movement", "inLimit":1.0, "outLimit":0.62, "inRate":0.8, "outRate":0.8, "inputFactor":1.0}],
         {"breakGroup":""},
     ],
     "triangles": [
@@ -572,9 +579,14 @@
     },
     "slotType" : "bug_sunvisor_kind",
     "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["bug_sunvisor_L_fabric", ["bug_sunvisor_L"]],
-         ["bug_sunvisor_R_fabric", ["bug_sunvisor_R"]],
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bug_sunvisor_L_fabric", ["bug_sunvisor_L"]],
+        ["bug_sunvisor_R_fabric", ["bug_sunvisor_R"]],
+    ],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["sunvisor_L", "sv2l","sv1l","sv4l", "box", {"x":0.31, "y":0.025, "z":0.07}, {"x":-5, "y":1, "z":1}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.02, "y":0.0, "z":-0.015},{"mesh":"bug_sunvisor_L_fabric"}],
+        ["sunvisor_R", "sv2r","sv1r","sv4r", "box", {"x":0.31, "y":0.025, "z":0.07}, {"x":5, "y":1, "z":-1}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.02, "y":0.0, "z":-0.01},{"mesh":"bug_sunvisor_R_fabric"}],
     ],
 },
 "bug_sunvisor_acrylic": {
@@ -585,10 +597,15 @@
     },
     "slotType" : "bug_sunvisor_kind",
     "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["bug_sunvisor_L_acrylic", ["bug_sunvisor_L"]],
-         ["bug_sunvisor_R_acrylic", ["bug_sunvisor_R"]],
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["bug_sunvisor_L_acrylic", ["bug_sunvisor_L"]],
+        ["bug_sunvisor_R_acrylic", ["bug_sunvisor_R"]],
     ]
+        "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        ["sunvisor_L", "sv2l","sv1l","sv4l", "box", {"x":0.31, "y":0.025, "z":0.07}, {"x":-5, "y":1, "z":1}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.02, "y":0.0, "z":-0.015},{"mesh":"bug_sunvisor_L_acrylic"}],
+        ["sunvisor_R", "sv2r","sv1r","sv4r", "box", {"x":0.31, "y":0.025, "z":0.07}, {"x":5, "y":1, "z":-1}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.02, "y":0.0, "z":-0.01},{"mesh":"bug_sunvisor_R_acrylic"}],
+    ],
 },
 
 // --- Decals
