@@ -14,7 +14,7 @@
         ["skin_interior4",  ["skin_interior4"], [],  "bug_skin_interior4_white",  "Seat Color 1",     {"coreSlot":true}],
         ["skin_interior4b", ["skin_interior4b"], [], "bug_skin_interior4b_white", "Seat Color 2",     {"coreSlot":true}],
 
-        ["bug_seat_FL",     ["bug_seat_FL"], [],     "bug_seat_lowback_FL",       "Front Left Seat"],
+        ["bug_seat_FL",     ["bug_seat_FL"], [],     "bug_seat_lowback_FL",       "Front Left Seat", {"variables":{"$isDriver":"LHD"}}],
         ["bug_seat_FR",     ["bug_seat_FR"], [],     "bug_seat_lowback_FR",       "Front Right Seat"],
         ["bug_seat_R",      ["bug_seat_R"], [],      "bug_seat_A_R",              "Rear Seats"],
     ],

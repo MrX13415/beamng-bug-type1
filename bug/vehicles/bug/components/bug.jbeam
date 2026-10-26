@@ -28,6 +28,7 @@
         ["fileName"],
         ["vehicleController", {}],
     ],
+    "occupantSystem": { "enabled": true, "version": 1 },
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$brakestrength", "range", "", "Chassis", 1, 0.6, 1.0, "Brake Force Multiplier", "Scales the overall brake torque for this setup", {"minDis":60, "maxDis":100}],
