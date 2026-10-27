@@ -1,0 +1,287 @@
+{
+  // Generic front-seat template.
+  // Variables used to be set.
+  //    $seatID     Either FL or FR
+  //    $side       Either +1 (for left) or -1 (for right)
+  //    $meshBase   The mesh name for the seat base without the seat ID suffix
+  //    $meshBack   The mesh name for the seat backrest without the seat ID suffix
+  "bug_seat_generic": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Generic Front Seat",
+        "value":0,
+        "isAuxiliary": true,
+    },
+    "slotType": "bug_seat_generic",
+    "slots2": [
+      ["name", "allowTypes", "denyTypes", "default", "description"],
+      ["$='seat_occupant_'..$seatID", ["seat_occupant"], [], "occupant_generic", "$=($seatID == 'FL' and 'Front Left' or 'Front Right')..' Seat Occupant'", {
+        "coreSlot": true,
+        "nodeMove": {"x": "$= $side * 0.293", "y": -0.025, "z": 0.6},
+        "nodeRotate1": {"x": -13, "y": 0, "z": 0},
+        "variables": {
+          "$seatID": "$= $seatID or 'FL'",
+          "$side": "$= $side",
+          "$TriggerHighlightMesh": "$=$meshBase..'_'..$seatID",
+          "$TriggerHighlightMesh2": "$=$meshBack..'_'..$seatID",
+          "$occupant_camPitch": 21,
+          "$occupantDragCoef": 1,
+          "$seatAttachmentStrength": "FLT_MAX",
+          "$occupant_attachnodeFL": "$='is'..$seatID..'1r'",
+          "$occupant_attachnodeFR": "$='is'..$seatID..'1l'",
+          "$occupant_attachnodeRL": "$='is'..$seatID..'2r'",
+          "$occupant_attachnodeRR": "$='is'..$seatID..'2l'",
+          "$occupant_attachnodeTL": "$='is'..$seatID..'5r'",
+          "$occupant_attachnodeTR": "$='is'..$seatID..'5l'",
+          "$occupant_attachnodeRigifier": "$='is'..$seatID..'9'"
+        }
+      }]
+    ],
+    "flexbodies": [
+      ["mesh", "[group]:", "nonFlexMaterials"],
+      ["$='bug_seat_frame_'..$seatID", ["bug_frame"]],
+      ["$=$meshBase..'_'..$seatID", ["$='bug_seat_'..$seatID..'_base'"]],
+      ["$=$meshBack..'_'..$seatID", ["$='bug_seat_'..$seatID..'_back'"]]
+    ],
+    "props": [
+      ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+      ["$='anim__seat'..$seatID..'_handle'", "$='bug_seat_'..$seatID..'_handle'", "$='is'..$seatID..'1r'", "$='is'..$seatID..'1l'", "$='is'..$seatID..'3l'", {"x": "$= $side * -90", "y": 90, "z": "$= $side * -20"}, {"x": 0, "y": 0, "z": 45}, {"x": 0, "y": 0, "z": 0}, -1, 0, 0, -1]
+    ],
+    "triggers2": [
+      ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+      ["$='seat_'..$seatID..'_toggle'", "$='is'..$seatID..'5r'", "$='is'..$seatID..'5l'", "$='is'..$seatID..'6l'", "box", {"x": 0.47, "y": 0.1, "z": 0.2}, {"x": "$= $side * 17", "y": 0, "z": 0}, {"x": 0, "y": 0, "z": 0}, {"x": 0, "y": 0, "z": 0}, {"x": "$= ($seatID == 'FL' and 0 or -0.025)", "y": "$= ($seatID == 'FL' and -0.05 or -0.01)", "z": "$= ($seatID == 'FL' and -0.01 or -0.09)"}, {"mesh": "$=$meshBack..'_'..$seatID"}],
+      ["$='seat_'..$seatID..'_move'", "$='is'..$seatID..'1r'", "$='is'..$seatID..'1l'", "$='is'..$seatID..'3l'", "sphere", 0.06, {"x": 0, "y": 0, "z": 0}, {"x": 0, "y": 0, "z": 0}, {"x": 0, "y": 0, "z": 0}, {"x": -0.245, "y": 0.35, "z": "$= ($seatID == 'FL' and -0.02 or 0.02)"}, {"mesh": "$='bug_seat_'..$seatID..'_handle'"}]
+    ],
+    "actionsEnabled": [
+      ["id"],
+      ["$='seat'..$seatID..'toggle'"],
+      ["$='seat'..$seatID..'moveF'"],
+      ["$='seat'..$seatID..'moveB'"]
+    ],
+    "triggerEventLinks2": [
+      ["triggerId:triggers2", "triggerInput", "inputAction"],
+      ["$='seat_'..$seatID..'_toggle'", "action0", "$='seat'..$seatID..'toggle'"],
+      ["$='seat_'..$seatID..'_move'", "action0", "$='seat'..$seatID..'moveF'"],
+      ["$='seat_'..$seatID..'_move'", "action1", "$='seat'..$seatID..'moveB'"],
+      ["$='seat_'..$seatID..'_move'", "action2", "$='seat'..$seatID..'moveB'"]
+    ],
+    "nodes": [
+      ["id", "posX", "posY", "posZ"],
+
+      {"nodeMaterial": "|NM_METAL"},
+      {"frictionCoef": 0.8},
+      {"selfCollision": true},
+      {"collision": true},
+      {"nodeWeight": 1.2},
+      {"group": "$='bug_seat_'..$seatID..'_base'"},
+      {"chemEnergy": 200, "burnRate": 0.5, "flashPoint": 300, "smokePoint": 200, "selfIgnition": 0, "specHeat": 1},
+      ["$='is'..$seatID..'1r'", "$= $side * 0.493", -0.353, 0.542],
+      ["$='is'..$seatID..'1l'", "$= $side * 0.088", -0.353, 0.542],
+      ["$='is'..$seatID..'2r'", "$= $side * 0.493", 0.070, 0.442],
+      ["$='is'..$seatID..'2l'", "$= $side * 0.088", 0.070, 0.442],
+      ["$='is'..$seatID..'3r'", "$= $side * 0.459", -0.300, 0.300],
+      ["$='is'..$seatID..'3l'", "$= $side * 0.126", -0.300, 0.300],
+      {"group": ["$='bug_seat_'..$seatID..'_base'", "$='bug_seat_'..$seatID..'_back'"]},
+      ["$='is'..$seatID..'4r'", "$= $side * 0.459", -0.036, 0.278],
+      ["$='is'..$seatID..'4l'", "$= $side * 0.126", -0.038, 0.278],
+      {"group": "$='bug_seat_'..$seatID..'_back'"},
+      ["$='is'..$seatID..'5r'", "$= $side * 0.493", 0.220, 0.900],
+      ["$='is'..$seatID..'5l'", "$= $side * 0.088", 0.220, 0.900],
+      ["$='is'..$seatID..'6r'", "$= $side * 0.493", 0.136, 0.398],
+      ["$='is'..$seatID..'6l'", "$= $side * 0.088", 0.136, 0.398],
+      {"group": ""},
+      {"chemEnergy": false, "burnRate": false, "flashPoint": false, "smokePoint": false, "selfIgnition": false, "specHeat": false},
+      {"selfCollision": false},
+      {"collision": false},
+      {"nodeWeight": 1},
+      ["$='is'..$seatID..'7r'", "$= $side * 0.459", -0.452, 0.312],
+      ["$='is'..$seatID..'7l'", "$= $side * 0.126", -0.452, 0.312],
+      ["$='is'..$seatID..'8r'", "$= $side * 0.459", 0.143, 0.263],
+      ["$='is'..$seatID..'8l'", "$= $side * 0.126", 0.143, 0.263],
+      ["$='is'..$seatID..'9'", "$= $side * 0.293", 0.500, 0.700],
+      {"selfCollision": true},
+      {"collision": true}
+    ],
+    "slidenodes": [
+      ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
+      ["$='is'..$seatID..'3l'", "$='seatrail_'..$seatID..'L'", true, true, 0.0, 2001000, 20000, "FLT_MAX"],
+      ["$='is'..$seatID..'4l'", "$='seatrail_'..$seatID..'L'", true, true, 0.0, 2001000, 20000, "FLT_MAX"],
+      ["$='is'..$seatID..'3r'", "$='seatrail_'..$seatID..'R'", true, true, 0.0, 2001000, 20000, "FLT_MAX"],
+      ["$='is'..$seatID..'4r'", "$='seatrail_'..$seatID..'R'", true, true, 0.0, 2001000, 20000, "FLT_MAX"]
+    ],
+    "rails": {
+      "$='seatrail_'..$seatID..'L'": {"links:":["$='is'..$seatID..'7l'", "$='is'..$seatID..'8l'"], "broken:":[], "looped":false, "capped":true},
+      "$='seatrail_'..$seatID..'R'": {"links:":["$='is'..$seatID..'7r'", "$='is'..$seatID..'8r'"], "broken:":[], "looped":false, "capped":true}
+    },
+    "hydros": [
+      ["id1:", "id2:"],
+
+      // Backrest
+      {"beamPrecompression": 1.0, "beamType": "|NORMAL", "beamLongBound": 1, "beamShortBound": 1},
+      {"beamSpring": 10000, "beamDamp": 100, "beamDeform": "FLT_MAX", "beamStrength": "FLT_MAX"},
+      ["$='is'..$seatID..'1l'", "$='is'..$seatID..'5l'", {"inputSource": "$='seat'..$seatID..'backrest'", "inLimit": 0.1, "outLimit": 1.0, "inRate": 1.0, "outRate": 1.0, "inputFactor": -1.0}],
+      ["$='is'..$seatID..'1r'", "$='is'..$seatID..'5r'", {"inputSource": "$='seat'..$seatID..'backrest'", "inLimit": 0.1, "outLimit": 1.0, "inRate": 1.0, "outRate": 1.0, "inputFactor": -1.0}],
+      
+      // Position adjustment
+      {"beamSpring": 600000, "beamDamp": 220, "beamStrength": 15000},
+      {"breakGroup": "$='bug_seat_'..$seatID", "breakGroupType": 1},
+      ["$='is'..$seatID..'8l'", "$='is'..$seatID..'3l'", {"inputSource": "$='seat'..$seatID..'_position'", "inLimit": 0.80, "outLimit": 1.3, "inRate": 0.2, "outRate": 0.2, "inputFactor": 1.0, "inputInLimit": -3, "inputOutLimit": 3}],
+      {"breakGroup": "", "breakGroupType": 0}
+    ],
+    "torsionbars": [
+      ["id1:", "id2:", "id3:", "id4:"],
+
+      {"spring": 800000, "damp": 60, "deform": 7000, "strength": 22000},
+      ["$='is'..$seatID..'8l'", "f4tm", "f5tm", "$='is'..$seatID..'8r'"]
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":1201000,"beamDamp":80},
+        {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":1.1},
+
+        // base
+        ["$='is'..$seatID..'7l'", "$='is'..$seatID..'7r'"],
+        ["$='is'..$seatID..'8l'", "$='is'..$seatID..'8r'"],
+        ["$='is'..$seatID..'7l'", "$='is'..$seatID..'8l'", {"breakGroup":"$='bug_seat_'..$seatID"}],
+        ["$='is'..$seatID..'7r'", "$='is'..$seatID..'8r'", {"breakGroup":"$='bug_seat_'..$seatID"}],
+        ["$='is'..$seatID..'7l'", "$='is'..$seatID..'8r'"],
+        ["$='is'..$seatID..'8l'", "$='is'..$seatID..'7r'"],
+
+        // seat
+        ["$='is'..$seatID..'1l'", "$='is'..$seatID..'1r'"],
+        ["$='is'..$seatID..'2l'", "$='is'..$seatID..'2r'"],
+        ["$='is'..$seatID..'1l'", "$='is'..$seatID..'2l'"],
+        ["$='is'..$seatID..'1r'", "$='is'..$seatID..'2r'"],
+        ["$='is'..$seatID..'1l'", "$='is'..$seatID..'2r'"],
+        ["$='is'..$seatID..'2l'", "$='is'..$seatID..'1r'"],
+        //-
+        ["$='is'..$seatID..'3l'", "$='is'..$seatID..'3r'"],
+        ["$='is'..$seatID..'1l'", "$='is'..$seatID..'3l'"],
+        ["$='is'..$seatID..'1r'", "$='is'..$seatID..'3r'"],
+        ["$='is'..$seatID..'1l'", "$='is'..$seatID..'3r'"],
+        ["$='is'..$seatID..'1r'", "$='is'..$seatID..'3l'"],
+        //-
+        ["$='is'..$seatID..'3l'", "$='is'..$seatID..'4l'"],
+        ["$='is'..$seatID..'1l'", "$='is'..$seatID..'4l'"],
+        ["$='is'..$seatID..'3l'", "$='is'..$seatID..'2l'"],
+        ["$='is'..$seatID..'2l'", "$='is'..$seatID..'4l'"],
+        //-
+        ["$='is'..$seatID..'3r'", "$='is'..$seatID..'4r'"],
+        ["$='is'..$seatID..'1r'", "$='is'..$seatID..'4r'"],
+        ["$='is'..$seatID..'3r'", "$='is'..$seatID..'2r'"],
+        ["$='is'..$seatID..'2r'", "$='is'..$seatID..'4r'"],
+        //-
+        ["$='is'..$seatID..'2l'", "$='is'..$seatID..'4r'"],
+        ["$='is'..$seatID..'2r'", "$='is'..$seatID..'4l'"],
+        ["$='is'..$seatID..'4l'", "$='is'..$seatID..'4r'"],
+        //-
+        ["$='is'..$seatID..'3l'", "$='is'..$seatID..'4r'"],
+        ["$='is'..$seatID..'4l'", "$='is'..$seatID..'3r'"],
+        //-
+        ["$='is'..$seatID..'4l'", "$='is'..$seatID..'1r'"],
+        ["$='is'..$seatID..'4r'", "$='is'..$seatID..'1l'"],
+        ["$='is'..$seatID..'2l'", "$='is'..$seatID..'3r'"],
+        ["$='is'..$seatID..'2r'", "$='is'..$seatID..'3l'"],
+        
+        // backrest
+        ["$='is'..$seatID..'5l'", "$='is'..$seatID..'5r'"],
+        ["$='is'..$seatID..'4l'", "$='is'..$seatID..'5l'"],
+        ["$='is'..$seatID..'4r'", "$='is'..$seatID..'5r'"],
+        ["$='is'..$seatID..'4l'", "$='is'..$seatID..'5r'"],
+        ["$='is'..$seatID..'5l'", "$='is'..$seatID..'4r'"],
+
+        ["$='is'..$seatID..'6l'", "$='is'..$seatID..'6r'"],
+        ["$='is'..$seatID..'4l'", "$='is'..$seatID..'6l'"],
+        ["$='is'..$seatID..'5l'", "$='is'..$seatID..'6l'"],
+        ["$='is'..$seatID..'4r'", "$='is'..$seatID..'6r'"],
+        ["$='is'..$seatID..'5r'", "$='is'..$seatID..'6r'"],
+        ["$='is'..$seatID..'4l'", "$='is'..$seatID..'6r'"],
+        ["$='is'..$seatID..'4r'", "$='is'..$seatID..'6l'"],
+        ["$='is'..$seatID..'5l'", "$='is'..$seatID..'6r'"],
+        ["$='is'..$seatID..'5r'", "$='is'..$seatID..'6l'"],
+
+        // base <> frame: never break, keep seat detach at rails only
+        {"beamSpring":2001000,"beamDamp":20},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+        ["$='is'..$seatID..'7r'", "$= ($side == 1 and ('f3ml') or ('f3mr'))"],
+        ["$='is'..$seatID..'7r'", "$= ($side == 1 and ('f3l') or ('f3r'))"],
+        ["$='is'..$seatID..'7l'", "$= ($side == 1 and ('f3ml') or ('f3mr'))"],
+        ["$='is'..$seatID..'7l'", "$= ($side == 1 and ('f3l') or ('f3r'))"],
+        ["$='is'..$seatID..'7r'", "$= ($side == 1 and ('f4ml') or ('f4mr'))"],
+        ["$='is'..$seatID..'7r'", "$= ($side == 1 and ('f4l') or ('f4r'))"],
+        ["$='is'..$seatID..'7l'", "$= ($side == 1 and ('f4ml') or ('f4mr'))"],
+        ["$='is'..$seatID..'7l'", "$= ($side == 1 and ('f4l') or ('f4r'))"],
+        // rear rail anti-sag / torsion brace
+        {"beamSpring":1200000,"beamDamp":60},
+        {"beamDeform":7000,"beamStrength":"FLT_MAX"},
+        ["$='is'..$seatID..'8r'", "f4tm"],
+        ["$='is'..$seatID..'8r'", "f5tm"],
+        ["$='is'..$seatID..'8l'", "f4tm"],
+        ["$='is'..$seatID..'8l'", "f5tm"],
+        {"beamSpring":2001000,"beamDamp":20},
+        {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+        ["$='is'..$seatID..'8r'", "$= ($side == 1 and ('f4l') or ('f4r'))"],
+        ["$='is'..$seatID..'8r'", "$= ($side == 1 and ('f5l') or ('f5r'))"],
+        ["$='is'..$seatID..'8r'", "$= ($side == 1 and ('f4ml') or ('f4mr'))"],
+        ["$='is'..$seatID..'8r'", "$= ($side == 1 and ('f5ml') or ('f5mr'))"],
+        //-
+        ["$='is'..$seatID..'8l'", "$= ($side == 1 and ('f4l') or ('f4r'))"],
+        ["$='is'..$seatID..'8l'", "$= ($side == 1 and ('f5l') or ('f5r'))"],
+        ["$='is'..$seatID..'8l'", "$= ($side == 1 and ('f4ml') or ('f4mr'))"],
+        ["$='is'..$seatID..'8l'", "$= ($side == 1 and ('f5ml') or ('f5mr'))"],
+        
+        // damp help
+        {"beamSpring":0,"beamDamp":300},
+        ["$='is'..$seatID..'1l'", "$='is'..$seatID..'5r'"],
+        ["$='is'..$seatID..'1r'", "$='is'..$seatID..'5l'"],
+
+        {"beamSpring":400000,"beamDamp":150},
+        {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+        ["$='is'..$seatID..'9'", "$='is'..$seatID..'2l'"],
+        ["$='is'..$seatID..'9'", "$='is'..$seatID..'2r'"],
+        ["$='is'..$seatID..'9'", "$='is'..$seatID..'5r'"],
+        ["$='is'..$seatID..'9'", "$='is'..$seatID..'5l'"],
+
+        // damping / seat-to-rail retention
+        {"breakGroup":"$='bug_seat_'..$seatID", "breakGroupType":1},
+        {"beamPrecompression":1,"beamType":"|BOUNDED", "beamLongBound":0, "beamShortBound":0},
+        {"beamSpring":500,"beamDamp":150},
+        {"beamDeform":10000,"beamStrength":12000},
+        ["$='is'..$seatID..'5l'", "$='is'..$seatID..'7l'"],
+        ["$='is'..$seatID..'5l'", "$='is'..$seatID..'7r'"],
+        ["$='is'..$seatID..'5r'", "$='is'..$seatID..'7l'"],
+        ["$='is'..$seatID..'5r'", "$='is'..$seatID..'7r'"],
+        ["$='is'..$seatID..'2l'", "$='is'..$seatID..'8l'"],
+        ["$='is'..$seatID..'2l'", "$='is'..$seatID..'8r'"],
+        ["$='is'..$seatID..'2r'", "$='is'..$seatID..'8l'"],
+        ["$='is'..$seatID..'2r'", "$='is'..$seatID..'8r'"],
+        {"breakGroup":"","breakGroupType":0},
+        
+        {"deformLimitExpansion":1.0},
+        {"beamPrecompression":1.0,"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+        ["id1:", "id2:", "id3:"],
+
+        {"groundModel": "CLOTH"},
+        {"dragCoef": 0},
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'1r') or ('is'..$seatID..'2r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2r') or ('is'..$seatID..'1r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'1l') or ('is'..$seatID..'1l'))"],
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'2r') or ('is'..$seatID..'2l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2l') or ('is'..$seatID..'2r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'1l') or ('is'..$seatID..'1l'))"],
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'2r') or ('is'..$seatID..'5r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'5r') or ('is'..$seatID..'2r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2l') or ('is'..$seatID..'2l'))"],
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'5r') or ('is'..$seatID..'5l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'5l') or ('is'..$seatID..'5r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2l') or ('is'..$seatID..'2l'))"],
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'3r') or ('is'..$seatID..'1r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'1r') or ('is'..$seatID..'3r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'3l') or ('is'..$seatID..'3l'))"],
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'1r') or ('is'..$seatID..'1l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'1l') or ('is'..$seatID..'1r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'3l') or ('is'..$seatID..'3l'))"],
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'3l') or ('is'..$seatID..'1l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'1l') or ('is'..$seatID..'3l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'4l') or ('is'..$seatID..'4l'))"],
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'1l') or ('is'..$seatID..'2l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2l') or ('is'..$seatID..'1l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'4l') or ('is'..$seatID..'4l'))"],
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'4r') or ('is'..$seatID..'2r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2r') or ('is'..$seatID..'4r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'3r') or ('is'..$seatID..'3r'))"],
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'2r') or ('is'..$seatID..'1r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'1r') or ('is'..$seatID..'2r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'3r') or ('is'..$seatID..'3r'))"],
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'4l') or ('is'..$seatID..'2l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2l') or ('is'..$seatID..'4l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'4r') or ('is'..$seatID..'4r'))"],
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'2l') or ('is'..$seatID..'2r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2r') or ('is'..$seatID..'2l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'4r') or ('is'..$seatID..'4r'))"],
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'6l') or ('is'..$seatID..'6l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'5l') or ('is'..$seatID..'5r'))", "$= ($seatID == 'FL' and ('is'..$seatID..'6r') or ('is'..$seatID..'6r'))"],
+        ["$= ($seatID == 'FL' and ('is'..$seatID..'5l') or ('is'..$seatID..'5l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'5r') or ('is'..$seatID..'5l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'6r') or ('is'..$seatID..'6r'))"]
+    ]
+  }
+}

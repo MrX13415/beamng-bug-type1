@@ -29,21 +29,21 @@
 
         ["bug_interior_luggage", ["bug_interior_luggage"], [], "bug_interior_luggage",     "Interior Luggage"],
     ],
-    "camerasInternal":[
-        ["name", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
-
-        {"nodeWeight":1.0},
-        {"beamSpring":800,"beamDamp":100},
-        {"selfCollision":true},
-        {"collision":true},		
-        {"rightHandCamera":false},   // set to true for right steering wheel otherwise false
-        // driver camera (make first value negative for right steering wheel)
-        //["driver",     0.2555, 0.18, 1.24, 55, "f6l","f4l","f5l","f6tml","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
-        //TODO: Disable also this?
-        // passenger seat
-        {"rightHandDoor":true},
-        ["rider", -0.2555, 0.18, 1.24, 55, "f6r","f4r","f5r","f6tmr","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
-    ], 
+    // Legacy internal cameras used before BeamNG.drive 0.40
+    //"camerasInternal":[
+    //    ["name", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
+    //
+    //    {"nodeWeight":1.0},
+    //    {"beamSpring":800,"beamDamp":100},
+    //    {"selfCollision":true},
+    //    {"collision":true},		
+    //    {"rightHandCamera":false},   // set to true for right steering wheel otherwise false
+    //    // driver camera (make first value negative for right steering wheel)
+    //    ["driver",     0.2555, 0.18, 1.24, 55, "f6l","f4l","f5l","f6tml","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+    //    // passenger seat
+    //    {"rightHandDoor":true},
+    //    ["rider", -0.2555, 0.18, 1.24, 55, "f6r","f4r","f5r","f6tmr","f4tm","f5tm", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
+    //], 
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
