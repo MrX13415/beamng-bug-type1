@@ -6,11 +6,11 @@
         "ashtraytoggle":       {"order":31.4, "onDown":"vehicle.toggleAshTray()",                "title":"vehicle.interaction.interior.ashtray.title",                      "desc":"vehicle.interaction.interior.ashtray.desc"},
         "gloveboxLatch":       {"order":31.5, "onDown":"vehicle.toggleGlovebox()",               "title":"vehicle.interaction.interior.glovebox.title",                     "desc":"vehicle.interaction.interior.glovebox.desc"},
     
-        "seatFLtoggle":        {"order":32.1, "onDown":"vehicle.toggle('seatFL')",               "title":"vehicle.interaction.interior.front_left_seat.title",              "desc":"vehicle.interaction.interior.front_left_seat.desc"},
+        "seatFLtoggle":        {"order":32.1, "onDown":"vehicle.toggle('seatFLbackrest')",       "title":"vehicle.interaction.interior.front_left_seat.title",              "desc":"vehicle.interaction.interior.front_left_seat.desc"},
         "seatFLmoveF":         {"order":32.2, "onDown":"vehicle.moveSeat('seatFL',  1, -3, 3)",  "title":"vehicle.interaction.interior.front_left_seat_forward.title",      "desc":"vehicle.interaction.interior.front_left_seat_forward.desc"},
         "seatFLmoveB":         {"order":32.3, "onDown":"vehicle.moveSeat('seatFL', -1, -3, 3)",  "title":"vehicle.interaction.interior.front_left_seat_backward.title",     "desc":"vehicle.interaction.interior.front_left_seat_backward.desc"},
     
-        "seatFRtoggle":        {"order":33.1, "onDown":"vehicle.toggle('seatFR')",               "title":"vehicle.interaction.interior.front_right_seat.title",             "desc":"vehicle.interaction.interior.front_right_seat.desc"},
+        "seatFRtoggle":        {"order":33.1, "onDown":"vehicle.toggle('seatFRbackrest')",       "title":"vehicle.interaction.interior.front_right_seat.title",             "desc":"vehicle.interaction.interior.front_right_seat.desc"},
         "seatFRmoveF":         {"order":33.2, "onDown":"vehicle.moveSeat('seatFR',  1, -3, 3)",  "title":"vehicle.interaction.interior.front_right_seat_forward.title",     "desc":"vehicle.interaction.interior.front_right_seat_forward.desc"},
         "seatFRmoveB":         {"order":33.3, "onDown":"vehicle.moveSeat('seatFR', -1, -3, 3)",  "title":"vehicle.interaction.interior.front_right_seat_backward.title",    "desc":"vehicle.interaction.interior.front_right_seat_backward.desc"},
         

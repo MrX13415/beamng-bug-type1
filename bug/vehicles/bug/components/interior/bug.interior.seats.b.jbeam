@@ -92,8 +92,8 @@
 
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
         {"beamSpring":300000,"beamDamp":300,"beamDeform":4000,"beamStrength":"FLT_MAX"},
-        ["isFL1l","isFL5l", {"inputSource":"seatFL", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
-        ["isFL1r","isFL5r", {"inputSource":"seatFL", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
+        ["isFL1l","isFL5l", {"inputSource":"seatFLbackrest", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
+        ["isFL1r","isFL5r", {"inputSource":"seatFLbackrest", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
 
         {"breakGroupType":1, "beamStrength":3000},
         {"breakGroup":"bug_seat_FL"},
@@ -331,8 +331,8 @@
 
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
         {"beamSpring":300000,"beamDamp":300,"beamDeform":4000,"beamStrength":"FLT_MAX"},
-        ["isFR1l","isFR5l", {"inputSource":"seatFR", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
-        ["isFR1r","isFR5r", {"inputSource":"seatFR", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
+        ["isFR1l","isFR5l", {"inputSource":"seatFRbackrest", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
+        ["isFR1r","isFR5r", {"inputSource":"seatFRbackrest", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
 
         {"breakGroupType":1, "beamStrength":3000},
         {"breakGroup":"bug_seat_FR"},
@@ -571,8 +571,8 @@
 
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
         {"beamSpring":300000,"beamDamp":300,"beamDeform":4000,"beamStrength":"FLT_MAX"},
-        ["isFL1l","isFL5l", {"inputSource":"seatFL", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
-        ["isFL1r","isFL5r", {"inputSource":"seatFL", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
+        ["isFL1l","isFL5l", {"inputSource":"seatFLbackrest", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
+        ["isFL1r","isFL5r", {"inputSource":"seatFLbackrest", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
 
         {"breakGroupType":1, "beamStrength":3000},
         {"breakGroup":"bug_seat_FL"},
@@ -810,8 +810,8 @@
 
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
         {"beamSpring":300000,"beamDamp":300,"beamDeform":4000,"beamStrength":"FLT_MAX"},
-        ["isFR1l","isFR5l", {"inputSource":"seatFR", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
-        ["isFR1r","isFR5r", {"inputSource":"seatFR", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
+        ["isFR1l","isFR5l", {"inputSource":"seatFRbackrest", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
+        ["isFR1r","isFR5r", {"inputSource":"seatFRbackrest", "inLimit":0.55, "outLimit":1.0, "inRate":0.6, "outRate":0.6, "inputFactor":-1.0}],
 
         {"breakGroupType":1, "beamStrength":3000},
         {"breakGroup":"bug_seat_FR"},
