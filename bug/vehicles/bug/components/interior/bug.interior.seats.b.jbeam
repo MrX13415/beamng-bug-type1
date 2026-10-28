@@ -92,15 +92,15 @@
     "slotType" : "bug_seat_R",
     "slots2": [
         ["name", "allowTypes", "denyTypes", "default", "description"],
-        ["load_seat_R", ["load_seat_R"], [], "",        "Rear Seat Load", {
-            "nodeMove":{"x": 0.00, "y":0.62, "z":0.77},
-            "variables":{
-                "$rotx":-10, "$roty":0, "$rotz":0,
-                "$group":"bug_seat_R",
-            },
+        ["bug_seat_generic_R", ["bug_seat_rear_generic"], [], "bug_seat_rear_generic", "Generic Rear Seat", {
+            "coreSlot": true,
+            "variables": {
+                "$meshBase": "bug_seat_B_rear_back",
+                "$meshBack": "bug_seat_B_rear_base"
+            }
         }],
     ],
-    // Legacy internal cameras used before BeamNG.drive 0.40
+    // Legacy internal camera, provided by the seat occupant now
     //"camerasInternal":[
     //    ["type", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
     //
@@ -113,111 +113,7 @@
     //    ["rider.back.left",    0.3, 0.80, 1.24, 60, "f4l","f5l","f6l","f4tm","f5tm","f6tml", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
     //    {"rightHandDoor":true},
     //    ["rider.back.right",  -0.3, 0.80, 1.24, 60, "f4r","f5r","f6r","f4tm","f5tm","f6tmr", {"beamDeform":5001000,"beamStrength":"FLT_MAX"}],
-    //], 
-    "flexbodies": [
-        ["mesh", "[group]:", "nonFlexMaterials"],
-    
-        ["bug_seat_B_rear_back", ["bug_seat_R"]],
-        ["bug_seat_B_rear_base", ["bug_seat_R"]],
-    ],
-    "nodes": [
-        ["id","posX","posY","posZ"],
-
-        {"nodeMaterial":"|NM_METAL"},
-        {"frictionCoef":0.8},
-        {"selfCollision":true},
-        {"collision":true},
-        {"nodeWeight": 1.0},
-        {"group": "bug_seat_R"},
-        {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
-        ["isR1l",  0.59871, 0.37828, 0.62694],
-        ["isR1r", -0.59871, 0.37828, 0.62694],
-        ["isR2l",  0.59871, 0.77459, 0.58043],
-        ["isR2r", -0.59871, 0.77459, 0.58043],
-        ["isR3l",  0.57240, 0.97553, 0.96024],
-        ["isR3r", -0.57240, 0.97553, 0.96024],
-        {"group": ""},
-        {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
-    ],
-    "beams": [
-        ["id1:", "id2:"],
-
-        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":501000,"beamDamp":300},
-        {"beamDeform":1000,"beamStrength":"FLT_MAX"},
-        {"deformLimitExpansion":1.1},
-        {"group": "bug_seat_R"},
-        //main
-        ["isR1l", "isR1r"],
-        ["isR2l", "isR2r"],
-        ["isR3l", "isR3r"],
-        ["isR1l", "isR2l"],
-        ["isR2l", "isR3l"],
-        ["isR3l", "isR1l"],
-        ["isR1r", "isR2r"],
-        ["isR2r", "isR3r"],
-        ["isR3r", "isR1r"],
-        //cross
-        ["isR1l", "isR2r"],
-        ["isR2l", "isR1r"],
-        ["isR2l", "isR3r"],
-        ["isR3l", "isR2r"],
-        ["isR1l", "isR3r"],
-        ["isR3l", "isR1r"],
-        {"group": ""},
-
-        // connection
-        {"breakGroup":"bug_seat_R"},
-        {"beamDeform":10000,"beamStrength":30000},
-        ["isR1l", "f5l"],
-        ["isR1l", "f5r"],
-        ["isR1r", "f5l"],
-        ["isR1r", "f5r"],
-        ["isR1l", "f6l"],
-        ["isR1l", "f6r"],
-        ["isR1r", "f6l"],
-        ["isR1r", "f6r"],
-        ["isR2l", "f5l"],
-        ["isR2l", "f5r"],
-        ["isR2r", "f5l"],
-        ["isR2r", "f5r"],
-        ["isR2l", "f6l"],
-        ["isR2l", "f6r"],
-        ["isR2r", "f6l"],
-        ["isR2r", "f6r"],
-        
-        //cargo load box
-        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":500001,"beamDamp":250},
-        {"beamDeform":510000,"beamStrength":"FLT_MAX"},
-        {"optional":true},
-        ["seat_box_R", "isR1l"],
-        ["seat_box_R", "isR1r"],
-        ["seat_box_R", "isR2l"],
-        ["seat_box_R", "isR2r"],
-        ["seat_box_R", "isR3l"],
-        ["seat_box_R", "isR3r"],
-        {"optional":false},
-        
-        {"breakGroup":""},
-        {"deformLimitExpansion":1.0},
-    ],
-    "triangles": [
-        ["id1:","id2:","id3:"],
-
-        //front bumper
-        {"groundModel":"CLOTH"},
-        {"dragCoef":0},
-        ["isR1r", "isR1l", "isR2r"],
-        ["isR2r", "isR1l", "isR2l"],
-        ["isR2r", "isR2l", "isR3r"],
-        ["isR3r", "isR2l", "isR3l"],
-        //-
-        {"breakGroup":"bug_seat_R"},
-        ["bi2l", "bi2r", "bq11l"],
-        ["bq11l", "bi2r", "bq11r"],
-        {"breakGroup":""}
-    ]
+    //]
 },
 
 }

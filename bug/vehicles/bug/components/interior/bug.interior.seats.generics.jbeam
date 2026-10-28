@@ -24,7 +24,7 @@
           "$side": "$= $side",
           "$TriggerHighlightMesh": "$=$meshBase..'_'..$seatID",
           "$TriggerHighlightMesh2": "$=$meshBack..'_'..$seatID",
-          "$occupant_camPitch": 21,
+          "$occupant_camPitch": 12,
           "$occupantDragCoef": 1,
           "$seatAttachmentStrength": "FLT_MAX",
           "$occupant_attachnodeFL": "$='is'..$seatID..'1r'",
@@ -284,4 +284,219 @@
         ["$= ($seatID == 'FL' and ('is'..$seatID..'5l') or ('is'..$seatID..'5l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'5r') or ('is'..$seatID..'5l'))", "$= ($seatID == 'FL' and ('is'..$seatID..'6r') or ('is'..$seatID..'6r'))"]
     ]
   }
+
+
+  // Generic rear-seat template.
+  // Variables used to be set.
+  //    $meshBase   The mesh name for the seat base
+  //    $meshBack   The mesh name for the seat backrest
+  "bug_seat_rear_generic": {
+    "information":{
+        "authors":"MrX13415",
+        "name":"Generic Rear Seat",
+        "value":0,
+        "isAuxiliary": true,
+    },
+    "slotType" : "bug_seat_rear_generic",
+    "slots2": [
+      ["name", "allowTypes", "denyTypes", "default", "description"],
+      ["bug_seats_R_space", ["bug_seats_R_space"], [], "bug_seats_R_occupants", "Rear Seat Space", {
+          "coreSlot":true,
+          "variables": { "$hghlightMesh1": "$=$meshBase", "$hghlightMesh2": "$=$meshBack" }
+      }],
+    ],
+    "flexbodies": [
+      ["mesh", "[group]:", "nonFlexMaterials"],
+  
+      ["$=$meshBase", ["bug_seat_R"]],
+      ["$=$meshBack", ["bug_seat_R"]],
+    ],
+    "nodes": [
+      ["id","posX","posY","posZ"],
+
+      {"nodeMaterial":"|NM_METAL"},
+      {"frictionCoef":0.8},
+      {"selfCollision":true},
+      {"collision":true},
+      {"nodeWeight": 1.0},
+      {"group": "bug_seat_R"},
+      {"chemEnergy":200,"burnRate":0.5,"flashPoint":300,"smokePoint":200,"selfIgnition":0,"specHeat":1},
+      ["isR1l",  0.59871, 0.37828, 0.60694],
+      ["isR1r", -0.59871, 0.37828, 0.60694],
+      ["isR2l",  0.57871, 0.80459, 0.56043],
+      ["isR2r", -0.57871, 0.80459, 0.56043],
+      ["isR3l",  0.57240, 0.97553, 0.96024],
+      ["isR3r", -0.57240, 0.97553, 0.96024],
+      ["isR4l",  0.30000, 1.30000, 0.80000, {"collision":false, "selfCollision":false, "group":"", "nodeWeight":1}],
+      ["isR4r", -0.30000, 1.30000, 0.80000, {"collision":false, "selfCollision":false, "group":"", "nodeWeight":1}],
+      {"group": ""},
+      {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
+    ],
+    "beams": [
+      ["id1:", "id2:"],
+
+      {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+      {"beamSpring":501000,"beamDamp":300},
+      {"beamDeform":1000,"beamStrength":"FLT_MAX"},
+      {"deformLimitExpansion":1.1},
+      {"group": "bug_seat_R"},
+      //main
+      ["isR1l", "isR1r"],
+      ["isR2l", "isR2r"],
+      ["isR3l", "isR3r"],
+      ["isR1l", "isR2l"],
+      ["isR2l", "isR3l"],
+      ["isR3l", "isR1l"],
+      ["isR1r", "isR2r"],
+      ["isR2r", "isR3r"],
+      ["isR3r", "isR1r"],
+      //cross
+      ["isR1l", "isR2r"],
+      ["isR2l", "isR1r"],
+      ["isR2l", "isR3r"],
+      ["isR3l", "isR2r"],
+      ["isR1l", "isR3r"],
+      ["isR3l", "isR1r"],
+      {"group": ""},
+
+      //seat back rigifier beams: only to seat back nodes
+      {"beamSpring":400000,"beamDamp":200},
+      {"beamDeform":20000,"beamStrength":"FLT_MAX"},
+      ["isR4l", "isR2l"],
+      ["isR4l", "isR3l"],
+      ["isR4r", "isR2r"],
+      ["isR4r", "isR3r"],
+      ["isR4l", "isR4r"],
+
+      // connection
+      {"breakGroup":"bug_seat_R"},
+      {"beamDeform":10000,"beamStrength":30000},
+      ["isR1l", "f5l"],
+      ["isR1l", "f5r"],
+      ["isR1r", "f5l"],
+      ["isR1r", "f5r"],
+      ["isR1l", "f6l"],
+      ["isR1l", "f6r"],
+      ["isR1r", "f6l"],
+      ["isR1r", "f6r"],
+      ["isR2l", "f5l"],
+      ["isR2l", "f5r"],
+      ["isR2r", "f5l"],
+      ["isR2r", "f5r"],
+      ["isR2l", "f6l"],
+      ["isR2l", "f6r"],
+      ["isR2r", "f6l"],
+      ["isR2r", "f6r"],
+            
+      {"breakGroup":""},
+      {"deformLimitExpansion":1.0},
+    ],
+    "triangles": [
+      ["id1:","id2:","id3:"],
+
+      //front bumper
+      {"groundModel":"CLOTH"},
+      {"dragCoef":0},
+      ["isR1r", "isR1l", "isR2r"],
+      ["isR2r", "isR1l", "isR2l"],
+      ["isR2r", "isR2l", "isR3r"],
+      ["isR3r", "isR2l", "isR3l"],
+      //-
+      {"breakGroup":"bug_seat_R"},
+      ["bi2l", "bi2r", "bq11l"],
+      ["bq11l", "bi2r", "bq11r"],
+      {"breakGroup":""}
+    ]
+  }
+
+  // Variables used to be set: $hghlightMesh1, $hghlightMesh2
+  "bug_seats_R_occupants": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Seat Occupants Space",
+        "value":0,
+    },
+    "slotType" : "bug_seats_R_space",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["seat_occupant_RL", ["seat_occupant"], [], "occupant_generic", "Rear Left Seat Occupant", {
+            "coreSlot":true,
+            "nodeMove":{"x":0.30,"y":0.60,"z":0.60},
+            "nodeRotate1":{"x":-23, "y":0, "z":0},
+            "variables": {
+                "$seatID": "RL",
+                "$TriggerHighlightMesh": "$=$hghlightMesh1",
+                "$TriggerHighlightMesh2": "$=$hghlightMesh2",
+                "$occupant_camPitch": 23,
+                "$occupantDragCoef": 1,
+                "$seatAttachmentStrength": "FLT_MAX",
+                "$occupant_attachnodeFL": "isR1l",
+                "$occupant_attachnodeFR": "isR1r",
+                "$occupant_attachnodeRL": "isR2l",
+                "$occupant_attachnodeRR": "isR2r",
+                "$occupant_attachnodeTL": "isR3l",
+                "$occupant_attachnodeTR": "isR3r",
+                "$occupant_attachnodeRigifier": "isR4l"
+            }
+        }],
+        ["seat_occupant_RR", ["seat_occupant"], [], "occupant_generic", "Rear Right Seat Occupant", {
+            "coreSlot":true,
+            "nodeMove":{"x":-0.30,"y":0.68,"z":0.65},
+            "nodeRotate1":{"x":-26, "y":0, "z":0},
+            "variables": {
+                "$seatID": "RR",
+                "$TriggerHighlightMesh": "$=$hghlightMesh1",
+                "$TriggerHighlightMesh2": "$=$hghlightMesh2",
+                "$occupant_camPitch": 23,
+                "$occupantDragCoef": 1,
+                "$seatAttachmentStrength": "FLT_MAX",
+                "$occupant_attachnodeFL": "isR1l",
+                "$occupant_attachnodeFR": "isR1r",
+                "$occupant_attachnodeRL": "isR2l",
+                "$occupant_attachnodeRR": "isR2r",
+                "$occupant_attachnodeTL": "isR3l",
+                "$occupant_attachnodeTR": "isR3r",
+                "$occupant_attachnodeRigifier": "isR4r"
+            }
+        }],
+    ],
+  },
+
+  "bug_seats_R_cargo": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Seat Cargo Load",
+        "value":0,
+    },
+    "slotType" : "autobello_seats_R_space",
+    "slots2": [
+        ["name", "allowTypes", "denyTypes", "default", "description"],
+        ["load_seat_R", ["load_seat_R"], [], "", "Rear Seat Load", {
+            "nodeMove":{"x": 0.00, "y":0.62, "z":0.77},
+            "variables":{
+                "$rotx":-10, "$roty":0, "$rotz":0,
+                "$group":"bug_seat_R",
+            },
+        }],
+    ],
+    "beams":[
+      ["id1:",       "id2:"],
+      {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+      //cargo load box
+      {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+      {"beamSpring":500001,"beamDamp":250},
+      {"beamDeform":510000,"beamStrength":"FLT_MAX"},
+      {"optional":true},
+      ["seat_box_R", "isR1l"],
+      ["seat_box_R", "isR1r"],
+      ["seat_box_R", "isR2l"],
+      ["seat_box_R", "isR2r"],
+      ["seat_box_R", "isR3l"],
+      ["seat_box_R", "isR3r"],
+      {"optional":false},
+    ],
+  },
+
+
 }

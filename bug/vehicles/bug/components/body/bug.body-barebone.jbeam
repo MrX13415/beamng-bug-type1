@@ -37,7 +37,7 @@
 
         // TODO: ["bug_rollbar",              ["bug_rollbar",], []               "",                         "Rollbar"],
     ],
-    // Legacy internal cameras used before BeamNG.drive 0.40
+    // Legacy internal camera, provided by the seat occupant now
     //"camerasInternal":[
     //    ["name", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
     //    

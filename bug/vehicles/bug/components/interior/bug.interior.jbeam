@@ -29,7 +29,7 @@
 
         ["bug_interior_luggage", ["bug_interior_luggage"], [], "bug_interior_luggage",     "Interior Luggage"],
     ],
-    // Legacy internal cameras used before BeamNG.drive 0.40
+    // Legacy internal camera, provided by the seat occupant now
     //"camerasInternal":[
     //    ["name", "x", "y", "z", "fov", "id1:", "id2:", "id3:", "id4:", "id5:", "id6:"],
     //
