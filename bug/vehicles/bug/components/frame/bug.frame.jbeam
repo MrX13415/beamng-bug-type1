@@ -125,7 +125,7 @@
 		{"nodeWeight":3.0},
 		["f1tml",  0.15993, -1.36400, 0.38100],
 		["f1tmr", -0.15993, -1.36400, 0.38100],
-		{"nodeWeight":2.0},
+		{"nodeWeight":3.0},
 		["f2tm",   0.00000, -1.02968, 0.39000],
 		["f3tm",   0.00000, -0.69101, 0.39000],
 		["f4tm",   0.00000, -0.19767, 0.39000],	// refNode "up"
@@ -135,6 +135,16 @@
 		["f7tml",  0.22655,  1.34987, 0.39000],
 		["f7tmr", -0.22655,  1.34987, 0.39000],
 
+		// Helper truss around the seats. Mainly used to connect 
+		// the seat structure in a rigid manner.
+		{"nodeWeight":1.0},
+		["f8l",   0.30000,  0.00000, 0.80000, {"collision":false,"selfCollision":false}],
+		["f8r",  -0.30000,  0.00000, 0.80000, {"collision":false,"selfCollision":false}],
+		{"nodeWeight":0.7},
+		["f4ll",  0.56635, -0.19767, 0.50000, {"collision":false,"selfCollision":false}],
+		["f4rr", -0.56635, -0.19767, 0.50000, {"collision":false,"selfCollision":false}],
+
+		// Steering column group
 		{"group":"bug_steeringcolumn"},
 		{"nodeWeight":2.0},
 		["steer1",  0.267100, -0.499316, 0.870051],
@@ -383,6 +393,49 @@
 		["f7ml", "f4r"],
 		["f7tmr", "f4l"],
 		["f7mr", "f4l"],
+
+		// Helper truss around the seats.
+		{"beamSpring":1001000,"beamDamp":40},
+		{"beamDeform":20000,"beamStrength":"FLT_MAX"},
+		["f4ll", "f3l"],
+		["f4ll", "f3tm"],
+		["f4ll", "f3ml"],
+		["f4ll", "f4l"],
+		["f4ll", "f4tm"],
+		["f4ll", "f4ml"],
+		["f4ll", "f5l"],
+		["f4ll", "f5tm"],
+		["f4ll", "f5ml"],
+		//-
+		["f4rr", "f3r"],
+		["f4rr", "f3tm"],
+		["f4rr", "f3mr"],
+		["f4rr", "f4r"],
+		["f4rr", "f4tm"],
+		["f4rr", "f4mr"],
+		["f4rr", "f5r"],
+		["f4rr", "f5tm"],
+		["f4rr", "f5mr"],
+		// Rigidify
+		["f8l", "f3l"],
+		["f8l", "f4l"],
+		["f8l", "f5l"],
+		["f8l", "f3ml"],
+		["f8l", "f4ml"],
+		["f8l", "f5ml"]
+		["f8l", "f3tm"],
+		["f8l", "f4tm"],
+		["f8l", "f5tm"]
+		//-
+		["f8r", "f3r"],
+		["f8r", "f4r"],
+		["f8r", "f5r"],
+		["f8r", "f3mr"],
+		["f8r", "f4mr"],
+		["f8r", "f5mr"]
+		["f8r", "f3tm"],
+		["f8r", "f4tm"],
+		["f8r", "f5tm"]
 
 		// Suspension Rigidify
 		{"beamSpring":1001000,"beamDamp":120},
