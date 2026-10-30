@@ -104,10 +104,10 @@
     ],
     "slidenodes": [
       ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
-      ["$='is'..$seatID..'3i'", "$='seatrail_'..$seatID..'I'", true, true, 0.0, 7001000, "FLT_MAX", "FLT_MAX"],
-      ["$='is'..$seatID..'4i'", "$='seatrail_'..$seatID..'I'", true, true, 0.0, 7001000, "FLT_MAX", "FLT_MAX"],
-      ["$='is'..$seatID..'3o'", "$='seatrail_'..$seatID..'O'", true, true, 0.0, 7001000, "FLT_MAX", "FLT_MAX"],
-      ["$='is'..$seatID..'4o'", "$='seatrail_'..$seatID..'O'", true, true, 0.0, 7001000, "FLT_MAX", "FLT_MAX"]
+      ["$='is'..$seatID..'3i'", "$='seatrail_'..$seatID..'I'", true, true, 0.0, 7001000, 60000, "FLT_MAX"],
+      ["$='is'..$seatID..'4i'", "$='seatrail_'..$seatID..'I'", true, true, 0.0, 7001000, 60000, "FLT_MAX"],
+      ["$='is'..$seatID..'3o'", "$='seatrail_'..$seatID..'O'", true, true, 0.0, 7001000, 60000, "FLT_MAX"],
+      ["$='is'..$seatID..'4o'", "$='seatrail_'..$seatID..'O'", true, true, 0.0, 7001000, 60000, "FLT_MAX"]
     ],
     "rails": {
       "$='seatrail_'..$seatID..'I'": {"links:":["$='is'..$seatID..'7i'", "$='is'..$seatID..'8i'"], "broken:":[], "looped":false, "capped":true},

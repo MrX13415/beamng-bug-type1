@@ -5,178 +5,201 @@
     "information":{
         "authors":"BeamNG",
         "name":"Front Left Race Seat Base",
-        "value":60,
+        "value":10,
     },
     "slotType" : "bug_seat_FL",
     "slots2": [
-        ["name", "allowTypes", "denyTypes", "default", "description"],
-        ["race_seat_FL", ["race_seat_FL"], [], "race_seat_FL", "Front Left Race Seat", {"nodeMove":{"x":0.30, "y":-0.10, "z":0.27}}],
+        ["name",         "allowTypes",     "denyTypes", "default",      "description"],
+        ["race_seat_FL", ["racing_seat"],  [],          "seat_race_gray", "Front Left Race Seat", {"nodeMove":{"x":0.30, "y":-0.04, "z":0.3}, "variables":{"$seatID":"FL"}}],
     ],
     "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["racingseat_base", ["bug_frame"],[],{"pos":{"x":0.28,"y":-0.15,"z":0.28}, "scale":{"x":0.95, "y":0.93, "z":0.93}}],
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["racingseat_base", ["bug_frame"],[],{"pos":{"x":0.3,"y":-0.15,"z":0.29}, "scale":{"x":0.95, "y":0.95, "z":1.7}}],
     ],
-    "beams":[
-        ["id1:", "id2:"],
+    "beams": [
+        ["id1:",  "id2:"],
+        {"deformLimitExpansion":1.2},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        //main shape
-        {"beamSpring":2501000,"beamDamp":300},
-        {"beamDeform":9000,"beamStrength":"FLT_MAX"},
-        {"deformLimitExpansion":""},
-        {"optional":true},
+        //attach
+        {"beamSpring":1201000,"beamDamp":150},
+        {"beamDeform":12000,"beamStrength":200000},
+        {"deformLimitExpansion":1.2},
         {"breakGroup":"bug_seat_FL"},
 
-        //damper
-        {"beamSpring":0,"beamDamp":800},
-        ["sf3ll", "f5r"],
-        ["sf3l", "f5r"],
+        //strong
+        ["seatGeneric1l_FL", "f3ml"],  
+        ["seatGeneric1l_FL", "f4ml"],  
+        ["seatGeneric1r_FL", "f3l"],   
+        ["seatGeneric1r_FL", "f4l"],   
+        ["seatGeneric2l_FL", "f4ml"],  
+        ["seatGeneric2l_FL", "f5ml"],  
+        ["seatGeneric2r_FL", "f4l"],   
+        ["seatGeneric2r_FL", "f5l"],   
 
-        //attach
-        {"beamSpring":282000,"beamDamp":37.6},
-        {"beamDeform":6000,"beamStrength":4000},
-        ["sf1ll", "f4l"],
-        ["sf1ll", "f5l"],
-        ["sf1ll", "f4ml"],
-        ["sf1ll", "f5ml"],
-
-        ["sf1l", "f4l"],
-        ["sf1l", "f5l"],
-        ["sf1l", "f4ml"],
-        ["sf1l", "f5ml"],
-
-        ["sf2l", "f4l"],
-        ["sf2l", "f5l"],
-        ["sf2l", "f4ml"],
-        ["sf2l", "f5ml"],
-
-        ["sf2ll", "f4l"],
-        ["sf2ll", "f5l"],
-        ["sf2ll", "f4ml"],
-        ["sf2ll", "f5ml"],
-        {"breakGroup":""},
-
-        //limiter
-        // {"beamType":"|SUPPORT", "beamLongBound":5},
-        // {"beamSpring":470000,"beamDamp":141},
-        // {"beamPrecompression":0.9},
-        // {"beamDeform":6000,"beamStrength":"FLT_MAX"},
-        // ["sf3l", "p3l"],
-        // ["sf3l", "p4l"],
-        // ["sf3l", "rf2l"],
-        // ["sf2l", "q5l"],
-        // ["sf2l", "f3ll"],
-        // ["sf1l", "f1ll"],
-        // ["sf1l", "f3ll"],
-
-        //to other seat
-        {"beamPrecompression":0.7},
-        // ["sf1rr", "sf1ll"],
-        // ["sf2rr", "sf2ll"],
-        // ["sf3rr", "sf3ll"],
-        {"optional":false},
-        {"beamPrecompression":1},
-
-        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //weaker
+        {"beamSpring":401000,"beamDamp":150},
+        {"beamDeform":5000},
         {"deformLimitExpansion":""},
+        ["seatGeneric1l_FL", "f3l"], 
+        ["seatGeneric1r_FL", "f3ml"],
+        ["seatGeneric2l_FL", "f5l"],
+        ["seatGeneric2r_FL", "f5ml"],
+
+        {"breakGroup":""},
+        {"deformLimitExpansion":1.2},
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
 },
 "bug_seat_race_FR": {
     "information":{
         "authors":"BeamNG",
         "name":"Front Right Race Seat Base",
-        "value":60,
+        "value":10,
     },
     "slotType" : "bug_seat_FR",
     "slots2": [
-        ["name", "allowTypes", "denyTypes", "default", "description"],
-        ["race_seat_FR", ["race_seat_FR"], [], "race_seat_FR", "Front Right Race Seat", {"nodeMove":{"x":-0.30, "y":-0.10, "z":0.27}}],
+        ["name",         "allowTypes",     "denyTypes", "default",      "description"],
+        ["race_seat_FR", ["racing_seat"],  [],          "seat_race_gray", "Front Right Race Seat", {"nodeMove":{"x":-0.30, "y":-0.04, "z":0.3}, "variables":{"$seatID":"FR"}}],
     ],
     "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["racingseat_base", ["bug_frame"],[],{"pos":{"x":-0.28,"y":-0.15,"z":0.28}, "scale":{"x":0.95, "y":0.93, "z":0.93}}],
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["racingseat_base", ["seat_race_FR","floor"],[],{"pos":{"x":-0.3,"y":-0.15,"z":0.29}, "scale":{"x":0.95, "y":0.95, "z":1.7}}],
     ],
-    "nodes": [
-         ["id", "posX", "posY", "posZ"],
-         {"collision":true},
-         {"selfCollision":false},
-         {"nodeWeight":6},
-         {"frictionCoef":0.5},
-         {"nodeMaterial":"|NM_METAL"},
-         //seats flexbody
-         {"group":"covet_seat_FR"},
-         {"nodeWeight":1.5},
-         ["sf1r", -0.10, -0.24, 0.5],
-         ["sf1rr", -0.62, -0.24, 0.5],
-         ["sf2r", -0.15, 0.18, 0.42],
-         ["sf2rr", -0.58, 0.18, 0.42],
-         ["sf3r", -0.20, 0.38, 1.15],
-         ["sf3rr", -0.52, 0.38, 1.15],
-         {"group":""},
-    ],
-    "beams":[
-        ["id1:", "id2:"],
+    "beams": [
+        ["id1:",  "id2:"],
+        {"deformLimitExpansion":1.2},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        //main shape
-        {"beamSpring":2501000,"beamDamp":300},
-        {"beamDeform":9000,"beamStrength":"FLT_MAX"},
-        {"deformLimitExpansion":""},
-        {"optional":true},
+        //attach
+        {"beamSpring":1201000,"beamDamp":150},
+        {"beamDeform":12000,"beamStrength":200000},
+        {"deformLimitExpansion":1.2},
         {"breakGroup":"bug_seat_FR"},
 
-        //damper
-        {"beamSpring":0,"beamDamp":800},
-        ["sf3rr", "f5l"],
-        ["sf3r", "f5l"],
+        //strong
+        ["seatGeneric1l_FR", "f3mr"],  
+        ["seatGeneric1l_FR", "f4mr"],  
+        ["seatGeneric1r_FR", "f3r"],   
+        ["seatGeneric1r_FR", "f4r"],   
+        ["seatGeneric2l_FR", "f4mr"],  
+        ["seatGeneric2l_FR", "f5mr"],  
+        ["seatGeneric2r_FR", "f4r"],   
+        ["seatGeneric2r_FR", "f5r"],   
 
-        //attach
-        {"beamSpring":282000,"beamDamp":37.6},
-        {"beamDeform":6000,"beamStrength":4000},
-        ["sf1rr", "f4r"],
-        ["sf1rr", "f5r"],
-        ["sf1rr", "f4mr"],
-        ["sf1rr", "f5mr"],
-
-        ["sf1r", "f4r"],
-        ["sf1r", "f5r"],
-        ["sf1r", "f4mr"],
-        ["sf1r", "f5mr"],
-
-        ["sf2r", "f4r"],
-        ["sf2r", "f5r"],
-        ["sf2r", "f4mr"],
-        ["sf2r", "f5mr"],
-
-        ["sf2rr", "f4r"],
-        ["sf2rr", "f5r"],
-        ["sf2rr", "f4mr"],
-        ["sf2rr", "f5mr"],
-        {"breakGroup":""},
-
-        //limiter
-        {"beamType":"|SUPPORT", "beamLongBound":5},
-        {"beamSpring":470000,"beamDamp":141},
-        {"beamPrecompression":0.9},
-        {"beamDeform":6000,"beamStrength":"FLT_MAX"},
-        // ["sf3r", "p3r"],
-        // ["sf3r", "p4r"],
-        // ["sf3r", "rf2r"],
-        // ["sf2r", "q5r"],
-        // ["sf2r", "f3rr"],
-        // ["sf1r", "f1rr"],
-        // ["sf1r", "f3rr"],
-
-        //to other seat
-        {"beamPrecompression":0.7},
-        //["sf1rr", "sf1ll"],
-        //["sf2rr", "sf2ll"],
-        //["sf3rr", "sf3ll"],
-        {"optional":false},
-        {"beamPrecompression":1},
-
-        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //weaker
+        {"beamSpring":401000,"beamDamp":150},
+        {"beamDeform":5000},
         {"deformLimitExpansion":""},
+        ["seatGeneric1l_FR", "f3r"], 
+        ["seatGeneric1r_FR", "f3mr"],
+        ["seatGeneric2l_FR", "f5r"],
+        ["seatGeneric2r_FR", "f5mr"],
+
+        {"breakGroup":""},
+        {"deformLimitExpansion":1.2},
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
 },
 
+// - Variant Vintage
+"bug_seat_vintage_FL": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Left Vintage Seat Base",
+        "value":10,
+    },
+    "slotType" : "bug_seat_FL",
+    "slots2": [
+        ["name",                "allowTypes",            "denyTypes", "default",                   "description"],
+        ["vintage_seat_FL",     ["vintage_seat"],        [],          "seat_vintage_black",        "Front Left Vintage Seat", {"nodeMove":{"x":0.30, "y":-0.04, "z":0.35}, "variables":{"$seatID":"FL"}}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["vintageseat_base", ["seat_vintage_FL","floor"],[],{"pos":{"x":0.3,"y":-0.04,"z":0.37}, "scale":{"x":1, "y":1, "z":2.0}}],
+
+    ],
+    "beams": [
+        ["id1:",  "id2:"],
+        {"deformLimitExpansion":1.2},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        //attach
+        {"beamSpring":1201000,"beamDamp":150},
+        {"beamDeform":12000,"beamStrength":200000},
+        {"deformLimitExpansion":1.2},
+        {"breakGroup":"bug_seat_FL"},
+
+        //strong
+        ["seatGeneric1l_FL", "f3ml"],  
+        ["seatGeneric1l_FL", "f4ml"],  
+        ["seatGeneric1r_FL", "f3l"],   
+        ["seatGeneric1r_FL", "f4l"],   
+        ["seatGeneric2l_FL", "f4ml"],  
+        ["seatGeneric2l_FL", "f5ml"],  
+        ["seatGeneric2r_FL", "f4l"],   
+        ["seatGeneric2r_FL", "f5l"],   
+
+        //weaker
+        {"beamSpring":401000,"beamDamp":150},
+        {"beamDeform":5000},
+        {"deformLimitExpansion":""},
+        ["seatGeneric1l_FL", "f3l"], 
+        ["seatGeneric1r_FL", "f3ml"],
+        ["seatGeneric2l_FL", "f5l"],
+        ["seatGeneric2r_FL", "f5ml"],
+
+        {"breakGroup":""},
+        {"deformLimitExpansion":1.2},
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"bug_seat_vintage_FR": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Right Vintage Seat Base",
+        "value":10,
+    },
+    "slotType" : "bug_seat_FL",
+    "slots2": [
+        ["name",                "allowTypes",            "denyTypes", "default",                   "description"],
+        ["vintage_seat_FR",     ["vintage_seat"],        [],          "seat_vintage_black",        "Front Right Vintage Seat", {"nodeMove":{"x":-0.30, "y":-0.04, "z":0.35}, "variables":{"$seatID":"FR"}}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["vintageseat_base", ["seat_vintage_FR","floor"],[],{"pos":{"x":-0.3,"y":-0.04,"z":0.37}, "scale":{"x":1, "y":1, "z":2.0}}],
+    ],
+    "beams": [
+        ["id1:",  "id2:"],
+        {"deformLimitExpansion":1.2},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //attach
+        {"beamSpring":1201000,"beamDamp":150},
+        {"beamDeform":12000,"beamStrength":200000},
+        {"deformLimitExpansion":1.2},
+        {"breakGroup":"bug_seat_FR"},
+
+        //strong
+        ["seatGeneric1l_FR", "f3mr"],  
+        ["seatGeneric1l_FR", "f4mr"],  
+        ["seatGeneric1r_FR", "f3r"],   
+        ["seatGeneric1r_FR", "f4r"],   
+        ["seatGeneric2l_FR", "f4mr"],  
+        ["seatGeneric2l_FR", "f5mr"],  
+        ["seatGeneric2r_FR", "f4r"],   
+        ["seatGeneric2r_FR", "f5r"],   
+
+        //weaker
+        {"beamSpring":401000,"beamDamp":150},
+        {"beamDeform":5000},
+        {"deformLimitExpansion":""},
+        ["seatGeneric1l_FR", "f3r"], 
+        ["seatGeneric1r_FR", "f3mr"],
+        ["seatGeneric2l_FR", "f5r"],
+        ["seatGeneric2r_FR", "f5mr"],
+
+        {"breakGroup":""},
+        {"deformLimitExpansion":1.2},
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+}
 
 }
