@@ -33,6 +33,12 @@ local function device(name)
   return controller.getController(name)
 end
 
+-- the game dropped a held trigger without a release (e.g. UI under the cursor), sent by the GE extension
+-- bug_doorDrag: the feature that drags the part `id` ends its drag (kind "crank" for window cranks, else "door")
+local function dragLost(id, kind)
+end
+
+
 local function updateGFX(dt)
   interior.update(dt)   -- hazard switch click
   body.update(dt)       -- foglight cover
@@ -102,6 +108,8 @@ M.isDoorOpen              = doors.isDoorOpen
 M.setDoor                 = doors.setDoor
 M.toggleDoor              = doors.toggleDoor
 M.toggleDoorHandle        = doors.toggleDoorHandle
+
+M.dragLost                = dragLost
 
 -- roof: lib/roof.lua
 M.isRagtopOpen            = roof.isRagtopOpen

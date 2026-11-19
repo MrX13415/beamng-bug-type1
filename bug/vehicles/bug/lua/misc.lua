@@ -222,6 +222,7 @@ end
 -- M.version in the extension: the vehicle Lua is reloaded with each spawn, a GE extension is not, so an older
 -- version that is still loaded gets reloaded.
 local GE_VERSIONS = {
+  bug_doorDrag = 8,
 }
 
 -- Load the GE extension `ext` (reload it if an older version is loaded) and run the GE Lua statement `cmd` there.
