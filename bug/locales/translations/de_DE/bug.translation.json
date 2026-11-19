@@ -512,6 +512,8 @@
     "vehicle.interaction.doors.FR.vent.window.close.title": "Ausstellfenster rechts schließen",
     "vehicle.interaction.ragtop.open.title": "Verdeck öffnen",
     "vehicle.interaction.ragtop.close.title": "Verdeck schließen",
+    "vehicle.interaction.frunk.handle.title": "Fronthaube: Griff",
+    "vehicle.interaction.engineLid.handle.title": "Motordeckel: Griff",
     "vehicle.interaction.foglight_cover.title": "Nebelscheinwerferabdeckung",
 
     "vehicle.interaction.hrb.trust.reset.title": "Herbie: Vertrauen zurücksetzen",
@@ -592,6 +594,8 @@
     "vehicle.interaction.doors.FR.vent.window.close.desc": "Schließt das vordere rechte Ausstellfenster.",
     "vehicle.interaction.ragtop.open.desc": "Öffnet das Verdeck.",
     "vehicle.interaction.ragtop.close.desc": "Schließt das Verdeck.",
+    "vehicle.interaction.frunk.handle.desc": "Klick löst den Sicherheitshaken (vorher den Entriegelungsgriff innen ziehen). Danach gedrückt halten und ziehen hebt oder senkt die Haube von Hand, Doppelklick öffnet oder schließt sie. Über halb offen drücken die Federn sie ganz auf, darunter sinkt sie auf ihre Gummipuffer. Zum Einrasten muss sie mit etwas Schwung zufallen.",
+    "vehicle.interaction.engineLid.handle.desc": "Klick dreht den Griff und löst die Verriegelung. Danach gedrückt halten und nach oben ziehen hebt den Motordeckel von Hand, Doppelklick öffnet oder schließt ihn.",
     "vehicle.interaction.foglight_cover.desc": "Entfernt die Nebelscheinwerferabdeckung.",
 
     "vehicle.interaction.hrb.trust.reset.desc": "Setzt Herbies Vertrauen in den Spieler auf den Standardwert zurück.",

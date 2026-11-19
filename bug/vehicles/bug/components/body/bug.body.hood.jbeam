@@ -51,15 +51,13 @@
         "attachSoundEvent": "event:>Vehicle>Latches>Hood>90s_03_close",
         "detachSoundEvent": "event:>Vehicle>Latches>Hood>90s_03_open_hood",
         "breakSoundEvent":"",
-        "openForceMagnitude": 300,
+        //"openForceMagnitude": 300, // old: threw the lid open; now the handle click only frees it (lib/lids.lua)
+        "openForceMagnitude": 0,
         "openForceDuration": 0.3,
         "closeForceMagnitude": 200,
         "closeForceDuration": 1.5
     },
-    "triggers2":[
-        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["hood", "h4","h4r","h5", "box", {"x":0.04, "y":0.06, "z":0.16}, {"x":0, "y":0, "z":0}, {"x":0, "y":-2, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.021, "y":0.122, "z":-0.07},{"mesh":"bug_hood_handle"}],
-    ],
+    // the outside handle trigger is in the handle parts (hood_handle / hood_handle_paint): action frunkHandle
     "actionsEnabled": [
         ["id"],
         ["hoodCatch"],
@@ -67,7 +65,6 @@
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
-        ["hood", "action0", "hoodCatch"],
         ["hood_int", "action0", "hoodRelease"],
     ],
     "flexbodies": [
@@ -331,8 +328,9 @@
         ["h8l","h6"],
         ["h8r","h6"],
 
-        // springs
-        {"beamSpring":5000,"beamDamp":58},
+        // springs (mesh only: the hinge springs are modelled in lib/lids.lua, over-center at half open)
+        //{"beamSpring":5000,"beamDamp":58}, // old: held the lid towards closed
+        {"beamSpring":0,"beamDamp":0},
         {"beamDeform":15000,"beamStrength":30100},
         ["h7al","h7bl", {"disableMeshBreaking":false, "breakGroup":"hoodhinge_L"}],
         ["h7ar","h7br", {"disableMeshBreaking":false, "breakGroup":"hoodhinge_R"}],
@@ -385,9 +383,12 @@
         //pop open
         {"breakGroupType":1},
         {"beamType":"|SUPPORT", "beamLongBound":4},
+        // rubber buffers: a lid that sinks down on its own rests on them ~3 cm open (at the handle) and doesn't
+        // reach the latch; only a lid that comes down with momentum gets through (lib/lids.lua)
         {"beamSpring":8000,"beamDamp":10},
         {"beamDeform":4000,"beamStrength":10000},
-        {"beamPrecompression":1.1},
+        //{"beamPrecompression":1.1}, // old: held a free lid ~5 cm open
+        {"beamPrecompression":1.04},
         ["h4", "bf6r", {"breakGroup":"hoodhinge_R"}],
         ["h4", "bf6l", {"breakGroup":"hoodhinge_L"}],
 
@@ -419,18 +420,19 @@
         {"longBoundRange":"", "shortBoundRange":""},
         {"beamLimitSpring":1,"beamLimitDamp":1},
 
-        //gas struts
-        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":290,"beamDamp":100},
-        {"beamDeform":4000,"beamStrength":10000},
-        {"beamPrecompression":3.2},
-        ["h3rr", "bf4r", {"breakGroup":"hoodhinge_R"}],
-        ["h3ll", "bf4l", {"breakGroup":"hoodhinge_L"}],
-        {"beamType":"|SUPPORT", "beamLongBound":8},
-        {"beamPrecompression":3.8},
-        {"beamSpring":100,"beamDamp":100},
-        ["h3rr", "bf3r", {"breakGroup":"hoodhinge_R"}],
-        ["h3ll", "bf3l", {"breakGroup":"hoodhinge_L"}],
+        //gas struts: removed, the hinge springs are modelled in lib/lids.lua (these pushed the lid open from ~5 deg
+        //to the limiter, with no over-center point)
+        //{"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //{"beamSpring":290,"beamDamp":100},
+        //{"beamDeform":4000,"beamStrength":10000},
+        //{"beamPrecompression":3.2},
+        //["h3rr", "bf4r", {"breakGroup":"hoodhinge_R"}],
+        //["h3ll", "bf4l", {"breakGroup":"hoodhinge_L"}],
+        //{"beamType":"|SUPPORT", "beamLongBound":8},
+        //{"beamPrecompression":3.8},
+        //{"beamSpring":100,"beamDamp":100},
+        //["h3rr", "bf3r", {"breakGroup":"hoodhinge_R"}],
+        //["h3ll", "bf3l", {"breakGroup":"hoodhinge_L"}],
         {"beamPrecompression":1},
         {"breakGroupType":0},
         {"breakGroup":""},
@@ -517,6 +519,19 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bug_hood_handle", ["bug_hood"]],
     ],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        // sphere at the mesh bounds (handle 14 cm tall); the handle mesh itself lights up
+        ["frunk_handle", "h4","h4r","h5", "sphere", 0.07, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_hood_handle", "baseTranslationGlobal":{"x":0.0, "y":-1.795, "z":0.505}, "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["frunkHandle"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["frunk_handle", "action0", "frunkHandle"], // click: release the catch; hold + drag: swing the lid; double-click: open / close
+    ],
 },
 "hood_handle_paint": {
     "information":{
@@ -528,6 +543,19 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bug_hood_handle_paint", ["bug_hood"]],
+    ],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        // sphere at the mesh bounds (handle 14 cm tall); the handle mesh itself lights up
+        ["frunk_handle", "h4","h4r","h5", "sphere", 0.07, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_hood_handle_paint", "baseTranslationGlobal":{"x":0.0, "y":-1.795, "z":0.505}, "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["frunkHandle"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["frunk_handle", "action0", "frunkHandle"], // click: release the catch; hold + drag: swing the lid; double-click: open / close
     ],
 },
 

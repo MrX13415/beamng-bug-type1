@@ -14,12 +14,15 @@
 --   lib/seats.lua      sliding the front seats, making room when getting out of the back
 --   lib/openings.lua   how open the cabin is: interior light, cabin sound filter
 --   lib/doors.lua      door couplers and the outside handles
+--   lib/lids.lua       dragging the frunk and engine lids (gets updateGFX / onReset from the game itself, as a
+--                      vehicle extension)
 -- New features go into their own lib/ module; only the entry points the actions need are added here.
 
 local M = {}
 
 local misc = require("vehicles/bug/lua/misc")
 local doors = require("vehicles/bug/lua/lib/doors")
+local lids = require("vehicles/bug/lua/lib/lids")    -- also loaded as a vehicle extension: gets updateGFX / onReset itself
 local interior = require("vehicles/bug/lua/lib/interior")
 local body = require("vehicles/bug/lua/lib/body")
 local roof = require("vehicles/bug/lua/lib/roof")
@@ -36,6 +39,17 @@ end
 -- the game dropped a held trigger without a release (e.g. UI under the cursor), sent by the GE extension
 -- bug_doorDrag: the feature that drags the part `id` ends its drag (kind "crank" for window cranks, else "door")
 local function dragLost(id, kind)
+  if lids.isLid(id) then
+    lids.dragLost(id)
+  end
+end
+
+-- frunk / engine lid handles ("frunk" / "engine"): press/release from the trigger, cursor ray from GE (lib/lids.lua)
+local function lidHandle(id, value)
+  lids.press(id, value)
+end
+local function lidDragRay(id, px, py, pz, dx, dy, dz)
+  lids.setRay(id, px, py, pz, dx, dy, dz)
 end
 
 
@@ -110,6 +124,8 @@ M.toggleDoor              = doors.toggleDoor
 M.toggleDoorHandle        = doors.toggleDoorHandle
 
 M.dragLost                = dragLost
+M.lidHandle               = lidHandle
+M.lidDragRay              = lidDragRay
 
 -- roof: lib/roof.lua
 M.isRagtopOpen            = roof.isRagtopOpen
