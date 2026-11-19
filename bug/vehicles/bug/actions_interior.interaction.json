@@ -18,6 +18,9 @@
         "heatingventFL":       {"order":34.2, "onDown":"vehicle.toggleHeatingVent('FL')",        "title":"vehicle.interaction.interior.heating_front_left_vent.title",      "desc":"vehicle.interaction.interior.heating_front_left_vent.desc"},
         "heatingventFR":       {"order":34.3, "onDown":"vehicle.toggleHeatingVent('FR')",        "title":"vehicle.interaction.interior.heating_front_right_vent.title",     "desc":"vehicle.interaction.interior.heating_front_right_vent.desc"},
         "heatingventRL":       {"order":34.4, "onDown":"vehicle.toggleHeatingVent('RL')",        "title":"vehicle.interaction.interior.heating_rear_left_vent.title",       "desc":"vehicle.interaction.interior.heating_rear_left_vent.desc"},
-        "heatingventRR":       {"order":34.5, "onDown":"vehicle.toggleHeatingVent('RR')",        "title":"vehicle.interaction.interior.heating_rear_right_vent.title",      "desc":"vehicle.interaction.interior.heating_rear_right_vent.desc"}
+        "heatingventRR":       {"order":34.5, "onDown":"vehicle.toggleHeatingVent('RR')",        "title":"vehicle.interaction.interior.heating_rear_right_vent.title",      "desc":"vehicle.interaction.interior.heating_rear_right_vent.desc"},
+
+        // Horn ring on the steering wheel: sounds while held, only on the ring / the ends of the cross bar (lua/lib/horn.lua)
+        "hornRing":            {"order":30.1, "onChange":"vehicle.hornRing(VALUE)",              "title":"vehicle.interaction.interior.horn_ring.title",                    "desc":"vehicle.interaction.interior.horn_ring.desc"}
     }
 }

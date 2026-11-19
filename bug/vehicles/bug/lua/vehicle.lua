@@ -14,12 +14,14 @@
 --   lib/seats.lua      sliding the front seats, making room when getting out of the back
 --   lib/openings.lua   how open the cabin is: interior light, cabin sound filter
 --   lib/doors.lua      door couplers and the outside handles
+--   lib/horn.lua       the horn ring on the steering wheel
 -- New features go into their own lib/ module; only the entry points the actions need are added here.
 
 local M = {}
 
 local misc = require("vehicles/bug/lua/misc")
 local doors = require("vehicles/bug/lua/lib/doors")
+local horn = require("vehicles/bug/lua/lib/horn")
 local interior = require("vehicles/bug/lua/lib/interior")
 local body = require("vehicles/bug/lua/lib/body")
 local roof = require("vehicles/bug/lua/lib/roof")
@@ -36,11 +38,23 @@ end
 -- the game dropped a held trigger without a release (e.g. UI under the cursor), sent by the GE extension
 -- bug_doorDrag: the feature that drags the part `id` ends its drag (kind "crank" for window cranks, else "door")
 local function dragLost(id, kind)
+  if id == "horn" then
+    horn.dragLost()
+  end
+end
+
+-- horn ring on the steering wheel: press/release from the trigger, cursor ray from GE (lib/horn.lua)
+local function hornRing(value)
+  horn.press(value)
+end
+local function hornRingRay(id, px, py, pz, dx, dy, dz)
+  horn.setRay(id, px, py, pz, dx, dy, dz)
 end
 
 
 local function updateGFX(dt)
   interior.update(dt)   -- hazard switch click
+  horn.update(dt)
   body.update(dt)       -- foglight cover
   openings.update(dt)   -- 10 Hz: openings, interior light; cabin sound filter
 end
@@ -63,6 +77,7 @@ end
 local function onReset()
   interior.reset()      -- hazard state
   openings.reset()      -- broken glass / roof flags
+  horn.onReset()
 end
 
 local function onPlayersChanged()
@@ -110,6 +125,8 @@ M.toggleDoor              = doors.toggleDoor
 M.toggleDoorHandle        = doors.toggleDoorHandle
 
 M.dragLost                = dragLost
+M.hornRing                = hornRing
+M.hornRingRay             = hornRingRay
 
 -- roof: lib/roof.lua
 M.isRagtopOpen            = roof.isRagtopOpen

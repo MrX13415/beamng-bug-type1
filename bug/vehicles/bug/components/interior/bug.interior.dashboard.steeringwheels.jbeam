@@ -13,9 +13,43 @@
 
         ["skin_steer", ["skin_steer"], [], "bug_steer_white", "Steering Wheel", {"coreSlot":true}],
     ],
+    // Horn ring: hold the left mouse button on the ring or on an end of the cross bar to sound the horn.
+    // The triggers can't turn with the wheel, so a circle of spheres sits at the ring's radius (11.7 cm,
+    // 11.5 cm in front of the wheel) all the way round, none in the center. lua/lib/horn.lua checks where
+    // the cursor is on the turned wheel and only sounds the horn on the ring (not the center, not the gap).
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["horn", "steer2","steer3","steer1", "sphere", 0.026, {"x":-0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.0008, "y":0.96, "z":-0.001},{"mesh":"bug_steeringwheel_horn"}],
+        ["hornRing_0", "steer2","steer3","steer1", "sphere", 0.032, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_steeringwheel_horn", "baseTranslationGlobal":{"x":0.3842, "y":-0.3839, "z":0.9280}, "alphaOnUsed":0}],
+        ["hornRing_1", "steer2","steer3","steer1", "sphere", 0.032, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_steeringwheel_horn", "baseTranslationGlobal":{"x":0.3685, "y":-0.3573, "z":0.8759}, "alphaOnUsed":0}],
+        ["hornRing_2", "steer2","steer3","steer1", "sphere", 0.032, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_steeringwheel_horn", "baseTranslationGlobal":{"x":0.3257, "y":-0.3379, "z":0.8377}, "alphaOnUsed":0}],
+        ["hornRing_3", "steer2","steer3","steer1", "sphere", 0.032, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_steeringwheel_horn", "baseTranslationGlobal":{"x":0.2672, "y":-0.3307, "z":0.8237}, "alphaOnUsed":0}],
+        ["hornRing_4", "steer2","steer3","steer1", "sphere", 0.032, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_steeringwheel_horn", "baseTranslationGlobal":{"x":0.2087, "y":-0.3379, "z":0.8377}, "alphaOnUsed":0}],
+        ["hornRing_5", "steer2","steer3","steer1", "sphere", 0.032, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_steeringwheel_horn", "baseTranslationGlobal":{"x":0.1659, "y":-0.3573, "z":0.8759}, "alphaOnUsed":0}],
+        ["hornRing_6", "steer2","steer3","steer1", "sphere", 0.032, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_steeringwheel_horn", "baseTranslationGlobal":{"x":0.1502, "y":-0.3839, "z":0.9280}, "alphaOnUsed":0}],
+        ["hornRing_7", "steer2","steer3","steer1", "sphere", 0.032, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_steeringwheel_horn", "baseTranslationGlobal":{"x":0.1659, "y":-0.4104, "z":0.9801}, "alphaOnUsed":0}],
+        ["hornRing_8", "steer2","steer3","steer1", "sphere", 0.032, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_steeringwheel_horn", "baseTranslationGlobal":{"x":0.2087, "y":-0.4299, "z":1.0183}, "alphaOnUsed":0}],
+        ["hornRing_9", "steer2","steer3","steer1", "sphere", 0.032, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_steeringwheel_horn", "baseTranslationGlobal":{"x":0.2672, "y":-0.4370, "z":1.0322}, "alphaOnUsed":0}],
+        ["hornRing_10", "steer2","steer3","steer1", "sphere", 0.032, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_steeringwheel_horn", "baseTranslationGlobal":{"x":0.3257, "y":-0.4299, "z":1.0183}, "alphaOnUsed":0}],
+        ["hornRing_11", "steer2","steer3","steer1", "sphere", 0.032, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_steeringwheel_horn", "baseTranslationGlobal":{"x":0.3685, "y":-0.4104, "z":0.9801}, "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["hornRing"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["hornRing_0", "action0", "hornRing"],
+        ["hornRing_1", "action0", "hornRing"],
+        ["hornRing_2", "action0", "hornRing"],
+        ["hornRing_3", "action0", "hornRing"],
+        ["hornRing_4", "action0", "hornRing"],
+        ["hornRing_5", "action0", "hornRing"],
+        ["hornRing_6", "action0", "hornRing"],
+        ["hornRing_7", "action0", "hornRing"],
+        ["hornRing_8", "action0", "hornRing"],
+        ["hornRing_9", "action0", "hornRing"],
+        ["hornRing_10", "action0", "hornRing"],
+        ["hornRing_11", "action0", "hornRing"],   // default: left mouse btn, hold = horn
     ],
 },
 //---
@@ -30,8 +64,8 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
-        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1], // horn ring, own mesh so it can light up
     ],
 },
 "bug_steer_white2": {
@@ -45,8 +79,8 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
-        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1], // horn ring, own mesh so it can light up
     ],
 },
 "bug_steer_black": {
@@ -60,8 +94,8 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
-        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1], // horn ring, own mesh so it can light up
     ],
 },
 "bug_steer_paint1": {
@@ -75,8 +109,8 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
-        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1], // horn ring, own mesh so it can light up
     ],
 },
 "bug_steer_paint2": {
@@ -90,8 +124,8 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
-        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1], // horn ring, own mesh so it can light up
     ],
 },
 "bug_steer_paint3": {
@@ -105,8 +139,8 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
-        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1], // horn ring, own mesh so it can light up
     ],
 },
 "bug_steer_wood": {
@@ -120,8 +154,8 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
-        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1], // horn ring, own mesh so it can light up
     ],
 },
 "bug_steer_old": {
@@ -135,8 +169,8 @@
     "props": [
         ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
 
-        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
-        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1]
+        ["steering", "bug_steeringwheel", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1],
+        ["steering", "bug_steeringwheel_horn", "steer2","steer3","steer1",  {"x":0, "y":0, "z":180}, {"x":0, "y":0, "z":1}, {"x":0, "y":0, "z":0}, -900, 900, 0, 1], // horn ring, own mesh so it can light up
     ],
 },
 
