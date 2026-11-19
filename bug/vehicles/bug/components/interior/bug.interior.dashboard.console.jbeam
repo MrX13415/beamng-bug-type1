@@ -413,7 +413,9 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["gloveboxLatch", "dgb1l","dgb1r","dgb2l", "sphere", 0.02, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1654, "y":0.1137, "z":0.005},{"mesh":["bug_dashboard_glovebox_knob", "bug_dashboard_glovebox_hatch_lock"]}],
+        // 6 cm ball around the knob: on foot the trigger is aimed with the screen-centre crosshair (no cursor) from
+        // 1.5-2 m away (was 4 cm)
+        ["gloveboxLatch", "dgb1l","dgb1r","dgb2l", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1654, "y":0.1137, "z":0.005},{"mesh":["bug_dashboard_glovebox_knob", "bug_dashboard_glovebox_hatch_lock"]}],
     ],
     "actionsEnabled": [
         ["id"],

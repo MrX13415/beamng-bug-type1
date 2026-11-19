@@ -1,0 +1,212 @@
+{
+  "ui": {
+    "close": "Schließen",
+    "contents": "Inhalt",
+    "prev": "Vorige Seite",
+    "next": "Nächste Seite",
+    "hint": "Blättern mit den Pfeiltasten oder per Klick auf eine Seitenecke · Esc schließt",
+    "notes": "Notizen",
+    "note": "Hinweis",
+    "chapter": "Kapitel"
+  },
+  "cover": {
+    "brand": "Volkswagen",
+    "model": "1200"
+  },
+  "chapters": [
+    {
+      "id": "foreword",
+      "title": "Vorwort",
+      "pages": [
+        [
+          { "h": "Lieber Käferfahrer," },
+          { "p": "herzlichen Glückwunsch zu Ihrem neuen Wagen. Dieses kleine Buch erklärt alles, was Sie mit eigener Hand bedienen können: Türen und Fenster, Sitze, Heizung, Fronthaube, Motorhaube und die Kontrollleuchten am Armaturenbrett." },
+          { "p": "Fast alles bedienen Sie mit der Maus, genau dort, wo es am Wagen sitzt. Zeigen Sie auf ein Teil: **Leuchtet es auf, können Sie es bedienen.**" },
+          { "list": [
+            "Ein **Klick** betätigt es.",
+            "Ein **Doppelklick** macht es ganz: Die Tür schwingt auf oder zu, das Fenster kurbelt ganz hoch oder herunter.",
+            "**Gedrückt halten** bewegt es von Hand.",
+            "**[Umschalt] + Klick** bewirkt meist das Gegenteil: schließen, absenken, zurück."
+          ] },
+          { "p": "Alles, was Sie von Hand bedienen können, steht auch im Fahrzeugfunktionsmenü (Radialmenü) und lässt sich auf Tasten legen." }
+        ]
+      ]
+    },
+    {
+      "id": "doors",
+      "title": "Türen",
+      "pages": [
+        [
+          { "h": "Öffnen von außen" },
+          { "p": "Jede Tür hat einen festen Griff mit Druckknopf." },
+          { "steps": [
+            "Klicken Sie auf den **Druckknopf**. Das Schloss gibt frei, und die Tür springt ein paar Zentimeter auf ihre Gummidichtung heraus.",
+            "Halten Sie die Maustaste auf dem **Griff** und ziehen Sie, um die Tür von Hand aufzuschwenken. Ein Türfeststeller bremst sie, bei etwa 85° ist Anschlag.",
+            "Oder **doppelklicken** Sie auf den Griff, dann öffnet oder schließt die Tür von selbst."
+          ] },
+          { "h": "Öffnen von innen" },
+          { "p": "Klicken Sie auf den **Innengriff**, um die Tür zu öffnen. Ist sie offen, zieht ein Doppelklick auf den Griff sie zu. Gedrückt halten und ziehen schwenkt die Tür von Hand." }
+        ],
+        [
+          { "h": "Schließen" },
+          { "p": "Der Innenraum des Käfers ist fast luftdicht. Sind die andere Tür und die Fenster zu, drückt die eingeschlossene Luft dagegen: Schließen Sie die Tür mit **kräftigem Schwung**, sonst bleibt sie an ihrer Dichtung stehen. Ist die andere Tür oder ein Fenster offen, genügt ein leichter Stoß." },
+          { "h": "Rechte Tür abschließen" },
+          { "p": "Die rechte Tür wird von innen verriegelt. **[Umschalt] + Klick** auf den Innengriff: Er dreht sich nach vorn, und die geschlossene Tür lässt sich von außen nicht mehr öffnen. Ein Klick auf den Griff (oder noch einmal [Umschalt] + Klick) entriegelt; ein Doppelklick entriegelt und öffnet." },
+          { "h": "Ein- und Aussteigen" },
+          { "p": "Drücken Sie wie gewohnt **[F]**. Zuerst öffnet sich die Tür auf Ihrer Seite, dann steigen Sie ein oder aus. Noch einmal [F] geht sofort. Vom Rücksitz aus klappt der Vordersitz auf dieser Seite die Lehne vor und rutscht nach vorn." }
+        ]
+      ]
+    },
+    {
+      "id": "windows",
+      "title": "Fenster und Dach",
+      "pages": [
+        [
+          { "h": "Türfenster" },
+          { "p": "Jedes Türfenster hat eine Kurbel." },
+          { "list": [
+            "Halten Sie die Maustaste auf der **Kurbel** und kreisen Sie mit der Maus um sie herum. Die Kurbel folgt dem Zeiger; die Drehrichtung bestimmt, ob das Fenster hoch- oder herunterfährt.",
+            "**Doppelklick** auf die Kurbel kurbelt das Fenster ganz. Den zweiten Klick gedrückt halten kurbelt es herunter, mit [Umschalt] kurbelt es hoch.",
+            "Oder zeigen Sie auf die Kurbel und **drehen Sie das Mausrad**: nach oben senkt das Fenster, nach unten hebt es."
+          ] },
+          { "h": "Ausstellfenster" },
+          { "p": "Die kleinen Ausstellfenster vorn in den Türen lassen frische Luft ohne Zug herein. Maustaste auf dem Ausstellfenster gedrückt halten, und es schwenkt auf; [Umschalt] + Klick gedrückt halten schwenkt es zu." }
+        ],
+        [
+          { "h": "Faltdach" },
+          { "p": "Wagen mit Faltschiebedach: Maustaste auf dem Dach gedrückt halten, und es faltet sich auf; [Umschalt] + Klick gedrückt halten schließt es wieder." },
+          { "h": "Scheibenwischer" },
+          { "p": "Der Wischerschalter sitzt am Armaturenbrett. Ein Klick schaltet die Wischer ein und schaltet die Stufen hoch; [Umschalt] + Klick schaltet zurück und aus. Je nach Modell haben sie eine oder zwei Stufen." }
+        ]
+      ]
+    },
+    {
+      "id": "interior",
+      "title": "Sitze und Innenraum",
+      "pages": [
+        [
+          { "h": "Vordersitze" },
+          { "list": [
+            "Ein Klick auf die **Rückenlehne** klappt sie nach vorn, zum Beispiel für den Rücksitz. Noch ein Klick stellt sie zurück.",
+            "Ein Klick auf den **Verstellhebel** schiebt den Sitz eine Raste nach vorn, [Umschalt] + Klick nach hinten. Es gibt sieben Stellungen."
+          ] },
+          { "h": "Sonnenblenden" },
+          { "p": "Ein Klick klappt eine Sonnenblende herunter, noch ein Klick wieder hoch." },
+          { "h": "Innenleuchte" },
+          { "p": "Die Innenleuchte geht an, sobald eine Tür offen ist. Ein Klick auf die Leuchte schaltet auf **Dauerlicht**, noch ein Klick zurück auf Türkontakt." }
+        ],
+        [
+          { "h": "Handschuhfach" },
+          { "p": "Ein Klick auf den **Knopf** am Deckel öffnet das Handschuhfach. Darin liegt diese Anleitung. Noch ein Klick auf den Knopf schließt den Deckel. Das geht auch zu Fuß: An eine offene Tür stellen und auf den Knopf zielen, dann auf die Anleitung." },
+          { "h": "Aschenbecher" },
+          { "p": "Ein Klick auf den Aschenbecher im Armaturenbrett zieht ihn heraus, noch ein Klick schiebt ihn zurück." },
+          { "h": "Hupe" },
+          { "p": "Halten Sie die Maustaste auf dem **Hupenring** des Lenkrads oder am linken oder rechten Ende des Querstegs. Die Hupe tönt, solange Sie halten. Die Mitte des Lenkrads tut nichts." }
+        ]
+      ]
+    },
+    {
+      "id": "heating",
+      "title": "Heizung und Lüftung",
+      "pages": [
+        [
+          { "p": "Der Käfer wird mit warmer Luft vom luftgekühlten Motor geheizt. Sie gelangt über das Heizungsventil in den Innenraum und strömt aus vier Düsen." },
+          { "steps": [
+            "Ein Klick auf den **Heizungsknopf** auf dem Mitteltunnel, hinter der Handbremse, öffnet das Heizungsventil. Noch ein Klick schließt es.",
+            "Ein Klick auf eine **Düse** öffnet oder schließt sie: vorn links, vorn rechts, hinten links und hinten rechts."
+          ] },
+          { "p": "Für frische Luft öffnen Sie die Ausstellfenster in den Türen (siehe Fenster und Dach)." }
+        ]
+      ]
+    },
+    {
+      "id": "driving",
+      "title": "Anlassen und Fahren",
+      "pages": [
+        [
+          { "h": "Batterie und Anlasser" },
+          { "p": "Der Anlasser läuft aus der Batterie. Je schwächer die Batterie, desto langsamer dreht der Motor durch. Unter etwa 5 Volt spurt der Anlasser gar nicht mehr ein." },
+          { "p": "Den Zustand der Batterie zeigt jederzeit **Batterie-Status anzeigen** im Fahrzeugfunktionsmenü: Ladung, Spannung und wie lange sie noch reicht." },
+          { "note": "Jeder Startversuch kostet Strom, also nicht endlos orgeln. Licht und andere Verbraucher bei stehendem Motor leeren die Batterie ebenfalls. Die Lichtmaschine lädt sie nur bei laufendem Motor." }
+        ],
+        [
+          { "h": "Kontrollleuchten" },
+          { "p": "Beide Leuchten gehen beim Einschalten der Zündung an und erlöschen, sobald der Motor läuft." },
+          { "table": [
+            [ "Ladekontrolle", "Leuchtet, solange die Lichtmaschine fast nichts liefert (unter 200 W), was bei stehendem Motor und niedrigem Leerlauf normal ist. Bleibt sie während der Fahrt an, wird die Batterie nicht geladen." ],
+            [ "Öldruckkontrolle", "Leuchtet, wenn der Öldruck unter 8 psi fällt. Geht sie während der Fahrt an, **sofort anhalten und den Motor abstellen**: zu wenig Öl, oder das Öl ist zu heiß." ]
+          ] }
+        ]
+      ]
+    },
+    {
+      "id": "lids",
+      "title": "Fronthaube, Motorhaube und Kraftstoff",
+      "pages": [
+        [
+          { "h": "Fronthaube (Kofferraum)" },
+          { "steps": [
+            "Ziehen Sie den **Entriegelungsgriff** unter dem Armaturenbrett links, neben der Fahrertür. Schloss und Sicherheitshaken geben frei, und die Haube hebt sich ein wenig.",
+            "Maustaste auf dem **Griff** der Fronthaube halten und nach oben ziehen hebt die Haube, ein Doppelklick auf den Griff öffnet oder schließt sie. Über die Hälfte hinaus drücken die Federn sie ganz auf."
+          ] },
+          { "p": "Zum Schließen die Haube **mit etwas Schwung** herunterbringen, damit das Schloss einrastet. Zu sanft abgesenkt, liegt sie nur auf ihren Gummipuffern auf." }
+        ],
+        [
+          { "h": "Motorhaube" },
+          { "steps": [
+            "Ein Klick auf den **Griff** an der Motorhaube dreht ihn und löst das Schloss.",
+            "Gedrückt halten und nach oben ziehen hebt die Haube, ein Doppelklick öffnet oder schließt sie."
+          ] },
+          { "h": "Kraftstoff" },
+          { "p": "Der Tank sitzt unter der Fronthaube. Öffnen Sie die Fronthaube; ein Klick auf den **Tankdeckel** öffnet oder schließt ihn. Wagen mit Rallye-Tankdeckel in der Fronthaube werden von außen betankt: Klick auf dessen Deckel." }
+        ]
+      ]
+    },
+    {
+      "id": "personality",
+      "title": "Herbie",
+      "requires": "personality",
+      "pages": [
+        [
+          { "h": "Ein Auto mit Seele" },
+          { "p": "Dies ist kein gewöhnliches Auto. Behandeln Sie ihn wie einen guten Freund, und er wird Sie mögen." },
+          { "p": "Herbie merkt sich, wie sehr er Ihnen vertraut, und **je mehr er Ihnen vertraut, desto mehr Leistung gibt er Ihnen.** Ändert sich sein Vertrauen, zeigt er seine Laune in einer Meldung." },
+          { "list": [
+            "Eine Weile ohne Unfall fahren bringt Vertrauen, und schneller, wenn er gerade sauer auf Sie ist.",
+            "Wheelies, Drifts und saubere Sprünge bringen Vertrauen. Ein missglückter Sprung kostet etwas davon.",
+            "Jeder Unfall kostet Vertrauen. Ein schwerer Unfall kostet das meiste davon."
+          ] }
+        ],
+        [
+          { "h": "Was Herbie kann" },
+          { "p": "Diese Funktionen stehen im Fahrzeugfunktionsmenü:" },
+          { "table": [
+            [ "Wheelie", "Herbie hebt die Vorderräder. Gedrückt halten, um weiterzumachen." ],
+            [ "Stoßstange", "Kippt die vordere Stoßstange hoch oder runter." ],
+            [ "Scheinwerferlider", "Senkt das linke oder rechte Scheinwerferlid, wie ein Zwinkern." ],
+            [ "Folgen", "Herbie folgt Ihnen, während Sie zu Fuß sind." ],
+            [ "Vertrauen zurücksetzen / max.", "Setzt sein Vertrauen auf den Anfang oder auf das Maximum." ]
+          ] }
+        ]
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Kurzübersicht",
+      "pages": [
+        [
+          { "table": [
+            [ "Auf ein Teil zeigen", "Es leuchtet auf: Sie können es bedienen." ],
+            [ "Klick", "Betätigen: Knopf, Schalter, Schloss, Leuchte." ],
+            [ "Doppelklick", "Ganz: Tür oder Haube auf oder zu, Fenster ganz kurbeln." ],
+            [ "Halten und ziehen", "Von Hand bewegen: Tür, Haube, Fensterkurbel." ],
+            [ "[Umschalt] + Klick", "Andersherum: schließen, absenken, zurück. Verriegelt die rechte Tür." ],
+            [ "Mausrad", "Auf einer Fensterkurbel: kurbelt das Fenster." ],
+            [ "[F]", "Ein- oder aussteigen. Die Tür öffnet zuerst." ],
+            [ "[Esc]", "Diese Anleitung zurück ins Handschuhfach legen." ]
+          ] }
+        ]
+      ]
+    }
+  ]
+}

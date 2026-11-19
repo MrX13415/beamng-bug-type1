@@ -1,0 +1,212 @@
+{
+  "ui": {
+    "close": "Close",
+    "contents": "Contents",
+    "prev": "Previous page",
+    "next": "Next page",
+    "hint": "Turn pages with the arrow keys or by clicking a page corner · Esc closes",
+    "notes": "Notes",
+    "note": "Note",
+    "chapter": "Chapter"
+  },
+  "cover": {
+    "brand": "Volkswagen",
+    "model": "1200"
+  },
+  "chapters": [
+    {
+      "id": "foreword",
+      "title": "Foreword",
+      "pages": [
+        [
+          { "h": "Dear Beetle owner," },
+          { "p": "Congratulations on your new car. This little book explains everything you can reach with your own hands: the doors and windows, the seats, the heater, the front and rear lids and the lamps on the dashboard." },
+          { "p": "Almost every control is used with the mouse, right where it sits on the car. Point at a part: **if it lights up, you can use it.**" },
+          { "list": [
+            "A **click** operates it.",
+            "A **double-click** does it all the way: a door swings open or shut, a window winds fully up or down.",
+            "**Holding** the button lets you move it by hand.",
+            "**[Shift] + click** usually does the opposite of a click: close, lower, move back."
+          ] },
+          { "p": "Everything you can use by hand is also in the vehicle function menu (radial menu) and can be bound to keys." }
+        ]
+      ]
+    },
+    {
+      "id": "doors",
+      "title": "Doors",
+      "pages": [
+        [
+          { "h": "Opening from outside" },
+          { "p": "Each door has a fixed handle with a push button." },
+          { "steps": [
+            "Click the **push button**. The latch releases and the door pops out a few centimetres onto its rubber seal.",
+            "Hold the mouse button on the **handle** and drag to swing the door open by hand. A check strap brakes it, and it stops at about 85°.",
+            "Or **double-click** the handle and the door opens or closes by itself."
+          ] },
+          { "h": "Opening from inside" },
+          { "p": "Click the **inside handle** to open the door. Once it is open, double-click the handle to pull the door shut, or hold and drag it to swing the door." }
+        ],
+        [
+          { "h": "Closing" },
+          { "p": "The Beetle's cabin is almost air-tight. With the other door and the windows closed, the trapped air pushes back: close the door with a **firm swing**, or it stays resting on its seal. With the other door or a window open, a light push is enough." },
+          { "h": "Locking the right door" },
+          { "p": "The right door locks from inside. **[Shift] + click** the inside handle: it turns forward, and the closed door can no longer be opened from outside. Click the handle (or [Shift] + click again) to unlock it; a double-click unlocks and opens." },
+          { "h": "Getting in and out" },
+          { "p": "Press **[F]** as usual. The door on your side opens first, then you get in or out. Press [F] again to go at once. From a rear seat, the front seat on that side folds its backrest and slides forward to let you out." }
+        ]
+      ]
+    },
+    {
+      "id": "windows",
+      "title": "Windows and Roof",
+      "pages": [
+        [
+          { "h": "Door windows" },
+          { "p": "Each door window has a crank." },
+          { "list": [
+            "Hold the mouse button on the **crank** and circle the mouse around it. The crank follows the pointer; the direction you turn decides up or down.",
+            "**Double-click** the crank to wind the window all the way. Keep the second click held to wind it down; with [Shift], the held second click winds it up.",
+            "Or point at the crank and **scroll the mouse wheel**: up lowers the window, down raises it."
+          ] },
+          { "h": "Vent windows" },
+          { "p": "The small swivelling vent windows at the front of the doors bring in fresh air without a draught. Hold the mouse button on a vent window and it swings open; hold [Shift] + click to swing it shut." }
+        ],
+        [
+          { "h": "Folding roof" },
+          { "p": "Cars with the folding fabric roof: hold the mouse button on the roof and it folds open; hold [Shift] + click to close it again." },
+          { "h": "Wipers" },
+          { "p": "The wiper switch is on the dashboard. A click switches the wipers on and steps through the speeds; [Shift] + click steps back down and switches them off. Depending on the model they have one or two speeds." }
+        ]
+      ]
+    },
+    {
+      "id": "interior",
+      "title": "Seats and Interior",
+      "pages": [
+        [
+          { "h": "Front seats" },
+          { "list": [
+            "Click the **backrest** to fold it forward, for example to reach the rear seat. Click it again to put it back.",
+            "Click the **adjusting lever** to slide the seat forward one notch, [Shift] + click to slide it back. There are seven positions."
+          ] },
+          { "h": "Sun visors" },
+          { "p": "Click a sun visor to lower it, click it again to fold it back up." },
+          { "h": "Interior light" },
+          { "p": "The interior light comes on whenever a door is open. Click the lamp to switch it to **always on**, and again to go back to door operation." }
+        ],
+        [
+          { "h": "Glovebox" },
+          { "p": "Click the **knob** on the glovebox lid to open it. This manual lives inside. Click the knob again to close the lid. This works on foot too: stand at an open door and aim at the knob, then at the manual." },
+          { "h": "Ashtray" },
+          { "p": "Click the ashtray in the dashboard to pull it out, and again to push it back in." },
+          { "h": "Horn" },
+          { "p": "Hold the mouse button on the **horn ring** of the steering wheel, or on the left or right end of its cross bar. The horn sounds for as long as you hold it. The centre of the wheel does nothing." }
+        ]
+      ]
+    },
+    {
+      "id": "heating",
+      "title": "Heating and Ventilation",
+      "pages": [
+        [
+          { "p": "The Beetle is heated with warm air from around the air-cooled engine. It is let into the cabin through the heater valve and comes out of four outlets." },
+          { "steps": [
+            "Click the **heater knob** on the centre tunnel, behind the handbrake, to open the heater valve. Click it again to close it.",
+            "Click each **outlet** you want to use to open or close it: front left, front right, rear left and rear right."
+          ] },
+          { "p": "For fresh air, open the vent windows in the doors (see Windows and Roof)." }
+        ]
+      ]
+    },
+    {
+      "id": "driving",
+      "title": "Starting and Driving",
+      "pages": [
+        [
+          { "h": "Battery and starter" },
+          { "p": "The starter runs from the battery. The weaker the battery, the slower the engine turns over. Below about 5 volts the starter does not engage at all." },
+          { "p": "You can check the battery at any time with **Battery: Show Status** in the vehicle function menu. It shows the charge, the voltage and how long it will last." },
+          { "note": "Every start drains the battery, so don't crank on and on. Lights and other electrics left on with the engine stopped drain it too. The generator only recharges it while the engine runs." }
+        ],
+        [
+          { "h": "Warning lamps" },
+          { "p": "Both lamps light up when you switch on the ignition and go out once the engine is running." },
+          { "table": [
+            [ "Generator lamp", "On while the generator delivers almost nothing (under 200 W), which is normal with the engine stopped or idling slowly. If it stays on while driving, the battery is not being charged." ],
+            [ "Oil pressure lamp", "On when the oil pressure falls below 8 psi. If it comes on while driving, **stop and switch the engine off**: there is too little oil, or the oil is too hot." ]
+          ] }
+        ]
+      ]
+    },
+    {
+      "id": "lids",
+      "title": "Front Lid, Engine Lid and Fuel",
+      "pages": [
+        [
+          { "h": "Front lid (luggage compartment)" },
+          { "steps": [
+            "Pull the **release handle** under the dashboard on the left, next to the driver's door. The lock and the safety catch let go, and the lid lifts a little.",
+            "Hold the mouse button on the **handle** of the front lid and drag upwards to lift it, or double-click the handle to open or close the lid. Past halfway, the springs push it fully open."
+          ] },
+          { "p": "To close it, bring the lid down **with some speed** so the catch latches. Lowered too gently, it only comes to rest on its rubber buffers." }
+        ],
+        [
+          { "h": "Engine lid" },
+          { "steps": [
+            "Click the **handle** on the engine lid. It turns and releases the latch.",
+            "Hold and drag upwards to lift the lid, or double-click to open or close it."
+          ] },
+          { "h": "Fuel" },
+          { "p": "The fuel tank sits under the front lid. Open the front lid and click the **fuel cap** to open or close it. Cars with a rally filler in the front lid are refuelled from outside: click its cap." }
+        ]
+      ]
+    },
+    {
+      "id": "personality",
+      "title": "Herbie",
+      "requires": "personality",
+      "pages": [
+        [
+          { "h": "A car with a soul" },
+          { "p": "This is no ordinary car. Treat him like a good friend and he will like you." },
+          { "p": "Herbie keeps track of how far he trusts you, and **the more he trusts you, the more power he gives you.** Each time his trust changes, he shows his mood in a message." },
+          { "list": [
+            "Driving for a while without a crash earns trust, and faster when he is cross with you.",
+            "Wheelies, drifts and clean jumps earn trust. A jump that ends badly costs some back.",
+            "Every crash costs trust. A hard crash costs most of it."
+          ] }
+        ],
+        [
+          { "h": "What Herbie can do" },
+          { "p": "These are in the vehicle function menu:" },
+          { "table": [
+            [ "Wheelie", "Herbie lifts his front wheels. Hold to keep going." ],
+            [ "Bumper tilt", "Tilts the front bumper up or down." ],
+            [ "Headlight lids", "Lowers the left or right headlight lid, like a wink." ],
+            [ "Follow", "Herbie follows you while you are on foot." ],
+            [ "Trust reset / max.", "Puts his trust back to the start, or to the maximum." ]
+          ] }
+        ]
+      ]
+    },
+    {
+      "id": "reference",
+      "title": "Quick Reference",
+      "pages": [
+        [
+          { "table": [
+            [ "Point at a part", "It lights up: you can use it." ],
+            [ "Click", "Operate: button, knob, latch, lamp." ],
+            [ "Double-click", "All the way: open or shut a door or lid, wind a window." ],
+            [ "Hold and drag", "Move it by hand: door, lid, window crank." ],
+            [ "[Shift] + click", "The opposite way: close, lower, back. Locks the right door." ],
+            [ "Mouse wheel", "On a window crank: winds the window." ],
+            [ "[F]", "Get in or out. The door opens first." ],
+            [ "[Esc]", "Put this manual back in the glovebox." ]
+          ] }
+        ]
+      ]
+    }
+  ]
+}

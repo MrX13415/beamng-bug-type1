@@ -223,6 +223,7 @@ end
 -- version that is still loaded gets reloaded.
 local GE_VERSIONS = {
   bug_doorDrag = 8,
+  bug_manual   = 3,
 }
 
 -- Load the GE extension `ext` (reload it if an older version is loaded) and run the GE Lua statement `cmd` there.

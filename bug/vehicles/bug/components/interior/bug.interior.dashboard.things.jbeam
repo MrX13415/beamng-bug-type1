@@ -14,7 +14,25 @@
         ["bug_glovebox_ownermanual", ["bug_dashboard"]],
         ["bug_glovebox_sponge",      ["bug_dashboard"]],
         ["bug_glovebox_sunglasses",  ["bug_dashboard"]]
-    ]
+    ],
+    // Owner's manual: click the book in the open glovebox to read it (vehicle.openManual, lua/lib/interior.lua;
+    // GE extension bug_manual in lua/ge/extensions/bug/manual.lua, the book itself in ui/ui-vue/mods/bug_manual).
+    // The box sits on the book (mesh bounds x -0.276 .. -0.139, y -0.656 .. -0.549, z 0.900 .. 0.910), fixed to the
+    // floor of the glovebox case (dgb9l / dgb9r / dgb8l, part bug_glovebox). It lights the book up on hover.
+    // Works from the seats (mouse cursor) and on foot (walking crosshair, the game's reach is 3 m from the camera).
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        //["ownerManual", "dgb9l","dgb9r","dgb8l", "box", {"x":0.14, "y":0.11, "z":0.03}, ... // old: a bit thin to hit from outside at a shallow angle
+        ["ownerManual", "dgb9l","dgb9r","dgb8l", "box", {"x":0.15, "y":0.12, "z":0.05}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_glovebox_ownermanual", "baseTranslationGlobal":{"x":-0.2073, "y":-0.6027, "z":0.9100}, "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["ownerManual"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["ownerManual", "action0", "ownerManual"],   // left mouse button
+    ],
 },
 
 }

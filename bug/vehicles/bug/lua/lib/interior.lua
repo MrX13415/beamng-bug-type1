@@ -3,7 +3,7 @@
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
 -- Interior controls: interior light button, ash tray, heater valve and vents, the switch board (beacon, siren,
--- underglow, extra lights, nitrous), the hazard switch click and the glovebox.
+-- underglow, extra lights, nitrous), the hazard switch click the glovebox and the owner's manual in it.
 -- Moved unchanged from vehicle.lua; the interaction actions still call vehicle.* (vehicle.lua forwards here).
 -- vehicle.lua calls setup / update / reset (not game hooks on purpose: this file is also auto-loaded as a
 -- vehicle extension, and the order is kept as before).
@@ -116,6 +116,25 @@ local function toggleGlovebox(noAnimation)
   end
 end
 
+-- Owner's manual in the glovebox (trigger ownerManual, bug.interior.dashboard.things.jbeam). Opens the manual
+-- screen through the GE extension bug_manual (lua/ge/extensions/bug/manual.lua). The book is only reachable while
+-- the glovebox is open; without a lid (no gloveboxCoupler) it always is. The trigger is behind the closed lid, so
+-- a click there does nothing.
+local function openManual()
+  if controller.getController('gloveboxCoupler') and getControllerState('gloveboxCoupler') == 0 then
+    log('D', 'bug.manual', 'owner\'s manual clicked, but the glovebox is shut')
+    return
+  end
+  log('I', 'bug.manual', 'owner\'s manual clicked, opening it')
+
+  -- the Herbie chapter is only shown on cars with the personality part (lua/hrb/hrb.lua)
+  local hrbModule = rawget(_G, "hrb")
+  local personality = hrbModule and hrbModule.isEnabled and hrbModule.isEnabled() or false
+
+  misc.geCall("bug_manual", "bug_manual.open(" .. obj:getId() .. ", " .. tostring(personality) .. ")")  -- version check in misc.geCall
+end
+
+-- called from vehicle.onInit
 local function setup()
   electrics.values.interiorlightstate = 0
   electrics.values.interiorlightbutton = 0
@@ -155,6 +174,7 @@ M.toggleInteriorLight = toggleInteriorLight
 M.toggleAshTray       = toggleAshTray
 M.toggleSwitchBoard   = toggleSwitchBoard
 M.toggleGlovebox      = toggleGlovebox
+M.openManual          = openManual
 M.toggleHeatingValve  = toggleHeatingValve
 M.toggleHeatingVent   = toggleHeatingVent
 M.setHeatingVent      = setHeatingVent

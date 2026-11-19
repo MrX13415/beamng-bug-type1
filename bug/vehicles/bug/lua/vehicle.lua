@@ -8,7 +8,7 @@
 -- The interaction actions (actions_*.interaction.json), the GE extensions and other modules call vehicle.* .
 -- This file only forwards them to the feature modules in lib/ and drives the modules that have no game hooks
 -- of their own (setup / update / reset, in a fixed order):
---   lib/interior.lua   interior light, ash tray, heater, switch board, hazard click, glovebox
+--   lib/interior.lua   interior light, ash tray, heater, switch board, hazard click, glovebox, owner's manual
 --   lib/body.lua       frunk release, engine lid latch / handle, fuel and gas caps, foglight cover
 --   lib/roof.lua       folding roof handle and lock
 --   lib/seats.lua      sliding the front seats, making room when getting out of the back
@@ -86,6 +86,7 @@ M.toggleInteriorLight     = interior.toggleInteriorLight
 M.toggleAshTray           = interior.toggleAshTray
 M.toggleSwitchBoard       = interior.toggleSwitchBoard
 M.toggleGlovebox          = interior.toggleGlovebox
+M.openManual              = interior.openManual
 M.toggleHeatingValve      = interior.toggleHeatingValve
 M.toggleHeatingVent       = interior.toggleHeatingVent
 M.setHeatingVent          = interior.setHeatingVent
