@@ -17,7 +17,8 @@
       ["name", "allowTypes", "denyTypes", "default", "description"],
       ["$='seat_occupant_'..$seatID", ["seat_occupant"], [], "occupant_generic", "$=($seatID == 'FL' and 'Front Left' or 'Front Right')..' Seat Occupant'", {
         "coreSlot": true,
-        "nodeMove": {"x": "$= $side * 0.293", "y": -0.025, "z": 0.6},
+        // z was 0.6 (a bit too high), 0.52 sank it into the cushion
+        "nodeMove": {"x": "$= $side * 0.293", "y": -0.025, "z": 0.56},
         "nodeRotate1": {"x": -13, "y": 0, "z": 0},
         "variables": {
           "$seatID": "$= $seatID or 'FL'",
@@ -31,10 +32,11 @@
           "$occupant_attachnodeFR": "$='is'..$seatID..'1i'",
           "$occupant_attachnodeRL": "$='is'..$seatID..'2o'",
           "$occupant_attachnodeRR": "$='is'..$seatID..'2i'",
-          // the occupant's back is attached to the seat frame (hinge nodes 4o / 4i, was the backrest top 5o / 5i), so
-          // the backrest can fold freely; while someone sits there lua/lib/lids.lua locks the backrest upright
-          "$occupant_attachnodeTL": "$='is'..$seatID..'4o'",
-          "$occupant_attachnodeTR": "$='is'..$seatID..'4i'",
+          // the occupant's back is attached to anchor nodes on the seat frame above the upright backrest top
+          // (10o / 10i, was the backrest top 5o / 5i itself), so the backrest can fold freely and the shoulders are
+          // held from above; while someone sits there lua/lib/lids.lua locks the backrest upright
+          "$occupant_attachnodeTL": "$='is'..$seatID..'10o'",
+          "$occupant_attachnodeTR": "$='is'..$seatID..'10i'",
           "$occupant_attachnodeRigifier": "$='is'..$seatID..'9'"
         }
       }]
@@ -108,7 +110,17 @@
       ["$='is'..$seatID..'7i'", "$= $side * 0.126", -0.452, 0.312],
       ["$='is'..$seatID..'8o'", "$= $side * 0.459",  0.143, 0.263],
       ["$='is'..$seatID..'8i'", "$= $side * 0.126",  0.143, 0.263],
-      ["$='is'..$seatID..'9'" , "$= $side * 0.293",  0.500, 0.700],
+      // occupant attachment points (the occupant's body hangs on them, see occupant_generic.jbeam): like on the game's
+      // own cars the back anchors are above the occupant's shoulders and the rigifier is behind them at shoulder
+      // height (was 0.500 / 0.700, 32 cm below the shoulders, and the backrest top 5o / 5i, below them: the shoulders
+      // were pulled down only and the occupant rocked back and forth in a crash)
+      {"nodeWeight": 1.0},
+      ["$='is'..$seatID..'9'" , "$= $side * 0.293",  0.600, 1.000],
+      // back anchors: on the line of the upright backrest, 0.25 m above its top, on the seat frame, so they stay put
+      // when the backrest folds (it passes below them, they don't collide)
+      {"nodeWeight": 0.8},
+      ["$='is'..$seatID..'10o'", "$= $side * 0.493",  0.298, 1.138],
+      ["$='is'..$seatID..'10i'", "$= $side * 0.088",  0.298, 1.138],
       {"selfCollision": true},
       {"collision": true}
     ],
@@ -243,14 +255,33 @@
         ["$='is'..$seatID..'1i'", "$='is'..$seatID..'5o'"],
         ["$='is'..$seatID..'1o'", "$='is'..$seatID..'5i'"],
 
-        // rigifier (the occupant is attached to it): on the seat frame only, cushion rear 2i / 2o and hinge 4i / 4o
-        // (was cushion and backrest top 5i / 5o: that tied the backrest to the cushion, through the occupant too)
+        // occupant back anchors 10o / 10i <> seat frame (cushion 1 / 2, hinge 4), stiff like the frame: the occupant's
+        // upper back hangs on them in a crash
+        {"beamSpring":1201000,"beamDamp":100},
+        {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+        ["$='is'..$seatID..'10o'", "$='is'..$seatID..'10i'"],
+        ["$='is'..$seatID..'10o'", "$='is'..$seatID..'1o'"],
+        ["$='is'..$seatID..'10o'", "$='is'..$seatID..'2o'"],
+        ["$='is'..$seatID..'10o'", "$='is'..$seatID..'2i'"],
+        ["$='is'..$seatID..'10o'", "$='is'..$seatID..'4o'"],
+        ["$='is'..$seatID..'10o'", "$='is'..$seatID..'4i'"],
+        ["$='is'..$seatID..'10i'", "$='is'..$seatID..'1i'"],
+        ["$='is'..$seatID..'10i'", "$='is'..$seatID..'2i'"],
+        ["$='is'..$seatID..'10i'", "$='is'..$seatID..'2o'"],
+        ["$='is'..$seatID..'10i'", "$='is'..$seatID..'4i'"],
+        ["$='is'..$seatID..'10i'", "$='is'..$seatID..'4o'"],
+
+        // rigifier (the occupant is attached to it): on the seat frame only, cushion rear 2i / 2o, hinge 4i / 4o and
+        // the back anchors 10i / 10o (was cushion and backrest top 5i / 5o: that tied the backrest to the cushion,
+        // through the occupant too)
         {"beamSpring":400000,"beamDamp":150},
         {"beamDeform":20000,"beamStrength":"FLT_MAX"},
         ["$='is'..$seatID..'9'", "$='is'..$seatID..'2i'"],
         ["$='is'..$seatID..'9'", "$='is'..$seatID..'2o'"],
         ["$='is'..$seatID..'9'", "$='is'..$seatID..'4o'"],
         ["$='is'..$seatID..'9'", "$='is'..$seatID..'4i'"],
+        ["$='is'..$seatID..'9'", "$='is'..$seatID..'10o'"],
+        ["$='is'..$seatID..'9'", "$='is'..$seatID..'10i'"],
 
         // backrest stops: upright (long bound) and folded forward by ~42 deg (the distance cushion front - backrest
         // top 0.676 m gets 0.295 m shorter); between them it swings freely, moved and sprung by lua/lib/lids.lua
