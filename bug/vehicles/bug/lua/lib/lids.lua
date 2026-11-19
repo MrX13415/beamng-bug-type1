@@ -665,6 +665,16 @@ local function open(id)
   if theta and theta < d.autoOpenRad then startAuto(d, "open") end
 end
 
+-- the car's frame (origin, right, forward, up): the previous cursor ray is kept in it, so the car moving between two
+-- frames doesn't count as hand motion (at speed it moved the hand by decimetres per frame, always towards the front)
+local function carFrame()
+  local f = obj:getDirectionVector():normalized()
+  local r = f:cross(obj:getDirectionVectorUp()):normalized()
+  return obj:getPosition(), r, f, r:cross(f)
+end
+local function toCar(w, o, r, f, u) if o then w = w - o end return vec3(w:dot(r), w:dot(f), w:dot(u)) end
+local function fromCar(l, o, r, f, u) local w = r * l.x + f * l.y + u * l.z; return o and (w + o) or w end
+
 -- called every frame by the GE extension with the cursor ray while the handle is held
 local function setRay(id, px, py, pz, dx, dy, dz)
   local d = lids[id]
@@ -673,8 +683,11 @@ local function setRay(id, px, py, pz, dx, dy, dz)
   local theta, R, _, axis, c, e1, e2 = geom(d)
   if not theta then return end
   if not d.uTarget then d.uTarget = theta end
+  local fo, fr, ff, fu = carFrame()
 
   if d.prevO then
+    -- last frame's ray where it is now, moved along with the car
+    local prevO, prevD = fromCar(d.prevO, fo, fr, ff, fu), fromCar(d.prevD, nil, fr, ff, fu)
     -- hand: cursor motion on the plane through the target point, facing the camera
     local P = arcPoint(d, d.uTarget, c, e1, e2, R)
     local vw = (P - O):normalized()
@@ -683,7 +696,7 @@ local function setRay(id, px, py, pz, dx, dy, dz)
       if dn < 0.05 then return nil end
       return o + dr * ((P - o):dot(vw) / dn)
     end
-    local h0, h1 = hit(d.prevO, d.prevD), hit(O, dir)
+    local h0, h1 = hit(prevO, prevD), hit(O, dir)
     if h0 and h1 then
       local dp = h1 - h0
       -- swing direction at the target and how much of it shows on screen
@@ -712,7 +725,7 @@ local function setRay(id, px, py, pz, dx, dy, dz)
       if not d.dragging and d.moved > CLICK_MAX_MOVE then d.dragging = true end
     end
   end
-  d.prevO, d.prevD = O, dir
+  d.prevO, d.prevD = toCar(O, fo, fr, ff, fu), toCar(dir, nil, fr, ff, fu)
 end
 
 local function dragLost(id)
