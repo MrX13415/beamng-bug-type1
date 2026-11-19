@@ -44,6 +44,10 @@ local stuckState = false
 local stuckDuration = 0
 local stuckPause = 0.5   -- seconds
 
+-- crank turned by hand (lib/windowcrank.lua): the window follows the crank directly
+local cranking = false
+local crankDelta = 0
+
 local sfxNode = nil
 local sfx = {
   move = { id = "windowroll", volume = 1.0, event = nil, sound = nil },
@@ -176,6 +180,17 @@ end
 
 local function updateWindow(dt)
   directionLast = direction
+
+  if cranking then
+    local old = value
+    value = math.max(0, math.min(1, value + crankDelta))
+    crankDelta = 0
+    direction = (value > old and 1) or (value < old and -1) or 0
+    playMoveSFX()
+    electrics.values[name .. "_state"] = value
+    return
+  end
+
   direction = electrics.values[name .. "_input"] or 0
 
   if isStuck(dt) then
@@ -242,8 +257,8 @@ local function updateGFX(dt)
     buttonTimer = buttonTimer + dt
   end
 
-	-- update rate: 30 fps (0.033 == 33ms)
-	if updateTimer < 0.033 then return end
+	-- update rate: 30 fps (0.033 == 33ms); every frame while the crank is turned by hand (smooth)
+	if updateTimer < 0.033 and not cranking then return end
 
   updateWindow(updateTimer)
 
@@ -284,7 +299,28 @@ local function close(value)
   onButton(value)
 end
 
+-- hand crank: start / stop following the crank, and move the window by delta (fraction of the full travel)
+local function crankStart()
+  cranking = true
+  crankDelta = 0
+  targetValue = -1
+  electrics.values[name .. "_input"] = 0
+end
+
+local function crankStop()
+  cranking = false
+  crankDelta = 0
+  direction = 0
+  stopMoveSFX()
+end
+
+local function crank(delta)
+  if cranking then crankDelta = crankDelta + delta end
+end
+
 local function onReset()
+  cranking = false
+  crankDelta = 0
   value = electrics.values[name .. "_state"]
   log("D", "", "[Bug:Window] ".. name.. ": " .. tostring(value*100) .. "% open")
 end
@@ -335,5 +371,8 @@ M.updateGFX = updateGFX
 M.set = set
 M.open = open
 M.close = close
+M.crankStart = crankStart
+M.crankStop  = crankStop
+M.crank      = crank
 
 return M

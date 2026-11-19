@@ -13,13 +13,16 @@
 --   lib/roof.lua       folding roof handle and lock
 --   lib/seats.lua      sliding the front seats, making room when getting out of the back
 --   lib/openings.lua   how open the cabin is: interior light, cabin sound filter
---   lib/doors.lua      door couplers and the outside handles
+--   lib/doors.lua, lib/doordrag.lua, lib/windowcrank.lua: the doors (latch, push buttons, handles, the right door's
+--                      lock, dragging them by hand, getting in / out with F) and the window cranks
+--     (doors.lua gets updateGFX / onReset from the game itself, as a vehicle extension)
 -- New features go into their own lib/ module; only the entry points the actions need are added here.
 
 local M = {}
 
 local misc = require("vehicles/bug/lua/misc")
-local doors = require("vehicles/bug/lua/lib/doors")
+local doors = require("vehicles/bug/lua/lib/doors")  -- also loaded as a vehicle extension: gets updateGFX / onReset itself
+local windowcrank = require("vehicles/bug/lua/lib/windowcrank")
 local interior = require("vehicles/bug/lua/lib/interior")
 local body = require("vehicles/bug/lua/lib/body")
 local roof = require("vehicles/bug/lua/lib/roof")
@@ -36,6 +39,26 @@ end
 -- the game dropped a held trigger without a release (e.g. UI under the cursor), sent by the GE extension
 -- bug_doorDrag: the feature that drags the part `id` ends its drag (kind "crank" for window cranks, else "door")
 local function dragLost(id, kind)
+  if kind == "crank" then
+    windowcrank.press(id, 0)
+  else
+    doors.dragLost(id)
+  end
+end
+
+-- window crank: press/release from the trigger (reverse = shift / middle mouse), cursor ray from GE
+local function windowCrank(id, value, reverse)
+  windowcrank.press(id, value, reverse)
+end
+local function windowCrankRay(id, px, py, pz, dx, dy, dz)
+  windowcrank.setRay(id, px, py, pz, dx, dy, dz)
+end
+-- mouse wheel over a crank (action windowCrankWheel, bound to the mouse wheel in inputmaps/mouse.vehicle.json)
+local function windowCrankWheel(value)
+  windowcrank.wheel(value)
+end
+local function windowCrankWheelRay(steps, px, py, pz, dx, dy, dz)
+  windowcrank.wheelRay(steps, px, py, pz, dx, dy, dz)
 end
 
 
@@ -51,7 +74,7 @@ local function onInit(jbeamData)
   electrics.values.usdm_signal_L = 0
   electrics.values.usdm_signal_R = 0
 
-  doors.setupDoors()    -- door handle animations
+  doors.setupDoors()    -- door handle animations, click handler, get in / out with F
   openings.setup()      -- the roof's break beam
   body.setup()          -- foglight cover, frunk release, fuel / gas cap animations
   roof.setup()          -- roof handle animation
@@ -101,6 +124,7 @@ M.toggleTrunkHandle       = body.toggleTrunkHandle
 
 -- seats: lib/seats.lua
 M.moveSeat                = seats.moveSeat
+M.exitSeatForward         = seats.exitSeatForward
 
 -- doors: lib/doors.lua
 M.doorControllerName      = doors.doorControllerName
@@ -108,7 +132,21 @@ M.isDoorOpen              = doors.isDoorOpen
 M.setDoor                 = doors.setDoor
 M.toggleDoor              = doors.toggleDoor
 M.toggleDoorHandle        = doors.toggleDoorHandle
+M.pressDoorButton         = doors.pressDoorButton
+M.doorDrag                = doors.doorDrag
+M.doorDragTarget          = doors.doorDragTarget
+M.doorDragRay             = doors.doorDragRay
+M.doorInterior            = doors.doorInterior
+M.isDoorLocked            = doors.isDoorLocked
+M.setDoorLock             = doors.setDoorLock
+M.toggleDoorLock          = doors.toggleDoorLock
+M.exitDoorOpen            = doors.exitDoorOpen
+M.exitDoorClose           = doors.exitDoorClose
 
+M.windowCrank             = windowCrank
+M.windowCrankRay          = windowCrankRay
+M.windowCrankWheel        = windowCrankWheel
+M.windowCrankWheelRay     = windowCrankWheelRay
 M.dragLost                = dragLost
 
 -- roof: lib/roof.lua

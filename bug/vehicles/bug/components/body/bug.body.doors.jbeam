@@ -32,9 +32,14 @@
         "attachSoundEvent": "event:>Vehicle>Latches>Door>vintage_02_close",
         "detachSoundEvent": "event:>Vehicle>Latches>Door>vintage_02_open",
         "breakSoundEvent":"",
-        "openForceMagnitude": 80,
-        "openForceDuration": 0.8,
-        "closeForceMagnitude": 130,
+        //"openForceMagnitude": 80, "openForceDuration": 0.8, // old: too violent without hinge damping
+        //"openForceMagnitude": 40, // old: still slightly too fast
+        //"openForceMagnitude": 30, "openForceDuration": 0.5, // old: pushed the door all the way open
+        //"openForceMagnitude": 8, "openForceDuration": 0.3, // old: door popped ~1 m open
+        "openForceMagnitude": 0,
+        "openForceDuration": 0,
+        //"closeForceMagnitude": 130, // old: closed too violently
+        "closeForceMagnitude": 91,
         "closeForceDuration": 1.3
     },
     "flexbodies": [
@@ -46,21 +51,26 @@
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
         ["anim__windowFR_state",    "bug_door_FR_window_handle",  "d14r","d8r","d11r",   {"x":-3, "y":7, "z":168},                  {"x":-2200, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
-        ["anim__doorFR_handle",    "bug_door_FR_handle"      ,  "d14r","d8r","d11r",   {"x":14, "y":-90 , "z":-19.23},   {"x":0, "y":0, "z":-30},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
+        //["anim__doorFR_handle",    "bug_door_FR_handle"      ,  "d14r","d8r","d11r",   {"x":14, "y":-90 , "z":-19.23},   {"x":0, "y":0, "z":-30},    {"x":0, "y":0, "z":0},           0,       1,   0,  1], // old: no lock position
+        ["anim__doorFR_handle_lock", "bug_door_FR_handle"    ,  "d14r","d8r","d11r",   {"x":14, "y":-90 , "z":-19.23},   {"x":0, "y":0, "z":-30},    {"x":0, "y":0, "z":0},       -1.67,       1,   0,  1], // open pull (0..1) and lock (-1.67 = 50 deg the other way), set by vehicle.lua
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["door_R", "d9r","d8r","d6r", "box", {"x":0.2, "y":-0.04, "z":0.05}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.025, "y":0.067, "z":0.04},{"mesh":["bug_door_R_handle_btn", "bug_door_R_handle"]}],
+        //["door_R", "d9r","d8r","d6r", "box", {"x":0.13, "y":-0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.03, "y":0.07, "z":0.04},{"color":[1,0.3,0,0], "alphaOnUsed":0}], // old: one box over grip + button; replaced by the button/grip triggers in the door handle parts
         ["door_R_int", "dh1r","d8r","d4r", "box", {"x":0.04, "y":0.04, "z":0.12}, {"x":5, "y":-18, "z":3}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.287, "y":0.07, "z":0.06},{"mesh":["bug_door_FR_handle","bug_door_FR_handle_ring"]}],
     ],
     "actionsEnabled": [
         ["id"],
         ["door_FR"],
+        ["doorInt_FR"],
+        ["doorLock_FR"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
-        ["door_R", "action0", "door_FR"],
-        ["door_R_int", "action0", "door_FR"],
+        //["door_R", "action0", "door_FR"], // old (see handle parts)
+        //["door_R_int", "action0", "door_FR"], // old: single click toggled the door
+        ["door_R_int", "action0", "doorInt_FR"],   // latched: click opens; open: double-click or hold + drag to close
+        ["door_R_int", "action1", "doorLock_FR"],  // shift + click: turn the handle forward to lock / back to unlock (right door only)
     ],
     "nodes": [
         ["id","posX","posY","posZ"],
@@ -217,9 +227,10 @@
         ["d13r","d14rr"],
         {"disableMeshBreaking":false},
 
-        //damping
+        //light hinge friction (keeps a rebound from swinging the door shut)
         {"beamDeform":77280,"beamStrength":448560},
-        {"beamSpring":0,"beamDamp":42.77},
+        //{"beamSpring":0,"beamDamp":42.77}, // old: strong damping, slow second opening phase
+        {"beamSpring":0,"beamDamp":8},
         {"breakGroup":"door_FR_hinge_b"},
         ["d3r","f5mr"],
         {"breakGroup":"door_FR_hinge_a"},
@@ -239,38 +250,73 @@
         ["d9r","brf4rrr"],
         //["d12r","bq9r"],
         ["d13r","brf4rrr"],
-        ["d13r","bq9r", {"beamLongBound":6}],
+        //["d13r","bq9r", {"beamLongBound":6}], // old: shortens by up to 1.9 mm while the door opens (0-3.1 deg) -> pushed the leaned door shut, then shoved it open
+        ["d13r","bq9r", {"beamLongBound":6, "beamPrecompression":0.985}], // rest just below the shortest length while opening: only acts when the door is pushed in
         //-
-        ["d9r","bq5r"],
+        //["d9r","bq5r"], // old: shortens by 0.34 mm while the door opens (0-1.8 deg)
+        ["d9r","bq5r", {"beamPrecompression":0.998}],
         ["d6r","bq9r"],
         ["d6r","bq3r"],
-        ["d3r","bq5r"],
+        //["d3r","bq5r"], // old: shortens by 0.04 mm while the door opens (0-0.6 deg)
+        ["d3r","bq5r", {"beamPrecompression":0.9995}],
         ["d3r","bq3r", {"beamLongBound":17}],
 
-        // hinge limiter
-        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":16.0, "beamShortBound":1.0},
+        // hinge limiter = check strap: stop at ~83°, so the door just clears the default (teardrop) mirror at ~84°.
+        // The stop load is split over two rear-edge nodes (d9 top, d6 middle) so a hard swing doesn't dent the door (damage indicator).
+        //{"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":16.0, "beamShortBound":1.0}, // old: stop at ~68°
+        //{"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":19.3, "beamShortBound":1.0}, // old: stop at ~85°, door hit the teardrop mirror
+        //{"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":18.49, "beamShortBound":1.0}, // old: was meant as 83°, actually ~81°
+        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":18.89, "beamShortBound":1.0},
         {"beamSpring":0,"beamDamp":0,"beamDeform":136500,"beamStrength":12000},
-        {"beamLimitSpring":1401000,"beamLimitDamp":200},
+        //{"beamLimitSpring":1401000,"beamLimitDamp":200}, // old: damped stop, no bounce
+        //{"beamLimitSpring":1401000,"beamLimitDamp":25}, // old: rigid stop, bounced too much
+        //{"beamLimitSpring":150000,"beamLimitDamp":800}, // old: rebound strong enough to swing the door shut
+        //{"beamLimitSpring":150000,"beamLimitDamp":2000}, // old: door could be forced well past the stop too easily
+        //{"beamLimitSpring":600000,"beamLimitDamp":2000}, // old: all of the stop load on d9, hard swings dented the door
+        {"beamLimitSpring":150000,"beamLimitDamp":250}, // per beam (x2 beams = 300000 / 500)
         {"breakGroupType":0},
         {"breakGroup":"door_FR_latch"},
-        ["d9r", "bq9r"],
+        //["d9r", "bq9r"], // old: default boundZone = 1 m, so the stop's spring/damping faded in over a whole meter and barely acted
+        //["d9r", "bq9r", {"boundZone":0.01}], // old
+        //["d9r", "bq9r", {"boundZone":0.02}], // old
+        ["d9r", "bq9r", {"boundZone":0.05}],
+        ["d6r", "bq5r", {"beamLongBound":19.35, "boundZone":0.05}], // same stop angle on the middle of the rear edge
+
+        // check strap brake: from ~77° the strap drags (damping only, ramps in up to the stop at ~83°), like the door brushing the mirror
+        //{"beamType":"|BOUNDED", "beamLongBound":17.3, "beamShortBound":1.0}, // old: was meant as 77°, actually ~75°
+        {"beamType":"|BOUNDED", "beamLongBound":17.71, "beamShortBound":1.0},
+        {"beamSpring":0,"beamDamp":0},
+        {"beamLimitSpring":0,"beamLimitDamp":90},
+        ["d9r", "bq9r", {"boundZone":0.074}],
         {"beamLimitSpring":1,"beamLimitDamp":1},
 
         //pop open
         {"breakGroupType":1},
-        {"beamType":"|SUPPORT", "beamLongBound":8},
-        {"beamSpring":55000,"beamDamp":320},
+        //{"beamType":"|SUPPORT", "beamLongBound":8}, // old: stiff 2 mm pop spring + seal drag zone (replaced by the door seal below)
+        //{"beamSpring":55000,"beamDamp":320},
         {"beamDeform":40000,"beamStrength":10000},
-        {"beamPrecompression":1.04},
-        ["q14r", "d9r", {"breakGroup":"door_FR_hinge_a"}],
+        //{"beamPrecompression":1.04}, // old: strong pop-open kick
+        //{"beamPrecompression":1.025}, // old: with the latch push it popped the door far open
+        //{"beamPrecompression":1.02}, // old
+        //["q14r", "d9r", {"breakGroup":"door_FR_hinge_a"}],
+        // old: seal as a jbeam beam. Its contact point never matched the Lua air model exactly, so the door crept and then
+        // jumped further open when the air gap opened. The seal now lives in lua/lib/cabinair.lua (same opening measure as the air model).
+        //{"beamType":"|BOUNDED", "beamLongBound":100, "beamShortBound":0},
+        //{"beamPrecompression":1.18},
+        //{"beamSpring":0,"beamDamp":0},
+        //{"beamLimitSpring":1300,"beamLimitDamp":22,"beamLimitDampRebound":324},
+        //["q14r", "d9r", {"boundZone":0.003, "breakGroup":"door_FR_hinge_a"}],
+        //{"beamLimitSpring":1,"beamLimitDamp":1,"beamLimitDampRebound":1},
         {"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
         {"beamPrecompression":1},
         {"breakGroupType":0},
         {"breakGroup":""},
 
-        //gas struts
+        //gas strut (disabled: the Bug has none; its spring stored ~14 J and slammed the door into the stop)
         {"beamType":"|SUPPORT", "beamLongBound":4},
-        {"beamSpring":70,"beamDamp":200},
+        //{"beamSpring":70,"beamDamp":200}, // old: damped gas strut
+        //{"beamSpring":70,"beamDamp":0}, // old: undamped spring, too violent
+        {"beamSpring":0,"beamDamp":0},
         {"beamDeform":4000,"beamStrength":10000},
         {"beamPrecompression":2.2},
         ["d2r", "bq3r", {"breakGroup":"door_FR_hinge_a"}],
@@ -349,9 +395,14 @@
         "attachSoundEvent": "event:>Vehicle>Latches>Door>vintage_02_close",
         "detachSoundEvent": "event:>Vehicle>Latches>Door>vintage_02_open",
         "breakSoundEvent":"",
-        "openForceMagnitude": 80,
-        "openForceDuration": 0.80,
-        "closeForceMagnitude": 130,
+        //"openForceMagnitude": 80, "openForceDuration": 0.80, // old: too violent without hinge damping
+        //"openForceMagnitude": 40, // old: still slightly too fast
+        //"openForceMagnitude": 30, "openForceDuration": 0.5, // old: pushed the door all the way open
+        //"openForceMagnitude": 8, "openForceDuration": 0.3, // old: door popped ~1 m open
+        "openForceMagnitude": 0,
+        "openForceDuration": 0,
+        //"closeForceMagnitude": 130, // old: closed too violently
+        "closeForceMagnitude": 91,
         "closeForceDuration": 1.3
     },
     "flexbodies": [
@@ -368,17 +419,19 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["door_L", "d9l","d8l","d6l", "box", {"x":0.2, "y":0.04, "z":0.05}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":-0.025, "y":0.067, "z":-0.04},{"mesh":["bug_door_L_handle_btn", "bug_door_L_handle"]}],
+        //["door_L", "d9l","d8l","d6l", "box", {"x":0.13, "y":0.04, "z":0.04}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.03, "y":0.07, "z":-0.04},{"color":[1,0.3,0,0], "alphaOnUsed":0}], // old: one box over grip + button; replaced by the button/grip triggers in the door handle parts
         ["door_L_int", "dh1l","d8l","d4l", "box", {"x":0.04, "y":-0.04, "z":0.12}, {"x":-5, "y":-18, "z":-3}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.287, "y":0.07, "z":-0.06},{"mesh":["bug_door_FL_handle","bug_door_FL_handle_ring"]}],
     ],
     "actionsEnabled": [
         ["id"],
         ["door_FL"],
+        ["doorInt_FL"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
-        ["door_L", "action0", "door_FL"],
-        ["door_L_int", "action0", "door_FL"],
+        //["door_L", "action0", "door_FL"], // old (see handle parts)
+        //["door_L_int", "action0", "door_FL"], // old: single click toggled the door
+        ["door_L_int", "action0", "doorInt_FL"],   // latched: click opens; open: double-click or hold + drag to close
     ],
 
     "nodes": [
@@ -535,9 +588,10 @@
         ["d13l","d14ll"],
         {"disableMeshBreaking":false},
 
-        //damping
+        //light hinge friction (keeps a rebound from swinging the door shut)
         {"beamDeform":77280,"beamStrength":448560},
-        {"beamSpring":0,"beamDamp":42.77},
+        //{"beamSpring":0,"beamDamp":42.77}, // old: strong damping, slow second opening phase
+        {"beamSpring":0,"beamDamp":8},
         {"breakGroup":"door_FL_hinge_b"},
         ["d3l","f5ml"],
         {"breakGroup":"door_FL_hinge_a"},
@@ -557,38 +611,73 @@
         ["d9l","brf4lll"],
         //["d12l","bq9l"],
         ["d13l","brf4lll"],
-        ["d13l","bq9l", {"beamLongBound":6}],
+        //["d13l","bq9l", {"beamLongBound":6}], // old: shortens by up to 1.9 mm while the door opens (0-3.1 deg) -> pushed the leaned door shut, then shoved it open
+        ["d13l","bq9l", {"beamLongBound":6, "beamPrecompression":0.985}], // rest just below the shortest length while opening: only acts when the door is pushed in
         //-
-        ["d9l","bq5l"],
+        //["d9l","bq5l"], // old: shortens by 0.34 mm while the door opens (0-1.8 deg)
+        ["d9l","bq5l", {"beamPrecompression":0.998}],
         ["d6l","bq9l"],
         ["d6l","bq3l"],
-        ["d3l","bq5l"],
+        //["d3l","bq5l"], // old: shortens by 0.04 mm while the door opens (0-0.6 deg)
+        ["d3l","bq5l", {"beamPrecompression":0.9995}],
         ["d3l","bq3l", {"beamLongBound":17}],
 
-        // hinge limiter
-        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":16.0, "beamShortBound":1.0},
+        // hinge limiter = check strap: stop at ~83°, so the door just clears the default (teardrop) mirror at ~84°.
+        // The stop load is split over two rear-edge nodes (d9 top, d6 middle) so a hard swing doesn't dent the door (damage indicator).
+        //{"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":16.0, "beamShortBound":1.0}, // old: stop at ~68°
+        //{"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":19.3, "beamShortBound":1.0}, // old: stop at ~85°, door hit the teardrop mirror
+        //{"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":18.49, "beamShortBound":1.0}, // old: was meant as 83°, actually ~81°
+        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":18.89, "beamShortBound":1.0},
         {"beamSpring":0,"beamDamp":0,"beamDeform":136500,"beamStrength":12000},
-        {"beamLimitSpring":1401000,"beamLimitDamp":200},
+        //{"beamLimitSpring":1401000,"beamLimitDamp":200}, // old: damped stop, no bounce
+        //{"beamLimitSpring":1401000,"beamLimitDamp":25}, // old: rigid stop, bounced too much
+        //{"beamLimitSpring":150000,"beamLimitDamp":800}, // old: rebound strong enough to swing the door shut
+        //{"beamLimitSpring":150000,"beamLimitDamp":2000}, // old: door could be forced well past the stop too easily
+        //{"beamLimitSpring":600000,"beamLimitDamp":2000}, // old: all of the stop load on d9, hard swings dented the door
+        {"beamLimitSpring":150000,"beamLimitDamp":250}, // per beam (x2 beams = 300000 / 500)
         {"breakGroupType":0},
         {"breakGroup":"door_FL_latch"},
-        ["d9l", "bq9l"],
+        //["d9l", "bq9l"], // old: default boundZone = 1 m, so the stop's spring/damping faded in over a whole meter and barely acted
+        //["d9l", "bq9l", {"boundZone":0.01}], // old
+        //["d9l", "bq9l", {"boundZone":0.02}], // old
+        ["d9l", "bq9l", {"boundZone":0.05}],
+        ["d6l", "bq5l", {"beamLongBound":19.35, "boundZone":0.05}], // same stop angle on the middle of the rear edge
+
+        // check strap brake: from ~77° the strap drags (damping only, ramps in up to the stop at ~83°), like the door brushing the mirror
+        //{"beamType":"|BOUNDED", "beamLongBound":17.3, "beamShortBound":1.0}, // old: was meant as 77°, actually ~75°
+        {"beamType":"|BOUNDED", "beamLongBound":17.71, "beamShortBound":1.0},
+        {"beamSpring":0,"beamDamp":0},
+        {"beamLimitSpring":0,"beamLimitDamp":90},
+        ["d9l", "bq9l", {"boundZone":0.074}],
         {"beamLimitSpring":1,"beamLimitDamp":1},
 
         //pop open
         {"breakGroupType":1},
-        {"beamType":"|SUPPORT", "beamLongBound":5},
-        {"beamSpring":55000,"beamDamp":320},
+        //{"beamType":"|SUPPORT", "beamLongBound":5}, // old: stiff 2 mm pop spring + seal drag zone (replaced by the door seal below)
+        //{"beamSpring":55000,"beamDamp":320},
         {"beamDeform":40000,"beamStrength":10000},
-        {"beamPrecompression":1.04},
-        ["q14l", "d9l", {"breakGroup":"door_FL_hinge_a"}],
+        //{"beamPrecompression":1.04}, // old: strong pop-open kick
+        //{"beamPrecompression":1.025}, // old: with the latch push it popped the door far open
+        //{"beamPrecompression":1.02}, // old
+        //["q14l", "d9l", {"breakGroup":"door_FL_hinge_a"}],
+        // old: seal as a jbeam beam. Its contact point never matched the Lua air model exactly, so the door crept and then
+        // jumped further open when the air gap opened. The seal now lives in lua/lib/cabinair.lua (same opening measure as the air model).
+        //{"beamType":"|BOUNDED", "beamLongBound":100, "beamShortBound":0},
+        //{"beamPrecompression":1.18},
+        //{"beamSpring":0,"beamDamp":0},
+        //{"beamLimitSpring":1300,"beamLimitDamp":22,"beamLimitDampRebound":324},
+        //["q14l", "d9l", {"boundZone":0.003, "breakGroup":"door_FL_hinge_a"}],
+        //{"beamLimitSpring":1,"beamLimitDamp":1,"beamLimitDampRebound":1},
         {"beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
         {"beamPrecompression":1},
         {"breakGroupType":0},
         {"breakGroup":""},
 
-        //gas struts
+        //gas strut (disabled: the Bug has none; its spring stored ~14 J and slammed the door into the stop)
         {"beamType":"|SUPPORT", "beamLongBound":4},
-        {"beamSpring":70,"beamDamp":200},
+        //{"beamSpring":70,"beamDamp":200}, // old: damped gas strut
+        //{"beamSpring":70,"beamDamp":0}, // old: undamped spring, too violent
+        {"beamSpring":0,"beamDamp":0},
         {"beamDeform":4000,"beamStrength":10000},
         {"beamPrecompression":2.2},
         ["d2l", "bq3l", {"breakGroup":"door_FL_hinge_a"}],
@@ -646,6 +735,22 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bug_door_R_handle",   ["bug_door_FR"]],
     ],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        // spheres (centered, no box-axis ambiguity) at the mesh bounds; the meshes themselves light up
+        ["door_R_btn",    "d9r","d8r","d6r", "sphere", 0.025, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_R_handle_btn", "baseTranslationGlobal":{"x":-0.725, "y":0.288, "z":0.862}, "alphaOnUsed":0}],
+        ["door_R_handle", "d9r","d8r","d6r", "sphere", 0.055, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_R_handle", "baseTranslationGlobal":{"x":-0.714, "y":0.190, "z":0.860}, "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["doorButton_FR"],
+        ["doorDrag_FR"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["door_R_btn",    "action0", "doorButton_FR"], // click: release the latch, door pops ajar
+        ["door_R_handle", "action0", "doorDrag_FR"],   // hold + drag: swing the door
+    ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
         ["anim__doorFR_handle",   "bug_door_R_handle_btn"       ,  "d14r","d8r","d11r",   {"x":13, "y":-81.9164 , "z":1.04601 },   {"x":0, "y":0, "z":0},    {"x":-0.025, "y":0, "z":0},           0,       1,   0,  1],
@@ -661,6 +766,22 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bug_door_R_handle_paint",   ["bug_door_FR"]],
+    ],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        // spheres (centered, no box-axis ambiguity) at the mesh bounds; the meshes themselves light up
+        ["door_R_btn",    "d9r","d8r","d6r", "sphere", 0.025, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_R_handle_btn_paint", "baseTranslationGlobal":{"x":-0.725, "y":0.288, "z":0.862}, "alphaOnUsed":0}],
+        ["door_R_handle", "d9r","d8r","d6r", "sphere", 0.055, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_R_handle_paint", "baseTranslationGlobal":{"x":-0.714, "y":0.190, "z":0.860}, "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["doorButton_FR"],
+        ["doorDrag_FR"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["door_R_btn",    "action0", "doorButton_FR"], // click: release the latch, door pops ajar
+        ["door_R_handle", "action0", "doorDrag_FR"],   // hold + drag: swing the door
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -678,6 +799,22 @@
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bug_door_L_handle",   ["bug_door_FL"]],
     ],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        // spheres (centered, no box-axis ambiguity) at the mesh bounds; the meshes themselves light up
+        ["door_L_btn",    "d9l","d8l","d6l", "sphere", 0.025, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_L_handle_btn", "baseTranslationGlobal":{"x":0.725, "y":0.288, "z":0.862}, "alphaOnUsed":0}],
+        ["door_L_handle", "d9l","d8l","d6l", "sphere", 0.055, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_L_handle", "baseTranslationGlobal":{"x":0.714, "y":0.190, "z":0.860}, "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["doorButton_FL"],
+        ["doorDrag_FL"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["door_L_btn",    "action0", "doorButton_FL"], // click: release the latch, door pops ajar
+        ["door_L_handle", "action0", "doorDrag_FL"],   // hold + drag: swing the door
+    ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
         ["anim__doorFL_handle",   "bug_door_L_handle_btn"       ,  "d14l","d8l","d11l",   {"x":-8, "y":-81.9164 , "z":-1.04601 },   {"x":0, "y":0, "z":0},    {"x":-0.025, "y":0, "z":0},           0,       1,   0,  1],
@@ -693,6 +830,22 @@
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
          ["bug_door_L_handle_paint",   ["bug_door_FL"]],
+    ],
+    "triggers2":[
+        ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+        // spheres (centered, no box-axis ambiguity) at the mesh bounds; the meshes themselves light up
+        ["door_L_btn",    "d9l","d8l","d6l", "sphere", 0.025, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_L_handle_btn_paint", "baseTranslationGlobal":{"x":0.725, "y":0.288, "z":0.862}, "alphaOnUsed":0}],
+        ["door_L_handle", "d9l","d8l","d6l", "sphere", 0.055, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_L_handle_paint", "baseTranslationGlobal":{"x":0.714, "y":0.190, "z":0.860}, "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["doorButton_FL"],
+        ["doorDrag_FL"],
+    ],
+    "triggerEventLinks2":[
+        ["triggerId:triggers2", "triggerInput", "inputAction"],
+        ["door_L_btn",    "action0", "doorButton_FL"], // click: release the latch, door pops ajar
+        ["door_L_handle", "action0", "doorDrag_FL"],   // hold + drag: swing the door
     ],
     "props": [
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
@@ -715,72 +868,163 @@
         ["mesh", "idRef:", "id1:", "id2:"],
         ["bug_door_L_mirror_circle","mi3l","mi2l","mi1l",{"refBaseTranslation":{"x":0.050,"y":0.007,"z":-0.004},"baseRotationGlobal":{"x":-7.5,"y":0,"z":-14}}],
     ],
+    // old (before swivel mount): fixed mirror, bent when hit
+        //"nodes": [
+        //["id", "posX", "posY", "posZ"],
+        //{"selfCollision":false}, // door sweeps through here when opening; self-collision would shove the mirror off its hinge-top mount
+        //{"collision":true},
+        //{"nodeMaterial":"|NM_METAL"},
+        //{"frictionCoef":0.5},
+
+        ////mirror
+        //{"nodeWeight":0.25},
+        //{"group":"door_mirror_L"},
+        //["mi1l", 0.7535, -0.5790, 1.0732],
+        //["mi2l", 0.7531, -0.5699, 1.0000],
+        //["mi3l", 0.6565, -0.6016, 1.0360],
+        //["mi4l", 0.67, -0.60, 0.95, {"nodeWeight":0.4}],
+        //{"group":""},
+        //],
+        //"beams": [
+        //["id1:", "id2:"],
+        //{"disableMeshBreaking":false},
+        //{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        ////mirror
+        //{"beamSpring":201000,"beamDamp":30},
+        //{"beamDeform":12000,"beamStrength":"FLT_MAX"},
+        //{"deformLimitExpansion":1.1},
+        //["mi1l", "mi2l"],
+        //["mi2l", "mi3l"],
+        //["mi3l", "mi1l"],
+
+        ////rigidifier
+        //{"deformLimitExpansion":""},
+        //["mi4l", "mi1l"],
+        //["mi4l", "mi2l"],
+        //["mi4l", "mi3l"],
+
+        ////attach
+        //{"beamSpring":101000,"beamDamp":30},
+        //{"beamDeform":8000,"beamStrength":6000},
+        //{"breakGroup":"mirror_L"},
+        //// anchored to body (A-pillar / cowl) so the mirror stays put when the door opens
+        //["mi1l", "bc3l"],
+        //["mi1l", "bc4l"],
+        //["mi1l", "bf5l"],
+        //["mi2l", "bc3l"],
+        //["mi2l", "bc4l"],
+        //["mi2l", "bf5l"],
+        //["mi3l", "bc3l"],
+        //["mi3l", "bc4l"],
+        //["mi3l", "bf5l"],
+
+        //["mi4l", "bc3l"],
+        //["mi4l", "bc4l"],
+        //["mi4l", "bf5l"],
+        //["mi4l", "bf8"],
+
+        ////dampers
+        //{"beamSpring":0,"beamDamp":250},
+        //["mi1l", "bc3l"],
+        //["mi1l", "bf5l"],
+        //["mi2l", "bc3l"],
+        //["mi2l", "bf5l"],
+
+        //{"breakGroup":""},
+        //{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //{"deformLimitExpansion":1.2},
+        //],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
-        {"selfCollision":true},
+        {"selfCollision":false}, // contact with the door is handled by the contact beam below, not by node-triangle collision
         {"collision":true},
         {"nodeMaterial":"|NM_METAL"},
         {"frictionCoef":0.5},
 
-        //mirror
+        //mirror head
         {"nodeWeight":0.25},
         {"group":"door_mirror_L"},
         ["mi1l", 0.7535, -0.5790, 1.0732],
         ["mi2l", 0.7531, -0.5699, 1.0000],
         ["mi3l", 0.6565, -0.6016, 1.0360],
-        ["mi4l", 0.67, -0.60, 0.95, {"nodeWeight":0.4}],
+        //swivel axis: vertical through the mount on top of the upper door hinge (body-fixed)
+        ["mp1l", 0.6450, -0.6160, 0.9400, {"nodeWeight":0.3}],
+        ["mp2l", 0.6450, -0.6160, 0.8000, {"nodeWeight":0.3}],
         {"group":""},
+
+        //door contact point (rides with the door, pushes the mirror head once the door reaches it)
+        {"collision":false},
+        ["mdcl", 0.5580, -0.5319, 1.0000, {"nodeWeight":0.2}],
     ],
     "beams": [
         ["id1:", "id2:"],
         {"disableMeshBreaking":false},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 
-        //mirror
+        //mirror head (rigid)
         {"beamSpring":201000,"beamDamp":30},
         {"beamDeform":12000,"beamStrength":"FLT_MAX"},
         {"deformLimitExpansion":1.1},
         ["mi1l", "mi2l"],
         ["mi2l", "mi3l"],
         ["mi3l", "mi1l"],
-
-        //rigidifier
         {"deformLimitExpansion":""},
-        ["mi4l", "mi1l"],
-        ["mi4l", "mi2l"],
-        ["mi4l", "mi3l"],
 
-         //attach
-        {"beamSpring":101000,"beamDamp":30},
-        {"beamDeform":8000,"beamStrength":6000},
+        //swivel: every head node is tied to both axis nodes, so the head can only rotate about the vertical mount axis
+        {"beamSpring":201000,"beamDamp":30},
+        {"beamDeform":12000,"beamStrength":8000},
         {"breakGroup":"mirror_L"},
-        ["mi1l", "dh1l"],
-        ["mi1l", "dh2l"],
-        ["mi1l", "d5l"],
-        ["mi1l", "d8l"],
-        ["mi2l", "dh1l"],
-        ["mi2l", "dh2l"],
-        ["mi2l", "d5l"],
-        ["mi2l", "d8l"],
-        ["mi3l", "dh1l"],
-        ["mi3l", "dh2l"],
-        ["mi3l", "d5l"],
-        ["mi3l", "d8l"],
+        ["mi1l", "mp1l"],
+        ["mi2l", "mp1l"],
+        ["mi3l", "mp1l"],
+        ["mi1l", "mp2l"],
+        ["mi2l", "mp2l"],
+        ["mi3l", "mp2l"],
 
-        ["mi4l", "dh1l"],
-        ["mi4l", "d4l"],
-        ["mi4l", "d10l"],
-        ["mi4l", "d5l"],
-        ["mi4l", "d8l"],
+        //mount: axis nodes fixed to the body (A-pillar / cowl), so the foot never moves
+        {"beamSpring":501000,"beamDamp":40},
+        {"beamDeform":20000,"beamStrength":8000},
+        ["mp1l", "bc3l"],
+        ["mp1l", "bc4l"],
+        ["mp1l", "bf5l"],
+        ["mp1l", "bf8"],
+        ["mp2l", "bc3l"],
+        ["mp2l", "bc4l"],
+        ["mp2l", "bf5l"],
+        ["mp2l", "bf8"],
+        ["mp1l", "mp2l"],
+
+        //swivel friction: holds the head in place, yields (plastically) when pushed, so the mirror stays where it was turned to
+        {"beamSpring":101000,"beamDamp":30},
+        {"beamDeform":300,"beamStrength":"FLT_MAX"},
+        ["mi1l", "bc3l"],
+        ["mi1l", "bf5l"],
+        ["mi2l", "bc3l"],
+        ["mi2l", "bf5l"],
 
         //dampers
         {"beamSpring":0,"beamDamp":250},
-        ["mi1l", "d8l"],
-        ["mi1l", "d11l"],
-        ["mi2l", "d8l"],
-        ["mi2l", "d11l"],
-
+        ["mi1l", "bc3l"],
+        ["mi1l", "bf5l"],
+        ["mi2l", "bc3l"],
+        ["mi2l", "bf5l"],
         {"breakGroup":""},
+
+        //contact point attached rigidly to the door
+        {"beamSpring":501000,"beamDamp":40},
+        {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+        ["mdcl", "dh1l"],
+        ["mdcl", "d4l"],
+        ["mdcl", "d8l"],
+        ["mdcl", "d10l"],
+
+        //door -> mirror contact: compression-only beam, 4 cm long once the door mesh reaches the mirror head
+        {"beamType":"|SUPPORT", "beamLongBound":100},
+        {"beamPrecompression":0.2012},
+        {"beamSpring":150000,"beamDamp":60},
+        ["mdcl", "mi2l"],
+
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"deformLimitExpansion":1.2},
     ],
@@ -809,72 +1053,163 @@
         ["mesh", "idRef:", "id1:", "id2:"],
         ["bug_door_R_mirror_circle","mi3r","mi2r","mi1r",{"refBaseTranslation":{"x":-0.050,"y":0.01,"z":-0.004},"baseRotationGlobal":{"x":-7.5,"y":0,"z":14}}],
     ],
+    // old (before swivel mount): fixed mirror, bent when hit
+        //"nodes": [
+        //["id", "posX", "posY", "posZ"],
+        //{"selfCollision":false}, // door sweeps through here when opening; self-collision would shove the mirror off its hinge-top mount
+        //{"collision":true},
+        //{"nodeMaterial":"|NM_METAL"},
+        //{"frictionCoef":0.5},
+
+        ////mirror
+        //{"nodeWeight":0.25},
+        //{"group":"door_mirror_R"},
+        //["mi1r", -0.7535, -0.5093, 1.0732],  // y = L + 0.069772
+        //["mi2r", -0.7531, -0.5001, 1.0000],
+        //["mi3r", -0.6565, -0.5318, 1.0360],
+        //["mi4r", -0.67, -0.60, 0.95, {"nodeWeight":0.4}],
+        //{"group":""},
+        //],
+        //"beams": [
+        //["id1:", "id2:"],
+        //{"disableMeshBreaking":false},
+        //{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        ////mirror
+        //{"beamSpring":201000,"beamDamp":30},
+        //{"beamDeform":12000,"beamStrength":"FLT_MAX"},
+        //{"deformLimitExpansion":1.1},
+        //["mi1r", "mi2r"],
+        //["mi2r", "mi3r"],
+        //["mi3r", "mi1r"],
+
+        ////rigidifier
+        //{"deformLimitExpansion":""},
+        //["mi4r", "mi1r"],
+        //["mi4r", "mi2r"],
+        //["mi4r", "mi3r"],
+
+        ////attach
+        //{"beamSpring":101000,"beamDamp":30},
+        //{"beamDeform":8000,"beamStrength":6000},
+        //{"breakGroup":"mirror_R"},
+        //// anchored to body (A-pillar / cowl) so the mirror stays put when the door opens
+        //["mi1r", "bc3r"],
+        //["mi1r", "bc4r"],
+        //["mi1r", "bf5r"],
+        //["mi2r", "bc3r"],
+        //["mi2r", "bc4r"],
+        //["mi2r", "bf5r"],
+        //["mi3r", "bc3r"],
+        //["mi3r", "bc4r"],
+        //["mi3r", "bf5r"],
+
+        //["mi4r", "bc3r"],
+        //["mi4r", "bc4r"],
+        //["mi4r", "bf5r"],
+        //["mi4r", "bf8"],
+
+        ////dampers
+        //{"beamSpring":0,"beamDamp":250},
+        //["mi1r", "bc3r"],
+        //["mi1r", "bf5r"],
+        //["mi2r", "bc3r"],
+        //["mi2r", "bf5r"],
+
+        //{"breakGroup":""},
+        //{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //{"deformLimitExpansion":1.2},
+        //],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
-        {"selfCollision":true},
+        {"selfCollision":false}, // contact with the door is handled by the contact beam below, not by node-triangle collision
         {"collision":true},
         {"nodeMaterial":"|NM_METAL"},
         {"frictionCoef":0.5},
 
-        //mirror
+        //mirror head
         {"nodeWeight":0.25},
         {"group":"door_mirror_R"},
         ["mi1r", -0.7535, -0.5093, 1.0732],  // y = L + 0.069772
         ["mi2r", -0.7531, -0.5001, 1.0000],
         ["mi3r", -0.6565, -0.5318, 1.0360],
-        ["mi4r", -0.67, -0.60, 0.95, {"nodeWeight":0.4}],
+        //swivel axis: vertical through the mount on top of the upper door hinge (body-fixed)
+        ["mp1r", -0.6450, -0.6160, 0.9400, {"nodeWeight":0.3}],
+        ["mp2r", -0.6450, -0.6160, 0.8000, {"nodeWeight":0.3}],
         {"group":""},
+
+        //door contact point (rides with the door, pushes the mirror head once the door reaches it)
+        {"collision":false},
+        ["mdcr", -0.5603, -0.4792, 0.9999, {"nodeWeight":0.2}],
     ],
     "beams": [
         ["id1:", "id2:"],
         {"disableMeshBreaking":false},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 
-        //mirror
+        //mirror head (rigid)
         {"beamSpring":201000,"beamDamp":30},
         {"beamDeform":12000,"beamStrength":"FLT_MAX"},
         {"deformLimitExpansion":1.1},
         ["mi1r", "mi2r"],
         ["mi2r", "mi3r"],
         ["mi3r", "mi1r"],
-
-        //rigidifier
         {"deformLimitExpansion":""},
-        ["mi4r", "mi1r"],
-        ["mi4r", "mi2r"],
-        ["mi4r", "mi3r"],
 
-         //attach
-        {"beamSpring":101000,"beamDamp":30},
-        {"beamDeform":8000,"beamStrength":6000},
+        //swivel: every head node is tied to both axis nodes, so the head can only rotate about the vertical mount axis
+        {"beamSpring":201000,"beamDamp":30},
+        {"beamDeform":12000,"beamStrength":8000},
         {"breakGroup":"mirror_R"},
-        ["mi1r", "dh1r"],
-        ["mi1r", "dh2r"],
-        ["mi1r", "d5r"],
-        ["mi1r", "d8r"],
-        ["mi2r", "dh1r"],
-        ["mi2r", "dh2r"],
-        ["mi2r", "d5r"],
-        ["mi2r", "d8r"],
-        ["mi3r", "dh1r"],
-        ["mi3r", "dh2r"],
-        ["mi3r", "d5r"],
-        ["mi3r", "d8r"],
+        ["mi1r", "mp1r"],
+        ["mi2r", "mp1r"],
+        ["mi3r", "mp1r"],
+        ["mi1r", "mp2r"],
+        ["mi2r", "mp2r"],
+        ["mi3r", "mp2r"],
 
-        ["mi4r", "dh1r"],
-        ["mi4r", "d4r"],
-        ["mi4r", "d10r"],
-        ["mi4r", "d5r"],
-        ["mi4r", "d8r"],
+        //mount: axis nodes fixed to the body (A-pillar / cowl), so the foot never moves
+        {"beamSpring":501000,"beamDamp":40},
+        {"beamDeform":20000,"beamStrength":8000},
+        ["mp1r", "bc3r"],
+        ["mp1r", "bc4r"],
+        ["mp1r", "bf5r"],
+        ["mp1r", "bf8"],
+        ["mp2r", "bc3r"],
+        ["mp2r", "bc4r"],
+        ["mp2r", "bf5r"],
+        ["mp2r", "bf8"],
+        ["mp1r", "mp2r"],
+
+        //swivel friction: holds the head in place, yields (plastically) when pushed, so the mirror stays where it was turned to
+        {"beamSpring":101000,"beamDamp":30},
+        {"beamDeform":300,"beamStrength":"FLT_MAX"},
+        ["mi1r", "bc3r"],
+        ["mi1r", "bf5r"],
+        ["mi2r", "bc3r"],
+        ["mi2r", "bf5r"],
 
         //dampers
         {"beamSpring":0,"beamDamp":250},
-        ["mi1r", "d8r"],
-        ["mi1r", "d11r"],
-        ["mi2r", "d8r"],
-        ["mi2r", "d11r"],
-
+        ["mi1r", "bc3r"],
+        ["mi1r", "bf5r"],
+        ["mi2r", "bc3r"],
+        ["mi2r", "bf5r"],
         {"breakGroup":""},
+
+        //contact point attached rigidly to the door
+        {"beamSpring":501000,"beamDamp":40},
+        {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+        ["mdcr", "dh1r"],
+        ["mdcr", "d4r"],
+        ["mdcr", "d8r"],
+        ["mdcr", "d10r"],
+
+        //door -> mirror contact: compression-only beam, 4 cm long once the door mesh reaches the mirror head
+        {"beamType":"|SUPPORT", "beamLongBound":100},
+        {"beamPrecompression":0.2063},
+        {"beamSpring":150000,"beamDamp":60},
+        ["mdcr", "mi2r"],
+
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"deformLimitExpansion":1.2},
     ],
@@ -903,72 +1238,163 @@
         ["mesh", "idRef:", "id1:", "id2:"],
         ["bug_door_L_mirror_teardrop","mi3l","mi2l","mi1l",{"refBaseTranslation":{"x":0.055,"y":0.017,"z":0.0},"baseRotationGlobal":{"x":-5.0,"y":0,"z":-15}}],
     ],
+    // old (before swivel mount): fixed mirror, bent when hit
+        //"nodes": [
+        //["id", "posX", "posY", "posZ"],
+        //{"selfCollision":false}, // door sweeps through here when opening; self-collision would shove the mirror off its hinge-top mount
+        //{"collision":true},
+        //{"nodeMaterial":"|NM_METAL"},
+        //{"frictionCoef":0.5},
+
+        ////mirror
+        //{"nodeWeight":0.25},
+        //{"group":"door_mirror_L"},
+        //["mi1l", 0.7535, -0.5790, 1.0732],
+        //["mi2l", 0.7531, -0.5699, 1.0000],
+        //["mi3l", 0.6565, -0.6016, 1.0360],
+        //["mi4l", 0.67, -0.60, 0.95, {"nodeWeight":0.4}],
+        //{"group":""},
+        //],
+        //"beams": [
+        //["id1:", "id2:"],
+        //{"disableMeshBreaking":false},
+        //{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        ////mirror
+        //{"beamSpring":201000,"beamDamp":30},
+        //{"beamDeform":12000,"beamStrength":"FLT_MAX"},
+        //{"deformLimitExpansion":1.1},
+        //["mi1l", "mi2l"],
+        //["mi2l", "mi3l"],
+        //["mi3l", "mi1l"],
+
+        ////rigidifier
+        //{"deformLimitExpansion":""},
+        //["mi4l", "mi1l"],
+        //["mi4l", "mi2l"],
+        //["mi4l", "mi3l"],
+
+        ////attach
+        //{"beamSpring":101000,"beamDamp":30},
+        //{"beamDeform":8000,"beamStrength":6000},
+        //{"breakGroup":"mirror_L"},
+        //// anchored to body (A-pillar / cowl) so the mirror stays put when the door opens
+        //["mi1l", "bc3l"],
+        //["mi1l", "bc4l"],
+        //["mi1l", "bf5l"],
+        //["mi2l", "bc3l"],
+        //["mi2l", "bc4l"],
+        //["mi2l", "bf5l"],
+        //["mi3l", "bc3l"],
+        //["mi3l", "bc4l"],
+        //["mi3l", "bf5l"],
+
+        //["mi4l", "bc3l"],
+        //["mi4l", "bc4l"],
+        //["mi4l", "bf5l"],
+        //["mi4l", "bf8"],
+
+        ////dampers
+        //{"beamSpring":0,"beamDamp":250},
+        //["mi1l", "bc3l"],
+        //["mi1l", "bf5l"],
+        //["mi2l", "bc3l"],
+        //["mi2l", "bf5l"],
+
+        //{"breakGroup":""},
+        //{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //{"deformLimitExpansion":1.2},
+        //],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
-        {"selfCollision":true},
+        {"selfCollision":false}, // contact with the door is handled by the contact beam below, not by node-triangle collision
         {"collision":true},
         {"nodeMaterial":"|NM_METAL"},
         {"frictionCoef":0.5},
 
-        //mirror
+        //mirror head
         {"nodeWeight":0.25},
         {"group":"door_mirror_L"},
         ["mi1l", 0.7535, -0.5790, 1.0732],
         ["mi2l", 0.7531, -0.5699, 1.0000],
         ["mi3l", 0.6565, -0.6016, 1.0360],
-        ["mi4l", 0.67, -0.60, 0.95, {"nodeWeight":0.4}],
+        //swivel axis: vertical through the mount on top of the upper door hinge (body-fixed)
+        ["mp1l", 0.6450, -0.6160, 0.9400, {"nodeWeight":0.3}],
+        ["mp2l", 0.6450, -0.6160, 0.8000, {"nodeWeight":0.3}],
         {"group":""},
+
+        //door contact point (rides with the door, pushes the mirror head once the door reaches it)
+        {"collision":false},
+        ["mdcl", 0.5715, -0.5204, 1.0000, {"nodeWeight":0.2}],
     ],
     "beams": [
         ["id1:", "id2:"],
         {"disableMeshBreaking":false},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 
-        //mirror
+        //mirror head (rigid)
         {"beamSpring":201000,"beamDamp":30},
         {"beamDeform":12000,"beamStrength":"FLT_MAX"},
         {"deformLimitExpansion":1.1},
         ["mi1l", "mi2l"],
         ["mi2l", "mi3l"],
         ["mi3l", "mi1l"],
-
-        //rigidifier
         {"deformLimitExpansion":""},
-        ["mi4l", "mi1l"],
-        ["mi4l", "mi2l"],
-        ["mi4l", "mi3l"],
 
-         //attach
-        {"beamSpring":101000,"beamDamp":30},
-        {"beamDeform":8000,"beamStrength":6000},
+        //swivel: every head node is tied to both axis nodes, so the head can only rotate about the vertical mount axis
+        {"beamSpring":201000,"beamDamp":30},
+        {"beamDeform":12000,"beamStrength":8000},
         {"breakGroup":"mirror_L"},
-        ["mi1l", "dh1l"],
-        ["mi1l", "dh2l"],
-        ["mi1l", "d5l"],
-        ["mi1l", "d8l"],
-        ["mi2l", "dh1l"],
-        ["mi2l", "dh2l"],
-        ["mi2l", "d5l"],
-        ["mi2l", "d8l"],
-        ["mi3l", "dh1l"],
-        ["mi3l", "dh2l"],
-        ["mi3l", "d5l"],
-        ["mi3l", "d8l"],
+        ["mi1l", "mp1l"],
+        ["mi2l", "mp1l"],
+        ["mi3l", "mp1l"],
+        ["mi1l", "mp2l"],
+        ["mi2l", "mp2l"],
+        ["mi3l", "mp2l"],
 
-        ["mi4l", "dh1l"],
-        ["mi4l", "d4l"],
-        ["mi4l", "d10l"],
-        ["mi4l", "d5l"],
-        ["mi4l", "d8l"],
+        //mount: axis nodes fixed to the body (A-pillar / cowl), so the foot never moves
+        {"beamSpring":501000,"beamDamp":40},
+        {"beamDeform":20000,"beamStrength":8000},
+        ["mp1l", "bc3l"],
+        ["mp1l", "bc4l"],
+        ["mp1l", "bf5l"],
+        ["mp1l", "bf8"],
+        ["mp2l", "bc3l"],
+        ["mp2l", "bc4l"],
+        ["mp2l", "bf5l"],
+        ["mp2l", "bf8"],
+        ["mp1l", "mp2l"],
+
+        //swivel friction: holds the head in place, yields (plastically) when pushed, so the mirror stays where it was turned to
+        {"beamSpring":101000,"beamDamp":30},
+        {"beamDeform":300,"beamStrength":"FLT_MAX"},
+        ["mi1l", "bc3l"],
+        ["mi1l", "bf5l"],
+        ["mi2l", "bc3l"],
+        ["mi2l", "bf5l"],
 
         //dampers
         {"beamSpring":0,"beamDamp":250},
-        ["mi1l", "d8l"],
-        ["mi1l", "d11l"],
-        ["mi2l", "d8l"],
-        ["mi2l", "d11l"],
-
+        ["mi1l", "bc3l"],
+        ["mi1l", "bf5l"],
+        ["mi2l", "bc3l"],
+        ["mi2l", "bf5l"],
         {"breakGroup":""},
+
+        //contact point attached rigidly to the door
+        {"beamSpring":501000,"beamDamp":40},
+        {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+        ["mdcl", "dh1l"],
+        ["mdcl", "d4l"],
+        ["mdcl", "d8l"],
+        ["mdcl", "d10l"],
+
+        //door -> mirror contact: compression-only beam, 4 cm long once the door mesh reaches the mirror head
+        {"beamType":"|SUPPORT", "beamLongBound":100},
+        {"beamPrecompression":0.2124},
+        {"beamSpring":150000,"beamDamp":60},
+        ["mdcl", "mi2l"],
+
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"deformLimitExpansion":1.2},
     ],
@@ -997,72 +1423,163 @@
         ["mesh", "idRef:", "id1:", "id2:"],
         ["bug_door_R_mirror_teardrop","mi3r","mi2r","mi1r",{"refBaseTranslation":{"x":-0.055,"y":0.017,"z":0.0},"baseRotationGlobal":{"x":-5.0,"y":0,"z":15}}],
     ],
+    // old (before swivel mount): fixed mirror, bent when hit
+        //"nodes": [
+        //["id", "posX", "posY", "posZ"],
+        //{"selfCollision":false}, // door sweeps through here when opening; self-collision would shove the mirror off its hinge-top mount
+        //{"collision":true},
+        //{"nodeMaterial":"|NM_METAL"},
+        //{"frictionCoef":0.5},
+
+        ////mirror
+        //{"nodeWeight":0.25},
+        //{"group":"door_mirror_R"},
+        //["mi1r", -0.7535, -0.5093, 1.0732],  // y = L + 0.069772
+        //["mi2r", -0.7531, -0.5001, 1.0000],
+        //["mi3r", -0.6565, -0.5318, 1.0360],
+        //["mi4r", -0.67, -0.60, 0.95, {"nodeWeight":0.4}],
+        //{"group":""},
+        //],
+        //"beams": [
+        //["id1:", "id2:"],
+        //{"disableMeshBreaking":false},
+        //{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+        ////mirror
+        //{"beamSpring":201000,"beamDamp":30},
+        //{"beamDeform":12000,"beamStrength":"FLT_MAX"},
+        //{"deformLimitExpansion":1.1},
+        //["mi1r", "mi2r"],
+        //["mi2r", "mi3r"],
+        //["mi3r", "mi1r"],
+
+        ////rigidifier
+        //{"deformLimitExpansion":""},
+        //["mi4r", "mi1r"],
+        //["mi4r", "mi2r"],
+        //["mi4r", "mi3r"],
+
+        ////attach
+        //{"beamSpring":101000,"beamDamp":30},
+        //{"beamDeform":8000,"beamStrength":6000},
+        //{"breakGroup":"mirror_R"},
+        //// anchored to body (A-pillar / cowl) so the mirror stays put when the door opens
+        //["mi1r", "bc3r"],
+        //["mi1r", "bc4r"],
+        //["mi1r", "bf5r"],
+        //["mi2r", "bc3r"],
+        //["mi2r", "bc4r"],
+        //["mi2r", "bf5r"],
+        //["mi3r", "bc3r"],
+        //["mi3r", "bc4r"],
+        //["mi3r", "bf5r"],
+
+        //["mi4r", "bc3r"],
+        //["mi4r", "bc4r"],
+        //["mi4r", "bf5r"],
+        //["mi4r", "bf8"],
+
+        ////dampers
+        //{"beamSpring":0,"beamDamp":250},
+        //["mi1r", "bc3r"],
+        //["mi1r", "bf5r"],
+        //["mi2r", "bc3r"],
+        //["mi2r", "bf5r"],
+
+        //{"breakGroup":""},
+        //{"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //{"deformLimitExpansion":1.2},
+        //],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
-        {"selfCollision":true},
+        {"selfCollision":false}, // contact with the door is handled by the contact beam below, not by node-triangle collision
         {"collision":true},
         {"nodeMaterial":"|NM_METAL"},
         {"frictionCoef":0.5},
 
-        //mirror
+        //mirror head
         {"nodeWeight":0.25},
         {"group":"door_mirror_R"},
         ["mi1r", -0.7535, -0.5093, 1.0732],  // y = L + 0.069772
         ["mi2r", -0.7531, -0.5001, 1.0000],
         ["mi3r", -0.6565, -0.5318, 1.0360],
-        ["mi4r", -0.67, -0.60, 0.95, {"nodeWeight":0.4}],
+        //swivel axis: vertical through the mount on top of the upper door hinge (body-fixed)
+        ["mp1r", -0.6450, -0.6160, 0.9400, {"nodeWeight":0.3}],
+        ["mp2r", -0.6450, -0.6160, 0.8000, {"nodeWeight":0.3}],
         {"group":""},
+
+        //door contact point (rides with the door, pushes the mirror head once the door reaches it)
+        {"collision":false},
+        ["mdcr", -0.5585, -0.4802, 0.9999, {"nodeWeight":0.2}],
     ],
     "beams": [
         ["id1:", "id2:"],
         {"disableMeshBreaking":false},
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 
-        //mirror
+        //mirror head (rigid)
         {"beamSpring":201000,"beamDamp":30},
         {"beamDeform":12000,"beamStrength":"FLT_MAX"},
         {"deformLimitExpansion":1.1},
         ["mi1r", "mi2r"],
         ["mi2r", "mi3r"],
         ["mi3r", "mi1r"],
-
-        //rigidifier
         {"deformLimitExpansion":""},
-        ["mi4r", "mi1r"],
-        ["mi4r", "mi2r"],
-        ["mi4r", "mi3r"],
 
-         //attach
-        {"beamSpring":101000,"beamDamp":30},
-        {"beamDeform":8000,"beamStrength":6000},
+        //swivel: every head node is tied to both axis nodes, so the head can only rotate about the vertical mount axis
+        {"beamSpring":201000,"beamDamp":30},
+        {"beamDeform":12000,"beamStrength":8000},
         {"breakGroup":"mirror_R"},
-        ["mi1r", "dh1r"],
-        ["mi1r", "dh2r"],
-        ["mi1r", "d5r"],
-        ["mi1r", "d8r"],
-        ["mi2r", "dh1r"],
-        ["mi2r", "dh2r"],
-        ["mi2r", "d5r"],
-        ["mi2r", "d8r"],
-        ["mi3r", "dh1r"],
-        ["mi3r", "dh2r"],
-        ["mi3r", "d5r"],
-        ["mi3r", "d8r"],
+        ["mi1r", "mp1r"],
+        ["mi2r", "mp1r"],
+        ["mi3r", "mp1r"],
+        ["mi1r", "mp2r"],
+        ["mi2r", "mp2r"],
+        ["mi3r", "mp2r"],
 
-        ["mi4r", "dh1r"],
-        ["mi4r", "d4r"],
-        ["mi4r", "d10r"],
-        ["mi4r", "d5r"],
-        ["mi4r", "d8r"],
+        //mount: axis nodes fixed to the body (A-pillar / cowl), so the foot never moves
+        {"beamSpring":501000,"beamDamp":40},
+        {"beamDeform":20000,"beamStrength":8000},
+        ["mp1r", "bc3r"],
+        ["mp1r", "bc4r"],
+        ["mp1r", "bf5r"],
+        ["mp1r", "bf8"],
+        ["mp2r", "bc3r"],
+        ["mp2r", "bc4r"],
+        ["mp2r", "bf5r"],
+        ["mp2r", "bf8"],
+        ["mp1r", "mp2r"],
+
+        //swivel friction: holds the head in place, yields (plastically) when pushed, so the mirror stays where it was turned to
+        {"beamSpring":101000,"beamDamp":30},
+        {"beamDeform":300,"beamStrength":"FLT_MAX"},
+        ["mi1r", "bc3r"],
+        ["mi1r", "bf5r"],
+        ["mi2r", "bc3r"],
+        ["mi2r", "bf5r"],
 
         //dampers
         {"beamSpring":0,"beamDamp":250},
-        ["mi1r", "d8r"],
-        ["mi1r", "d11r"],
-        ["mi2r", "d8r"],
-        ["mi2r", "d11r"],
-
+        ["mi1r", "bc3r"],
+        ["mi1r", "bf5r"],
+        ["mi2r", "bc3r"],
+        ["mi2r", "bf5r"],
         {"breakGroup":""},
+
+        //contact point attached rigidly to the door
+        {"beamSpring":501000,"beamDamp":40},
+        {"beamDeform":"FLT_MAX","beamStrength":"FLT_MAX"},
+        ["mdcr", "dh1r"],
+        ["mdcr", "d4r"],
+        ["mdcr", "d8r"],
+        ["mdcr", "d10r"],
+
+        //door -> mirror contact: compression-only beam, 4 cm long once the door mesh reaches the mirror head
+        {"beamType":"|SUPPORT", "beamLongBound":100},
+        {"beamPrecompression":0.2045},
+        {"beamSpring":150000,"beamDamp":60},
+        ["mdcr", "mi2r"],
+
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
         {"deformLimitExpansion":1.2},
     ],

@@ -23,6 +23,24 @@
         "trunk":               {"order":1006.1, "onDown":"vehicle.toggleTrunkHandle()", "title": "vehicle.interaction.trunk.toggle.title", "desc": "vehicle.interaction.trunk.toggle.desc" },
         "hoodRelease":         {"order":1003.2, "onDown":"vehicle.toogleHoodReleaseHandle()", "title": "vehicle.interaction.hoodRelease.toggle.title", "desc": "vehicle.interaction.hoodRelease.toggle.desc" },
         "door_FL":             {"order":1000.3, "onDown":"vehicle.toggleDoorHandle('FL')", "title": "vehicle.interaction.doors.FL.toggle.title", "desc": "vehicle.interaction.doors.FL.toggle.desc" },
-        "door_FR":             {"order":1000.4, "onDown":"vehicle.toggleDoorHandle('FR')", "title": "vehicle.interaction.doors.FR.toggle.title", "desc": "vehicle.interaction.doors.FR.toggle.desc" }
+        "door_FR":             {"order":1000.4, "onDown":"vehicle.toggleDoorHandle('FR')", "title": "vehicle.interaction.doors.FR.toggle.title", "desc": "vehicle.interaction.doors.FR.toggle.desc" },
+
+        // Door handles (outside): push button pops the latch, holding + dragging the grip swings the door
+        "doorButton_FL":       {"order":1000.5, "onDown":"vehicle.pressDoorButton('FL')",    "title": "vehicle.interaction.doors.FL.button.title", "desc": "vehicle.interaction.doors.FL.button.desc" },
+        "doorButton_FR":       {"order":1000.6, "onDown":"vehicle.pressDoorButton('FR')",    "title": "vehicle.interaction.doors.FR.button.title", "desc": "vehicle.interaction.doors.FR.button.desc" },
+        "doorDrag_FL":         {"order":1000.7, "onChange":"vehicle.doorDrag('FL', VALUE)",  "title": "vehicle.interaction.doors.FL.drag.title",   "desc": "vehicle.interaction.doors.FL.drag.desc" },
+        "doorDrag_FR":         {"order":1000.8, "onChange":"vehicle.doorDrag('FR', VALUE)",  "title": "vehicle.interaction.doors.FR.drag.title",   "desc": "vehicle.interaction.doors.FR.drag.desc" },
+
+        // Door handles (inside): click opens a latched door; an open door is closed with a double-click or by hold + drag
+        "doorInt_FL":          {"order":1000.9, "onChange":"vehicle.doorInterior('FL', VALUE)", "title": "vehicle.interaction.doors.FL.interior.title", "desc": "vehicle.interaction.doors.FL.interior.desc" },
+        "doorInt_FR":          {"order":1001.0, "onChange":"vehicle.doorInterior('FR', VALUE)", "title": "vehicle.interaction.doors.FR.interior.title", "desc": "vehicle.interaction.doors.FR.interior.desc" },
+        "doorLock_FR":         {"order":1001.1, "onDown":"vehicle.toggleDoorLock('FR')",       "title": "vehicle.interaction.doors.FR.lock.title",     "desc": "vehicle.interaction.doors.FR.lock.desc" },
+
+        // Window cranks: hold + turn the crank; double-click = roll fully open/closed (hold on the second click: roll while held)
+        "windowCrank_FL":      {"order":42.01,  "onChange":"vehicle.windowCrank('FL', VALUE)",       "title":"vehicle.interaction.doors.FL.window.crank.title",    "desc":"vehicle.interaction.doors.FL.window.crank.desc"},
+        "windowCrankRev_FL":   {"order":42.02,  "onChange":"vehicle.windowCrank('FL', VALUE, true)", "title":"vehicle.interaction.doors.FL.window.crankRev.title", "desc":"vehicle.interaction.doors.FL.window.crankRev.desc"},
+        "windowCrank_FR":      {"order":42.03,  "onChange":"vehicle.windowCrank('FR', VALUE)",       "title":"vehicle.interaction.doors.FR.window.crank.title",    "desc":"vehicle.interaction.doors.FR.window.crank.desc"},
+        "windowCrankRev_FR":   {"order":42.04,  "onChange":"vehicle.windowCrank('FR', VALUE, true)", "title":"vehicle.interaction.doors.FR.window.crankRev.title", "desc":"vehicle.interaction.doors.FR.window.crankRev.desc"},
+        "windowCrankWheel":    {"order":42.05,  "onChange":"vehicle.windowCrankWheel(VALUE)", "isCentered":true,    "title":"vehicle.interaction.doors.window.crankWheel.title",       "desc":"vehicle.interaction.doors.window.crankWheel.desc"}
     }
 }

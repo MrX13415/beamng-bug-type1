@@ -315,18 +315,60 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["window_FR", "dh1r","d8r","d4r", "sphere", 0.06, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1795, "y":0.082, "z":0.085},{"mesh":["bug_door_FR_window_handle", "bug_door_FR_window_handle_ring"]}],
+        //["window_FR", "dh1r","d8r","d4r", "sphere", 0.04, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1795, "y":0.082, "z":0.085},{"color":[1,0.3,0,0], "alphaOnUsed":0}], // old: no mesh highlight
+        //["window_FR", "dh1r","d8r","d4r", "sphere", 0.04, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1795, "y":0.082, "z":0.085},{"color":[1,0.3,0,0], "alphaOnUsed":0, "mesh":"bug_door_FR_window_handle"}], // old: one sphere on the crank axis, you had to click the center
+        // ring of small spheres along the circle of the knob (r 7.8 cm, 3.6 cm in front of the panel): the crank is gripped at the knob, wherever it is
+        ["window_FR_0", "dh1r","d8r","d4r", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FR_window_handle", "baseTranslationGlobal":{"x":-0.5402, "y":-0.3528, "z":0.8515}, "alphaOnUsed":0}],
+        ["window_FR_1", "dh1r","d8r","d4r", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FR_window_handle", "baseTranslationGlobal":{"x":-0.5321, "y":-0.3758, "z":0.9059}, "alphaOnUsed":0}],
+        ["window_FR_2", "dh1r","d8r","d4r", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FR_window_handle", "baseTranslationGlobal":{"x":-0.5250, "y":-0.4309, "z":0.9278}, "alphaOnUsed":0}],
+        ["window_FR_3", "dh1r","d8r","d4r", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FR_window_handle", "baseTranslationGlobal":{"x":-0.5231, "y":-0.4858, "z":0.9043}, "alphaOnUsed":0}],
+        ["window_FR_4", "dh1r","d8r","d4r", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FR_window_handle", "baseTranslationGlobal":{"x":-0.5274, "y":-0.5082, "z":0.8491}, "alphaOnUsed":0}],
+        ["window_FR_5", "dh1r","d8r","d4r", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FR_window_handle", "baseTranslationGlobal":{"x":-0.5355, "y":-0.4852, "z":0.7947}, "alphaOnUsed":0}],
+        ["window_FR_6", "dh1r","d8r","d4r", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FR_window_handle", "baseTranslationGlobal":{"x":-0.5426, "y":-0.4301, "z":0.7728}, "alphaOnUsed":0}],
+        ["window_FR_7", "dh1r","d8r","d4r", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FR_window_handle", "baseTranslationGlobal":{"x":-0.5445, "y":-0.3752, "z":0.7963}, "alphaOnUsed":0}],
+        // hub on the crank axis: only the mouse wheel (the tooltip shows just the wheel there; drag at the knob ring)
+        //["window_FR_hub", "dh1r","d8r","d4r", "sphere", 0.035, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FR_window_handle", "baseTranslationGlobal":{"x":-0.5497, "y":-0.4318, "z":0.8521}, "alphaOnUsed":0}], // old: the tooltip sat at the middle of the crank (mesh center), not on its axis
+        ["window_FR_hub", "dh1r","d8r","d4r", "sphere", 0.035, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FR_window_handle_ring", "baseTranslationGlobal":{"x":-0.5497, "y":-0.4318, "z":0.8521}, "alphaOnUsed":0}], // lights up the trim ring at the crank base, which is centered on the axis
     ],
     "actionsEnabled": [
         ["id"],
         ["windowFRopen"],
         ["windowFRclose"],
+        ["windowCrank_FR"],
+        ["windowCrankRev_FR"],
+        ["windowCrankWheel"], // mouse wheel over a crank (inputmaps/mouse.vehicle.json); actions not listed here are never bound
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
-        ["window_FR", "action0", "windowFRopen"],      // default: left mouse btn
-        ["window_FR", "action1", "windowFRclose"],     // default: SHIFT + left mouse btn
-        ["window_FR", "action2", "windowFRclose"],     // default: middle mouse btn
+        //["window_FR", "action0", "windowFRopen"],      // default: left mouse btn (old: single click)
+        ["window_FR_0", "action0", "windowCrank_FR"], // default: left mouse btn
+        ["window_FR_1", "action0", "windowCrank_FR"],
+        ["window_FR_2", "action0", "windowCrank_FR"],
+        ["window_FR_3", "action0", "windowCrank_FR"],
+        ["window_FR_4", "action0", "windowCrank_FR"],
+        ["window_FR_5", "action0", "windowCrank_FR"],
+        ["window_FR_6", "action0", "windowCrank_FR"],
+        ["window_FR_7", "action0", "windowCrank_FR"],
+        //["window_FR", "action1", "windowFRclose"],     // default: SHIFT + left mouse btn (old: single click)
+        ["window_FR_0", "action1", "windowCrankRev_FR"], // default: SHIFT + left mouse btn
+        ["window_FR_1", "action1", "windowCrankRev_FR"],
+        ["window_FR_2", "action1", "windowCrankRev_FR"],
+        ["window_FR_3", "action1", "windowCrankRev_FR"],
+        ["window_FR_4", "action1", "windowCrankRev_FR"],
+        ["window_FR_5", "action1", "windowCrankRev_FR"],
+        ["window_FR_6", "action1", "windowCrankRev_FR"],
+        ["window_FR_7", "action1", "windowCrankRev_FR"],
+        //["window_FR", "action2", "windowFRclose"],     // default: middle mouse btn (old: single click)
+        //["window_FR_0", "action2", "windowCrankRev_FR"], // old
+        //["window_FR_0", "action2", "windowCrankWheel"], // the tooltip shows this line with the mouse wheel symbol (the action is bound to the wheel); a middle click turns one notch // old: wheel offered at the knob too
+        //["window_FR_1", "action2", "windowCrankWheel"],
+        //["window_FR_2", "action2", "windowCrankWheel"],
+        //["window_FR_3", "action2", "windowCrankWheel"],
+        //["window_FR_4", "action2", "windowCrankWheel"],
+        //["window_FR_5", "action2", "windowCrankWheel"],
+        //["window_FR_6", "action2", "windowCrankWheel"],
+        //["window_FR_7", "action2", "windowCrankWheel"],
+        ["window_FR_hub", "action2", "windowCrankWheel"], // hub: wheel only (shown with the mouse wheel symbol); a middle click turns one notch
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
@@ -451,18 +493,60 @@
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-        ["window_FL", "dh1l","d8l","d4l", "sphere", 0.06, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1795, "y":0.082, "z":-0.085},{"mesh":["bug_door_FL_window_handle", "bug_door_FL_window_handle_ring"]}],
+        //["window_FL", "dh1l","d8l","d4l", "sphere", 0.04, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1795, "y":0.082, "z":-0.085},{"color":[1,0.3,0,0], "alphaOnUsed":0}], // old: no mesh highlight
+        //["window_FL", "dh1l","d8l","d4l", "sphere", 0.04, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1795, "y":0.082, "z":-0.085},{"color":[1,0.3,0,0], "alphaOnUsed":0, "mesh":"bug_door_FL_window_handle"}], // old: one sphere on the crank axis, you had to click the center
+        // ring of small spheres along the circle of the knob (r 7.8 cm, 3.6 cm in front of the panel): the crank is gripped at the knob, wherever it is
+        ["window_FL_0", "dh1l","d8l","d4l", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FL_window_handle", "baseTranslationGlobal":{"x":0.5402, "y":-0.3528, "z":0.8515}, "alphaOnUsed":0}],
+        ["window_FL_1", "dh1l","d8l","d4l", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FL_window_handle", "baseTranslationGlobal":{"x":0.5321, "y":-0.3758, "z":0.9059}, "alphaOnUsed":0}],
+        ["window_FL_2", "dh1l","d8l","d4l", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FL_window_handle", "baseTranslationGlobal":{"x":0.5250, "y":-0.4309, "z":0.9278}, "alphaOnUsed":0}],
+        ["window_FL_3", "dh1l","d8l","d4l", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FL_window_handle", "baseTranslationGlobal":{"x":0.5231, "y":-0.4858, "z":0.9043}, "alphaOnUsed":0}],
+        ["window_FL_4", "dh1l","d8l","d4l", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FL_window_handle", "baseTranslationGlobal":{"x":0.5274, "y":-0.5082, "z":0.8491}, "alphaOnUsed":0}],
+        ["window_FL_5", "dh1l","d8l","d4l", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FL_window_handle", "baseTranslationGlobal":{"x":0.5355, "y":-0.4852, "z":0.7947}, "alphaOnUsed":0}],
+        ["window_FL_6", "dh1l","d8l","d4l", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FL_window_handle", "baseTranslationGlobal":{"x":0.5426, "y":-0.4301, "z":0.7728}, "alphaOnUsed":0}],
+        ["window_FL_7", "dh1l","d8l","d4l", "sphere", 0.03, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FL_window_handle", "baseTranslationGlobal":{"x":0.5445, "y":-0.3752, "z":0.7963}, "alphaOnUsed":0}],
+        // hub on the crank axis: only the mouse wheel (the tooltip shows just the wheel there; drag at the knob ring)
+        //["window_FL_hub", "dh1l","d8l","d4l", "sphere", 0.035, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FL_window_handle", "baseTranslationGlobal":{"x":0.5497, "y":-0.4318, "z":0.8521}, "alphaOnUsed":0}], // old: the tooltip sat at the middle of the crank (mesh center), not on its axis
+        ["window_FL_hub", "dh1l","d8l","d4l", "sphere", 0.035, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"bug_door_FL_window_handle_ring", "baseTranslationGlobal":{"x":0.5497, "y":-0.4318, "z":0.8521}, "alphaOnUsed":0}], // lights up the trim ring at the crank base, which is centered on the axis
     ],
     "actionsEnabled": [
         ["id"],
         ["windowFLopen"],
         ["windowFLclose"],
+        ["windowCrank_FL"],
+        ["windowCrankRev_FL"],
+        ["windowCrankWheel"], // mouse wheel over a crank (inputmaps/mouse.vehicle.json); actions not listed here are never bound
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
-        ["window_FL", "action0", "windowFLopen"],      // default: left mouse btn
-        ["window_FL", "action1", "windowFLclose"],     // default: SHIFT + left mouse btn
-        ["window_FL", "action2", "windowFLclose"],     // default: middle mouse btn
+        //["window_FL", "action0", "windowFLopen"],      // default: left mouse btn (old: single click)
+        ["window_FL_0", "action0", "windowCrank_FL"], // default: left mouse btn
+        ["window_FL_1", "action0", "windowCrank_FL"],
+        ["window_FL_2", "action0", "windowCrank_FL"],
+        ["window_FL_3", "action0", "windowCrank_FL"],
+        ["window_FL_4", "action0", "windowCrank_FL"],
+        ["window_FL_5", "action0", "windowCrank_FL"],
+        ["window_FL_6", "action0", "windowCrank_FL"],
+        ["window_FL_7", "action0", "windowCrank_FL"],
+        //["window_FL", "action1", "windowFLclose"],     // default: SHIFT + left mouse btn (old: single click)
+        ["window_FL_0", "action1", "windowCrankRev_FL"], // default: SHIFT + left mouse btn
+        ["window_FL_1", "action1", "windowCrankRev_FL"],
+        ["window_FL_2", "action1", "windowCrankRev_FL"],
+        ["window_FL_3", "action1", "windowCrankRev_FL"],
+        ["window_FL_4", "action1", "windowCrankRev_FL"],
+        ["window_FL_5", "action1", "windowCrankRev_FL"],
+        ["window_FL_6", "action1", "windowCrankRev_FL"],
+        ["window_FL_7", "action1", "windowCrankRev_FL"],
+        //["window_FL", "action2", "windowFLclose"],     // default: middle mouse btn (old: single click)
+        //["window_FL_0", "action2", "windowCrankRev_FL"], // old
+        //["window_FL_0", "action2", "windowCrankWheel"], // the tooltip shows this line with the mouse wheel symbol (the action is bound to the wheel); a middle click turns one notch // old: wheel offered at the knob too
+        //["window_FL_1", "action2", "windowCrankWheel"],
+        //["window_FL_2", "action2", "windowCrankWheel"],
+        //["window_FL_3", "action2", "windowCrankWheel"],
+        //["window_FL_4", "action2", "windowCrankWheel"],
+        //["window_FL_5", "action2", "windowCrankWheel"],
+        //["window_FL_6", "action2", "windowCrankWheel"],
+        //["window_FL_7", "action2", "windowCrankWheel"],
+        ["window_FL_hub", "action2", "windowCrankWheel"], // hub: wheel only (shown with the mouse wheel symbol); a middle click turns one notch
     ],
     "nodes": [
         ["id", "posX", "posY", "posZ"],
