@@ -176,6 +176,68 @@ local function executeLua(cmd)
 end
 
 
+-- Coupler controllers (doors, trunk, glovebox): 0 = attached (closed), 1 = detached / broken (open)
+local function getControllerState(name)
+  local result = 0
+
+  local controller = controller.getController(name)
+  if not controller then return result end
+  local state = controller.getGroupState()
+
+  result = 1
+  if state == 'attached' then result = 0 end
+  if state == 'desyncedAttached' then result = 0 end
+  if state == 'broken' then result = 1 end
+
+  return result
+end
+local function setControllerState(name, state)
+  local controller = controller.getController(name)
+  if not controller then return end
+
+  if state then
+    controller.detachGroup()
+  else
+    controller.tryAttachGroupImpulse()
+  end
+end
+
+
+-- Electrics
+
+-- flips an electrics value between 0 and 1 and returns the new value (nil for an empty name)
+local function toggle(var)
+  if var == "" then return nil end
+  local state = electrics.values[var] or 0
+  state = state > 0 and 0 or 1
+  --print(tostring(var) .. " " .. tostring(state))
+  electrics.values[var] = state
+  return state
+end
+
+
+-- GE extensions of the mod
+
+-- Every GE extension in lua/ge/extensions/bug/ and its M.version. Bump the number here (only here) together with
+-- M.version in the extension: the vehicle Lua is reloaded with each spawn, a GE extension is not, so an older
+-- version that is still loaded gets reloaded.
+local GE_VERSIONS = {
+}
+
+-- Load the GE extension `ext` (reload it if an older version is loaded) and run the GE Lua statement `cmd` there.
+-- `guard` (optional): name of a function the extension must have, otherwise `cmd` is skipped.
+local function geCall(ext, cmd, guard)
+  local version = GE_VERSIONS[ext]
+  if not version then
+    log('E', 'bug.misc', 'geCall: unknown GE extension ' .. tostring(ext) .. ' (add it to GE_VERSIONS)')
+    version = 0
+  end
+  local cond = guard and (ext .. " and " .. ext .. "." .. guard) or ext
+  obj:queueGameEngineLua("extensions.load('" .. ext .. "'); "
+    .. "if " .. ext .. " and (" .. ext .. ".version or 0) < " .. version .. " then extensions.reload('" .. ext .. "') end; "
+    .. (cmd and ("if " .. cond .. " then " .. cmd .. " end") or ""))
+end
+
 -- Initialization
 
 local function onInit()
@@ -198,5 +260,11 @@ M.playSound       = playSound
 M.toUnit          = toUnit
 M.toTime          = toTime
 M.executeLua      = executeLua
+
+M.getControllerState = getControllerState
+M.setControllerState = setControllerState
+
+M.geCall          = geCall
+M.toggle          = toggle
 
 return M

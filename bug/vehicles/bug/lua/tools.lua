@@ -185,9 +185,46 @@ end
 
 M.updateGFX = updateGFX
 
+-- Checks that the jbeam nodes are mirrored: every node on the left side (x > 0) should have exactly one node on the
+-- right side at (-x, y, z) with the same weight. Logs every mismatch. Moved from vehicle.lua (was commented out
+-- there). Console: tools.checkNodes()
+local function checkNodes()
+  for i,node in pairs(v.data.nodes) do
+    if node.pos.x > 0 then -- On left side ...
+
+      local m = {}
+      local w = true
+      for i,n in pairs(v.data.nodes) do
+        -- On right side ...
+        if n.pos.x < 0 and math.abs(node.pos.x) == math.abs(n.pos.x) and node.pos.y == n.pos.y and node.pos.z == n.pos.z then
+          table.insert(m, n)
+        end
+      end
+
+      if #m > 1 then
+        log("W","", "Multiple: " .. tostring(node.cid) .. " '" .. tostring(node.name) .. "' weight: " .. tostring(node.nodeWeight) .. " pos: " .. tostring(node.pos))
+        for i,n in pairs(m) do
+          log("W","", "           - " .. tostring(n.cid) .. " '" .. tostring(n.name) .. "' weight: " .. tostring(n.nodeWeight) .. " pos: " .. tostring(n.pos))
+        end
+
+      elseif #m > 0 then
+        for i,n in pairs(m) do
+          if node.nodeWeight ~= n.nodeWeight then
+            log("W","", "Weight: " .. tostring(node.cid) .. " '" .. tostring(node.name) .. "' weight: " .. tostring(node.nodeWeight) .. " pos: " .. tostring(node.pos))
+            log("W","", "         - " .. tostring(n.cid) .. " '" .. tostring(n.name) .. "' weight: " .. tostring(n.nodeWeight) .. " pos: " .. tostring(n.pos))
+          end
+        end
+      else
+        log("W","", "No match: " .. tostring(node.cid) .. " '" .. tostring(node.name) .. "' weight: " .. tostring(node.nodeWeight) .. " pos: " .. tostring(node.pos))
+      end
+    end
+  end
+end
+
 -- public interface
 M.help = help
 M.listConfigs = listConfigs
+M.checkNodes = checkNodes
 M.spawnConfig = spawnConfig
 M.listInputActions = listInputActions
 
