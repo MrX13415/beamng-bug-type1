@@ -90,10 +90,15 @@
       ["$='is'..$seatID..'4o'", "$= $side * 0.459", -0.036, 0.278, {"nodeWeight": 1.5}],
       ["$='is'..$seatID..'4i'", "$= $side * 0.126", -0.036, 0.278, {"nodeWeight": 1.5}],
       {"group": "$='bug_seat_'..$seatID..'_back'"},
+      // backrest: no self-collision, so it can fold forward through the seat's occupant body (it stays on the seat,
+      // invisible and almost massless, while nobody sits there; while someone does, lua/lib/lids.lua locks the
+      // backrest upright). It still collides with the world and other vehicles.
+      {"selfCollision": false},
       ["$='is'..$seatID..'5o'", "$= $side * 0.493",  0.220, 0.900],
       ["$='is'..$seatID..'5i'", "$= $side * 0.088",  0.220, 0.900],
       ["$='is'..$seatID..'6o'", "$= $side * 0.493",  0.136, 0.398],
       ["$='is'..$seatID..'6i'", "$= $side * 0.088",  0.136, 0.398],
+      {"selfCollision": true},
       {"group": ""},
       {"chemEnergy": false, "burnRate": false, "flashPoint": false, "smokePoint": false, "selfIgnition": false, "specHeat": false},
       {"selfCollision": false},
@@ -290,8 +295,12 @@
         {"dragCoef": 0},
         ["$= ($seatID == 'FL' and ('is'..$seatID..'1o') or ('is'..$seatID..'2o'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2o') or ('is'..$seatID..'1o'))", "$= ($seatID == 'FL' and ('is'..$seatID..'1i') or ('is'..$seatID..'1i'))"],
         ["$= ($seatID == 'FL' and ('is'..$seatID..'2o') or ('is'..$seatID..'2i'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2i') or ('is'..$seatID..'2o'))", "$= ($seatID == 'FL' and ('is'..$seatID..'1i') or ('is'..$seatID..'1i'))"],
+        // backrest faces: not collidable, so the seat's occupant body (on the cushion, invisible and almost massless
+        // while nobody sits there) doesn't block folding; the backrest is locked upright while someone sits there
+        {"triangleType":"NONCOLLIDABLE"},
         ["$= ($seatID == 'FL' and ('is'..$seatID..'2o') or ('is'..$seatID..'5o'))", "$= ($seatID == 'FL' and ('is'..$seatID..'5o') or ('is'..$seatID..'2o'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2i') or ('is'..$seatID..'2i'))"],
         ["$= ($seatID == 'FL' and ('is'..$seatID..'5o') or ('is'..$seatID..'5i'))", "$= ($seatID == 'FL' and ('is'..$seatID..'5i') or ('is'..$seatID..'5o'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2i') or ('is'..$seatID..'2i'))"],
+        {"triangleType":"NORMAL"},
         ["$= ($seatID == 'FL' and ('is'..$seatID..'3o') or ('is'..$seatID..'1o'))", "$= ($seatID == 'FL' and ('is'..$seatID..'1o') or ('is'..$seatID..'3o'))", "$= ($seatID == 'FL' and ('is'..$seatID..'3i') or ('is'..$seatID..'3i'))"],
         ["$= ($seatID == 'FL' and ('is'..$seatID..'1o') or ('is'..$seatID..'1i'))", "$= ($seatID == 'FL' and ('is'..$seatID..'1i') or ('is'..$seatID..'1o'))", "$= ($seatID == 'FL' and ('is'..$seatID..'3i') or ('is'..$seatID..'3i'))"],
         ["$= ($seatID == 'FL' and ('is'..$seatID..'3i') or ('is'..$seatID..'1i'))", "$= ($seatID == 'FL' and ('is'..$seatID..'1i') or ('is'..$seatID..'3i'))", "$= ($seatID == 'FL' and ('is'..$seatID..'4i') or ('is'..$seatID..'4i'))"],
@@ -300,8 +309,12 @@
         ["$= ($seatID == 'FL' and ('is'..$seatID..'2o') or ('is'..$seatID..'1o'))", "$= ($seatID == 'FL' and ('is'..$seatID..'1o') or ('is'..$seatID..'2o'))", "$= ($seatID == 'FL' and ('is'..$seatID..'3o') or ('is'..$seatID..'3o'))"],
         ["$= ($seatID == 'FL' and ('is'..$seatID..'4i') or ('is'..$seatID..'2i'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2i') or ('is'..$seatID..'4i'))", "$= ($seatID == 'FL' and ('is'..$seatID..'4o') or ('is'..$seatID..'4o'))"],
         ["$= ($seatID == 'FL' and ('is'..$seatID..'2i') or ('is'..$seatID..'2o'))", "$= ($seatID == 'FL' and ('is'..$seatID..'2o') or ('is'..$seatID..'2i'))", "$= ($seatID == 'FL' and ('is'..$seatID..'4o') or ('is'..$seatID..'4o'))"],
+        // backrest faces: not collidable, so the seat's occupant body (on the cushion, invisible and almost massless
+        // while nobody sits there) doesn't block folding; the backrest is locked upright while someone sits there
+        {"triangleType":"NONCOLLIDABLE"},
         ["$= ($seatID == 'FL' and ('is'..$seatID..'6i') or ('is'..$seatID..'6i'))", "$= ($seatID == 'FL' and ('is'..$seatID..'5i') or ('is'..$seatID..'5o'))", "$= ($seatID == 'FL' and ('is'..$seatID..'6o') or ('is'..$seatID..'6o'))"],
         ["$= ($seatID == 'FL' and ('is'..$seatID..'5i') or ('is'..$seatID..'5i'))", "$= ($seatID == 'FL' and ('is'..$seatID..'5o') or ('is'..$seatID..'5i'))", "$= ($seatID == 'FL' and ('is'..$seatID..'6o') or ('is'..$seatID..'6o'))"]
+        {"triangleType":"NORMAL"},
     ]
   }
 
