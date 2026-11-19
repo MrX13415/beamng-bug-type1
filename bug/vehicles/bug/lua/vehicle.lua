@@ -14,15 +14,17 @@
 --   lib/seats.lua      sliding the front seats, making room when getting out of the back
 --   lib/openings.lua   how open the cabin is: interior light, cabin sound filter
 --   lib/doors.lua      door couplers and the outside handles
---   lib/lids.lua       dragging the frunk and engine lids (gets updateGFX / onReset from the game itself, as a
---                      vehicle extension)
+--   lib/hinge.lua      parts swinging on a hinge, moved by hand (springs, dragging, double-click); gets updateGFX /
+--                      onReset from the game itself, as a vehicle extension
+--   lib/lids.lua       the frunk and engine lids on lib/hinge.lua: latches, the engine lid's handle and locking
 -- New features go into their own lib/ module; only the entry points the actions need are added here.
 
 local M = {}
 
 local misc = require("vehicles/bug/lua/misc")
 local doors = require("vehicles/bug/lua/lib/doors")
-local lids = require("vehicles/bug/lua/lib/lids")    -- also loaded as a vehicle extension: gets updateGFX / onReset itself
+local hinge = require("vehicles/bug/lua/lib/hinge")  -- also loaded as a vehicle extension: gets updateGFX / onReset itself
+local lids = require("vehicles/bug/lua/lib/lids")
 local interior = require("vehicles/bug/lua/lib/interior")
 local body = require("vehicles/bug/lua/lib/body")
 local roof = require("vehicles/bug/lua/lib/roof")
@@ -39,17 +41,18 @@ end
 -- the game dropped a held trigger without a release (e.g. UI under the cursor), sent by the GE extension
 -- bug_doorDrag: the feature that drags the part `id` ends its drag (kind "crank" for window cranks, else "door")
 local function dragLost(id, kind)
-  if lids.isLid(id) then
-    lids.dragLost(id)
+  if hinge.isPart(id) then
+    hinge.dragLost(id)
   end
 end
 
--- frunk / engine lid handles ("frunk" / "engine"): press/release from the trigger, cursor ray from GE (lib/lids.lua)
+-- frunk / engine lid handles ("frunk" / "engine"): press/release from the trigger (lib/lids.lua); the cursor ray from
+-- GE goes to every hinged part (lib/hinge.lua)
 local function lidHandle(id, value)
   lids.press(id, value)
 end
 local function lidDragRay(id, px, py, pz, dx, dy, dz)
-  lids.setRay(id, px, py, pz, dx, dy, dz)
+  hinge.setRay(id, px, py, pz, dx, dy, dz)
 end
 
 
