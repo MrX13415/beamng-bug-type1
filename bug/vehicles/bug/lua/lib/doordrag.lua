@@ -62,6 +62,16 @@ local SWING_MAX_FORCE = 70    -- N      cap
 local SWING_DONE      = math.rad(3) -- close enough ...
 local SWING_DONE_VEL  = 0.15  -- m/s    ... and slow enough: stop pulling
 local SWING_TIMEOUT   = 3     -- s      give up (door blocked)
+-- Airflow on an open door while driving: the door is hinged at its front edge, so the air pushes it shut (reversing:
+-- open). Flat plate in the flow: q * A * Cn, q = rho / 2 * v^2, Cn growing with the opening angle; at the handle
+-- with the center of pressure halfway along the door. At 50 km/h a door open 30 deg takes ~40 N at the handle, at
+-- 100 km/h ~150 N (the hand's cap DRAG_MAX_FORCE: it only cracks open). The game's own drag on the door's triangles
+-- (dragCoef 20 in the jbeam, like the stock cars) is much weaker; this comes on top.
+local AIR_DENSITY     = 1.2   -- kg/m^3
+local DOOR_AREA       = 0.85  -- m^2    door with window
+local DOOR_CN_MAX     = 1.1   --        normal force coefficient of a flat plate across the flow (90 deg)
+local DOOR_CP         = 0.5   --        center of pressure / handle radius
+local WIND_MIN_SPEED  = 1     -- m/s    slower: no wind force
 
 local doors = {}   -- per door id ("FL"/"FR")
 local onClick = nil
@@ -271,6 +281,16 @@ local function setTarget(id, x, y, z)
   end
 end
 
+-- the car's frame (origin, right, forward, up): the previous cursor ray is kept in it, so the car moving between two
+-- frames doesn't count as hand motion (at speed it moved the hand by decimetres per frame, always towards the front)
+local function carFrame()
+  local f = obj:getDirectionVector():normalized()
+  local r = f:cross(obj:getDirectionVectorUp()):normalized()
+  return obj:getPosition(), r, f, r:cross(f)
+end
+local function toCar(w, o, r, f, u) if o then w = w - o end return vec3(w:dot(r), w:dot(f), w:dot(u)) end
+local function fromCar(l, o, r, f, u) local w = r * l.x + f * l.y + u * l.z; return o and (w + o) or w end
+
 -- called every frame by the GE extension with the cursor ray (DRAG_ARC):
 -- the target is the point of the handle's swing arc (circle around the hinge axis at handle height) that is
 -- closest to the cursor on screen, so the door can be steered from any viewing angle, also from the other seat
@@ -365,7 +385,10 @@ local function setRay(id, px, py, pz, dx, dy, dz)
   -- from both seats: 5 cm down closes 8-15 deg, 5 cm up opens as much, at any door angle; dragging down-left
   -- or down-right closes too.
   local duHand = nil
+  local fo, fr, ff, fu = carFrame()
   if DRAG_MODEL == "hand" and d.prevRayO then
+    -- last frame's ray where it is now, moved along with the car
+    local prevO, prevD = fromCar(d.prevRayO, fo, fr, ff, fu), fromCar(d.prevRayD, nil, fr, ff, fu)
     local G = grabPoint(d.uOffset)
     local vw = (G - O):normalized()
     local function hitOnPlane(o, dr)
@@ -373,7 +396,7 @@ local function setRay(id, px, py, pz, dx, dy, dz)
       if dn < 0.05 then return nil end
       return o + dr * ((G - o):dot(vw) / dn)
     end
-    local h0, h1p = hitOnPlane(d.prevRayO, d.prevRayD), hitOnPlane(O, dir)
+    local h0, h1p = hitOnPlane(prevO, prevD), hitOnPlane(O, dir)
     if h0 and h1p then
       local upv = vec3(0, 0, 1)
       upv = upv - vw * upv:dot(vw)
@@ -388,7 +411,7 @@ local function setRay(id, px, py, pz, dx, dy, dz)
       end
     end
   end
-  d.prevRayO, d.prevRayD = O, dir
+  d.prevRayO, d.prevRayD = toCar(O, fo, fr, ff, fu), toCar(dir, nil, fr, ff, fu)
 
   local du
   if DRAG_MODEL == "hand" then
@@ -425,8 +448,24 @@ local function push(id, force, duration)
   d.pushForce, d.pushTime = force, duration
 end
 
+-- airflow on an open, unlatched door while driving (see AIR_DENSITY ff.)
+local function applyWind(id, dt)
+  local d = getDoor(id)
+  if not d or isLatched(id) then return end
+  local vf = obj:getVelocity():dot(obj:getDirectionVector())   -- forward speed, m/s
+  if math.abs(vf) < WIND_MIN_SPEED then return end
+  local a = getAngle(id)
+  if not a or a <= 0 then return end
+  -- Cn of a flat plate: rises quickly at small angles, ~DOOR_CN_MAX across the flow
+  local cn = DOOR_CN_MAX * math.sqrt(math.sin(math.min(a, math.pi / 2)))
+  local f = 0.5 * AIR_DENSITY * vf * vf * DOOR_AREA * cn * DOOR_CP
+  applyHandleForce(d, openDirection(d) * (vf > 0 and -f or f), dt)
+end
+
 local function updateGFX(dt)
   clock = clock + dt
+  applyWind("FL", dt)
+  applyWind("FR", dt)
   for id, d in pairs(doors) do
     if d.pushTime > 0 then
       d.pushTime = d.pushTime - dt
