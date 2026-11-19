@@ -1,0 +1,33 @@
+{
+  "bug_highlight": {
+    "name": "bug_highlight",
+    "mapTo": "bug_highlight",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          1,
+          0.78,
+          0.15,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1,
+        "emissive": true,
+        "emissiveFactor": [
+          1,
+          0.78,
+          0.15
+        ],
+        "emissiveIntensityNits": 40
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5,
+    "castShadows": false,
+    "translucent": true,
+    "translucentZWrite": false
+  }
+}

@@ -1165,20 +1165,163 @@
         "value":220,
     },
     "slotType": "bug_intake",   
+    // the engine's throttle is the carburettor's lever (lib/carburettor.lua update), not the pedal directly: the
+    // lever springs back when the pedal is let go, and a hand can pull it open in the work mode
+    "mainEngine": {
+        "electricsThrottleName":"carbThrottle",
+    },
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         
-        // Single carburetor
+        // Single carburetor (static meshes of engine/Carburettor.dae; the moving ones are props below)
         ["bug_engine_air_filter",        ["bug_engine"]],
         ["bug_engine_cables",            ["bug_engine"]],
-        ["bug_engine_carburetor",        ["bug_engine"]],
-        ["bug_engine_carburetor_spring", ["bug_engine"]],
-        ["bug_engine_fuel_line",         ["bug_engine"]],
+        ["carb_body",                    ["bug_engine"]],
+        ["carb_plug_main_jet",           ["bug_engine"]],
+        ["carb_spring_arm",              ["bug_engine"]],
+        ["carb_spring_arm_screw",        ["bug_engine"]],
+        ["carb_throttle_spring",         ["bug_carb_spring"]],
+        ["carb_fuel_line",               ["bug_engine"]],
+        ["carb_fuel_line_clamps",        ["bug_engine"]],
+        // highlight shells of the interactors below (material bug_highlight): hidden, the GE extension bug_interact
+        // shows the hovered one (setMeshAlpha). The moving parts' shells are props next to their parts.
+        ["engine_highlight",                                ["bug_engine"]],
+        ["carb_spring_arm_highlight",                       ["bug_engine"]],
+        ["carb_spring_arm_screw_highlight",                 ["bug_engine"]],
         ["bug_engine_ignition_coil",     ["bug_engine"]],
         ["bug_engine_intake_manifold",   ["bug_engine"]],
         ["bug_engine_warm_air_tube",     ["bug_engine"]],
         ["bug_engine_oil_tube",          ["bug_engine"]],
-    ]
+    ],
+    // carburettor return spring: a flexbody on four small nodes, so it stretches. Its bottom hook (csp_b) sits on the
+    // throttle lever's rear arm and turns with it about the throttle shaft (hinge csp_h1 / csp_h2), driven by a
+    // throttle hydro from csp_q: closed at 0, 75° open at full throttle like the lever prop (the hydro's length
+    // is within 1.1° of that angle all the way). csp_t / csp_ts hold the top hook, csp_b / csp_bs the bottom hook. The
+    // second node of each pair is offset along the throttle shaft (x), not along the spring: an offset parallel to
+    // the shaft keeps its direction while the arm turns, so the coils follow the spring's axis instead of shearing
+    // with the lever's 75°. The nodes are only for the mesh: light, no collision, not in the engine's group.
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"collision":false},
+        {"selfCollision":false},
+        {"nodeWeight":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"group":"bug_carb_spring"},
+        ["csp_t",  0.0835, 1.650, 0.737],
+        ["csp_ts", 0.0435, 1.650, 0.737],
+        ["csp_b",  0.0835, 1.650, 0.640],
+        ["csp_bs", 0.0435, 1.650, 0.640],
+        {"group":""},
+        ["csp_a",  0.0835, 1.6530, 0.6598],
+        ["csp_h1", 0.040,  1.6118, 0.6457],
+        ["csp_h2", 0.120,  1.6118, 0.6457],
+        ["csp_q",  0.0835, 1.790,  0.770],
+        {"collision":true},
+        {"selfCollision":true},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamType":"|NORMAL", "beamSpring":300000, "beamDamp":100, "beamDeform":"FLT_MAX", "beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":""},
+        // fixed nodes to the engine top and the engine block
+        ["csp_t", "e6l"], ["csp_t", "e6r"], ["csp_t", "e4l"], ["csp_t", "e5l"],
+        ["csp_ts", "e6l"], ["csp_ts", "e6r"], ["csp_ts", "e4l"], ["csp_ts", "e5l"], ["csp_ts", "csp_t"],
+        ["csp_h1", "e6l"], ["csp_h1", "e6r"], ["csp_h1", "e4l"], ["csp_h1", "e5l"],
+        ["csp_h2", "e6l"], ["csp_h2", "e6r"], ["csp_h2", "e4l"], ["csp_h2", "e5l"], ["csp_h2", "csp_h1"],
+        ["csp_q", "e6l"], ["csp_q", "e6r"], ["csp_q", "e4l"], ["csp_q", "e5l"],
+        // the lever's arm: turns about the hinge axis csp_h1 – csp_h2. csp_a sits 2 cm from csp_b along the arm's arc,
+        // so beams to it hold the arm's angle (a node on the same radius as csp_b would only be held loosely and swing)
+        ["csp_b", "csp_h1"], ["csp_b", "csp_h2"],
+        ["csp_a", "csp_h1"], ["csp_a", "csp_h2"], ["csp_a", "csp_b"],
+        ["csp_bs", "csp_h1"], ["csp_bs", "csp_h2"], ["csp_bs", "csp_b"], ["csp_bs", "csp_a"],
+    ],
+    "hydros": [
+        ["id1:", "id2:"],
+        {"beamSpring":300000, "beamDamp":100, "beamDeform":"FLT_MAX", "beamStrength":"FLT_MAX"},
+        // the lever's opening (carbThrottle): lengthens and pushes the arm down, the spring stretches. Fast rates, so
+        // it keeps up with the lever springing back and bouncing off the idle stop.
+        ["csp_q", "csp_b", {"inputSource":"carbThrottle", "inputFactor":1, "inLimit":1, "outLimit":1.2461, "inRate":40, "outRate":40}],
+    ],
+    // moving carburettor parts (engine/Carburettor.dae, each mesh's origin is its pivot). Rotations are about the
+    // car's x axis (e2r → e2l). Prop axes come from the nodes, not the car: x = e2r → e2l, y = e2r → e4r (up),
+    // z = y × x (to the rear). Translations in x and y are in multiples of those node vectors (0.72 m and 0.34 m),
+    // only z is in meters. Throttle lever: opens with the throttle (flip the sign if it turns the wrong way).
+    // Idle screw: electrics.values.carbIdleScrew = its turns from the factory setting (lib/carburettor.lua), so it
+    // turns and moves in (-x, 0.0008 × 0.72 m = 0.58 mm per turn) as it is adjusted in the work mode. offset
+    // -3.125 turns puts it 1.8 mm further out than in the mesh, so its head reaches the carburettor body exactly at the screw's limit (4.5 turns
+    // in, 540 rpm above the factory idle; in the mesh it touched at 1.375 turns). The offset also turns it by
+    // 3.125 turns (1125° = 45° + 3 full turns): baseRotation -45° takes that back, so the slot stays where it was.
+    // Accelerator pump rod: hangs on the pump arm 1 cm below the throttle shaft, which turns 75° at full throttle:
+    // its end moves 9.7 mm forward (z -0.0097 m) and 1 cm × (1 - cos 75°) = 7.4 mm up (y 0.0218 × 0.34 m; x -0.0006
+    // takes back the 0.44 mm that e2r → e4r leans sideways). A prop moves in a straight line, so this only goes
+    // straight to the arc's end point: lib/carburettor.lua (updateLinkage) sets the translation every frame so the rod's origin
+    // follows the arc exactly (the rod keeps pointing forward, it doesn't turn).
+    // Stepped (fast-idle) cam and the choke's operating lever on its shaft: turn with electrics.values.carbChoke
+    // (0 = open / warm … 1 = shut / cold), the automatic choke's flap (lib/carburettor.lua).
+    // Automatic choke cover (the white bimetal housing): turns about the choke's axis (x) with
+    // electrics.values.carbChokeCover, its degrees from the factory mark (+ = richer, ±20°), adjusted in the work mode.
+    // Its retaining ring's three screws: electrics.values.carbChokeScrewTop / Left / Right = turns out from tight
+    // (0 … 4); they turn and move out 0.7 mm per turn (x -0.00097 × 0.72 m, outward is -x on this side). The ring
+    // (func carbChokeRing, always 1) has no motion of its own here: lib/carburettor.lua sets its rotation and
+    // translation every frame so it lifts off its seat at each loose screw up to that screw's head, tilts between
+    // them and drops in its holes (rattling while the engine runs).
+    // Throttle cable: its clamp sits on the lever's lower arm, so the cable is pulled along as the lever opens (it
+    // moves, it doesn't turn): lib/carburettor.lua (updateLinkage) sets its translation every frame like the pump
+    // rod's; the jbeam's goes straight to the arc's end (2.6 cm forward).
+    // A part's highlight shell (…_highlight) is a prop with the same row, so it moves exactly with the part.
+    "props": [
+        ["func",          "mesh",                           "idRef:", "idX:", "idY:", "baseRotation",         "rotation",                "translation",                "min",  "max", "offset", "multiplier"],
+        ["carbThrottle",  "carb_throttle_lever",           "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":-75, "y":0, "z":0}, {"x":0, "y":0, "z":0},        0,      1,     0,        1],
+        ["carbThrottle",  "carb_throttle_lever_highlight", "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":-75, "y":0, "z":0}, {"x":0, "y":0, "z":0},        0,      1,     0,        1],
+        ["carbIdleScrew", "carb_idle_screw",               "e2r",    "e2l",  "e4r",  {"x":-45, "y":0, "z":0}, {"x":-360, "y":0, "z":0}, {"x":-0.0008, "y":0, "z":0}, -3.75,  4.5,   -3.125,   1],
+        ["carbIdleScrew", "carb_idle_screw_highlight",     "e2r",    "e2l",  "e4r",  {"x":-45, "y":0, "z":0}, {"x":-360, "y":0, "z":0}, {"x":-0.0008, "y":0, "z":0}, -3.75,  4.5,   -3.125,   1],
+        ["carbThrottle",  "carb_accelerator_rod",          "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":-0.0006, "y":0.0218, "z":-0.0097}, 0,      1,     0,        1],
+        ["carbThrottle",  "carb_throttle_cable",           "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":-0.0264},  0,      1,     0,        1],
+        ["carbChoke",     "carb_stepped_cam",              "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":-40, "y":0, "z":0},  {"x":0, "y":0, "z":0},       0,      1,     0,        1],
+        ["carbChoke",     "carb_operating_lever",          "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":-40, "y":0, "z":0},  {"x":0, "y":0, "z":0},       0,      1,     0,        1],
+        ["carbChokeCover", "carb_choke",                   "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0},    {"x":0, "y":0, "z":0},       -20,    20,    0,        1],
+        ["carbChokeCover", "carb_choke_highlight",         "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0},    {"x":0, "y":0, "z":0},       -20,    20,    0,        1],
+        ["carbChokeRing",  "carb_choke_retaining_ring",    "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0},       0,      1,     0,        1],
+        ["carbChokeScrewTop",   "carb_choke_retaining_ring_screw_top",             "e2r", "e2l", "e4r", {"x":0, "y":0, "z":0}, {"x":-360, "y":0, "z":0}, {"x":-0.00097, "y":0, "z":0}, 0, 4, 0, 1],
+        ["carbChokeScrewTop",   "carb_choke_retaining_ring_screw_top_highlight",   "e2r", "e2l", "e4r", {"x":0, "y":0, "z":0}, {"x":-360, "y":0, "z":0}, {"x":-0.00097, "y":0, "z":0}, 0, 4, 0, 1],
+        ["carbChokeScrewLeft",  "carb_choke_retaining_ring_screw_left",            "e2r", "e2l", "e4r", {"x":0, "y":0, "z":0}, {"x":-360, "y":0, "z":0}, {"x":-0.00097, "y":0, "z":0}, 0, 4, 0, 1],
+        ["carbChokeScrewLeft",  "carb_choke_retaining_ring_screw_left_highlight",  "e2r", "e2l", "e4r", {"x":0, "y":0, "z":0}, {"x":-360, "y":0, "z":0}, {"x":-0.00097, "y":0, "z":0}, 0, 4, 0, 1],
+        ["carbChokeScrewRight", "carb_choke_retaining_ring_screw_right",           "e2r", "e2l", "e4r", {"x":0, "y":0, "z":0}, {"x":-360, "y":0, "z":0}, {"x":-0.00097, "y":0, "z":0}, 0, 4, 0, 1],
+        ["carbChokeScrewRight", "carb_choke_retaining_ring_screw_right_highlight", "e2r", "e2l", "e4r", {"x":0, "y":0, "z":0}, {"x":-360, "y":0, "z":0}, {"x":-0.00097, "y":0, "z":0}, 0, 4, 0, 1],
+    ],
+    // What the player can point at on the carburettor (interactors: format in lua/lib/interactors.lua, behaviour in
+    // lua/common/bug/interact/config.lua). All move with the engine top nodes. Each is its highlight shell in
+    // engine/Carburettor.dae (…_highlight, material bug_highlight): it is picked by the shell's triangles and the
+    // shell is shown while it is pointed at. A shell that is a prop moves with it, and so does the picking.
+    //   engineBayWork   the engine (its shell engine_highlight covers the engine with the carburettor): a click
+    //                   starts the work mode at the engine bay (lib/workmode.lua), only while the engine lid is
+    //                   open far enough (condition workModeAvailable)
+    //   idleScrew       work mode: the idle speed screw, mouse wheel with the screwdriver. The sphere on its outer
+    //                   end makes it easier to hit.
+    //   throttleLever   work mode: the throttle lever's upper arm, dragged open by hand. The sphere sits on the
+    //                   middle of the arm (closed).
+    //   chokeScrew…     work mode: the three screws of the choke cover's retaining ring, mouse wheel with the
+    //                   screwdriver (down = loosen)
+    //   chokeCover      work mode: the automatic choke's cover, mouse wheel by hand (up = richer); it only turns
+    //                   while all three screws are loose
+    //   springArm       work mode: the bracket the return spring hangs on, and its screw (nothing to do yet)
+    "interactors": [
+        ["id", "nodeRef:", "nodeX:", "nodeY:", "mesh"],
+        {"dae":"Carburettor.dae"},
+        ["engineBayWork",    "e6l","e6r","e5l", "engine_highlight",                                {"action":"engineBayWork", "when":"workModeAvailable"}],
+        ["idleScrew",        "e6l","e6r","e5l", "carb_idle_screw_highlight",                       {"mode":"workmode", "pick":{"x":0.063, "y":1.589, "z":0.640, "r":0.015}, "tool":"screwdriver", "label":"idleScrew"}],
+        ["throttleLever",    "e6l","e6r","e5l", "carb_throttle_lever_highlight",                   {"mode":"workmode", "pick":{"x":0.0672, "y":1.6510, "z":0.7098, "r":0.016}, "tool":"hand", "label":"throttleLever"}],
+        ["chokeScrewTop",    "e6l","e6r","e5l", "carb_choke_retaining_ring_screw_top_highlight",   {"mode":"workmode", "tool":"screwdriver", "label":"chokeCoverScrew"}],
+        ["chokeScrewLeft",   "e6l","e6r","e5l", "carb_choke_retaining_ring_screw_left_highlight",  {"mode":"workmode", "tool":"screwdriver", "label":"chokeCoverScrew"}],
+        ["chokeScrewRight",  "e6l","e6r","e5l", "carb_choke_retaining_ring_screw_right_highlight", {"mode":"workmode", "tool":"screwdriver", "label":"chokeCoverScrew"}],
+        ["chokeCover",       "e6l","e6r","e5l", "carb_choke_highlight",                            {"mode":"workmode", "tool":"hand", "label":"chokeCover"}],
+        ["springArm",        "e6l","e6r","e5l", "carb_spring_arm_highlight",                       {"mode":"workmode", "label":"springArm"}],
+        ["springArmScrew",   "e6l","e6r","e5l", "carb_spring_arm_screw_highlight",                 {"mode":"workmode", "label":"springArmScrew"}],
+    ],
+    "actionsEnabled": [
+        ["id"],
+        ["engineBayWork"],
+    ],
 },
 "bug_intake_dual": {
     "information":{
@@ -1190,7 +1333,6 @@
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
 
-        // Dual carburetor
         ["bug_engine_dualcarburetor",               ["bug_engine"]],
         ["bug_engine_dualcarburetor_cables",        ["bug_engine"]],
         ["bug_engine_dualcarburetor_connector",     ["bug_engine"]],

@@ -1,0 +1,6 @@
+{
+// Bug mod: the car's interactors (GE extension bug_interact). The action map BugInteract is only pushed while one of
+// them is hovered or held. The game may read this file before the mod is mounted: bug_interact then makes it read
+// the action files again (ensureInputActions). Bound in settings/inputmaps/mouse_bugInteract.json.
+"bugInteractUse" :{"cat":"gameplay", "order": 139, "ctx": "tlua", "onChange":"if bug_interact then bug_interact.onUse(VALUE) end", "actionMap": "BugInteract", "title": "ui.bug.interact.action.use.title", "desc": "ui.bug.interact.action.use.desc", "simplemenu":false }
+}

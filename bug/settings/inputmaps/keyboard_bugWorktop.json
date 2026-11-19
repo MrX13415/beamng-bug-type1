@@ -1,0 +1,16 @@
+{"devicetype":"keyboard", "version":1, "bindings":[
+  // Bug mod work mode: leave it (action map BugWorktop, only active in the work mode)
+  {"control":"escape", "action":"bugWorktopExit"},
+  // reload the car and stay in the work mode (the game's own Ctrl+R, reload_vehicle, is blocked in the work mode)
+  {"control":"ctrl r", "action":"bugWorktopReload"},
+  // numpad camera: 4 / 6 / 8 / 2 orbit, 9 / 3 up / down, + / - zoom, 5 back to the start view
+  {"control":"numpad4", "action":"bugWorktopCamLeft"},
+  {"control":"numpad6", "action":"bugWorktopCamRight"},
+  {"control":"numpad8", "action":"bugWorktopCamUp"},
+  {"control":"numpad2", "action":"bugWorktopCamDown"},
+  {"control":"numpad9", "action":"bugWorktopCamRaise"},
+  {"control":"numpad3", "action":"bugWorktopCamLower"},
+  {"control":"numpadadd", "action":"bugWorktopZoomIn"},
+  {"control":"numpadminus", "action":"bugWorktopZoomOut"},
+  {"control":"numpad5", "action":"bugWorktopCamCenter"}
+]}

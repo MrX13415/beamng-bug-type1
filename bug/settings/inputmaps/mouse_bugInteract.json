@@ -1,0 +1,4 @@
+{"devicetype":"mouse", "version":1, "bindings":[
+  // Bug mod: left mouse button on a hovered part of the car uses it (action map BugInteract, only active while one is hovered)
+  {"control":"button0", "action":"bugInteractUse"}
+]}

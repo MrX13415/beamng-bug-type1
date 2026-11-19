@@ -504,6 +504,22 @@ local function toggle(id)
   end
 end
 
+-- open automatically, if it isn't open already
+local function open(id)
+  local d = getLid(id)
+  if not d or isLatched(d) or d.active then return end
+  local theta = geom(d)
+  if theta and theta < d.autoOpenRad then startAuto(d, "open") end
+end
+
+-- open automatically, also when it is locked (the handle turns and releases the latch first). Used by
+-- lib/workmode.lua when the car comes back into the work mode after a reload.
+local function openAuto(id)
+  local d = getLid(id)
+  if not d or d.active or isBroken(d) then return end
+  if isLatched(d) then toggle(id) else open(id) end
+end
+
 -- called every frame by the GE extension with the cursor ray while the handle is held
 local function setRay(id, px, py, pz, dx, dy, dz)
   local d = lids[id]
@@ -666,11 +682,22 @@ end
 
 local function isLid(id) return LIDS[id] ~= nil end
 
+-- opening angle in degrees (0 = shut), nil if the lid isn't installed (used by lib/workmode.lua)
+local function openAngle(id)
+  local d = getLid(id)
+  if not d then return nil end
+  local theta = geom(d)
+  return theta and math.deg(theta) or nil
+end
+
 M.press     = press
 M.setRay    = setRay
 M.toggle    = toggle
+M.open      = open
+M.openAuto  = openAuto
 M.dragLost  = dragLost
 M.isLid     = isLid
+M.openAngle = openAngle
 M.updateGFX = updateGFX
 M.onReset   = onReset
 

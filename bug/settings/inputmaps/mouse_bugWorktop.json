@@ -1,0 +1,10 @@
+{"devicetype":"mouse", "version":1, "bindings":[
+  // Bug mod work mode: mouse wheel over a screw turns it (action map BugWorktop, only active in the work mode)
+  {"control":"zaxis", "action":"bugWorktopWheel"},
+  // left mouse button held on the throttle lever: drag it open
+  {"control":"button0", "action":"bugWorktopGrab"},
+  // right mouse button held: orbit around the engine bay
+  {"control":"button1", "action":"bugWorktopOrbit"},
+  // middle mouse button held together with the right one: move the camera up / down
+  {"control":"button2", "action":"bugWorktopPan"}
+]}

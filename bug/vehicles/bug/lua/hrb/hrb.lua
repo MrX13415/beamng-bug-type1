@@ -6,18 +6,26 @@ local M = {}
 
 local misc = require("vehicles/bug/lua/misc")
 local storage = require("vehicles/bug/lua/lib/storage")
+local carcondition = require("vehicles/bug/lua/carcondition")
+local personalityModel = require("bug/condition/subsystems/personality")
 
 local horn_node = nil
 
-local playerTrustDefault = 0
-local playerTrustMax = 500
-local playerTrustMin = -150
+-- The trust in the player is a condition of the car: it lives in the car condition model (subsystem "personality",
+-- saved with the car's record; only cars with the personality part have it). This script reads it, judges the
+-- driving, and writes it back; it keeps no copy.
+local playerTrustDefault = personalityModel.TRUST_DEFAULT
+local playerTrustMax = personalityModel.TRUST_MAX
+local playerTrustMin = personalityModel.TRUST_MIN
 
 local enabled = false
 local herbieEngine = false
 local power = nil
 
-local playerTrust = playerTrustDefault
+-- the car's personality slice; a car without the personality part gets a throwaway default (not saved anywhere)
+local function personalityState()
+  return carcondition.getModel():state("personality") or { trust = playerTrustDefault }
+end
 local trustDirection = 0
 local herbieMood = ""
 local emojiTimer = 0
@@ -102,10 +110,10 @@ end
 local function getTrustEmoji(s)
 	s = s or 0
 
-	if playerTrust < -100 then return "😡" end
-	if playerTrust < -40 then return "😠" end
+	if personalityState().trust < -100 then return "😡" end
+	if personalityState().trust < -40 then return "😠" end
 
-	if playerTrust < playerTrustDefault then
+	if personalityState().trust < playerTrustDefault then
 		if s == -3 then return "😵" end
 		if s == -2 then return "😤" end
 		if s == -1 then return "😑" end
@@ -120,16 +128,16 @@ local function getTrustEmoji(s)
 	if s == 1 then return "😁" end
 	if s == 2 then return "🤩" end
 
-	if playerTrust >= 400 then return "🥰" end
-	if playerTrust >= 330 then return "😊" end
-	if playerTrust >= 100 then return "😄" end
+	if personalityState().trust >= 400 then return "🥰" end
+	if personalityState().trust >= 330 then return "😊" end
+	if personalityState().trust >= 100 then return "😄" end
 	return "🙂"
 end
 
 local function hasPower() return electrics.values.ignitionLevel > 0 end
 local function isEnabled() return enabled end
 local function isHerbieEngine() return herbieEngine end
-local function getPlayerTrust() return playerTrust end
+local function getPlayerTrust() return personalityState().trust end
 local function IsExcited() return getPlayerTrust() >= 330 end
 local function isAngry() return getPlayerTrust() <= -20 end
 local function state() return vState end
@@ -198,14 +206,9 @@ local function getBrakeEvents()
 	end
 end
 
-local function loadCurrentTrust()
-	local herbie = storage.data().herbie or {}
-	playerTrust = herbie.trust or playerTrustDefault
-end
+-- a change of trust is saved soon (the store saves the whole record)
 local function writeCurrentTrust()
-	local d = storage.data()
-	d.herbie = {}
-	d.herbie.trust = playerTrust
+	storage.markDirty()
 end
 
 
@@ -243,14 +246,14 @@ local function createNewTorqueCurve()
 	
 	local torqueAmplifier = 0.0
 	
-	if playerTrust >= playerTrustMax then
+	if personalityState().trust >= playerTrustMax then
 		torqueAmplifier = 1.0
 		message("100% Trust (max)")
 		
 		newTorqueCurve = maxTorqueGraph
 	
-	elseif playerTrustMax > playerTrust and playerTrust > 0 then
-		torqueAmplifier = playerTrust / playerTrustMax
+	elseif playerTrustMax > personalityState().trust and personalityState().trust > 0 then
+		torqueAmplifier = personalityState().trust / playerTrustMax
 		message(tostring(math.floor(torqueAmplifier * 100)) .. "% Trust")
 		
 		for i,_ in pairs(defaultTorqueGraph) do
@@ -258,8 +261,8 @@ local function createNewTorqueCurve()
 		end
 		--dumpToFile("vehicles/bug/curves_cache/" .. tostring(torqueAmplifier * 100) .. ".json", newTorqueCurve)
 		
-	elseif playerTrustMin < playerTrust and playerTrust < 0 then
-		torqueAmplifier = playerTrust / playerTrustMin
+	elseif playerTrustMin < personalityState().trust and personalityState().trust < 0 then
+		torqueAmplifier = personalityState().trust / playerTrustMin
 		message(tostring(math.floor(torqueAmplifier * -100)) .. "% Trust")
 		
 		for i,_ in pairs(defaultTorqueGraph) do
@@ -267,14 +270,14 @@ local function createNewTorqueCurve()
 		end
 		--dumpToFile("vehicles/bug/curves_cache/-" .. tostring(torqueAmplifier * 100) .. ".json", newTorqueCurve)
 		
-	elseif playerTrust <= playerTrustMin then
+	elseif personalityState().trust <= playerTrustMin then
 		torqueAmplifier = -1.0
 		message("-100% Trust (min)")
 		
 		newTorqueCurve = minTorqueGraph
 		
-		-- limit playerTrust
-		playerTrust = playerTrustMin
+		-- limit personalityState().trust
+		personalityState().trust = playerTrustMin
 		
 	else
 		message("0% Trust (default)")
@@ -325,12 +328,12 @@ local function setThermals()
 	local temperature_lowpoint = 50
 	local temperature_highpoint = 150
 	
-	if playerTrust > 0 then
-		local substractor = (temperature_midpoint - temperature_lowpoint) * (playerTrust / playerTrustMax)
+	if personalityState().trust > 0 then
+		local substractor = (temperature_midpoint - temperature_lowpoint) * (personalityState().trust / playerTrustMax)
 		engine.thermals.coolantTemperature = temperature_midpoint - substractor
 		engine.thermals.oilTemperature = temperature_midpoint - substractor
 	else
-		local additor = (temperature_highpoint - temperature_midpoint) * (playerTrust / playerTrustMin)
+		local additor = (temperature_highpoint - temperature_midpoint) * (personalityState().trust / playerTrustMin)
 		engine.thermals.coolantTemperature = temperature_midpoint + additor
 		engine.thermals.oilTemperature = temperature_midpoint + additor
 	end
@@ -338,17 +341,17 @@ end
 
 local function eventMessage(name, trustDiff, severity, minor)
 	-- Clamp min/max
-	playerTrust = math.min(math.max(playerTrust, playerTrustMin), playerTrustMax)
+	personalityState().trust = math.min(math.max(personalityState().trust, playerTrustMin), playerTrustMax)
 	minor = minor or false
 
 	local lastDirection = trustDirection
 	local arrow = " "
 	local emoji = getTrustEmoji()
 	
-	local m = "Event: "..tostring(name).." | Trust: "..tostring(playerTrust)
-	if playerTrust >= playerTrustMax then 
+	local m = "Event: "..tostring(name).." | Trust: "..tostring(personalityState().trust)
+	if personalityState().trust >= playerTrustMax then 
 		m = m .. " MAX"
-	elseif playerTrust <= playerTrustMin then 
+	elseif personalityState().trust <= playerTrustMin then 
 		m = m .. " MIN"
 	else
 		if trustDiff > 0 then 
@@ -386,7 +389,7 @@ local function eventMessage(name, trustDiff, severity, minor)
 end
 
 local function playerBehaviourValuation()
-	local lastTrust = playerTrust
+	local lastTrust = personalityState().trust
 
 	-- sensor for time without crashing (while driving + steering) / intensity of crash
 	getBrakeEvents()
@@ -395,17 +398,17 @@ local function playerBehaviourValuation()
 			noCrashCounter = noCrashCounter + 1
 			hardCrashCounter = hardCrashCounter + 1
 			if noCrashCounter >= noCrashCheckpoint then 
-				if playerTrust < 0 then
-					playerTrust = playerTrust + 4
+				if personalityState().trust < 0 then
+					personalityState().trust = personalityState().trust + 4
 					noCrashCounter = 0
 					setNewTorqueCurve()
 				else
-					playerTrust = playerTrust + 2
+					personalityState().trust = personalityState().trust + 2
 					noCrashCounter = 0
 					setNewTorqueCurve()
 				end
 
-				eventMessage("No crash", playerTrust-lastTrust, 1, true)
+				eventMessage("No crash", personalityState().trust-lastTrust, 1, true)
 			end
 		end
 		
@@ -416,13 +419,13 @@ local function playerBehaviourValuation()
 		
 		noCrashCounter = 0
 		hardCrashCounter = 0
-		if playerTrust > 5 then
-			playerTrust = round(playerTrust * 0.1) - 30
+		if personalityState().trust > 5 then
+			personalityState().trust = round(personalityState().trust * 0.1) - 30
 		else
-			playerTrust = round(playerTrust - curBrokenBeams * 2)
+			personalityState().trust = round(personalityState().trust - curBrokenBeams * 2)
 		end
 		
-		eventMessage("Hard crash", playerTrust-lastTrust, -3)
+		eventMessage("Hard crash", personalityState().trust-lastTrust, -3)
 		setNewTorqueCurve()
 
 	elseif curBrokenBeams < 18 then
@@ -430,21 +433,21 @@ local function playerBehaviourValuation()
 		if curBrokenBeams > 5 then
 			curBrokenBeams = round(curBrokenBeams * 1)
 		end
-		playerTrust = round(playerTrust - curBrokenBeams)
+		personalityState().trust = round(personalityState().trust - curBrokenBeams)
 
-		eventMessage("Small crash", playerTrust-lastTrust, -1)
+		eventMessage("Small crash", personalityState().trust-lastTrust, -1)
 		setNewTorqueCurve()		
 
 	else
 		if hardCrashCounter > 4 then
-			playHornSound("SFX_bug_sadhorn2",50, 1 - 0.0005 * math.abs((playerTrust - playerTrustMax)))
+			playHornSound("SFX_bug_sadhorn2",50, 1 - 0.0005 * math.abs((personalityState().trust - playerTrustMax)))
 		end
 		
 		hardCrashCounter = 0
 		noCrashCounter = 0
-		playerTrust = round(playerTrust - curBrokenBeams * ((curBrokenBeams*4)/18))
+		personalityState().trust = round(personalityState().trust - curBrokenBeams * ((curBrokenBeams*4)/18))
 		
-		eventMessage("Medium crash", playerTrust-lastTrust, -2)
+		eventMessage("Medium crash", personalityState().trust-lastTrust, -2)
 		setNewTorqueCurve()
 
 	end
@@ -457,9 +460,9 @@ local function playerBehaviourValuation()
 				wheelieAwardCounter = wheelieAwardCounter + 1
 				-- only 4 awards possible
 				if wheelieAwardCounter < 5 then
-					playerTrust = playerTrust + 1
+					personalityState().trust = personalityState().trust + 1
 					wheelieCounter = 0
-					eventMessage("Wheelie", playerTrust-lastTrust, 1)
+					eventMessage("Wheelie", personalityState().trust-lastTrust, 1)
 				end
 				
 			end
@@ -475,10 +478,10 @@ local function playerBehaviourValuation()
 		if wd.lastSlip > 3.0 then
 			driftingCounter = driftingCounter + 1
 			if driftingCounter >= driftingCheckpoint then
-				playerTrust = playerTrust + 1
+				personalityState().trust = personalityState().trust + 1
 				driftingCounter = 0
 				
-				eventMessage("Drift", playerTrust-lastTrust, 1)
+				eventMessage("Drift", personalityState().trust-lastTrust, 1)
 				setNewTorqueCurve()
 			end
 		else
@@ -516,15 +519,15 @@ local function playerBehaviourValuation()
 				if jumpingAwardCounter < 16 then
 					if jumpingAwardCounter == 1 and noCrashCounter > 7 and hardCrashCounter > 30 then
 						jumpingAwardSum = jumpingAwardSum + 7
-						playerTrust = playerTrust + 7
+						personalityState().trust = personalityState().trust + 7
 					else
 					jumpingAwardSum = jumpingAwardSum + jumpingAwardCounter
-					playerTrust = playerTrust + jumpingAwardCounter
+					personalityState().trust = personalityState().trust + jumpingAwardCounter
 					end
 					
 					jumpingCounter = 0
 					
-					eventMessage("Jump", playerTrust-lastTrust, 2)
+					eventMessage("Jump", personalityState().trust-lastTrust, 2)
 					setNewTorqueCurve()
 				end
 			end
@@ -539,12 +542,12 @@ end
 
 local function checkIfJumpCheat(jumpingAwSum,jumpingAwCounter)
 	if jumpingAwCounter > 0 then
-		local lastTrust = playerTrust
+		local lastTrust = personalityState().trust
 
 		local jumpCheatCorrection = round(jumpingAwSum - (jumpingAwSum / jumpingAwCounter)) + 4
-		playerTrust = playerTrust - jumpCheatCorrection
+		personalityState().trust = personalityState().trust - jumpCheatCorrection
 
-		eventMessage("Incomplete Jump", playerTrust-lastTrust, 0)
+		eventMessage("Incomplete Jump", personalityState().trust-lastTrust, 0)
 		setNewTorqueCurve()
 	end
 end
@@ -601,7 +604,6 @@ local function onReset()
 	-- Is herbie?
 	if not enabled then	return end
 
-	loadCurrentTrust()
 	getMaxMinDefaultTorqueCurves()
 	setNewTorqueCurve()
 	setThermals()
@@ -637,7 +639,7 @@ end
 
 local function setTrust(value)
 	value = math.min(math.max(value or playerTrustDefault, playerTrustMin), playerTrustMax)
-	playerTrust = value
+	personalityState().trust = value
 	writeCurrentTrust()
 	onReset()
 end

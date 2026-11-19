@@ -50,12 +50,15 @@ function OnTranslationCallback(key, result)
   translationCache[key] = result
 end
 local function loadTranslationCache(key)
+  -- the answer goes back to this car by its id: the player's vehicle may be another one (on foot it is the walking
+  -- character, whose Lua has no OnTranslationCallback)
   for key, _ in pairs(translationCache) do
     obj:queueGameEngineLua(string.format([[
       local key = "%s"
       local result = core_locales.translate(key)
-      be:getPlayerVehicle(0):queueLuaCommand('OnTranslationCallback("'..key..'","'..tostring(result)..'")')
-    ]], key))
+      local veh = getObjectByID(%d)
+      if veh then veh:queueLuaCommand('OnTranslationCallback("'..key..'","'..tostring(result)..'")') end
+    ]], key, obj:getId()))
   end
 end
 
@@ -223,6 +226,9 @@ end
 -- version that is still loaded gets reloaded.
 local GE_VERSIONS = {
   bug_doorDrag = 8,
+  bug_interact = 4,
+  bug_service  = 3,
+  bug_worktop  = 17,
 }
 
 -- Load the GE extension `ext` (reload it if an older version is loaded) and run the GE Lua statement `cmd` there.

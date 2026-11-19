@@ -412,6 +412,8 @@
     },
     "slotType" : "bug_intake_D",
     "mainEngine":{
+        // the engine's throttle is the carburettor's lever (lib/carburettor.lua update), not the pedal directly
+        "electricsThrottleName":"carbThrottle",
         "revLimiterRPM":3300,
         "revLimiterType":"soft",
         "revLimiterSmoothOvershootRPM":500,
@@ -424,11 +426,73 @@
         // Single carburetor
         ["bug_engine_air_filter",             ["bug_engine"]],
         ["bug_engine_cables",                 ["bug_engine"]],
-        ["bug_engine_carburetor",             ["bug_engine"]],
-        ["bug_engine_carburetor_spring",      ["bug_engine"]],
+        ["carb_body",                    ["bug_engine"]],
+        ["carb_plug_main_jet",           ["bug_engine"]],
+        ["carb_spring_arm",              ["bug_engine"]],
+        ["carb_spring_arm_screw",        ["bug_engine"]],
+        ["carb_throttle_spring",         ["bug_carb_spring"]],
         ["bug_engine_diesle_intake_manifold", ["bug_engine"]],
         ["bug_engine_warm_air_tube",          ["bug_engine"]],
         ["bug_engine_oil_tube",               ["bug_engine"]],
+    ],
+    // carburettor return spring, see bug_intake in bug.engine.parts.jbeam
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"collision":false},
+        {"selfCollision":false},
+        {"nodeWeight":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"group":"bug_carb_spring"},
+        ["csp_t",  0.0835, 1.650, 0.737],
+        ["csp_ts", 0.0435, 1.650, 0.737],
+        ["csp_b",  0.0835, 1.650, 0.640],
+        ["csp_bs", 0.0435, 1.650, 0.640],
+        {"group":""},
+        ["csp_a",  0.0835, 1.6530, 0.6598],
+        ["csp_h1", 0.040,  1.6118, 0.6457],
+        ["csp_h2", 0.120,  1.6118, 0.6457],
+        ["csp_q",  0.0835, 1.790,  0.770],
+        {"collision":true},
+        {"selfCollision":true},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        {"beamType":"|NORMAL", "beamSpring":300000, "beamDamp":100, "beamDeform":"FLT_MAX", "beamStrength":"FLT_MAX"},
+        {"deformLimitExpansion":""},
+        // fixed nodes to the engine top and the engine block
+        ["csp_t", "e6l"], ["csp_t", "e6r"], ["csp_t", "e4l"], ["csp_t", "e5l"],
+        ["csp_ts", "e6l"], ["csp_ts", "e6r"], ["csp_ts", "e4l"], ["csp_ts", "e5l"], ["csp_ts", "csp_t"],
+        ["csp_h1", "e6l"], ["csp_h1", "e6r"], ["csp_h1", "e4l"], ["csp_h1", "e5l"],
+        ["csp_h2", "e6l"], ["csp_h2", "e6r"], ["csp_h2", "e4l"], ["csp_h2", "e5l"], ["csp_h2", "csp_h1"],
+        ["csp_q", "e6l"], ["csp_q", "e6r"], ["csp_q", "e4l"], ["csp_q", "e5l"],
+        // the lever's arm: turns about the hinge axis csp_h1 – csp_h2. csp_a sits 2 cm from csp_b along the arm's arc,
+        // so beams to it hold the arm's angle (a node on the same radius as csp_b would only be held loosely and swing)
+        ["csp_b", "csp_h1"], ["csp_b", "csp_h2"],
+        ["csp_a", "csp_h1"], ["csp_a", "csp_h2"], ["csp_a", "csp_b"],
+        ["csp_bs", "csp_h1"], ["csp_bs", "csp_h2"], ["csp_bs", "csp_b"], ["csp_bs", "csp_a"],
+    ],
+    "hydros": [
+        ["id1:", "id2:"],
+        {"beamSpring":300000, "beamDamp":100, "beamDeform":"FLT_MAX", "beamStrength":"FLT_MAX"},
+        // the lever's opening (carbThrottle): lengthens and pushes the arm down, the spring stretches. Fast rates, so
+        // it keeps up with the lever springing back and bouncing off the idle stop.
+        ["csp_q", "csp_b", {"inputSource":"carbThrottle", "inputFactor":1, "inLimit":1, "outLimit":1.2461, "inRate":40, "outRate":40}],
+    ],
+    // moving carburettor parts, see bug_intake in bug.engine.parts.jbeam
+    "props": [
+        ["func",          "mesh",                           "idRef:", "idX:", "idY:", "baseRotation",         "rotation",                "translation",                "min",  "max", "offset", "multiplier"],
+        ["carbThrottle",  "carb_throttle_lever", "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":-75, "y":0, "z":0}, {"x":0, "y":0, "z":0},        0,      1,     0,        1],
+        ["carbIdleScrew", "carb_idle_screw",     "e2r",    "e2l",  "e4r",  {"x":-45, "y":0, "z":0}, {"x":-360, "y":0, "z":0}, {"x":-0.0008, "y":0, "z":0}, -3.75,  4.5,   -3.125,   1],
+        ["carbThrottle",  "carb_accelerator_rod",  "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":-0.0006, "y":0.0218, "z":-0.0097}, 0,      1,     0,        1],
+        ["carbThrottle",  "carb_throttle_cable",   "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},   {"x":0, "y":0, "z":-0.0264},  0,      1,     0,        1],
+        ["carbChoke",     "carb_stepped_cam",      "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":-40, "y":0, "z":0},  {"x":0, "y":0, "z":0},       0,      1,     0,        1],
+        ["carbChoke",     "carb_operating_lever",  "e2r",    "e2l",  "e4r",  {"x":0, "y":0, "z":0}, {"x":-40, "y":0, "z":0},  {"x":0, "y":0, "z":0},       0,      1,     0,        1],
+        // the choke cover, its retaining ring and screws are props now (their meshes have their pivots as origins)
+        ["carbChokeCover", "carb_choke",                "e2r", "e2l", "e4r", {"x":0, "y":0, "z":0}, {"x":1, "y":0, "z":0},    {"x":0, "y":0, "z":0},        -20, 20, 0, 1],
+        ["carbChokeRing",  "carb_choke_retaining_ring", "e2r", "e2l", "e4r", {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},    {"x":0, "y":0, "z":0},        0,   1,  0, 1],
+        ["carbChokeScrewTop",   "carb_choke_retaining_ring_screw_top",   "e2r", "e2l", "e4r", {"x":0, "y":0, "z":0}, {"x":-360, "y":0, "z":0}, {"x":-0.00097, "y":0, "z":0}, 0, 4, 0, 1],
+        ["carbChokeScrewLeft",  "carb_choke_retaining_ring_screw_left",  "e2r", "e2l", "e4r", {"x":0, "y":0, "z":0}, {"x":-360, "y":0, "z":0}, {"x":-0.00097, "y":0, "z":0}, 0, 4, 0, 1],
+        ["carbChokeScrewRight", "carb_choke_retaining_ring_screw_right", "e2r", "e2l", "e4r", {"x":0, "y":0, "z":0}, {"x":-360, "y":0, "z":0}, {"x":-0.00097, "y":0, "z":0}, 0, 4, 0, 1],
     ]
 },
 }

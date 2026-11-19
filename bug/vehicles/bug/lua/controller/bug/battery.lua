@@ -3,12 +3,21 @@
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
 -- Battery controller to simulate a simple power system with voltage drop and self discharge.
--- v1.0
--- by MrX13415
+-- v1.1 (v1.0 by MrX13415)
+--
+-- The charge is a condition of the car: it lives in the battery's slice of the car condition model
+-- (bug/condition/subsystems/battery, slice.charge = stored charge / capacity), so it is saved with the car, drained
+-- by the time the car stood, and kept by a vehicle reset (R). This controller holds no charge of its own: it reads
+-- and writes the slice. The jbeam "charge" is only the start charge of a car that has no record yet.
+-- It also tells the model what the car would draw if it was left as it is now (standbyLoadW), so the standing time
+-- drains a car whose lights or ignition were left on.
 
 local M = {}
 
 local power = require("vehicles/bug/lua/power")
+local batteryModel = require("bug/condition/subsystems/battery")
+local carcondition = require("vehicles/bug/lua/carcondition")
+local storage = require("vehicles/bug/lua/lib/storage")
 
 local toUnit = power.toUnit
 
@@ -20,7 +29,7 @@ local voltageRange = 10.5       -- %
 local voltageNominal = 29.76    -- %
 
 local capacity = 0              -- mAh
-local charge = 0                -- mAh
+local slice = { charge = 1 }    -- the battery's slice in the car condition model (set in init)
 local selfDischarge = 0         -- mAh
 
 local resistanceMin = 0.005     -- Ohm
@@ -46,34 +55,32 @@ local function addNotify(notifyFunc)
   table.insert(notifyCallbacks, notifyFunc)
 end
 
-local function ratioFrom(x)
-  return math.log10(x * 0.9 + 0.1) + 1
-end
-local function ratioTo(y)
-  return (math.pow(10, y - 1) - 0.1) / 0.9
-end
+local ratioFrom = batteryModel.chargeFromShown
+local ratioTo = batteryModel.shownFromCharge
+
+local function chargeMah() return slice.charge * capacity end
 
 local function getSystemVoltage() return systemVoltage end
 local function getVoltage() return voltage end
 
 local function getCapcity() return capacity end
-local function getCharge() return charge end
+local function getCharge() return chargeMah() end
 local function getRatio()
   if capacity < 1 or broken then return 0 end
-  return charge / capacity
+  return slice.charge
 end
 
 local function getChargeRatio()
   return ratioTo(getRatio())
 end
 local function setChargeRatio(ratio)
-  ratio = clamp(ratio, 0, 1)
-  charge = capacity * ratioFrom(ratio)
+  batteryModel.setCharge(slice, ratioFrom(clamp(ratio, 0, 1)))
+  storage.markDirty()
 end
 
 local function isBroken() return broken end
 local function isEmpty() return getRatio() < 0.00001 end
-local function isFull() return charge >= capacity end
+local function isFull() return slice.charge >= 1 end
 local function isCharging() return not isFull() and current > 0 end
 
 local function getCurrent() return current end
@@ -112,9 +119,10 @@ end
 
 local function getEstimatedTime()
   if isCharging() then
-    return (capacity - charge) / math.abs(current) * 60
+    return (capacity - chargeMah()) / math.abs(current) * 60
   end
 
+  local charge = chargeMah()
   local estimateP = C * math.pow((charge)/(math.abs(current) * C), k) * 60
   local estimate = charge / math.abs(chargingRate) * 60
   return math.min(estimateP, estimate)
@@ -202,8 +210,8 @@ local function onUpdateGFX(dt)
     rate = math.min(rate, -selfDischarge * time)
   end
 
-  -- Update battery capacity
-  charge = clamp(charge + rate, 0, capacity)
+  -- Update battery charge (in the car condition model)
+  if capacity > 0 then batteryModel.setCharge(slice, (chargeMah() + rate) / capacity) end
   -- Update charging rate
   chargingRate = rate / time
 
@@ -211,6 +219,15 @@ local function onUpdateGFX(dt)
 
   electrics.values.ampere = needCurrent
   electrics.values.voltage = voltage
+
+  -- what stays on if the car is left now: nothing while the engine runs (the driver is still there), the starter never
+  local engineRunning = (electrics.values.rpm or 0) > 300 and (powers.starter or 0) <= 0
+  local standby = engineRunning and 0 or math.max(0, powerLoad - (powers.starter or 0))
+  if batteryModel.setStandbyLoad(slice, standby, dt) then
+    storage.touch()
+    log("D", "bug.battery", string.format("load if left now: %.0f W (all loads %.0f W, %s)", slice.standbyLoadW, powerLoad,
+      engineRunning and "engine running" or "engine off"))
+  end
 end
 
 local function onInit(jbeamData)
@@ -226,7 +243,8 @@ local function onInit(jbeamData)
   systemVoltage = jbeamData.voltage or systemVoltage
   
   capacity = (jbeamData.capacity or 0) * 1000  -- A to mA
-  charge = capacity * ratioFrom(jbeamData.charge or 1)
+  -- the car's charge (a new car starts with jbeamData.charge, see carcondition.lua readSettings)
+  slice = carcondition.getModel():state("battery") or { charge = ratioFrom(jbeamData.charge or 1) }
   selfDischarge = (jbeamData.selfDischarge or 0) * 1000  -- Ah to mAh
 
   resistanceMin = jbeamData.resistanceMin or resistanceMin
@@ -235,7 +253,7 @@ local function onInit(jbeamData)
   C = jbeamData.C or C
   k = jbeamData.k or k
 
-  log("D", "", "[Bug:Battery] "..toUnit(systemVoltage, "V").." "..tostring(getChargeRatio()*100).."% "..tostring(charge).."/"..tostring(capacity).."mAh (C"..tostring(C)..", "..tostring(k)..")")
+  log("D", "", "[Bug:Battery] "..toUnit(systemVoltage, "V").." "..tostring(getChargeRatio()*100).."% "..tostring(chargeMah()).."/"..tostring(capacity).."mAh (C"..tostring(C)..", "..tostring(k)..")")
 end
 
 M.init                = onInit

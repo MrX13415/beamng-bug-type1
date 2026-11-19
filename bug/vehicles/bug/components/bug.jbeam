@@ -33,8 +33,22 @@
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$brakestrength", "range", "", "Chassis", 1, 0.6, 1.0, "Brake Force Multiplier", "Scales the overall brake torque for this setup", {"minDis":60, "maxDis":100}],
         ["$ffbstrength", "range", "", "Chassis", 1, 0.5, 1.5, "Setup-Specific Force Feedback Multiplier", "Scales the force feedback strength for THIS SETUP ONLY", {"minDis":50, "maxDis":150}],
-        ["$headlightPitchComp", "range", "degree", "Headlights", 0, -3, 3, "Setup Specific Headlight Pitch Compensation", "Adjusts the headlight pitch  for this setup", {"minDis":-3, "maxDis":3}]
+        ["$headlightPitchComp", "range", "degree", "Headlights", 0, -3, 3, "Setup Specific Headlight Pitch Compensation", "Adjusts the headlight pitch  for this setup", {"minDis":-3, "maxDis":3}],
+        // Service concept: engine-model settings and start state in the Tuning category "Service".
+        // Read by lua/carcondition.lua through the bugEngineModel section below (set in the Service tab).
+        ["$bugEmRealism",      "range", "",   "Service",      2, 0, 3,    "Realism",                  "0 = off, 1 = forgiving, 2 = realistic, 3 = hardcore",                          {"subCategory":"Simulation",  "minDis":0, "maxDis":3,    "stepDis":1}],
+        ["$bugEmFaultRate",    "range", "%",  "Service",      1, 0, 3,    "Fault rate",               "Scales every fault hazard (0 % = no random faults)",                             {"subCategory":"Simulation",  "minDis":0, "maxDis":300,  "stepDis":10}],
+        ["$bugEmParkedSim",    "range", "%",  "Service",      1, 0, 1,    "Standing-time simulation", "How much of the real time the car stood parked is simulated when it is loaded",  {"subCategory":"Simulation",  "minDis":0, "maxDis":100,  "stepDis":5}],
+        ["$bugEmStartBattery", "range", "%",  "Service",      1, 0, 1,    "Battery charge",           "Charge of a car that has no saved state yet",                                    {"subCategory":"Start state", "minDis":0, "maxDis":100,  "stepDis":5}],
+        ["$bugEmStartOilKm",   "range", "km", "Service",      0, 0, 5000, "Oil age",                  "Kilometres on the oil of a car that has no saved state yet",                     {"subCategory":"Start state", "minDis":0, "maxDis":5000, "stepDis":100}]
     ],
+    "bugEngineModel": {
+        "realism":      "$bugEmRealism",
+        "faultRate":    "$bugEmFaultRate",
+        "parkedSim":    "$bugEmParkedSim",
+        "startBattery": "$bugEmStartBattery",
+        "startOilKm":   "$bugEmStartOilKm",
+    },
     "sounds": {
         "cabinFilterCoef": 0
     },

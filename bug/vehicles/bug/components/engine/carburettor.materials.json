@@ -1,0 +1,180 @@
+{
+  "bug_carb_cast_steel": {
+    "name": "bug_carb_cast_steel",
+    "mapTo": "bug_carb_cast_steel",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.55,
+          0.55,
+          0.55,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.55
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_carb_aluminum": {
+    "name": "bug_carb_aluminum",
+    "mapTo": "bug_carb_aluminum",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.7,
+          0.7,
+          0.7,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.45
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_carb_brass": {
+    "name": "bug_carb_brass",
+    "mapTo": "bug_carb_brass",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.78,
+          0.62,
+          0.3,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.35
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_carb_black_plastic": {
+    "name": "bug_carb_black_plastic",
+    "mapTo": "bug_carb_black_plastic",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.02,
+          0.02,
+          0.02,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.6
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_carb_spring": {
+    "name": "bug_carb_spring",
+    "mapTo": "bug_carb_spring",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.04,
+          0.04,
+          0.04,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.5
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5,
+    "doubleSided": true,
+    "invertBackFaceNormals": true
+  },
+  "bug_carb_white_plastic": {
+    "name": "bug_carb_white_plastic",
+    "mapTo": "bug_carb_white_plastic",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.8,
+          0.79,
+          0.75,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.5
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_carb_stainless": {
+    "name": "bug_carb_stainless",
+    "mapTo": "bug_carb_stainless",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.68,
+          0.68,
+          0.68,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.3
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "bug_carb_fuel_hose": {
+    "name": "bug_carb_fuel_hose",
+    "mapTo": "bug_carb_fuel_hose",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.03,
+          0.03,
+          0.03,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.75
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  }
+}
