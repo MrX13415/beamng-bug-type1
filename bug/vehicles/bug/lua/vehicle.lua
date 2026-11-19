@@ -52,6 +52,16 @@ local function lidDragRay(id, px, py, pz, dx, dy, dz)
   lids.setRay(id, px, py, pz, dx, dy, dz)
 end
 
+-- front seat backrests ("seatFL" / "seatFR"): hold + drag swings them, double-click folds / unfolds; they work like
+-- the lids without a latch (lib/lids.lua, the cursor ray comes in via lidDragRay). seatFoldToggle: the same automatic
+-- fold without a trigger. Both do nothing while someone sits on the seat.
+local function seatFold(id, value)
+  lids.press(id, value)
+end
+local function seatFoldToggle(id)
+  lids.toggle(id)
+end
+
 
 local function updateGFX(dt)
   interior.update(dt)   -- hazard switch click
@@ -126,6 +136,8 @@ M.toggleDoorHandle        = doors.toggleDoorHandle
 M.dragLost                = dragLost
 M.lidHandle               = lidHandle
 M.lidDragRay              = lidDragRay
+M.seatFold                = seatFold
+M.seatFoldToggle          = seatFoldToggle
 
 -- roof: lib/roof.lua
 M.isRagtopOpen            = roof.isRagtopOpen

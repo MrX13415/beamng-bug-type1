@@ -31,8 +31,10 @@
           "$occupant_attachnodeFR": "$='is'..$seatID..'1i'",
           "$occupant_attachnodeRL": "$='is'..$seatID..'2o'",
           "$occupant_attachnodeRR": "$='is'..$seatID..'2i'",
-          "$occupant_attachnodeTL": "$='is'..$seatID..'5o'",
-          "$occupant_attachnodeTR": "$='is'..$seatID..'5i'",
+          // the occupant's back is attached to the seat frame (hinge nodes 4o / 4i, was the backrest top 5o / 5i), so
+          // the backrest can fold freely; while someone sits there lua/lib/lids.lua locks the backrest upright
+          "$occupant_attachnodeTL": "$='is'..$seatID..'4o'",
+          "$occupant_attachnodeTR": "$='is'..$seatID..'4i'",
           "$occupant_attachnodeRigifier": "$='is'..$seatID..'9'"
         }
       }]
@@ -55,12 +57,15 @@
     "actionsEnabled": [
       ["id"],
       ["$='seat'..$seatID..'toggle'"],
+      ["$='seat'..$seatID..'fold'"],
       ["$='seat'..$seatID..'moveF'"],
       ["$='seat'..$seatID..'moveB'"]
     ],
     "triggerEventLinks2": [
       ["triggerId:triggers2", "triggerInput", "inputAction"],
-      ["$='seat_'..$seatID..'_toggle'", "action0", "$='seat'..$seatID..'toggle'"],
+      //["$='seat_'..$seatID..'_toggle'", "action0", "$='seat'..$seatID..'toggle'"], // was: a click folds / unfolds via the hydro
+      // hold + drag folds the backrest, double-click folds / unfolds it (lua/lib/lids.lua); the toggle action stays
+      ["$='seat_'..$seatID..'_toggle'", "action0", "$='seat'..$seatID..'fold'"],
       ["$='seat_'..$seatID..'_move'", "action0", "$='seat'..$seatID..'moveF'"],
       ["$='seat_'..$seatID..'_move'", "action1", "$='seat'..$seatID..'moveB'"],
       ["$='seat_'..$seatID..'_move'", "action2", "$='seat'..$seatID..'moveB'"]
@@ -116,7 +121,8 @@
     "hydros": [
       ["id1:", "id2:"],
 
-      // Backrest
+      // Backrest. Also its lock: lua/lib/lids.lua makes these two beams slack (spring 0) while nobody sits on the
+      // seat, so the backrest swings freely between the stop beams below, and stiff again when someone sits down.
       {"beamPrecompression": 1.0, "beamType": "|NORMAL", "beamLongBound": 1, "beamShortBound": 1},
       {"beamSpring": 10000, "beamDamp": 100, "beamDeform": "FLT_MAX", "beamStrength": "FLT_MAX"},
       ["$='is'..$seatID..'1i'", "$='is'..$seatID..'5i'", {"inputSource": "$='seat'..$seatID..'backrest'", "inLimit": 0.1, "outLimit": 1.0, "inRate": 1.0, "outRate": 1.0, "inputFactor": -1.0}],
@@ -227,26 +233,47 @@
         ["$='is'..$seatID..'8i'", "$= ($side == 1 and ('f8l') or ('f8r'))"],
         
         // damp help
-        {"beamSpring":0,"beamDamp":300},
+        //{"beamSpring":0,"beamDamp":300}, // was: damped the backrest's swing hard (it folds freely now)
+        {"beamSpring":0,"beamDamp":10},
         ["$='is'..$seatID..'1i'", "$='is'..$seatID..'5o'"],
         ["$='is'..$seatID..'1o'", "$='is'..$seatID..'5i'"],
 
+        // rigifier (the occupant is attached to it): on the seat frame only, cushion rear 2i / 2o and hinge 4i / 4o
+        // (was cushion and backrest top 5i / 5o: that tied the backrest to the cushion, through the occupant too)
         {"beamSpring":400000,"beamDamp":150},
         {"beamDeform":20000,"beamStrength":"FLT_MAX"},
         ["$='is'..$seatID..'9'", "$='is'..$seatID..'2i'"],
         ["$='is'..$seatID..'9'", "$='is'..$seatID..'2o'"],
-        ["$='is'..$seatID..'9'", "$='is'..$seatID..'5o'"],
-        ["$='is'..$seatID..'9'", "$='is'..$seatID..'5i'"],
+        ["$='is'..$seatID..'9'", "$='is'..$seatID..'4o'"],
+        ["$='is'..$seatID..'9'", "$='is'..$seatID..'4i'"],
+
+        // backrest stops: upright (long bound) and folded forward by ~42 deg (the distance cushion front - backrest
+        // top 0.676 m gets 0.295 m shorter); between them it swings freely, moved and sprung by lua/lib/lids.lua
+        {"beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":0,"beamDamp":0},
+        {"beamLimitSpring":300000,"beamLimitDamp":30},
+        {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+        {"longBoundRange":0.0, "shortBoundRange":0.295},
+        ["$='is'..$seatID..'1i'", "$='is'..$seatID..'5i'"],
+        ["$='is'..$seatID..'1o'", "$='is'..$seatID..'5o'"],
+        {"longBoundRange":"", "shortBoundRange":""},
+        {"beamLimitSpring":"","beamLimitDamp":""},
+        {"beamPrecompression":1.0,"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
 
         // damping / seat-to-rail retention
         {"breakGroup":"$='bug_seat_'..$seatID", "breakGroupType":1},
         {"beamPrecompression":1,"beamType":"|BOUNDED", "beamLongBound":0, "beamShortBound":0},
-        {"beamSpring":500,"beamDamp":150},
         {"beamDeform":10000,"beamStrength":12000},
+        // backrest top <> rails: plain beams without spring, light damping, so the backrest can fold (were |BOUNDED with
+        // both bounds 0, spring 500 / damping 150: the zero range makes the limit spring act at once, a rigid strut)
+        {"beamType":"|NORMAL"},
+        {"beamSpring":0,"beamDamp":10},
         ["$='is'..$seatID..'5i'", "$='is'..$seatID..'7i'"],
         ["$='is'..$seatID..'5i'", "$='is'..$seatID..'7o'"],
         ["$='is'..$seatID..'5o'", "$='is'..$seatID..'7i'"],
         ["$='is'..$seatID..'5o'", "$='is'..$seatID..'7o'"],
+        {"beamType":"|BOUNDED", "beamLongBound":0, "beamShortBound":0},
+        {"beamSpring":500,"beamDamp":150},
         ["$='is'..$seatID..'2i'", "$='is'..$seatID..'8i'"],
         ["$='is'..$seatID..'2i'", "$='is'..$seatID..'8o'"],
         ["$='is'..$seatID..'2o'", "$='is'..$seatID..'8i'"],
