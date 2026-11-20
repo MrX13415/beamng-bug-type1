@@ -125,7 +125,7 @@
 		{"nodeWeight":3.0},
 		["f1tml",  0.15993, -1.36400, 0.38100],
 		["f1tmr", -0.15993, -1.36400, 0.38100],
-		{"nodeWeight":3.0},
+		{"nodeWeight":3.1},
 		["f2tm",   0.00000, -1.02968, 0.39000],
 		["f3tm",   0.00000, -0.69101, 0.39000],
 		["f4tm",   0.00000, -0.19767, 0.39000],	// refNode "up"
@@ -137,13 +137,13 @@
 
 		// Helper truss around the seats. Mainly used to connect 
 		// the seat structure in a rigid manner.
-		{"nodeWeight":1.0},
-		["f8l",   0.30000,  0.00000, 0.80000, {"collision":false,"selfCollision":false}],
-		["f8r",  -0.30000,  0.00000, 0.80000, {"collision":false,"selfCollision":false}],
-		{"nodeWeight":0.7},
-		["f4ll",  0.56635, -0.19767, 0.50000, {"collision":false,"selfCollision":false}],
-		["f4rr", -0.56635, -0.19767, 0.50000, {"collision":false,"selfCollision":false}],
+		{"nodeWeight":2.0},
+		["f3ll",  0.56635, -0.45, 0.50000, {"group":"", "collision":false,"selfCollision":false}],
+		["f3rr", -0.56635, -0.45, 0.50000, {"group":"", "collision":false,"selfCollision":false}],
+		["f5ll",  0.56635,  0.15, 0.50000, {"group":"", "collision":false,"selfCollision":false}],
+		["f5rr", -0.56635,  0.15, 0.50000, {"group":"", "collision":false,"selfCollision":false}],
 
+		
 		// Steering column group
 		{"group":"bug_steeringcolumn"},
 		{"nodeWeight":2.0},
@@ -395,47 +395,35 @@
 		["f7mr", "f4l"],
 
 		// Helper truss around the seats.
-		{"beamSpring":1001000,"beamDamp":40},
+		{"beamSpring":2501000,"beamDamp":40},
 		{"beamDeform":20000,"beamStrength":"FLT_MAX"},
-		["f4ll", "f3l"],
-		["f4ll", "f3tm"],
-		["f4ll", "f3ml"],
-		["f4ll", "f4l"],
-		["f4ll", "f4tm"],
-		["f4ll", "f4ml"],
-		["f4ll", "f5l"],
-		["f4ll", "f5tm"],
-		["f4ll", "f5ml"],
+		{"highlight":{"radius":0.002, "col":"#ff8800ff" }},
+		// V2:
+		["f3ll", "f3rr"],
+		["f3ll", "f5rr"],
+		["f5ll", "f5rr"],
+		["f5ll", "f3rr"],
 		//-
-		["f4rr", "f3r"],
-		["f4rr", "f3tm"],
-		["f4rr", "f3mr"],
-		["f4rr", "f4r"],
-		["f4rr", "f4tm"],
-		["f4rr", "f4mr"],
-		["f4rr", "f5r"],
-		["f4rr", "f5tm"],
-		["f4rr", "f5mr"],
-		// Rigidify
-		["f8l", "f3l"],
-		["f8l", "f4l"],
-		["f8l", "f5l"],
-		["f8l", "f3ml"],
-		["f8l", "f4ml"],
-		["f8l", "f5ml"]
-		["f8l", "f3tm"],
-		["f8l", "f4tm"],
-		["f8l", "f5tm"]
+		["f3ll", "f3l"],
+		["f3ll", "f3tm"],
+		["f3ll", "f4l"],
+		["f3ll", "f5tm"],
 		//-
-		["f8r", "f3r"],
-		["f8r", "f4r"],
-		["f8r", "f5r"],
-		["f8r", "f3mr"],
-		["f8r", "f4mr"],
-		["f8r", "f5mr"]
-		["f8r", "f3tm"],
-		["f8r", "f4tm"],
-		["f8r", "f5tm"]
+		["f5ll", "f3tm"],
+		["f5ll", "f4l"],
+		["f5ll", "f5l"],
+		["f5ll", "f5tm"],
+		//-
+		["f3rr", "f3r"],
+		["f3rr", "f3tm"],
+		["f3rr", "f4r"],
+		["f3rr", "f5tm"],
+		//-
+		["f5rr", "f3tm"],
+		["f5rr", "f4r"],
+		["f5rr", "f5r"],
+		["f5rr", "f5tm"],
+		{"highlight":""},
 
 		// Suspension Rigidify
 		{"beamSpring":1001000,"beamDamp":120},

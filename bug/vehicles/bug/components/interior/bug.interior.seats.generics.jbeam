@@ -79,23 +79,25 @@
       {"frictionCoef": 0.9},
       {"selfCollision": true},
       {"collision": true},
-      {"nodeWeight": 1.2},
+      {"nodeWeight": 2.0},
       {"group": "$='bug_seat_'..$seatID..'_base'"},
       {"chemEnergy": 200, "burnRate": 0.5, "flashPoint": 300, "smokePoint": 200, "selfIgnition": 0, "specHeat": 1},
       ["$='is'..$seatID..'1o'", "$= $side * 0.493", -0.353, 0.542],
       ["$='is'..$seatID..'1i'", "$= $side * 0.088", -0.353, 0.542],
       ["$='is'..$seatID..'2o'", "$= $side * 0.493",  0.070, 0.442],
       ["$='is'..$seatID..'2i'", "$= $side * 0.088",  0.070, 0.442],
+      {"nodeWeight": 1.6},
       ["$='is'..$seatID..'3o'", "$= $side * 0.459", -0.300, 0.300],
       ["$='is'..$seatID..'3i'", "$= $side * 0.126", -0.300, 0.300],
       {"group": ["$='bug_seat_'..$seatID..'_base'", "$='bug_seat_'..$seatID..'_back'"]},
-      ["$='is'..$seatID..'4o'", "$= $side * 0.459", -0.036, 0.278, {"nodeWeight": 1.5}],
-      ["$='is'..$seatID..'4i'", "$= $side * 0.126", -0.036, 0.278, {"nodeWeight": 1.5}],
+      ["$='is'..$seatID..'4o'", "$= $side * 0.459", -0.036, 0.278, {"nodeWeight": 2.7}],
+      ["$='is'..$seatID..'4i'", "$= $side * 0.126", -0.036, 0.278, {"nodeWeight": 2.7}],
       {"group": "$='bug_seat_'..$seatID..'_back'"},
       // backrest: no self-collision, so it can fold forward through the seat's occupant body (it stays on the seat,
       // invisible and almost massless, while nobody sits there; while someone does, lua/lib/seats.lua locks the
       // backrest upright). It still collides with the world and other vehicles.
       {"selfCollision": false},
+      {"nodeWeight": 1.6},
       ["$='is'..$seatID..'5o'", "$= $side * 0.493",  0.220, 0.900],
       ["$='is'..$seatID..'5i'", "$= $side * 0.088",  0.220, 0.900],
       ["$='is'..$seatID..'6o'", "$= $side * 0.493",  0.136, 0.398],
@@ -126,10 +128,10 @@
     ],
     "slidenodes": [
       ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
-      ["$='is'..$seatID..'3i'", "$='seatrail_'..$seatID..'I'", true, true, 0.0, 7001000, 60000, "FLT_MAX"],
-      ["$='is'..$seatID..'4i'", "$='seatrail_'..$seatID..'I'", true, true, 0.0, 7001000, 60000, "FLT_MAX"],
-      ["$='is'..$seatID..'3o'", "$='seatrail_'..$seatID..'O'", true, true, 0.0, 7001000, 60000, "FLT_MAX"],
-      ["$='is'..$seatID..'4o'", "$='seatrail_'..$seatID..'O'", true, true, 0.0, 7001000, 60000, "FLT_MAX"]
+      ["$='is'..$seatID..'3i'", "$='seatrail_'..$seatID..'I'", true, true, 0.0, 8001000, 60000, "FLT_MAX"],
+      ["$='is'..$seatID..'4i'", "$='seatrail_'..$seatID..'I'", true, true, 0.0, 8001000, 60000, "FLT_MAX"],
+      ["$='is'..$seatID..'3o'", "$='seatrail_'..$seatID..'O'", true, true, 0.0, 8001000, 60000, "FLT_MAX"],
+      ["$='is'..$seatID..'4o'", "$='seatrail_'..$seatID..'O'", true, true, 0.0, 8001000, 60000, "FLT_MAX"]
     ],
     "rails": {
       "$='seatrail_'..$seatID..'I'": {"links:":["$='is'..$seatID..'7i'", "$='is'..$seatID..'8i'"], "broken:":[], "looped":false, "capped":true},
@@ -152,20 +154,15 @@
       ["$='is'..$seatID..'8o'", "$='is'..$seatID..'3o'", {"inputSource": "$='seat'..$seatID..'_position'", "inLimit": 0.80, "outLimit": 1.3, "inRate": 0.2, "outRate": 0.2, "inputFactor": 1.0, "inputInLimit": -3, "inputOutLimit": 3}],
       {"breakGroup": "", "breakGroupType": 0}
     ],
-    "torsionbars": [
-      ["id1:", "id2:", "id3:", "id4:"],
-
-      {"spring": 1800000, "damp": 300, "deform": 7000, "strength": 22000},
-      ["$='is'..$seatID..'8i'", "f4tm", "f5tm", "$='is'..$seatID..'8o'"]
-    ],
     "beams": [
         ["id1:", "id2:"],
 
         {"beamPrecompression":1.0, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-        {"beamSpring":1201000,"beamDamp":100},
+        {"beamSpring":2001000,"beamDamp":100},
         {"beamDeform":15000,"beamStrength":"FLT_MAX"},
         {"deformLimitExpansion":1.0},
         // base
+        {"highlight":{"radius":0.002, "col":"#ff0088ff" }},
         ["$='is'..$seatID..'7i'", "$='is'..$seatID..'7o'"],
         ["$='is'..$seatID..'8i'", "$='is'..$seatID..'8o'"],
         ["$='is'..$seatID..'7i'", "$='is'..$seatID..'8i'", {"breakGroup":"$='bug_seat_'..$seatID"}],
@@ -174,6 +171,15 @@
         ["$='is'..$seatID..'8i'", "$='is'..$seatID..'7o'"],
 
         // seat
+        {"beamSpring":4001000,"beamDamp":40},
+        {"highlight":{"radius":0.002, "col":"#888800ff" }},
+        ["$='is'..$seatID..'3i'", "$='is'..$seatID..'4i'"],
+        ["$='is'..$seatID..'3o'", "$='is'..$seatID..'4o'"],
+        ["$='is'..$seatID..'3i'", "$='is'..$seatID..'4o'"],
+        ["$='is'..$seatID..'4i'", "$='is'..$seatID..'3o'"],
+
+        {"beamSpring":2501000,"beamDamp":100},
+        {"highlight":{"radius":0.002, "col":"#88ff00ff" }},
         ["$='is'..$seatID..'1i'", "$='is'..$seatID..'1o'"],
         ["$='is'..$seatID..'2i'", "$='is'..$seatID..'2o'"],
         ["$='is'..$seatID..'1i'", "$='is'..$seatID..'2i'"],
@@ -187,12 +193,10 @@
         ["$='is'..$seatID..'1i'", "$='is'..$seatID..'3o'"],
         ["$='is'..$seatID..'1o'", "$='is'..$seatID..'3i'"],
         //-
-        ["$='is'..$seatID..'3i'", "$='is'..$seatID..'4i'"],
         ["$='is'..$seatID..'1i'", "$='is'..$seatID..'4i'"],
         ["$='is'..$seatID..'3i'", "$='is'..$seatID..'2i'"],
         ["$='is'..$seatID..'2i'", "$='is'..$seatID..'4i'"],
         //-
-        ["$='is'..$seatID..'3o'", "$='is'..$seatID..'4o'"],
         ["$='is'..$seatID..'1o'", "$='is'..$seatID..'4o'"],
         ["$='is'..$seatID..'3o'", "$='is'..$seatID..'2o'"],
         ["$='is'..$seatID..'2o'", "$='is'..$seatID..'4o'"],
@@ -201,21 +205,22 @@
         ["$='is'..$seatID..'2o'", "$='is'..$seatID..'4i'"],
         ["$='is'..$seatID..'4i'", "$='is'..$seatID..'4o'"],
         //-
-        ["$='is'..$seatID..'3i'", "$='is'..$seatID..'4o'"],
-        ["$='is'..$seatID..'4i'", "$='is'..$seatID..'3o'"],
+
         //-
         ["$='is'..$seatID..'4i'", "$='is'..$seatID..'1o'"],
         ["$='is'..$seatID..'4o'", "$='is'..$seatID..'1i'"],
         ["$='is'..$seatID..'2i'", "$='is'..$seatID..'3o'"],
         ["$='is'..$seatID..'2o'", "$='is'..$seatID..'3i'"],
         
+        {"highlight":{"radius":0.002, "col":"#44ffffff" }},
         // backrest
+        {"beamSpring":2001000,"beamDamp":40},
         ["$='is'..$seatID..'5i'", "$='is'..$seatID..'5o'"],
         ["$='is'..$seatID..'4i'", "$='is'..$seatID..'5i'"],
         ["$='is'..$seatID..'4o'", "$='is'..$seatID..'5o'"],
         ["$='is'..$seatID..'4i'", "$='is'..$seatID..'5o'"],
         ["$='is'..$seatID..'5i'", "$='is'..$seatID..'4o'"],
-
+        {"beamSpring":2501000,"beamDamp":100},
         ["$='is'..$seatID..'6i'", "$='is'..$seatID..'6o'"],
         ["$='is'..$seatID..'4i'", "$='is'..$seatID..'6i'"],
         ["$='is'..$seatID..'5i'", "$='is'..$seatID..'6i'"],
@@ -227,33 +232,42 @@
         ["$='is'..$seatID..'5o'", "$='is'..$seatID..'6i'"],
 
         // base <> frame: never break, keep seat detach at rails only
-        {"beamSpring":2001000,"beamDamp":60},
+        {"highlight":{"radius":0.002, "col":"#0088ffff" }},
+        {"beamSpring":2501000,"beamDamp":60},
         {"beamDeform":20000,"beamStrength":"FLT_MAX"},
         ["$='is'..$seatID..'7o'", "$= ($side == 1 and ('f3l') or ('f3r'))"],
         ["$='is'..$seatID..'7o'", "$= ($side == 1 and ('f4l') or ('f4r'))"],
-        ["$='is'..$seatID..'7o'", "$= ($side == 1 and ('f4ll') or ('f4rr'))"],
+        ["$='is'..$seatID..'7o'", "$= ($side == 1 and ('f3ll') or ('f3rr'))"],
+        ["$='is'..$seatID..'7o'", "$= ($side == 1 and ('f5ll') or ('f5rr'))"],
+        ["$='is'..$seatID..'7o'", "f3tm"],
+        ["$='is'..$seatID..'7o'", "f4tm"],
         ["$='is'..$seatID..'7i'", "$= ($side == 1 and ('f3ml') or ('f3mr'))"],
         ["$='is'..$seatID..'7i'", "$= ($side == 1 and ('f4ml') or ('f4mr'))"],
         ["$='is'..$seatID..'7i'", "f3tm"],
         ["$='is'..$seatID..'7i'", "f4tm"],
+        ["$='is'..$seatID..'7i'", "$= ($side == 1 and ('f3ll') or ('f3rr'))"],
         ["$='is'..$seatID..'8o'", "$= ($side == 1 and ('f4l') or ('f4r'))"],
-        ["$='is'..$seatID..'8o'", "$= ($side == 1 and ('f4ll') or ('f4rr'))"],
+        ["$='is'..$seatID..'8o'", "$= ($side == 1 and ('f3ll') or ('f3rr'))"],
+        ["$='is'..$seatID..'8o'", "$= ($side == 1 and ('f5ll') or ('f5rr'))"],
         ["$='is'..$seatID..'8o'", "$= ($side == 1 and ('f5l') or ('f5r'))"],
+        ["$='is'..$seatID..'8o'", "f4tm"],
+        ["$='is'..$seatID..'8o'", "f5tm"],
         ["$='is'..$seatID..'8i'", "f4tm"],
         ["$='is'..$seatID..'8i'", "f5tm"],
         ["$='is'..$seatID..'8i'", "$= ($side == 1 and ('f4ml') or ('f4mr'))"],
         ["$='is'..$seatID..'8i'", "$= ($side == 1 and ('f5ml') or ('f5mr'))"],
-        // Rigidfing connections for seat rails
-        ["$='is'..$seatID..'7o'", "$= ($side == 1 and ('f8l') or ('f8r'))"],
-        ["$='is'..$seatID..'7i'", "$= ($side == 1 and ('f8l') or ('f8r'))"],
-        ["$='is'..$seatID..'8o'", "$= ($side == 1 and ('f8l') or ('f8r'))"],
-        ["$='is'..$seatID..'8i'", "$= ($side == 1 and ('f8l') or ('f8r'))"],
+        ["$='is'..$seatID..'8i'", "$= ($side == 1 and ('f5ll') or ('f5rr'))"],
+        
+        {"highlight":{"radius":0.002, "col":"#ff4444ff" }},
         
         // damp help
         //{"beamSpring":0,"beamDamp":300}, // was: damped the backrest's swing hard (it folds freely now)
         {"beamSpring":0,"beamDamp":10},
         ["$='is'..$seatID..'1i'", "$='is'..$seatID..'5o'"],
         ["$='is'..$seatID..'1o'", "$='is'..$seatID..'5i'"],
+        ["$='is'..$seatID..'2i'", "$='is'..$seatID..'6o'"],
+        ["$='is'..$seatID..'2o'", "$='is'..$seatID..'6i'"],
+        {"highlight":""},
 
         // occupant back anchors 10o / 10i <> seat frame (cushion 1 / 2, hinge 4), stiff like the frame: the occupant's
         // upper back hangs on them in a crash
@@ -283,18 +297,24 @@
         ["$='is'..$seatID..'9'", "$='is'..$seatID..'10o'"],
         ["$='is'..$seatID..'9'", "$='is'..$seatID..'10i'"],
 
+        {"highlight":{"radius":0.002, "col":"#ff0000ff" }},
         // backrest stops: upright (long bound) and folded forward by ~42 deg (the distance cushion front - backrest
         // top 0.676 m gets 0.295 m shorter); between them it swings freely, moved and sprung by lua/lib/seats.lua
         {"beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
         {"beamSpring":0,"beamDamp":0},
-        {"beamLimitSpring":300000,"beamLimitDamp":30},
+        {"beamLimitSpring":2001000,"beamLimitDamp":150},
         {"beamDeform":4000,"beamStrength":"FLT_MAX"},
         {"longBoundRange":0.0, "shortBoundRange":0.295},
         ["$='is'..$seatID..'1i'", "$='is'..$seatID..'5i'"],
         ["$='is'..$seatID..'1o'", "$='is'..$seatID..'5o'"],
-        {"longBoundRange":"", "shortBoundRange":""},
+        // Tension-only stops: no compression bound above zero length.
+        {"shortBoundRange":"", "beamShortBound":1, "boundZone":0.01, "beamDeform":"FLT_MAX"},
+        ["$='is'..$seatID..'2i'", "$='is'..$seatID..'6i'"],
+        ["$='is'..$seatID..'2o'", "$='is'..$seatID..'6o'"],
+        {"longBoundRange":"", "shortBoundRange":"", "boundZone":1},
         {"beamLimitSpring":"","beamLimitDamp":""},
         {"beamPrecompression":1.0,"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"highlight":""},
 
         // damping / seat-to-rail retention
         {"breakGroup":"$='bug_seat_'..$seatID", "breakGroupType":1},
