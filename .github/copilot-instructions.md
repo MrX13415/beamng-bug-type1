@@ -1,0 +1,5 @@
+# Project Instructions
+
+- `bug/` is the main VW mod source. `bug-aw/#mod/` holds AW-specific overlay files; most other `bug-aw/` content is generated and ignored. Check the actual source and overlay before choosing where to edit; preserve existing generated or untracked user files.
+- The [AW build](../build/py/buildaw.py) cleans the generated target, copies the VW source, applies the overlay, and performs branding replacements. Review its effects before running it: local files outside the overlay can be deleted or overwritten. Do not run a destructive build unless its effects are appropriate and authorized for the task.
+- [Publishing](../build/py/publish.py) creates archives under `artifacts/` and can replace an existing target archive. The [AW workflow](workflows/buildaw.yml) builds AW before packaging; the [VW workflow](workflows/buildvw.yml) packages VW directly. Avoid publishing or overwriting artifacts unless requested.
