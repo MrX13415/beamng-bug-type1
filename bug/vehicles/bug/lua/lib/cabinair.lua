@@ -27,7 +27,7 @@
 
 local M = {}
 
-local doordrag = require("vehicles/bug/lua/lib/doordrag")
+local doorswing = require("vehicles/bug/lua/lib/doorswing")
 
 -- Model (tuned with a 1-DOF simulation of both doors)
 local P0        = 101325   -- Pa   ambient pressure (isothermal compression)
@@ -72,8 +72,8 @@ local function onPhysicsStep(dt)
   local dV = 0
   local free, nFree = nil, 0
   for _, id in ipairs(DOORS) do
-    if not doordrag.isLatched(id) then
-      local s, sdot = doordrag.getOpening(id)
+    if not doorswing.isLatched(id) then
+      local s, sdot = doorswing.getOpening(id)
       if not s then
         leak = leak + A_MISSING
       else
@@ -88,7 +88,7 @@ local function onPhysicsStep(dt)
 
   -- dry hinge friction on the doors that can swing (part of the door physics, needs the physics step too)
   if free then
-    for i = 1, nFree do doordrag.hingeFrictionStep(freeDoors[i], dt) end
+    for i = 1, nFree do doorswing.hingeFrictionStep(freeDoors[i], dt) end
   end
 
   if not free then
@@ -116,7 +116,7 @@ local function onPhysicsStep(dt)
       f = f - C_RECOIL * sdot
     end
     if math.abs(f) > 0.01 then
-      doordrag.applyOpenForceStep(id, f)
+      doorswing.applyOpenForceStep(id, f)
     end
   end
 end

@@ -13,11 +13,11 @@
 --   lib/roof.lua       folding roof handle and lock
 --   lib/seats.lua      sliding the front seats, making room when getting out of the back
 --   lib/openings.lua   how open the cabin is: interior light, cabin sound filter
---   lib/doors.lua, lib/doordrag.lua, lib/windowcrank.lua: the doors (latch, push buttons, handles, the right door's
---                      lock, dragging them by hand, getting in / out with F) and the window cranks
+--   lib/doors.lua, lib/doorswing.lua, lib/windowcrank.lua: the doors (latch, push buttons, handles, the right door's
+--                      lock, getting in / out with F; how they swing: on lib/hinge.lua) and the window cranks
 --     (doors.lua gets updateGFX / onReset from the game itself, as a vehicle extension)
---   lib/hinge.lua      parts swinging on a hinge, moved by hand (springs, dragging, double-click); gets updateGFX /
---                      onReset from the game itself, as a vehicle extension
+--   lib/hinge.lua      parts swinging on a hinge, moved by hand (springs, dragging, double-click): lids and doors;
+--                      gets updateGFX / onReset from the game itself, as a vehicle extension
 --   lib/lids.lua       the frunk and engine lids on lib/hinge.lua: latches, the engine lid's handle and locking
 -- New features go into their own lib/ module; only the entry points the actions need are added here.
 
@@ -46,10 +46,10 @@ end
 local function dragLost(id, kind)
   if kind == "crank" then
     windowcrank.press(id, 0)
+  elseif doors.isDoor(id) then
+    doors.dragLost(id)    -- also ends a held inside handle
   elseif hinge.isPart(id) then
     hinge.dragLost(id)
-  else
-    doors.dragLost(id)
   end
 end
 
@@ -151,7 +151,6 @@ M.toggleDoorHandle        = doors.toggleDoorHandle
 M.pressDoorButton         = doors.pressDoorButton
 M.doorDrag                = doors.doorDrag
 M.doorDragTarget          = doors.doorDragTarget
-M.doorDragRay             = doors.doorDragRay
 M.doorInterior            = doors.doorInterior
 M.isDoorLocked            = doors.isDoorLocked
 M.setDoorLock             = doors.setDoorLock

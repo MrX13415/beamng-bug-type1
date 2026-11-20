@@ -5,7 +5,8 @@
 -- Front doors: latch (coupler), push button and handle animations, the right door lock, the inside handle
 -- and getting in / out with the enter / exit key (F).
 -- The public functions are exported by vehicles/bug/lua/vehicle.lua (the actions call vehicle.<name>).
--- Hand dragging and the door physics helpers are in lib/doordrag.lua, the seal and cabin air in lib/cabinair.lua.
+-- How the doors swing (on lib/hinge.lua: dragging by hand, push, swing to an angle, airflow) is lib/doorswing.lua,
+-- the seal and cabin air are in lib/cabinair.lua.
 -- Like the other files in lua/, the game loads this file as a vehicle extension, so updateGFX and onReset are
 -- called by the game (don't call them from vehicle.lua as well: the lock animation would run twice per frame).
 -- require() returns the same module table, so vehicle.lua shares its state. setupDoors() is called by vehicle.onInit.
@@ -16,7 +17,7 @@ local M = {}
 
 local misc = require("vehicles/bug/lua/misc")
 local animation = require("vehicles/bug/lua/lib/animation")
-local doordrag = require("vehicles/bug/lua/lib/doordrag")
+local doorswing = require("vehicles/bug/lua/lib/doorswing")
 
 local function doorControllerName(id)
   return 'door_'..id..'_coupler'
@@ -57,9 +58,9 @@ local function onDoorButtonKeyframe(id)
   if isDoorOpen(id) then return end
   toggleDoor(id) -- releases the latch; the coupler itself only pops the door ajar now
   if mode == "open" then
-    doordrag.push(id, DOOR_OPEN_PUSH_FORCE, DOOR_OPEN_PUSH_DURATION)
+    doorswing.push(id, DOOR_OPEN_PUSH_FORCE, DOOR_OPEN_PUSH_DURATION)
   elseif mode == "wide" then
-    doordrag.swingTo(id, math.rad(EXIT_DOOR_ANGLE))
+    doorswing.swingTo(id, math.rad(EXIT_DOOR_ANGLE))
   end
 end
 
@@ -113,15 +114,13 @@ local function pressDoorButton(id)
 end
 
 -- outside handle: press/release from the trigger; a quick click opens/closes automatically,
--- holding and moving drags the door by hand (see lib/doordrag.lua)
+-- holding and moving drags the door by hand (see lib/doorswing.lua, lib/hinge.lua)
 local function doorDrag(id, value)
-  doordrag.drag(id, value)
+  doorswing.drag(id, value)
 end
+-- the cursor's point on the plane at handle height, every frame while a door is dragged (GE bug_doorDrag)
 local function doorDragTarget(id, x, y, z)
-  doordrag.setTarget(id, x, y, z)
-end
-local function doorDragRay(id, px, py, pz, dx, dy, dz)
-  doordrag.setRay(id, px, py, pz, dx, dy, dz)
+  doorswing.setTarget(id, x, y, z)
 end
 
 -- outside handle double-click: a locked door stays shut
@@ -137,10 +136,10 @@ local function registerExitDoor()
 end
 local function exitDoorOpen(id)
   if isDoorOpen(id) then
-    local a = doordrag.getAngle(id)
+    local a = doorswing.getAngle(id)
     --if a and a < math.rad(EXIT_DOOR_ANGLE - 5) then -- old: also swung a door the player had opened by hand
     if a and a < math.rad(EXIT_DOOR_MIN_OPEN) then
-      doordrag.swingTo(id, math.rad(EXIT_DOOR_ANGLE))  -- only ajar (leaned on the seal): swing it open
+      doorswing.swingTo(id, math.rad(EXIT_DOOR_ANGLE))  -- only ajar (leaned on the seal): swing it open
     else
       obj:queueGameEngineLua("if bug_exitDoor then bug_exitDoor.doorAlreadyOpen(" .. obj:getId() .. ") end")
     end
@@ -174,24 +173,25 @@ local function doorInterior(id, value)
       if not doorButtonMode[id] then toggleDoorHandle(id) end  -- ignore clicks while the handle animation runs
     else
       doorInteriorPress[id] = "drag"
-      doordrag.drag(id, 1)
+      doorswing.drag(id, 1)
     end
   else
-    if doorInteriorPress[id] == "drag" then doordrag.drag(id, 0) end
+    if doorInteriorPress[id] == "drag" then doorswing.drag(id, 0) end
     doorInteriorPress[id] = nil
   end
 end
 
 -- the game dropped the held trigger without a release (e.g. UI under the cursor): end the drag
 local function dragLost(id)
-  doordrag.drag(id, 0)
+  doorswing.drag(id, 0)
   doorInteriorPress[id] = nil
 end
 
 -- from vehicle.onInit (after the animations library is set up)
 local function setupDoors()
-  --doordrag.setClickHandler(toggleDoorHandle) -- old: ignored the door lock
-  doordrag.setClickHandler(onOutsideHandleClick)
+  --doorswing.setClickHandler(toggleDoorHandle) -- old: ignored the door lock
+  doorswing.setClickHandler(onOutsideHandleClick)
+  doorswing.setup()     -- both doors on lib/hinge.lua
   registerExitDoor()
 
   animation.setup('doorFL_handle', {
@@ -235,7 +235,6 @@ M.toggleDoorHandle   = toggleDoorHandle
 M.pressDoorButton    = pressDoorButton
 M.doorDrag           = doorDrag
 M.doorDragTarget     = doorDragTarget
-M.doorDragRay        = doorDragRay
 M.doorInterior       = doorInterior
 M.isDoorLocked       = isDoorLocked
 M.setDoorLock        = setDoorLock
@@ -243,5 +242,6 @@ M.toggleDoorLock     = toggleDoorLock
 M.exitDoorOpen       = exitDoorOpen
 M.exitDoorClose      = exitDoorClose
 M.dragLost           = dragLost
+M.isDoor             = doorswing.isDoor
 
 return M

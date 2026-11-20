@@ -2,8 +2,9 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
--- Hinged parts moved by hand: a part (lid, backrest, cushion, ...) that swings on a hinge between two stop beams.
--- Knows nothing about a particular part: the feature modules (lib/lids.lua, ...) register their parts with a config
+-- Hinged parts moved by hand: a part (lid, backrest, cushion, door, ...) that swings on a hinge between two stop beams.
+-- Knows nothing about a particular part: the feature modules (lib/lids.lua, lib/doorswing.lua, ...) register their
+-- parts with a config
 -- (node names, springs, limits) and optional hooks for their own logic (latches, locks, handles).
 --
 --   * Swing geometry from the hinge nodes, the handle nodes and a reference node on the fixed side (closed angle).
@@ -25,6 +26,9 @@
 --         the swing's direction on screen is ignored and the hand's up / down motion moves the part: drag up = open.
 --         In between the two are blended. screenFree parts follow the screen direction in any direction.
 --       - the previous ray is kept in the car's frame, so the car moving between two frames isn't hand motion.
+--     dragPlane parts (the doors) are dragged differently: the GE extension sends the cursor's point on a
+--     horizontal plane at handle height (setTarget), and the handle is pulled towards that point (kept at the
+--     offset it had when the cursor first came in) with a capped horizontal spring-damper.
 --   * Double-click: automatic open / close (pushed at a set speed until it is open / shut or gives up).
 --
 -- Config of a part (hinge.register(id, cfg)):
@@ -33,7 +37,11 @@
 --   springs = {mid, tOpen, tClose, width, damp, throw, throwDamp [, speedLimit, speedDamp]} (rad, N m, N m s/rad,
 --   m/s, N s/m), maxDeg (the hand's target range), autoOpenDeg (automatic open stops here),
 --   optional: dragMaxForce, dragSpring, dragDamp, autoGain, autoMaxForce, autoOpenSpeed, autoCloseSpeed,
---   screenFree, slowCloseCap = {gap, maxClose} (near shut the hand pushes it shut with at most maxClose N).
+--   screenFree, slowCloseCap = {gap, maxClose [, opening]} (near shut the hand pushes it shut with at most maxClose
+--   N; opening(d) measures how far it is open in m, default: the arc length at the handle),
+--   opensOutward (opening moves the handle away from the car's centre line; default: upwards),
+--   dragPlane (drag on the horizontal plane at handle height, see above; dragSpring / dragDamp / dragMaxForce then
+--   act on that plane), rayCmd (vehicle function the GE extension sends the cursor ray to, default lidDragRay).
 -- Hooks (cfg.hooks, all optional):
 --   init(d)              new state table d (also after a reset)
 --   held(d)              true while the part is held shut (latched): no drag, no physics
@@ -122,7 +130,13 @@ local function getPart(id)
   local r0 = hp0 - a0; r0 = r0 - axis0 * r0:dot(axis0)
   local q0 = jbeamPos(ref) - a0; q0 = q0 - axis0 * q0:dot(axis0)
   local arcDelta = math.atan2(axis0:dot(q0:cross(r0)), q0:dot(r0))
-  local sg = (axis0:cross(r0).z > 0) and 1 or -1
+  local t0 = axis0:cross(r0)
+  local sg
+  if cfg.opensOutward then
+    sg = (t0.x * hp0.x > 0) and 1 or -1   -- the handle moves away from the centre line (x = 0)
+  else
+    sg = (t0.z > 0) and 1 or -1           -- the handle moves upwards
+  end
 
   local massCids, massW = {}, {}
   for _, name in ipairs(cfg.massNodes or {}) do
@@ -141,6 +155,7 @@ local function getPart(id)
        maxRad = math.rad(cfg.maxDeg), autoOpenRad = math.rad(cfg.autoOpenDeg),
        active = false, dragging = false, pressTime = 0, moved = 0, rayOn = false, lastClick = -1,
        uTarget = nil, prevO = nil, prevD = nil, lastU = nil, targetOmega = 0,
+       planeStart = nil, planeOffset = nil, planeTarget = nil, cursorStart = nil,
        auto = nil, thrown = false, settleTime = 0}
   parts[id] = d
   hook(d, "init")
@@ -191,6 +206,13 @@ local function handleSpeed(d, t)
   return vel:dot(t)
 end
 
+-- handle velocity relative to the car (plane drag)
+local function handleVelCar(d)
+  local vel = vec3(0, 0, 0)
+  for _, h in ipairs(d.handle) do vel = vel + obj:getNodeVelocityVector(h.cid) * h.w end
+  return vel - obj:getVelocity()
+end
+
 local function applyHandleForce(d, f, dt)
   for _, h in ipairs(d.handle) do obj:applyForceVectorTime(h.cid, f * h.w, dt) end
 end
@@ -200,7 +222,9 @@ local function arcPoint(d, u, c, e1, e2, R)
   return c + (e1 * math.cos(a) + e2 * math.sin(a)) * R
 end
 
--- the cursor ray comes in through vehicle.lidDragRay (vehicle.lua forwards it to setRay)
+-- the cursor ray comes in through vehicle.lidDragRay (vehicle.lua forwards it to setRay), unless the part names
+-- another vehicle function (rayCmd); dragPlane parts get the cursor point through vehicle.doorDragTarget (setTarget),
+-- the command the GE extension sends for its plane drags
 local RAY_CMD = "vehicle.lidDragRay"
 -- bug_doorDrag call; loading and the version check are in misc.geCall
 local function geCall(cmd)
@@ -209,12 +233,22 @@ end
 local function startRay(d)
   if d.rayOn then return end
   d.rayOn = true
-  geCall(string.format("bug_doorDrag.startRay(%d, %q, %q)", obj:getId(), d.id, RAY_CMD))
+  if d.cfg.dragPlane then
+    -- the grab point: the handle where it is now; the cursor's first point sets the offset (setTarget)
+    d.planeStart, d.planeOffset, d.planeTarget, d.cursorStart = handlePos(d), nil, nil, nil
+    geCall(string.format("bug_doorDrag.start(%d, %q, %f)", obj:getId(), d.id, d.planeStart.z))
+  else
+    geCall(string.format("bug_doorDrag.startRay(%d, %q, %q)", obj:getId(), d.id, d.cfg.rayCmd or RAY_CMD))
+  end
 end
 local function stopRay(d)
   if not d.rayOn then return end
   d.rayOn = false
-  geCall(string.format("bug_doorDrag.stopRay(%d, %q, %q)", obj:getId(), d.id, RAY_CMD))
+  if d.cfg.dragPlane then
+    geCall(string.format("bug_doorDrag.stop(%d, %q)", obj:getId(), d.id))
+  else
+    geCall(string.format("bug_doorDrag.stopRay(%d, %q, %q)", obj:getId(), d.id, d.cfg.rayCmd or RAY_CMD))
+  end
 end
 
 -- net torque of springs + weight (N m, + = opening) at opening angle theta
@@ -255,8 +289,10 @@ local function press(id, value)
     if d.active then return end
     d.active, d.dragging, d.pressTime, d.moved = true, false, 0, 0
     d.uTarget, d.prevO, d.prevD, d.lastU, d.targetOmega = nil, nil, nil, nil, 0
+    d.planeOffset, d.planeTarget, d.cursorStart = nil, nil, nil
     d.thrown = false
-    if not isHeld(d) and not isBroken(d) then startRay(d) end
+    -- a plane drag starts on a held (latched) part too: cursor motion then still makes it a drag, not a click
+    if (d.cfg.dragPlane or not isHeld(d)) and not isBroken(d) then startRay(d) end
   else
     if not d.active then return end
     local wasClick = not d.dragging and d.pressTime <= CLICK_MAX_TIME
@@ -310,7 +346,7 @@ local function fromCar(l, o, r, f, u) local w = r * l.x + f * l.y + u * l.z; ret
 -- called every frame by the GE extension with the cursor ray while the handle is held
 local function setRay(id, px, py, pz, dx, dy, dz)
   local d = parts[id]
-  if not d or not d.active then return end
+  if not d or not d.active or d.cfg.dragPlane then return end
   local O, dir = vec3(px, py, pz), vec3(dx, dy, dz):normalized()
   local theta, R, _, axis, c, e1, e2 = geom(d)
   if not theta then return end
@@ -358,6 +394,48 @@ local function setRay(id, px, py, pz, dx, dy, dz)
     end
   end
   d.prevO, d.prevD = toCar(O, fo, fr, ff, fu), toCar(dir, nil, fr, ff, fu)
+end
+
+-- called every frame by the GE extension with the cursor's point on the plane at handle height (dragPlane parts)
+local function setTarget(id, x, y, z)
+  local d = parts[id]
+  if not d or not d.active or not d.cfg.dragPlane or not d.planeStart then return end
+  local cursor = vec3(x, y, z)
+  if not d.planeOffset then
+    -- keep the grab point where it is: the part must not jump to the cursor on the first frame
+    d.planeOffset = d.planeStart - cursor
+    d.cursorStart = cursor
+  end
+  d.planeTarget = cursor + d.planeOffset
+  if not d.dragging and (cursor - d.cursorStart):length() > CLICK_MAX_MOVE then d.dragging = true end
+end
+
+-- plane drag: the handle is pulled towards the target point, horizontally (the hinge, the stops and the jbeam's own
+-- door physics still act)
+local function planeHand(d, dt, theta, R, t)
+  local err = d.planeTarget - handlePos(d)
+  err.z = 0
+  local vel = handleVelCar(d)
+  vel.z = 0
+  local f = err * (d.cfg.dragSpring or DRAG_SPRING) - vel * (d.cfg.dragDamp or DRAG_DAMP)
+  local fMax = d.cfg.dragMaxForce or DRAG_MAX_FORCE
+  local len = f:length()
+  if len > fMax then f = f * (fMax / len) end
+  -- near shut the hand can't press it shut slowly: limit the closing component
+  local cap = d.cfg.slowCloseCap
+  if cap then
+    local gap
+    if cap.opening then gap = cap.opening(d) else gap = theta * R end
+    if gap and gap < cap.gap then
+      local dir = vec3(t.x, t.y, 0)
+      if dir:length() > 1e-3 then
+        dir = dir:normalized()
+        local along = f:dot(dir)
+        if along < -cap.maxClose then f = f + dir * (-cap.maxClose - along) end
+      end
+    end
+  end
+  applyHandleForce(d, f, dt)
 end
 
 local function dragLost(id)
@@ -425,7 +503,9 @@ local function updatePart(d, dt)
   end
 
   -- hand
-  if d.active and d.dragging and d.uTarget then
+  if d.cfg.dragPlane then
+    if d.active and d.dragging and d.planeTarget then planeHand(d, dt, theta, R, t) end
+  elseif d.active and d.dragging and d.uTarget then
     if d.lastU then
       local k = math.min(1, dt / TARGET_VEL_TAU)
       d.targetOmega = d.targetOmega + ((d.uTarget - d.lastU) / math.max(dt, 1e-3) - d.targetOmega) * k
@@ -477,6 +557,7 @@ M.press      = press
 M.toggle     = toggle
 M.open       = open
 M.setRay     = setRay
+M.setTarget  = setTarget
 M.dragLost   = dragLost
 M.isPart     = isPart
 M.updateGFX  = updateGFX
