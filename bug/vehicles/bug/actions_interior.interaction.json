@@ -6,7 +6,7 @@
         "ashtraytoggle":       {"order":31.4, "onDown":"vehicle.toggleAshTray()",                "title":"vehicle.interaction.interior.ashtray.title",                      "desc":"vehicle.interaction.interior.ashtray.desc"},
         "gloveboxLatch":       {"order":31.5, "onDown":"vehicle.toggleGlovebox()",               "title":"vehicle.interaction.interior.glovebox.title",                     "desc":"vehicle.interaction.interior.glovebox.desc"},
     
-        // Front seat backrests: hold + drag folds the backrest, double-click folds / unfolds it (lua/lib/lids.lua);
+        // Front seat backrests: hold + drag folds the backrest, double-click folds / unfolds it (lua/lib/seats.lua);
         // the toggle action folds / unfolds it automatically. Neither works while someone sits on the seat.
         "seatFLfold":          {"order":32.0, "onChange":"vehicle.seatFold('seatFL', VALUE)",      "title":"vehicle.interaction.interior.front_left_seat_fold.title",         "desc":"vehicle.interaction.interior.front_left_seat_fold.desc"},
         "seatFLtoggle":        {"order":32.1, "onDown":"vehicle.toggle('seatFLbackrest')",       "title":"vehicle.interaction.interior.front_left_seat.title",              "desc":"vehicle.interaction.interior.front_left_seat.desc"},
