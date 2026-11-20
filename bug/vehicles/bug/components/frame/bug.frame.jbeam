@@ -11,8 +11,6 @@
 
 		["soundscape_horn",      ["soundscape_horn"], [],      "soundscape_horn_116",        "Horn"],
 
-		// TODO: REMOVE
-		["cruisecontrol",        ["cruisecontrol"], [],        "personality_cruisecontrol",  "Personality Cruise Control"],
 		["linelock",             ["linelock"], [],             "",                           "Brake Line Lock"],
 		["bug_ABS",              ["bug_ABS"], [],              "",  		                 "Anti-Lock Braking System"],
 
