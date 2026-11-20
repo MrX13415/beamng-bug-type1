@@ -56,7 +56,8 @@ local function lidDragRay(id, px, py, pz, dx, dy, dz)
   hinge.setRay(id, px, py, pz, dx, dy, dz)
 end
 
--- front seat backrests ("seatFL" / "seatFR"): hold + drag swings them, double-click folds / unfolds; hinged parts
+-- front seat backrests ("seatFL" / "seatFR") and the rear cushion ("seatR"): hold + drag swings them, double-click
+-- folds / unfolds; hinged parts
 -- without a latch (lib/seats.lua on lib/hinge.lua, the cursor ray comes in via lidDragRay). seatFoldToggle: the same
 -- automatic fold without a trigger. Both do nothing while someone sits on the seat.
 local function seatFold(id, value)

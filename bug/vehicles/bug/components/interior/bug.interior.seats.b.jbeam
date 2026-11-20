@@ -95,8 +95,8 @@
         ["bug_seat_generic_R", ["bug_seat_rear_generic"], [], "bug_seat_rear_generic", "Generic Rear Seat", {
             "coreSlot": true,
             "variables": {
-                "$meshBase": "bug_seat_B_rear_back",
-                "$meshBack": "bug_seat_B_rear_base"
+                "$meshBase": "bug_seat_B_rear_base",
+                "$meshBack": "bug_seat_B_rear_back"
             }
         }],
     ],

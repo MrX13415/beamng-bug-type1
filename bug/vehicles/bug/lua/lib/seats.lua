@@ -2,8 +2,8 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
--- Seats: sliding the front seats with the handle (seatFL_position / seatFR_position), folding the front backrests by
--- hand and locking them while someone sits there.
+-- Seats: sliding the front seats with the handle (seatFL_position / seatFR_position), folding the front backrests and
+-- lifting the rear cushion by hand, and locking them while someone sits there.
 -- vehicle.lua forwards the public functions and calls setup / update / reset.
 --
 -- Front seat backrests of the generic front seats (bug.interior.seats.generics.jbeam): a hinged part
@@ -15,6 +15,9 @@
 -- The seat's backrest hydro (input seat<ID>backrest) is the lock: while nobody sits on the seat its beams are slack
 -- (spring 0), so the hinge is free; while someone sits there (the game's occupant system says so) it is stiff again
 -- and holds the backrest upright, and the backrest can't be dragged or folded (see the seat lock below).
+-- The rear seat cushion of the generic rear seat lifts up the same way (the battery is underneath): hinged at its rear
+-- (isRHl / isRHr), stop beams isR3 - isRB1. Its lock is a pair of plain beams (seatR_lock_L / _R, the same nodes),
+-- slack while both rear seats are empty, stiff while someone sits on either.
 
 local M = {}
 
@@ -57,6 +60,11 @@ local SEAT_FRONT_MID_FRACTION = 0.5 -- tipping point (~ where its weight would t
 local SEAT_FRONT_T_OPEN    = 6    -- N m    above it: falls forward onto the stop
 local SEAT_FRONT_T_CLOSE   = 20   -- N m    below it: falls back upright (more than its weight's torque at 1 g)
 local SEAT_FRONT_DAMP      = 15   -- N m s/rad  (I ~1 kg m^2, top of the backrest 0.67 m from the pivot)
+local SEAT_REAR_FULL_DEG   = 88   -- deg    cushion up (stop beams isR3-isRB1, 0.444 m shorter)
+local SEAT_REAR_MID_FRACTION = 0.85 -- tipping point ~75 deg: below it the cushion falls down
+local SEAT_REAR_T_OPEN     = 4    -- N m    above it: leans against the up stop
+local SEAT_REAR_T_CLOSE    = 12   -- N m    below it: falls down (~37 N at the front edge)
+local SEAT_REAR_DAMP       = 8    -- N m s/rad  (I ~0.45 kg m^2, front edge 0.32 m from the pivot)
 local SEAT_T_WIDTH         = math.rad(3)
 local SEAT_THROW_SPEED     = 0.8  -- m/s
 local SEAT_THROW_DAMP      = 3    -- N m s/rad
@@ -68,8 +76,8 @@ local SEAT_AUTO_MAX_FORCE  = 90   -- N
 local SEAT_AUTO_CLOSE_SPEED = 0.6 -- m/s    at the drag point: no slam onto the stop
 
 local SEAT_POLL_TIME   = 0.5    -- s    how often GE is asked which seats are occupied
-local SEAT_LOCK_DELAY  = 1.0    -- s    from setting the input to upright until the hydro is stiff again (its rate
-                                --      is 1 per second: it is back at upright by then)
+local SEAT_LOCK_DELAY  = 1.5    -- s    from someone sitting down until the lock is stiff: meanwhile the seat closes
+                                --      by itself (automatic close), so the stiff lock doesn't snap it shut
 local SEATS = {}                -- hinged seat parts: id -> config
 local seatLocks = {}            -- id -> {elec, beams, locked, lockTimer, elecSeen}, or false (not a seat)
 local occupiedSeats = {}        -- seat id of the occupant system ("FL", "FR", …) -> true, from GE
@@ -99,16 +107,27 @@ local function seatLockOf(id)
   local sl = seatLocks[id]
   if sl ~= nil then return sl or nil end
   local cfg = SEATS[id]
-  if not cfg or not cfg.lock then seatLocks[id] = false return nil end
+  if not cfg or not (cfg.lock or cfg.lockBeams) then seatLocks[id] = false return nil end
   sl = {elec = cfg.lock, beams = {}, locked = true, lockTimer = 0}
-  for _, h in pairs(v.data.hydros or {}) do
-    if h.inputSource == cfg.lock and h.beamCID then
-      local b = v.data.beams[h.beamCID]
-      sl.beams[#sl.beams + 1] = {cid = h.beamCID, spring = b and b.beamSpring or 0, damp = b and b.beamDamp or 0}
+  if cfg.lock then                              -- front backrests: the hydro with this input
+    for _, h in pairs(v.data.hydros or {}) do
+      if h.inputSource == cfg.lock and h.beamCID then
+        local b = v.data.beams[h.beamCID]
+        sl.beams[#sl.beams + 1] = {cid = h.beamCID, spring = b and b.beamSpring or 0, damp = b and b.beamDamp or 0}
+      end
+    end
+  end
+  if cfg.lockBeams then                         -- rear cushion: beams by name
+    local names = {}
+    for _, n in ipairs(cfg.lockBeams) do names[n] = true end
+    for _, b in pairs(v.data.beams) do
+      if b.cid and b.name and names[b.name] then
+        sl.beams[#sl.beams + 1] = {cid = b.cid, spring = b.beamSpring or 0, damp = b.beamDamp or 0}
+      end
     end
   end
   if #sl.beams == 0 then
-    log('W', 'bug.seats', 'seat ' .. id .. ': no backrest hydro with input ' .. cfg.lock .. ', it stays rigid')
+    log('W', 'bug.seats', 'seat ' .. id .. ': no lock beams found, it stays rigid')
     seatLocks[id] = false
     return nil
   end
@@ -127,34 +146,47 @@ local function seatLocked(id)
   return sl and sl.locked or false
 end
 
--- hook (lib/hinge.lua): every frame for a seat; true while it is locked (the hinge physics is skipped then, the
--- hydro holds it)
+-- is someone sitting on this seat (the rear cushion: on either rear seat)
+local function seatOccupied(cfg)
+  if cfg.seatIds then
+    for _, s in ipairs(cfg.seatIds) do if occupiedSeats[s] then return true end end
+    return false
+  end
+  return occupiedSeats[cfg.seatId] or false
+end
+
+-- hook (lib/hinge.lua): every frame for a seat; true while it is locked (the hinge physics is skipped then, the lock
+-- beams hold it)
 local function updateSeatLock(d, dt)
   local id = d.id
   local sl = seatLockOf(id)
   if not sl then return false end
-  local e = electrics.values[sl.elec] or 0
+  local e = sl.elec and electrics.values[sl.elec] or 0
 
-  if occupiedSeats[d.cfg.seatId] then
-    if not sl.locked then                     -- someone sat down: back to upright, then stiff
+  if seatOccupied(d.cfg) then
+    if not sl.locked then                     -- someone sat down: close it by itself, then stiff
       log('D', 'bug.seats', 'seat ' .. id .. ' locked (occupied)')
       sl.locked, sl.lockTimer = true, SEAT_LOCK_DELAY
       hinge.cancel(d)
+      local theta = hinge.geom(d)
+      if theta and theta > math.rad(1) then hinge.startAuto(d, "close") end
     end
-    electrics.values[sl.elec] = 0
-    sl.elecSeen = 0
+    if sl.elec then electrics.values[sl.elec] = 0; sl.elecSeen = 0 end
     if sl.lockTimer > 0 then
       sl.lockTimer = sl.lockTimer - dt
-      if sl.lockTimer <= 0 then setSeatStiff(sl, true) end
+      if sl.lockTimer > 0 then return false end   -- still closing: the hinge physics runs the automatic close
+      d.auto = nil
+      setSeatStiff(sl, true)
     end
     return true
   end
 
-  if sl.locked then                           -- empty (again): slack hydro, free hinge
+  if sl.locked then                           -- empty (again): slack lock, free hinge
     log('D', 'bug.seats', 'seat ' .. id .. ' free (nobody on it)')
     sl.locked, sl.lockTimer, sl.elecSeen = false, 0, e
     setSeatStiff(sl, false)
   end
+  if not sl.elec then return false end        -- no input to follow (rear cushion)
   local theta = hinge.geom(d)
   if not theta then return false end
   local folded = theta > d.cfg.springs.mid
@@ -189,6 +221,21 @@ local function frontSeat(s)
 end
 SEATS.seatFL = frontSeat("FL")
 SEATS.seatFR = frontSeat("FR")
+SEATS.seatR = {
+  hinge = {"isRHl", "isRHr"}, ref = "isR1l",                   -- pivot near the cushion's rear / fixed seat frame
+  handle = {{"isRB1l", 0.5}, {"isRB1r", 0.5}},                 -- front edge of the cushion
+  breakGroups = {},
+  massNodes = {"isRB1l", "isRB1r", "isRB3l", "isRB3r", "isRB4l", "isRB4r", "isRB5l", "isRB5r"},
+  lockBeams = {"seatR_lock_L", "seatR_lock_R"}, seatIds = {"RL", "RR"},  -- lock beams, seat ids of the occupant system
+  springs = {mid = math.rad(SEAT_REAR_FULL_DEG * SEAT_REAR_MID_FRACTION), tOpen = SEAT_REAR_T_OPEN,
+             tClose = SEAT_REAR_T_CLOSE, width = SEAT_T_WIDTH, damp = SEAT_REAR_DAMP,
+             throw = SEAT_THROW_SPEED, throwDamp = SEAT_THROW_DAMP},
+  dragMaxForce = SEAT_DRAG_MAX_FORCE, dragSpring = SEAT_DRAG_SPRING, dragDamp = SEAT_DRAG_DAMP, autoGain = SEAT_AUTO_GAIN, autoMaxForce = SEAT_AUTO_MAX_FORCE,
+  autoCloseSpeed = SEAT_AUTO_CLOSE_SPEED, screenFree = true,
+  maxDeg = 90,
+  autoOpenDeg = SEAT_REAR_FULL_DEG * SEAT_REAR_MID_FRACTION + 7,
+  hooks = SEAT_HOOKS,
+}
 for id, cfg in pairs(SEATS) do hinge.register(id, cfg) end
 
 -- backrest trigger press (value 1) / release (value 0): hold + drag swings it, double-click folds / unfolds it;

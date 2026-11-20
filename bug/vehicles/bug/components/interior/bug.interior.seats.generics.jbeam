@@ -372,7 +372,7 @@
 
   // Generic rear-seat template.
   // Variables used to be set.
-  //    $meshBase   The mesh name for the seat base
+  //    $meshBase   The mesh name for the seat base (the cushion, it lifts up: the battery is underneath)
   //    $meshBack   The mesh name for the seat backrest
   "bug_seat_rear_generic": {
     "information":{
@@ -392,8 +392,26 @@
     "flexbodies": [
       ["mesh", "[group]:", "nonFlexMaterials"],
   
-      ["$=$meshBase", ["bug_seat_R"]],
+      ["$=$meshBase", ["bug_seat_R_base"]],   // the cushion lifts up (lua/lib/seats.lua)
       ["$=$meshBack", ["bug_seat_R"]],
+    ],
+    // three spheres along the cushion's front edge, it lights up; hold + drag lifts it up to ~88 deg (the battery is
+    // underneath), double-click lifts / lowers it (lua/lib/seats.lua); not while someone sits on a rear seat
+    "triggers2":[
+      ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
+      ["seat_R_fold",  "isRB1r", "isRB1l", "isRHl", "sphere", 0.15, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"$=$meshBase", "baseTranslationGlobal":{"x": 0.40, "y":0.48, "z":0.58}, "alphaOnUsed":0}],
+      ["seat_R_fold2", "isRB1r", "isRB1l", "isRHl", "sphere", 0.15, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"$=$meshBase", "baseTranslationGlobal":{"x": 0.00, "y":0.48, "z":0.58}, "alphaOnUsed":0}],
+      ["seat_R_fold3", "isRB1r", "isRB1l", "isRHl", "sphere", 0.15, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"$=$meshBase", "baseTranslationGlobal":{"x":-0.40, "y":0.48, "z":0.58}, "alphaOnUsed":0}],
+    ],
+    "actionsEnabled": [
+      ["id"],
+      ["seatRfold"],
+    ],
+    "triggerEventLinks2":[
+      ["triggerId:triggers2", "triggerInput", "inputAction"],
+      ["seat_R_fold",  "action0", "seatRfold"],
+      ["seat_R_fold2", "action0", "seatRfold"],
+      ["seat_R_fold3", "action0", "seatRfold"],
     ],
     "nodes": [
       ["id","posX","posY","posZ"],
@@ -413,6 +431,26 @@
       ["isR3r", -0.57240, 0.97553, 0.96024],
       ["isR4l",  0.30000, 1.30000, 0.80000, {"collision":false, "selfCollision":false, "group":"", "nodeWeight":1}],
       ["isR4r", -0.30000, 1.30000, 0.80000, {"collision":false, "selfCollision":false, "group":"", "nodeWeight":1}],
+      // cushion: lifts up around isRHl / isRHr (inside the cushion, half its thickness up, ~10 cm from its rear end;
+      // also part of the fixed seat frame). No self-collision: it lifts through the rear occupants' bodies (they stay
+      // on the seat, invisible and almost massless, while nobody sits there; while someone does, lua/lib/seats.lua
+      // locks the cushion down). The occupants sit on the frame's faces (isR1 / isR2) below it.
+      {"group": ["bug_seat_R", "bug_seat_R_base"]},
+      {"nodeWeight": 1.5},   // many beams meet here
+      ["isRHl",  0.58, 0.71, 0.55],
+      ["isRHr", -0.58, 0.71, 0.55],
+      {"group": "bug_seat_R_base"},
+      {"nodeWeight": 1.0},
+      {"selfCollision":false},
+      ["isRB1l",  0.58, 0.40, 0.63],
+      ["isRB1r", -0.58, 0.40, 0.63],
+      ["isRB3l",  0.58, 0.42, 0.47],
+      ["isRB3r", -0.58, 0.42, 0.47],
+      ["isRB4l",  0.58, 0.78, 0.47],
+      ["isRB4r", -0.58, 0.78, 0.47],
+      ["isRB5l",  0.58, 0.80, 0.64],
+      ["isRB5r", -0.58, 0.80, 0.64],
+      {"selfCollision":true},
       {"group": ""},
       {"chemEnergy":false,"burnRate":false,"flashPoint":false,"smokePoint":false,"selfIgnition":false,"specHeat":false},
     ],
@@ -441,6 +479,95 @@
       ["isR3l", "isR2r"],
       ["isR1l", "isR3r"],
       ["isR3l", "isR1r"],
+      {"group": ""},
+
+      // cushion: rigid, hinged on isRHl / isRHr only (stop beams below, moved and sprung by lua/lib/seats.lua)
+      // (softer and less damped than the frame: summed over the many beams at the hinge nodes the frame's damping
+      // made the car explode at spawn)
+      {"group": "bug_seat_R_base"},
+      {"beamSpring":301000,"beamDamp":40},
+      {"beamDeform":20000},   // stronger than the stops (the frame's 1000 would bend under the stops)
+      ["isRHl", "isRB1l"],
+      ["isRHl", "isRB1r"],
+      ["isRHl", "isRB3l"],
+      ["isRHl", "isRB3r"],
+      ["isRHl", "isRB4l"],
+      ["isRHl", "isRB4r"],
+      ["isRHl", "isRB5l"],
+      ["isRHl", "isRB5r"],
+      ["isRHr", "isRB1l"],
+      ["isRHr", "isRB1r"],
+      ["isRHr", "isRB3l"],
+      ["isRHr", "isRB3r"],
+      ["isRHr", "isRB4l"],
+      ["isRHr", "isRB4r"],
+      ["isRHr", "isRB5l"],
+      ["isRHr", "isRB5r"],
+      ["isRB1l", "isRB1r"],
+      ["isRB1l", "isRB3l"],
+      ["isRB1l", "isRB3r"],
+      ["isRB1l", "isRB4l"],
+      ["isRB1l", "isRB4r"],
+      ["isRB1l", "isRB5l"],
+      ["isRB1l", "isRB5r"],
+      ["isRB1r", "isRB3l"],
+      ["isRB1r", "isRB3r"],
+      ["isRB1r", "isRB4l"],
+      ["isRB1r", "isRB4r"],
+      ["isRB1r", "isRB5l"],
+      ["isRB1r", "isRB5r"],
+      ["isRB3l", "isRB3r"],
+      ["isRB3l", "isRB4l"],
+      ["isRB3l", "isRB4r"],
+      ["isRB3l", "isRB5l"],
+      ["isRB3l", "isRB5r"],
+      ["isRB3r", "isRB4l"],
+      ["isRB3r", "isRB4r"],
+      ["isRB3r", "isRB5l"],
+      ["isRB3r", "isRB5r"],
+      ["isRB4l", "isRB4r"],
+      ["isRB4l", "isRB5l"],
+      ["isRB4l", "isRB5r"],
+      ["isRB4r", "isRB5l"],
+      ["isRB4r", "isRB5r"],
+      ["isRB5l", "isRB5r"],
+      // hinge nodes <> seat frame
+      {"group": "bug_seat_R"},
+      {"beamSpring":501000,"beamDamp":300},
+      {"beamDeform":1000},
+      ["isRHl", "isRHr"],
+      ["isRHl", "isR1l"],
+      ["isRHl", "isR1r"],
+      ["isRHl", "isR2l"],
+      ["isRHl", "isR2r"],
+      ["isRHl", "isR3l"],
+      ["isRHl", "isR3r"],
+      ["isRHr", "isR1l"],
+      ["isRHr", "isR1r"],
+      ["isRHr", "isR2l"],
+      ["isRHr", "isR2r"],
+      ["isRHr", "isR3l"],
+      ["isRHr", "isR3r"],
+      // stops: down (long bound) and up at ~88 deg (backrest top isR3 <> cushion front edge, 0.444 m shorter); free
+      // in between
+      {"beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
+      {"beamSpring":0,"beamDamp":0},
+      {"beamLimitSpring":300000,"beamLimitDamp":30},
+      {"beamDeform":20000},
+      {"longBoundRange":0.0, "shortBoundRange":0.444},
+      ["isR3l", "isRB1l"],
+      ["isR3r", "isRB1r"],
+      {"longBoundRange":"", "shortBoundRange":""},
+      {"beamLimitSpring":"","beamLimitDamp":""},
+      {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+      // lock: holds the cushion down while someone sits on a rear seat; lua/lib/seats.lua makes these beams slack
+      // (spring 0) while both rear seats are empty, so the cushion can be lifted
+      {"beamSpring":10000,"beamDamp":100},
+      {"beamDeform":"FLT_MAX"},
+      ["isR3l", "isRB1l", {"name":"seatR_lock_L"}],
+      ["isR3r", "isRB1r", {"name":"seatR_lock_R"}],
+      {"beamSpring":501000,"beamDamp":300},
+      {"beamDeform":1000},
       {"group": ""},
 
       //seat back rigifier beams: only to seat back nodes
