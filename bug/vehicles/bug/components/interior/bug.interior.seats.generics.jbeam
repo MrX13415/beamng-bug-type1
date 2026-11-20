@@ -34,7 +34,7 @@
           "$occupant_attachnodeRR": "$='is'..$seatID..'2i'",
           // the occupant's back is attached to anchor nodes on the seat frame above the upright backrest top
           // (10o / 10i, was the backrest top 5o / 5i itself), so the backrest can fold freely and the shoulders are
-          // held from above; while someone sits there lua/lib/lids.lua locks the backrest upright
+          // held from above; while someone sits there lua/lib/seats.lua locks the backrest upright
           "$occupant_attachnodeTL": "$='is'..$seatID..'10o'",
           "$occupant_attachnodeTR": "$='is'..$seatID..'10i'",
           "$occupant_attachnodeRigifier": "$='is'..$seatID..'9'"
@@ -66,7 +66,7 @@
     "triggerEventLinks2": [
       ["triggerId:triggers2", "triggerInput", "inputAction"],
       //["$='seat_'..$seatID..'_toggle'", "action0", "$='seat'..$seatID..'toggle'"], // was: a click folds / unfolds via the hydro
-      // hold + drag folds the backrest, double-click folds / unfolds it (lua/lib/lids.lua); the toggle action stays
+      // hold + drag folds the backrest, double-click folds / unfolds it (lua/lib/seats.lua); the toggle action stays
       ["$='seat_'..$seatID..'_toggle'", "action0", "$='seat'..$seatID..'fold'"],
       ["$='seat_'..$seatID..'_move'", "action0", "$='seat'..$seatID..'moveF'"],
       ["$='seat_'..$seatID..'_move'", "action1", "$='seat'..$seatID..'moveB'"],
@@ -93,7 +93,7 @@
       ["$='is'..$seatID..'4i'", "$= $side * 0.126", -0.036, 0.278, {"nodeWeight": 1.5}],
       {"group": "$='bug_seat_'..$seatID..'_back'"},
       // backrest: no self-collision, so it can fold forward through the seat's occupant body (it stays on the seat,
-      // invisible and almost massless, while nobody sits there; while someone does, lua/lib/lids.lua locks the
+      // invisible and almost massless, while nobody sits there; while someone does, lua/lib/seats.lua locks the
       // backrest upright). It still collides with the world and other vehicles.
       {"selfCollision": false},
       ["$='is'..$seatID..'5o'", "$= $side * 0.493",  0.220, 0.900],
@@ -138,7 +138,7 @@
     "hydros": [
       ["id1:", "id2:"],
 
-      // Backrest. Also its lock: lua/lib/lids.lua makes these two beams slack (spring 0) while nobody sits on the
+      // Backrest. Also its lock: lua/lib/seats.lua makes these two beams slack (spring 0) while nobody sits on the
       // seat, so the backrest swings freely between the stop beams below, and stiff again when someone sits down.
       {"beamPrecompression": 1.0, "beamType": "|NORMAL", "beamLongBound": 1, "beamShortBound": 1},
       {"beamSpring": 10000, "beamDamp": 100, "beamDeform": "FLT_MAX", "beamStrength": "FLT_MAX"},
@@ -284,7 +284,7 @@
         ["$='is'..$seatID..'9'", "$='is'..$seatID..'10i'"],
 
         // backrest stops: upright (long bound) and folded forward by ~42 deg (the distance cushion front - backrest
-        // top 0.676 m gets 0.295 m shorter); between them it swings freely, moved and sprung by lua/lib/lids.lua
+        // top 0.676 m gets 0.295 m shorter); between them it swings freely, moved and sprung by lua/lib/seats.lua
         {"beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
         {"beamSpring":0,"beamDamp":0},
         {"beamLimitSpring":300000,"beamLimitDamp":30},
@@ -372,11 +372,11 @@
     "flexbodies": [
       ["mesh", "[group]:", "nonFlexMaterials"],
   
-      ["$=$meshBase", ["bug_seat_R_base"]],   // the cushion lifts up (lua/lib/lids.lua)
+      ["$=$meshBase", ["bug_seat_R_base"]],   // the cushion lifts up (lua/lib/seats.lua)
       ["$=$meshBack", ["bug_seat_R"]],
     ],
     // three spheres along the cushion's front edge, it lights up; hold + drag lifts it up to ~88 deg (the battery is
-    // underneath), double-click lifts / lowers it (lua/lib/lids.lua); not while someone sits on a rear seat
+    // underneath), double-click lifts / lowers it (lua/lib/seats.lua); not while someone sits on a rear seat
     "triggers2":[
       ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
       ["seat_R_fold",  "isRB1r", "isRB1l", "isRHl", "sphere", 0.15, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"$=$meshBase", "baseTranslationGlobal":{"x": 0.40, "y":0.48, "z":0.58}, "alphaOnUsed":0}],
@@ -413,7 +413,7 @@
       ["isR4r", -0.30000, 1.30000, 0.80000, {"collision":false, "selfCollision":false, "group":"", "nodeWeight":1}],
       // cushion: lifts up around isRHl / isRHr (inside the cushion, half its thickness up, ~10 cm from its rear end;
       // also part of the fixed seat frame). No self-collision: it lifts through the rear occupants' bodies (they stay
-      // on the seat, invisible and almost massless, while nobody sits there; while someone does, lua/lib/lids.lua
+      // on the seat, invisible and almost massless, while nobody sits there; while someone does, lua/lib/seats.lua
       // locks the cushion down). The occupants sit on the frame's faces (isR1 / isR2) below it.
       {"group": ["bug_seat_R", "bug_seat_R_base"]},
       {"nodeWeight": 1.5},   // many beams meet here
@@ -461,7 +461,7 @@
       ["isR3l", "isR1r"],
       {"group": ""},
 
-      // cushion: rigid, hinged on isRHl / isRHr only (stop beams below, moved and sprung by lua/lib/lids.lua)
+      // cushion: rigid, hinged on isRHl / isRHr only (stop beams below, moved and sprung by lua/lib/seats.lua)
       // (softer and less damped than the frame: summed over the many beams at the hinge nodes the frame's damping
       // made the car explode at spawn)
       {"group": "bug_seat_R_base"},
@@ -540,7 +540,7 @@
       {"longBoundRange":"", "shortBoundRange":""},
       {"beamLimitSpring":"","beamLimitDamp":""},
       {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-      // lock: holds the cushion down while someone sits on a rear seat; lua/lib/lids.lua makes these beams slack
+      // lock: holds the cushion down while someone sits on a rear seat; lua/lib/seats.lua makes these beams slack
       // (spring 0) while both rear seats are empty, so the cushion can be lifted
       {"beamSpring":10000,"beamDamp":100},
       {"beamDeform":"FLT_MAX"},
