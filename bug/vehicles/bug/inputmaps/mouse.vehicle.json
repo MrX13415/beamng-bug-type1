@@ -1,0 +1,6 @@
+{
+  "bindings":[
+    // mouse wheel over a window crank turns it (up = crank forward, window down)
+    {"control": "zaxis", "action": "windowCrankWheel"}
+  ]
+}

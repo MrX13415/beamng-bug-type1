@@ -14,16 +14,19 @@
 --   lib/seats.lua      sliding the front seats, folding the front backrests (on lib/hinge.lua) and locking them
 --                      while someone sits there
 --   lib/openings.lua   how open the cabin is: interior light, cabin sound filter
---   lib/doors.lua      door couplers and the outside handles
---   lib/hinge.lua      parts swinging on a hinge, moved by hand (springs, dragging, double-click); gets updateGFX /
---                      onReset from the game itself, as a vehicle extension
+--   lib/doors.lua, lib/doorswing.lua, lib/windowcrank.lua: the doors (latch, push buttons, handles, the right door's
+--                      lock, getting in / out with F; how they swing: on lib/hinge.lua) and the window cranks
+--     (doors.lua gets updateGFX / onReset from the game itself, as a vehicle extension)
+--   lib/hinge.lua      parts swinging on a hinge, moved by hand (springs, dragging, double-click): lids and doors;
+--                      gets updateGFX / onReset from the game itself, as a vehicle extension
 --   lib/lids.lua       the frunk and engine lids on lib/hinge.lua: latches, the engine lid's handle and locking
 -- New features go into their own lib/ module; only the entry points the actions need are added here.
 
 local M = {}
 
 local misc = require("vehicles/bug/lua/misc")
-local doors = require("vehicles/bug/lua/lib/doors")
+local doors = require("vehicles/bug/lua/lib/doors")  -- also loaded as a vehicle extension: gets updateGFX / onReset itself
+local windowcrank = require("vehicles/bug/lua/lib/windowcrank")
 local hinge = require("vehicles/bug/lua/lib/hinge")  -- also loaded as a vehicle extension: gets updateGFX / onReset itself
 local lids = require("vehicles/bug/lua/lib/lids")
 local interior = require("vehicles/bug/lua/lib/interior")
@@ -42,9 +45,28 @@ end
 -- the game dropped a held trigger without a release (e.g. UI under the cursor), sent by the GE extension
 -- bug_doorDrag: the feature that drags the part `id` ends its drag (kind "crank" for window cranks, else "door")
 local function dragLost(id, kind)
-  if hinge.isPart(id) then
+  if kind == "crank" then
+    windowcrank.press(id, 0)
+  elseif doors.isDoor(id) then
+    doors.dragLost(id)    -- also ends a held inside handle
+  elseif hinge.isPart(id) then
     hinge.dragLost(id)
   end
+end
+
+-- window crank: press/release from the trigger (reverse = shift / middle mouse), cursor ray from GE
+local function windowCrank(id, value, reverse)
+  windowcrank.press(id, value, reverse)
+end
+local function windowCrankRay(id, px, py, pz, dx, dy, dz)
+  windowcrank.setRay(id, px, py, pz, dx, dy, dz)
+end
+-- mouse wheel over a crank (action windowCrankWheel, bound to the mouse wheel in inputmaps/mouse.vehicle.json)
+local function windowCrankWheel(value)
+  windowcrank.wheel(value)
+end
+local function windowCrankWheelRay(steps, px, py, pz, dx, dy, dz)
+  windowcrank.wheelRay(steps, px, py, pz, dx, dy, dz)
 end
 
 -- frunk / engine lid handles ("frunk" / "engine"): press/release from the trigger (lib/lids.lua); the cursor ray from
@@ -81,7 +103,7 @@ local function onInit(jbeamData)
   electrics.values.usdm_signal_L = 0
   electrics.values.usdm_signal_R = 0
 
-  doors.setupDoors()    -- door handle animations
+  doors.setupDoors()    -- door handle animations, click handler, get in / out with F
   openings.setup()      -- the roof's break beam
   body.setup()          -- foglight cover, frunk release, fuel / gas cap animations
   roof.setup()          -- roof handle animation
@@ -132,6 +154,7 @@ M.toggleTrunkHandle       = body.toggleTrunkHandle
 
 -- seats: lib/seats.lua
 M.moveSeat                = seats.moveSeat
+M.exitSeatForward         = seats.exitSeatForward
 
 -- doors: lib/doors.lua
 M.doorControllerName      = doors.doorControllerName
@@ -139,7 +162,20 @@ M.isDoorOpen              = doors.isDoorOpen
 M.setDoor                 = doors.setDoor
 M.toggleDoor              = doors.toggleDoor
 M.toggleDoorHandle        = doors.toggleDoorHandle
+M.pressDoorButton         = doors.pressDoorButton
+M.doorDrag                = doors.doorDrag
+M.doorDragTarget          = doors.doorDragTarget
+M.doorInterior            = doors.doorInterior
+M.isDoorLocked            = doors.isDoorLocked
+M.setDoorLock             = doors.setDoorLock
+M.toggleDoorLock          = doors.toggleDoorLock
+M.exitDoorOpen            = doors.exitDoorOpen
+M.exitDoorClose           = doors.exitDoorClose
 
+M.windowCrank             = windowCrank
+M.windowCrankRay          = windowCrankRay
+M.windowCrankWheel        = windowCrankWheel
+M.windowCrankWheelRay     = windowCrankWheelRay
 M.dragLost                = dragLost
 M.lidHandle               = lidHandle
 M.lidDragRay              = lidDragRay

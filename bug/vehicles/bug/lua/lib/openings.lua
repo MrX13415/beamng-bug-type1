@@ -6,6 +6,7 @@
 -- open the cabin is and sets from that:
 --   - electrics opendoor_L / opendoor_R / opendoors, vehicleopenL / vehicleopenR / vehicleopen;
 --   - the interior light (on with an open door or the button, see lib/interior.lua);
+--   - the extra air leak of broken glass (lib/cabinair.lua);
 --   - the cabin sound filter (core_sounds.cabinFilterStrength).
 -- Moved unchanged from vehicle.lua. vehicle.lua calls setup / update / reset (they are not game hooks on purpose:
 -- this file is also auto-loaded as a vehicle extension, and the order is kept as before).
@@ -13,6 +14,7 @@
 local M = {}
 
 local misc = require("vehicles/bug/lua/misc")
+local cabinair = require("vehicles/bug/lua/lib/cabinair")
 
 local getControllerState = misc.getControllerState
 
@@ -29,6 +31,7 @@ local parts = {
   windowRL = {broken = false, deformGroup = "sidewindow_RL_break"},
   windowRR = {broken = false, deformGroup = "sidewindow_RR_break"},
   windowR  = {broken = false, deformGroup = "rearwindow_break"},
+  windshield = {broken = false, deformGroup = "windshield_break"},
   ragtop   = {broken = false, name = "ragtopF", cid = nil},
 }
 
@@ -38,6 +41,9 @@ local function updatePartBroken(part)
 
   local group = beamstate.deformGroupDamage[part.deformGroup]
   if group and group.eventCount > 0 then
+    part.broken = true
+  elseif not group and next(beamstate.deformGroupDamage) ~= nil then
+    -- no beam has this deform group: the glass part isn't installed, the opening is open (cabin air leak)
     part.broken = true
   end
   return part.broken
@@ -57,6 +63,7 @@ local function checkPartsBroken()
   updatePartBroken(parts.windowRL)
   updatePartBroken(parts.windowRR)
   updatePartBroken(parts.windowR)
+  updatePartBroken(parts.windshield)
 
   updatePartBrokenBeam(parts.ragtop)
 end
@@ -68,6 +75,7 @@ local function resetParts()
   parts.windowRL.broken = false
   parts.windowRR.broken = false
   parts.windowR.broken = false
+  parts.windshield.broken = false
   parts.ragtop.broken = false
 end
 
@@ -112,8 +120,8 @@ local function updateOpenings()
 
   updateInteriorlight(doors)
 
-  local brokenWindowL = (parts.windowFL.broken and 1) or (parts.windowRL.broken and 1) or (parts.windowR.broken and 1) or 0
-  local brokenWindowR = (parts.windowFR.broken and 1) or (parts.windowRR.broken and 1) or (parts.windowR.broken and 1) or 0
+  local brokenWindowL = (parts.windowFL.broken and 1) or (parts.windowRL.broken and 1) or (parts.windowR.broken and 1) or (parts.windshield.broken and 1) or 0
+  local brokenWindowR = (parts.windowFR.broken and 1) or (parts.windowRR.broken and 1) or (parts.windowR.broken and 1) or (parts.windshield.broken and 1) or 0
   local ventFL = math.max(parts.ventL.broken and 1 or 0, electrics.values["doorventFL_state"] or 0)
   local ventFR = math.max(parts.ventR.broken and 1 or 0, electrics.values["doorventFR_state"] or 0)
   local windowFL = math.max(brokenWindowL, electrics.values["windowFL_state"] or 0)
@@ -121,6 +129,15 @@ local function updateOpenings()
   --local windows = clamp((windowFL + windowFR) / 2, 0, 1)
 
   local ragtop = math.max(parts.ragtop.broken and 1 or 0, electrics.values.ragtop_state or 0)
+
+  -- broken glass lets the cabin air out (cabin pressure when slamming a door, see lib/cabinair.lua)
+  cabinair.setExtraLeak(
+      (parts.windowFL.broken and 0.25 or 0) + (parts.windowFR.broken and 0.25 or 0)
+    + (parts.ventL.broken and 0.03 or 0)    + (parts.ventR.broken and 0.03 or 0)
+    + (parts.windowRL.broken and 0.2 or 0)  + (parts.windowRR.broken and 0.2 or 0)
+    + (parts.windowR.broken and 0.3 or 0)
+    + (parts.windshield.broken and 0.4 or 0)  -- was missing: a broken windshield left the cabin air-tight
+    + (parts.ragtop.broken and 1.0 or 0))
 
   local openL = clamp(doorL + (windowFL * 0.75) + (ventFL * 0.1) + (ragtop * 0.5), 0, 1)
   local openR = clamp(doorR + (windowFR * 0.75) + (ventFR * 0.1) + (ragtop * 0.5), 0, 1)

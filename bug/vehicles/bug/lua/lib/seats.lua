@@ -2,8 +2,8 @@
 -- If a copy of the bCDDL was not distributed with this
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
--- Seats: sliding the front seats with the handle (seatFL_position / seatFR_position), folding the front backrests and
--- lifting the rear cushion by hand, and locking them while someone sits there.
+-- Seats: sliding the front seats with the handle (seatFL_position / seatFR_position), folding the front backrests,
+-- lifting the rear cushion by hand, and moving the front seat forward to let rear passengers exit.
 -- vehicle.lua forwards the public functions and calls setup / update / reset.
 --
 -- Front seat backrests of the generic front seats (bug.interior.seats.generics.jbeam): a hinged part
@@ -256,6 +256,18 @@ local function reset()
   seatLocks = {}   -- the reset restored the hydros' springs from the jbeam: stiff, like a new lock
 end
 
+-- getting out from a rear seat with F (bug_exitDoor): the front seat on the door's side ("FL" / "FR") folds
+-- its backrest forward (backrest hydro seatFLbackrest / seatFRbackrest = 1, like the seat's toggle action) and
+-- slides all the way forward (seatFL_position = 3, with the handle animation, like the "move seat forward" action)
+local EXIT_SEAT_SLIDE = true  -- false: only fold the backrest
+local function exitSeatForward(id)
+  local seatId = "seat" .. id
+  electrics.values[seatId .. "backrest"] = 1
+  if EXIT_SEAT_SLIDE and (electrics.values[seatId .. "_position"] or 0) < 3 then
+    moveSeat(seatId, 6, -3, 3)  -- clamped to the forward end (+3)
+  end
+end
+
 -- called from vehicle.onInit
 local function setup()
   animation.setup('seatFL_handle', {
@@ -287,5 +299,6 @@ M.moveSeat        = moveSeat
 M.fold            = fold
 M.foldToggle      = foldToggle
 M.setOccupiedSeats = setOccupiedSeats   -- from GE (pollOccupiedSeats)
+M.exitSeatForward = exitSeatForward
 
 return M
