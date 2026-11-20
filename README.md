@@ -12,7 +12,7 @@ For The latest release and official donwload look [**HERE**](https://www.beamng.
 
 ## Repository Layout
 
-- `bug/` -  Main mod source wotj real-branding
+- `bug/` -  Main mod source with real-branding
 - `bug-aw/` - Specific files for the repository-frindly variant
 - `assets` - Images and logos
 - `build/` - Build and publishing utilities
