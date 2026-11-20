@@ -22,6 +22,10 @@
         // Doors:
         "trunk":               {"order":1006.1, "onDown":"vehicle.toggleTrunkHandle()", "title": "vehicle.interaction.trunk.toggle.title", "desc": "vehicle.interaction.trunk.toggle.desc" },
         "hoodRelease":         {"order":1003.2, "onDown":"vehicle.toogleHoodReleaseHandle()", "title": "vehicle.interaction.hoodRelease.toggle.title", "desc": "vehicle.interaction.hoodRelease.toggle.desc" },
+
+        // Frunk / engine lid handles: click releases the catch / turns the handle, hold + drag swings the lid, double-click opens / closes it
+        "frunkHandle":         {"order":1003.3, "onChange":"vehicle.lidHandle('frunk', VALUE)",  "title": "vehicle.interaction.frunk.handle.title",     "desc": "vehicle.interaction.frunk.handle.desc" },
+        "engineLidHandle":     {"order":1006.2, "onChange":"vehicle.lidHandle('engine', VALUE)", "title": "vehicle.interaction.engineLid.handle.title", "desc": "vehicle.interaction.engineLid.handle.desc" },
         "door_FL":             {"order":1000.3, "onDown":"vehicle.toggleDoorHandle('FL')", "title": "vehicle.interaction.doors.FL.toggle.title", "desc": "vehicle.interaction.doors.FL.toggle.desc" },
         "door_FR":             {"order":1000.4, "onDown":"vehicle.toggleDoorHandle('FR')", "title": "vehicle.interaction.doors.FR.toggle.title", "desc": "vehicle.interaction.doors.FR.toggle.desc" },
 

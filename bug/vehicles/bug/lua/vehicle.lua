@@ -16,6 +16,9 @@
 --   lib/doors.lua, lib/doordrag.lua, lib/windowcrank.lua: the doors (latch, push buttons, handles, the right door's
 --                      lock, dragging them by hand, getting in / out with F) and the window cranks
 --     (doors.lua gets updateGFX / onReset from the game itself, as a vehicle extension)
+--   lib/hinge.lua      parts swinging on a hinge, moved by hand (springs, dragging, double-click); gets updateGFX /
+--                      onReset from the game itself, as a vehicle extension
+--   lib/lids.lua       the frunk and engine lids on lib/hinge.lua: latches, the engine lid's handle and locking
 -- New features go into their own lib/ module; only the entry points the actions need are added here.
 
 local M = {}
@@ -23,6 +26,8 @@ local M = {}
 local misc = require("vehicles/bug/lua/misc")
 local doors = require("vehicles/bug/lua/lib/doors")  -- also loaded as a vehicle extension: gets updateGFX / onReset itself
 local windowcrank = require("vehicles/bug/lua/lib/windowcrank")
+local hinge = require("vehicles/bug/lua/lib/hinge")  -- also loaded as a vehicle extension: gets updateGFX / onReset itself
+local lids = require("vehicles/bug/lua/lib/lids")
 local interior = require("vehicles/bug/lua/lib/interior")
 local body = require("vehicles/bug/lua/lib/body")
 local roof = require("vehicles/bug/lua/lib/roof")
@@ -41,6 +46,8 @@ end
 local function dragLost(id, kind)
   if kind == "crank" then
     windowcrank.press(id, 0)
+  elseif hinge.isPart(id) then
+    hinge.dragLost(id)
   else
     doors.dragLost(id)
   end
@@ -59,6 +66,15 @@ local function windowCrankWheel(value)
 end
 local function windowCrankWheelRay(steps, px, py, pz, dx, dy, dz)
   windowcrank.wheelRay(steps, px, py, pz, dx, dy, dz)
+end
+
+-- frunk / engine lid handles ("frunk" / "engine"): press/release from the trigger (lib/lids.lua); the cursor ray from
+-- GE goes to every hinged part (lib/hinge.lua)
+local function lidHandle(id, value)
+  lids.press(id, value)
+end
+local function lidDragRay(id, px, py, pz, dx, dy, dz)
+  hinge.setRay(id, px, py, pz, dx, dy, dz)
 end
 
 
@@ -148,6 +164,8 @@ M.windowCrankRay          = windowCrankRay
 M.windowCrankWheel        = windowCrankWheel
 M.windowCrankWheelRay     = windowCrankWheelRay
 M.dragLost                = dragLost
+M.lidHandle               = lidHandle
+M.lidDragRay              = lidDragRay
 
 -- roof: lib/roof.lua
 M.isRagtopOpen            = roof.isRagtopOpen

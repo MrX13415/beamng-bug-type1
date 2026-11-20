@@ -524,6 +524,8 @@
     "vehicle.interaction.doors.FL.window.crankRev.title": "Andersherum kurbeln (Doppelklick)",
     "vehicle.interaction.doors.FR.window.crankRev.title": "Andersherum kurbeln (Doppelklick)",
     "vehicle.interaction.doors.window.crankWheel.title": "Kurbel drehen",
+    "vehicle.interaction.frunk.handle.title": "Fronthaube: Griff",
+    "vehicle.interaction.engineLid.handle.title": "Motordeckel: Griff",
     "vehicle.interaction.foglight_cover.title": "Nebelscheinwerferabdeckung",
 
     "vehicle.interaction.hrb.trust.reset.title": "Herbie: Vertrauen zurücksetzen",
@@ -616,6 +618,8 @@
     "vehicle.interaction.doors.FL.window.crankRev.desc": "Wie die Kurbel, aber den zweiten Klick eines Doppelklicks halten kurbelt das linke Fenster hoch.",
     "vehicle.interaction.doors.FR.window.crankRev.desc": "Wie die Kurbel, aber den zweiten Klick eines Doppelklicks halten kurbelt das rechte Fenster hoch.",
     "vehicle.interaction.doors.window.crankWheel.desc": "Mausrad drehen, während der Cursor auf einer Fensterkurbel ist: nach oben dreht die Kurbel vorwärts und senkt das Fenster, nach unten hebt es.",
+    "vehicle.interaction.frunk.handle.desc": "Klick löst den Sicherheitshaken (vorher den Entriegelungsgriff innen ziehen). Danach gedrückt halten und ziehen hebt oder senkt die Haube von Hand, Doppelklick öffnet oder schließt sie. Über halb offen drücken die Federn sie ganz auf, darunter sinkt sie auf ihre Gummipuffer. Zum Einrasten muss sie mit etwas Schwung zufallen.",
+    "vehicle.interaction.engineLid.handle.desc": "Klick dreht den Griff und löst die Verriegelung. Danach gedrückt halten und nach oben ziehen hebt den Motordeckel von Hand, Doppelklick öffnet oder schließt ihn.",
     "vehicle.interaction.foglight_cover.desc": "Entfernt die Nebelscheinwerferabdeckung.",
 
     "vehicle.interaction.hrb.trust.reset.desc": "Setzt Herbies Vertrauen in den Spieler auf den Standardwert zurück.",

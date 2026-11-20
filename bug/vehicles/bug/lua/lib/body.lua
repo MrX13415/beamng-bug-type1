@@ -3,6 +3,7 @@
 -- file, You can obtain one at http://beamng.com/bCDDL-1.1.txt
 
 -- Body: frunk release (interior pull handle), engine lid latch and handle, fuel / gas caps, foglight cover.
+-- The lids' swing, springs and dragging are in lib/lids.lua; this file only has the latches and handles.
 -- Moved unchanged from vehicle.lua; the interaction actions still call vehicle.* (vehicle.lua forwards here).
 -- vehicle.lua calls setup / update (not game hooks on purpose: this file is also auto-loaded as a vehicle
 -- extension, and the order is kept as before).
@@ -11,15 +12,25 @@ local M = {}
 
 local misc = require("vehicles/bug/lua/misc")
 local animation = require("vehicles/bug/lua/lib/animation")
+local lids = require("vehicles/bug/lua/lib/lids")
 
 local getControllerState = misc.getControllerState
 local toggle = misc.toggle
 
 local foglightstate = 0
 
--- interior pull handle (key frame of the hood_release animation): releases the frunk's main latch
+-- interior pull handle (key frame of the hood_release animation): releases the main latch and the safety catch
+-- together, so the frunk lid pops up into the leaned position on its buffers and can be lifted by the outside
+-- handle right away (lib/lids.lua). An open lid is left alone.
 local function toolgeHoodRelease()
-  controller.getControllerSafe('hoodLatchCoupler').toggleGroup()
+  --controller.getControllerSafe('hoodLatchCoupler').toggleGroup() -- old: main latch only, the catch needed a click outside
+  for _, name in ipairs({'hoodLatchCoupler', 'hoodCatchCoupler'}) do
+    local c = controller.getController(name)
+    if c then
+      local s = c.getGroupState()
+      if s == "attached" or s == "desyncedAttached" then c.toggleGroup() end
+    end
+  end
 end
 local function toogleHoodReleaseHandle()
   animation.start("hood_release")
@@ -31,15 +42,10 @@ end
 local function toggleTrunk()
   controller.getControllerSafe('trunkCoupler').toggleGroup()
 end
--- engine lid handle: open = close the lid (the handle turns back once it is latched), closed = turn the handle,
--- which releases the latch (key frame of the trunk animation)
+-- keyboard: latched = turn the handle (releases the latch) and swing the lid open, otherwise open / close it
+-- automatically (lib/lids.lua, which also drives the handle prop anim__trunk now)
 local function toggleTrunkHandle()
-  if isTrunkOpen() then
-    toggleTrunk()
-    animation.startWait("trunk", -1, function() return not isTrunkOpen() end)
-  else
-    animation.start("trunk", 1)
-  end
+  lids.toggle("engine")
 end
 
 local function toggleGascap()
@@ -65,16 +71,6 @@ local function setup()
     { 80,   0}
   },{
     { 35, function() toolgeHoodRelease() end },
-  })
-  animation.setup('trunk', {
-    {  0,   0},
-    { 20, 0.2},
-    { 40, 0.4},
-    { 60, 0.6},
-    { 80, 1.0}
-  },{
-    -- Only when opening the trunk
-    { 70, function() toggleTrunk() end },
   })
 
   animation.setup('fuelcap', {

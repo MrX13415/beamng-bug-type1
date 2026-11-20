@@ -524,6 +524,8 @@
     "vehicle.interaction.doors.FL.window.crankRev.title": "Roll other way (double-click)",
     "vehicle.interaction.doors.FR.window.crankRev.title": "Roll other way (double-click)",
     "vehicle.interaction.doors.window.crankWheel.title": "Turn crank",
+    "vehicle.interaction.frunk.handle.title": "Frunk: Handle",
+    "vehicle.interaction.engineLid.handle.title": "Engine Lid: Handle",
     "vehicle.interaction.foglight_cover.title": "Foglight Cover",
 
     "vehicle.interaction.hrb.trust.reset.title": "Herbie: Trust Reset",
@@ -616,6 +618,8 @@
     "vehicle.interaction.doors.FL.window.crankRev.desc": "Like the crank, but holding the second click of a double-click rolls the left window up.",
     "vehicle.interaction.doors.FR.window.crankRev.desc": "Like the crank, but holding the second click of a double-click rolls the right window up.",
     "vehicle.interaction.doors.window.crankWheel.desc": "Scroll the mouse wheel while the cursor is on a window crank: up turns the crank forward and lowers the window, down raises it.",
+    "vehicle.interaction.frunk.handle.desc": "Click to release the safety catch (pull the release handle inside first). Then hold and drag to lift or lower the frunk lid by hand, or double-click to open or close it. Above half open the springs push it fully open; below that it sinks down onto its rubber buffers. To latch it, bring it down with some speed.",
+    "vehicle.interaction.engineLid.handle.desc": "Click to turn the handle and release the latch. Then hold and drag up to lift the engine lid by hand, or double-click to open or close it.",
     "vehicle.interaction.foglight_cover.desc": "Removes the foglight cover.",
 
     "vehicle.interaction.hrb.trust.reset.desc": "Resets Herbie's trust in the player to the default value.",
