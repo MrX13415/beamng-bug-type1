@@ -168,7 +168,7 @@
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
         ["ragtop", "action0", "ragtopopen"],   // default: left mouse btn
-        ["ragtop", "action1", "ragtopclose"],  // default: SHIFT + left mouse btn
+        //["ragtop", "action1", "ragtopclose"],  // default: SHIFT + left mouse btn
         ["ragtop", "action2", "ragtopclose"],  // default: middle mouse btn
     ],
     "nodes": [

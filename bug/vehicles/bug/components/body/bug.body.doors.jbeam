@@ -70,7 +70,7 @@
         //["door_R", "action0", "door_FR"], // old (see handle parts)
         //["door_R_int", "action0", "door_FR"], // old: single click toggled the door
         ["door_R_int", "action0", "doorInt_FR"],   // latched: click opens; open: double-click or hold + drag to close
-        ["door_R_int", "action1", "doorLock_FR"],  // shift + click: turn the handle forward to lock / back to unlock (right door only)
+        ["door_R_int", "action2", "doorLock_FR"],  // middle mouse click: turn the handle forward to lock / back to unlock (right door only)
     ],
     "nodes": [
         ["id","posX","posY","posZ"],

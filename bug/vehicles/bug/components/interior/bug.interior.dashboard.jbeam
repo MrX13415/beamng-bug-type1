@@ -62,10 +62,10 @@
         ["ashtray", "action0", "ashtraytoggle"],
 
         ["headlights", "action0", "common:toggle_headlights"],
-        ["headlights", "action1", "common:toggle_headlights"],
+        //["headlights", "action1", "common:toggle_headlights"],
         ["headlights", "action2", "common:toggle_headlights"],
         ["wipers", "action0", "wiperstoggle"],
-        ["wipers", "action1", "wipersdown"],
+        //["wipers", "action1", "wipersdown"],
         ["wipers", "action2", "wipersdown"],
 
         ["parkingbreak", "action0", "common:parkingbrake"],
@@ -311,10 +311,10 @@
         ["triggerId:triggers2", "triggerInput", "inputAction"],        
 
         ["headlights", "action0", "common:toggle_headlights"],
-        ["headlights", "action1", "common:toggle_headlights"],
+        //["headlights", "action1", "common:toggle_headlights"],
         ["headlights", "action2", "common:toggle_headlights"],
         ["wipers", "action0", "wiperstoggle"],
-        ["wipers", "action1", "wipersdown"],
+        //["wipers", "action1", "wipersdown"],
         ["wipers", "action2", "wipersdown"],
 
         ["parkingbreak", "action0", "common:parkingbrake"],

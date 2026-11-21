@@ -276,7 +276,7 @@
         ["triggerId:triggers2", "triggerInput", "inputAction"],
         
         ["ignition", "action0", "common:activateStarterMotor"],
-        ["ignition", "action1", "common:activateStarterMotor"],
+        //["ignition", "action1", "common:activateStarterMotor"],
         ["ignition", "action2", "common:activateStarterMotor"],
     ],
     "props": [

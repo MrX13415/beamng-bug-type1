@@ -69,7 +69,7 @@
       // hold + drag folds the backrest, double-click folds / unfolds it (lua/lib/seats.lua); the toggle action stays
       ["$='seat_'..$seatID..'_toggle'", "action0", "$='seat'..$seatID..'fold'"],
       ["$='seat_'..$seatID..'_move'", "action0", "$='seat'..$seatID..'moveF'"],
-      ["$='seat_'..$seatID..'_move'", "action1", "$='seat'..$seatID..'moveB'"],
+      //["$='seat_'..$seatID..'_move'", "action1", "$='seat'..$seatID..'moveB'"],
       ["$='seat_'..$seatID..'_move'", "action2", "$='seat'..$seatID..'moveB'"]
     ],
     "nodes": [
