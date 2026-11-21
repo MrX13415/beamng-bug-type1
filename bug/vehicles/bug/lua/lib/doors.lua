@@ -70,7 +70,7 @@ end
 local DOOR_LOCK_ANGLE  = 50   -- deg  inside handle rotation when locked
 local DOOR_HANDLE_PULL = 30   -- deg  inside handle rotation of the open animation (prop anim__doorFR_handle)
 local DOOR_LOCK_SPEED  = 5    -- 1/s  handle turning speed (lock position per second)
-local doorLockable = {FR = true}
+local doorLockable = {FL = true, FR = true}
 local doorLocked = {}
 local doorLockAnim = {}
 

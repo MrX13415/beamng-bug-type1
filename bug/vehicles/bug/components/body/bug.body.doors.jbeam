@@ -415,7 +415,7 @@
         ["func",         "mesh",      "idRef:", "idX:", "idY:", 		"baseRotation",           "rotation",                 "translation",        		"min", "max", "offset", "multiplier"],
         // base translation would be {"x":0, "y":0, "z":-6} but some adjustment due to the node positons is required.
         ["anim__windowFL_state",    "bug_door_FL_window_handle",  "d14l","d8l","d11l",   {"x":-3, "y":7, "z":9},     {"x":2200, "y":0, "z":0},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
-        ["anim__doorFL_handle",   "bug_door_FL_handle"       ,  "d14l","d8l","d11l",   {"x":14, "y":-90 , "z":199.23},   {"x":0, "y":0, "z":30},    {"x":0, "y":0, "z":0},           0,       1,   0,  1],
+        ["anim__doorFL_handle_lock", "bug_door_FL_handle"      ,  "d14l","d8l","d11l",   {"x":14, "y":-90 , "z":199.23},   {"x":0, "y":0, "z":30},    {"x":0, "y":0, "z":0},       -1.67,       1,   0,  1], // open pull (0..1) and lock (-1.67 = 50 deg the other way), set by vehicle.lua
     ],
     "triggers2":[
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
@@ -426,12 +426,14 @@
         ["id"],
         ["door_FL"],
         ["doorInt_FL"],
+        ["doorLock_FL"],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
         //["door_L", "action0", "door_FL"], // old (see handle parts)
         //["door_L_int", "action0", "door_FL"], // old: single click toggled the door
         ["door_L_int", "action0", "doorInt_FL"],   // latched: click opens; open: double-click or hold + drag to close
+        ["door_L_int", "action2", "doorLock_FL"],  // middle mouse click: turn the handle forward to lock / back to unlock (left door)
     ],
 
     "nodes": [

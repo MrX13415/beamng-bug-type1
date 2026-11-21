@@ -38,7 +38,8 @@
         // Door handles (inside): click opens a latched door; an open door is closed with a double-click or by hold + drag
         "doorInt_FL":          {"order":1000.9, "onChange":"vehicle.doorInterior('FL', VALUE)", "title": "vehicle.interaction.doors.FL.interior.title", "desc": "vehicle.interaction.doors.FL.interior.desc" },
         "doorInt_FR":          {"order":1001.0, "onChange":"vehicle.doorInterior('FR', VALUE)", "title": "vehicle.interaction.doors.FR.interior.title", "desc": "vehicle.interaction.doors.FR.interior.desc" },
-        "doorLock_FR":         {"order":1001.1, "onDown":"vehicle.toggleDoorLock('FR')",       "title": "vehicle.interaction.doors.FR.lock.title",     "desc": "vehicle.interaction.doors.FR.lock.desc" },
+        "doorLock_FL":         {"order":1001.1, "onDown":"vehicle.toggleDoorLock('FL')",       "title": "vehicle.interaction.doors.FL.lock.title",     "desc": "vehicle.interaction.doors.FL.lock.desc" },
+        "doorLock_FR":         {"order":1001.2, "onDown":"vehicle.toggleDoorLock('FR')",       "title": "vehicle.interaction.doors.FR.lock.title",     "desc": "vehicle.interaction.doors.FR.lock.desc" },
 
         // Window cranks: hold + turn the crank; double-click = roll fully open/closed (hold on the second click: roll while held)
         "windowCrank_FL":      {"order":42.01,  "onChange":"vehicle.windowCrank('FL', VALUE)",       "title":"vehicle.interaction.doors.FL.window.crank.title",    "desc":"vehicle.interaction.doors.FL.window.crank.desc"},
