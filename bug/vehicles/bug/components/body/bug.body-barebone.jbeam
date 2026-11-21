@@ -93,8 +93,8 @@
         ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
 
         ["parkingbreak", "f4mr","f4ml","refup", "box", {"x":0.02, "y":0.19, "z":0.07}, {"x":-11, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":0.074, "y":0.18, "z":-0.16},{"mesh":"bug_controls_handbreak"}],
-        ["indicatorL", "steer2","steer3","steer1", "box", {"x":0.07, "y":0.03, "z":0.02}, {"x":-0, "y":-5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.17, "y":0.95, "z":-0.05},{"mesh":"bug_indicatorlever_handle"}],
-        ["indicatorR", "steer2","steer3","steer1", "box", {"x":0.07, "y":0.03, "z":0.02}, {"x":-0, "y":-5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.17, "y":0.95, "z":0.015},{"mesh":"bug_indicatorlever_handle"}],
+        ["indicatorL", "steer2","steer3","steer1", "box", {"x":0.08, "y":0.05, "z":0.02}, {"x":-0, "y":-5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.13, "y":0.95, "z":-0.05},{"mesh":"bug_indicatorlever_handle"}],
+        ["indicatorR", "steer2","steer3","steer1", "box", {"x":0.08, "y":0.05, "z":0.02}, {"x":-0, "y":-5, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0},{"x":-0.13, "y":0.95, "z":0.005},{"mesh":"bug_indicatorlever_handle"}],
     ],
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],        

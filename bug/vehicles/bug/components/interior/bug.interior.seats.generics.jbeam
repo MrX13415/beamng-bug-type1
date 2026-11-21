@@ -53,7 +53,7 @@
     ],
     "triggers2": [
       ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-      ["$='seat_'..$seatID..'_toggle'", "$='is'..$seatID..'5o'", "$='is'..$seatID..'5i'", "$='is'..$seatID..'6i'", "box", {"x": 0.47, "y": 0.1, "z": 0.2}, {"x": "$= $side * 17", "y": 0, "z": 0}, {"x": 0, "y": 0, "z": 0}, {"x": 0, "y": 0, "z": 0}, {"x": "$= ($seatID == 'FL' and 0 or -0.025)", "y": "$= ($seatID == 'FL' and -0.05 or -0.01)", "z": "$= ($seatID == 'FL' and -0.01 or -0.09)"}, {"mesh": "$=$meshBack..'_'..$seatID"}],
+      ["$='seat_'..$seatID..'_toggle'", "$='is'..$seatID..'5o'", "$='is'..$seatID..'5i'", "$='is'..$seatID..'6i'", "box", {"x": 0.47, "y": "$= ($seatID == 'FL' and 0.12 or -0.12)", "z": 0.3}, {"x": "$= $side * 10", "y": 0, "z": 0}, {"x": 0, "y": 0, "z": 0}, {"x": 0, "y": 0, "z": 0}, {"x": 0, "y": 0, "z": 0}, {"mesh": "$=$meshBack..'_'..$seatID", "baseTranslationGlobal":{"x":"$= ($seatID == 'FL' and 0.525 or -0.525)", "y":0.17, "z":0.95}}],
       ["$='seat_'..$seatID..'_move'", "$='is'..$seatID..'1o'", "$='is'..$seatID..'1i'", "$='is'..$seatID..'3i'", "sphere", 0.06, {"x": 0, "y": 0, "z": 0}, {"x": 0, "y": 0, "z": 0}, {"x": 0, "y": 0, "z": 0}, {"x": -0.245, "y": 0.35, "z": "$= ($seatID == 'FL' and -0.02 or 0.02)"}, {"mesh": "$='bug_seat_'..$seatID..'_handle'"}]
     ],
     "actionsEnabled": [
@@ -86,7 +86,7 @@
       ["$='is'..$seatID..'1i'", "$= $side * 0.088", -0.353, 0.542],
       ["$='is'..$seatID..'2o'", "$= $side * 0.493",  0.070, 0.442],
       ["$='is'..$seatID..'2i'", "$= $side * 0.088",  0.070, 0.442],
-      {"nodeWeight": 1.6},
+      {"nodeWeight": 2.0},
       ["$='is'..$seatID..'3o'", "$= $side * 0.459", -0.300, 0.300],
       ["$='is'..$seatID..'3i'", "$= $side * 0.126", -0.300, 0.300],
       {"group": ["$='bug_seat_'..$seatID..'_base'", "$='bug_seat_'..$seatID..'_back'"]},
@@ -395,13 +395,12 @@
       ["$=$meshBase", ["bug_seat_R_base"]],   // the cushion lifts up (lua/lib/seats.lua)
       ["$=$meshBack", ["bug_seat_R"]],
     ],
-    // three spheres along the cushion's front edge, it lights up; hold + drag lifts it up to ~88 deg (the battery is
-    // underneath), double-click lifts / lowers it (lua/lib/seats.lua); not while someone sits on a rear seat
+    // one broad trigger across the cushion's front edge; hold + drag lifts it up to ~88 deg (the battery is underneath),
+    // double-click lifts / lowers it (lua/lib/seats.lua); not while someone sits on a rear seat
     "triggers2":[
       ["id", "idRef:", "idX:", "idY:", "type", "size", "baseRotation", "rotation", "translation", "baseTranslation"],
-      ["seat_R_fold",  "isRB1r", "isRB1l", "isRHl", "sphere", 0.15, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"$=$meshBase", "baseTranslationGlobal":{"x": 0.40, "y":0.48, "z":0.58}, "alphaOnUsed":0}],
-      ["seat_R_fold2", "isRB1r", "isRB1l", "isRHl", "sphere", 0.15, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"$=$meshBase", "baseTranslationGlobal":{"x": 0.00, "y":0.48, "z":0.58}, "alphaOnUsed":0}],
-      ["seat_R_fold3", "isRB1r", "isRB1l", "isRHl", "sphere", 0.15, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"$=$meshBase", "baseTranslationGlobal":{"x":-0.40, "y":0.48, "z":0.58}, "alphaOnUsed":0}],
+      ["seat_R_fold1", "isRB1l", "isRB1r", "isRB3l", "box", {"x":0.60, "y":-0.12, "z":0.25}, {"x":3, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"$=$meshBase", "baseTranslationGlobal":{"x":0.60, "y":0.46, "z":0.67}, "alphaOnUsed":0}],
+      ["seat_R_fold2", "isRB1r", "isRB1l", "isRB3r", "box", {"x":0.60, "y":0.12, "z":0.25}, {"x":-3, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"x":0, "y":0, "z":0}, {"mesh":"$=$meshBase", "baseTranslationGlobal":{"x":-0.60, "y":0.46, "z":0.67}, "alphaOnUsed":0}],
     ],
     "actionsEnabled": [
       ["id"],
@@ -409,9 +408,8 @@
     ],
     "triggerEventLinks2":[
       ["triggerId:triggers2", "triggerInput", "inputAction"],
-      ["seat_R_fold",  "action0", "seatRfold"],
+      ["seat_R_fold1", "action0", "seatRfold"],
       ["seat_R_fold2", "action0", "seatRfold"],
-      ["seat_R_fold3", "action0", "seatRfold"],
     ],
     "nodes": [
       ["id","posX","posY","posZ"],
