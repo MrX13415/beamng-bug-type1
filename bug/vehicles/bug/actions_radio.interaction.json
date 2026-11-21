@@ -6,6 +6,8 @@
         "radio_On":             {"order":10.3, "isBasic":false, "onDown":"controller.getControllerSafe('radio').setState(true)",             "title":"vehicle.interaction.radio.on.title",                         "desc":"vehicle.interaction.radio.on.desc"},
         "radio_Info":           {"order":10.4,                  "onDown":"controller.getControllerSafe('radio').info()",                     "title":"vehicle.interaction.radio.show.title",                       "desc":"vehicle.interaction.radio.show.desc"},
         
+        "radioWheel":           {"order":10.6,                  "onChange":"vehicle.radioWheel(VALUE)", "isCentered":true,                    "title":"vehicle.interaction.radio.toggle.title",                     "desc":"vehicle.interaction.radio.toggle.desc"},
+
         "radio_VolumeDown":     {"order":21.1,                  "onChange":"controller.getControllerSafe('radio').volumeDown(VALUE)",        "title":"vehicle.interaction.radio.decrease_volume.title",            "desc":"vehicle.interaction.radio.decrease_volume.desc"},
         "radio_VolumeUp":       {"order":21.2,                  "onChange":"controller.getControllerSafe('radio').volumeUp(VALUE)",          "title":"vehicle.interaction.radio.increase_volume.title",            "desc":"vehicle.interaction.radio.increase_volume.desc"},
         "radio_On_VolumeDown":  {"order":21.3, "isBasic":false, "onDown":"controller.getControllerSafe('radio').volumeDown()",               "title":"vehicle.interaction.radio.switch_on_decrease_volume.title",  "desc":"vehicle.interaction.radio.switch_on_decrease_volume.desc"},

@@ -1,6 +1,8 @@
 {
   "bindings":[
     // mouse wheel over a window crank turns it (up = crank forward, window down)
-    {"control": "zaxis", "action": "windowCrankWheel"}
+    {"control": "zaxis", "action": "windowCrankWheel"},
+    // mouse wheel over a radio knob changes the hovered knob
+    {"control": "zaxis", "action": "radioWheel"}
   ]
 }

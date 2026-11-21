@@ -60,6 +60,7 @@
         ["id"],
 
         ["radio_Toggle"],
+        ["radioWheel"],
         ["radio_Off"],
         ["radio_On"],
         ["radio_Info"],
@@ -75,6 +76,7 @@
         ["radio_TuneNext"],
         ["radio_TrackPrev"],
         ["radio_TrackNext"],
+
         ["radio_TunePreset1"],
         ["radio_TunePreset2"],
         ["radio_TunePreset3"],
@@ -89,12 +91,12 @@
     "triggerEventLinks2":[
         ["triggerId:triggers2", "triggerInput", "inputAction"],
 
-        ["volDown", "action0", "radio_On_VolumeDown"],
-        ["volDown", "action1", "radio_Off"],
-        ["volDown", "action2", "radio_Off"],
-        ["volUp", "action0", "radio_On_VolumeUp"],
-        ["volUp", "action1", "radio_Off"],
-        ["volUp", "action2", "radio_Off"],
+        ["volDown"  , "action0", "radio_On_VolumeDown"],
+        //["volDown"  , "action1", "radio_Off"],
+        ["volDown"  , "action2", "radio_Off"],
+        ["volUp"    , "action0", "radio_On_VolumeUp"],
+        //["volUp"    , "action1", "radio_Off"],
+        ["volUp"    , "action2", "radio_Off"],
 
         ["tunePreset1", "action0", "radio_TunePreset1"],
         ["tunePreset2", "action0", "radio_TunePreset2"],
@@ -102,11 +104,11 @@
         ["tunePreset4", "action0", "radio_TunePreset4"],
         ["tunePreset5", "action0", "radio_TunePreset5"],
 
-        ["tunePreset1", "action1", "radio_SetPreset1"],
-        ["tunePreset2", "action1", "radio_SetPreset2"],
-        ["tunePreset3", "action1", "radio_SetPreset3"],
-        ["tunePreset4", "action1", "radio_SetPreset4"],
-        ["tunePreset5", "action1", "radio_SetPreset5"],
+        //["tunePreset1", "action1", "radio_SetPreset1"],
+        //["tunePreset2", "action1", "radio_SetPreset2"],
+        //["tunePreset3", "action1", "radio_SetPreset3"],
+        //["tunePreset4", "action1", "radio_SetPreset4"],
+        //["tunePreset5", "action1", "radio_SetPreset5"],
 
         ["tunePreset1", "action2", "radio_SetPreset1"],
         ["tunePreset2", "action2", "radio_SetPreset2"],
@@ -114,12 +116,12 @@
         ["tunePreset4", "action2", "radio_SetPreset4"],
         ["tunePreset5", "action2", "radio_SetPreset5"],
         
-        ["tuneDown", "action0", "radio_TuneDown"],
-        ["tuneDown", "action1", "radio_TuneRev"],
-        ["tuneDown", "action2", "radio_TuneRev"],
-        ["tuneUp", "action0", "radio_TuneUp"],
-        ["tuneUp", "action1", "radio_TuneNext"],
-        ["tuneUp", "action2", "radio_TuneNext"],
+        ["tuneDown" , "action0", "radio_TuneDown"],
+        //["tuneDown" , "action1", "radio_TuneRev"],
+        ["tuneDown" , "action2", "radio_TuneRev"],
+        ["tuneUp"   , "action0", "radio_TuneUp"],
+        //["tuneUp"   , "action1", "radio_TuneNext"],
+        ["tuneUp"   , "action2", "radio_TuneNext"],
     ],
     "glowMap":{
         "bug_radio_scale":          {"simpleFunction":"power__radio_state",  "off":"bug_radio_scale",    "on":"bug_radio_scale_on",       "on_intense":"bug_radio_scale_on", "materialEmissiveScaling":{"on_max":1.0}},

@@ -34,6 +34,7 @@ local body = require("vehicles/bug/lua/lib/body")
 local roof = require("vehicles/bug/lua/lib/roof")
 local seats = require("vehicles/bug/lua/lib/seats")
 local openings = require("vehicles/bug/lua/lib/openings")
+local radiowheel = require("vehicles/bug/lua/lib/radiowheel")
 
 
 local function hasPower() return electrics.values.ignitionLevel > 0 end
@@ -67,6 +68,15 @@ local function windowCrankWheel(value)
 end
 local function windowCrankWheelRay(steps, px, py, pz, dx, dy, dz)
   windowcrank.wheelRay(steps, px, py, pz, dx, dy, dz)
+end
+
+-- Mouse wheel over a radio knob. Geometry and ray hit testing live in radiowheel.lua.
+local function radioWheel(value)
+  radiowheel.wheel(value)
+end
+
+local function radioWheelRay(steps, px, py, pz, dx, dy, dz)
+  radiowheel.wheelRay(steps, px, py, pz, dx, dy, dz)
 end
 
 -- frunk / engine lid handles ("frunk" / "engine"): press/release from the trigger (lib/lids.lua); the cursor ray from
@@ -176,6 +186,8 @@ M.windowCrank             = windowCrank
 M.windowCrankRay          = windowCrankRay
 M.windowCrankWheel        = windowCrankWheel
 M.windowCrankWheelRay     = windowCrankWheelRay
+M.radioWheel              = radioWheel
+M.radioWheelRay           = radioWheelRay
 M.dragLost                = dragLost
 M.lidHandle               = lidHandle
 M.lidDragRay              = lidDragRay

@@ -9,10 +9,7 @@
     {"control": "numpadmult", "action": "radio_TuneRev"},
     {"control": "numpadminus", "action": "radio_TuneNext"},
     {"control": "alt numpadmult", "action": "radio_TrackPrev"},
-    {"control": "alt numpadminus", "action": "radio_TrackNext"},
-
-    //{"control": "", "action": "radiotunedown"},
-    //{"control": "", "action": "radiotuneup"},
+    {"control": "alt numpadminus", "action": "radio_TrackNext"}
   ], 
   "name": "Keyboard", 
   "version": 1, 

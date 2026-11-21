@@ -288,7 +288,7 @@ function Radio:new()
 	self.frequency = 0
 
 	self.tuneDirection = 0
-	self.tuning = false
+	self.tuneBest = false
 	self.tuneNext = false
 	self.tuneTimer = 0
 
@@ -781,13 +781,20 @@ function Radio:tune(frequency)
 	self.tuneNext = false
 end
 
+function Radio:tuneAxis(value)
+	self:tune(self.frequency + 0.05 * value)
+	-- Automatically tune to best frequency for current station when not tuning for more then 1200ms
+	self.tuneBest = true
+end
+
 function Radio:tuneDown(value)
 	if not self.tuneNext and self.tuneDirection > 0 then return end -- already tuning right
 	if self.tuneDirection == 0 then self.tuneTimer = 0 end
 
-	self.tuneNext = value == nil	
+	self.tuneNext = value == nil
 	self.tuneDirection = (value or 1) * -1	
 end
+
 function Radio:tuneUp(value)
 	if not self.tuneNext and self.tuneDirection < 0 then return end -- already tuning left
 	if self.tuneDirection == 0 then self.tuneTimer = 0 end
@@ -828,6 +835,22 @@ end
 function Radio:showInfo()
 	local s = self:station()
 	if s then s:showInfo() end
+end
+
+function Radio:volumeAxis(value)
+	if value > 0 and not self.state then
+		self.userVolume = 0
+		self:setState(true)
+	elseif value < 0 and self.userVolume <= 0.05 then
+		self.userVolume = 0
+		if self.state then
+			self:setState(false)
+		end
+		return
+	end
+	
+	self.userVolumeDirection = 0
+	self:setVolume(self.userVolume + 0.05 * value)
 end
 
 function Radio:volumeUp(value)
@@ -955,14 +978,14 @@ function Radio:updateControls(dt)
 		if self.stationIndex > 0 then step = 0.03 end
 
 		self:setFrequency(self.frequency + (step * self.tuneDirection))
-		self.tuning = true
+		self.tuneBest = true
 
-	elseif self.tuning and self:isOn() then
+	elseif self.tuneBest and self:isOn() then
 		self.tuneTimer = self.tuneTimer + dt
 
 		-- tune to best frequency for current station when not tuning for more then 1200ms
 		if self.tuneTimer >= 1.2 then
-			self.tuning = false
+			self.tuneBest = false
 			self:tune()
 			return
 		end
@@ -1184,10 +1207,12 @@ local function tuneDown(value) radio:tuneDown(value) end
 local function tuneUp(value) radio:tuneUp(value) end
 local function tunePreset(index) radio:tunePreset(index) end
 local function setPreset(index) radio:setPreset(index) end
+local function tuneAxis(value) radio:tuneAxis(value) end
 
 local function volumeSet(volume) radio:setVolume(volume) end
 local function volumeDown(value) radio:volumeDown(value) end
 local function volumeUp(value) radio:volumeUp(value) end
+local function volumeAxis(value) radio:volumeAxis(value) end
 
 local function setState(enabled) radio:setState(enabled) end
 
@@ -1213,9 +1238,11 @@ M.tuneDown     = tuneDown
 M.tuneUp       = tuneUp
 M.tunePreset   = tunePreset
 M.setPreset    = setPreset
+M.tuneAxis     = tuneAxis
 
 M.volumeSet    = volumeSet
 M.volumeDown   = volumeDown
 M.volumeUp     = volumeUp
+M.volumeAxis   = volumeAxis
 
 return M
